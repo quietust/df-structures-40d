@@ -1271,21 +1271,6 @@
             <pointer type-name='historical_figure'/>
         </stl-vector>
 
-        <compound name='event_collections'>
-            <stl-vector name='all'>
-                <pointer type-name='history_event_collection'/>
-            </stl-vector>
-            <static-array name='other' count='8'>
-                <stl-vector>
-                    <pointer type-name='history_event_collection'/>
-                </stl-vector>
-            </static-array>
-        </compound>
-
-        <stl-vector name='ages'>
-            <pointer/>
-        </stl-vector>
-
         <stl-vector name='unk1' type-name='int32_t'/>
         <stl-vector name='unk2' type-name='int16_t'/>
 
@@ -1301,8 +1286,6 @@
         <stl-vector/>
         <bool/>
         <stl-vector/>
-        <stl-vector comment='v0.34.01'/>
-        <stl-vector comment='v0.34.01'/>
         <int32_t/>
         <int32_t/>
         <int32_t/>

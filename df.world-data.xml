@@ -411,9 +411,6 @@
         <int32_t name='next_unk_140_id'/>
         <int32_t name='next_unk_150_id'/>
 
-        <int32_t comment='v0.34.01'/>
-        <int32_t comment='v0.34.01'/>
-
         <int32_t name='world_width'/>
         <int32_t name='world_height'/>
 
@@ -449,9 +446,6 @@
         <int16_t/>
         <int16_t/>
 
-        <int16_t comment='v0.34.01'/>
-        <int16_t comment='v0.34.01'/>
-
         <int32_t name='world_width2'/>
         <int32_t name='world_height2'/>
 
@@ -471,24 +465,6 @@
         <int32_t name="unk_e8"/>
         <int32_t name="unk_ec"/>
         <int32_t name="unk_f0"/>
-
-        <compound name='construction_squares'>
-            <int16_t name="width"/>
-            <int16_t name="height"/>
-
-            <pointer name="table" is-array='true'>
-                <pointer is-array='true'>
-                    <stl-vector>
-                        <pointer/>
-                    </stl-vector>
-                </pointer>
-            </pointer>
-        </compound>
-
-        <stl-vector name="constructions">
-            <pointer/>
-        </stl-vector>
-        <int32_t name="next_construction_id"/>
 
         <static-array name="unk_110" count='2'>
             <pointer name="table" is-array='true'>
@@ -555,10 +531,6 @@
                 </stl-vector>
             </pointer>
         </stl-vector>
-
-        <stl-vector type-name='pointer' comment='v0.34.01'/>
-        <stl-vector type-name='pointer' comment='v0.34.01'/>
-        <stl-vector type-name='pointer' comment='v0.34.01'/>
 
         <stl-vector name="landmasses">
             <pointer type-name='world_landmass'/>

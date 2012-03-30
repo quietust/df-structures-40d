@@ -1,60 +1,22 @@
 <data-definition>
     <struct-type type-name='world_raws'>
-        -- Materials
+        -- Matglosses
 
-        <stl-vector name='material_templates'>
-            <pointer type-name='material_template'/>
+        <stl-vector name='matgloss_wood'>
+            <pointer type-name='matgloss_wood'/>
         </stl-vector>
-
-        -- Inorganic
-
-        <stl-vector name='inorganics'>
-            <pointer type-name='inorganic_raw'/>
+        <stl-vector name='matgloss_stone'>
+            <pointer type-name='matgloss_stone'/>
         </stl-vector>
-        <stl-vector name='inorganics_subset' comment='all inorganics with value less than 4'>
-            <pointer type-name='inorganic_raw'/>
+        <stl-vector name='matgloss_gem'>
+            <pointer type-name='matgloss_gem'/>
         </stl-vector>
-
-        -- Plants
-
-        <compound name='plants'>
-            dtor 852cc20
-
-            <stl-vector name='all'>
-                <pointer type-name='plant_raw'/>
-            </stl-vector>
-            <stl-vector name='bushes'>
-                <pointer type-name='plant_raw'/>
-            </stl-vector>
-            <stl-vector name='bushes_idx' index-refers-to='$$._parent.bushes[$]'>
-                <int32_t ref-target='plant_raw'/>
-            </stl-vector>
-            <stl-vector name='trees'>
-                <pointer type-name='plant_raw'/>
-            </stl-vector>
-            <stl-vector name='trees_idx' index-refers-to='$$._parent.trees[$]'>
-                <int32_t ref-target='plant_raw'/>
-            </stl-vector>
-            <stl-vector name='grasses'>
-                <pointer type-name='plant_raw'/>
-            </stl-vector>
-            <stl-vector name='grasses_idx' index-refers-to='$$._parent.grasses[$]'>
-                <int32_t ref-target='plant_raw'/>
-            </stl-vector>
-        </compound>
+        <stl-vector name='matgloss_plant'>
+            <pointer type-name='matgloss_plant'/>
+        </stl-vector>
 
         -- Creature RAWs
 
-        <stl-vector name='tissue_templates'>
-            <pointer type-name='tissue_template'/>
-        </stl-vector>
-
-        dtor 89bab50
-        <stl-vector name='body_detail_plans'>
-            <pointer type-name='body_detail_plan'/>
-        </stl-vector>
-
-        dtor 8527e40
         <stl-vector name='body_templates'>
             <pointer type-name='body_template'/>
         </stl-vector>
@@ -69,35 +31,17 @@
             </pointer>
         </stl-vector>
 
-        dtor 89ba980
-        <stl-vector name='creature_variations'>
-            <pointer type-name='creature_variation'/>
+        <stl-vector name='creatures'>
+            <pointer type-name='creature_raw'/>
         </stl-vector>
 
-        -- Creatures
-
-        <compound name='creatures'>
-            dtor 81448c0
-
-            <stl-vector name='alphabetic'>
-                <pointer type-name='creature_raw'/>
-            </stl-vector>
-
-            <stl-vector name='all'>
-                <pointer type-name='creature_raw'/>
-            </stl-vector>
-
-            <int32_t name='unk1'/>
-
-            <stl-vector name='list_creature' type-name='int32_t'
-                        comment='Together with list_caste, a list of all caste indexes in order.'/>
+            <stl-vector name='list_creature' type-name='int32_t'/>
             <stl-vector name='list_caste' type-name='int32_t'/>
         </compound>
 
         -- Item RAWs
 
         <compound name='itemdefs'>
-            dtor 852e080
 
             <stl-vector name='all'>
                 <pointer type-name='itemdef'/>
@@ -112,14 +56,6 @@
             <stl-vector name='toys'>
                 <pointer type-name='itemdef_toyst'/>
             </stl-vector>
-            <stl-vector name='tools'>
-                <pointer type-name='itemdef_toolst'/>
-            </stl-vector>
-            <static-array name='tools_by_type' count='15' index-enum='tool_uses'>
-                <stl-vector>
-                    <pointer type-name='itemdef_toolst'/>
-                </stl-vector>
-            </static-array>
             <stl-vector name='instruments'>
                 <pointer type-name='itemdef_instrumentst'/>
             </stl-vector>
@@ -129,7 +65,7 @@
             <stl-vector name='ammo'>
                 <pointer type-name='itemdef_ammost'/>
             </stl-vector>
-            <stl-vector name='siege_ammo'>
+            <stl-vector name='siegeammo'>
                 <pointer type-name='itemdef_siegeammost'/>
             </stl-vector>
             <stl-vector name='gloves'>
@@ -176,7 +112,7 @@
             </stl-vector>
 
             <static-array name='word_table' count='2'>
-                <static-array count='59'>
+                <static-array count='38'>
                     <static-array name='words' count='6'>
                         <stl-vector index-refers-to='$$._parent._parent.parts[$$._key][$]'>
                             <int32_t ref-target='language_word'/>
@@ -198,76 +134,7 @@
             <stl-vector name='shapes'>
                 <pointer type-name='descriptor_shape'/>
             </stl-vector>
-            <stl-vector name='patterns'>
-                <pointer type-name='descriptor_pattern'/>
-            </stl-vector>
         </compound>
-
-        -- Reaction RAWs
-
-        <stl-vector name='reactions'>
-            <pointer type-name='reaction'/>
-        </stl-vector>
-
-        -- Workshops
-
-        <compound name='buildings'>
-            <stl-vector name='all'>
-                <pointer type-name='building_def'/>
-            </stl-vector>
-            <stl-vector name='workshops'>
-                <pointer type-name='building_def_workshopst'/>
-            </stl-vector>
-            <stl-vector name='furnaces'>
-                <pointer type-name='building_def_furnacest'/>
-            </stl-vector>
-
-            <int32_t name='next_id'/>
-        </compound>
-
-        -- Interactions
-
-        <stl-vector name='interactions' comment='v0.34.01'>
-            <pointer type-name='interaction'/>
-        </stl-vector>
-
-        -- Material index
-
-        <compound name='mat_table' type-name='special_mat_table'/>
-
-        -- Interaction effects
-
-        <compound name='syndromes'>
-            <stl-vector name='mat_types' index-refers-to='$$._parent.all[$]'>
-                <int16_t ref-target='material' aux-value='$$._parent.mat_indexes[$._key]'/>
-            </stl-vector>
-            <stl-vector name='mat_indexes' type-name='int32_t'/>
-            <stl-vector name='interactions'>
-                <int32_t ref-target='interaction'/>
-            </stl-vector>
-
-            <stl-vector name='all' comment='v0.34.01'>
-                <pointer type-name='syndrome'/>
-            </stl-vector>
-        </compound>
-
-        <compound name='effects'>
-            <stl-vector name='mat_types' index-refers-to='$$._parent.all[$]'>
-                <int16_t ref-target='material' aux-value='$$._parent.mat_indexes[$._key]'/>
-            </stl-vector>
-            <stl-vector name='mat_indexes' type-name='int32_t'/>
-            <stl-vector name='interactions'>
-                <int32_t ref-target='interaction'/>
-            </stl-vector>
-
-            <stl-vector name='all' comment='v0.34.01'>
-                <pointer type-name='creature_interaction_effect'/>
-            </stl-vector>
-        </compound>
-
-        <int32_t comment='v0.34.01'/>
-        <int32_t comment='v0.34.01'/>
-        <int32_t comment='v0.34.01'/>
     </struct-type>
 </data-definition>
 

@@ -1,213 +1,50 @@
 <?xml version="1.0"?>
 <data-definition>
-    <!--
-    <symbol-table name="" os-type="">
-        <binary-timestamp value=""/>
-        <md5-hash value=""/>
-
-        .data
-
-        <global-address name='cursor'/>
-        <global-address name='selection_rect'/>
-
-        <global-address name='control_mode'/>
-        <global-address name='game_mode'/>
-
-        <global-address name='ui_area_map_width'/>
-        <global-address name='ui_menu_width'/>
-
-        .bss compound - THAT IS, NOT SIMPLE INTEGER VARIABLES!
-
-        <global-address name='announcements'/>
-        <global-address name='cursor_unit_list'/>
-        <global-address name='d_init'/>
-        <global-address name='enabler'/>
-        <global-address name='gps'/>
-        <global-address name='gview'/>
-        <global-address name='init'/>
-        <global-address name='ui'/>
-        <global-address name='ui_advmode'/>
-        <global-address name='ui_build_selector'/>
-        <global-address name='ui_look_list'/>
-        <global-address name='ui_sidebar_menus'/>
-        <global-address name='world'/>
-
-        .bss primitive
-
-        <global-address name='cur_year'/>
-        <global-address name='cur_year_tick'/>
-
-        <global-address name='current_weather'/>
-
-        <global-address name='job_next_id'/>
-        <global-address name='pause_state'/>
-
-        <global-address name='ui_building_item_cursor'/>
-        <global-address name='ui_look_cursor'/>
-        <global-address name='ui_selected_unit'/>
-        <global-address name='ui_unit_view_mode'/>
-        <global-address name='ui_workshop_in_add'/>
-        <global-address name='ui_workshop_job_cursor'/>
-
-        <global-address name='window_x'/>
-        <global-address name='window_y'/>
-        <global-address name='window_z'/>
-    </symbol-table>
-    -->
-
-
-                    .,:rsr,
-                  :2;,;r2A@@5
-                  @2::s5A#@@@ @r.       .
-                 sd;:riXA#@@ :@@@Gir;;AS9
-                 Bs::sS3A#@2 @@#AhXirsS#;
-                iHrLr5d#@@@ .@#95sr;;rie
-                i*'    `*@3 @@A2sr;:;r#5
-                :..:rll:    @@A5sr::r3@
-               @Hr;iZ#@@@@   `:rr;;;;:
-              S@r.;i2#@@@  @s.      ..
-              @2::ri2A@@# B@G2ir:...5i
-             :@r,r3X##@@  @G5sr:..,:A
-            .@Ar;;rSB@@# H#2sr;,..,is
-            .'       `* ,@ASs;:..,:B
-                         ;rr;:,..,:.
-                             `'''
-                  W I N D O W S
-
-    <symbol-table name='v0.34.06 SDL' os-type='windows'>
+    <symbol-table name='v0.23.130.23aL' os-type='windows/msvc6'>
         <binary-timestamp value='0x4f6c34ca'/>
 
         .data
 
-        <global-address name='cursor' value='0xc55848'/>
-        <global-address name='selection_rect' value='0xc55854'/>
+        <global-address name='cursor' value='0x789c1c'/>
+        <global-address name='selection_rect' value='0x789c28'/>
 
-        <global-address name='control_mode' value='0xc5586c'/>
-        <global-address name='game_mode' value='0xc55870'/>
+        <global-address name='control_mode' value='0x789c40'/>
+        <global-address name='game_mode' value='0x789c44'/>
 
-        <global-address name='ui_area_map_width' value='0xc55921'/>
-        <global-address name='ui_menu_width' value='0xc55920'/>
-
-        .bss compound - THAT IS, NOT SIMPLE INTEGER VARIABLES!
-
-        <global-address name='announcements' value='0x196aa98'/>
-        <global-address name='cursor_unit_list' value='0x196e678'/>
-        <global-address name='d_init' value='0x196a9f0'/>
-        <global-address name='enabler' value='0x16107C8'/>
-        <global-address name='gps' value='0xc55d88'/>
-        <global-address name='gview' value='0x1618310'/>
-        <global-address name='init' value='0x196d5e0'/>
-        <global-address name='ui' value='0x1610AD0'/>
-        <global-address name='ui_advmode' value='0x197E6C0'/>
-        <global-address name='ui_build_selector' value='0x196c610'/>
-        <global-address name='ui_look_list' value='0x197e8f8'/>
-        <global-address name='ui_sidebar_menus' value='0x196ADD0'/>
-        <global-address name='world' value='0x17D2CF8'/>
-
-        .bss primitive
-
-        <global-address name='cur_year' value='0x10191f0'/>
-        <global-address name='cur_year_tick' value='0xfe6fa4'/>
-
-        <global-address name='current_weather' value='0x0160e72c'/>
-
-        <global-address name='job_next_id' value='0xf3a1d0'/>
-        <global-address name='pause_state' value='0x160e756'/>
-
-        <global-address name='ui_building_item_cursor' value='0x10191ec'/>
-        <global-address name='ui_look_cursor' value='0x1000ad0'/>
-        <global-address name='ui_selected_unit' value='0x10143B8'/>
-        <global-address name='ui_unit_view_mode' value='0xfe6f8c'/>
-        <global-address name='ui_workshop_in_add' value='0xfd28da'/>
-        <global-address name='ui_workshop_job_cursor' value='0x160e728'/>
-
-        <global-address name='window_x' value='0xfd28cc'/>
-        <global-address name='window_y' value='0x1000ad8'/>
-        <global-address name='window_z' value='0x1000ab0'/>
-    </symbol-table>
-
-    <!-- end windows -->
-
-                            .-"""-.
-                           '       \
-                          |,.  ,-.  |   _________________________
-                          |()L( ()| |   \                        \
-                          |,'  `".| |   /_  Argh !!!              \
-                          |.___.',| `     \________________________\
-                         .j `--"' `  `.
-                        / '        '   \
-                       / /          `   `.
-                      / /            `    .
-                     / /              l   |
-                    . ,   L I N U X   |   |
-                    ,"`.             .|   |
-                 _.'   ``.          | `..-'l
-                |       `.`,        |      `.
-                |         `.    __.j         )
-                |__        |--""___|      ,-'
-                   `"--...,+""""   `._,.-'
-
-    <!-- Windows logo by Microsoft -->
-    <!-- Tux logo by the Linux guys :) -->
-
-    <symbol-table name='v0.34.06 linux' os-type='linux'>
-        <md5-hash value='304f8e89577ac1ab733d71a743576d1e'/>
-
-        .data
-
-        <global-address name='cursor' value='0x8e3f7a0'/>
-        <global-address name='selection_rect' value='0x8e3f7b0'/>
-
-        <global-address name='control_mode' value='0x8e3f7d0'/>
-        <global-address name='game_mode' value='0x8e3f7e0'/>
-
-        <global-address name='ui_area_map_width' value='0x8e3f892'/>
-        <global-address name='ui_menu_width' value='0x8e3f891'/>
+        <global-address name='ui_area_map_width' value='0x789c61'/>
+        <global-address name='ui_menu_width' value='0x789c60'/>
 
         .bss compound - THAT IS, NOT SIMPLE INTEGER VARIABLES!
 
-        <global-address name='announcements'/>
-        <global-address name='cursor_unit_list' value="0x978dde0"/>
-        <global-address name='d_init' value="0x979ef00"/>
-        <global-address name='enabler' value='0x8e3ff40'/>
-        <global-address name='gps' value='0x8e3f940'/>
-        <global-address name='gview' value="0x8e40240"/>
-        <global-address name='init' value="0x979de60"/>
-        <global-address name='ui' value="0x95f20c0"/>
-        <global-address name='ui_advmode' value="0x95f8f20"/>
-        <global-address name='ui_build_selector' value="0x8ffb460"/>
-        <global-address name='ui_look_list' value="0x981f4e0"/>
-        <global-address name='ui_sidebar_menus' value="0x978c600"/>
-        <global-address name='world' value="0x95f90e0"/>
+        <global-address name='cursor_unit_list' value=''/>
+        <global-address name='enabler' value='0x7a59b8'/>
+        <global-address name='gps' value='0xabfad0'/>
+        <global-address name='gview' value='0xcc5f98'/>
+        <global-address name='init' value='0xaa9288'/>
+        <global-address name='ui' value='0xa82a38'/>
+        <global-address name='ui_advmode' value=''/>
+        <global-address name='ui_build_selector' value=''/>
+        <global-address name='ui_look_list' value=''/>
+        <global-address name='ui_sidebar_menus' value=''/>
+        <global-address name='world' value='0xacb278'/>
 
         .bss primitive
 
-        <global-address name='cur_year' value='0x95f1f40'/>
-        <global-address name='cur_year_tick' value='0x95f1f60'/>
+        <global-address name='cur_year' value='0xaa91e0'/>
+        <global-address name='cur_year_tick' value='0xea0548'/>
 
-        <global-address name='current_weather' value='0x95f1f24'/>
+        <global-address name='job_next_id' value=''/>
+        <global-address name='pause_state' value='0xf1719e'/>
 
-        <global-address name='job_next_id' value='0x981f5e0'/>
-        <global-address name='pause_state' value='0x95f2030'/>
+        <global-address name='ui_building_item_cursor' value=''/>
+        <global-address name='ui_look_cursor' value=''/>
+        <global-address name='ui_selected_unit' value=''/>
+        <global-address name='ui_unit_view_mode' value=''/>
+        <global-address name='ui_workshop_in_add' value=''/>
+        <global-address name='ui_workshop_job_cursor' value=''/>
 
-        <global-address name='ui_building_item_cursor' value='0x95f1f88'/>
-        <global-address name='ui_look_cursor' value='0x95f201c'/>
-        <global-address name='ui_selected_unit' value='0x95f2010'/>
-        <global-address name='ui_unit_view_mode' value='0x95f2018'/>
-        <global-address name='ui_workshop_in_add' value='0x95f1f91'/>
-        <global-address name='ui_workshop_job_cursor' value='0x95f1f84'/>
-
-        <global-address name='window_x' value='0x8ffc3d8'/>
-        <global-address name='window_y' value='0x8ffc3dc'/>
-        <global-address name='window_z' value='0x8ffc3e0'/>
+        <global-address name='window_x' value='0xe89c3c'/>
+        <global-address name='window_y' value='0xe89c30'/>
+        <global-address name='window_z' value='0xe89c34'/>
     </symbol-table>
-
-    <!-- end linux -->
 </data-definition>
-
-<!--
-Local Variables:
-indent-tabs-mode: nil
-nxml-child-indent: 4
-End:
--->
