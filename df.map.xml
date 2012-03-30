@@ -39,133 +39,81 @@
         </code-helper>
     </struct-type>
 
-    <enum-type type-name='tile_traffic' base-type='uint32_t'>
-        <enum-item name='Normal'/>
-        <enum-item name='Low'/>
-        <enum-item name='High'/>
-        <enum-item name='Restricted'/>
-    </enum-type>
+    <bitfield-type type-name='tile_color' base-type='uint8_t'>
+        <flag-bit name='color' count='4'/>
+        <flag-bit name='mud'/>
+        <flag-bit/>
+        <flag-bit name='snow'/>
+        <flag-bit name='dry'/>
+    </bitfield-type>
 
-    <enum-type type-name='tile_dig_designation' base-type='uint32_t'>
-        <enum-item name='No' comment='no designation'/>
-        <enum-item name='Default' comment='dig walls, remove stairs and ramps, gather plants, fell trees'/>
-        <enum-item name='UpDownStair'/>
-        <enum-item name='Channel'/>
-        <enum-item name='Ramp'/>
-        <enum-item name='DownStair'/>
-        <enum-item name='UpStair'/>
-    </enum-type>
+    <bitfield-type type-name='tile_designation' base-type='uint32_t'>
+        <flag-bit name='pile'/>
+        <flag-bit/>
+        <flag-bit/>
+        <flag-bit/>
+        <flag-bit/>
+        <flag-bit/>
+        <flag-bit name='smooth'/>
+        <flag-bit name='dig'/>
 
-    <enum-type type-name='tile_liquid' base-type='uint32_t'>
-        <enum-item name='Water'/>
-        <enum-item name='Magma'/>
-    </enum-type>
-
-    <bitfield-type type-name='tile_designation'>
-        <flag-bit name='flow_size' count='3' comment='liquid amount'/>
-        <flag-bit name='pile' comment='stockpile?'/>
-        <flag-bit name='dig' count='3' type-name='tile_dig_designation'/>
-        <flag-bit name='smooth' count='2'/>
+        <flag-bit name='fortification'/>
         <flag-bit name='hidden'/>
+        <flag-bit/>
+        <flag-bit/>
+        <flag-bit name='stone_type' count='4'/>
 
-        <flag-bit name='geolayer_index' count='4'/>
-        <flag-bit name='light'/>
-        <flag-bit name='subterranean'/>
-        <flag-bit name='outside'/>
-        <flag-bit name='biome' count='4'/>
-
-        <flag-bit name='liquid_type' type-name='tile_liquid'/>
-
-        <flag-bit name='water_table' comment='aquifer'/>
-        <flag-bit name='rained'/>
-
-        <flag-bit name='traffic' count='2' type-name='tile_traffic'/>
-
-        <flag-bit name='flow_forbid'/>
-        <flag-bit name='liquid_static'/>
-        <flag-bit name='feature_local'/>
-        <flag-bit name='feature_global'/>
-        <flag-bit name='water_stagnant'/>
-        <flag-bit name='water_salt'/>
+        <flag-bit/>
+        <flag-bit/>
+        <flag-bit/>
     </bitfield-type>
 
     <bitfield-type type-name='tile_occupancy'>
-        <flag-bit name='building' count='3'/>
         <flag-bit name='unit' comment='standing'/>
         <flag-bit name='unit_grounded' comment='prone'/>
         <flag-bit name='item'/>
-        <flag-bit name='edge_flow_in'
-                  comment='if set on an edge tile, water or magma will flow in'/>
+        <flag-bit name='building' count='2'/>
         <flag-bit name='moss'/>
+        <flag-bit name='water'/>
+        <flag-bit name='vomit'/>
+
         <flag-bit name='arrow_color' count='4'/>
+        <flag-bit name='blood_g' count='2'/>
+        <flag-bit name='blood_b' count='2'/>
+
+        <flag-bit name='pus' count='2'/>
+        <flag-bit name='blood_m' count='2'/>
+        <flag-bit name='blood_c' count='2'/>
+        <flag-bit name='ichor' count='2'/>
+
+        <flag-bit name='goo' count='2'/>
+        <flag-bit name='slime' count='2'/>
+        <flag-bit name='blood' count='2'/>
         <flag-bit name='arrow_variant'/>
-        <flag-bit name='unk13'/>
-        <flag-bit name='monster_lair'
-                  comment='A monster lair. Items placed wont be moved.'/>
-        <flag-bit name='no_grow'
-                  comment='seems to be set on terrain tiles where grass growth is impossible'/>
+        <flag-bit name='lava'/>
     </bitfield-type>
 
-    <bitfield-type type-name='block_flags'>
+    <enum-type type-name='block_flags'>
         <flag-bit name='designated' comment='for jobs etc'/>
-        <flag-bit name='update_temperature'/>
-        <flag-bit name='update_liquid'/>
-        <flag-bit name='update_liquid_twice'
-                  comment='Protects UpdateLiquid from being cleared the first time.'/>
-    </bitfield-type>
-
-    <struct-type type-name='block_burrow'>
-        <int32_t name='id' ref-target='burrow'/>
-
-        <static-array name='tile_bitmask' count='16'>
-            <uint16_t/>
-        </static-array>
-
-        <pointer name="link" type-name='block_burrow_link'/>
-    </struct-type>
-
-    <struct-type type-name='block_burrow_link'>
-        <pointer name='item' type-name='block_burrow'/>
-        <pointer name='prev' type-name='block_burrow_link'/>
-        <pointer name='next' type-name='block_burrow_link'/>
-    </struct-type>
+    </enum-type>
 
     <struct-type type-name='map_block'>
-        <compound name='flags' type-name='block_flags'/>
-
-        <stl-vector name='block_events'>
-            <pointer type-name='block_square_event'/>
-        </stl-vector>
-
-        <df-linked-list name='block_burrows' type-name='block_burrow_link'/>
-
-        <int32_t name='local_feature'/>
-        <int32_t name='global_feature'/>
-        <int32_t name='unk2'/>
-        <int32_t name='unk3' comment='undef'/>
-        <int32_t name='unk4'/>
-        <int32_t name='unk5'/>
+        <df-flagarray name='flags' index-enum='block_flags'/>
 
         <stl-vector name='items'>
             <int32_t ref-target='item'/>
         </stl-vector>
+
         <stl-vector name='effects'>
             <pointer type-name='effect'/>
         </stl-vector>
 
-        <int32_t name='unk7'/>
-        <int32_t name='unk8' comment='undef'/>
+        <int32_t/>
+        <int32_t/>
 
-        <stl-vector name='plants'>
-            <pointer type-name='plant'/>
-        </stl-vector>
-
-        <compound name='map_pos' type-name='coord'/>
-        <compound name='region_pos' type-name='coord2d'/>
-
-        <static-array name='tiletype' count='16'>
+        <static-array name='color' count='16'>
             <static-array count='16'>
-                <enum base-type='int16_t' type-name='tiletype'/>
+                <compound type-name='tile_color'/>
             </static-array>
         </static-array>
         <static-array name='designation' count='16'>
@@ -173,33 +121,33 @@
                 <compound type-name='tile_designation'/>
             </static-array>
         </static-array>
+        <static-array name='tiletype' count='16'>
+            <static-array count='16'>
+                <enum base-type='int8_t' type-name='tiletype'/>
+            </static-array>
+        </static-array>
+
         <static-array name='occupancy' count='16'>
             <static-array count='16'>
                 <compound type-name='tile_occupancy'/>
             </static-array>
         </static-array>
-
-        <static-array name='unk9' count='16'>
+        <static-array count='16'>
             <static-array count='16'>
                 <int8_t/>
             </static-array>
         </static-array>
-        <static-array name='pathfinding' count='16'>
+        <static-array count='16' comment='temporary'>
             <static-array count='16'>
-                <int32_t/>
+                <uint32_t/>
             </static-array>
         </static-array>
-        <static-array name='unk10' count='16'>
-            <static-array count='16'>
-                <uint16_t/>
-            </static-array>
-        </static-array>
-        <static-array name='passable' count='16'>
+        <static-array name='passable' count='16' comment='temporary'>
             <static-array count='16'>
                 <uint16_t/>
             </static-array>
         </static-array>
-        <static-array name='unk12' count='16'>
+        <static-array count='16'>
             <static-array count='16'>
                 <uint16_t/>
             </static-array>
@@ -216,324 +164,12 @@
             </static-array>
         </static-array>
 
-        <static-array name='unk13' count='16'>
+        <static-array count='16'>
             <static-array count='16'>
                 <uint16_t/>
             </static-array>
         </static-array>
-        <static-array name='unk14' count='16'>
-            <static-array count='16'>
-                <uint16_t/>
-            </static-array>
-        </static-array>
-
-        <static-array name='region_offset' count='9'>
-            <uint8_t/>
-        </static-array>
     </struct-type>
-
-    <struct-type type-name='cave_column_link'>
-        <pointer name='item'/>
-        <pointer name='prev' type-name='cave_column_link'/>
-        <pointer name='next' type-name='cave_column_link'/>
-    </struct-type>
-
-    <struct-type type-name='map_block_column'>
-        <int16_t name="unk_0"/>
-        <int16_t name="unk_2"/>
-        <int16_t name="unk_4"/>
-
-        <stl-vector name="unk_8">
-            <pointer>
-                <static-array name='unk1' count='8' type-name='int16_t'/>
-                <static-array name='unk2' count='4' type-name='uint8_t'/>
-            </pointer>
-        </stl-vector>
-
-        <int16_t name="z_base"/>
-
-        <static-array name='cave_columns' count='16'>
-            <static-array count='16'>
-                <df-linked-list type-name='cave_column_link'/>
-            </static-array>
-        </static-array>
-
-        <stl-vector name='column_rectangles'>
-            <pointer/>
-        </stl-vector>
-
-        <int16_t name='unk_c2c'/>
-        <df-flagarray name='flags'/>
-
-        <int16_t name='tile_min_x'/>
-        <int16_t name='tile_min_y'/>
-        <int16_t name='unk_c3c' comment='uninitialized'/>
-        <int16_t name='unk_c3e'/>
-        <int16_t name='unk_c40'/>
-    </struct-type>
-
-    <enum-type type-name='block_square_event_type'>
-        <enum-item name='mineral'/>
-        <enum-item name='frozen_liquid'/>
-        <enum-item name='world_construction'/>
-        <enum-item name='material_spatter'/>
-        <enum-item name='grass'/>
-    </enum-type>
-
-    <class-type type-name='block_square_event' original-name='block_square_eventst'>
-        <virtual-methods>
-            <vmethod ret-type='block_square_event_type' name='getType'/>
-            <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
-            <vmethod name='read_file'>
-                <pointer comment='file_compressorst'/>
-                <int32_t name='loadversion'/>
-            </vmethod>
-            <vmethod ret-type='bool' name='isEmpty'/>
-            <vmethod is-destructor='true'/>
-
-            <vmethod name='checkTemperature'>
-                <int16_t name='x'/>
-                <int16_t name='y'/>
-                <int16_t name='temperature'/>
-            </vmethod>
-        </virtual-methods>
-    </class-type>
-
-    <class-type type-name='block_square_event_mineralst' inherits-from='block_square_event' custom-methods='true'>
-        <int32_t name='inorganic_mat' ref-target='inorganic_raw'/>
-        <static-array name='tile_bitmask' count='16' type-name='uint16_t'/>
-        <uint32_t name='flags'/>
-    </class-type>
-
-    <class-type type-name='block_square_event_frozen_liquidst' inherits-from='block_square_event'>
-        <static-array name='tiles' count='16'>
-            <static-array count='16'>
-                <enum base-type='int16_t' type-name='tiletype'/>
-            </static-array>
-        </static-array>
-        <static-array name='liquid_type' count='16'>
-            <static-array count='16'>
-                <enum base-type='int8_t' type-name='tile_liquid'/>
-            </static-array>
-        </static-array>
-    </class-type>
-
-    <class-type type-name='block_square_event_world_constructionst' inherits-from='block_square_event'>
-        <int32_t name='inorganic_mat' ref-target='inorganic_raw'/>
-        <static-array name='tile_bitmask' count='16' type-name='uint16_t'/>
-    </class-type>
-
-    <class-type type-name='block_square_event_material_spatterst' inherits-from='block_square_event'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
-        <int16_t name='mat_state'/>
-        <static-array name='amount' count='16'>
-            <static-array count='16' type-name='uint8_t'/>
-        </static-array>
-        <int16_t name='min_temperature'/>
-        <int16_t name='max_temperature'/>
-    </class-type>
-
-    <class-type type-name='block_square_event_grassst' inherits-from='block_square_event'>
-        <int32_t name='plant_index' ref-target='plant_raw' />
-        <static-array name='amount' count='16'>
-            <static-array count='16' type-name='int8_t'/>
-        </static-array>
-    </class-type>
-
-    <enum-type type-name='feature_type'>
-        <enum-item name='outdoor_river'/>
-        <enum-item name='cave'/>
-        <enum-item name='pit'/>
-        <enum-item name='magma_pool'/>
-        <enum-item name='volcano'/>
-        <enum-item name='deep_special_tube'/>
-        <enum-item name='deep_surface_portal'/>
-        <enum-item name='subterranean_from_layer'/>
-        <enum-item name='magma_core_from_layer'/>
-        <enum-item name='feature_underworld_from_layer'/>
-    </enum-type>
-
-    <class-type type-name='feature' original-name='featurest'>
-        <stl-vector name='population'>
-            <pointer type-name='world_population'/>
-        </stl-vector>
-
-        <int32_t/>
-        <int16_t/>
-
-        <compound name='embark_pos' type-name='coord2d_path'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-
-        <virtual-methods>
-            <vmethod ret-type='feature_type' name='getType'/>
-            <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
-            <vmethod name='read_file'>
-                <pointer comment='file_compressorst'/>
-                <int32_t name='loadversion'/>
-            </vmethod>
-            <vmethod/>
-            <vmethod/>
-
-            <vmethod is-destructor='true'/>
-        </virtual-methods>
-    </class-type>
-
-    <class-type type-name='feature_outdoor_riverst' inherits-from='feature'/>
-    <class-type type-name='feature_cavest' inherits-from='feature'/>
-    <class-type type-name='feature_pitst' inherits-from='feature'/>
-    <class-type type-name='feature_magma_poolst' inherits-from='feature'>
-        <int32_t/>
-    </class-type>
-    <class-type type-name='feature_volcanost' inherits-from='feature'>
-        <int32_t/>
-    </class-type>
-    <class-type type-name='feature_deep_special_tubest' inherits-from='feature'/>
-    <class-type type-name='feature_deep_surface_portalst' inherits-from='feature'/>
-    <class-type type-name='feature_subterranean_from_layerst' inherits-from='feature'/>
-    <class-type type-name='feature_magma_core_from_layerst' inherits-from='feature'/>
-    <class-type type-name='feature_underworld_from_layerst' inherits-from='feature'/>
-
-    <enum-type type-name='feature_init_flags'>
-        <enum-item/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item name='Discovered'/>
-    </enum-type>
-
-    <class-type type-name='feature_init' original-name='feature_initst'>
-        <df-flagarray name='flags' index-enum='feature_init_flags'/>
-        <stl-vector/>
-        <int16_t name='start_x'/>
-        <int16_t name='start_y'/>
-        <int16_t name='end_x'/>
-        <int16_t name='end_y'/>
-        <int16_t/>
-        <int16_t/>
-
-        <virtual-methods>
-            <vmethod ret-type='feature_type' name='getType'/>
-            <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
-            <vmethod name='read_file'>
-                <pointer comment='file_compressorst'/>
-                <int32_t name='loadversion'/>
-            </vmethod>
-            <vmethod name='createFeature'>
-                <ret-type><pointer type-name='feature'/></ret-type>
-            </vmethod>
-            <vmethod name='recreateFeature' comment='destroyFeature(), then createFeature()'>
-                <ret-type><pointer type-name='feature'/></ret-type>
-            </vmethod>
-
-            <vmethod name='destroyFeature'/>
-            <vmethod name='getFeature'>
-                <ret-type><pointer type-name='feature'/></ret-type>
-            </vmethod>
-            <vmethod is-destructor='true'/>
-            <vmethod name='getMaterial'>
-                <pointer name='mat_type' type-name='int16_t'/>
-                <pointer name='mat_index' type-name='int32_t'/>
-            </vmethod>
-            <vmethod ret-type='bool'/>
-
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
-            <vmethod name='getColor'>
-                <pointer name='foreground' type-name='int16_t'/>
-                <pointer name='background' type-name='int16_t'/>
-                <pointer name='bright' type-name='int8_t'/>
-            </vmethod>
-            <vmethod name='getName'>
-                <pointer name='name' type-name='stl-string'/>
-            </vmethod>
-
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
-
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='int32_t' name='getLayer'/>
-        </virtual-methods>
-    </class-type>
-
-    <class-type type-name='feature_init_outdoor_riverst' inherits-from='feature_init'>
-        <pointer name='feature' type-name='feature_outdoor_riverst'/>
-    </class-type>
-
-    <class-type type-name='feature_init_cavest' inherits-from='feature_init'>
-        <pointer name='feature' type-name='feature_cavest'/>
-    </class-type>
-
-    <class-type type-name='feature_init_pitst' inherits-from='feature_init'>
-        <pointer name='feature' type-name='feature_pitst'/>
-    </class-type>
-
-    <class-type type-name='feature_init_magma_poolst' inherits-from='feature_init'>
-        <pointer name='feature' type-name='feature_magma_poolst'/>
-    </class-type>
-
-    <class-type type-name='feature_init_volcanost' inherits-from='feature_init'>
-        <pointer name='feature' type-name='feature_volcanost'/>
-    </class-type>
-
-    <class-type type-name='feature_init_deep_special_tubest' inherits-from='feature_init'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
-        <pointer name='feature' type-name='feature_deep_special_tubest'/>
-    </class-type>
-
-    <class-type type-name='feature_init_deep_surface_portalst' inherits-from='feature_init'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
-        <pointer name='feature' type-name='feature_deep_surface_portalst'/>
-    </class-type>
-
-    <class-type type-name='feature_init_subterranean_from_layerst' inherits-from='feature_init'>
-        <int32_t name='layer' ref-target='world_underground_region'/>
-        <pointer name='feature' type-name='feature_subterranean_from_layerst'/>
-    </class-type>
-
-    <class-type type-name='feature_init_magma_core_from_layerst' inherits-from='feature_init'>
-        <int32_t name='layer' ref-target='world_underground_region'/>
-        <pointer name='feature' type-name='feature_magma_core_from_layerst'/>
-    </class-type>
-
-    <class-type type-name='feature_init_underworld_from_layerst' inherits-from='feature_init'>
-        <int32_t name='layer' ref-target='world_underground_region'/>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
-        <pointer name='feature' type-name='feature_underworld_from_layerst'/>
-    </class-type>
-
-    <enum-type type-name='feature_alteration_type'>
-        <enum-item name='new_pop_max'/>
-        <enum-item name='new_lava_fill_z'/>
-    </enum-type>
-
-    <class-type type-name='feature_alteration' original-name='feature_alterationst'>
-        <virtual-methods>
-            <vmethod ret-type='feature_alteration_type' name='getType'/>
-            <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
-            <vmethod name='read_file'>
-                <pointer comment='file_compressorst'/>
-                <int32_t name='loadversion'/>
-            </vmethod>
-            <vmethod is-destructor='true'/>
-        </virtual-methods>
-    </class-type>
-
-    <class-type type-name='feature_alteration_new_pop_maxst' inherits-from='feature_alteration'>
-        <int32_t/>
-        <int32_t/>
-    </class-type>
-
-    <class-type type-name='feature_alteration_new_lava_fill_zst' inherits-from='feature_alteration'>
-        <int32_t/>
-    </class-type>
 
     <enum-type type-name='biome_type'>
         <enum-item name='MOUNTAIN'/>
@@ -588,21 +224,6 @@
         <enum-item name='SUBTERRANEAN_CHASM'/>
         <enum-item name='SUBTERRANEAN_LAVA'/>
     </enum-type>
-
-    <bitfield-type type-name='construction_flags' base-type='uint8_t'>
-        <flag-bit/>
-        <flag-bit name='top_of_wall' comment='used on the floors above constructed walls so you cannot remove them'/>
-    </bitfield-type>
-
-    <struct-type type-name='construction' instance-vector='$global.world.constructions' key-field='pos'>
-        <compound name='pos' type-name='coord'/>
-        <enum type-name='item_type' base-type='int16_t' name='item_type'/>
-        <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
-        <compound type-name='construction_flags' name='flags'/>
-        <enum base-type='int16_t' type-name='tiletype' name='original_tile'/>
-    </struct-type>
 
     <enum-type type-name='effect_type' base-type='int16_t'>
         <enum-item name='Miasma'/>
