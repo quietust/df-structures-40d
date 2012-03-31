@@ -428,13 +428,6 @@
     <class-type type-name='building_armorstandst' inherits-from='building_actual'>
         <int16_t name='unk_c0'/>
 
-        <stl-vector name='assignments'>
-            <pointer>
-                <int32_t name='squad_id' ref-target='squad'/>
-                <compound name='mode' type-name='squad_use_flags'/>
-            </pointer>
-        </stl-vector>
-
         <int32_t name='unk_d0'/>
         <int32_t name='unk_d4'/>
     </class-type>
@@ -641,13 +634,6 @@
 
     <class-type type-name='building_weaponrackst' inherits-from='building_actual'>
         <int16_t name='unk_c0'/>
-
-        <stl-vector name='assignments'>
-            <pointer>
-                <int32_t name='squad_id' ref-target='squad'/>
-                <compound name='mode' type-name='squad_use_flags'/>
-            </pointer>
-        </stl-vector>
 
         <int32_t name='unk_d0'/>
     </class-type>

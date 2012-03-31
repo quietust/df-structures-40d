@@ -146,10 +146,6 @@
             <stl-vector name='unk24' type-name='int16_t'/>
         </compound>
 
-        <stl-vector name='uniforms'>
-            <pointer type-name='entity_uniform'/>
-        </stl-vector>
-
         <compound name='unknown1b'>
             <int16_t name='unk26a'/>
             <int16_t name='unk26b'/>
@@ -177,26 +173,6 @@
             <stl-vector name='unk34e' type-name='pointer' comment='empty'/>
         </compound>
 
-        <compound name='positions'>
-            <stl-vector name='own'>
-                <pointer type-name='entity_position'/>
-            </stl-vector>
-            <stl-vector name='site'>
-                <pointer type-name='entity_position'/>
-            </stl-vector>
-            <stl-vector name='conquered_site'>
-                <pointer type-name='entity_position'/>
-            </stl-vector>
-
-            <int32_t name='next_position_id'/>
-
-            <stl-vector name='assignments'>
-                <pointer type-name='entity_position_assignment'/>
-            </stl-vector>
-
-            <int32_t name='next_assignment_id'/>
-        </compound>
-
         <compound name='unknown1c'>
             <stl-vector name='unk38' type-name='pointer'/>
             <int32_t name='unk39'/>
@@ -211,17 +187,6 @@
             <int32_t name='unk42'/>
             <stl-vector name='unk43' type-name='pointer' comment='empty'/>
             <int32_t name='unk44'/>
-
-            <static-array name='unk44a' count='16' type-name='int32_t' comment='v0.34.01'/>
-
-            <pointer name='training_knowledge' comment='v0.34.06'>
-                <stl-vector name="level" index-refers-to='(find-instance $creature_raw $)'>
-                    <enum base-type='int32_t' type-name='training_knowledge_level'/>
-                </stl-vector>
-                <stl-vector name="unk_10" index-refers-to='(find-instance $creature_raw $)'>
-                    <int32_t/>
-                </stl-vector>
-            </pointer>
 
             <stl-vector name='unk45' type-name='pointer'/>
 
@@ -247,12 +212,6 @@
 
             <static-array name='unk5' count='30'>
                 <stl-vector type-name='int16_t'/>
-            </static-array>
-
-            <static-array name='unk6' count='25'>
-                <stl-vector>
-                    <pointer type-name='entity_position_assignment'/>
-                </stl-vector>
             </static-array>
 
             <static-array name='unk6b' count='6'>
@@ -287,136 +246,7 @@
             <static-array name='unk26' count='177' type-name='int32_t' comment='Uninitialized'/>
 
             <stl-vector name='unk28' type-name='pointer' comment='empty'/>
-            <stl-vector name='unk29' type-name='pointer' comment='v0.34.01'/>
         </compound>
-    </struct-type>
-
-    <enum-type type-name='training_knowledge_level' base-type='int32_t'>
-        <enum-item name='None'/>
-        <enum-item name='FewFacts'/>
-        <enum-item name='GeneralFamiliarity'/>
-        <enum-item name='Knowledgeable'/>
-        <enum-item name='Expert'/>
-        <enum-item name='Domesticated'/>
-    </enum-type>
-
-    <enum-type type-name='entity_position_flags'>
-        <enum-item name='IS_LAW_MAKER'/>
-        <enum-item name='ELECTED'/>
-        <enum-item name='DUTY_BOUND'/>
-        <enum-item name='MILITARY_SCREEN_ONLY'/>
-        <enum-item name='GENDER_MALE'/>
-        <enum-item name='GENDER_FEMALE'/>
-        <enum-item name='SUCCESSION_BY_HEIR'/>
-        <enum-item name='HAS_RESPONSIBILITIES'/>
-
-        <enum-item name='FLASHES'/>
-        <enum-item name='BRAG_ON_KILL'/>
-        <enum-item name='CHAT_WORTHY'/>
-        <enum-item name='DO_NOT_CULL'/>
-        <enum-item name='KILL_QUEST'/>
-        <enum-item name='IS_LEADER'/>
-        <enum-item name='IS_DIPLOMAT'/>
-        <enum-item name='EXPORTED_IN_LEGENDS'/>
-
-        <enum-item name='DETERMINES_COIN_DESIGN'/>
-        <enum-item name='ACCOUNT_EXEMPT'/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item name='COLOR'/>
-        <enum-item name='RULES_FROM_LOCATION'/>
-        <enum-item name='MENIAL_WORK_EXEMPTION'/>
-        <enum-item name='MENIAL_WORK_EXEMPTION_SPOUSE'/>
-
-        <enum-item name='SLEEP_PRETENSION'/>
-        <enum-item name='PUNISHMENT_EXEMPTION'/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item name='QUEST_GIVER'/>
-    </enum-type>
-
-    <struct-type type-name='entity_position' key-field='id'>
-        <stl-string name='code'/>
-        <int32_t name='id'/>
-
-        <code-helper name='describe'>$.code</code-helper>
-
-        <df-flagarray name='flags' index-enum='entity_position_flags'/>
-
-        <stl-vector name='allowed_creature' type-name='int32_t'/>
-        <stl-vector name='allowed_class'>
-            <pointer type-name='stl-string'/>
-        </stl-vector>
-
-        <stl-vector name='rejected_creature' type-name='int32_t'/>
-        <stl-vector name='rejected_class'>
-            <pointer type-name='stl-string'/>
-        </stl-vector>
-
-        <static-array type-name='stl-string' name='name' count='2'/>
-        <static-array type-name='stl-string' name='name_female' count='2'/>
-        <static-array type-name='stl-string' name='name_male' count='2'/>
-        <static-array type-name='stl-string' name='spouse' count='2'/>
-        <static-array type-name='stl-string' name='spouse_female' count='2'/>
-        <static-array type-name='stl-string' name='spouse_male' count='2'/>
-        <static-array type-name='stl-string' name='squad' count='2'/>
-        <stl-string name='land_name'/>
-
-        <int16_t name='squad_size'/>
-
-        <stl-vector name='commander_id' type-name='int32_t'/>
-        <stl-vector name='commander_civ'>
-            <int32_t ref-target='historical_entity'/>
-        </stl-vector>
-        <stl-vector name='commander_types' type-name='int16_t'/>
-
-        <int16_t name='land_holder'/>
-        <int16_t name='requires_population'/>
-
-        <int16_t comment='v0.34.01'/>
-
-        <int32_t name='precedence' init-value='30001'/>
-        <int32_t name='replaced_by' init-value='-1'/>
-        <int16_t name='number' init-value='1'/>
-
-        <stl-vector name='appointed_by' type-name='int32_t'/>
-        <stl-vector name='appointed_by_civ'>
-            <int32_t ref-target='historical_entity'/>
-        </stl-vector>
-        <stl-vector name='succession_by_position' type-name='int32_t'/>
-
-        <static-array type-name='bool' name='responsibilities' count='25' index-enum='entity_position_responsibility'/>
-        <static-array type-name='int16_t' name='color' count='3'/>
-
-        <int32_t name='required_boxes'/>
-        <int32_t name='required_cabinets'/>
-        <int32_t name='required_racks'/>
-        <int32_t name='required_stands'/>
-        <int32_t name='required_office'/>
-        <int32_t name='required_bedroom'/>
-        <int32_t name='required_dining'/>
-        <int32_t name='required_tomb'/>
-        <int32_t name='mandate_max'/>
-        <int32_t name='demand_max'/>
-    </struct-type>
-
-    <struct-type type-name='entity_position_assignment' key-field='id'>
-        <int32_t name='id'/>
-
-        <code-helper name='describe'>
-            (describe-obj $.position_id.refers-to)
-            (awhen $.histfig.ref-target
-              (describe-obj it))
-        </code-helper>
-
-        <int32_t name='histfig' ref-target='historical_figure'/>
-        <int32_t name='position_id'
-                 refers-to='(find-by-id $$._global._parent._global.positions.own $id $)'
-                 comment='position within relevant entity'/>
-        <df-flagarray name='flags'/>
-        <int32_t name='squad_id' ref-target='squad'/>
-        <int32_t init-value='-1'/>
-        <int32_t init-value='-1'/>
     </struct-type>
 </data-definition>
 

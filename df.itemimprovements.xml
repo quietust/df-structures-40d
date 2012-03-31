@@ -9,8 +9,6 @@
         <enum-item name="THREAD"/>
         <enum-item name="CLOTH"/>
         <enum-item name="SEWN_IMAGE"/>
-        <enum-item name="PAGES"/>
-        <enum-item name="ILLUSTRATION"/>
     </enum-type>
 
     <struct-type type-name='dye_info'>
@@ -97,16 +95,6 @@
         <compound name='dye' type-name='dye_info'/>
     </class-type>
 
-    <class-type type-name='itemimprovement_pagesst' inherits-from='itemimprovement'>
-        <int32_t comment='v0.34.01'/>
-        <stl-vector/>
-    </class-type>
-
-    <class-type type-name='itemimprovement_illustrationst' inherits-from='itemimprovement'>
-        <compound name='image' type-name='art_image_ref'/>
-        <int32_t comment='v0.34.01'/>
-    </class-type>
-
     <bitfield-type type-name='engraving_flags' base-type='uint32_t'>
         <flag-bit name='floor'/>
         <flag-bit name='west'/>
@@ -130,8 +118,6 @@
         <int32_t name='art_id' ref-target='art_image_collection'/>
         <int16_t name='art_subid' ref-target='art_image' aux-value='$$.art_id'/>
         <enum base-type='int16_t' name='quality' type-name='item_quality'/>
-        <int32_t name='unk1' init-value='-1' comment='v0.34.06'/>
-        <int32_t name='unk2' init-value='-1' comment='v0.34.06'/>
     </struct-type>
 
 </data-definition>

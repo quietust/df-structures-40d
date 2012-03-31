@@ -121,9 +121,6 @@
             <pointer type-name='general_ref'/>
         </stl-vector>
 
-        <int32_t comment='v0.34.01'/>
-        <int32_t comment='v0.34.01'/>
-
         <compound name='temp'>
             <int16_t name='unk1'/>
             <int16_t name='unk2'/>
@@ -239,7 +236,6 @@
             <vmethod name='getItemShapeDesc' comment='a statue/figurine of "string goes here"'>
                 <ret-type><pointer type-name='stl-string'/></ret-type>
             </vmethod>
-            <vmethod ret-type='bool' name='isMatchingAmmoItem'> <pointer type-name='item_filter_spec'/> </vmethod>
 
             -- 60
 
@@ -564,7 +560,6 @@
         <int32_t name='wear_timer' comment='counts up to 806400'/>
 
         <int32_t name='unk3' init-value='-1'/>
-        <int32_t init-value='-1' comment='v0.34.01'/>
     </class-type>
 
     -- CRAFTED ITEM

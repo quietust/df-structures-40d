@@ -89,10 +89,6 @@
         <df-flagarray name='flags'/>
 
         <pointer name='item' type-name='item'/>
-
-        <int32_t comment='v0.34.01'/>
-        <int32_t comment='v0.34.01'/>
-        <int32_t comment='v0.34.01'/>
     </struct-type>
 </data-definition>
 
