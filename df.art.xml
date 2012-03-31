@@ -46,7 +46,6 @@
 
     <class-type type-name='art_image_element_creaturest' inherits-from='art_image_element'>
         <int32_t name='race' ref-target='creature_raw'/>
-        <int16_t name='caste'/>
         <int32_t name='histfig' ref-target='historical_figure'/>
     </class-type>
 

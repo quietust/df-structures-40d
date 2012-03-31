@@ -11,9 +11,6 @@
         <stl-vector name="killed_race">
             <int16_t ref-target='creature_raw'/>
         </stl-vector>
-        <stl-vector name="killed_caste">
-            <int16_t ref-target='caste_raw' aux-value='$$._parent.killed_race[$._key]'/>
-        </stl-vector>
         <stl-vector name="unk_30">
             <int32_t comment='-1'/>
         </stl-vector>
@@ -100,13 +97,7 @@
             <stl-vector name="events">
                 <int32_t ref-target='history_event'/>
             </stl-vector>
-            <stl-bit-vector name="status">
-                <code-helper name='index-refers-to'>
-                    (let* ((info $$._parent._parent._parent)
-                           (figure $info._parent._parent))
-                      $caste.body_parts[$])
-                </code-helper>
-            </stl-bit-vector>
+            <stl-bit-vector name="status"/>
         </pointer>
     </struct-type>
 
@@ -337,7 +328,6 @@
 
         <int32_t name='slayer' ref-target='historical_figure'/>
         <int32_t name='slayer_race' ref-target='creature_raw'/>
-        <int32_t name='slayer_caste' ref-target='caste_raw' aux-value='$$.slayer_race'/>
 
         <compound name='weapon' type-name='history_hit_item'/>
 

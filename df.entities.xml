@@ -179,10 +179,6 @@
             <stl-vector name='unk40' type-name='pointer'/>
         </compound>
 
-        <stl-vector name='squads'>
-            <int32_t ref-target='squad'/>
-        </stl-vector>
-
         <compound name='unknown1d'>
             <int32_t name='unk42'/>
             <stl-vector name='unk43' type-name='pointer' comment='empty'/>

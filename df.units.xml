@@ -106,12 +106,6 @@
     <struct-type type-name='unit' key-field='id' instance-vector='$global.world.units.all'>
         <compound type-name='language_name' name='name'/>
 
-        <code-helper name='describe'>
-            (describe-obj $.name)
-            (awhen (find-creature $.race)
-            (fmt "~:(~A ~A~)" $it.caste[$.caste].caste_id $it.creature_id))
-        </code-helper>
-
         <stl-string name='custom_profession'/>
 
         <enum base-type='int16_t' name='profession' type-name='profession'/>
