@@ -7,7 +7,7 @@
     <struct-type type-name='plant' instance-vector='$global.world.plants.all'>
         <compound type-name='language_name' name='name'/>
         <compound type-name='plant_flags' name='flags'/>
-        <int16_t name='material' ref-target='plant_raw'/>
+        <int16_t name='material' ref-target='matgloss_plant'/>
         <compound name='pos' type-name='coord'/>
 
         <int32_t name='grow_counter'/>

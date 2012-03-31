@@ -284,8 +284,6 @@
             <int32_t name='unk_544'/> // if set, decrements every job_counter reroll
             <int16_t name='unk_548'/>
 
-            <int32_t name='death_id' ref-target='death_info' comment='v0.34.01'/>
-
             <int16_t name='winded'/>
             <int16_t name='stunned'/> // 54c decrements every tick, unstun at 0
             <int16_t name='unconscious'/>
@@ -565,13 +563,13 @@
             <int16_t name='creature_id' ref-target='creature_raw'/>
             <int16_t name='color_id' ref-target='descriptor_color'/>
             <int16_t name='shape_id' ref-target='descriptor_shape'/>
-            <int16_t name='plant_id' ref-target='plant_raw'/>
+            <int16_t name='plant_id' ref-target='matgloss_plant'/>
+            <int16_t name='wood_id' ref-target='matgloss_wood'/>
+            <int16_t name='stone_id' ref-target='matgloss_stone'/>
+            <int16_t name='gem_id' ref-target='matgloss_gem'/>
         </compound>
 
         <int16_t name="item_subtype" refers-to='(item-subtype-target $$._parent.item_type $)'/>
-
-        <int16_t name='mattype' ref-target='material' aux-value='$$.matindex'/>
-        <int32_t name='matindex'/>
 
         <bool name='active'/>
 

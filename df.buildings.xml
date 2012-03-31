@@ -512,14 +512,13 @@
 
     <class-type type-name='building_farmplotst' inherits-from='building_actual'>
         <static-array name='plant_id' count='4'>
-            <int16_t ref-target='plant_raw'/>
+            <int16_t ref-target='matgloss_plant'/>
         </static-array>
         <int32_t/>
         <int32_t name='seasonal_fertilize'/>
         <int8_t/>
         <int32_t name='current_fertilization'/>
         <int32_t name='max_fertilization'/>
-        <int16_t name='terrain_purge_timer'/>
     </class-type>
 
     <class-type type-name='building_floodgatest' inherits-from='building_actual'>

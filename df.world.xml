@@ -1,47 +1,4 @@
 <data-definition>
-    <struct-type type-name='criminal_case'
-                 instance-vector='$global.world.criminal_cases.all' key-field='id'>
-        dtor 0x8C166D0
-
-        <int32_t name='id'/>
-
-        <enum name='mode' base-type='int32_t'>
-            <enum-item name='ProductionOrderViolation'/>
-            <enum-item name='ExportViolation'/>
-            <enum-item name='JobOrderViolation'/>
-            <enum-item name='ConspiracyToSlowLabor'/>
-            <enum-item name='Murder'/>
-            <enum-item name='DisorderlyBehavior'/>
-            <enum-item name='BuildingDestruction'/>
-            <enum-item name='Vandalism'/>
-        </enum>
-
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-
-        <int32_t name='criminal' ref-target='unit'/>
-        <int32_t name='convicted' ref-target='unit'/>
-        <int32_t name='victim' ref-target='unit'/>
-
-        <bitfield name='flags'>
-            <flag-bit name='sentenced'/>
-            <flag-bit name='discovered'/>
-            <flag-bit name='needs_trial'
-                      comment='i.e. the player chooses whom to convict'/>
-        </bitfield>
-
-        <int32_t name='death_id' ref-target='death_info'/>
-
-        <int32_t name='event_year'/>
-        <int32_t name='event_time'/>
-        <int32_t name='discovered_year'/>
-        <int32_t name='discovered_time'/>
-
-        <int32_t name='site' ref-target='world_site'/>
-        <int32_t name='entity' ref-target='historical_entity'/>
-    </struct-type>
-
     <struct-type type-name='world'>
         dtor 89fff80
         <stl-vector name='unk_0'>
@@ -106,7 +63,7 @@
 
                 <compound is-union='true'>
                     <int16_t name="race" ref-target='creature_raw'/>
-                    <int16_t name="plant" ref-target='plant_raw'/>
+                    <int16_t name="plant" ref-target='matgloss_plant'/>
                 </compound>
 
                 <int32_t name="quantity"/>

@@ -51,11 +51,11 @@
     </class-type>
 
     <class-type type-name='art_image_element_plantst' inherits-from='art_image_element'>
-        <int32_t name='plant_id' ref-target='plant_raw'/>
+        <int32_t name='plant_id' ref-target='matgloss_plant'/>
     </class-type>
 
     <class-type type-name='art_image_element_treest' inherits-from='art_image_element'>
-        <int32_t name='plant_id' ref-target='plant_raw'/>
+        <int32_t name='plant_id' ref-target='matgloss_wood'/>
     </class-type>
 
     <class-type type-name='art_image_element_shapest' inherits-from='art_image_element'>
