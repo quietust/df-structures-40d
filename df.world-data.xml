@@ -257,8 +257,6 @@
 
     <struct-type type-name='world_geo_layer'>
         <int32_t name="matgloss" ref-target='matgloss_stone'/>
-
-        <code-helper name='describe'>(describe-obj $.mat_index.ref-target)</code-helper>
     </struct-type>
 
     <struct-type type-name='world_geo_biome' instance-vector='$global.world.world_data.geo_biomes'>
@@ -434,11 +432,6 @@
         <stl-vector name="unk_140">
             <pointer>
                 <int32_t name='index'/>
-                <static-array name='resource_allotments' count='100'>
-                    <stl-vector>
-                        <pointer type-name='resource_allotment_specifier'/>
-                    </stl-vector>
-                </static-array>
                 <int32_t name='unk1'/>
                 <int32_t name='unk2'/>
                 <int32_t name='unk3'/>

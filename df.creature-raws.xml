@@ -282,9 +282,8 @@
             <int16_t name='buildingdestroyer'/>
             <enum base-type='int16_t' name='itemcorpse_itemtype' type-name='item_type'/>
             <int16_t name='itemcorpse_itemsubtype'/>
-            <int16_t name='itemcorpse_materialtype'
-                     ref-target='material' aux-value='$$.itemcorpse_materialindex'/>
-            <int16_t name='itemcorpse_materialindex'/> // NOT 32-bit!
+            <int16_t name="itemcorpse_material" ref-target='material_type'/>
+            <int16_t name="itemcorpse_matgloss"/>
             <int16_t name='itemcorpse_quality'/>
             <static-array type-name='int16_t' name='remains_color' count='3'/>
             <int16_t name='difficulty'/>
@@ -314,41 +313,7 @@
             <static-array type-name='int32_t' name='unk6' count='29'/>
         </compound>
 
-        <compound name='personality'>
-            <static-array type-name='int16_t' name='a' count='30' index-enum='personality_facet_type'/>
-            <static-array type-name='int16_t' name='b' count='30' index-enum='personality_facet_type'/>
-            <static-array type-name='int16_t' name='c' count='30' index-enum='personality_facet_type'/>
-        </compound>
-
-        <df-flagarray name='flags' index-enum='caste_raw_flags'/>
-
         <int32_t name='index' comment='global across creatures'/>
-
-        <compound name='body_info' type-name='caste_body_info'/>
-
-        <stl-vector name='caste_speech_1'/>
-        <stl-vector name='caste_speech_2'/>
-
-        <static-array name='skill_rates' count='4'>
-            <static-array type-name='int32_t' count='116' index-enum='job_skill'/>
-        </static-array>
-
-        <compound name='attributes'>
-            <static-array name='phys_att_range' count='6' index-enum='physical_attribute_type'>
-                <static-array type-name='int32_t' count='7'/>
-            </static-array>
-            <static-array name='ment_att_range' count='13' index-enum='mental_attribute_type'>
-                <static-array type-name='int32_t' count='7'/>
-            </static-array>
-            <static-array name='phys_att_rates' count='6' index-enum='physical_attribute_type'>
-                <static-array type-name='int32_t' count='4'/>
-            </static-array>
-            <static-array name='ment_att_rates' count='13' index-enum='mental_attribute_type'>
-                <static-array type-name='int32_t' count='4'/>
-            </static-array>
-            <static-array type-name='int32_t' name='phys_att_cap_perc' count='6' index-enum='physical_attribute_type'/>
-            <static-array type-name='int32_t' name='ment_att_cap_perc' count='13' index-enum='mental_attribute_type'/>
-        </compound>
 
         <int8_t name='gender'/>
 
@@ -470,49 +435,6 @@
         </compound>
 
         <stl-vector name='unk22'/>
-
-        <stl-vector name='creature_class'>
-            <pointer type-name='stl-string'/>
-        </stl-vector>
-
-        <compound name='unknown2'>
-            <stl-vector name='unk23a' type-name='int32_t'/>
-            <stl-vector name='unk23b' type-name='int32_t'/>
-            <stl-vector name='unk23c' type-name='int32_t'/>
-            <stl-vector type-name='int32_t' comment='v0.34.01'/>
-            <stl-vector type-name='int32_t' comment='v0.34.01'/>
-            <stl-vector type-name='int32_t' comment='v0.34.01'/>
-            <stl-vector type-name='int32_t' comment='v0.34.01'/>
-
-            <df-flagarray name='unk24_flags'/>
-            <df-flagarray name='unk25_flags'/>
-
-            <static-array type-name='int32_t' name='unk26' count='33'/>
-
-            <compound name='materials' type-name='material_vec_ref'/>
-            <stl-vector name='unk_2f20' type-name='int16_t'/>
-            <stl-vector name='unk_2f30' type-name='int8_t'/>
-            <stl-vector name='unk_2f40' type-name='int32_t'/>
-            <stl-vector name='unk_2f50' type-name='int16_t' comment='v0.34.01'/>
-
-            muscle:
-            <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-            <int32_t name='mat_index'/>
-        </compound>
-
-        <static-array type-name='int32_t' name='habit_num' count='2'/>
-        <static-array name='habit' count='2'><stl-vector/></static-array>
-        <static-array name='lair' count='2'><stl-vector/></static-array>
-        <static-array name='lair_characteristic' count='2'><stl-vector/></static-array>
-        <static-array name='lair_hunter_speech' count='2'><stl-vector/></static-array>
-        <static-array name='unk29' count='2'><stl-vector/></static-array>
-        <static-array name='specific_food' count='2'><stl-vector/></static-array>
-
-        <stl-vector name='sound'><pointer/></stl-vector>
-        <stl-vector type-name='int32_t' name='sound_alert'/>
-        <stl-vector type-name='int32_t' name='sound_peaceful_intermittent'/>
-
-        <stl-vector type-name='pointer' comment='v0.34.01'/>
     </struct-type>
 -->
     <struct-type type-name='creature_raw' instance-vector='$global.world.raws.creatures'>

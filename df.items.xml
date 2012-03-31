@@ -51,9 +51,8 @@
     </struct-type>
 
     <struct-type type-name='contaminant'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
-        <int16_t name='mat_state' comment='enum or document in text'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
         <uint16_t name='temperature'/>
         <uint16_t name='temperature_fraction'/>
         <int32_t name='size' comment='1-24=spatter, 25-49=smear, 50-* = coating'/>
@@ -572,13 +571,8 @@
 
     <class-type type-name='item_crafted' inherits-from='item_actual'
                 original-name='item_craftedst'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
-
-        <code-helper name='describe'>
-            $.quality
-            (describe-obj (material-by-id $.mat_type $.mat_index))
-        </code-helper>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
 
         <int16_t name='maker_race' ref-target='creature_raw'/>
         <enum base-type='int16_t' name='quality' type-name='item_quality'/>
@@ -633,93 +627,7 @@
         <int16_t name='race' ref-target='creature_raw'/>
         <int32_t name='hist_figure_id' ref-target='historical_figure'/>
         <int32_t name='unit_id' ref-target='unit'/>
-        <int16_t name='caste' ref-target='caste_raw' aux-value='$$.race'/>
         <int8_t name='sex' comment='-1 n/a, 0 female, 1 male'/>
-
-        <int16_t name='race2' ref-target='creature_raw'/>
-        <int16_t name='caste2' ref-target='caste_raw' aux-value='$$.race2'/>
-
-        <int32_t name='unk_88'/>
-        <int8_t name='unk_8c'/>
-
-        <compound name='body'>
-            <stl-vector name='wounds' type-name='pointer'/>
-
-            <static-array name='unk_100' type-name='int32_t' count='10'/>
-            <int32_t name='unk_c8'/>
-
-            <compound name='components' type-name='body_component_info'/>
-
-            <static-array type-name='int32_t' name='physical_attr_unk1'
-                          count='6' index-enum='physical_attribute_type'/>
-            <static-array type-name='int32_t' name='physical_attr_unk2'
-                          count='6' index-enum='physical_attribute_type'/>
-            <static-array type-name='int32_t' name='physical_attr_unk3'
-                          count='6' index-enum='physical_attribute_type'/>
-
-            <stl-vector name='unk_194' type-name='int32_t'/>
-            <stl-vector name='unk_1a4' type-name='int32_t'/>
-            <stl-vector name='unk_1b4' type-name='int32_t'/>
-            <int32_t name="unk_18c"/>
-        </compound>
-
-        <int32_t name="birth_year"/>
-        <int32_t name="birth_time"/>
-        <int32_t name='curse_year' comment='v0.34.01'/>
-        <int32_t name='curse_time' comment='v0.34.01'/>
-        <int32_t comment='v0.34.01'/>
-        <int32_t comment='v0.34.01'/>
-        <int32_t name="death_year"/>
-        <int32_t name="death_time"/>
-
-        <compound name='appearance'>
-            <stl-vector name='colors' type-name='int32_t'/>
-
-            <stl-vector name='unk_1e8' type-name='int16_t'/>
-            <stl-vector name='unk_1f8' type-name='int32_t'/>
-            <stl-vector name='unk_208' type-name='int32_t'/>
-            <stl-vector name='unk_218' type-name='int32_t'/>
-        </compound>
-
-        <int32_t name="blood_count"/>
-
-        <int32_t name="unk_1e0" comment='== counters.unk_cntdn_598'/>
-
-        <int32_t name='hist_figure_id2' ref-target='historical_figure'/>
-        <int32_t comment='v0.34.01, actual offset unknown'/>
-        <int32_t name='unit_id2' ref-target='unit'/>
-
-        <bitfield name='corpse_flags'>
-            <flag-bit comment='prevents use'/>
-            <flag-bit/>
-            <flag-bit/>
-            <flag-bit/>
-            <flag-bit/>
-            <flag-bit/>
-            <flag-bit/>
-            <flag-bit/>
-
-            <flag-bit/>
-            <flag-bit/>
-            <flag-bit/>
-            <flag-bit/>
-            <flag-bit comment='prevents use'/>
-            <flag-bit/>
-            <flag-bit/>
-            <flag-bit/>
-        </bitfield>
-
-        <static-array name='material_amount' type-name='int32_t'
-                      count='19' index-enum='corpse_material_type'/>
-
-        <compound name='bone1'>
-            <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-            <int32_t name='mat_index'/>
-        </compound>
-        <compound name='bone2'>
-            <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-            <int32_t name='mat_index'/>
-        </compound>
     </class-type>
 
     <class-type type-name='item_corpsest' inherits-from='item_body_component'/>
@@ -746,8 +654,8 @@
                 original-name='item_liquidpowderst'>
         <compound name='mat_state' type-name='item_matstate'/>
         <int32_t name='dimension'/>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
     </class-type>
 
     <class-type type-name='item_liquid' inherits-from='item_liquidpowder' original-name='item_liquidst'/>
@@ -757,76 +665,72 @@
 
     <class-type type-name='item_barst' inherits-from='item_actual'>
         <int16_t name='subtype'/>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
-        <int32_t name='dimension'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
     </class-type>
 
     <class-type type-name='item_smallgemst' inherits-from='item_actual'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
-        <int32_t name='shape' ref-target='descriptor_shape'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
     </class-type>
     <class-type type-name='item_blocksst' inherits-from='item_actual'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
     </class-type>
     <class-type type-name='item_roughst' inherits-from='item_actual'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
     </class-type>
     <class-type type-name='item_boulderst' inherits-from='item_actual'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
     </class-type>
     <class-type type-name='item_woodst' inherits-from='item_actual'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
     </class-type>
 
     <class-type type-name='item_rockst' inherits-from='item_actual'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
-        <int32_t name='sharpness'/>
-        <int32_t name='unk_84'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
     </class-type>
 
     <class-type type-name='item_seedsst' inherits-from='item_actual'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
         <int32_t name='unk_80'/>
         <int32_t name='unk_84'/>
     </class-type>
 
     <class-type type-name='item_skin_tannedst' inherits-from='item_actual'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
         <int32_t name='unk_80'/>
     </class-type>
 
     <class-type type-name='item_meatst' inherits-from='item_actual'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
         <int32_t name='rot_timer'/>
     </class-type>
     <class-type type-name='item_plantst' inherits-from='item_actual'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
         <int32_t name='rot_timer'/>
     </class-type>
     <class-type type-name='item_leavesst' inherits-from='item_actual'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
         <int32_t name='rot_timer'/>
     </class-type>
     <class-type type-name='item_cheesest' inherits-from='item_actual'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
         <int32_t name='rot_timer'/>
     </class-type>
     <class-type type-name='item_globst' inherits-from='item_actual'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
         <int32_t name='rot_timer'/>
         <compound name='mat_state' type-name='item_matstate'/>
     </class-type>
@@ -864,10 +768,10 @@
     </class-type>
 
     <class-type type-name='item_threadst' inherits-from='item_actual'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
-        <int16_t name='dye_mat_type' ref-target='material' aux-value='$$.dye_mat_index'/>
-        <int32_t name='dye_mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
+        <int16_t name="dye_material" ref-target='material_type'/>
+        <int16_t name="dye_matgloss"/>
         <int32_t name='unk_88'/>
         <int32_t name='unk_8c'/>
         <int16_t name='dye_quality'/>
@@ -908,14 +812,6 @@
     <class-type type-name='item_catapultpartsst' inherits-from='item_constructed'/>
     <class-type type-name='item_ballistapartsst' inherits-from='item_constructed'/>
     <class-type type-name='item_trappartsst' inherits-from='item_constructed'/>
-    <class-type type-name='item_pipe_sectionst' inherits-from='item_constructed'/>
-    <class-type type-name='item_hatch_coverst' inherits-from='item_constructed'/>
-    <class-type type-name='item_gratest' inherits-from='item_constructed'/>
-    <class-type type-name='item_quernst' inherits-from='item_constructed'/>
-    <class-type type-name='item_millstonest' inherits-from='item_constructed'/>
-    <class-type type-name='item_splintst' inherits-from='item_constructed'/>
-    <class-type type-name='item_crutchst' inherits-from='item_constructed'/>
-    <class-type type-name='item_traction_benchst' inherits-from='item_constructed'/>
 
     <class-type type-name='item_instrumentst' inherits-from='item_constructed'>
         <pointer name='subtype' type-name='itemdef_instrumentst'/>
@@ -957,11 +853,6 @@
         <pointer name='subtype' type-name='itemdef_trapcompst'/>
         <int32_t name='sharpness'/>
     </class-type>
-    <class-type type-name='item_toolst' inherits-from='item_constructed'>
-        <pointer name='subtype' type-name='itemdef_toolst'/>
-        <int32_t name='sharpness'/>
-        <compound name='stockpile' type-name='item_stockpile_ref'/>
-    </class-type>
 
     <struct-type type-name='item_stockpile_ref'>
         <int32_t name='id' ref-target='building'/>
@@ -977,7 +868,6 @@
     </class-type>
 
     <class-type type-name='item_gemst' inherits-from='item_constructed'>
-        <int32_t name='shape' ref-target='descriptor_shape'/>
     </class-type>
 
     <class-type type-name='item_statuest' inherits-from='item_constructed'>
@@ -987,17 +877,6 @@
     <class-type type-name='item_figurinest' inherits-from='item_constructed'>
         <compound name='image' type-name='art_image_ref'/>
         <stl-string name='description'/>
-    </class-type>
-
-    <class-type type-name='item_slabst' inherits-from='item_constructed'>
-        <stl-string name='description'/>
-        <int32_t name='unk_bc'/>
-        <int16_t name='unk_c0'/>
-    </class-type>
-
-    <class-type type-name='item_orthopedic_castst' inherits-from='item_constructed'>
-        <stl-string name='unk_a0'/>
-        <stl-string name='unk_bc'/>
     </class-type>
 
     <class-type type-name='item_coinst' inherits-from='item_constructed'>
@@ -1014,13 +893,9 @@
         <int32_t name='dimension'/>
     </class-type>
 
-    <class-type type-name='item_bookst' inherits-from='item_constructed'>
-        <stl-string name='title'/>
-    </class-type>
-
     <class-type type-name='item_ballistaarrowheadst' inherits-from='item_actual'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
     </class-type>
 </data-definition>
 

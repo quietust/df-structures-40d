@@ -33,13 +33,6 @@
         <flag-bit name='tooth'/>
         <flag-bit name='horn'/>
         <flag-bit name='pearl'/>
-        <flag-bit name='yarn'/>
-        <!-- DFHack-specific fields -->
-        <flag-bit name='metal'/>
-        <flag-bit name='stone'/>
-        <flag-bit name='sand'/>
-        <flag-bit name='glass'/>
-        <flag-bit name='clay'/>
     </bitfield-type>
 
     <bitfield-type type-name='job_item_category' base-type='uint32_t'>
@@ -104,8 +97,8 @@
 
         <compound name='flags' type-name='job_flags'/>
 
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
         <int16_t name='unk5'/>
         <int16_t name='unk6'/>
         <int16_t name='item_subtype'/>
@@ -113,8 +106,6 @@
         <compound name="item_category" type-name='job_item_category'/>
         <int32_t name="hist_figure_id" ref-target='historical_figure'/>
         <compound name='material_category' type-name='job_material_category'/>
-
-        <stl-string name='reaction_name'/>
 
         <int32_t name='unk9'/>
         <int32_t name='unk10'/>
@@ -219,35 +210,13 @@
         <flag-bit name="totemable" comment='vtable[158]'/>
         <flag-bit name="horn" comment='check for material flag HORN'/>
         <flag-bit name="pearl" comment='check for material flag PEARL'/>
-        <flag-bit name="plaster_containing" comment='vtable[17]'/>
-        <flag-bit/>
-
-        <flag-bit name="soap" comment='check for material flag SOAP'/>
-        <flag-bit name="body_part" comment='itemtype CORPSE or CORPSEPIECE'/>
-        <flag-bit name="ivory_tooth" comment='check for material flag TOOTH'/>
-        <flag-bit name="lye_milk_free" comment='(call 00759110)'/>
-        <flag-bit name="blunt" comment='vtable[157]'/>
-        <flag-bit name="unengraved" comment='vtable[214]'/>
-        <flag-bit name="hair_wool" comment='??? (pretty sure this is [ANY_STRAND_TISSUE])'/>
-        <flag-bit name="yarn" comment='check for material flag YARN'/>
-    </bitfield-type>
-
-    <bitfield-type type-name='job_item_flags3' base-type='uint32_t'>
-        <flag-bit name="unimproved" comment='vtable[176]'/>
-        <flag-bit name="any_raw_material" comment='itemtype BAR, BOULDER, POWDER_MISC, or GLOB'/>
-        <flag-bit name="non_absorbent" comment='vtable[215]'/>
-        <flag-bit name="non_pressed" comment='vtable[91]'/>
-        <flag-bit name='allow_liquid_powder'/>
-        <flag-bit name="any_craft" comment='FIGURINE, AMULET, SCEPTER, CROWN, RING, EARRING, BRACLET'/>
-        <flag-bit name="hard" comment='check for material flag ITEMS_HARD'/>
-        <flag-bit name="food_storage" comment='vtable[15]'/>
     </bitfield-type>
 
     <struct-type type-name='job_item'>
         <enum base-type='int16_t' name='item_type' type-name='item_type'/>
         <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
 
         <compound name='flags1' type-name='job_item_flags1'/>
 
@@ -255,28 +224,15 @@
         <enum base-type='int16_t' name='vector_id' type-name='job_item_vector_id'/>
 
         <compound name='flags2' type-name='job_item_flags2'/>
-        <compound name='flags3' type-name='job_item_flags3'/>
         <int32_t name='unk2'/>
         <int32_t name='unk3'/>
-
-        -- Custom:
-        <int32_t name='metal_ore' ref-target='inorganic_raw'/>
-
-        <stl-string name='reaction_class'/>
-        <stl-string name='has_material_reaction_product'/>
-
-        <int32_t name='min_dimension' comment='pure guess by context'/>
-        <int32_t name='reagent_index'/>
-        <stl-vector type-name='int32_t' name='contains' comment='used with custom reactions'/>
-        <int32_t name='reaction_id' ref-target='reaction'/>
-        <enum base-type='int16_t' name='has_tool_use' type-name='tool_uses'/>
     </struct-type>
 
     <struct-type type-name='job_item_filter'>
         <enum base-type='int16_t' name="item_type" type-name='item_type'/>
         <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
 
         <compound name="flags1" type-name='job_item_flags1'/>
 
@@ -286,36 +242,14 @@
             </stl-vector>
         </pointer>
 
-        <bool name="use_mat_index"/>
-
         <compound name="flags2" type-name='job_item_flags2'/>
         <bool name="use_flags2"/>
-
-        <compound name="flags3" type-name='job_item_flags3'/>
-        <bool name="use_flags3"/>
 
         <int32_t name="unk2"/>
         <bool name="use_unk2"/>
 
         <int32_t name="unk3"/>
         <bool name="use_unk3"/>
-
-        <stl-string name='reaction_class'/>
-        <stl-string name='has_material_reaction_product'/>
-        <int32_t name="metal_ore"/>
-
-        <bool name="use_metal_ore"/>
-        <bool name="use_reaction_class"/>
-        <bool name="use_reaction_product"/>
-
-        <int32_t name="min_dimension"/>
-        <int32_t name="reaction_id"/>
-
-        <stl-vector name='contains' type-name='int32_t'/>
-        <bool name="use_contains"/>
-
-        <int16_t name="has_tool_use"/>
-        <int16_t comment='v0.34.01-02'/>
 
         <compound name='pos' type-name='coord'/>
 
@@ -324,11 +258,6 @@
         <pointer name="building" type-name='building'/>
 
         <int32_t name="unk_74"/>
-
-        <stl-vector name='burrows'>
-            <int32_t ref-target='burrow'/>
-        </stl-vector>
-        <bool name="use_burrows"/>
     </struct-type>
 
     <struct-type type-name='manager_order'>
@@ -337,10 +266,8 @@
 
         <int16_t name="item_subtype"/>
 
-        <stl-string name="reaction_name"/>
-
-        <int16_t name="mat_type" ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name="mat_index"/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
 
         <compound name="item_category" type-name='job_item_category'/>
         <int32_t name="hist_figure_id" ref-target='historical_figure'/>
@@ -356,8 +283,8 @@
         <stl-string name="reaction_name"/>
         <int16_t init-value='-1'/>
         <int16_t name="item_subtype"/>
-        <int16_t name="mat_type" ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name="mat_index"/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
         <compound name="item_category" type-name='job_item_category'/>
         <int32_t init-value='-1'/>
         <compound name="material_category" type-name='job_material_category'/>
@@ -372,8 +299,8 @@
         <enum base-type='int16_t' name='item_type' type-name='item_type'/>
         <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
 
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
 
         <int16_t name='amount_total'/>
         <int16_t name='amount_remaining'/>
@@ -381,24 +308,9 @@
         <int32_t name='timeout_counter' comment='counts once per 10 frames'/>
         <int32_t name='timeout_limit' comment='once counter passes limit, mandate ends'/>
 
-        <int32_t comment='v0.34.01'/>
-        <int32_t comment='v0.34.01'/>
         <int32_t name='unk2'/>
         <uint8_t name='unk3'/>
         <int32_t name='unk4'/>
-    </struct-type>
-
-    <struct-type type-name='training_assignment'
-                 instance-vector='$global.ui.equipment.training_assignments'
-                 key-field='animal_id'>
-        <int32_t name="animal_id" ref-target='unit'/>
-        <int32_t name="trainer_id" ref-target='unit'/>
-
-        <enum base-type='int32_t' name="auto_mode">
-            <enum-item name='None'/>
-            <enum-item name='Any'/>
-            <enum-item name='AnyUnassigned'/>
-        </enum>
     </struct-type>
 
     <struct-type type-name='unit_demand'>
@@ -413,8 +325,8 @@
 
         <enum base-type='int16_t' name='item_type' type-name='item_type'/>
         <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
-        <int16_t name="mat_type" ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name="mat_index" init-value='-1'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
 
         <int32_t name='timeout_counter' comment='counts once per 10 frames'/>
         <int32_t name='timeout_limit' comment='once counter passes limit, mandate ends'/>

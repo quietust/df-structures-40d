@@ -14,8 +14,8 @@
     </enum-type>
 
     <struct-type type-name='dye_info'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
         <int32_t name='dyer' ref-target='historical_figure'/>
         <enum base-type='int16_t' name='quality' type-name='item_quality'/>
         <int16_t name='skill_rating' comment='at the moment of creation'/>
@@ -23,8 +23,8 @@
     </struct-type>
 
     <class-type type-name='itemimprovement' original-name='itemimprovementst'>
-        <int16_t name='mat_type' ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name='mat_index'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
         <int32_t name='maker' ref-target='historical_figure'/>
         <int32_t/>
         <enum base-type='int16_t' name='quality' type-name='item_quality'/>

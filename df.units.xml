@@ -458,8 +458,8 @@
     </struct-type>
 
     <struct-type type-name='unit_spatter'>
-        <int16_t name="mat_type" ref-target='material' aux-value='$$.mat_index'/>
-        <int32_t name="mat_index" init-value='-1'/>
+        <int16_t name="material" ref-target='material_type'/>
+        <int16_t name="matgloss"/>
 
         <int16_t name="unk_8"/>
         <int16_t name="unk_a"/>

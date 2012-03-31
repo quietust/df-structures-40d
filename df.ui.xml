@@ -8,42 +8,15 @@
         <code-helper name='describe'>$.code</code-helper>
     </struct-type>
 
-    <struct-type type-name='burrow' key-field='id' instance-vector='$global.ui.burrows.list'>
-        <int32_t name='id'/>
-        <stl-string name='name'/>
-
-        <code-helper name='describe'>
-            (describe-obj $.name)
-        </code-helper>
-
-        <uint8_t name='tile'/>
-        <int16_t name='fg_color'/>
-        <int16_t name='bg_color'/>
-        <stl-vector name='unk1' type-name='int32_t'/>
-        <stl-vector name='unk2' type-name='int32_t'/>
-        <stl-vector name='unk3' type-name='int32_t'/>
-        <stl-vector name='units'>
-            <int32_t ref-target='unit'/>
-        </stl-vector>
-    </struct-type>
-
     <enum-type type-name='ui_sidebar_mode'>
         <enum-item name='Default'/>
-        <enum-item name='Squads'/>
 
         -- 2
 
         <enum-item name='DesignateMine'/>
-        <enum-item name='DesignateRemoveRamps'/>
-        <enum-item name='DesignateUpStair'/>
-        <enum-item name='DesignateDownStair'/>
-        <enum-item name='DesignateUpDownStair'/>
-        <enum-item name='DesignateUpRamp'/>
-        <enum-item name='DesignateChannel'/>
         <enum-item name='DesignateGatherPlants'/>
         <enum-item name='DesignateRemoveDesignation'/>
         <enum-item name='DesignateSmooth'/>
-        <enum-item name='DesignateEngrave'/>
         <enum-item name='DesignateCarveFortification'/>
 
         -- 14
@@ -69,45 +42,9 @@
         -- 25
 
         <enum-item name='DesignateItemsClaim'/>
-        <enum-item name='DesignateItemsForbid'/>
-        <enum-item name='DesignateItemsMelt'/>
-        <enum-item name='DesignateItemsUnmelt'/>
-        <enum-item name='DesignateItemsDump'/>
-        <enum-item name='DesignateItemsUndump'/>
-        <enum-item name='DesignateItemsHide'/>
-        <enum-item name='DesignateItemsUnhide'/>
-
-        -- 33
-
         <enum-item name='DesignateChopTrees'/>
         <enum-item name='DesignateToggleEngravings'/>
 
-        -- 35
-
-        <enum-item name='Hotkeys'/>
-
-        -- 36
-
-        <enum-item name='DesignateTrafficHigh'/>
-        <enum-item name='DesignateTrafficNormal'/>
-        <enum-item name='DesignateTrafficLow'/>
-        <enum-item name='DesignateTrafficRestricted'/>
-
-        -- 40
-
-        <enum-item name='Zones'/>
-        <enum-item name='ZonesPenInfo'/>
-        <enum-item name='ZonesPitInfo'/>
-        <enum-item name='ZonesHospitalInfo'/>
-
-        -- 44
-
-        <enum-item name='DesignateRemoveConstruction'/>
-
-        <enum-item name='DepotAccess'/>
-        <enum-item name='NotesPoints'/>
-        <enum-item name='NotesRoutes'/>
-        <enum-item name='Burrows'/>
     </enum-type>
 
     <struct-type type-name='ui'>
@@ -249,9 +186,9 @@
                 <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent._parent.item_types[$$._key] $)'/>
             </stl-vector>
             <stl-vector name='mat_types'>
-                <int16_t ref-target='material' aux-value='$$._parent.mat_indices[$._key]'/>
+                <int16_t ref-target='material_type'/>
             </stl-vector>
-            <stl-vector name='mat_indices' type-name='int32_t'/>
+            <stl-vector name='mat_indices' type-name='int16_t'/>
             <stl-vector name='exc_types' type-name='int8_t'/>
         </compound>
 
@@ -317,79 +254,6 @@
             <stl-vector/>
         </static-array>
 
-        <compound name='waypoints'>
-            <stl-vector name='points'>
-                <pointer>
-                    <int32_t name='id'/>
-                    <uint8_t name='tile'/>
-                    <int16_t name='fg_color'/>
-                    <int16_t name='bg_color'/>
-                    <stl-string name='name'/>
-                    <stl-string name='comment'/>
-                    <compound name='pos' type-name='coord'/>
-                </pointer>
-            </stl-vector>
-            <stl-vector name='routes'>
-                <pointer>
-                    <int32_t name='id'/>
-                    <stl-string name='name'/>
-                    <stl-vector name='points'>
-                        <int32_t/>
-                    </stl-vector>
-                </pointer>
-            </stl-vector>
-            <int16_t name='sym_selector'/>
-            <int16_t/>
-            <int32_t name='cur_point_index'/>
-            <bool name='in_edit_name_mode'/>
-            <int8_t/>
-            <uint8_t name='sym_tile'/>
-            <int16_t name='sym_fg_color'/>
-            <int16_t name='sym_bg_color'/>
-            <stl-vector name='unk5c04'>
-                <pointer type-name='stl-string'/>
-            </stl-vector>
-            <int32_t name='next_point_id'/>
-            <int32_t name='next_route_id'/>
-            <int32_t name='sel_route_idx'/>
-            <int32_t name='sel_route_waypt_idx'/>
-            <bool name='in_edit_waypts_mode'/>
-        </compound>
-
-        <compound name='burrows'>
-            <stl-vector name='list'>
-                <pointer type-name='burrow'/>
-            </stl-vector>
-            <int32_t name='next_id'/>
-            <int32_t name='sel_index1'/>
-            <int32_t name='sel_index2'/>
-            <bool name='in_add_units_mode'/>
-            <stl-vector name='list_units'>
-                <pointer type-name='unit'/>
-            </stl-vector>
-            <stl-bit-vector name='sel_units' index-refers-to='$$._parent.list_units[$]'/>
-            <int32_t name='unit_cursor_pos'/>
-            <bool name='in_define_mode'/>
-            <compound name='rect_start' type-name='coord'/>
-            <int32_t name='brush_mode'/>
-            <int16_t name='sym_selector'/>
-            <int16_t name='sym_tile'/>
-            <int16_t name='sym_fg_color'/>
-            <int16_t name='sym_bg_color'/>
-        </compound>
-
-        <compound name='alerts'>
-            <stl-vector name='list'>
-                <pointer>
-                    <int32_t name='id'/>
-                    <stl-string name='name'/>
-                    <stl-vector/>
-                </pointer>
-            </stl-vector>
-            <int32_t name='next_id'/>
-            <int32_t name='civ_alert_idx' refers-to='$$._parent.list[$]'/>
-        </compound>
-
         <compound name='equipment'>
             <static-array name='items_by_type1' count='112' index-enum='item_type'>
                 <stl-vector>
@@ -407,46 +271,9 @@
                     <pointer type-name='item'/>
                 </stl-vector>
             </static-array>
-
-            <int32_t name='unk6c4c'/>
-
-            <stl-vector name='work_weapons' comment='i.e. woodcutter axes, and miner picks'>
-                <int32_t ref-target='item'/>
-            </stl-vector>
-            <stl-vector name='work_units'>
-                <int32_t ref-target='unit'/>
-            </stl-vector>
-
-            <stl-vector name='hunter_ammunition'>
-                <pointer type-name='squad_ammo_spec'/>
-            </stl-vector>
-            <stl-vector name='ammo_items'>
-                <int32_t ref-target='item'/>
-            </stl-vector>
-            <stl-vector name='ammo_units'>
-                <int32_t ref-target='unit'/>
-            </stl-vector>
-
-            <stl-vector name='training_assignments' comment='v0.34.06'>
-                <!-- sorted by animal_id -->
-                <pointer type-name='training_assignment'/>
-            </stl-vector>
         </compound>
 
         <compound name='main'>
-            <static-array name='hotkeys' count='16'>
-                <stl-string name='name'/>
-                <int16_t name='cmd'/>
-                <int32_t name='x'/>
-                <int32_t name='y'/>
-                <int32_t name='z'/>
-            </static-array>
-
-            <int32_t name='traffic_cost_high'/>
-            <int32_t name='traffic_cost_normal'/>
-            <int32_t name='traffic_cost_low'/>
-            <int32_t name='traffic_cost_restricted'/>
-
             <stl-vector name='dead_citizens' comment='?'>
                 <pointer>
                     <int32_t name='unit_id' ref-target='unit'/>
@@ -463,60 +290,9 @@
 
             <enum base-type='int32_t' name='mode' type-name='ui_sidebar_mode'/>
 
-            <int16_t name='selected_traffic_cost'
-                     comment='For changing the above costs.'/>
-
             <bool name='unk6df2'/>
             <int32_t name='unk6df4'/>
-
-            <int16_t name='selected_hotkey'/>
-            <bool name='in_rename_hotkey'/>
         </compound>
-
-        <compound name='squads'>
-            <stl-vector name='list' has-bad-pointers='true'
-                        comment='valid only when ui is displayed'>
-                <pointer type-name='squad'/>
-            </stl-vector>
-
-            <stl-vector name='unk6e08'/>
-
-            <stl-bit-vector name='sel_squads' index-refers-to='$$._parent.list[$]'/>
-
-            <stl-vector name='indiv_selected'>
-                <int32_t ref-target='historical_figure'/>
-            </stl-vector>
-            <bool name='in_select_indiv'/>
-            <int32_t name='sel_indiv_squad' refers-to='$$._parent.list[$]'/>
-
-            <padding size='8'/>
-
-            <int32_t name='unk48'/>
-            <pointer name='unk4c' type-name='squad'/>
-
-            <bool name='in_move_order'/>
-            <int32_t name='point_list_scroll'/>
-
-            <bool name='in_kill_order'/>
-
-            <stl-vector name='kill_rect_targets'>
-                <pointer type-name='unit'/>
-            </stl-vector>
-
-            <padding size='4'/>
-
-            <bool name='in_kill_list'/>
-            <stl-vector name='kill_targets'>
-                <pointer type-name='unit'/>
-            </stl-vector>
-            <stl-bit-vector name='sel_kill_targets' index-refers-to='$$._parent.kill_target[$]'/>
-            <padding size='4'/>
-
-            <bool name='in_kill_rect'/>
-            <compound name='rect_start' type-name='coord'/>
-        </compound>
-
-        <padding size='4'/>
     </struct-type>
 </data-definition>
 

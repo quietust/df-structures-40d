@@ -77,19 +77,6 @@
         <enum-item name='COIN' comment='Coins.'/>
         <enum-item name='GLOB' comment='Fat, tallow, pastes/pressed objects, and small bits of molten rock/metal.'/>
         <enum-item name='ROCK' comment='Small rocks (usually sharpened and/or thrown in adventurer mode)'/>
-        <enum-item name='PIPE_SECTION' comment='Pipe sections.'/>
-        <enum-item name='HATCH_COVER' comment='Hatch covers.'/>
-        <enum-item name='GRATE' comment='Grates.'/>
-        <enum-item name='QUERN' comment='Querns.'/>
-        <enum-item name='MILLSTONE' comment='Millstones.'/>
-        <enum-item name='SPLINT' comment='Splints.'/>
-        <enum-item name='CRUTCH' comment='Crutches.'/>
-        <enum-item name='TRACTION_BENCH' comment='Traction benches.'/>
-        <enum-item name='ORTHOPEDIC_CAST' comment='Casts'/>
-        <enum-item name='TOOL' comment='Tools.'/>
-        <enum-item name='SLAB' comment='Slabs.'/>
-        <enum-item name='EGG' comment='Eggs. Material is CREATURE_ID:CASTE.'/>
-        <enum-item name='BOOK' comment='Books.'/>
     </enum-type>
 
     <class-type type-name='itemdef' original-name='itemdefst'>
@@ -274,62 +261,6 @@
         <stl-string name="name"/>
         <stl-string name="name_plural"/>
         <stl-string name="ammo_class"/>
-    </class-type>
-
-    <enum-type type-name='tool_flags'>
-        <enum-item name='HARD_MAT'/>
-        <enum-item name='METAL_MAT'/>
-        <enum-item name='HAS_EDGE_ATTACK'/>
-        <enum-item name='METAL_WEAPON_MAT'/>
-        <enum-item name='UNIMPROVABLE'/>
-    </enum-type>
-
-    <enum-type type-name='tool_uses' base-type='int16_t'>
-        <enum-item name='NONE' value='-1'/>
-        <enum-item name='LIQUID_COOKING'/>
-        <enum-item name='LIQUID_SCOOP'/>
-        <enum-item name='GRIND_POWDER_RECEPTACLE'/>
-        <enum-item name='GRIND_POWDER_GRINDER'/>
-        <enum-item name='MEAT_CARVING'/>
-        <enum-item name='MEAT_BONING'/>
-        <enum-item name='MEAT_SLICING'/>
-        <enum-item name='MEAT_CLEAVING'/>
-        <enum-item name='HOLD_MEAT_FOR_CARVING'/>
-        <enum-item name='MEAL_CONTAINER'/>
-        <enum-item name='LIQUID_CONTAINER'/>
-        <enum-item name='FOOD_STORAGE'/>
-        <enum-item name='HIVE'/>
-        <enum-item name='NEST_BOX'/>
-        <enum-item name='POUCH'/>
-    </enum-type>
-
-    <class-type type-name='itemdef_toolst' inherits-from='itemdef'
-                instance-vector='$global.world.raws.itemdefs.tools'>
-        <stl-string name="name"/>
-        <stl-string name="name_plural"/>
-        <df-flagarray name='flags' index-enum='tool_flags'/>
-        <int32_t name="value"/>
-        <uint8_t name="tile"/>
-
-        <stl-vector name="tool_use">
-            <enum base-type='int16_t' type-name='tool_uses'/>
-        </stl-vector>
-
-        <stl-string name="adjective"/>
-        <int32_t name="size"/>
-        <int16_t name="skill_melee"/>
-        <int16_t name="skill_ranged"/>
-        <stl-string name="ranged_ammo"/>
-        <int32_t name="two_handed"/>
-        <int32_t name="minimum_size"/>
-        <int32_t name="material_size"/>
-
-        <stl-vector name="attacks"/>
-
-        <int32_t name="shoot_force"/>
-        <int32_t name="shoot_maxvel"/>
-
-        <int32_t name="container_capacity"/>
     </class-type>
 
     <enum-type type-name='toy_flags'>
