@@ -227,15 +227,15 @@
         <enum-item/>
         <enum-item/>
         <enum-item/>
-        <enum-item name='WallSmoothLD2'>
+        <enum-item name='WallSmoothLD2'/>
 
-        <enum-item name='WallSmoothL2D'>
-        <enum-item name='WallSmoothLUD'>
-        <enum-item name='WallSmoothUD'>
-        <enum-item name='WallSmoothLD'>
-        <enum-item name='WallSmoothLU'>
-        <enum-item name='WallSmoothLU2'>
-        <enum-item name='WallSmoothL2U'>
+        <enum-item name='WallSmoothL2D'/>
+        <enum-item name='WallSmoothLUD'/>
+        <enum-item name='WallSmoothUD'/>
+        <enum-item name='WallSmoothLD'/>
+        <enum-item name='WallSmoothLU'/>
+        <enum-item name='WallSmoothLU2'/>
+        <enum-item name='WallSmoothL2U'/>
         <enum-item/>
 
         -- 0xC0
@@ -249,13 +249,13 @@
         <enum-item/>
         <enum-item/>
 
-        <enum-item name='WallSmoothRU'>
-        <enum-item name='WallSmoothRD'>
-        <enum-item name='WallSmoothLRU'>
-        <enum-item name='WallSmoothLRD'>
-        <enum-item name='WallSmoothRUD'>
-        <enum-item name='WallSmoothLR'>
-        <enum-item name='WallSmoothLRUD'>
+        <enum-item name='WallSmoothRU'/>
+        <enum-item name='WallSmoothRD'/>
+        <enum-item name='WallSmoothLRU'/>
+        <enum-item name='WallSmoothLRD'/>
+        <enum-item name='WallSmoothRUD'/>
+        <enum-item name='WallSmoothLR'/>
+        <enum-item name='WallSmoothLRUD'/>
         <enum-item/>
 
         -- 0xD0
@@ -263,10 +263,10 @@
         <enum-item/>
         <enum-item/>
         <enum-item/>
-        <enum-item name='WallSmoothRU2'>
-        <enum-item name='WallSmoothR2U'>
-        <enum-item name='WallSmoothR2D'>
-        <enum-item name='WallSmoothRD2'>
+        <enum-item name='WallSmoothRU2'/>
+        <enum-item name='WallSmoothR2U'/>
+        <enum-item name='WallSmoothR2D'/>
+        <enum-item name='WallSmoothRD2'/>
         <enum-item/>
 
         <enum-item/>
