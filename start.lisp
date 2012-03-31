@@ -76,10 +76,6 @@
 (reload)
 (resume)
 
-(load "version.lisp")
-
-(open-annotations (concatenate 'string *df-version-str* ".lst"))
-
 (defun write-csv (context filename gfilename)
   (let ((*known-types* (remove-if-not #'consp *known-types* :key #'car))
         (*known-globals* nil)

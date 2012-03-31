@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <data-definition>
-    <symbol-table name='v0.23.130.23aL' os-type='windows-msvc6'>
-        <binary-timestamp value='0x4f6c34ca'/>
+    <symbol-table name='v0.23.130.23a' os-type='windows-msvc6'>
+        <binary-timestamp value='0x45b03c59'/>
 
         .data
 

@@ -27,7 +27,6 @@
 
         <int32_t name="building_type" comment='if -1, in Build menu; otherwise select item'/>
         <int16_t name="building_subtype"/>
-        <int32_t name="custom_type" ref-target='building_def'/>
 
         <int32_t name="stage" comment='0 no materials, 1 place, 2 select item'/>
 
@@ -132,7 +131,6 @@
                 inherits-from='interface_button_constructionst'>
         <int16_t name="building_type"/>
         <int16_t name="building_subtype"/>
-        <int32_t name="custom_type" ref-target='building_def'/>
 
         <int32_t name="existing_count"/>
     </class-type>
