@@ -158,7 +158,6 @@
         <compound name='worldgen'>
             <pointer name="unk_0" type-name="world_site"/>
             <pointer name="unk_4" type-name="language_name"/>
-            <pointer name="unk_8" type-name="world_underground_region"/>
             <pointer name="unk_c">
                 <df-array name="unk_0" type-name='uint8_t'/>
                 <df-array name="unk_8" type-name='int16_t'/>
@@ -344,7 +343,6 @@
 
         <int32_t name='site' ref-target='world_site'/>
         <int32_t name='region' ref-target='world_region'/>
-        <int32_t name='layer' ref-target='world_underground_region' comment='?'/>
 
         <int16_t name='death_cause'/>
     </class-type>

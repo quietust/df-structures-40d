@@ -236,31 +236,6 @@
         <int32_t name="max_y"/>
     </struct-type>
 
-    <struct-type type-name='world_underground_region'
-                 instance-vector='$global.world.world_data.underground_regions'>
-        <int16_t name='unk1'/>
-        <compound name='name' type-name='language_name'/>
-        <code-helper name='describe'>(describe-obj $.name)</code-helper>
-
-        <int32_t name="index"/>
-
-        <int16_t name="unk_74"/>
-        <int16_t name="unk_76"/>
-        <int16_t name="unk_78"/>
-        <int16_t name="unk_7a"/>
-        <int32_t name="unk_7c"/>
-        <int16_t name="unk_80"/>
-        <int16_t name="unk_82"/>
-        <int16_t name="unk_84"/>
-
-        <compound name='region_coords' type-name='coord2d_path'/>
-        <stl-vector name="region_min_z" type-name='int16_t'/>
-        <stl-vector name="region_max_z" type-name='int16_t'/>
-
-        <stl-vector name="unk_c8"/>
-        <pointer name="feature_init" type-name='feature_init'/>
-    </struct-type>
-
     <struct-type type-name='world_river'>
         <compound name='name' type-name='language_name'/>
         <code-helper name='describe'>(describe-obj $.name)</code-helper>
@@ -505,9 +480,6 @@
         <stl-vector name="regions">
             <pointer type-name='world_region'/>
         </stl-vector>
-        <stl-vector name="underground_regions">
-            <pointer type-name='world_underground_region'/>
-        </stl-vector>
         <stl-vector name="geo_biomes">
             <pointer type-name='world_geo_biome'/>
         </stl-vector>
@@ -598,18 +570,6 @@
             <pointer is-array='true'>
                 <int16_t name='x'/>
                 <int16_t name='y'/>
-                <pointer name='features'>
-                    <static-array name='feature_init' count='16'>
-                        <static-array count='16'>
-                            <stl-vector><pointer type-name='feature_init'/></stl-vector>
-                        </static-array>
-                    </static-array>
-                    <static-array name='unk' count='16'>
-                        <static-array count='16'>
-                            <static-array count='30' type-name='int32_t' comment='it might actually be [30][16][16] rather than [16][16][30]'/>
-                        </static-array>
-                    </static-array>
-                </pointer>
                 <pointer name='unk_8' type-name='int16_t' is-array='true'/>
                 <pointer name='unk_c' type-name='int32_t' is-array='true'/>
             </pointer>
