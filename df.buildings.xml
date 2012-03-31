@@ -173,12 +173,6 @@
 
             -- 20
 
-            <vmethod name='getMachineInfo'>
-                <ret-type><pointer type-name='machine_info'/></ret-type>
-            </vmethod>
-            <vmethod name='getPowerInfo'>
-                <pointer name='power_info' type-name='power_info'/>
-            </vmethod>
             <vmethod/>
             <vmethod ret-type='building_type' name='getType'/>
             <vmethod ret-type='int16_t' name='getSubtype'/>
@@ -506,8 +500,6 @@
         </stl-vector>
         <int32_t name="min_level"/>
         <int32_t name="max_level"/>
-
-        <compound name='machine' type-name='machine_info'/>
 
         <int32_t name="custom_type" ref-target='building_def'/>
     </class-type>

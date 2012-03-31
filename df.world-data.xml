@@ -280,43 +280,10 @@
         <df-flagarray name='flags'/>
     </struct-type>
 
-    <enum-type type-name='geo_layer_type' base-type='int16_t'>
-        <enum-attr name='flag' type-name='inorganic_flags' use-key-name='true'/>
-
-        <enum-item name='SOIL'/>
-        <enum-item name='SEDIMENTARY'/>
-        <enum-item name='METAMORPHIC'/>
-        <enum-item name='IGNEOUS_EXTRUSIVE'/>
-        <enum-item name='IGNEOUS_INTRUSIVE'/>
-        <enum-item name='SOIL_OCEAN'/>
-        <enum-item name='SOIL_SAND'/>
-        <enum-item name='SEDIMENTARY_OCEAN_SHALLOW'/>
-        <enum-item name='SEDIMENTARY_OCEAN_DEEP'/>
-    </enum-type>
-
     <struct-type type-name='world_geo_layer'>
-        <enum base-type='int16_t' name="type" type-name='geo_layer_type'/>
-
-        <int32_t name="mat_index" ref-target='inorganic_raw'/>
+        <int32_t name="matgloss" ref-target='matgloss_stone'/>
 
         <code-helper name='describe'>(describe-obj $.mat_index.ref-target)</code-helper>
-
-        <stl-vector name="vein_mat">
-            <int32_t ref-target='inorganic_raw'/>
-        </stl-vector>
-        <stl-vector name="vein_nested_in">
-            -- Index of the other vein this one is nested in, or -1
-            <int16_t refers-to='$$._global.vein_mat[$].ref-target'/>
-        </stl-vector>
-        <stl-vector name="vein_type">
-            <enum base-type='int8_t' type-name='inclusion_type'/>
-        </stl-vector>
-        <stl-vector name="vein_unk_38" comment='density??'>
-            <int8_t/>
-        </stl-vector>
-
-        <int16_t name="top_height" comment='negative'/>
-        <int16_t name="bottom_height"/>
     </struct-type>
 
     <struct-type type-name='world_geo_biome' instance-vector='$global.world.world_data.geo_biomes'>
@@ -392,7 +359,7 @@
             </static-array>
         </static-array>
 
-        <int16_t name='lava_stone' ref-target='inorganic_raw'/>
+        <int16_t name='lava_stone' ref-target='matgloss_stone'/>
 
         <static-array count='16' name='elevation2'>
             <static-array type-name='int16_t' count='16'/>

@@ -35,10 +35,6 @@
             <pointer type-name='creature_raw'/>
         </stl-vector>
 
-            <stl-vector name='list_creature' type-name='int32_t'/>
-            <stl-vector name='list_caste' type-name='int32_t'/>
-        </compound>
-
         -- Item RAWs
 
         <compound name='itemdefs'>

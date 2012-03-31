@@ -99,35 +99,6 @@
         <enum-item/>
         <enum-item/>
 
-        <enum-item/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item name='GENERATED'/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item name='DOES_NOT_EXIST'/>
-        <enum-item/>
-
-        <enum-item/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item name='ARTIFICIAL_HIVEABLE'/>
-
-        <enum-item name='UBIQUITOUS'/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item/>
-    </enum-type>
-
-    <enum-type type-name='caste_raw_flags'>
         <enum-item name='AMPHIBIOUS'/>
         <enum-item name='AQUATIC'/>
         <enum-item name='LOCKPICKER'/>
@@ -266,224 +237,9 @@
         <enum-item name='GETS_INFECTIONS_FROM_ROT'/>
         <enum-item/>
         <enum-item name='ALCOHOL_DEPENDENT'/>
-        <enum-item name='SWIMS_INNATE'/>
-        <enum-item name='POWER'/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item/>
-
-        <enum-item/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item name='FEATURE_BEAST'/>
-        <enum-item name='TITAN'/>
-        <enum-item name='UNIQUE_DEMON'/>
-        <enum-item name='DEMON'/>
-        <enum-item name='MANNERISM_LAUGH'/>
-
-        <enum-item name='MANNERISM_SMILE'/>
-        <enum-item name='MANNERISM_WALK'/>
-        <enum-item name='MANNERISM_SIT'/>
-        <enum-item name='MANNERISM_BREATH'/>
-        <enum-item name='MANNERISM_POSTURE'/>
-        <enum-item name='MANNERISM_STRETCH'/>
-        <enum-item name='MANNERISM_EYELIDS'/>
-        <enum-item name='NIGHT_CREATURE_ANY'/>
-
-        <enum-item name='NIGHT_CREATURE_HUNTER'/>
-        <enum-item name='NIGHT_CREATURE_BOGEYMAN'/>
-        <enum-item name='CONVERTED_SPOUSE'/>
-        <enum-item name='SPOUSE_CONVERTER'/>
-        <enum-item name='SPOUSE_CONVERSION_TARGET'/>
-        <enum-item name='DIE_WHEN_VERMIN_BITE'/>
-        <enum-item name='REMAINS_ON_VERMIN_BITE_DEATH'/>
-        <enum-item name='COLONY_EXTERNAL'/>
-
-        <enum-item name='LAYS_UNUSUAL_EGGS'/>
-        <enum-item name='RETURNS_VERMIN_KILLS_TO_OWNER'/>
-        <enum-item name='HUNTS_VERMIN'/>
-        <enum-item name='ADOPTS_OWNER'/>
-        <enum-item name='SOUND_ALERT'/>
-        <enum-item name='SOUND_PEACEFUL_INTERMITTENT'/>
     </enum-type>
 
-
-    <struct-type type-name='body_part_layer_raw'>
-        <stl-string name='layer_name'/>
-
-        <code-helper name='describe'>$.layer_name</code-helper>
-
-        <int32_t name='tissue_id'/>
-
-        <df-flagarray name='flags'/>
-
-        <int32_t name='unk2'/>
-
-        <int32_t name='healing_rate'/>
-        <int32_t name='vascular'/>
-        <int32_t name='pain_receptors'/>
-
-        <int32_t name='unk6'/>
-        <int16_t name='unk7'/>
-
-        <stl-vector name='unk8'/>
-
-        <int32_t name='layer_id' comment='across all body parts'/>
-
-        <int32_t name='unk10'/>
-        <int32_t name='unk11'/>
-        <int32_t name='layer_depth' comment='-1 for skin and internal organs'/>
-        <int32_t name='unk13'/>
-        <int32_t name='unk14'/>
-        <int32_t name='unk15'/>
-    </struct-type>
-
-    <struct-type type-name='body_part_raw'>
-        <stl-string name='part_code'/>
-        <stl-string name='part_name'/>
-
-        <code-helper name='describe'>$.part_name</code-helper>
-
-        <int16_t name='con_part_id'/>
-
-        <df-flagarray name='flags'/>
-
-        <stl-vector name='layers'>
-            <pointer type-name='body_part_layer_raw'/>
-        </stl-vector>
-
-        <int32_t name='unk2'/>
-        <int32_t name='unk3'/>
-        <int32_t name='unk4'/>
-        <int32_t name='unk5'/>
-        <int32_t name='relsize'/>
-        <int32_t name='unk7'/>
-
-        <int16_t name='unk7b'/>
-
-        <stl-vector name='name_singular'>
-            <pointer type-name='stl-string'/>
-        </stl-vector>
-        <stl-vector name='name_plural'>
-            <pointer type-name='stl-string'/>
-        </stl-vector>
-
-        <pointer name='bp_relation_part_id'>
-            <stl-vector type-name='int16_t'/>
-        </pointer>
-        <pointer name='bp_relation_code'>
-            <stl-vector type-name='int16_t'/> // 0 around of, 1 around by
-        </pointer>
-        <pointer name='bp_relation_coverage'>
-            <stl-vector type-name='int16_t'/>
-        </pointer>
-
-        <uint16_t name='min_temp'/>
-        <uint16_t name='max_temp'/>
-        <uint16_t name='temp_factor'/>
-
-        <int32_t name='unused'/>
-
-        <int32_t name='unk11'/>
-        <int16_t name='unk12'/>
-
-        <int32_t name='clothing_item_id' init-value='-1' comment='v0.34.06'/>
-    </struct-type>
-
-    <struct-type type-name='color_modifier_raw'>
-        <stl-vector name='color_indexes'>
-            <int32_t ref-target='descriptor_color'/>
-        </stl-vector>
-        <stl-vector type-name='int32_t' name='unk2'/>
-
-        <stl-vector type-name='int16_t' name='unk3'/>
-        <stl-vector type-name='int16_t' name='unk4'/>
-
-        <int16_t name='unk5' />
-        <int32_t name='start_date'/>
-        <int32_t name='end_date'/>
-        <int32_t name='unk6' />
-        <stl-string name="part" />
-        <int16_t name="unk_6c"/>
-        <int16_t name="unk_6e"/>
-        <int32_t name="unk_70"/>
-        <int32_t name="unk_74"/>
-        <stl-vector name="unk_78">
-            <pointer/>
-        </stl-vector>
-        <stl-vector name="unk_88">
-            <pointer/>
-        </stl-vector>
-    </struct-type>
-
-    <struct-type type-name='caste_clothing_item'>
-        <int16_t name="body_part_id"/>
-        <int32_t name="unk_4"/>
-
-        <!-- This stuff appears to be used as temporaries
-             during claim selection or whatever. -->
-        <static-array name='item' count='3' comment='under, over, cover'>
-            <pointer type-name="item"/>
-        </static-array>
-        <static-array name="unk_14" count='3' type-name='int32_t'/>
-        <static-array name="size" count='3' type-name='int32_t'/>
-        <static-array name="permit" count='3' type-name='int32_t'/>
-        <static-array name="unk_38" count='3' type-name='int32_t'/>
-    </struct-type>
-
-    <struct-type type-name='caste_body_info'>
-        <stl-vector name='body_parts'>
-            <pointer type-name='body_part_raw'/>
-        </stl-vector>
-
-        <stl-vector name='attacks'>
-            <pointer/>
-        </stl-vector>
-
-        <stl-vector name='interactions' comment='v0.34.01'>
-            <pointer/>
-        </stl-vector>
-
-        <stl-vector name='extra_butcher_objects' comment='v0.34.01'>
-            <pointer/>
-        </stl-vector>
-
-        <int32_t name='unk8'/>
-
-        <stl-vector name='layer_part' index-refers-to='$$._global.layer_idx[$].refers-to'>
-            <int16_t refers-to='$$._global.body_parts[$]'/>
-        </stl-vector>
-        <stl-vector name='layer_idx'>
-            <int16_t refers-to='$$._global.layer_part[$$._key].refers-to.layers[$]'/>
-        </stl-vector>
-        <stl-vector type-name='int32_t' name='unk10'/>
-        <stl-vector name='layer_nonsolid' index-refers-to='$$._global.layer_part[$].refers-to'>
-            Index in nonsolid_layers if applicable
-            <int32_t refers-to='$$._global.nonsolid_layers[$].refers-to'/>
-        </stl-vector>
-
-        <stl-vector name='nonsolid_layers'>
-            For blood, magma, iron men etc, lists BLOOD/MAGMA/GAS layers.
-            For other titans and FBs, lists all layers. For ordinary, empty.
-            <int32_t refers-to='$$._global.layer_part[$].refers-to'/>
-        </stl-vector>
-
-        <int32_t comment='v0.34.01'/>
-
-        <compound name='materials' type-name='material_vec_ref'/>
-
-        <int32_t name='unk15a'/>
-        <int32_t name='unk15b'/>
-        <int32_t name='unk15c'/>
-        <int32_t name='unk15d'/>
-
-        <pointer name='clothing_items' comment='v0.34.06'>
-            <stl-vector>
-                <pointer type-name='caste_clothing_item'/>
-            </stl-vector>
-        </pointer>
-    </struct-type>
-
+<!--
     <struct-type type-name='caste_raw'>
         <stl-string name='caste_id'/>
 
@@ -758,20 +514,18 @@
 
         <stl-vector type-name='pointer' comment='v0.34.01'/>
     </struct-type>
-
-    <struct-type type-name='creature_raw' instance-vector='$global.world.raws.creatures.all'>
+-->
+    <struct-type type-name='creature_raw' instance-vector='$global.world.raws.creatures'>
         <stl-string name='creature_id'/>
 
         <code-helper name='describe'>$.creature_id</code-helper>
 
         <static-array type-name='stl-string' name='name' count='3'/>
-        <static-array type-name='stl-string' name='general_baby_name' count='2'/>
-        <static-array type-name='stl-string' name='general_child_name' count='2'/>
+        <static-array type-name='stl-string' name='baby_name' count='2'/>
+        <static-array type-name='stl-string' name='child_name' count='2'/>
 
-        <uint8_t name='creature_tile'/>
-        <uint8_t name='creature_soldier_tile'/>
+        <uint8_t name='tile'/>
         <uint8_t name='alttile'/>
-        <uint8_t name='soldier_alttile'/>
         <uint8_t name='glowtile'/>
 
         <uint16_t name='temperature1'/>
@@ -784,81 +538,15 @@
         <static-array type-name='int16_t' name='color' count='3'/>
         <static-array type-name='int16_t' name='glowcolor' count='3'/>
 
-        <int32_t name='adultsize'/>
+        <int32_t name='size'/>
 
         <stl-vector name='prefstring'>
             <pointer type-name='stl-string'/>
         </stl-vector>
 
-        <stl-vector type-name='int16_t' name='sphere'/>
-        <stl-vector name='caste'>
-            <pointer type-name='caste_raw'/>
-        </stl-vector>
-
-        <stl-vector type-name='int32_t' name='pop_ratio'/>
-
         <df-flagarray name='flags' index-enum='creature_raw_flags'/>
 
         <padding name='stuff' size='6860'/>
-
-        <stl-vector name='unk5'/>
-        <stl-vector name='speech1' type-name='int8_t'/>
-        <stl-vector name='speech2' type-name='int32_t'/>
-        <stl-vector name='speech3'/>
-
-        <stl-vector name='material'>
-            <pointer type-name='material'/>
-        </stl-vector>
-        <stl-vector type-name='pointer' name='tissue'/>
-
-        <compound name='profession_name'>
-            <static-array type-name='stl-string' name='singular' count='106' index-enum='profession'/>
-            <static-array type-name='stl-string' name='plural' count='106' index-enum='profession'/>
-        </compound>
-
-        <pointer name='unk6pa'/>
-        <pointer name='unk6pb'/>
-
-        <stl-vector type-name='int32_t' name='unk6'/>
-        <stl-vector type-name='int32_t' name='unk7'/>
-
-        <stl-vector type-name='int32_t' name='hive_product_0'/>
-        <stl-vector type-name='int32_t' name='hive_product_1'/>
-        <stl-vector type-name='int16_t' name='hive_product_2'/>
-        <stl-vector type-name='int16_t' name='hive_product_3'/>
-        <stl-vector type-name='int16_t' name='hive_product_4'/>
-        <stl-vector type-name='int32_t' name='hive_product_5'/>
-
-        <static-array name='hive_product_tmpstr' count='5'>
-            <stl-vector>
-                <pointer type-name='stl-string'/>
-            </stl-vector>
-        </static-array>
-
-        <int32_t name='unk8'/>
-
-        <stl-vector name='raws'>
-            <pointer type-name='stl-string'/>
-        </stl-vector>
-    </struct-type>
-
-    <struct-type type-name='creature_variation_convert_tag'>
-        <stl-string name='cvct_master'/>
-        <stl-string name='cvct_target'/>
-        <stl-string name='cvct_replacement'/>
-    </struct-type>
-
-    <struct-type type-name='creature_variation' instance-vector='$global.world.raws.creature_variations'>
-        <stl-string name='id'/>
-        <stl-vector name='cv_convert_tag'>
-            <pointer type-name='creature_variation_convert_tag'/>
-        </stl-vector>
-        <stl-vector name='cv_new_tag'>
-            <pointer type-name='stl-string'/>
-        </stl-vector>
-        <stl-vector name='cv_remove_tag'>
-            <pointer type-name='stl-string'/>
-        </stl-vector>
     </struct-type>
 
     <enum-type type-name='body_part_template_flags'>
@@ -915,9 +603,6 @@
 
         <df-flagarray name='flags' index-enum='body_part_template_flags'/>
 
-        <int32_t name='default_relsize'/>
-        <int32_t name='number'/>
-
         <stl-vector name='name_singular' comment='first comes from BP, rest come from INDIVIDUAL_NAME'>
             <pointer type-name='stl-string'/>
         </stl-vector>
@@ -931,82 +616,6 @@
         <stl-vector name='parts'>
             <pointer type-name='body_part_template'/>
         </stl-vector>
-    </struct-type>
-
-    <enum-type type-name='tissue_template_flags'>
-        <enum-item name='THICKENS_ON_STRENGTH'/>
-        <enum-item name='THICKENS_ON_ENERGY_STORAGE'/>
-        <enum-item name='ARTERIES'/>
-        <enum-item name='SCARS'/>
-        <enum-item name='STRUCTURAL'/>
-        <enum-item name='NERVOUS'/>
-        <enum-item name='THOUGHT'/>
-        <enum-item name='MUSCULAR'/>
-
-        <enum-item name='SMELL'/>
-        <enum-item name='HEAR'/>
-        <enum-item name='FLIGHT'/>
-        <enum-item name='BREATHE'/>
-        <enum-item name='SIGHT'/>
-        <enum-item name='COSMETIC'/>
-        <enum-item name='CONNECTS'/>
-        <enum-item name='FUNCTIONAL'/>
-
-        <enum-item name='MAJOR_ARTERIES'/>
-        <enum-item name='TISSUE_LEAKS'/>
-        <enum-item name='STYLEABLE'/>
-        <enum-item name='CONNECTIVE_TISSUE_ANCHOR'/>
-        <enum-item name='SETTABLE'/>
-        <enum-item name='SPLINTABLE'/>
-    </enum-type>
-
-    <struct-type type-name='tissue_template' instance-vector='$global.world.raws.tissue_templates'>
-        <stl-string name='id'/>
-        <df-flagarray name='flags' index-enum='tissue_template_flags'/>
-        <stl-string name='tissue_name_singular'/>
-        <stl-string name='tissue_name_plural'/>
-        <static-array name='tissue_material_str' type-name='stl-string' count='3'/>
-        <int16_t/>
-        <int32_t/>
-        <int32_t name='relative_thickness'/>
-        <int32_t name='healing_rate'/>
-        <int32_t name='vascular'/>
-        <int32_t name='pain_receptors'/>
-        <int16_t name='tissue_shape'/>
-        <int32_t/>
-        <int16_t name='insulation'/>
-        <stl-string name='subordinate_to_tissue'/>
-        <int16_t name='tissue_mat_state'/>
-        <stl-string name='tissue_shape_str'/>
-    </struct-type>
-
-    <struct-type type-name='body_detail_plan' instance-vector='$global.world.raws.body_detail_plans'>
-        <stl-string name='id'/>
-        <stl-vector name='add_material_name'> <pointer type-name='stl-string'/> </stl-vector>
-        <stl-vector name='add_material_template'> <pointer type-name='stl-string'/> </stl-vector>
-        <stl-vector name='add_tissue_name'> <pointer type-name='stl-string'/> </stl-vector>
-        <stl-vector name='add_tissue_template'> <pointer type-name='stl-string'/> </stl-vector>
-        <stl-vector name='unk5c'/>
-        <stl-vector name='unk6c'/>
-        <stl-vector name='unk7c'/>
-        <stl-vector name='bp_layers_selection'/>
-        <stl-vector name='bp_layers_criteria'/>
-        <stl-vector name='bp_layers_tissue'/>
-        <stl-vector name='bp_layers_thickness'/>
-        <stl-vector name='bp_layers_position'/>
-        <stl-vector name='bp_layers_over_under'/>
-        <stl-vector name='bp_relsize_selection'/>
-        <stl-vector name='bp_relsize_criteria'/>
-        <stl-vector name='bp_relsize_value'/>
-        <stl-vector name='bp_position_selection'/>
-        <stl-vector name='bp_position_criteria'/>
-        <stl-vector name='bp_position_value'/>
-        <stl-vector name='bp_relation_selection_1'/>
-        <stl-vector name='bp_relation_criteria_1'/>
-        <stl-vector name='bp_relation_value_1'/>
-        <stl-vector name='bp_relation_selection_2'/>
-        <stl-vector name='bp_relation_criteria_2'/>
-        <stl-vector name='bp_relation_extent'/>
     </struct-type>
 </data-definition>
 

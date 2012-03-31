@@ -50,14 +50,13 @@
                 <stl-vector type-name='int16_t'/>
             </static-array>
 
-            <static-array name='metals' count='7' type-name='material_vec_ref'/>
+            <static-array name='metals' count='7' type-name='int16_t'/>
 
             <compound name='organic'>
-                <compound name='leather' type-name='material_vec_ref'/>
-                <compound name='fiber' type-name='material_vec_ref'/>
-                <compound name='silk' type-name='material_vec_ref'/>
-                <compound name='wool' type-name='material_vec_ref'/>
-                <compound name='wood' type-name='material_vec_ref'/>
+                <stl-vector name='leather' type-name='int16_t'/>
+                <stl-vector name='fiber' type-name='int16_t'/>
+                <stl-vector name='silk' type-name='int16_t'/>
+                <stl-vector name='wood' type-name='int16_t'/>
             </compound>
 
             <static-array name='unk10' count='3'>
@@ -65,57 +64,43 @@
             </static-array>
 
             <compound name='refuse'>
-                <compound name='bone' type-name='material_vec_ref'/>
-                <compound name='shell' type-name='material_vec_ref'/>
-                <compound name='unk1' type-name='material_vec_ref'/>
-                <compound name='tooth' type-name='material_vec_ref'/>
-                <compound name='hoof' type-name='material_vec_ref'/>
+                <stl-vector name='bone' type-name='int16_t'/>
+                <stl-vector name='shell' type-name='int16_t'/>
+                <stl-vector name='unk1' type-name='int16_t'/>
+                <stl-vector name='tooth' type-name='int16_t'/>
+                <stl-vector name='hoof' type-name='int16_t'/>
             </compound>
 
             <compound name='misc_mat'>
-                <compound name='unk2' type-name='material_vec_ref'/>
-                <compound name='glass' type-name='material_vec_ref'/>
-                <compound name='sand' type-name='material_vec_ref'/>
-                <compound name='clay' type-name='material_vec_ref'/>
-                <compound name='rock_bone_metal' type-name='material_vec_ref'/>
-                <compound name='unk4' type-name='material_vec_ref'/>
-                <compound name='wood' type-name='material_vec_ref'/>
-                <compound name='metal_leather' type-name='material_vec_ref'/>
-                <compound name='leather' type-name='material_vec_ref'/>
-                <compound name='leather2' type-name='material_vec_ref'/>
-                <compound name='metal' type-name='material_vec_ref'/>
-                <compound name='wood2' type-name='material_vec_ref' comment='v0.34.01'/>
-                <compound name='rock_metal' type-name='material_vec_ref' comment='v0.34.01'/>
-                <compound name='booze' type-name='material_vec_ref'/>
-                <compound name='cheese' type-name='material_vec_ref'/>
-                <compound name='powders' type-name='material_vec_ref'/>
-                <compound name='extracts' type-name='material_vec_ref'/>
-                <compound name='meat' type-name='material_vec_ref'/>
+                <stl-vector name='unk2' type-name='int16_t'/>
+                <stl-vector name='glass' type-name='int16_t'/>
+                <stl-vector name='rock_bone_metal' type-name='int16_t'/>
+                <stl-vector name='unk4' type-name='int16_t'/>
+                <stl-vector name='wood' type-name='int16_t'/>
+                <stl-vector name='metal_leather' type-name='int16_t'/>
+                <stl-vector name='leather' type-name='int16_t'/>
+                <stl-vector name='leather2' type-name='int16_t'/>
+                <stl-vector name='metal' type-name='int16_t'/>
+                <stl-vector name='booze' type-name='int16_t'/>
+                <stl-vector name='cheese' type-name='int16_t'/>
+                <stl-vector name='powders' type-name='int16_t'/>
+                <stl-vector name='extracts' type-name='int16_t'/>
+                <stl-vector name='meat' type-name='int16_t'/>
             </compound>
 
             <stl-vector name='fish_races'>
                 <int32_t ref-target='creature_raw'/>
             </stl-vector>
-            <stl-vector name='fish_castes'>
-                <int16_t ref-target='caste_raw' aux-value='$$._parent.fish_races[$._key]'/>
-            </stl-vector>
 
-            <stl-vector name='egg_races'>
-                <int32_t ref-target='creature_raw'/>
-            </stl-vector>
-            <stl-vector name='egg_castes'>
-                <int16_t ref-target='caste_raw' aux-value='$$._parent.egg_races[$._key]'/>
-            </stl-vector>
-
-            <compound name='plants' type-name='material_vec_ref'/>
-            <compound name='seeds' type-name='material_vec_ref'/>
+            <stl-vector name='plants' type-name='int16_t'/>
+            <stl-vector name='seeds' type-name='int16_t'/>
 
             <compound name='wood_products' comment='lye, charcoal, potash, pearlash, and coke'>
                 <stl-vector name='item_type'>
                     <enum base-type='int16_t' type-name='item_type'/>
                 </stl-vector>
                 <stl-vector type-name='int16_t' name='item_subtype'/>
-                <compound name='material' type-name='material_vec_ref'/>
+                <stl-vector name='material' type-name='int16_t'/>
             </compound>
 
             <compound name='animals'>
@@ -134,33 +119,8 @@
                 <stl-vector name='mount_races'>
                     <int32_t ref-target='creature_raw'/>
                 </stl-vector>
-                <stl-vector name='war_exotic_races' comment='v0.34.06'>
-                    <int32_t ref-target='creature_raw'/>
-                </stl-vector>
                 <stl-vector name='unk728_races'>
                     <int32_t ref-target='creature_raw'/>
-                </stl-vector>
-
-                <stl-vector name='pet_castes'>
-                    <int16_t ref-target='caste_raw' aux-value='$$._parent.pet_races[$._key]'/>
-                </stl-vector>
-                <stl-vector name='wagon_castes'>
-                    <int16_t ref-target='caste_raw' aux-value='$$._parent.wagon_races[$._key]'/>
-                </stl-vector>
-                <stl-vector name='pack_animal_castes'>
-                    <int16_t ref-target='caste_raw' aux-value='$$._parent.pack_animal_races[$._key]'/>
-                </stl-vector>
-                <stl-vector name='wagon_puller_castes'>
-                    <int16_t ref-target='caste_raw' aux-value='$$._parent.wagon_puller_races[$._key]'/>
-                </stl-vector>
-                <stl-vector name='mount_castes'>
-                    <int16_t ref-target='caste_raw' aux-value='$$._parent.mount_races[$._key]'/>
-                </stl-vector>
-                <stl-vector name='war_exotic_castes'>
-                    <int16_t ref-target='caste_raw' aux-value='$$._parent.war_exotic_races[$._key]'/>
-                </stl-vector>
-                <stl-vector name='unk728_castes'>
-                    <int16_t ref-target='caste_raw' aux-value='$$._parent.unk728_races[$._key]'/>
                 </stl-vector>
             </compound>
 
@@ -176,12 +136,6 @@
 
             <int16_t name='unk15a'/>
             <int16_t name='unk15b'/>
-
-            <static-array name='ethic' count='22' index-enum='ethic_type'>
-                <enum base-type='int16_t' type-name='ethic_response'/>
-            </static-array>
-
-            <compound name='unk_metal16' type-name='material_vec_ref'/>
 
             <stl-vector name='unk18' type-name='int16_t'/>
             <stl-vector name='unk19' type-name='int8_t'/>
@@ -288,8 +242,8 @@
         </stl-vector>
 
         <compound name='unknown2'>
-            <compound name='flour_sugar' type-name='material_vec_ref'/>
-            <compound name='dye' type-name='material_vec_ref'/>
+            <stl-vector name='flour_sugar' type-name='int16_t'/>
+            <stl-vector name='dye' type-name='int16_t'/>
 
             <static-array name='unk5' count='30'>
                 <stl-vector type-name='int16_t'/>

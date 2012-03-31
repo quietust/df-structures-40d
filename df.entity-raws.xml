@@ -79,57 +79,6 @@
         <enum-item/>
     </enum-type>
 
-    <enum-type type-name='world_construction_type'>
-        <enum-item name='ROAD'/>
-        <enum-item name='TUNNEL'/>
-        <enum-item name='BRIDGE'/>
-        <enum-item name='WALL'/>
-    </enum-type>
-
-    <enum-type type-name='ethic_type'>
-        <enum-item name='KILL_ENTITY_MEMBER'/>
-        <enum-item name='KILL_NEUTRAL'/>
-        <enum-item name='KILL_ENEMY'/>
-        <enum-item name='KILL_ANIMAL'/>
-        <enum-item name='KILL_PLANT'/>
-        <enum-item name='TORTURE_AS_EXAMPLE'/>
-        <enum-item name='TORTURE_FOR_INFORMATION'/>
-        <enum-item name='TORTURE_FOR_FUN'/>
-        <enum-item name='TORTURE_ANIMALS'/>
-        <enum-item name='TREASON'/>
-        <enum-item name='OATH_BREAKING'/>
-        <enum-item name='LYING'/>
-        <enum-item name='VANDALISM'/>
-        <enum-item name='TRESPASSING'/>
-        <enum-item name='THEFT'/>
-        <enum-item name='ASSAULT'/>
-        <enum-item name='SLAVERY'/>
-        <enum-item name='EAT_SAPIENT_OTHER'/>
-        <enum-item name='EAT_SAPIENT_KILL'/>
-        <enum-item name='MAKE_TROPHY_SAME_RACE'/>
-        <enum-item name='MAKE_TROPHY_SAPIENT'/>
-        <enum-item name='MAKE_TROPHY_ANIMAL'/>
-    </enum-type>
-
-    <enum-type type-name='ethic_response' base-type='int16_t'>
-        <enum-item name='NOT_APPLICABLE'/>
-        <enum-item name='ACCEPTABLE'/>
-        <enum-item name='PERSONAL_MATTER'/>
-        <enum-item name='JUSTIFIED_IF_NO_REPERCUSSIONS'/>
-        <enum-item name='JUSTIFIED_IF_GOOD_REASON'/>
-        <enum-item name='JUSTIFIED_IF_EXTREME_REASON'/>
-        <enum-item name='JUSTIFIED_IF_SELF_DEFENSE'/>
-        <enum-item name='ONLY_IF_SANCTIONED'/>
-        <enum-item name='MISGUIDED'/>
-        <enum-item name='SHUN'/>
-        <enum-item name='APPALLING'/>
-        <enum-item name='PUNISH_REPRIMAND'/>
-        <enum-item name='PUNISH_SERIOUS'/>
-        <enum-item name='PUNISH_EXILE'/>
-        <enum-item name='PUNISH_CAPITAL'/>
-        <enum-item name='UNTHINKABLE'/>
-    </enum-type>
-
     <struct-type type-name='entity_raw' instance-vector='$global.world.raws.entities'>
         <stl-string name='code'/>
 
@@ -265,7 +214,6 @@
         </compound>
 
         <compound name='habitat'>
-            <static-array name='sphere_alignment' type-name='int32_t' count='130' index-enum='sphere_type'/>
             <static-array name='art_facet_modifier' type-name='int32_t' count='4' index-enum='art_facet_type'/>
             <static-array name='art_image_element_modifier' type-name='int32_t' count='5' index-enum='art_image_element_type'/>
             <static-array name='item_improvement_modifier' type-name='int32_t'
@@ -292,20 +240,9 @@
             <int16_t name='trade_siege'/>
         </compound>
 
-        <static-array name='ethic' count='22' index-enum='ethic_type'>
-            <enum base-type='int16_t' type-name='ethic_response'/>
-        </static-array>
-
         <int32_t name='max_site_pop_number'/>
         <int32_t name='max_pop_number'/>
         <int32_t name='max_starting_civ_number'/>
-
-        <stl-vector name='religion'>
-            <int16_t/>
-        </stl-vector>
-        <stl-vector name='religion_sphere'>
-            <enum base-type='int16_t' type-name='sphere_type'/>
-        </stl-vector>
 
         <compound name='jobs'>
             <static-array name='permitted_job' type-name='bool'
@@ -314,9 +251,6 @@
                           index-enum='unit_labor' count='94'/>
             <static-array name='permitted_skill' type-name='bool'
                           index-enum='job_skill' count='116'/>
-
-            <static-array name='world_construction' type-name='bool'
-                          index-enum='world_construction_type' count='4'/>
         </compound>
 
         <stl-vector name='positions'>

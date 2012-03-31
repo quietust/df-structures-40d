@@ -409,7 +409,7 @@
 
         <int32_t name='unk_59e78'/>
 
-        -- hist figures
+        - hist figures
 
         <compound name='history' type-name='world_history'/>
 

@@ -877,27 +877,6 @@
         <int32_t name='dimension'/>
     </class-type>
 
-    <class-type type-name='item_eggst' inherits-from='item_actual'>
-        <int16_t name='race' ref-target='creature_raw'/>
-        <int16_t name='caste' ref-target='caste_raw' aux-value='$$.race'/>
-        <int32_t name='unk_7c'/>
-        <compound name='egg_materials' type-name='material_vec_ref'/>
-        <padding size='44'/>
-        <int32_t comment='v0.34.01, actual offset unknown'/>
-        <int32_t comment='v0.34.06, actual offset unknown'/>
-        <compound name='unk_cc'>
-            <int16_t/>
-            <int16_t/>
-            <int16_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int16_t/>
-        </compound>
-        <int32_t/>
-        <int32_t name='size'/>
-    </class-type>
-
     -- CONSTRUCTED
 
     <class-type type-name='item_doorst' inherits-from='item_constructed'/>
