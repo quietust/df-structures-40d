@@ -94,7 +94,7 @@
     </bitfield-type>
 
     <enum-type type-name='block_flags'>
-        <flag-bit name='designated' comment='for jobs etc'/>
+        <enum-item name='designated' comment='for jobs etc'/>
     </enum-type>
 
     <struct-type type-name='map_block'>
