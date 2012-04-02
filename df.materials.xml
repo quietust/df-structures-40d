@@ -51,28 +51,194 @@
         <enum-item name='SLIME'/>
     </enum-type>
 
+    <enum-type type-name='matgloss_stone_flags'>
+        <enum-item name='LIGHT'/>
+        <enum-item name='DARK'/>
+        <enum-item name='LAVA'/>
+        <enum-item name='SHARP'/>
+        <enum-item name='RIVER'/>
+        <enum-item name='FLUX'/>
+    </enum-type>
+
     <struct-type type-name='matgloss_stone' instance-vector='$global.world.raws.matgloss_stone'>
         <stl-string name='id'/>
-
         <code-helper name='describe'>$.id</code-helper>
+
+        <int32_t name='flags'/>
+        <stl-string name='name'/>
+        <uint8_t name='tile'/>
+        <static-array type-name='int16_t' name='color' count='3'/>
+
+        <uint16_t name='spec_heat'/>
+        <uint16_t name='heatdam_point'/>
+        <uint16_t name='colddam_point'/>
+        <uint16_t name='ignite_point'/>
+        <uint16_t name='melting_point'/>
+        <uint16_t name='boiling_point'/>
+        <uint16_t name='fixed_temp'/>
     </struct-type>
+
+    <enum-type type-name='matgloss_gem_flags'>
+        <enum-item name='ORNAMENTAL'/>
+        <enum-item name='SEMI'/>
+        <enum-item name='PRECIOUS'/>
+        <enum-item name='RARE'/>
+        <enum-item name='GLASS'/>
+    </enum-type>
 
     <struct-type type-name='matgloss_gem' instance-vector='$global.world.raws.matgloss_gem'>
         <stl-string name='id'/>
-
         <code-helper name='describe'>$.id</code-helper>
+
+        <int32_t name='flags'/>
+        <static-array type-name='stl-string' name='name' count='2'/>
+        <uint8_t name='tile'/>
+        <int16_t name='color'/>
+        <int32_t name='value'/>
+
+        <uint16_t name='spec_heat'/>
+        <uint16_t name='heatdam_point'/>
+        <uint16_t name='colddam_point'/>
+        <uint16_t name='ignite_point'/>
+        <uint16_t name='melting_point'/>
+        <uint16_t name='boiling_point'/>
+        <uint16_t name='fixed_temp'/>
     </struct-type>
+
+    <enum-type type-name='matgloss_plant_flags'>
+        <enum-item name='SWAMP'/>
+        <enum-item name='RIVER'/>
+        <enum-item name='CAVE'/>
+        <enum-item name='FOREST'/>
+        <enum-item name='SPRING'/>
+        <enum-item name='SUMMER'/>
+        <enum-item name='AUTUMN'/>
+        <enum-item name='WINTER'/>
+
+        <enum-item/>
+        <enum-item name='SEED'/>
+        <enum-item name='EDIBLE_RAW'/>
+        <enum-item name='EDIBLE_VERMIN'/>
+        <enum-item name='LEAVES'/>
+        <enum-item name='EXTRACT_VIAL'/>
+        <enum-item name='EXTRACT_BAG'/>
+        <enum-item name='EXTRACT_BARREL'/>
+
+        <enum-item name='THREAD'/>
+        <enum-item name='MILL'/>
+        <enum-item name='EXTRACT_STILL_VIAL'/>
+        <enum-item name='DRINK'/>
+        <enum-item name='EXTRACT_COOKABLE'/>
+        <enum-item name='EDIBLE_WHENCOOKED'/>
+        <enum-item name='COOKABLE_WHEN_MILLED'/>
+        <enum-item name='MILL_DYE'/>
+    </enum-type>
 
     <struct-type type-name='matgloss_plant' instance-vector='$global.world.raws.matgloss_plant'>
         <stl-string name='id'/>
-
         <code-helper name='describe'>$.id</code-helper>
+
+        <int32_t name='flags'/>
+        <stl-string name='name'/>
+        <stl-string name='name_plural'/>
+        <stl-string name='drink_name'/>
+        <stl-string name='seedname'/>
+        <stl-string name='mill_name'/>
+        <stl-string name='extract_name'/>
+
+        <static-array count='7'> // plant, CLOTH, EXTRACT, DRINK, CHEESE
+            <uint16_t name='spec_heat'/>
+            <uint16_t name='heatdam_point'/>
+            <uint16_t name='colddam_point'/>
+            <uint16_t name='ignite_point'/>
+            <uint16_t name='melting_point'/>
+            <uint16_t name='boiling_point'/>
+            <uint16_t name='fixed_temp'/>
+        </static-array>
+
+        <stl-string name='mill_dye'/>
+        <uint8_t name='tile'/>
+        <uint8_t name='leaves'/>
+        <int32_t name='growdur'/>
+        <int32_t name='value'/>
+        <int32_t name='drinkvalue'/>
+        <int32_t name='extractvalue'/>
+        <int32_t name='mill_value'/>
+        <static-array type-name='int16_t' name='color' count='3'/>
+        <static-array type-name='int16_t' name='seed_color' count='3'/>
+        <static-array type-name='int16_t' name='drink_color' count='3'/>
+        <static-array type-name='int16_t' name='extract_color' count='3'/>
+        <static-array type-name='int16_t' name='mill_color' count='3'/>
+        <int16_t name='genpower'/>
+        <int16_t name='frequency'/>
+        <int16_t name='clustersize'/>
+
+        <stl-vector name='prefstring'>
+            <pointer type-name='stl-string'/>
+        </stl-vector>
     </struct-type>
+
+    <enum-type type-name='matgloss_wood_flags'>
+        <enum-item name='AUTUMNCOLOR'/>
+        <enum-item name='WET'/>
+        <enum-item name='DRY'/>
+        <enum-item name='BIOME_MOUNTAIN'/>
+        <enum-item name='BIOME_GLACIER'/>
+        <enum-item name='BIOME_TUNDRA'/>
+        <enum-item name='BIOME_SWAMP_TEMPERATE_FRESHWATER'/>
+        <enum-item name='BIOME_SWAMP_TEMPERATE_SALTWATER'/>
+
+        <enum-item name='BIOME_MARSH_TEMPERATE_FRESHWATER'/>
+        <enum-item name='BIOME_MARSH_TEMPERATE_SALTWATER'/>
+        <enum-item name='BIOME_SWAMP_TROPICAL_FRESHWATER'/>
+        <enum-item name='BIOME_SWAMP_TROPICAL_SALTWATER'/>
+        <enum-item name='BIOME_SWAMP_MANGROVE'/>
+        <enum-item name='BIOME_MARSH_TROPICAL_FRESHWATER'/>
+        <enum-item name='BIOME_MARSH_TROPICAL_SALTWATER'/>
+        <enum-item name='BIOME_FOREST_TAIGA'/>
+
+        <enum-item name='BIOME_FOREST_TEMPERATE_CONIFER'/>
+        <enum-item name='BIOME_FOREST_TEMPERATE_BROADLEAF'/>
+        <enum-item name='BIOME_FOREST_TROPICAL_CONIFER'/>
+        <enum-item name='BIOME_FOREST_TROPICAL_DRY_BROADLEAF'/>
+        <enum-item name='BIOME_FOREST_TROPICAL_MOIST_BROADLEAF'/>
+        <enum-item name='BIOME_GRASSLAND_TEMPERATE'/>
+        <enum-item name='BIOME_SAVANNA_TEMPERATE'/>
+        <enum-item name='BIOME_SHRUBLAND_TEMPERATE'/>
+
+        <enum-item name='BIOME_GRASSLAND_TROPICAL'/>
+        <enum-item name='BIOME_SAVANNA_TROPICAL'/>
+        <enum-item name='BIOME_SHRUBLAND_TROPICAL'/>
+        <enum-item name='BIOME_DESERT_BADLAND'/>
+        <enum-item name='BIOME_DESERT_ROCK'/>
+        <enum-item name='BIOME_DESERT_SAND'/>
+        <enum-item name='BIOME_OCEAN'/>
+        <enum-item name='BIOME_INLAND_FRESHWATER'/>
+
+        <enum-item name='BIOME_INLAND_BRACKISHWATER'/>
+        <enum-item name='BIOME_INLAND_SALTWATER'/>
+        <enum-item name='BIOME_SUBTERRANEAN_RIVER'/>
+        <enum-item name='BIOME_SUBTERRANEAN_CHASM'/>
+        <enum-item name='BIOME_SUBTERRANEAN_LAVA'/>
+    </enum-type>
 
     <struct-type type-name='matgloss_wood' instance-vector='$global.world.raws.matgloss_wood'>
         <stl-string name='id'/>
-
         <code-helper name='describe'>$.id</code-helper>
+        <df-flagarray name='flags' index-enum='matgloss_wood_flags'/>
+        <stl-string name='name'/>
+        <stl-string name='adj'/>
+        <stl-vector name='prefstring'>
+            <pointer type-name='stl-string'/>
+        </stl-vector>
+
+        <uint16_t name='spec_heat'/>
+        <uint16_t name='heatdam_point'/>
+        <uint16_t name='colddam_point'/>
+        <uint16_t name='ignite_point'/>
+        <uint16_t name='melting_point'/>
+        <uint16_t name='boiling_point'/>
+        <uint16_t name='fixed_temp'/>
     </struct-type>
 
 
