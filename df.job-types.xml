@@ -104,10 +104,6 @@
             <item-attr name='caption' value='Fill Waterskin'/>
             <item-attr name='type' value='LifeSupport'/>
         </enum-item>
-        <enum-item name='FillWaterskin2'>
-            <item-attr name='caption' value='Fill Waterskin'/>
-            <item-attr name='type' value='LifeSupport'/>
-        </enum-item>
         <enum-item name='Sleep'>
             <item-attr name='caption' value='Sleep'/>
             <item-attr name='type' value='LifeSupport'/>
