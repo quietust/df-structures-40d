@@ -356,7 +356,6 @@
 
         <enum-item name='MASTER_THIEF'>
             <item-attr name='caption' value='Master Thief'/>
-            <item-attr name='parent' value='THIEF'/>
         </enum-item>
         <enum-item name='THIEF'>
             <item-attr name='caption' value='Thief'/>

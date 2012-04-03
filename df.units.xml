@@ -106,13 +106,17 @@
     <struct-type type-name='unit' key-field='id' instance-vector='$global.world.units.all'>
         <compound type-name='language_name' name='name'/>
 
+        <code-helper name='describe'>
+            (describe-obj $.name)
+        </code-helper>
+
         <stl-string name='custom_profession'/>
 
-        <enum base-type='int16_t' name='profession' type-name='profession'/>
-        <enum base-type='int16_t' name='profession2' type-name='profession'/>
+        <enum base-type='int32_t' name='profession' type-name='profession'/>
+        <enum base-type='int32_t' name='profession2' type-name='profession'/>
+        <int16_t name='race' ref-target='creature_raw'/>
 
-        <int32_t name='race' ref-target='creature_raw'/>
-
+        <int32_t/>
         <compound name='pos' type-name='coord'/>
         <compound name='old_pos' type-name='coord'>
             <comment>
@@ -121,6 +125,168 @@
                 to mine in an aquifer.
             </comment>
         </compound>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+
+        <compound name='flags1' type-name='unit_flags1'/>
+        <compound name='flags2' type-name='unit_flags2'/>
+        <int8_t/>
+        <int16_t/>
+        <int8_t/>
+        <int32_t name='id'/>
+        <int16_t/>
+        <int32_t/>
+        <int32_t name='civ_id' ref-target='historical_entity'/>
+
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <int32_t/>
+        <stl-vector/>
+        <stl-vector/>
+
+        <compound type-name='language_name' name='squad_name'/>
+        <int8_t/>
+        <int8_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int32_t/>
+
+        <int16_t/>
+        <int32_t/>
+        <int32_t/>
+        <int16_t/>
+        <int16_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <static-array type-name='int8_t' count='36'/>
+        <int16_t/>
+        <int16_t/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int16_t/>
+        <int16_t/>
+        <pointer comment='df_job' name='current_job' type-name='job'/>
+        <stl-vector name='mood_item_type'>
+            <int32_t ref-target='item_type'/>
+        </stl-vector>
+        <stl-vector name='mood_item_subtype'>
+            <int32_t/>
+        </stl-vector>
+        <stl-vector name='mood_material'>
+            <int32_t ref-target='material_type'/>
+        </stl-vector>
+        <stl-vector name='mood_matgloss'>
+            <int32_t/>
+        </stl-vector>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <stl-vector name='wounds'/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <int32_t/>
+        <int16_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <static-array type-name='int8_t' count='12'/>
+        <int16_t/>
+        <int16_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <stl-vector/>
+        <stl-vector/>
+        <int32_t/>
+        <int32_t/>
+        <int8_t/>
+        <compound type-name='language_name' name='artifact_name'/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <stl-vector name='skills'>
+            <pointer type-name='unit_skill'/>
+        </stl-vector>
+        <stl-vector/>
+        <stl-vector/>
+        <static-array type-name='bool' name='labors' index-enum='unit_labor' count='62'/>
+        <static-array type-name='int8_t' count='29' />
+        <int32_t/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <int32_t/>
+        <int16_t/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <int16_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <int32_t/>
+        <int16_t/>
+        <int16_t/>
+        <int32_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int32_t/>
+        <stl-vector/>
+        <int32_t/>
+        <int32_t/>
+
+<!--
 
         <compound name='unknown1'>
             <uint32_t name='unk_9c'/>
@@ -138,8 +304,6 @@
             <compound name='path' type-name='coord_path'/>
         </compound>
 
-        <compound name='flags1' type-name='unit_flags1'/>
-        <compound name='flags2' type-name='unit_flags2'/>
 
         <compound name='unknown2'>
             -- defined for visiting diplomats
@@ -155,7 +319,6 @@
 
         <int16_t name='unk_100'/>
 
-        <int32_t name='civ_id' ref-target='historical_entity'/>
         <int32_t name='population_id' ref-target='entity_population'/>
         <int32_t name='invasion_id' ref-target='invasion_info'/>
 
@@ -351,13 +514,9 @@
 
             <uint8_t name='unk_5dc'/>
 
-            <compound type-name='language_name' name='artifact_name'/>
-
             <stl-vector name='demands'>
                 <pointer type-name='unit_demand'/>
             </stl-vector>
-
-            <static-array type-name='bool' name='labors' index-enum='unit_labor' count='94'/>
 
             <stl-vector name='unk_6d0'/>
             <stl-vector name='unk_6e0' type-name='int32_t'/> // item ids?
@@ -409,9 +568,6 @@
             <int32_t ref-target='unit'/>
         </stl-vector>
 
-        <stl-vector name='skills'>
-            <pointer type-name='unit_skill'/>
-        </stl-vector>
         <stl-vector name='preferences'>
             <pointer type-name='unit_preference'/>
         </stl-vector>
@@ -424,6 +580,7 @@
         </stl-vector>
 
         <stl-vector name='unk6'/>
+-->
     </struct-type>
 
     <struct-type type-name='unit_inventory_item'>
