@@ -66,7 +66,7 @@
         <enum base-type='int16_t' name='item_type' type-name='item_type'/>
         <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <compound name='flags' type-name='item_flags'/>
         <int32_t name='item_id' ref-target='item'/>
     </class-type>
@@ -182,7 +182,7 @@
         <compound name='name' type-name='language_name'/>
         <int32_t/>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <enum base-type='int16_t' name='quality' type-name='item_quality'/>
         <int32_t name='artist' ref-target='historical_figure'/>
         <int32_t name='site' ref-target='world_site'/>

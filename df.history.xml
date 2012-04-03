@@ -36,14 +36,14 @@
         <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
 
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name='matgloss'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
 
         -- If shot by a ranged weapon:
         <int32_t name='bow_item' ref-target='item'/>
         <enum base-type='int16_t' name='bow_item_type' type-name='item_type'/>
         <int16_t name='bow_item_subtype' refers-to='(item-subtype-target $$._parent.bow_item_type $)'/>
         <enum base-type='int16_t' name='bow_material' type-name='material_type'/>
-        <int16_t name='bow_matgloss'/>
+        <int16_t name='bow_matgloss' refers-to='(matgloss-target $$._parent.bow_material $)'/>
     </struct-type>
 
     <struct-type type-name='historical_figure_info'>

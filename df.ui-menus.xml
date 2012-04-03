@@ -94,7 +94,7 @@
     <class-type type-name='interface_button_building_material_selectorst'
                 inherits-from='interface_button_buildingst'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <compound name='material_category' type-name='job_material_category'/>
         <int8_t name="unk_1c"/>
     </class-type>
@@ -106,7 +106,7 @@
         <int16_t name="unused_30"/>
         <int16_t name="item_subtype"/>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <compound name="item_category" type-name='job_item_category'/>
         <int32_t name="hist_figure_id" ref-target='historical_figure'/>
         <compound name='material_category' type-name='job_material_category'/>
@@ -167,7 +167,7 @@
             <int32_t name="category_id" comment='weapons, armor, etc'/>
 
             <enum base-type='int16_t' name='material' type-name='material_type'/>
-            <int16_t name="matgloss"/>
+            <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
             <compound name='material_category' type-name='job_material_category'/>
         </compound>
 

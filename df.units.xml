@@ -608,7 +608,7 @@
 
     <struct-type type-name='unit_spatter'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
 
         <int16_t name="unk_8"/>
         <int16_t name="unk_a"/>

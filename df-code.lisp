@@ -70,54 +70,9 @@
 (defun find-activity (key) (find-by-id $global.world.activities.all $id key))
 (defun find-squad (key) (find-by-id $global.world.squads.all $id key))
 
-(defun find-inorganic (key) $global.world.raws.inorganics[key])
-(defun find-plant-raw (key) $global.world.raws.plants.all[key])
-(defun find-creature (key) $global.world.raws.creatures.all[key])
+(defun find-plant-raw (key) $global.world.raws.matgloss_plant[key])
+(defun find-creature (key) $global.world.raws.creatures[key])
 (defun find-figure (key) (find-by-id $global.world.history.figures $id key))
-
-(defun find-burrow (key) (find-by-id $global.ui.burrows.list $id key))
-
-(defun material-by-id (mat-type &optional mat-idx)
-  (let ((raws $global.world.raws))
-    (cond ((and (< (or mat-idx -1) 0) (< 0 mat-type))
-           $raws.mat_table.builtin[mat-type])
-          ((= mat-type 0)
-           (or $raws.inorganics[mat-idx].material
-               $raws.mat_table.builtin[0]))
-          ((<= 19 mat-type 218)
-           (or $raws.creatures.all[mat-idx].material[(- mat-type 19)]
-               $raws.mat_table.builtin[19]))
-          ((<= 219 mat-type 418)
-           (let ((hfig (find-figure mat-idx)))
-             (values
-              (or $raws.creatures.all[$hfig.race].material[(- mat-type 219)]
-                  $raws.mat_table.builtin[19])
-              hfig)))
-          ((<= 419 mat-type 618)
-           (or $raws.plants.all[mat-idx].material[(- mat-type 419)]
-               $raws.mat_table.builtin[419]))
-          ((< 0 mat-type)
-           $raws.mat_table.builtin[mat-type]))))
-
-(defun food-mat-by-idx (category-id idx)
-  (let* ((raws $global.world.raws)
-         (table $raws.mat_table)
-         (category (enum-to-int $organic_mat_category category-id))
-         (type $table.organic_types[category][idx])
-         (idx $table.organic_indexes[category][idx]))
-    (case category
-      ((1 2 3)
-       $raws.creatures[type].caste[idx])
-      (otherwise
-       (material-by-id type idx)))))
-
-(defun describe-material ($)
-  (let ((pfix (ignore-errors $.prefix))
-        (mtemp $.heat.melting_point))
-    (fmt "~@[~A ~]~A"
-         (if (string= pfix "") nil pfix)
-         (if (< mtemp 10015)
-              $.state_name[1] $.state_name[0]))))
 
 (defun item-subtype-target (type subtype)
   (let* ((defs $global.world.raws.itemdefs)
@@ -137,6 +92,31 @@
                   ($HELM $defs.helms)
                   ($PANTS $defs.pants)
                   ($FOOD $defs.food))))
+    $table[subtype]))
+
+(defun matgloss-target (type subtype)
+  (let* ((raws $global.world.raws)
+         (key (enum-to-key $item_type type))
+         (table (case key
+                  ($WOOD $raws.matgloss_wood)
+                  ($STONE_GRAY $raws.matgloss_stone)
+                  ($STONE_LIGHT $raws.matgloss_stone)
+                  ($STONE_DARK $raws.matgloss_stone)
+                  ($GEM_ORNAMENTAL $raws.matgloss_gem)
+                  ($GEM_SEMI $raws.matgloss_gem)
+                  ($GEM_PRECIOUS $raws.matgloss_gem)
+                  ($GEM_RARE $raws.matgloss_gem)
+                  ($BONE $raws.creatures)
+                  ($IVORY $raws.creatures)
+                  ($HORN $raws.creatures)
+                  ($PEARL $raws.creatures)
+                  ($SHELL $raws.creatures)
+                  ($LEATHER $raws.creatures)
+                  ($SILK $raws.creatures)
+                  ($PLANT $raws.matgloss_plant)
+                  ($RENDERED_FAT $raws.creatures)
+                  ($SOAP_ANIMAL $raws.creatures)
+                  ($FAT $raws.creatures))))
     $table[subtype]))
 
 (defun name-has-substring? (name substring)

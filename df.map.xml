@@ -237,14 +237,12 @@
         <enum-item name='Web'/>
         <enum-item name='MaterialGas'/>
         <enum-item name='MaterialVapor'/>
-        <enum-item name='OceanWave'/>
-        <enum-item name='SeaFoam'/>
     </enum-type>
 
     <struct-type type-name='effect'>
         <enum type-name='effect_type' base-type='int16_t' name='type'/>
-        <int16_t name='material'/>
-        <int16_t name='matgloss'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <int16_t name='density'/>
         <int16_t name='x'/>
         <int16_t name='y'/>

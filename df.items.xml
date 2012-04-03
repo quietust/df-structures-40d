@@ -102,7 +102,7 @@
     <class-type type-name='item_crafted' inherits-from='item_actual'
                 original-name='item_craftedst'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
 
         <int16_t name='maker_race' ref-target='creature_raw'/>
         <enum base-type='int16_t' name='quality' type-name='item_quality'/>
@@ -138,32 +138,32 @@
     <class-type type-name='item_barst' inherits-from='item_actual'>
         <int16_t name='subtype'/>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
 
     <class-type type-name='item_smallgemst' inherits-from='item_actual'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
     <class-type type-name='item_blocksst' inherits-from='item_actual'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
     <class-type type-name='item_orest' inherits-from='item_actual'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
     <class-type type-name='item_roughst' inherits-from='item_actual'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
     <class-type type-name='item_stonest' inherits-from='item_actual'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
     <class-type type-name='item_woodst' inherits-from='item_actual'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
 
     <class-type type-name='item_doorst' inherits-from='item_constructed'/>
@@ -348,7 +348,7 @@
 
     <class-type type-name='item_threadst' inherits-from='item_actual'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <int16_t/>
         <int16_t/>
         <int32_t/>
@@ -383,7 +383,7 @@
 
     <class-type type-name='item_ballistaarrowheadst' inherits-from='item_actual'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
 
     <class-type type-name='item_trappartsst' inherits-from='item_constructed'/>
@@ -394,24 +394,24 @@
 
     <class-type type-name='item_extractst' inherits-from='item_liquid'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
 
     <class-type type-name='item_potionst' inherits-from='item_liquid'/>
 
     <class-type type-name='item_drinkst' inherits-from='item_liquid'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
 
     <class-type type-name='item_powder_organicst' inherits-from='item_powder'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
 
     <class-type type-name='item_cheesest' inherits-from='item_actual'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <int32_t name='rot_timer'/>
     </class-type>
 
@@ -425,7 +425,7 @@
 
     <class-type type-name='item_liquid_miscst' inherits-from='item_liquid'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
 
     <class-type type-name='item_coinst' inherits-from='item_constructed'>
@@ -434,13 +434,13 @@
 
     <class-type type-name='item_globst' inherits-from='item_actual'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <int32_t name='rot_timer'/>
     </class-type>
 
     <class-type type-name='item_rockst' inherits-from='item_actual'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
 </data-definition>
 

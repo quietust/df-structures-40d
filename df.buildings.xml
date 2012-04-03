@@ -67,7 +67,7 @@
         <compound name='flags' type-name='building_flags'/>
 
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name='matgloss'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
 
         <compound name='room'>
             <pointer name='extents' type-name='uint8_t' is-array='true'>
@@ -361,7 +361,7 @@
 
     <class-type type-name='building_furnacest' inherits-from='building_actual'>
         <stl-vector name='melt_remainder' type-name='int32_t'
-                    index-refers-to='(material-by-id 0 $)'/>
+                    index-refers-to='material_type'/>
 
         <int16_t name="unk_108"/>
 

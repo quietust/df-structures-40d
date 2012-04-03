@@ -77,7 +77,7 @@
         <enum base-type='int32_t' name='type' type-name='item_type'/>
         <int32_t name='subtype' refers-to='(item-subtype-target $$._parent.type $)'/>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name="matgloss"/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
 
     <class-type type-name='general_ref_coinbatchst' inherits-from='general_ref'>
