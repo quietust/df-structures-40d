@@ -351,9 +351,6 @@
             <vmethod/>
             <vmethod/>
             <vmethod ret-type='bool' name='isImproved'/>
-            <vmethod name='getMagic'>
-                <ret-type><pointer><stl-vector><pointer type-name='item_magicness'/></stl-vector></pointer></ret-type>
-            </vmethod>
 
             -- 180
 
@@ -418,9 +415,6 @@
             <vmethod/>
             <vmethod/>
             <vmethod/>
-            <vmethod name='getSlabEngravingType'>
-                <ret-type><enum base-type='int16_t' type-name='slab_engraving_type'/></ret-type>
-            </vmethod>
             <vmethod ret-type='int32_t' name='getAbsorption'/>
 
             -- 220

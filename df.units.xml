@@ -306,7 +306,7 @@
 
 
         <compound name='unknown2'>
-            -- defined for visiting diplomats
+            defined for visiting diplomats
             <int8_t name='unk_ec'/>
             <int32_t name='unk_f0' ref-target='historical_entity'/>
             <int16_t name='unk_f4'/>
@@ -546,7 +546,7 @@
 
             <uint16_t name='unk_758'/>
 
-            -- coordinates, and a set of coordinate vectors
+            coordinates, and a set of coordinate vectors
             <compound name='unk_75a' type-name='coord'/>
             <compound name='unk_760' type-name='coord_path'/>
         </compound>
