@@ -93,7 +93,7 @@
 
     <class-type type-name='interface_button_building_material_selectorst'
                 inherits-from='interface_button_buildingst'>
-        <int16_t name="material" ref-target='material_type'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name="matgloss"/>
         <compound name='material_category' type-name='job_material_category'/>
         <int8_t name="unk_1c"/>
@@ -105,7 +105,7 @@
         <stl-string name="reaction_name"/>
         <int16_t name="unused_30"/>
         <int16_t name="item_subtype"/>
-        <int16_t name="material" ref-target='material_type'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name="matgloss"/>
         <compound name="item_category" type-name='job_item_category'/>
         <int32_t name="hist_figure_id" ref-target='historical_figure'/>
@@ -166,7 +166,7 @@
             <int32_t name="cursor"/>
             <int32_t name="category_id" comment='weapons, armor, etc'/>
 
-            <int16_t name="material" ref-target='material_type'/>
+            <enum base-type='int16_t' name='material' type-name='material_type'/>
             <int16_t name="matgloss"/>
             <compound name='material_category' type-name='job_material_category'/>
         </compound>

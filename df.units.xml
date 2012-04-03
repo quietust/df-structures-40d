@@ -199,7 +199,7 @@
             <int32_t/>
         </stl-vector>
         <stl-vector name='mood_material'>
-            <int32_t ref-target='material_type'/>
+            <enum base-type='int32_t' name='material' type-name='material_type'/>
         </stl-vector>
         <stl-vector name='mood_matgloss'>
             <int32_t/>
@@ -607,7 +607,7 @@
     </struct-type>
 
     <struct-type type-name='unit_spatter'>
-        <int16_t name="material" ref-target='material_type'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name="matgloss"/>
 
         <int16_t name="unk_8"/>

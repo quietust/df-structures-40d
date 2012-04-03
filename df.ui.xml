@@ -186,9 +186,9 @@
                 <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent._parent.item_types[$$._key] $)'/>
             </stl-vector>
             <stl-vector name='mat_types'>
-                <int16_t ref-target='material_type'/>
+                <enum base-type='int16_t' name='material' type-name='material_type'/>
             </stl-vector>
-            <stl-vector name='mat_indices' type-name='int16_t'/>
+            <stl-vector name='mat_glosses' type-name='int16_t'/>
             <stl-vector name='exc_types' type-name='int8_t'/>
         </compound>
 

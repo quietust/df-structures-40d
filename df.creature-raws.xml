@@ -296,7 +296,7 @@
         <int16_t name='damblock'/>
         <enum base-type='int16_t' name='itemcorpse_itemtype' type-name='item_type'/>
         <int16_t name='itemcorpse_itemsubtype'/>
-        <int16_t name="itemcorpse_material" ref-target='material_type'/>
+        <enum base-type='int16_t' name='itemcorpse_material' type-name='material_type'/>
         <int16_t name="itemcorpse_matgloss" comment='unused?'/>
         <int16_t name='itemcorpse_quality'/>
         <int16_t name='has_racegloss'/>
@@ -309,7 +309,7 @@
         <int16_t name='fat'/>
 
         <static-array type-name='int16_t' name='glowcolor' count='3'/>
-        <int16_t name="material" ref-target='material_type'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name="layering"/>
 
         <int32_t name='speed'/>

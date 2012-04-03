@@ -65,7 +65,7 @@
     <class-type type-name='art_image_element_itemst' inherits-from='art_image_element'>
         <enum base-type='int16_t' name='item_type' type-name='item_type'/>
         <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
-        <int16_t name="material" ref-target='material_type'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name="matgloss"/>
         <compound name='flags' type-name='item_flags'/>
         <int32_t name='item_id' ref-target='item'/>
@@ -181,7 +181,7 @@
         <int32_t name='event' ref-target='history_event'/>
         <compound name='name' type-name='language_name'/>
         <int32_t/>
-        <int16_t name="material" ref-target='material_type'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name="matgloss"/>
         <enum base-type='int16_t' name='quality' type-name='item_quality'/>
         <int32_t name='artist' ref-target='historical_figure'/>

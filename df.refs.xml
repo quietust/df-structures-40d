@@ -76,7 +76,7 @@
     <class-type type-name='general_ref_item_typest' inherits-from='general_ref'>
         <enum base-type='int32_t' name='type' type-name='item_type'/>
         <int32_t name='subtype' refers-to='(item-subtype-target $$._parent.type $)'/>
-        <int16_t name="material" ref-target='material_type'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name="matgloss"/>
     </class-type>
 

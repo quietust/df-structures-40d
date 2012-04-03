@@ -12,7 +12,7 @@
     </enum-type>
 
     <struct-type type-name='dye_info'>
-        <int16_t name="material" ref-target='material_type'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name="matgloss"/>
         <int32_t name='dyer' ref-target='historical_figure'/>
         <enum base-type='int16_t' name='quality' type-name='item_quality'/>
@@ -21,7 +21,7 @@
     </struct-type>
 
     <class-type type-name='itemimprovement' original-name='itemimprovementst'>
-        <int16_t name="material" ref-target='material_type'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name="matgloss"/>
         <int32_t name='maker' ref-target='historical_figure'/>
         <int32_t/>
