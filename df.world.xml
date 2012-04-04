@@ -420,8 +420,6 @@
 
         - hist figures
 
-        <compound name='history' type-name='world_history'/>
-
         <stl-vector name='entity_populations'>
             <pointer type-name='entity_population'/>
         </stl-vector>

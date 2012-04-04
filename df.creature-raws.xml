@@ -334,8 +334,8 @@
             <pointer type-name='stl-string'/>
         </stl-vector>
 
-        <stl-vector name='body'/>
-        <stl-vector name='attack'/>
+        <stl-vector name='body' type-name='pointer'/>
+        <stl-vector name='attack' type-name='pointer'/>
 
         <static-array type-name='int32_t' count='7'/>
         <static-array type-name='int32_t' count='7'/>
@@ -350,9 +350,9 @@
             <static-array type-name='int8_t' count='88'/>
         </static-array>
 
-        <stl-vector name='speech_1'/>
-        <stl-vector name='speech_2'/>
-        <stl-vector name='speech_3'/>
+        <stl-vector name='speech_1' type-name='int8_t'/>
+        <stl-vector name='speech_2' type-name='int32_t'/>
+        <stl-vector name='speech_3' type-name='int32_t'/>
     </struct-type>
 
     <enum-type type-name='body_part_template_flags'>
@@ -385,11 +385,6 @@
 
         <enum-item name='MOUTH'/>
         <enum-item name='APERTURE'/>
-        <enum-item name='SOCKET'/>
-        <enum-item name='TOTEMABLE'/>
-        <enum-item name='UNDER_PRESSURE'/>
-        <enum-item name='VERMIN_BUTCHER_ITEM'/>
-        <enum-item name='CONNECTOR'/>
     </enum-type>
 
     <enum-type type-name='body_part_template_contype' base-type='int16_t'>
@@ -402,19 +397,10 @@
 
     <struct-type type-name='body_part_template'>
         <stl-string name='id'/>
+        <stl-string name='name'/>
         <stl-string name='con'/>
-        <stl-string name='category'/>
-        <stl-string name='con_cat'/>
         <enum type-name='body_part_template_contype' base-type='int16_t' name='contype'/>
-
-        <df-flagarray name='flags' index-enum='body_part_template_flags'/>
-
-        <stl-vector name='name_singular' comment='first comes from BP, rest come from INDIVIDUAL_NAME'>
-            <pointer type-name='stl-string'/>
-        </stl-vector>
-        <stl-vector name='name_plural'>
-            <pointer type-name='stl-string'/>
-        </stl-vector>
+        <static-array type-name='int8_t' name='flags' count='6'/>
     </struct-type>
 
     <struct-type type-name='body_template' instance-vector='$global.world.raws.body_templates'>

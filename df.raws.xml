@@ -24,10 +24,8 @@
         <stl-vector name='bodyglosses'>
             <pointer key-field='id'>
                 <stl-string name='id'/>
-                <stl-string name='old_singular'/>
-                <stl-string name='new_singular'/>
-                <stl-string name='old_plural'/>
-                <stl-string name='new_plural'/>
+                <stl-string name='old'/>
+                <stl-string name='new'/>
             </pointer>
         </stl-vector>
 
