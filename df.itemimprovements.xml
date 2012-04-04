@@ -102,16 +102,10 @@
         <flag-bit name='north'/>
         <flag-bit name='south'/>
         <flag-bit name='hidden'/>
-        <flag-bit name='northwest'/>
-        <flag-bit name='northeast'/>
-        <flag-bit name='southwest'/>
-        <flag-bit name='southeast'/>
     </bitfield-type>
 
     <struct-type type-name='engraving' instance-vector='$global.world.engravings'>
         <int32_t name='artist' ref-target='historical_figure'/>
-        <int32_t name='masterpiece_event' ref-target='history_event'/>
-        <int32_t name='skill_rating' comment='at the moment of creation'/>
         <compound name='pos' type-name='coord'/>
         <compound name='flags' type-name='engraving_flags'/>
         <int8_t name='tile'/>

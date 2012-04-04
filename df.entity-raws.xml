@@ -2,21 +2,21 @@
     <enum-type type-name='entity_raw_flags'>
         <enum-item name='CIV_CONTROLLABLE'/>
         <enum-item name='INDIV_CONTROLLABLE'/>
-        <enum-item name='LAYER_LINKED'/>
-        <enum-item name='INDOOR_WOOD'/>
-        <enum-item name='WOOD_ARMOR'/>
+        <enum-item name='MOUNTAIN_SETTLEMENTS'/>
+        <enum-item name='FOREST_SETTLEMENTS'/>
+        <enum-item name='PLAINS_SETTLEMENTS'/>
         <enum-item name='SIEGER'/>
         <enum-item name='AMBUSHER'/>
         <enum-item name='BABYSNATCHER'/>
 
-        <enum-item name='ITEM_THIEF'/>
+        <enum-item name='NUISANCE'/>
         <enum-item name='CLOTHING'/>
         <enum-item name='CURRENCY_BY_YEAR'/>
         <enum-item name='METAL_PREF'/>
         <enum-item name='GEM_PREF'/>
         <enum-item name='STONE_PREF'/>
-        <enum-item name='WOOD_WEAPONS'/>
-        <enum-item name='BUILDS_OUTDOOR_FORTIFICATIONS'/>
+        <enum-item name='WOOD_PREF'/>
+        <enum-item name='MINOR_METAL'/>
 
         <enum-item name='RIVER_PRODUCTS'/>
         <enum-item name='OCEAN_PRODUCTS'/>
@@ -31,39 +31,6 @@
         <enum-item name='COMMON_DOMESTIC_MOUNT'/>
         <enum-item name='COMMON_DOMESTIC_PET'/>
         <enum-item name='SUBTERRANEAN_CLOTHING'/>
-        <enum-item name='USE_EVIL_WOOD'/>
-        <enum-item name='USE_GOOD_WOOD'/>
-        <enum-item name='USE_EVIL_PLANTS'/>
-        <enum-item name='USE_GOOD_PLANTS'/>
-
-        <enum-item name='USE_GOOD_ANIMALS'/>
-        <enum-item name='USE_ANY_PET_RACE'/>
-        <enum-item name='USE_MISC_PROCESSED_WOOD_PRODUCTS'/>
-        <enum-item name='IMPROVED_BOWS'/>
-        <enum-item name='OUTDOOR_WOOD'/>
-        <enum-item name='LOCAL_BANDITRY'/>
-        <enum-item/>
-        <enum-item name='INVADERS_IGNORE_NEUTRALS'/>
-
-        <enum-item name='AT_PEACE_WITH_WILDLIFE'/>
-        <enum-item name='EQUIPMENT_IMPROVEMENTS'/>
-        <enum-item name='ABUSE_BODIES'/>
-        <enum-item name='UNDEAD_CANDIDATE'/>
-        <enum-item/>
-        <enum-item name='SKULKING'/>
-        <enum-item/>
-        <enum-item name='MERCHANT_NOBILITY'/>
-
-        <enum-item name='TREE_CAP_DIPLOMACY'/>
-        <enum-item name='DIPLOMAT_BODYGUARDS'/>
-        <enum-item name='MERCHANT_BODYGUARDS'/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item name='WANDERER'/>
-        <enum-item name='BEAST_HUNTER'/>
-        <enum-item name='SCOUT'/>
-
-        <enum-item name='WILL_ACCEPT_TRIBUTE'/>
     </enum-type>
 
     <enum-type type-name='site_type'>
@@ -179,35 +146,49 @@
             </stl-vector>
         </compound>
 
-        <stl-vector name='currency_value' type-name='int32_t'
-                    index-refers-to='material_type'/>
+        <static-array type='int32_t' name='currency_value' index-refers-to='material_type' count='64'/>
 
         <df-flagarray name='flags' index-enum='entity_raw_flags'/>
         <stl-string name='translation'/>
 
         <compound name='symbols'>
-            <static-array name='symbols1' count='14'>
-                <static-array count='12'>
+            <static-array name='symbols1' count='2'>
+                <static-array count='6'>
                     <stl-vector type-name='int32_t'/>
                 </static-array>
             </static-array>
-            <static-array name='symbols2' count='14'>
-                <static-array count='12'>
+            <static-array name='symbols2' count='2'>
+                <static-array count='6'>
                     <stl-vector type-name='int32_t'/>
                 </static-array>
             </static-array>
-            <static-array name='symbols3' count='14'>
+            <static-array name='symbols3' count='2'>
+                <static-array count='6'>
+                    <stl-vector type-name='int32_t'/>
+                </static-array>
+            </static-array>
+            <static-array name='symbols4' count='2'>
+                <static-array count='6'>
+                    <stl-vector type-name='int32_t'/>
+                </static-array>
+            </static-array>
+            <static-array name='symbols5' count='2'>
+                <static-array count='6'>
+                    <stl-vector type-name='int32_t'/>
+                </static-array>
+            </static-array>
+            <static-array name='symbols6' count='2'>
+                <static-array count='6'>
+                    <stl-vector type-name='int32_t'/>
+                </static-array>
+            </static-array>
+            <static-array name='select_symbol' count='3'>
                 <stl-vector/>
             </static-array>
-            <static-array name='symbols4' count='14'>
-                <stl-vector/>
-            </static-array>
-            <static-array name='cull_symbol' count='14'>
+            <static-array name='cull_symbol' count='3'>
                 <stl-vector/>
             </static-array>
         </compound>
-
-        <stl-vector name='currency'/>
     </struct-type>
 </data-definition>
 

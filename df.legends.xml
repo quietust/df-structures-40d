@@ -86,6 +86,8 @@
 
         <compound name='name' type-name='language_name'/>
 
+        <int32_t/>
+
         <df-flagarray name='flags'/>
 
         <pointer name='item' type-name='item'/>

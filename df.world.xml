@@ -21,16 +21,16 @@
             </stl-vector>
         </compound>
         <stl-vector name='drink_areas'>
-            <pointer type-name='coord'/>
+            <pointer/>
         </stl-vector>
         <stl-vector name='unk_48'>
-            <pointer/>
+            <pointer type-name='coord2d16'/>
         </stl-vector>
         <stl-vector name='unk_54'>
-            <pointer/>
+            <pointer type-name='coord2d16'/>
         </stl-vector>
         <stl-vector name='unk_60'>
-            <pointer/>
+            <pointer type-name='coord2d16'/>
         </stl-vector>
         <stl-vector name='unk_6C'>
             <pointer/>

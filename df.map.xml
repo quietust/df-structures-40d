@@ -6,6 +6,13 @@
         <code-helper name='describe'>(fmt "(~A,~A)" $.x $.y)</code-helper>
     </struct-type>
 
+    <struct-type type-name='coord2d16' custom-methods='true'>
+        <int16_t name='x' init-value='-30000'/>
+        <int16_t name='y' init-value='-30000'/>
+
+        <code-helper name='describe'>(fmt "(~A,~A)" $.x $.y)</code-helper>
+    </struct-type>
+
     <struct-type type-name='coord2d_path' custom-methods='true'>
         <stl-vector type-name='int32_t' name='x'/>
         <stl-vector type-name='int32_t' name='y'/>

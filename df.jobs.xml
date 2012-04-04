@@ -262,20 +262,17 @@
 
     <struct-type type-name='manager_order'>
         <enum name='job_type' base-type='int16_t' type-name='job_type'/>
-        <int16_t name="unk_2"/>
-
         <int16_t name="item_subtype"/>
 
-        <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
 
-        <compound name="item_category" type-name='job_item_category'/>
-        <int32_t name="hist_figure_id" ref-target='historical_figure'/>
-        <compound name="material_category" type-name='job_material_category'/>
+        <enum base-type='int16_t' name='material' comment='or matgloss, depends on context'/>
 
         <int16_t name="amount_left"/>
         <int16_t name="amount_total"/>
-        <int32_t name="is_validated"/>
     </struct-type>
 
     <struct-type type-name='manager_order_template'>
