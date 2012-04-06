@@ -108,6 +108,8 @@
 
         <code-helper name='describe'>
             (describe-obj $.name)
+            (awhen (find-creature $.race)
+              (fmt "(~A)" $it.creature_id))
         </code-helper>
 
         <stl-string name='custom_profession'/>

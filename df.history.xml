@@ -101,31 +101,25 @@
         </pointer>
     </struct-type>
 
-    <struct-type type-name='historical_figure' instance-vector='$global.world.history.figures' key-field='id'>
-        <enum base-type='int16_t' name='profession' type-name='profession'/>
+    <struct-type type-name='historical_figure' instance-vector='$global.world.world_data.history.figures' key-field='id'>
+        <enum base-type='int32_t' name='profession' type-name='profession'/>
 
         <int16_t name='race' ref-target='creature_raw'/>
         <int8_t name='sex' comment='-1 n/a, 0 female, 1 male'/>
 
+        <int32_t/>
         <int32_t name='appeared_year'/>
         <int32_t name='born_year'/>
         <int32_t name='born_seconds'/>
-
-        <int32_t name='old_year'/>
-        <int32_t name='old_seconds'/>
-        <int32_t name='died_year'/>
-        <int32_t name='died_seconds'/>
+        <int32_t/>
 
         <compound type-name='language_name' name='name'/>
 
         <code-helper name='describe'>
             (describe-obj $.name)
             (awhen (find-creature $.race)
-              (fmt "~:(~A ~A~)" $it.creature_id))
+              (fmt "(~A)" $it.creature_id))
         </code-helper>
-
-        <int32_t name='civ_id' ref-target='historical_entity'/>
-        <int32_t name='population_id' ref-target='entity_population'/>
 
         <df-flagarray name='flags'/>
 
@@ -134,8 +128,14 @@
 
         <int32_t name='unk4'/>
 
-        <pointer name='info' type-name='historical_figure_info'/>
-
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <int32_t/>
+        <int32_t/>
+<!--
         <compound name='worldgen'>
             <pointer name="unk_0" type-name="world_site"/>
             <pointer name="unk_4" type-name="language_name"/>
@@ -145,6 +145,7 @@
             </pointer>
             <int32_t name="unk_10"/>
         </compound>
+-->
     </struct-type>
 
     <enum-type type-name='history_event_type'>
@@ -227,7 +228,7 @@
     </enum-type>
 
     <class-type type-name='history_event' original-name='history_eventst'
-                instance-vector='$global.world.history.events' key-field='id'>
+                instance-vector='$global.world.world_data.history.events' key-field='id'>
         <int32_t name='year'/>
         <int32_t name='seconds'/>
         <df-flagarray name='flags'/>
