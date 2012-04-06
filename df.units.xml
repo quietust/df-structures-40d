@@ -678,7 +678,7 @@
             <enum-item name='HateCreature'/>
             <enum-item name='LikeItem'/>
             <enum-item name='LikePlant'/>
-            <enum-item name='LikePlant2' comment='likely 2nd prefstring'/>
+            <enum-item name='LikeTree'/>
             <enum-item name='LikeColor'/>
             <enum-item name='LikeShape'/>
         </enum>
@@ -692,15 +692,12 @@
             <int16_t name='shape_id' ref-target='descriptor_shape'/>
             <int16_t name='plant_id' ref-target='matgloss_plant'/>
             <int16_t name='wood_id' ref-target='matgloss_wood'/>
-            <int16_t name='stone_id' ref-target='matgloss_stone'/>
-            <int16_t name='gem_id' ref-target='matgloss_gem'/>
         </compound>
-
         <int16_t name="item_subtype" refers-to='(item-subtype-target $$._parent.item_type $)'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
 
         <bool name='active'/>
-
-        <uint32_t name='unk'/>
     </struct-type>
 
 </data-definition>
