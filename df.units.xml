@@ -127,13 +127,11 @@
         </compound>
         <int32_t/>
         <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
 
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
+        <compound name='path'>
+            <compound name='dest' type-name='coord'/>
+            <compound name='path' type-name='coord_path'/>
+        </compound>
 
         <compound name='flags1' type-name='unit_flags1'/>
         <compound name='flags2' type-name='unit_flags2'/>
@@ -145,12 +143,12 @@
         <int32_t/>
         <int32_t name='civ_id' ref-target='historical_entity'/>
 
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
+        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector type-name='pointer' comment='unk'/>
         <int32_t/>
-        <stl-vector/>
-        <stl-vector/>
+        <stl-vector type-name='int32_t'/>
+        <stl-vector type-name='pointer' comment='unk'/>
 
         <compound type-name='language_name' name='squad_name'/>
         <int8_t/>
@@ -176,12 +174,18 @@
         <static-array type-name='int8_t' count='36'/>
         <int16_t/>
         <int16_t/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
+        <stl-vector name='inventory'>
+            <pointer type-name='unit_inventory_item'/>
+        </stl-vector>
+        <stl-vector name='owned_items'>
+            <int32_t ref-target='item'/>
+        </stl-vector>
+        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector name='owned_buildings'>
+            <pointer type-name='building'/>
+        </stl-vector>
+        <stl-vector type-name='pointer' comment='unk'/>
         <int32_t/>
         <int32_t/>
         <int32_t/>
@@ -207,12 +211,12 @@
         <int32_t/>
         <int32_t/>
         <int32_t/>
-        <stl-vector name='wounds'/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <int32_t/>
+        <stl-vector name='wounds' type-name='int16_t'/>
+        <stl-vector type-name='int32_t'/>
+        <stl-vector type-name='int8_t'/>
+        <stl-vector type-name='int8_t'/>
+        <stl-vector type-name='int16_t'/>
+        <pointer/>
         <int16_t/>
         <int32_t/>
         <int32_t/>
@@ -239,8 +243,8 @@
         <int32_t/>
         <int32_t/>
         <int32_t/>
-        <stl-vector/>
-        <stl-vector/>
+        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector type-name='pointer' comment='unk'/>
         <int32_t/>
         <int32_t/>
         <int8_t/>
@@ -251,29 +255,27 @@
         <stl-vector name='skills'>
             <pointer type-name='unit_skill'/>
         </stl-vector>
-        <stl-vector/>
-        <stl-vector/>
+        <stl-vector name='preferences'>
+            <pointer type-name='unit_preference'/>
+        </stl-vector>
+        <stl-vector type-name='pointer' comment='unk'/>
         <static-array type-name='bool' name='labors' index-enum='unit_labor' count='62'/>
         <static-array type-name='int8_t' count='29' />
         <int32_t/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
+        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer' comment='unk'/>
         <int32_t/>
         <int16_t/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
+        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer' comment='unk'/>
         <int16_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <int32_t/>
+        <compound type-name='coord'/>
+        <compound type-name='coord_path'/>
+        <int32_t name='hist_figure_id' ref-target='historical_figure'/>
         <int16_t/>
         <int16_t/>
         <int32_t/>
@@ -282,7 +284,7 @@
         <int16_t/>
         <int16_t/>
         <int32_t/>
-        <stl-vector/>
+        <stl-vector type-name='pointer'/>
         <int32_t/>
         <int32_t/>
 
@@ -295,15 +297,6 @@
             <int16_t name='unk_a4a'/>
             <int16_t name='unk_a4b'/>
         </compound>
-
-        <compound name='path'>
-            <compound name='dest' type-name='coord'/>
-
-            <int16_t name='unk_ae' comment='-1 unless dest valid'/>
-
-            <compound name='path' type-name='coord_path'/>
-        </compound>
-
 
         <compound name='unknown2'>
             defined for visiting diplomats
@@ -377,19 +370,10 @@
             <int16_t name='unk_264'/>
         </compound>
 
-        <stl-vector name='inventory'>
-            <pointer type-name='unit_inventory_item'/>
-        </stl-vector>
-
-        <stl-vector name='owned_items'>
-            <int32_t ref-target='item'/>
-        </stl-vector>
         <stl-vector name='traded_items' comment='items brought to trade depot'>
             <int32_t ref-target='item'/>
         </stl-vector>
-        <stl-vector name='owned_buildings'>
-            <pointer type-name='building'/>
-        </stl-vector>
+
         <stl-vector name='corpse_parts' comment='entries remain even when items are destroyed'>
             <int32_t ref-target='item'/>
         </stl-vector>
@@ -568,10 +552,6 @@
             <int32_t ref-target='unit'/>
         </stl-vector>
 
-        <stl-vector name='preferences'>
-            <pointer type-name='unit_preference'/>
-        </stl-vector>
-
         <stl-vector name='unk5'>
             <pointer>
                 <int16_t name='unk1'/>
@@ -688,10 +668,6 @@
         <int32_t name="rating"/>
         <uint32_t name="experience"/>
         <int32_t name="unk_c"/>
-        <int32_t name="rusty"/>
-        <int32_t name="unk_14"/>
-        <int32_t name="unk_18"/>
-        <int32_t name="unk_1c"/>
     </struct-type>
 
     <struct-type type-name='unit_preference'>
