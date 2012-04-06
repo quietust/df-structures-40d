@@ -244,7 +244,9 @@
         <int32_t/>
         <int32_t/>
         <stl-vector type-name='pointer' comment='unk'/>
-        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector name='misc_traits'>
+            <pointer type-name='unit_misc_trait'/>
+        </stl-vector>
         <int32_t/>
         <int32_t/>
         <int8_t/>
@@ -465,10 +467,6 @@
         </compound>
 
         <compound name='status'>
-            <stl-vector name='misc_traits'>
-                <pointer type-name='unit_misc_trait'/>
-            </stl-vector>
-
             <pointer name='eat_history'>
                 <compound name='food'>
                     <stl-vector name='item_type'>
