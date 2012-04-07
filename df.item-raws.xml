@@ -102,29 +102,28 @@
                 <pointer/>
             </vmethod>
             <vmethod name='categorize' comment='add to world.raws.itemdefs.whatever'/>
-            <vmethod name='finalize' comment='calculate stuff like base value'/>
             <vmethod is-destructor='true'/>
         </virtual-methods>
     </class-type>
 
-    <enum-type type-name='ammo_flags'>
-        <enum-item name='HAS_EDGE_ATTACK'/>
+    <enum-type type-name='damage_type'>
+        <enum-item name='BLUDGEON'/>
+        <enum-item name='SLASH'/>
+        <enum-item name='GORE'/>
+        <enum-item name='PIERCE'/>
+        <enum-item name='BURN'/>
+        <enum-item name='HEAT'/>
+        <enum-item name='COLD'/>
     </enum-type>
 
     <class-type type-name='itemdef_ammost' inherits-from='itemdef'
                 instance-vector='$global.world.raws.itemdefs.ammo'>
         <stl-string name="name"/>
         <stl-string name="name_plural"/>
-        <stl-string name="ammo_class"/>
-
-        <df-flagarray name='flags' index-enum='ammo_flags'/>
-
-        <int32_t name="size" comment='divided by 10'/>
-        <int32_t name="unk_84"/>
-
-        <stl-vector name="attacks">
-            <pointer/>
-        </stl-vector>
+        <int32_t name='damage'/>
+        <enum base-type='int32_t' name='damage_type' type-name='damage_type'/>
+        <stl-string name="class"/>
+        <int16_t name="stick_chance"/>
     </class-type>
 
     <enum-type type-name='armor_general_flags'>
@@ -135,11 +134,6 @@
         <enum-item name='SCALED'/>
         <enum-item name='LEATHER'/>
         <enum-item name='SHAPED'/>
-        <enum-item name='CHAIN_METAL_TEXT'/>
-
-        <enum-item name='STRUCTURAL_ELASTICITY_WOVEN_THREAD'/>
-        <enum-item name='STRUCTURAL_ELASTICITY_CHAIN_METAL'/>
-        <enum-item name='STRUCTURAL_ELASTICITY_CHAIN_ALL'/>
     </enum-type>
 
     <struct-type type-name='armor_properties'>
@@ -151,6 +145,7 @@
     </struct-type>
 
     <enum-type type-name='armor_flags'>
+        <enum-item/>
         <enum-item name='METAL_ARMOR_LEVELS'/>
     </enum-type>
 
@@ -160,10 +155,13 @@
         <stl-string name="name_plural"/>
         <stl-string name="name_preplural"/>
         <stl-string name="material_placeholder"/>
+        <int32_t name="weight"/>
         <int32_t name="value"/>
         <int8_t name="armorlevel"/>
         <int16_t name="ubstep"/>
         <int16_t name="lbstep"/>
+        <int16_t name="mainblock"/>
+        <int16_t name="secondblock"/>
         <int32_t name="material_size"/>
 
         <compound name='props' type-name='armor_properties'/>
@@ -178,6 +176,7 @@
     </class-type>
 
     <enum-type type-name='gloves_flags'>
+        <enum-item/>
         <enum-item name='METAL_ARMOR_LEVELS'/>
     </enum-type>
 
@@ -185,15 +184,18 @@
                 instance-vector='$global.world.raws.itemdefs.gloves'>
         <stl-string name="name"/>
         <stl-string name="name_plural"/>
+        <int32_t name="weight"/>
         <int32_t name="value"/>
+        <int32_t name="blockpower"/>
         <int8_t name='armorlevel'/>
-        <int16_t name="ubstep"/>
+        <int16_t name="upstep"/>
         <df-flagarray name='flags' index-enum='gloves_flags'/>
         <int32_t name="material_size"/>
         <compound name='props' type-name='armor_properties'/>
     </class-type>
 
     <enum-type type-name='helm_flags'>
+        <enum-item/>
         <enum-item name='METAL_ARMOR_LEVELS'/>
     </enum-type>
 
@@ -201,7 +203,9 @@
                 instance-vector='$global.world.raws.itemdefs.helms'>
         <stl-string name="name"/>
         <stl-string name="name_plural"/>
+        <int32_t name="weight"/>
         <int32_t name="value"/>
+        <int32_t name="blockpower"/>
         <int8_t name='armorlevel'/>
         <df-flagarray name='flags' index-enum='helm_flags'/>
         <int32_t name="material_size"/>
@@ -220,6 +224,7 @@
     </class-type>
 
     <enum-type type-name='pants_flags'>
+        <enum-item name='CHAIN_METAL'/>
         <enum-item name='METAL_ARMOR_LEVELS'/>
     </enum-type>
 
@@ -229,7 +234,9 @@
         <stl-string name="name_plural"/>
         <stl-string name="name_preplural"/>
         <stl-string name="material_placeholder"/>
+        <int32_t name="weight"/>
         <int32_t name="value"/>
+        <int32_t name="blockpower"/>
         <int8_t name="armorlevel"/>
         <df-flagarray name='flags' index-enum='pants_flags'/>
         <int32_t name="material_size"/>
@@ -242,14 +249,17 @@
                 instance-vector='$global.world.raws.itemdefs.shields'>
         <stl-string name="name"/>
         <stl-string name="name_plural"/>
+        <int32_t name="weight"/>
         <int32_t name="value"/>
         <int32_t name="blockchance"/>
+        <int32_t name="blockpower"/>
         <int8_t name='armorlevel'/>
-        <int16_t name="ubstep"/>
+        <int16_t name="upstep"/>
         <int32_t name="material_size"/>
     </class-type>
 
     <enum-type type-name='shoes_flags'>
+        <enum-item/>
         <enum-item name='METAL_ARMOR_LEVELS'/>
     </enum-type>
 
@@ -257,9 +267,11 @@
                 instance-vector='$global.world.raws.itemdefs.shoes'>
         <stl-string name="name"/>
         <stl-string name="name_plural"/>
+        <int32_t name="weight"/>
         <int32_t name="value"/>
+        <int32_t name="blockpower"/>
         <int8_t name='armorlevel'/>
-        <int16_t name="ubstep"/>
+        <int16_t name="upstep"/>
         <df-flagarray name='flags' index-enum='shoes_flags'/>
         <int32_t name="material_size"/>
 
@@ -270,7 +282,7 @@
                 instance-vector='$global.world.raws.itemdefs.siege_ammo'>
         <stl-string name="name"/>
         <stl-string name="name_plural"/>
-        <stl-string name="ammo_class"/>
+        <stl-string name="class"/>
     </class-type>
 
     <enum-type type-name='toy_flags'>
@@ -284,36 +296,22 @@
         <df-flagarray name='flags' index-enum='toy_flags'/>
     </class-type>
     
-    <enum-type type-name='trapcomp_flags'>
-        <enum-item name='IS_SCREW'/>
-        <enum-item name='IS_SPIKE'/>
-        <enum-item name='WOOD'/>
-        <enum-item name='METAL'/>
-        <enum-item name='HAS_EDGE_ATTACK'/>
-    </enum-type>
-
     <class-type type-name='itemdef_trapcompst' inherits-from='itemdef'
                 instance-vector='$global.world.raws.itemdefs.trapcomps'>
         <stl-string name="name"/>
         <stl-string name="name_plural"/>
         <stl-string name="adjective"/>
-
-        <int32_t name="size"/>
-        <int32_t name="unk_7c"/>
+        <int32_t name='damage'/>
+        <enum base-type='int32_t' name='damage_type' type-name='damage_type'/>
+        <int32_t name="weight"/>
         <int32_t name="hits"/>
+        <int32_t name='crit_boost'/>
         <int32_t name="material_size"/>
-
-        <df-flagarray name='flags' index-enum='trapcomp_flags'/>
-
-        <stl-vector name="attacks">
-            <pointer/>
-        </stl-vector>
+        <int16_t name="stick_chance"/>
     </class-type>
 
     <enum-type type-name='weapon_flags'>
         <enum-item name='CAN_STONE'/>
-        <enum-item name='HAS_EDGE_ATTACK'/>
-        <enum-item name='TRAINING'/>
     </enum-type>
 
     <class-type type-name='itemdef_weaponst' inherits-from='itemdef'
@@ -321,20 +319,18 @@
         <stl-string name="name"/>
         <stl-string name="name_plural"/>
         <stl-string name="adjective"/>
-        <int32_t name="size"/>
-        <int32_t name="unk_7c"/>
-        <int16_t name="skill_melee"/>
-        <int16_t name="skill_ranged"/>
+        <int32_t name='damage'/>
+        <enum base-type='int32_t' name='damage_type' type-name='damage_type'/>
+        <int32_t name="weight"/>
+        <int32_t name="skill_melee"/>
+        <int32_t name="skill_ranged"/>
         <stl-string name="ranged_ammo"/>
-        <int32_t name="two_handed"/>
-        <int32_t name="minimum_size"/>
+        <int32_t name='crit_boost'/>
+        <int16_t name="two_handed"/>
+        <int16_t name="minimum_size"/>
         <int32_t name="material_size"/>
         <df-flagarray name='flags' index-enum='weapon_flags'/>
-        <stl-vector name="attacks">
-            <pointer/>
-        </stl-vector>
-        <int32_t name="shoot_force"/>
-        <int32_t name="shoot_maxvel"/>
+        <int16_t name="stick_chance"/>
     </class-type>
 </data-definition>
 
