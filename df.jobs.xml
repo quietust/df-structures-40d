@@ -269,7 +269,7 @@
         <int32_t/>
         <int32_t/>
 
-        <enum base-type='int16_t' name='material' comment='or matgloss, depends on context'/>
+        <int16_t name='material' comment='or matgloss, depends on context'/>
 
         <int16_t name="amount_left"/>
         <int16_t name="amount_total"/>

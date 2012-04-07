@@ -343,8 +343,8 @@
     </class-type>
 
     <class-type type-name='building_weaponrackst' inherits-from='building_actual'>
-        <stl-vector name='allowed_weapons' type='pointer'/>
-        <stl-vector name='allowed_weapons_2' type='pointer'/>
+        <stl-vector name='allowed_weapons' type-name='pointer'/>
+        <stl-vector name='allowed_weapons_2' type-name='pointer'/>
         <static-array type-name='int16_t' count='32'/>
         <int8_t/>
         <int8_t/>
@@ -353,12 +353,12 @@
     </class-type>
 
     <class-type type-name='building_armorstandst' inherits-from='building_actual'>
-        <stl-vector name='allowed_armor' type='pointer'/>
-        <stl-vector name='allowed_helms' type='pointer'/>
-        <stl-vector name='allowed_shoes' type='pointer'/>
-        <stl-vector name='allowed_pants' type='pointer'/>
-        <stl-vector name='allowed_shields' type='pointer'/>
-        <stl-vector type='pointer'/>
+        <stl-vector name='allowed_armor' type-name='pointer'/>
+        <stl-vector name='allowed_helms' type-name='pointer'/>
+        <stl-vector name='allowed_shoes' type-name='pointer'/>
+        <stl-vector name='allowed_pants' type-name='pointer'/>
+        <stl-vector name='allowed_shields' type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
         <static-array type-name='int16_t' count='32'/>
         <int8_t/>
         <int16_t/>

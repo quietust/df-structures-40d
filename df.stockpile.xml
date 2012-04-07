@@ -78,7 +78,7 @@
             <bool name='sand_bags'/>
         </compound>
 
-        <int32_t'/>
+        <int32_t/>
 
         <compound name='refuse'>
             <stl-vector type-name='bool' name='type' index-enum='item_type'/>
