@@ -17,10 +17,6 @@
             <item-attr name='generic_item' value='WEAPON'/>
             <item-attr name='generic_item' value='TRAPCOMP'/>
         </enum-item>
-        <enum-item name='ANY_SPIKE'>
-            <item-attr name='generic_item' value='WEAPON'/>
-            <item-attr name='generic_item' value='TRAPCOMP'/>
-        </enum-item>
 
         <enum-item name='ANY_TRUE_ARMOR'>
             <item-attr name='generic_item' value='ARMOR'/>
@@ -46,16 +42,6 @@
         <enum-item name='QUIVER'>
             <item-attr name='item' value='QUIVER'/>
         </enum-item>
-        <enum-item name='SPLINT'>
-            <item-attr name='item' value='SPLINT'/>
-        </enum-item>
-        <enum-item name='ORTHOPEDIC_CAST'>
-            <item-attr name='item' value='ORTHOPEDIC_CAST'/>
-        </enum-item>
-        <enum-item name='CRUTCH'>
-            <item-attr name='item' value='CRUTCH'/>
-        </enum-item>
-
         <enum-item name='BACKPACK'>
             <item-attr name='item' value='BACKPACK'/>
         </enum-item>
@@ -65,8 +51,8 @@
         <enum-item name='WOOD'>
             <item-attr name='item' value='WOOD'/>
         </enum-item>
-        <enum-item name='BOULDER'>
-            <item-attr name='item' value='BOULDER'/>
+        <enum-item name='STONE'>
+            <item-attr name='item' value='STONE'/>
         </enum-item>
         <enum-item name='ROCK'>
             <item-attr name='item' value='ROCK'/>
@@ -92,7 +78,6 @@
             <item-attr name='generic_item' value='LEAVES'/>
             <item-attr name='generic_item' value='CHEESE'/>
             <item-attr name='generic_item' value='FOOD'/>
-            <item-attr name='generic_item' value='EGG'/>
             do_not_clean:
             <item-attr name='generic_item' value='GLOB'/>
         </enum-item>
@@ -107,11 +92,10 @@
             <item-attr name='generic_item' value='LEAVES'/>
             <item-attr name='generic_item' value='CHEESE'/>
             <item-attr name='generic_item' value='FOOD'/>
-            <item-attr name='generic_item' value='EGG'/>
         </enum-item>
         <enum-item name='ANY_GENERIC22'>
             <item-attr name='generic_item' value='DRINK'/>
-            <item-attr name='generic_item' value='POWDER_MISC'/>
+            <item-attr name='generic_item' value='POWDER_ORGANIC'/>
             <item-attr name='generic_item' value='LIQUID_MISC'/>
             <item-attr name='generic_item' value='GLOB'/>
         </enum-item>
@@ -157,7 +141,6 @@
             <item-attr name='generic_item' value='LEAVES'/>
             <item-attr name='generic_item' value='CHEESE'/>
             <item-attr name='generic_item' value='FOOD'/>
-            <item-attr name='generic_item' value='EGG'/>
         </enum-item>
         <enum-item name='ANY_MURDERED'>
             <item-attr name='generic_item' value='CORPSE'/>
@@ -193,8 +176,6 @@
             <item-attr name='generic_item' value='QUIVER'/>
             <item-attr name='generic_item' value='BALLISTAARROWHEAD'/>
             <item-attr name='generic_item' value='COIN'/>
-            <item-attr name='generic_item' value='SPLINT'/>
-            <item-attr name='generic_item' value='TOOL'/>
         </enum-item>
         <enum-item name='ANY_GENERIC36'>
             <item-attr name='generic_item' value='ARMOR'/>
@@ -225,12 +206,6 @@
         <enum-item name='FLOODGATE'>
             <item-attr name='item' value='FLOODGATE'/>
         </enum-item>
-        <enum-item name='HATCH_COVER'>
-            <item-attr name='item' value='HATCH_COVER'/>
-        </enum-item>
-        <enum-item name='GRATE'>
-            <item-attr name='item' value='GRATE'/>
-        </enum-item>
         <enum-item name='CAGE'>
             <item-attr name='item' value='CAGE'/>
         </enum-item>
@@ -249,9 +224,6 @@
         </enum-item>
         <enum-item name='TOY'>
             <item-attr name='item' value='TOY'/>
-        </enum-item>
-        <enum-item name='TOOL'>
-            <item-attr name='item' value='TOOL'/>
         </enum-item>
 
         -- 50
@@ -272,9 +244,6 @@
             <item-attr name='item' value='BED'/>
         </enum-item>
 
-        <enum-item name='TRACTION_BENCH'>
-            <item-attr name='item' value='TRACTION_BENCH'/>
-        </enum-item>
         <enum-item name='CHAIR'>
             <item-attr name='item' value='CHAIR'/>
         </enum-item>
@@ -290,15 +259,6 @@
 
         -- 60
 
-        <enum-item name='SLAB'>
-            <item-attr name='item' value='SLAB'/>
-        </enum-item>
-        <enum-item name='QUERN'>
-            <item-attr name='item' value='QUERN'/>
-        </enum-item>
-        <enum-item name='MILLSTONE'>
-            <item-attr name='item' value='MILLSTONE'/>
-        </enum-item>
         <enum-item name='BOX'>
             <item-attr name='item' value='BOX'/>
         </enum-item>
@@ -336,12 +296,8 @@
         <enum-item name='ANY_WEBS'>
             <item-attr name='generic_item' value='THREAD'/>
         </enum-item>
-        <enum-item name='PIPE_SECTION'>
-            <item-attr name='item' value='PIPE_SECTION'/>
-        </enum-item>
 
         <enum-item name='ANY_ITEM_FLAG_800'/>
-        <enum-item name='ANY_IN_CONSTRUCTION'/>
         <enum-item name='DRINK'>
             <item-attr name='item' value='DRINK'/>
         </enum-item>
@@ -354,8 +310,8 @@
 
         -- 80
 
-        <enum-item name='POWDER_MISC'>
-            <item-attr name='item' value='POWDER_MISC'/>
+        <enum-item name='POWDER_ORGANIC'>
+            <item-attr name='item' value='POWDER_ORGANIC'/>
         </enum-item>
         <enum-item name='ANY_GENERIC81'>
             <item-attr name='generic_item' value='FLASK'/>
@@ -376,8 +332,6 @@
             <item-attr name='generic_item' value='CHEESE'/>
             <item-attr name='generic_item' value='LIQUID_MISC'/>
             <item-attr name='generic_item' value='GLOB'/>
-            <item-attr name='generic_item' value='TOOL'/>
-            <item-attr name='generic_item' value='EGG'/>
         </enum-item>
         <enum-item name='ANY_GENERIC82'>
             <item-attr name='generic_item' value='BOX'/>
@@ -469,9 +423,6 @@
         <enum-item name='FISH_RAW'>
             <item-attr name='item' value='FISH_RAW'/>
         </enum-item>
-        <enum-item name='EGG'>
-            <item-attr name='item' value='EGG'/>
-        </enum-item>
         <enum-item name='SEEDS'>
             <item-attr name='item' value='SEEDS'/>
         </enum-item>
@@ -539,14 +490,8 @@
             <item-attr name='generic_item' value='CABINET'/>
             <item-attr name='generic_item' value='BACKPACK'/>
             <item-attr name='generic_item' value='QUIVER'/>
-            <item-attr name='generic_item' value='TOOL'/>
-        </enum-item>
-        <enum-item name='FOOD_STORAGE'>
-            <item-attr name='generic_item' value='BARREL'/>
-            <item-attr name='generic_item' value='TOOL'/>
         </enum-item>
 
-        <enum-item name='UNKNOWN_125'/>
         <enum-item name='ANY_MELT_DESIGNATED'/>
 
         <enum-item name='BAD'/>
@@ -564,7 +509,6 @@
         <enum-item name='ANY_ARTIFACT'/>
         <enum-item name='WEAPON'/>
         <enum-item name='ANY_WEAPON'/>
-        <enum-item name='ANY_SPIKE'/>
 
         <enum-item name='ANY_TRUE_ARMOR'/>
         <enum-item name='ANY_ARMOR_HELM'/>
@@ -576,16 +520,10 @@
 
         <enum-item name='ANY_ARMOR_PANTS'/>
         <enum-item name='QUIVER'/>
-        <enum-item name='SPLINT'/>
-        <enum-item name='ANY_14' comment='supposed to be ORTHOPEDIC_CAST'>
-            <item-attr name='other' value='ANY'/>
-        </enum-item>
-        <enum-item name='CRUTCH'/>
-
         <enum-item name='BACKPACK'/>
         <enum-item name='AMMO'/>
         <enum-item name='WOOD'/>
-        <enum-item name='BOULDER'/>
+        <enum-item name='STONE'/>
         <enum-item name='ROCK'/>
 
         -- 21
@@ -629,8 +567,6 @@
         <enum-item name='INSTRUMENT'/>
         <enum-item name='TOY'/>
 
-        SKIPPED: TOOL
-
         -- 50
 
         <enum-item name='BUCKET'/>
@@ -639,7 +575,6 @@
         <enum-item name='ANIMALTRAP'/>
         <enum-item name='BED'/>
 
-        <enum-item name='TRACTION_BENCH'/>
         <enum-item name='CHAIR'/>
         <enum-item name='COFFIN'/>
         <enum-item name='TABLE'/>
@@ -647,10 +582,6 @@
 
         -- 60
 
-        SKIPPED: SLAB
-
-        <enum-item name='QUERN'/>
-        <enum-item name='MILLSTONE'/>
         <enum-item name='BOX'/>
         <enum-item name='BIN'/>
 
@@ -666,10 +597,8 @@
         <enum-item name='SIEGEAMMO'/>
         <enum-item name='TRAPPARTS'/>
         <enum-item name='ANY_WEBS'/>
-        <enum-item name='PIPE_SECTION'/>
 
         <enum-item name='ANY_ITEM_FLAG_800'/>
-        <enum-item name='ANY_IN_CONSTRUCTION'/>
         <enum-item name='DRINK'/>
         <enum-item name='ANY_DRINK'/>
         <enum-item name='LIQUID_MISC'/>
@@ -746,19 +675,6 @@
         <enum-item name='SHOES'/>
         <enum-item name='HELM'/>
         <enum-item name='GLOVES'/>
-
-        <enum-item name='ANY_124' comment='supposed to be TOOL'>
-            <item-attr name='other' value='ANY'/>
-        </enum-item>
-        <enum-item name='ANY_125' comment='supposed to be SLAB'>
-            <item-attr name='other' value='ANY'/>
-        </enum-item>
-
-        <enum-item name='EGG'/>
-
-        <enum-item name='ANY_127' comment='supposed to be FOOD_STORAGE'>
-            <item-attr name='other' value='ANY'/>
-        </enum-item>
     </enum-type>
 
 </data-definition>
