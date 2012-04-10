@@ -57,7 +57,7 @@
     <bitfield-type type-name='tile_color' base-type='uint8_t'>
         <flag-bit name='color' count='4'/>
         <flag-bit name='mud'/>
-        <flag-bit/>
+        <flag-bit name='rain'/>
         <flag-bit name='snow'/>
         <flag-bit name='dry'/>
     </bitfield-type>
@@ -242,16 +242,20 @@
 
     <enum-type type-name='effect_type' base-type='int16_t'>
         <enum-item name='Miasma'/>
-        <enum-item name='Steam' comment='only if mat_type=1'/>
+        <enum-item name='Steam' comment='only if material=1'/>
         <enum-item name='Mist'/>
-        <enum-item name='MaterialDust'/>
+        <enum-item name='BloodyMist'/>
+        <enum-item name='Dust'/>
+        <enum-item name='WaterFlood'/>
+        <enum-item comment='Water Antiflood?'/>
+        <enum-item comment='Magma Antiflood?'/>
+        <enum-item name='MagmaFlood'/>
         <enum-item name='MagmaMist'/>
         <enum-item name='Smoke'/>
         <enum-item name='Dragonfire'/>
         <enum-item name='Fire'/>
         <enum-item name='Web'/>
         <enum-item name='MaterialGas'/>
-        <enum-item name='MaterialVapor'/>
     </enum-type>
 
     <struct-type type-name='effect'>
