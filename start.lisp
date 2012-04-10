@@ -76,6 +76,8 @@
 (reload)
 (resume)
 
+(load "version.lisp")
+
 (defun write-csv (context filename gfilename)
   (let ((*known-types* (remove-if-not #'consp *known-types* :key #'car))
         (*known-globals* nil)
@@ -88,12 +90,9 @@
       (export-csv stream context :globals? t))))
 
 (defun make-csv ()
-  (write-csv (make-instance 'type-context ;:os-type $windows
+  (write-csv (make-instance 'type-context ;:os-type $windows-msvc6
                             :executable-hashes (list (cons *windows-timestamp* 0)))
-             "windows/all.csv" "windows/globals.csv")
-  (write-csv (make-instance 'type-context ;:os-type $linux
-                            :executable-hashes (list (cons *linux-hash* 0)))
-             "linux/all.csv" "linux/globals.csv"))
+             "windows/all.csv" "windows/globals.csv"))
 
 (defun browse-list (start)
   (browse (loop for node = $start.next then $node.next
