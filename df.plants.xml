@@ -1,5 +1,5 @@
 <data-definition>
-    <bitfield-type type-name='plant_flags' base-type='uint16_t'>
+    <bitfield-type type-name='plant_flags' base-type='uint32_t'>
         <flag-bit/>
         <flag-bit name='watery'/>
         <flag-bit name='is_shrub' comment='If it is not a shrub, then it is a tree'/>
