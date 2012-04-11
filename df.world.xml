@@ -223,18 +223,12 @@
             <int8_t/>
             <int8_t/>
 
-            -- Plants
-
-            <compound name='plants'>
-                <stl-vector name='all'>
-                    <pointer type-name='plant'/>
-                </stl-vector>
-                <static-array name='other' count='5'>
-                    <stl-vector>
-                        <pointer type-name='plant'/>
-                    </stl-vector>
-                </static-array>
-            </compound>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
 
             <int8_t/>
             <int8_t/>
@@ -260,7 +254,38 @@
         <int8_t/>
         <int8_t/>
 
-        <static-array count='10'><stl-vector type-name='pointer'/></static-array>
+        <compound name='plants'>
+            <stl-vector name='all'>
+                <pointer type-name='plant'/>
+            </stl-vector>
+            <stl-vector name='shrub_forest'>
+                <pointer type-name='plant'/>
+            </stl-vector>
+            <stl-vector name='shrub_swamp'>
+                <pointer type-name='plant'/>
+            </stl-vector>
+            <stl-vector name='shrub_river'>
+                <pointer type-name='plant'/>
+            </stl-vector>
+            <stl-vector name='shrub_cave'>
+                <pointer type-name='plant'/>
+            </stl-vector>
+            <stl-vector name='unknown'>
+                <pointer type-name='plant'/>
+            </stl-vector>
+            <stl-vector name='tree_outside_dry'>
+                <pointer type-name='plant'/>
+            </stl-vector>
+            <stl-vector name='tree_outside_wet'>
+                <pointer type-name='plant'/>
+            </stl-vector>
+            <stl-vector name='tree_inside_dry'>
+                <pointer type-name='plant'/>
+            </stl-vector>
+            <stl-vector name='tree_inside_wet'>
+                <pointer type-name='plant'/>
+            </stl-vector>
+        </compound>
 
         -- Adventure quests
 

@@ -1,28 +1,27 @@
 <data-definition>
     <bitfield-type type-name='plant_flags' base-type='uint16_t'>
+        <flag-bit/>
         <flag-bit name='watery'/>
         <flag-bit name='is_shrub' comment='If it is not a shrub, then it is a tree'/>
     </bitfield-type>
 
-    <struct-type type-name='plant' instance-vector='$global.world.plants.all'>
+    <class-type type-name='plant' instance-vector='$global.world.plants.all' original-name='vegst'>
         <compound type-name='language_name' name='name'/>
         <compound type-name='plant_flags' name='flags'/>
-        <int16_t name='material' ref-target='matgloss_plant'/>
-        <compound name='pos' type-name='coord'/>
+        <compound is-union='true'>
+            <int16_t name='plant_id' ref-target='matgloss_plant'/>
+            <int16_t name='wood_id' ref-target='matgloss_wood'/>
+        </compound>
+        <compound name='pos' type-name='coord16'/>
 
         <int32_t name='grow_counter'/>
-        <uint16_t name='temperature_1' comment='initial value 10050'/>
-        <uint16_t name='temperature_2' comment='initial value 0'/>
+        <uint16_t name='temperature'/>
+        <uint16_t name='temperature_fraction'/>
         <int32_t name='is_burning'/>
         <int32_t name='hitpoints'/>
-        <int16_t name='update_order'/>
-
         <stl-vector/>
         <int32_t/>
-        <uint16_t name='temperature_3' comment='initial value 60001 = NONE'/>
-        <uint16_t name='temperature_4' comment='initial value 60001 = NONE'/>
-        <uint16_t name='temperature_5' comment='initial value 60001 = NONE'/>
-    </struct-type>
+    </class-type>
 </data-definition>
 
 <!--
