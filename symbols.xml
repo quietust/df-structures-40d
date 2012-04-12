@@ -369,9 +369,9 @@
         <vtable-address name='viewscreen_unitst' value='0x75CC60'/>
         <vtable-address name='viewscreen_wagesst' value='0x75C0F4'/>
         <vtable-address name='viewscreenst' value='0x75653C'/>
-        <vtable-address name='unk1' value='0x753140'/>
-        <vtable-address name='unk2' value='0x753144'/>
-        <vtable-address name='unk3' value='0x753180'/>
-        <vtable-address name='unk4' value='0x758BD8'/>
+        <vtable-address name='unk1st' value='0x753140'/>
+        <vtable-address name='unk2st' value='0x753144'/>
+        <vtable-address name='unk3st' value='0x753180'/>
+        <vtable-address name='unk4st' value='0x758BD8'/>
     </symbol-table>
 </data-definition>
