@@ -119,7 +119,7 @@
 
         -- Unknown
 
-        <stl-vector name='unk_13a1c'>
+        <stl-vector name='unit_chunks'>
             <pointer/>
         </stl-vector>
         <stl-vector name='art_images'>
@@ -299,7 +299,7 @@
             <int32_t/>
         </compound>
 
-        <compound name='unk_42054'>
+        <compound name='schedules'>
             <stl-vector name='all'>
                 <pointer/>
             </stl-vector>
