@@ -262,15 +262,15 @@
         <stl-vector name='preferences'>
             <pointer type-name='unit_preference'/>
         </stl-vector>
-        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector name='demands' type-name='pointer'/>
         <static-array type-name='bool' name='labors' index-enum='unit_labor' count='62'/>
         <static-array type-name='int8_t' count='29' />
         <int32_t/>
         <stl-vector type-name='pointer' comment='unk'/>
         <stl-vector type-name='pointer' comment='unk'/>
-        <stl-vector type-name='pointer'/>
+        <stl-vector name='thoughts' type-name='pointer'/>
         <stl-vector type-name='pointer' comment='unk'/>
-        <int32_t/>
+        <int32_t name='happiness'/>
         <int16_t/>
         <stl-vector type-name='pointer' comment='unk'/>
         <stl-vector type-name='pointer' comment='unk'/>
