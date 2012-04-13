@@ -95,7 +95,6 @@
                 inherits-from='interface_button_buildingst'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
-        <compound name='material_category' type-name='job_material_category'/>
         <int8_t name="unk_1c"/>
     </class-type>
 
@@ -109,9 +108,7 @@
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <compound name="item_category" type-name='job_item_category'/>
         <int32_t name="hist_figure_id" ref-target='historical_figure'/>
-        <compound name='material_category' type-name='job_material_category'/>
         <bool name="unk_48"/>
-        <bool name="is_custom"/>
     </class-type>
 
     <class-type type-name='interface_button_constructionst'
@@ -168,7 +165,6 @@
 
             <enum base-type='int16_t' name='material' type-name='material_type'/>
             <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
-            <compound name='material_category' type-name='job_material_category'/>
         </compound>
 
         <compound name='building'>

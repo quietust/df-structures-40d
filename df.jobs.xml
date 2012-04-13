@@ -1,40 +1,4 @@
 <data-definition>
-    <bitfield-type type-name='job_material_category' base-type='uint32_t'>
-        <flag-bit name='plant'/>
-        <flag-bit name='wood'/>
-        <flag-bit name='cloth'/>
-        <flag-bit name='silk'/>
-        <flag-bit name='leather'/>
-        <flag-bit name='bone'/>
-        <flag-bit name='shell'/>
-        <flag-bit name='wood2'/>
-        <flag-bit name='soap'/>
-        <flag-bit name='tooth'/>
-        <flag-bit name='horn'/>
-        <flag-bit name='pearl'/>
-        <flag-bit name='yarn'/>
-    </bitfield-type>
-
-    <bitfield-type type-name='dfhack_material_category' base-type='uint32_t'>
-        <comment>
-            An extended version of job_material_category,
-            for use in some plugins, like workflow.
-        </comment>
-        <!-- The start must be identical to job_material_category -->
-        <flag-bit name='plant'/>
-        <flag-bit name='wood'/>
-        <flag-bit name='cloth'/>
-        <flag-bit name='silk'/>
-        <flag-bit name='leather'/>
-        <flag-bit name='bone'/>
-        <flag-bit name='shell'/>
-        <flag-bit name='wood2'/>
-        <flag-bit name='soap'/>
-        <flag-bit name='tooth'/>
-        <flag-bit name='horn'/>
-        <flag-bit name='pearl'/>
-    </bitfield-type>
-
     <bitfield-type type-name='job_item_category' base-type='uint32_t'>
         <flag-bit name='unk1'/>
         <flag-bit name='unk2'/>
@@ -56,7 +20,7 @@
         <pointer name='next' type-name='job_list_link'/>
     </struct-type>
 
-    <bitfield-type type-name='job_flags' base-type='uint32_t'>
+    <bitfield-type type-name='job_flags' base-type='uint16_t'>
         <flag-bit name='repeat'/>
         <flag-bit name='suspend'/>
         <flag-bit name='working' comment='not for food, or store in sp'/>
@@ -83,32 +47,24 @@
     <struct-type type-name='job' key-field='id'>
         <int32_t name='id'/>
         <pointer name='list_link' type-name='job_list_link'/>
-        <enum name='job_type' base-type='int16_t' type-name='job_type'/>
-        <int32_t name='unk2'/>
+        <enum name='job_type' base-type='int32_t' type-name='job_type'/>
 
         <code-helper name='describe'>$.job_type</code-helper>
 
         <compound name='pos' type-name='coord'/>
 
         <int32_t name='completion_timer' comment='-1 per 10 frames'/>
-
         <uint16_t name='unk4a'/>
         <uint16_t name='unk4b'/>
 
         <compound name='flags' type-name='job_flags'/>
-
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
-        <int16_t name='unk5'/>
-        <int16_t name='unk6'/>
         <int16_t name='item_subtype'/>
 
         <compound name="item_category" type-name='job_item_category'/>
-        <int32_t name="hist_figure_id" ref-target='historical_figure'/>
-        <compound name='material_category' type-name='job_material_category'/>
-
-        <int32_t name='unk9'/>
-        <int32_t name='unk10'/>
+        <stl-vector type-name='pointer'/>
+        <int16_t/>
 
         <stl-vector name='items'>
             <pointer type-name='job_item_ref'/>
@@ -123,10 +79,6 @@
 
         <stl-vector name='references'>
             <pointer type-name='general_ref'/>
-        </stl-vector>
-
-        <stl-vector name='job_items'>
-            <pointer type-name='job_item'/>
         </stl-vector>
     </struct-type>
 
@@ -144,7 +96,6 @@
         </enum>
         <int32_t name='is_fetching'
                  comment='0 immediately once taken to be brought'/>
-        <int32_t name='job_item_idx'/>
     </struct-type>
 
     <bitfield-type type-name='job_item_flags1' base-type='uint32_t'>
@@ -284,7 +235,6 @@
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <compound name="item_category" type-name='job_item_category'/>
         <int32_t init-value='-1'/>
-        <compound name="material_category" type-name='job_material_category'/>
         <int8_t init-value='1'/>
     </struct-type>
 
