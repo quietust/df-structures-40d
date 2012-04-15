@@ -121,7 +121,7 @@
         <flag-bit name="processable_to_vial" comment='vtable[81]'/>
         <flag-bit name="processable_to_bag" comment='vtable[82]'/>
         <flag-bit name="processable_to_barrel" comment='vtable[83]'/>
-        <flag-bit name="solid" comment='vtable[74]'/>
+        <flag-bit name="alchemical" comment='vtable[74]'/>
         <flag-bit name="tameable_vermin" comment='vtable[104]'/>
         <flag-bit name="nearby"/>
         <flag-bit name="sand_bearing" comment='vtable[108]'/>
@@ -141,26 +141,6 @@
         <flag-bit name="dyeable" comment='vtable[159]'/>
         <flag-bit name="dyed" comment='vtable[161]'/>
         <flag-bit name="sewn_imageless" comment='vtable[162]'/>
-        <flag-bit name="glass_making" comment='vtable[26]'/>
-        <flag-bit name="screw" comment='vtable[46]'/>
-        <flag-bit name="building_material" comment='vtable[47]'/>
-        <flag-bit name="fire_safe" comment='vtable[48],1'/>
-
-        <flag-bit name="magma_safe" comment='vtable[48],2'/>
-        <flag-bit name="deep_material" comment='check for inorganic material flag DEEP'/>
-        <flag-bit name="melt_designated" comment='check for item flag "melt"'/>
-        <flag-bit name="non_economic" comment='(call 0076be60)'/>
-        <flag-bit name="allow_melt_dump" comment='item can be designated for melting or dumping'/>
-        <flag-bit name="allow_artifact" comment='item can be artifact'/>
-        <flag-bit name="plant" comment='check if material is a PLANT_MAT'/>
-        <flag-bit name="silk" comment='check for material flag SILK'/>
-
-        <flag-bit name="leather" comment='check for material flag LEATHER'/>
-        <flag-bit name="bone" comment='check for material flag BONE'/>
-        <flag-bit name="shell" comment='check for material flag SHELL'/>
-        <flag-bit name="totemable" comment='vtable[158]'/>
-        <flag-bit name="horn" comment='check for material flag HORN'/>
-        <flag-bit name="pearl" comment='check for material flag PEARL'/>
     </bitfield-type>
 
     <struct-type type-name='job_item'>

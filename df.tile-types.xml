@@ -16,7 +16,7 @@
         <enum-item/>
         <enum-item/>
         <enum-item/>
-        <enum-item/>
+        <enum-item name='Gem'/>
 
         -- 0x10
 
