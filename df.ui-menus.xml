@@ -7,8 +7,6 @@
             E.g. Soap Maker's workshop requires a bucket and a building material.
         </comment>
 
-        <compound name='filter' type-name='job_item_filter'/>
-
         <stl-vector name='candidates'>
             <pointer type-name='item'/>
         </stl-vector>
