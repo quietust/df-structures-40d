@@ -57,11 +57,6 @@
             <stl-vector type-name='int16_t'/>
             <stl-vector type-name='int16_t'/>
             <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
             <compound name='trade'>
                 <compound name='metal_1' type-name='material_vec_ref'/>
                 <compound name='metal_2' type-name='material_vec_ref'/>
