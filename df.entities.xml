@@ -39,14 +39,12 @@
             <int32_t ref-target='unit'/>
         </stl-vector>
 
-        <stl-vector name='unk7' type-name='int32_t'/>
-
         <stl-vector name='nemesis_ids'>
             <int32_t ref-target='historical_figure'/>
         </stl-vector>
 
         <compound name='resources'>
-            <static-array name='unk8' count='15'>
+            <static-array name='unk8' count='16'>
                 <stl-vector type-name='int16_t'/>
             </static-array>
 
@@ -136,17 +134,17 @@
 
             <stl-vector type-name='pointer'/>
             <static-array count='5'>
-                <stl-vector type-name='pointer'/>
+                <stl-vector type-name='int8_t'/>
             </static-array>
             <stl-vector type-name='pointer'/>
 
             <int16_t/>
             <int16_t/>
 
-            <stl-vector type-name='pointer'/>
-            <stl-vector type-name='pointer'/>
-            <stl-vector type-name='pointer'/>
-            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int32_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int32_t'/>
             <stl-vector type-name='pointer'/>
         </compound>
 
@@ -167,7 +165,7 @@
             <int16_t/>
             <int32_t/>
             <static-array count='110' type-name='int32_t' index-enum='item_type'/>
-            <stl-vector type-name='int32_t' index-refers-to='itemdef_weaponst'/>
+            <stl-vector name='created_weapons' type-name='int32_t' index-refers-to='itemdef_weapon'/>
             <int32_t name='created_wealth'/>
             <int32_t/>
             <int32_t/>
@@ -181,14 +179,14 @@
             <int32_t/>
             <int32_t name='exported_wealth'/>
             <static-array count='202' index-enum='job_type'>
-                <static-array count='65' type='int32_t'/>
+                <static-array count='65' type-name='int32_t'/>
                 <int32_t name='completed'/>
             </static-array>
             <int32_t/>
-            <static-array count='5' type='int32_t'/>
-            <static-array count='5' type='int32_t'/>
-            <static-array count='5' type='int32_t'/>
-            <static-array count='5' type='int32_t'/>
+            <static-array count='5' type-name='int32_t'/>
+            <static-array count='5' type-name='int32_t'/>
+            <static-array count='5' type-name='int32_t'/>
+            <static-array count='5' type-name='int32_t'/>
             <int32_t/>
             <int32_t/>
             <int32_t/>
