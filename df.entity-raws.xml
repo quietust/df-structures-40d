@@ -146,7 +146,7 @@
             </stl-vector>
         </compound>
 
-        <static-array type-name='int32_t' name='currency_value' index-refers-to='material_type' count='64'/>
+        <static-array type-name='int32_t' name='currency_value' index-enum='material_type' count='64'/>
 
         <df-flagarray name='flags' index-enum='entity_raw_flags'/>
         <stl-string name='translation'/>

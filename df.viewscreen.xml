@@ -173,17 +173,6 @@
         <bool name='want_quantity'/>
     </class-type>
 
-    <class-type type-name='viewscreen_layer_arena_creaturest' inherits-from='viewscreen'>
-        <stl-vector name="interface_objects">
-            <pointer/>
-        </stl-vector>
-        <int8_t name="unk_1c"/>
-        <int16_t name="unk_1e"/>
-        <padding name="unk_20" size="8"/>
-        <int32_t name="cur_side"/>
-        <int32_t name="cur_interaction" refers-to='$global.world.arena_spawn.interactions[$]'/>
-    </class-type>
-
     <class-type type-name='viewscreen_dungeonmodest' inherits-from='viewscreen'>
         <int32_t name="x"/>
         <int32_t name="y"/>

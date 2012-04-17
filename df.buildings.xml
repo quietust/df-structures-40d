@@ -285,7 +285,7 @@
     </enum-type>
 
     <class-type type-name='building_furnacest' inherits-from='building_actual'>
-        <static-array name='melt_remainder' type-name='int32_t' count='32' index-refers-to='material_type'/>
+        <static-array name='melt_remainder' type-name='int32_t' count='32' index-enum='material_type'/>
 
         <int16_t/>
 
