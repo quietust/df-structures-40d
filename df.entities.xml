@@ -57,48 +57,45 @@
             <stl-vector type-name='int16_t'/>
             <stl-vector type-name='int16_t'/>
             <stl-vector type-name='int16_t'/>
-            <compound name='trade'>
-                <compound name='metal_1' type-name='material_vec_ref'/>
-                <compound name='metal_2' type-name='material_vec_ref'/>
-                <stl-vector name='leather'>
-                    <int16_t ref-target='creature_raw'/>
-                </stl-vector>
-                <stl-vector name='cloth_plant'>
-                    <int16_t ref-target='matgloss_plant'/>
-                </stl-vector>
-                <stl-vector name='cloth_silk'>
-                    <int16_t ref-target='creature_raw'/>
-                </stl-vector>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <compound type-name='material_vec_ref'/>
-                <compound name='crafts' type-name='material_vec_ref'/>
-                <compound type-name='material_vec_ref'/>
-                <compound type-name='material_vec_ref'/>
-                <stl-vector name='trade_pet'>
-                    <int16_t ref-target='creature_raw'/>
-                </stl-vector>
-                <compound type-name='material_vec_ref'/>
-                <compound name='drink' type-name='material_vec_ref'/>
-                <compound name='cheese' type-name='material_vec_ref'/>
-                <compound name='mill' type-name='material_vec_ref'/>
-                <compound name='extract' type-name='material_vec_ref'/>
-                <stl-vector name='meat_fish'>
-                    <int16_t ref-target='creature_raw'/>
-                </stl-vector>
-            </compound>
-
+            <compound name='metal_1' type-name='material_vec_ref'/>
+            <compound name='metal_2' type-name='material_vec_ref'/>
+            <stl-vector name='leather'>
+                <int16_t ref-target='creature_raw'/>
+            </stl-vector>
+            <stl-vector name='cloth_plant'>
+                <int16_t ref-target='matgloss_plant'/>
+            </stl-vector>
+            <stl-vector name='cloth_silk'>
+                <int16_t ref-target='creature_raw'/>
+            </stl-vector>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <compound type-name='material_vec_ref'/>
+            <compound name='crafts' type-name='material_vec_ref'/>
+            <compound type-name='material_vec_ref'/>
+            <compound type-name='material_vec_ref'/>
             <stl-vector name='pet'>
                 <int16_t ref-target='creature_raw'/>
+            </stl-vector>
+            <compound type-name='material_vec_ref'/>
+            <compound name='drink' type-name='material_vec_ref'/>
+            <compound name='cheese' type-name='material_vec_ref'/>
+            <compound name='mill' type-name='material_vec_ref'/>
+            <compound name='extract' type-name='material_vec_ref'/>
+            <stl-vector name='meat_fish'>
+                <int16_t ref-target='creature_raw'/>
+            </stl-vector>
+            <stl-vector name='plant'>
+                <int16_t ref-target='matgloss_plant'/>
             </stl-vector>
             <stl-vector name='wagon'>
                 <int16_t ref-target='creature_raw'/>
