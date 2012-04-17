@@ -1,15 +1,16 @@
 <data-definition>
     <bitfield-type type-name='job_item_category' base-type='uint32_t'>
-        <flag-bit name='unk1'/>
-        <flag-bit name='unk2'/>
+        <flag-bit/>
+        <flag-bit/>
         <flag-bit name='furniture'/>
-        <flag-bit name='unk8'/>
-        <flag-bit name='unk16'/>
-        <flag-bit name='unk32'/>
+        <flag-bit/>
+        <flag-bit/>
+        <flag-bit/>
+        <flag-bit/>
         <flag-bit name='ammo'/>
-        <flag-bit name='unk128'/>
-        <flag-bit name='unk256'/>
-        <flag-bit name='unk512'/>
+        <flag-bit/>
+        <flag-bit/>
+        <flag-bit/>
         <flag-bit name='finished_goods'/>
     </bitfield-type>
 

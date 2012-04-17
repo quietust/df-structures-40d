@@ -492,7 +492,7 @@
             <item-attr name='caption' value='Farming (Fields)'/>
         </enum-item>
 
-        -- 40
+        -- 30
 
         <enum-item name='HERBALIST'>
             <item-attr name='caption' value='Plant Gathering'/>
@@ -525,7 +525,7 @@
             <item-attr name='caption' value='Craftsworking'/>
         </enum-item>
 
-        -- 50
+        -- 40
 
         <enum-item name='GLASSMAKER'>
             <item-attr name='caption' value='Glassmaking'/>
@@ -558,7 +558,7 @@
             <item-attr name='caption' value='Blowgun-fighting'/>
         </enum-item>
 
-        -- 60
+        -- 50
 
         <enum-item name='PIKE'>
             <item-attr name='caption' value='Pike-fighting'/>
@@ -591,7 +591,7 @@
             <item-attr name='caption' value='Ashery Operating'/>
         </enum-item>
 
-        -- 70
+        -- 60
 
         <enum-item name='DYER'>
             <item-attr name='caption' value='Dyeing'/>
