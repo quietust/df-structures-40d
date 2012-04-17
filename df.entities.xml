@@ -57,8 +57,8 @@
             <stl-vector type-name='int16_t'/>
             <stl-vector type-name='int16_t'/>
             <stl-vector type-name='int16_t'/>
-            <compound name='metal_1' type-name='material_vec_ref'/>
-            <compound name='metal_2' type-name='material_vec_ref'/>
+            <compound name='weapon' type-name='material_vec_ref'/>
+            <compound name='armor' type-name='material_vec_ref'/>
             <stl-vector name='leather'>
                 <int16_t ref-target='creature_raw'/>
             </stl-vector>
@@ -77,16 +77,18 @@
             <stl-vector name='bone'>
                 <int16_t ref-target='creature_raw'/>
             </stl-vector>
-            <compound type-name='material_vec_ref'/>
-            <compound type-name='material_vec_ref'/>
-            <compound type-name='material_vec_ref'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <compound name='other' type-name='material_vec_ref' comment='jade, etc.'/>
             <compound name='crafts' type-name='material_vec_ref'/>
             <compound type-name='material_vec_ref'/>
             <compound name='wood' type-name='material_vec_ref'/>
             <stl-vector name='pet'>
                 <int16_t ref-target='creature_raw'/>
             </stl-vector>
-            <compound name='metal_3' type-name='material_vec_ref'/>
+            <compound name='metal_3' type-name='material_vec_ref' comment='wood materials for Elves, iron/bronze/copper for goblins (who only use iron for weapons/armors)'/>
             <compound name='drink' type-name='material_vec_ref'/>
             <compound name='cheese' type-name='material_vec_ref'/>
             <compound name='mill' type-name='material_vec_ref'/>
@@ -152,7 +154,7 @@
             <int16_t/>
             <int32_t/>
             <static-array count='110' type-name='int32_t' index-enum='item_type'/>
-            <stl-vector name='created_weapons' type-name='int32_t' index-refers-to='itemdef_weapon'/>
+            <stl-vector name='created_weapons' type-name='int32_t' index-refers-to='itemdef_weaponst'/>
             <int32_t name='created_wealth'/>
             <int32_t/>
             <int32_t/>
@@ -215,40 +217,14 @@
         <stl-vector name='nemesis'>
             <pointer type-name='nemesis_record'/>
         </stl-vector>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
+
+        <compound>
+            <compound name='flour_sugar' type-name='material_vec_ref'/>
+            <compound name='dye' type-name='material_vec_ref'/>
+            <static-array count='30'>
+                <stl-vector type-name='int16_t'/>
+            </static-array>
+        </compound>
     </struct-type>
 </data-definition>
 
