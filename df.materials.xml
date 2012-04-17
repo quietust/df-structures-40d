@@ -241,7 +241,14 @@
         <uint16_t name='fixed_temp'/>
     </struct-type>
 
-
+    <struct-type type-name='material_vec_ref'>
+        <stl-vector name='material'>
+            <enum base-type='int16_t' type-name='material_type'/>
+        </stl-vector>
+        <stl-vector name='matgloss'>
+            <int16_t refers-to='(matgloss-target $$._parent.material[$._key] $)'/>
+        </stl-vector>
+    </struct-type>
 </data-definition>
 
 <!--

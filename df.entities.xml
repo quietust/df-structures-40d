@@ -44,84 +44,79 @@
         </stl-vector>
 
         <compound name='resources'>
-            <static-array name='unk8' count='16'>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <compound name='trade'>
+                <compound name='metal_1' type-name='material_vec_ref'/>
+                <compound name='metal_2' type-name='material_vec_ref'/>
+                <stl-vector name='leather'>
+                    <int16_t ref-target='creature_raw'/>
+                </stl-vector>
+                <stl-vector name='cloth_plant'>
+                    <int16_t ref-target='matgloss_plant'/>
+                </stl-vector>
+                <stl-vector name='cloth_silk'>
+                    <int16_t ref-target='creature_raw'/>
+                </stl-vector>
                 <stl-vector type-name='int16_t'/>
-            </static-array>
-
-            <compound name='organic'>
-                <stl-vector name='leather' type-name='int16_t'/>
-                <stl-vector name='fiber' type-name='int16_t'/>
-                <stl-vector name='silk' type-name='int16_t'/>
-                <stl-vector name='wood' type-name='int16_t'/>
-            </compound>
-
-            <static-array name='unk10' count='3'>
                 <stl-vector type-name='int16_t'/>
-            </static-array>
-
-            <compound name='refuse'>
-                <stl-vector name='bone' type-name='int16_t'/>
-                <stl-vector name='shell' type-name='int16_t'/>
-                <stl-vector name='unk1' type-name='int16_t'/>
-                <stl-vector name='tooth' type-name='int16_t'/>
-                <stl-vector name='hoof' type-name='int16_t'/>
+                <stl-vector type-name='int16_t'/>
+                <stl-vector type-name='int16_t'/>
+                <stl-vector type-name='int16_t'/>
+                <stl-vector type-name='int16_t'/>
+                <stl-vector type-name='int16_t'/>
+                <stl-vector type-name='int16_t'/>
+                <stl-vector type-name='int16_t'/>
+                <stl-vector type-name='int16_t'/>
+                <stl-vector type-name='int16_t'/>
+                <compound type-name='material_vec_ref'/>
+                <compound name='crafts' type-name='material_vec_ref'/>
+                <compound type-name='material_vec_ref'/>
+                <compound type-name='material_vec_ref'/>
+                <stl-vector name='trade_pet'>
+                    <int16_t ref-target='creature_raw'/>
+                </stl-vector>
+                <compound type-name='material_vec_ref'/>
+                <compound name='drink' type-name='material_vec_ref'/>
+                <compound name='cheese' type-name='material_vec_ref'/>
+                <compound name='mill' type-name='material_vec_ref'/>
+                <compound name='extract' type-name='material_vec_ref'/>
+                <stl-vector name='meat_fish'>
+                    <int16_t ref-target='creature_raw'/>
+                </stl-vector>
             </compound>
 
-            <compound name='misc_mat'>
-                <stl-vector name='unk2' type-name='int16_t'/>
-                <stl-vector name='glass' type-name='int16_t'/>
-                <stl-vector name='rock_bone_metal' type-name='int16_t'/>
-                <stl-vector name='unk4' type-name='int16_t'/>
-                <stl-vector name='wood' type-name='int16_t'/>
-                <stl-vector name='metal_leather' type-name='int16_t'/>
-                <stl-vector name='leather' type-name='int16_t'/>
-                <stl-vector name='leather2' type-name='int16_t'/>
-                <stl-vector name='metal' type-name='int16_t'/>
-                <stl-vector name='booze' type-name='int16_t'/>
-                <stl-vector name='cheese' type-name='int16_t'/>
-                <stl-vector name='powders' type-name='int16_t'/>
-                <stl-vector name='extracts' type-name='int16_t'/>
-                <stl-vector name='meat' type-name='int16_t'/>
-            </compound>
-
-            <stl-vector name='fish_races'>
+            <stl-vector name='pet'>
                 <int16_t ref-target='creature_raw'/>
             </stl-vector>
-
-            <stl-vector name='plants' type-name='int16_t'/>
-            <stl-vector name='seeds' type-name='int16_t'/>
-
-            <compound name='wood_products' comment='lye, charcoal, potash, pearlash, and coke'>
-                <stl-vector name='item_type'>
-                    <enum base-type='int16_t' type-name='item_type'/>
-                </stl-vector>
-                <stl-vector type-name='int16_t' name='item_subtype'/>
-                <stl-vector type-name='int16_t' name='material'/>
-            </compound>
-
-            <compound name='animals'>
-                <stl-vector name='pet_races'>
-                    <int16_t ref-target='creature_raw'/>
-                </stl-vector>
-                <stl-vector name='wagon_races'>
-                    <int16_t ref-target='creature_raw'/>
-                </stl-vector>
-                <stl-vector name='pack_animal_races'>
-                    <int16_t ref-target='creature_raw'/>
-                </stl-vector>
-                <stl-vector name='wagon_puller_races'>
-                    <int16_t ref-target='creature_raw'/>
-                </stl-vector>
-                <stl-vector name='mount_races'>
-                    <int16_t ref-target='creature_raw'/>
-                </stl-vector>
-                <stl-vector name='unk728_races'>
-                    <int16_t ref-target='creature_raw'/>
-                </stl-vector>
-            </compound>
-
-            <stl-vector name='unk798' type-name='int16_t' comment='empty'/>
-            <stl-vector name='unk7a8' type-name='int16_t' comment='empty'/>
+            <stl-vector name='wagon'>
+                <int16_t ref-target='creature_raw'/>
+            </stl-vector>
+            <stl-vector name='pack_animal'>
+                <int16_t ref-target='creature_raw'/>
+            </stl-vector>
+            <stl-vector name='wagon_puller'>
+                <int16_t ref-target='creature_raw'/>
+            </stl-vector>
+            <stl-vector name='mount'>
+                <int16_t ref-target='creature_raw'/>
+            </stl-vector>
 
             <stl-vector type-name='pointer'/>
             <stl-vector type-name='pointer'/>
