@@ -9,15 +9,15 @@
             <int32_t name='plant'/>
             <int32_t name='drink'/>
         </compound>
-        <static-array name='populations' type-name='int16_t' count='88' index-enum='profession'/>
+        <static-array name='unit_counts' type-name='int16_t' count='88' index-enum='profession'/>
         <int16_t/>
         <int16_t/>
         <int16_t/>
-        <int16_t/>
-        <int16_t/>
+        <int16_t name='trained_animals'/>
+        <int16_t name='other_animals'/>
         <int16_t/>
         <int32_t/>
-        <static-array type-name='int32_t' count='110' index-enum='item_type'/>
+        <static-array name='item_counts' type-name='int32_t' count='110' index-enum='item_type'/>
         <stl-vector name='created_weapons' type-name='int32_t' index-refers-to='$global.world.raws.itemdefs.weapons[$]'/>
         <compound name='wealth'>
             <int32_t name='total'/>
@@ -27,13 +27,13 @@
             <int32_t name='other'/>
             <int32_t name='architecture'/>
             <int32_t name='displayed'/>
+            <int32_t/>
             <int32_t name='held'/>
             <int32_t name='imported'/>
             <int32_t/>
             <int32_t name='exported'/>
-            <int32_t/>
         </compound>
-        <static-array count='202' index-enum='job_type'>
+        <static-array name='recent_jobs' count='202' index-enum='job_type'>
             <static-array count='65' type-name='int32_t'/>
             <int32_t name='completed'/>
         </static-array>
@@ -59,11 +59,11 @@
         <int8_t name='found_caveriver'/>
         <int8_t name='found_chasm'/>
         <int8_t name='found_magma'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='bool'/>
+        <stl-vector type-name='bool'/>
+        <stl-vector type-name='bool'/>
+        <stl-vector type-name='bool'/>
+        <stl-vector type-name='bool'/>
     </struct-type>
 
     <struct-type type-name='historical_entity' key-field='id'
