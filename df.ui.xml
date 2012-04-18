@@ -241,12 +241,12 @@
             <compound name='price_adjustment'>
                 <stl-vector type-name='int32_t' name='general_items' index-enum='item_type'/>
                 <stl-vector type-name='int32_t' name='weapons' index-refers-to='$global.world.raws.itemdefs.weapons[$]'/>
-                <stl-vector type-name='int32_t' name='armors' index-refers-to='$global.world.raws.itemdefs.armor[$]'/>
+                <stl-vector type-name='int32_t' name='armor' index-refers-to='$global.world.raws.itemdefs.armor[$]'/>
                 <stl-vector type-name='int32_t' name='handwear' index-refers-to='$global.world.raws.itemdefs.helms[$]'/>
                 <stl-vector type-name='int32_t' name='footwear' index-refers-to='$global.world.raws.itemdefs.shoes[$]'/>
                 <stl-vector type-name='int32_t' name='headgear' index-refers-to='$global.world.raws.itemdefs.gloves[$]'/>
                 <stl-vector type-name='int32_t' name='legwear' index-refers-to='$global.world.raws.itemdefs.pants[$]'/>
-                <stl-vector type-name='int32_t' name='food' index-refers-to='$global.world.raws.itemdefs.food[$]'/>
+                <stl-vector type-name='int32_t' name='prepared_food' index-refers-to='$global.world.raws.itemdefs.food[$]'/>
                 <stl-vector type-name='int32_t' name='potions'/>
                 <stl-vector type-name='int32_t' name='materials' index-enum='material_type'/>
                 <stl-vector type-name='int32_t' name='wood' index-refers-to='$global.world.raws.matgloss_wood[$]'/>
@@ -269,17 +269,17 @@
                 <stl-vector type-name='int32_t' name='mill_plant' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
                 <stl-vector type-name='int32_t' name='cheese_animal' index-refers-to='$global.world.raws.creatures[$]'/>
                 <stl-vector type-name='int32_t' name='cheese_plant' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
-                <stl-vector type-name='int32_t' name='pet' index-refers-to='$global.world.raws.creatures[$]'/>
+                <stl-vector type-name='int32_t' name='pets' index-refers-to='$global.world.raws.creatures[$]'/>
             </compound>
             <compound name='price_setter'>
                 <stl-vector name='general_items' index-enum='item_type'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='weapons' index-refers-to='$global.world.raws.itemdefs.weapons[$]'><pointer type-name='unit'/></stl-vector>
-                <stl-vector name='armors' index-refers-to='$global.world.raws.itemdefs.armor[$]'><pointer type-name='unit'/></stl-vector>
+                <stl-vector name='armor' index-refers-to='$global.world.raws.itemdefs.armor[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='handwear' index-refers-to='$global.world.raws.itemdefs.helms[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='footwear' index-refers-to='$global.world.raws.itemdefs.shoes[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='headgear' index-refers-to='$global.world.raws.itemdefs.gloves[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='legwear' index-refers-to='$global.world.raws.itemdefs.pants[$]'><pointer type-name='unit'/></stl-vector>
-                <stl-vector name='food' index-refers-to='$global.world.raws.itemdefs.food[$]'><pointer type-name='unit'/></stl-vector>
+                <stl-vector name='prepared_food' index-refers-to='$global.world.raws.itemdefs.food[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='potions'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='materials' index-enum='material_type'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='wood' index-refers-to='$global.world.raws.matgloss_wood[$]'><pointer type-name='unit'/></stl-vector>
@@ -302,7 +302,7 @@
                 <stl-vector name='mill_plant' index-refers-to='$global.world.raws.matgloss_plant[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='cheese_animal' index-refers-to='$global.world.raws.creatures[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='cheese_plant' index-refers-to='$global.world.raws.matgloss_plant[$]'><pointer type-name='unit'/></stl-vector>
-                <stl-vector name='pet' index-refers-to='$global.world.raws.creatures[$]'><pointer type-name='unit'/></stl-vector>
+                <stl-vector name='pets' index-refers-to='$global.world.raws.creatures[$]'><pointer type-name='unit'/></stl-vector>
             </compound>
         </compound>
 
