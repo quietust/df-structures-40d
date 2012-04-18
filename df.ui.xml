@@ -102,7 +102,7 @@
         <static-array name='currency_value' type-name='int32_t' count='64' index-enum='material_type'/>
         <int32_t/>
         <int32_t/>
-        <int32_t/>
+        <int32_t name='adamantine_mined'/>
         <int32_t/>
 
         <compound type-name='entity_activity_statistics'/>
@@ -127,9 +127,9 @@
             </pointer>
         </stl-vector>
 
-        <stl-vector comment='maybe'><int32_t ref-target='unit'/></stl-vector>
-        <stl-vector comment='maybe'><int32_t ref-target='unit'/></stl-vector>
-        <stl-vector comment='maybe'><int32_t ref-target='unit'/></stl-vector>
+        <stl-vector name='royal_guards'><int32_t ref-target='unit'/></stl-vector>
+        <stl-vector name='fortress_guards'><int32_t ref-target='unit'/></stl-vector>
+        <stl-vector name='aid_requesters'><int32_t ref-target='unit'/></stl-vector>
         <int8_t/>
 
         <compound name='invasions'>
@@ -234,12 +234,8 @@
         <stl-vector type-name='int16_t'/>
         <stl-vector type-name='int8_t'/>
 
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int8_t/>
-        <int8_t/>
-        <int8_t/>
+        <static-array type-name='int16_t' count='3'/>
+        <static-array type-name='int8_t' count='3'/>
 
         <compound name='economy_prices'>
             <compound name='price_adjustment'>
