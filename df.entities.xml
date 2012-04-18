@@ -18,7 +18,7 @@
         <int16_t/>
         <int32_t/>
         <static-array type-name='int32_t' count='110' index-enum='item_type'/>
-        <stl-vector name='created_weapons' type-name='int32_t'/>
+        <stl-vector name='created_weapons' type-name='int32_t' index-refers-to='$global.world.raws.itemdefs.weapons[$]'/>
         <compound name='wealth'>
             <int32_t name='total'/>
             <int32_t name='weapons'/>
@@ -155,7 +155,7 @@
             <stl-vector name='pet'>
                 <int16_t ref-target='creature_raw'/>
             </stl-vector>
-            <compound name='metal_3' type-name='material_vec_ref' comment='wood materials for Elves, iron/bronze/copper for goblins (who only use iron for weapons/armors)'/>
+            <compound name='metal_3' type-name='material_vec_ref' comment='ammo materials?'/>
             <compound name='drink' type-name='material_vec_ref'/>
             <compound name='cheese' type-name='material_vec_ref'/>
             <compound name='mill' type-name='material_vec_ref'/>
