@@ -103,6 +103,13 @@
         <enum-item name='Baby'/>
     </enum-type>
 
+    <struct-type type-name='unit_list_link'>
+        <code-helper name='describe'>(describe-obj $.item)</code-helper>
+        <pointer name='item' type-name='unit'/>
+        <pointer name='prev' type-name='unit_list_link'/>
+        <pointer name='next' type-name='unit_list_link'/>
+    </struct-type>
+
     <struct-type type-name='unit' key-field='id' instance-vector='$global.world.units.all'>
         <compound type-name='language_name' name='name'/>
 

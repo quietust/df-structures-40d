@@ -27,7 +27,7 @@
             <int32_t name='other'/>
             <int32_t name='architecture'/>
             <int32_t name='displayed'/>
-            <int32_t/>
+            <int32_t name='road'/>
             <int32_t name='held'/>
             <int32_t name='imported'/>
             <int32_t/>
