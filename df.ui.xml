@@ -48,51 +48,65 @@
     </enum-type>
 
     <struct-type type-name='ui'>
-        ctor 86e33c0 x
-        dtor 8534190
-
-        <padding size='16'/>
-        <stl-vector name='unk10'/>
-        <padding size='76'/>
-        <stl-vector name='unk68' type-name='pointer'/>
-        <padding size='24'/>
-        <compound name='becoming_capital'>
+        <int32_t/>
+        <int32_t/>
+        <int16_t/>
+        <int32_t/>
+        <stl-vector/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int16_t/>
+        <int16_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <stl-vector type-name='pointer'/>
+        <int8_t/>
+        <stl-vector type-name='pointer'/>
+        <int8_t/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector name='roadInfo' type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <int16_t name='progress_population'/>
+        <int16_t name='progress_trade'/>
+        <int16_t name='progress_production'/>
+        <bool/>
+        <bool/>
+        <bool/>
+        <bool name='economy_active'/>
+        <bool/>
+        <bool name='justice_active'/>
+        <int16_t/>
+        <compound name='incoming_king'>
             <int32_t name='desired_architecture'/>
+            <int32_t name='desired_roads'/>
             <int32_t name='desired_offerings'/>
         </compound>
-        <padding size='352'/>
-        <stl-vector name='currency_value' type-name='int32_t'
-                    index-refers-to='(material-by-id 0 $)'/>
-        <padding size='812'/>
-        <stl-vector name='unk530' type-name='int32_t'/>
-        <compound name='wealth'>
-            <int32_t name='total'/>
-            <int32_t name='weapons'/>
-            <int32_t name='armor'/>
-            <int32_t name='furniture'/>
-            <int32_t name='other'/>
-            <int32_t name='architecture'/>
-            <int32_t name='displayed'/>
-            <int32_t name='held'/>
-            <int32_t name='imported'/>
-            <int32_t/>
-            <int32_t name='exported'/>
-            <int32_t/>
-        </compound>
-        <padding size='7380'/>
-        <stl-vector name='unk2298' type-name='bool'
-                    index-refers-to='(find-creature $)'/>
-        <stl-vector name='unk22a4' type-name='bool'
-                    index-refers-to='(find-creature $)'/>
-        <stl-vector name='unk22b0' type-name='bool'
-                    index-refers-to='(find-plant-raw $)'/>
-        <stl-vector name='unk22bc' type-name='bool'
-                    index-refers-to='(find-plant-raw $)'/>
-        <padding size='16'/>
-        <stl-vector name='unk22d8' type-name='int32_t'/>
-        <padding size='4'/>
-        <stl-vector name='unk22e8'/>
+        <static-array name='nobles_enabled' type-name='int16_t' count='88' index-enum='profession'/>
+        <static-array name='nobles_arrived' type-name='int16_t' count='88' index-enum='profession'/>
+        <static-array name='nobles_killed' type-name='int16_t' count='88' index-enum='profession'/>
+        <static-array type-name='int32_t' count='16'/>
+        <static-array type-name='int32_t' count='8'/>
+        <static-array type-name='int32_t' count='8'/>
+        <static-array name='currency_value' type-name='int32_t' count='64' index-enum='material_type'/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
 
+        <compound type-name='entity_activity_statistics'/>
+
+        <stl-vector type-name='pointer'/>
         <stl-vector name='dip_meeting_vec'>
             <pointer type-name='meeting_diplomat'/>
         </stl-vector>
@@ -115,8 +129,10 @@
         <stl-vector name='unk230c' comment='really a wild guess'>
             <int32_t ref-target='unit'/>
         </stl-vector>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
 
-        <padding size='4'/>
+...
 
         <compound name='invasions'>
             <stl-vector name='list' comment='goblins...'>
@@ -192,9 +208,6 @@
             <stl-vector name='exc_types' type-name='int8_t'/>
         </compound>
 
-        <stl-vector name='economic_stone' type-name='bool'
-                    index-refers-to='(material-by-id 0 $)'/>
-
         <padding size='4'/>
         <int16_t name='unk23cc'/>
         <int16_t name='unk23ce'/>
@@ -219,79 +232,6 @@
             <int32_t name='reserved_barrels'/>
 
             <compound name='custom_settings' type-name='stockpile_settings'/>
-        </compound>
-
-        <static-array name='unk2a8c' count='4'>
-            <static-array count='768'>
-                <int16_t name='unk1'/>
-                <int16_t name='unk2'/>
-            </static-array>
-        </static-array>
-
-        <stl-vector name='unk5a8c' type-name='int16_t'/>
-        <stl-vector name='unk5a98' type-name='int16_t'/>
-        <stl-vector name='unk5aa4' type-name='int16_t'/>
-
-        <static-array name='unk5ab0' count='5'>
-            <stl-vector type-name='int16_t'/>
-        </static-array>
-
-        <stl-vector name='unk5aec' type-name='int16_t'/>
-
-        <static-array name='unk5af8' count='5'>
-            <stl-vector type-name='int16_t'/>
-        </static-array>
-
-        <stl-vector name='unk5b34' type-name='int16_t'/>
-
-        <static-array name='unk5b40' count='5'>
-            <stl-vector type-name='int16_t'/>
-        </static-array>
-
-        <stl-vector name='unk5b7c' type-name='int16_t'/>
-
-        <static-array name='unk5b88' count='7'>
-            <stl-vector/>
-        </static-array>
-
-        <compound name='equipment'>
-            <static-array name='items_by_type1' count='112' index-enum='item_type'>
-                <stl-vector>
-                    <pointer type-name='item'/>
-                </stl-vector>
-            </static-array>
-
-            <static-array name='items_unassigned' count='112' index-enum='item_type'>
-                <stl-vector>
-                    <pointer type-name='item'/>
-                </stl-vector>
-            </static-array>
-            <static-array name='items_assigned' count='112' index-enum='item_type'>
-                <stl-vector>
-                    <pointer type-name='item'/>
-                </stl-vector>
-            </static-array>
-        </compound>
-
-        <compound name='main'>
-            <stl-vector name='dead_citizens' comment='?'>
-                <pointer>
-                    <int32_t name='unit_id' ref-target='unit'/>
-                    <int32_t name='histfig_id' ref-target='historical_figure'/>
-                    <int32_t name='death_year'/>
-                    <int32_t name='death_time'/>
-                    <int32_t name='timer' comment='+1 per 10'/>
-                    <int16_t name='unk6'/>
-                </pointer>
-            </stl-vector>
-
-            <pointer name='fortress_entity' type-name='historical_entity'
-                     comment='entity pointed to by group_id'/>
-
-            <enum base-type='int32_t' name='mode' type-name='ui_sidebar_mode'/>
-
-            <bool name='unk6df2'/>
-            <int32_t name='unk6df4'/>
         </compound>
     </struct-type>
 </data-definition>

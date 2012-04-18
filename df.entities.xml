@@ -1,4 +1,71 @@
 <data-definition>
+    <struct-type type-name='entity_activity_statistics'>
+        <compound name='food'>
+            <int32_t name='total'/>
+            <int32_t name='meat'/>
+            <int32_t name='fish'/>
+            <int32_t name='other'/>
+            <int32_t name='seeds'/>
+            <int32_t name='plant'/>
+            <int32_t name='drink'/>
+        </compound>
+        <static-array name='populations' type-name='int16_t' count='88' index-enum='profession'/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int32_t/>
+        <static-array type-name='int32_t' count='110' index-enum='item_type'/>
+        <stl-vector name='created_weapons' type-name='int32_t'/>
+        <compound name='wealth'>
+            <int32_t name='total'/>
+            <int32_t name='weapons'/>
+            <int32_t name='armor'/>
+            <int32_t name='furniture'/>
+            <int32_t name='other'/>
+            <int32_t name='architecture'/>
+            <int32_t name='displayed'/>
+            <int32_t name='held'/>
+            <int32_t name='imported'/>
+            <int32_t/>
+            <int32_t name='exported'/>
+            <int32_t/>
+        </compound>
+        <static-array count='202' index-enum='job_type'>
+            <static-array count='65' type-name='int32_t'/>
+            <int32_t name='completed'/>
+        </static-array>
+        <int32_t/>
+        <static-array count='5' type-name='int32_t'/>
+        <static-array count='5' type-name='int32_t'/>
+        <static-array count='5' type-name='int32_t'/>
+        <static-array count='5' type-name='int32_t'/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t name='num_artifacts'/>
+        <int32_t/>
+        <int8_t name='found_gold'/>
+        <int8_t name='found_coal'/>
+        <int8_t name='found_copper'/>
+        <int8_t name='found_silver'/>
+        <int8_t name='found_tin'/>
+        <int8_t name='found_zinc'/>
+        <int8_t name='found_iron'/>
+        <int8_t name='found_platinum'/>
+        <int8_t name='found_adamantine'/>
+        <int8_t name='found_caveriver'/>
+        <int8_t name='found_chasm'/>
+        <int8_t name='found_magma'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+    </struct-type>
+
     <struct-type type-name='historical_entity' key-field='id'
                  instance-vector='$global.world.entities.all'>
         <int16_t name='type' comment='0 = civilization, 1-4 = group?'/>
@@ -137,68 +204,7 @@
             <stl-vector type-name='pointer'/>
         </compound>
 
-        <compound name='jobs'>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <static-array count='88' type-name='int16_t' index-enum='profession'/>
-            <int16_t/>
-            <int16_t/>
-            <int16_t/>
-            <int16_t/>
-            <int16_t/>
-            <int16_t/>
-            <int32_t/>
-            <static-array count='110' type-name='int32_t' index-enum='item_type'/>
-            <stl-vector name='created_weapons' type-name='int32_t' index-refers-to='itemdef_weaponst'/>
-            <int32_t name='created_wealth'/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t name='exported_wealth'/>
-            <static-array count='202' index-enum='job_type'>
-                <static-array count='65' type-name='int32_t'/>
-                <int32_t name='completed'/>
-            </static-array>
-            <int32_t/>
-            <static-array count='5' type-name='int32_t'/>
-            <static-array count='5' type-name='int32_t'/>
-            <static-array count='5' type-name='int32_t'/>
-            <static-array count='5' type-name='int32_t'/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int8_t/>
-            <int8_t/>
-            <int8_t/>
-            <int8_t/>
-            <int8_t/>
-            <int8_t/>
-            <int8_t/>
-            <int8_t/>
-            <int8_t/>
-            <int8_t/>
-            <int8_t/>
-            <int8_t/>
-            <stl-vector type-name='pointer'/>
-            <stl-vector type-name='pointer'/>
-            <stl-vector type-name='pointer'/>
-            <stl-vector type-name='pointer'/>
-            <stl-vector type-name='pointer'/>
-        </compound>
+        <compound type-name='entity_activity_statistics'/>
 
         <int8_t/>
         <int16_t/>
