@@ -1,11 +1,11 @@
 <data-definition>
     <struct-type type-name='world'>
         dtor 89fff80
-        <stl-vector name='unk_0'>
-            <pointer/>
+        <stl-vector name='gem_clusters'>
+            <pointer type-name='mineral_cluster'/>
         </stl-vector>
-        <stl-vector name='unk_C'>
-            <pointer/>
+        <stl-vector name='stone_clusters'>
+            <pointer type-name='mineral_cluster'/>
         </stl-vector>
 
         <stl-vector name='engravings'>

@@ -54,6 +54,17 @@
         </code-helper>
     </struct-type>
 
+    <struct-type type-name='mineral_cluster'>
+        <int16_t name='x1'/>
+        <int16_t name='x2'/>
+        <int16_t name='y1'/>
+        <int16_t name='y2'/>
+        <int16_t name='z'/>
+        <int16_t name='color'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
+    </struct-type>
+
     <bitfield-type type-name='tile_color' base-type='uint8_t'>
         <flag-bit name='color' count='4'/>
         <flag-bit name='mud'/>
