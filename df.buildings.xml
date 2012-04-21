@@ -365,6 +365,7 @@
     </class-type>
 
     <enum-type type-name='workshop_type' base-type='int16_t'>
+        <enum-item name="Alchemists"/>
         <enum-item name="Carpenters"/>
         <enum-item name="Farmers"/>
         <enum-item name="Masons"/>
@@ -378,7 +379,7 @@
         <enum-item name="Butchers"/>
         <enum-item name="Leatherworks"/>
         <enum-item name="Tanners"/>
-        <enum-item name="Clothiers"/>
+        <enum-item name="Clothes"/>
         <enum-item name="Fishery"/>
         <enum-item name="Still"/>
         <enum-item name="Loom"/>
