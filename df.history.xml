@@ -30,22 +30,6 @@
         <stl-vector name="killed_count" type-name='int32_t'/>
     </struct-type>
 
-    <struct-type type-name='history_hit_item'>
-        <int32_t name='item' ref-target='item'/>
-        <enum base-type='int16_t' name='item_type' type-name='item_type'/>
-        <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
-
-        <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
-
-        -- If shot by a ranged weapon:
-        <int32_t name='bow_item' ref-target='item'/>
-        <enum base-type='int16_t' name='bow_item_type' type-name='item_type'/>
-        <int16_t name='bow_item_subtype' refers-to='(item-subtype-target $$._parent.bow_item_type $)'/>
-        <enum base-type='int16_t' name='bow_material' type-name='material_type'/>
-        <int16_t name='bow_matgloss' refers-to='(matgloss-target $$._parent.bow_material $)'/>
-    </struct-type>
-
     <struct-type type-name='historical_figure_info'>
         <pointer name="skills">
             <stl-vector name="skills">
@@ -154,7 +138,6 @@
         <enum-item name='CREATED_SITE'/>
         <enum-item name='HIST_FIGURE_DIED'/>
         <enum-item name='ADD_HF_ENTITY_LINK'/>
-        <enum-item name='REMOVE_HF_ENTITY_LINK'/>
         <enum-item name='FIRST_CONTACT'/>
         <enum-item name='FIRST_CONTACT_FAILED'/>
         <enum-item name='TOPICAGREEMENT_CONCLUDED'/>
@@ -172,65 +155,20 @@
         <enum-item name='ARTIFACT_FOUND'/>
         <enum-item name='ARTIFACT_RECOVERED'/>
         <enum-item name='ARTIFACT_DROPPED'/>
+        <enum-item name='DEMON_ENCASED'/>
+        <enum-item name='DEMON_RELEASED'/>
         <enum-item name='RECLAIM_SITE'/>
+        <enum-item name='CONTACT_LIST'/>
         <enum-item name='HF_DESTROYED_SITE'/>
         <enum-item name='SITE_DIED'/>
         <enum-item name='SITE_ABANDONED'/>
-        <enum-item name='ENTITY_CREATED'/>
-        <enum-item name='ENTITY_ACTION'/>
-        <enum-item name='ENTITY_INCORPORATED'/>
-        <enum-item name='CREATED_BUILDING'/>
-        <enum-item name='REPLACED_BUILDING'/>
-        <enum-item name='ADD_HF_SITE_LINK'/>
-        <enum-item name='REMOVE_HF_SITE_LINK'/>
-        <enum-item name='ADD_HF_HF_LINK'/>
-        <enum-item name='REMOVE_HF_HF_LINK'/>
-        <enum-item name='ENTITY_RAZED_BUILDING'/>
-        <enum-item name='MASTERPIECE_CREATED_ARCH_DESIGN'/>
-        <enum-item name='MASTERPIECE_CREATED_ARCH_CONSTRUCT'/>
-        <enum-item name='MASTERPIECE_CREATED_ITEM'/>
-        <enum-item name='MASTERPIECE_CREATED_DYE_ITEM'/>
-        <enum-item name='MASTERPIECE_CREATED_ITEM_IMPROVEMENT'/>
-        <enum-item name='MASTERPIECE_CREATED_FOOD'/>
-        <enum-item name='MASTERPIECE_CREATED_ENGRAVING'/>
-        <enum-item name='MASTERPIECE_LOST'/>
-        <enum-item name='CHANGE_HF_STATE'/>
-        <enum-item name='CHANGE_HF_JOB'/>
-        <enum-item name='WAR_FIELD_BATTLE'/>
-        <enum-item name='WAR_PLUNDERED_SITE'/>
-        <enum-item name='WAR_SITE_NEW_LEADER'/>
-        <enum-item name='WAR_SITE_TRIBUTE_FORCED'/>
-        <enum-item name='WAR_SITE_TAKEN_OVER'/>
-        <enum-item name='BODY_ABUSED'/>
-        <enum-item name='HIST_FIGURE_ABDUCTED'/>
-        <enum-item name='ITEM_STOLEN'/>
-        <enum-item name='HF_RAZED_BUILDING'/>
-        <enum-item name='CREATURE_DEVOURED'/>
-        <enum-item name='HIST_FIGURE_WOUNDED'/>
-        <enum-item name='HIST_FIGURE_SIMPLE_BATTLE_EVENT'/>
-        <enum-item name='CREATED_WORLD_CONSTRUCTION'/>
-        <enum-item name='HIST_FIGURE_REUNION'/>
-        <enum-item name='HIST_FIGURE_REACH_SUMMIT'/>
-        <enum-item name='HIST_FIGURE_TRAVEL'/>
-        <enum-item name='HIST_FIGURE_NEW_PET'/>
-        <enum-item name='ASSUME_IDENTITY'/>
-        <enum-item name='CREATE_ENTITY_POSITION'/>
-        <enum-item name='CHANGE_CREATURE_TYPE'/>
-        <enum-item name='HIST_FIGURE_REVIVED'/>
-        <enum-item name='HF_LEARNS_SECRET'/>
-        <enum-item name='CHANGE_HF_BODY_STATE'/>
-        <enum-item name='HF_ACT_ON_BUILDING'/>
-        <enum-item name='HF_DOES_INTERACTION'/>
-        <enum-item name='HF_CONFRONTED'/>
-        <enum-item name='ENTITY_LAW'/>
-        <enum-item name='HF_GAINS_SECRET_GOAL'/>
-        <enum-item name='ARTIFACT_STORED'/>
     </enum-type>
 
     <class-type type-name='history_event' original-name='history_eventst'
                 instance-vector='$global.world.world_data.history.events' key-field='id'>
         <int32_t name='year'/>
-        <int32_t name='seconds'/>
+        <int8_t name='season'/>
+        <int16_t name='seconds'/>
         <df-flagarray name='flags'/>
         <int32_t name='id'/>
 
@@ -297,8 +235,6 @@
         <int32_t/>
         <int32_t/>
         <int32_t/>
-        <int32_t/>
-        <int32_t/>
     </class-type>
 
     <class-type type-name='history_event_war_destroyed_sitest' inherits-from='history_event'>
@@ -318,9 +254,6 @@
         <int32_t name='hfid' ref-target='historical_figure'/>
 
         <int32_t name='slayer' ref-target='historical_figure'/>
-        <int32_t name='slayer_race' ref-target='creature_raw'/>
-
-        <compound name='weapon' type-name='history_hit_item'/>
 
         <int32_t name='site' ref-target='world_site'/>
         <int32_t name='region' ref-target='world_region'/>
@@ -331,15 +264,6 @@
     <class-type type-name='history_event_add_hf_entity_linkst' inherits-from='history_event'>
         <int32_t name='entity_id' ref-target='historical_entity'/>
         <int32_t name='hfid' ref-target='historical_figure'/>
-        <int32_t/>
-        <int32_t/>
-    </class-type>
-
-    <class-type type-name='history_event_remove_hf_entity_linkst' inherits-from='history_event'>
-        <int32_t name='entity_id' ref-target='historical_entity'/>
-        <int32_t name='hfid' ref-target='historical_figure'/>
-        <int32_t/>
-        <int32_t/>
     </class-type>
 
     <class-type type-name='history_event_first_contactst' inherits-from='history_event'>
@@ -428,7 +352,6 @@
         <int32_t name='unit_id' ref-target='unit'/>
         <int32_t name='hfid' ref-target='historical_figure'/>
         <int32_t name='site' ref-target='world_site'/>
-        <int32_t/>
     </class-type>
 
     <class-type type-name='history_event_artifact_lostst' inherits-from='history_event'>
@@ -459,7 +382,23 @@
         <int32_t/>
     </class-type>
 
+    <class-type type-name='history_event_demon_encasedst' inherits-from='history_event'>
+        <int32_t name='hfid' ref-target='historical_figure'/>
+        <int32_t name='site' ref-target='world_site'/>
+    </class-type>
+
+    <class-type type-name='history_event_demon_releasedst' inherits-from='history_event'>
+        <int32_t name='hfid' ref-target='historical_figure'/>
+        <int32_t name='site' ref-target='world_site'/>
+    </class-type>
+
     <class-type type-name='history_event_reclaim_sitest' inherits-from='history_event'>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='history_event_contact_lostst' inherits-from='history_event'>
         <int32_t/>
         <int32_t/>
         <int32_t/>

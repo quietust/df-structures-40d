@@ -294,8 +294,8 @@
         <stl-vector name="permitted_workers">
             <int32_t ref-target='unit'/>
         </stl-vector>
-        <int32_t name="min_level"/>
-        <int32_t name="max_level"/>
+        <int16_t name="min_level"/>
+        <int16_t name="max_level"/>
     </class-type>
 
     <class-type type-name='building_tradedepotst' inherits-from='building_actual'/>
@@ -396,8 +396,8 @@
         <stl-vector name="permitted_workers">
             <int32_t ref-target='unit'/>
         </stl-vector>
-        <int32_t name="min_level"/>
-        <int32_t name="max_level"/>
+        <int16_t name="min_level"/>
+        <int16_t name="max_level"/>
     </class-type>
 
     <class-type type-name='building_cabinetst' inherits-from='building_actual'>
