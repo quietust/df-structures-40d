@@ -6,6 +6,18 @@
         <code-helper name='describe'>(fmt "(~A,~A)" $.x $.y)</code-helper>
     </struct-type>
 
+    <struct-type type-name='coord2d_path' custom-methods='true'>
+        <stl-vector type-name='int32_t' name='x'/>
+        <stl-vector type-name='int32_t' name='y'/>
+
+        <code-helper name='describe'>
+            (fmt "[~A]" $.x.count)
+            (loop for i from 0 below (min $.x.count 3)
+              collect (fmt "(~A,~A)" $.x[i] $.y[i]))
+            (when (> $.x.count 3) "...")
+        </code-helper>
+    </struct-type>
+
     <struct-type type-name='coord2d16' custom-methods='true'>
         <int16_t name='x' init-value='-30000'/>
         <int16_t name='y' init-value='-30000'/>
@@ -13,9 +25,9 @@
         <code-helper name='describe'>(fmt "(~A,~A)" $.x $.y)</code-helper>
     </struct-type>
 
-    <struct-type type-name='coord2d_path' custom-methods='true'>
-        <stl-vector type-name='int32_t' name='x'/>
-        <stl-vector type-name='int32_t' name='y'/>
+    <struct-type type-name='coord2d16_path' custom-methods='true'>
+        <stl-vector type-name='int16_t' name='x'/>
+        <stl-vector type-name='int16_t' name='y'/>
 
         <code-helper name='describe'>
             (fmt "[~A]" $.x.count)
@@ -33,6 +45,19 @@
         <code-helper name='describe'>(fmt "(~A,~A,~A)" $.x $.y $.z)</code-helper>
     </struct-type>
 
+    <struct-type type-name='coord_path' custom-methods='true'>
+        <stl-vector type-name='int32_t' name='x'/>
+        <stl-vector type-name='int32_t' name='y'/>
+        <stl-vector type-name='int32_t' name='z'/>
+
+        <code-helper name='describe'>
+            (fmt "[~A]" $.x.count)
+            (loop for i from 0 below (min $.x.count 3)
+              collect (fmt "(~A,~A,~A)" $.x[i] $.y[i] $.z[i]))
+            (when (> $.x.count 3) "...")
+        </code-helper>
+    </struct-type>
+
     <struct-type type-name='coord16' custom-methods='true'>
         <int16_t name='x' init-value='-30000'/>
         <int16_t name='y' init-value='-30000'/>
@@ -41,10 +66,10 @@
         <code-helper name='describe'>(fmt "(~A,~A,~A)" $.x $.y $.z)</code-helper>
     </struct-type>
 
-    <struct-type type-name='coord_path' custom-methods='true'>
-        <stl-vector type-name='int32_t' name='x'/>
-        <stl-vector type-name='int32_t' name='y'/>
-        <stl-vector type-name='int32_t' name='z'/>
+    <struct-type type-name='coord16_path' custom-methods='true'>
+        <stl-vector type-name='int16_t' name='x'/>
+        <stl-vector type-name='int16_t' name='y'/>
+        <stl-vector type-name='int16_t' name='z'/>
 
         <code-helper name='describe'>
             (fmt "[~A]" $.x.count)

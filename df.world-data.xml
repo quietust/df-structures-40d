@@ -109,7 +109,7 @@
         <int32_t name="index"/>
         <int16_t name="unk_70"/>
 
-        <compound name='region_coords' type-name='coord2d_path'/>
+        <compound name='region_coords' type-name='coord2d16_path'/>
 
         <int32_t name="unk_94"/>
         <int32_t name="unk_98"/>
