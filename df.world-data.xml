@@ -62,21 +62,15 @@
             <enum-item name='Unk6'/>
         </enum>
 
-        <compound name='pos' type-name='coord2d'/>
+        <compound name='pos' type-name='coord16'/>
 
         <int32_t name="id"/>
 
         <stl-vector name="nemesis" comment='could also be units - they happen to coincide here'>
             <int32_t ref-target='nemesis_record'/>
         </stl-vector>
-
-        <stl-vector name="unk_94"/>
-
-        <stl-vector name="animals">
-            <pointer type-name='world_population'/>
-        </stl-vector>
-
-        <stl-vector name="inhabitants">
+        <stl-vector type-name='pointer'/>
+<!--
             <pointer>
                 <int32_t name="count"/>
                 <int32_t name="race" ref-target='creature_raw'/>
@@ -85,75 +79,15 @@
                 <int32_t name="unk_10"/>
             </pointer>
         </stl-vector>
+-->
 
-        <stl-vector name="unk_c4"/>
-        <stl-vector name="unk_d4"/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
 
-        <int32_t name="index"/>
-
-        <int16_t name="unk_e8"/>
-        <int16_t name="unk_ea"/>
-        <int16_t name="unk_ec"/>
-        <int16_t name="unk_ee"/>
-
-        <int32_t name="unk_f0"/>
-        <int32_t name="unk_f4"/>
-        <int32_t name="unk_f8"/>
-        <int32_t name="unk_fc"/>
-        <int32_t name="unk_100"/>
-
-        <uint32_t name="unk_104"/>
-        <uint32_t name="unk_108"/>
-
-        <int32_t name="unk_10c"/>
-        <int32_t name="unk_110"/>
-        <int32_t name="unk_114"/>
-        <int32_t name="unk_118"/>
-        <int32_t name="unk_11c"/>
-        <int32_t name="unk_120"/>
-        <int32_t name="unk_124"/>
-        <int32_t name="unk_128"/>
-        <int32_t name="unk_12c"/>
-        <int32_t name="unk_130"/>
-        <int32_t name="unk_134"/>
-        <int32_t name="unk_138"/>
-
-        <stl-vector name="unk_13c">
-            <pointer>
-                <int32_t name="unk_0"/>
-                <int32_t name="unk_4"/>
-                <int32_t name="unk_8"/>
-                <int32_t name="unk_c"/>
-            </pointer>
-        </stl-vector>
-
-        <df-flagarray name='flags'/>
-
-        <stl-vector name="unk_154"/>
-
-        <int32_t name="unk_164"/>
-        <int32_t name="unk_168"/>
-        <int32_t name="unk_16c"/>
-        <int32_t name="unk_170"/>
-        <int32_t name="unk_174"/>
-
-        <compound name='unk_178' type-name='coord'/>
-
-        <pointer name="unk_180"/>
-
-        <pointer name="unk_184">
-            <int32_t name="unk_0"/>
-            <int16_t name="unk_4"/>
-            <stl-vector name="unk_8"/>
-            <int32_t name="unk_14"/>
-            <int32_t name="unk_18"/>
-            <int32_t name="unk_1c"/>
-        </pointer>
-
-        <pointer name="unk_188" type-name='world_site_unk130'/>
-
-        <stl-vector name="unk_18c"/>
-        <stl-vector name="unk_19c"/>
+        <stl-vector type-name='pointer'/>
+        <int32_t/>
     </struct-type>
 
     <struct-type type-name='world_landmass'
@@ -413,10 +347,6 @@
             <int16_t name="height"/>
         </static-array>
 
-        <stl-vector name="sites">
-            <pointer type-name='world_site'/>
-        </stl-vector>
-
         <stl-vector name="site_unk130">
             <pointer type-name='world_site_unk130'/>
         </stl-vector>
@@ -461,9 +391,6 @@
 
         <stl-vector name="landmasses">
             <pointer type-name='world_landmass'/>
-        </stl-vector>
-        <stl-vector name="regions">
-            <pointer type-name='world_region'/>
         </stl-vector>
         <stl-vector name="geo_biomes">
             <pointer type-name='world_geo_biome'/>
@@ -571,8 +498,12 @@
         <int32_t/>
         <int32_t/>
         <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
+        <stl-vector name="sites">
+            <pointer type-name='world_site'/>
+        </stl-vector>
+        <stl-vector name="regions">
+            <pointer type-name='world_region'/>
+        </stl-vector>
         <pointer/>
 
 <!--
