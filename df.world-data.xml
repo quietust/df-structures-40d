@@ -50,7 +50,6 @@
 
         <int32_t name="civ_id" ref-target='historical_entity'/>
         <int32_t name="owner1" ref-target='historical_entity'/>
-        <int32_t name="owner2" ref-target='historical_entity'/>
 
         <enum base-type='int16_t' name="type">
             <enum-item name='PlayerFortress'/>
@@ -59,10 +58,12 @@
             <enum-item name='MountainHalls'/>
             <enum-item name='ForestRetreat'/>
             <enum-item name='Town'/>
-            <enum-item name='Unk6'/>
+            <enum-item name='LostFortress'/>
+            <enum-item name='Ruin'/>
         </enum>
 
-        <compound name='pos' type-name='coord16'/>
+        <compound name='pos' type-name='coord2d16'/>
+        <compound name='pos2' type-name='coord2d16'/>
 
         <int32_t name="id"/>
 
@@ -83,8 +84,7 @@
 
         <int32_t/>
         <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <df-flagarray name='flags'/>
 
         <stl-vector type-name='pointer'/>
         <int32_t/>
