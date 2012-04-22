@@ -51,7 +51,7 @@
         <int32_t name="civ_id" ref-target='historical_entity'/>
         <int32_t name="owner1" ref-target='historical_entity'/>
 
-        <enum base-type='int16_t' name="type">
+        <enum base-type='int32_t' name="type">
             <enum-item name='PlayerFortress'/>
             <enum-item name='DarkFortress'/>
             <enum-item name='Cave'/>
