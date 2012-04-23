@@ -67,7 +67,7 @@
 
         <int32_t name="id"/>
 
-        <stl-vector name="nemesis" comment='could also be units - they happen to coincide here'>
+        <stl-vector name="nemesis">
             <int32_t ref-target='nemesis_record'/>
         </stl-vector>
         <stl-vector type-name='pointer'/>

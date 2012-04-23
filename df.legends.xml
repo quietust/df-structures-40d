@@ -74,6 +74,7 @@
         <int32_t name='unk11' comment='-1'/>
         <int32_t name='unk12' comment='-1'/>
         <df-flagarray name='flags'/>
+        <stl-vector type-name='pointer'/>
     </struct-type>
 
     <struct-type type-name='artifact_record' key-field='id'
