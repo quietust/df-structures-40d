@@ -157,7 +157,10 @@
         <stl-vector type-name='pointer' comment='unk'/>
         <int32_t/>
         <stl-vector type-name='int32_t'/>
-        <stl-vector type-name='pointer' comment='unk'/>
+
+        <stl-vector name='refs'>
+            <pointer type-name='general_ref'/>
+        </stl-vector>
 
         <compound name='squad'>
             <compound type-name='language_name' name='name'/>
@@ -232,22 +235,25 @@
         <pointer/>
 
 
-<!--
         <compound name='counters'>
-            <int32_t name='think_counter'/> // 53c decrements every job_counter reroll, set when changing jobs
-            <int32_t name='job_counter'/> // 540 current_job unit/walk done when reach -1, decremented every tick
-            <int32_t name='unk_544'/> // if set, decrements every job_counter reroll
-
+            <int16_t/>
+            <int32_t name='web_escape_rate'/>
+            <int32_t/>
+            <int32_t name='blood_remaining'/>
+            <int32_t name='bleed_rate'/>
+            <int32_t/>
+            <int32_t/>
+            <int32_t/>
+            <int32_t/>
+            <int16_t/>
             <int16_t name='nausea'/>
             <int16_t name='winded'/>
-            <int16_t name='stunned'/> // 54c decrements every tick, unstun at 0
+            <int16_t name='stunned'/>
             <int16_t name='unconscious'/>
-            <int16_t name='unk_550'/>
+            <int16_t/>
             <int16_t name='webbed'/>
-
-            <compound name='unk_554' type-name='coord'/>
-            <compound name='unk_55a' type-name='coord'/>
-
+            <int16_t name='paralysis'/>
+            <static-array type-name='int32_t' count='3'/>
             <int16_t name='soldier_mood_countdown'/>
             <enum name='soldier_mood' base-type='int16_t'>
                 <enum-item name='None' value='-1'/>
@@ -255,38 +261,13 @@
                 <enum-item name='Enranged'/>
                 <enum-item name='Tantrum'/>
             </enum>
-
-            <uint32_t name='unk_564'/>
-            <uint32_t name='unk_568'/>
-            <uint32_t name='unk_56c'/>
+            <int32_t name='pain'/>
+            <int32_t name='exhaustion'/>
+            <int32_t name='hunger'/>
+            <int32_t name='thirst'/>
+            <int32_t name='drowsiness'/>
         </compound>
--->
-        <int16_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <static-array type-name='int32_t' count='3'/>
-        <int16_t/>
-        <int16_t name='rage'/>
-        <int32_t/>
 
-        <int32_t/>
-        <int32_t name='hunger'/>
-        <int32_t name='thirst'/>
-        <int32_t name='drowsiness'/>
         <int32_t/>
         <stl-vector type-name='pointer' comment='unk'/>
         <stl-vector name='misc_traits'>
@@ -296,9 +277,9 @@
         <int32_t/>
         <int8_t/>
         <compound type-name='language_name' name='artifact_name'/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='strength'/>
+        <int32_t name='agility'/>
+        <int32_t name='toughness'/>
         <stl-vector name='skills'>
             <pointer type-name='unit_skill'/>
         </stl-vector>
@@ -306,15 +287,14 @@
             <pointer type-name='unit_preference'/>
         </stl-vector>
         <stl-vector name='demands' type-name='pointer'/>
-        <static-array type-name='bool' name='labors' index-enum='unit_labor' count='62'/>
-        <static-array type-name='int8_t' count='29' />
+        <static-array type-name='bool' name='labors' index-enum='unit_labor' count='91'/>
         <int32_t/>
         <stl-vector type-name='pointer' comment='unk'/>
         <stl-vector type-name='pointer' comment='unk'/>
         <stl-vector name='thoughts' type-name='pointer'/>
         <stl-vector type-name='pointer' comment='unk'/>
         <int32_t name='happiness'/>
-        <int16_t/>
+        <int16_t name='insanity_chance'/>
         <stl-vector type-name='pointer' comment='unk'/>
         <stl-vector type-name='pointer' comment='unk'/>
         <stl-vector type-name='pointer'/>
@@ -353,8 +333,6 @@
             <padding size='2'/>
         </compound>
 
-        <int8_t name='sex' comment='-1 n/a, 0 female, 1 male'/>
-
         <int32_t name='id'/>
 
         <int16_t name='unk_100'/>
@@ -370,9 +348,6 @@
 
         <stl-vector name='meetings'>
             <pointer type-name='meeting_ref'/>
-        </stl-vector>
-        <stl-vector name='refs'>
-            <pointer type-name='general_ref'/>
         </stl-vector>
 
         <compound name='unknown4'>

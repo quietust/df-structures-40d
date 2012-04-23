@@ -92,7 +92,7 @@
         <int16_t name='sex' comment='-1 n/a, 0 female, 1 male'/>
 
         <int8_t/>
-        <int32_t/>
+        <int32_t name='age_death'/>
         <int32_t name='appeared_year'/>
         <int32_t name='born_year'/>
         <int32_t/>
@@ -110,7 +110,7 @@
         <int32_t name='unit_id' ref-target='unit'/>
         <int32_t name='id'/>
 
-        <int32_t name='unk4'/>
+        <int32_t/>
 
         <stl-vector type-name='pointer'/>
         <stl-vector type-name='pointer'/>
