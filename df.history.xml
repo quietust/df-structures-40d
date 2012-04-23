@@ -89,12 +89,12 @@
         <enum base-type='int32_t' name='profession' type-name='profession'/>
 
         <int16_t name='race' ref-target='creature_raw'/>
-        <int8_t name='sex' comment='-1 n/a, 0 female, 1 male'/>
+        <int16_t name='sex' comment='-1 n/a, 0 female, 1 male'/>
 
+        <int8_t/>
         <int32_t/>
         <int32_t name='appeared_year'/>
         <int32_t name='born_year'/>
-        <int32_t name='born_seconds'/>
         <int32_t/>
 
         <compound type-name='language_name' name='name'/>
@@ -115,21 +115,6 @@
         <stl-vector type-name='pointer'/>
         <stl-vector type-name='pointer'/>
         <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <int32_t/>
-        <int32_t/>
-<!--
-        <compound name='worldgen'>
-            <pointer name="unk_0" type-name="world_site"/>
-            <pointer name="unk_4" type-name="language_name"/>
-            <pointer name="unk_c">
-                <df-array name="unk_0" type-name='uint8_t'/>
-                <df-array name="unk_8" type-name='int16_t'/>
-            </pointer>
-            <int32_t name="unk_10"/>
-        </compound>
--->
     </struct-type>
 
     <enum-type type-name='history_event_type'>
