@@ -180,7 +180,7 @@
         <int32_t/>
         <enum type-name='mood_type' name='mood_type'/>
         <int16_t/>
-        <int32_t/>
+        <int32_t name='pregnancy_timer'/>
         <int32_t name='age_seconds'/>
         <int32_t name='age_years'/>
         <int32_t name='age_death'/>
@@ -599,12 +599,12 @@
             <enum-item/>
             <enum-item/>
             <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
+            <enum-item name='Migrant'/>
+            <enum-item name='RoomComplaint'/>
+            <enum-item name='ResidentCreature' comment='upon reaching zero, it gets a name'/>
             <enum-item/>
             <enum-item name='ClaimCooldown'/>
+            <enum-item/>
             <enum-item name='WantsDrink' comment='ALCOHOLIC'/>
             <enum-item name='LikesOutdoors' comment='MOUNTAIN'/>
             <enum-item name='Hardened' comment='COMBATHARDNESS'/>
