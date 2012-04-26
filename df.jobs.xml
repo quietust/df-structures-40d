@@ -193,6 +193,25 @@
         <int32_t name='unk4'/>
     </struct-type>
 
+    <enum-type type-name='guild_id'>
+        <enum-item name='Miners'/>
+        <enum-item name='Carpenters'/>
+        <enum-item name='Masons'/>
+        <enum-item name='Metalsmiths'/>
+        <enum-item name='Jewelers'/>
+        <enum-item name='Craftsmen'/>
+        <enum-item name='HouseFer'/>
+        <enum-item name='HouseBer'/>
+        <enum-item name='HouseRash'/>
+        <enum-item name='OrderAxe'/>
+        <enum-item name='OrderMace'/>
+        <enum-item name='OrderSword'/>
+        <enum-item name='OrderHammer'/>
+        <enum-item name='OrderCrossbow'/>
+        <enum-item name='OrderSpear'/>
+        <enum-item name='Philosophers'/>
+    </enum-type>
+
     <struct-type type-name='unit_demand'>
         <int16_t name="unk_0"/>
 

@@ -96,9 +96,9 @@
         <static-array name='nobles_enabled' type-name='int16_t' count='88' index-enum='profession'/>
         <static-array name='nobles_arrived' type-name='int16_t' count='88' index-enum='profession'/>
         <static-array name='units_killed' type-name='int16_t' count='88' index-enum='profession'/>
-        <static-array type-name='int32_t' count='16'/>
-        <static-array type-name='int32_t' count='8'/>
-        <static-array type-name='int32_t' count='8'/>
+        <static-array name='guild_wages' type-name='int32_t' count='16' index-enum='guild_id'/>
+        <static-array name='guild_happiness' type-name='int16_t' count='16' index-enum='guild_id'/>
+        <static-array name='labor_slowdown_timer' type-name='int16_t' count='16' index-enum='guild_id'/>
         <static-array name='currency_value' type-name='int32_t' count='64' index-enum='material_type'/>
         <int32_t/>
         <int32_t/>
