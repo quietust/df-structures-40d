@@ -151,20 +151,22 @@
         <stl-vector name='crimes'>
             <pointer>
                 <enum name='mode' base-type='int16_t'>
-                    <enum-item name='ProductionOrderViolation'/>
-                    <enum-item name='ExportViolation'/>
-                    <enum-item name='JobOrderViolation'/>
+                    <enum-item name='ViolateProductionOrder'/>
+                    <enum-item name='ViolateExportBan'/>
+                    <enum-item name='ViolateJobOrder'/>
                     <enum-item name='ConspiracyToSlowLabor'/>
                     <enum-item name='Murder'/>
-                    <enum-item name='DisorderlyBehavior'/>
+                    <enum-item name='DisorderlyConduct'/>
                     <enum-item name='BuildingDestruction'/>
                     <enum-item name='Vandalism'/>
+                    <enum-item name='ViolateMiningOrder'/>
                 </enum>
-                <int16_t name='unk2' comment='uninit'/>
 
-                <int16_t name='unk3'/>
-                <int16_t name='unk4'/>
-                <int32_t name='unk5'/>
+                <compound name='punishments'>
+                    <int16_t name='hammerstrikes'/>
+                    <int16_t name='prison'/>
+                    <int32_t name='beating'/>
+                </compound>
 
                 <pointer name='criminal' type-name='unit'/>
                 <pointer name='victim' type-name='unit'/>
