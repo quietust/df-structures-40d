@@ -233,16 +233,15 @@
             <stl-vector type-name='int8_t'/>
             <stl-vector type-name='int8_t'/>
             <stl-vector type-name='int16_t'/>
-        </compound>
-        <pointer/>
-
-
-        <compound name='counters'>
+            <pointer/>
             <int16_t/>
-            <int32_t name='web_escape_rate'/>
+            <int32_t name='size'/>
             <int32_t name='blood_total'/>
             <int32_t name='blood_remaining'/>
             <int32_t name='bleed_rate'/>
+        </compound>
+
+        <compound name='counters'>
             <int32_t/>
             <int32_t/>
             <int32_t/>
