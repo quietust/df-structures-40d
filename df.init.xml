@@ -2,25 +2,25 @@
     -- init.h
 
     <enum-type type-name='init_display_flags'>
+        <enum-item name='VARIED_GROUND_TILES'/>
+        <enum-item name='ENGRAVINGS_START_OBSCURED'/>
         <enum-item name='USE_GRAPHICS'/>
         <enum-item name='BLACK_SPACE'/>
-        <enum-item name='PARTIAL_PRINT'/>
-        <enum-item name='FRAME_BUFFER'/>
-        <enum-item name='SINGLE_BUFFER'/>
-        <enum-item name='ACCUM_BUFFER'/>
-        <enum-item name='VBO'/>
-        <enum-item name='RENDER_2D'/>
-        <enum-item name='RENDER_2DHW'/>
-        <enum-item name='RENDER_2DASYNC'/>
-        <enum-item name='UNUSED_01_08'/>
-        <enum-item name='TEXT'/>
-        <enum-item name='SHADER'/>
-        <enum-item name='NOT_RESIZABLE'/>
-        <enum-item name='ARB_SYNC'/>
+    </enum-type>
+
+    <enum-type type-name='init_nickname_mode'>
+        <enum-item name='REPLACE_FIRST'/>
+        <enum-item name='CENTRALIZE'/>
+        <enum-item name='REPLACE_ALL'/>
     </enum-type>
 
     <struct-type type-name='init_display'>
         <df-flagarray name='flag' index-enum='init_display_flags'/>
+
+        <enum name="nickname_dwarf" type-name='init_nickname_mode'/>
+        <enum name="nickname_adventure" type-name='init_nickname_mode'/>
+        <enum name="nickname_legends" type-name='init_nickname_mode'/>
+        <enum name="nickname_dwarf2" type-name='init_nickname_mode'/>
 
         <enum name='windowed'>
             <enum-item name='True'/>
@@ -28,26 +28,18 @@
             <enum-item name='Prompt'/>
         </enum>
 
-        <int32_t name='grid_x'/>
-        <int32_t name='grid_y'/>
-
-        <int32_t name='desired_fullscreen_width'/>
-        <int32_t name='desired_fullscreen_height'/>
-        <int32_t name='desired_windowed_width'/>
-        <int32_t name='desired_windowed_height'/>
-
-        <int8_t name='partial_print_count'/>
+        <int32_t/>
+        <int32_t name='fps_cap_1'/>
+        <int32_t name='fps_cap_2'/>
     </struct-type>
 
     <enum-type type-name='init_media_flags'>
         <enum-item name='SOUND_OFF'/>
         <enum-item name='INTRO_OFF'/>
-        <enum-item name='COMPRESS_SAVES'/>
     </enum-type>
 
     <struct-type type-name='init_media'>
         <df-flagarray name='flag' index-enum='init_media_flags'/>
-        <int32_t name='volume'/>
     </struct-type>
 
     <enum-type type-name='init_input_flags'>
@@ -56,14 +48,8 @@
     </enum-type>
 
     <struct-type type-name='init_input'>
-        <int32_t name='hold_time'/>
-        <int32_t name='repeat_time'/>
-        <int32_t name='macro_time'/>
-        <int32_t name='pause_zoom_no_interface_ms'/>
+        <int32_t name='key_hold_ms'/>
         <df-flagarray name='flag' index-enum='init_input_flags'/>
-        <int32_t name='zoom_speed'/>
-        <int32_t name='repeat_accel_start'/>
-        <int32_t name='repeat_accel_limit'/>
     </struct-type>
 
     <struct-type type-name='init_font'>
@@ -79,31 +65,31 @@
         <int32_t name='small_font_dispy'/>
         <int32_t name='large_font_dispx'/>
         <int32_t name='large_font_dispy'/>
-        <enum name='use_ttf'>
-            <enum-item name='TTF_OFF'/>
-            <enum-item name='TTF_ON'/>
-            <enum-item name='TTF_AUTO'/>
-        </enum>
-        <int32_t name='ttf_limit'/>
     </struct-type>
 
-    <enum-type type-name='init_window_flags'>
-        <enum-item name='TOPMOST'/>
-        <enum-item name='VSYNC_ON'/>
-        <enum-item name='VSYNC_OFF'/>
-        <enum-item name='TEXTURE_LINEAR'/>
+    <enum-type type-name='init_adventurer_flags'>
+        <enum-item name='MORE'/>
+        <enum-item name='ADVENTURER_TRAPS'/>
     </enum-type>
 
-    <struct-type type-name='init_window'>
-        <df-flagarray name='flag' index-enum='init_window_flags'/>
-    </struct-type>
+    <enum-type type-name='init_game_flags'>
+        <enum-item name='TEMPERATURE'/>
+        <enum-item name='WEATHER'/>
+    </enum-type>
 
     <struct-type type-name='init'>
         <compound name='display' type-name='init_display'/>
+        <compound name='adventure'>
+            <df-flagarray name='flags' index-enum='init_adventure_flags'/>
+            <int32_t name="display_length"/>
+            <int32_t name="population_cap"/>
+        </compound>
         <compound name='media' type-name='init_media'/>
         <compound name='input' type-name='init_input'/>
         <compound name='font' type-name='init_font'/>
-        <compound name='window' type-name='init_window'/>
+        <compound name='game'>
+            <df-flagarray name='flags' index-enum='init_game_flags'/>
+        </compound>
     </struct-type>
 
     -- texture_handler.h

@@ -33,7 +33,7 @@
         <global-address name='cur_year' value='0xaa91e0'/>
         <global-address name='cur_year_tick' value='0xea0548'/>
 
-        <global-address name='job_next_id'/>
+        <global-address name='job_next_id' value='0xaa9268'/>
         <global-address name='pause_state' value='0xf1719e'/>
 
         <global-address name='ui_building_item_cursor'/>
