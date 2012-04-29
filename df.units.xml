@@ -123,9 +123,8 @@
 
         <enum base-type='int32_t' name='profession' type-name='profession'/>
         <enum base-type='int32_t' name='profession2' type-name='profession'/>
-        <int16_t name='race' ref-target='creature_raw'/>
-
-        <int32_t/>
+        <int32_t name='race' ref-target='creature_raw'/>
+        <int32_t name='sex'/>
         <compound name='pos' type-name='coord'/>
         <compound name='old_pos' type-name='coord'>
             <comment>
@@ -224,7 +223,7 @@
         <stl-vector name='mood_matgloss'>
             <int32_t/>
         </stl-vector>
-        <int32_t/>
+        <int32_t name='mood_skill'/>
         <int32_t/>
         <int32_t/>
         <compound name='body'>
@@ -292,7 +291,9 @@
         <int32_t/>
         <stl-vector type-name='pointer' comment='unk'/>
         <stl-vector type-name='pointer' comment='unk'/>
-        <stl-vector name='thoughts' type-name='pointer'/>
+        <stl-vector name='recent_events'>
+            <pointer type-name='unit_thought'/>
+        </stl-vector>
         <stl-vector type-name='pointer' comment='unk'/>
         <int32_t name='happiness'/>
         <int16_t name='insanity_chance'/>
@@ -363,17 +364,6 @@
         <int16_t name='unk_18e'/>
 
         <compound name='relations'>
-            <uint32_t name='pregnancy_timer'/>
-            <pointer name='pregnancy_ptr'>
-                <df-array type-name='uint8_t'/>
-                <df-array type-name='int16_t'/>
-            </pointer>
-            <int16_t name='pregnancy_mystery' comment='-1 = crash, 1 = many cats'/>
-            <int16_t name='unk_21c_b'/>
-
-            <int32_t name='birth_year'/>
-            <int32_t name='birth_time'/>
-
             <int32_t name='old_year' comment='could there be a death of old age time??'/>
             <int32_t name='old_time'/>
 
@@ -411,7 +401,6 @@
             <uint16_t name='unk_2ec'/>
             <uint16_t name='unk_2ee'/>
             <uint16_t name='unk_2f0_cntr'/> // increments every tick
-            <pointer comment='df_job' name='current_job' type-name='job'/>
             <uint16_t name='unk_2f8'/>
             <uint32_t name='unk_2fc'/>
             <uint32_t name='unk_300'/>
@@ -419,44 +408,15 @@
         </compound>
 
         <compound name='body'>
-            <compound name='components' type-name='body_component_info'/>
-
-            <stl-vector name='wounds' type-name='pointer'/>
-
             <uint32_t name='unk_398'/>
 
             <static-array name='unk_39c' type-name='int32_t' count='10'/>
 
             <uint16_t name='unk_3c8'/>
 
-            <uint32_t name='blood_max'/>
-            <uint32_t name='blood_count'/> // 490
-            <uint32_t name='unk_494'/>
-
-            <stl-vector name='spatters'>
-                <pointer type-name='unit_spatter'/>
-            </stl-vector>
-
             <stl-vector type-name='uint32_t' name='unk_4a8'/>
             <stl-vector type-name='uint32_t' name='unk_4b8'/>
             <uint32_t name='unk_4c8'/>
-        </compound>
-
-        <compound name='counters2'>
-            <uint32_t name='unk_570'/>
-            <uint32_t name='unk_574'/>
-            <uint32_t name='unk_578'/>
-            <uint32_t name='unk_57c'/>
-
-            <uint32_t name='hunger_timer'/>
-            <uint32_t name='thirst_timer'/>
-            <uint32_t name='sleepiness_timer'/>
-
-            <uint32_t name='unk_58c'/> // counter, decrement to 0
-            <uint32_t name='unk_590'/> // same as 58c
-            <uint32_t name='unk_594'/>
-            <uint32_t name='unk_cntdn_598'/> // fluctuate
-            <uint32_t name='unk_59c'/>
         </compound>
 
         <compound name='status'>
@@ -489,20 +449,11 @@
 
             <uint8_t name='unk_5dc'/>
 
-            <stl-vector name='demands'>
-                <pointer type-name='unit_demand'/>
-            </stl-vector>
-
             <stl-vector name='unk_6d0'/>
             <stl-vector name='unk_6e0' type-name='int32_t'/> // item ids?
 
-            <stl-vector name='recent_events'>
-                <pointer type-name='unit_thought'/>
-            </stl-vector>
-
             <stl-vector name='unk_700'/>
 
-            <uint32_t name='happiness'/> // 710
             <uint16_t name='unk_714'/>
 
             <stl-vector name='unk_718'/>
@@ -525,9 +476,6 @@
             <compound name='unk_75a' type-name='coord'/>
             <compound name='unk_760' type-name='coord_path'/>
         </compound>
-
-        <int32_t name='hist_figure_id' ref-target='historical_figure'/>
-        <int32_t name='hist_figure_id2' ref-target='historical_figure'/>
 
         <stl-vector name='used_items'>
             <comment>Contains worn clothes, armor, weapons, arrows fired by archers</comment>
