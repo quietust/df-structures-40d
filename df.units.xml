@@ -550,8 +550,8 @@
             <enum-item name='RoomComplaint'/>
             <enum-item name='ResidentCreature' comment='upon reaching zero, it gets a name'/>
             <enum-item/>
-            <enum-item name='ClaimCooldown'/>
-            <enum-item/>
+            <enum-item name='ClaimTrinketCooldown'/>
+            <enum-item name='ClaimClothingCooldown'/>
             <enum-item name='WantsDrink' comment='ALCOHOLIC'/>
             <enum-item name='LikesOutdoors' comment='MOUNTAIN'/>
             <enum-item name='Hardened' comment='COMBATHARDNESS'/>
