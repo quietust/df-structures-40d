@@ -102,23 +102,23 @@
         <vtable-address name='general_ref_building_holderst' value='0x765F94'/>
         <vtable-address name='general_ref_building_triggerst' value='0x766070'/>
         <vtable-address name='general_ref_building_triggertargetst' value='0x766044'/>
-        <vtable-address name='general_ref_building_unk16st' value='0x7660C8'/>
-        <vtable-address name='general_ref_building_unk21st' value='0x765FC0'/>
+        <vtable-address name='general_ref_building_channeledst' value='0x765FC0'/>
+        <vtable-address name='general_ref_buildingst' value='0x7660C8'/>
         <vtable-address name='general_ref_coinbatchst' value='0x75D4BC'/>
         <vtable-address name='general_ref_contained_in_itemst' value='0x76614C'/>
         <vtable-address name='general_ref_contains_itemst' value='0x766228'/>
         <vtable-address name='general_ref_contains_unitst' value='0x766280'/>
         <vtable-address name='general_ref_entity_art_imagest' value='0x75A5B0'/>
         <vtable-address name='general_ref_item_typest' value='0x765888'/>
-        <vtable-address name='general_ref_item_unk7st' value='0x766254'/>
+        <vtable-address name='general_ref_itemst' value='0x766254'/>
         <vtable-address name='general_ref_mapsquarest' value='0x7658E0'/>
         <vtable-address name='general_ref_projectilest' value='0x7661FC'/>
         <vtable-address name='general_ref_unit_holderst' value='0x766120'/>
         <vtable-address name='general_ref_unit_itemownerst' value='0x7661A4'/>
         <vtable-address name='general_ref_unit_tradebringerst' value='0x766178'/>
         <vtable-address name='general_ref_unit_traineest' value='0x7661D0'/>
-        <vtable-address name='general_ref_unit_unk5st' value='0x7662AC'/>
         <vtable-address name='general_ref_unit_workerst' value='0x7660F4'/>
+        <vtable-address name='general_ref_unitst' value='0x7662AC'/>
         <vtable-address name='general_refst' value='0x75A5DC'/>
         <vtable-address name='history_event_add_hf_entity_linkst' value='0x75C8EC'/>
         <vtable-address name='history_event_agreements_voidedst' value='0x75C640'/>
