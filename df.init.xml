@@ -79,8 +79,8 @@
 
     <struct-type type-name='init'>
         <compound name='display' type-name='init_display'/>
-        <compound name='adventure'>
-            <df-flagarray name='flags' index-enum='init_adventure_flags'/>
+        <compound name='adventurer'>
+            <df-flagarray name='flags' index-enum='init_adventurer_flags'/>
             <int32_t name="display_length"/>
             <int32_t name="population_cap"/>
         </compound>

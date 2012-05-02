@@ -59,15 +59,10 @@
         <uint32_t name='age'/>
         <int32_t name='id'/>
 
-        <stl-vector name='jobs'>
-            <pointer>
-                <int32_t name='unk1'/>
-                <pointer name='job' type-name='job'/>
-                <int32_t name='unk2'/>
-            </pointer>
+        <stl-vector name='specific_refs'>
+            <pointer type-name='specific_ref'/>
         </stl-vector>
-
-        <stl-vector name='itemrefs'>
+        <stl-vector name='general_refs'>
             <pointer type-name='general_ref'/>
         </stl-vector>
 

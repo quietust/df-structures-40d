@@ -155,9 +155,11 @@
         <stl-vector type-name='pointer' comment='unk'/>
         <stl-vector type-name='pointer' comment='unk'/>
         <int32_t/>
-        <stl-vector type-name='int32_t'/>
 
-        <stl-vector name='refs'>
+        <stl-vector name='specific_refs'>
+            <pointer type-name='specific_ref'/>
+        </stl-vector>
+        <stl-vector name='general_refs'>
             <pointer type-name='general_ref'/>
         </stl-vector>
 

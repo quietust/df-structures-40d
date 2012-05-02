@@ -43,7 +43,7 @@
         </stl-vector>
         <pointer name="location" type-name="building"/>
         <int32_t name="timer" comment='-1 per 10'/>
-        <int32_t/>
+        <int32_t name='id'/>
     </struct-type>
 
     <struct-type type-name='activity_entry' instance-vector='$global.world.activities.all' key-field='id'>

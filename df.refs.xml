@@ -5,9 +5,9 @@
         <enum-item name="COINBATCH"/>
         <enum-item name="MAPSQUARE"/>
         <enum-item name="ENTITY_ART_IMAGE"/>
-        <enum-item name="UNIT_UNK5"/>
+        <enum-item name="UNIT"/>
         <enum-item name="CONTAINS_UNIT"/>
-        <enum-item name="ITEM_UNK7"/>
+        <enum-item name="ITEM"/>
         <enum-item name="CONTAINS_ITEM"/>
         <enum-item name="PROJECTILE"/>
         <enum-item name="UNIT_TRAINEE"/>
@@ -16,13 +16,13 @@
         <enum-item name="CONTAINED_IN_ITEM"/>
         <enum-item name="UNIT_HOLDER"/>
         <enum-item name="UNIT_WORKER"/>
-        <enum-item name="BUILDING_UNK16"/>
+        <enum-item name="BUILDING"/>
         <enum-item name="BUILDING_CIVZONE_ASSIGNED"/>
         <enum-item name="BUILDING_TRIGGER"/>
         <enum-item name="BUILDING_TRIGGERTARGET"/>
         <enum-item name="BUILDING_CHAIN"/>
         <enum-item name="BUILDING_CAGED"/>
-        <enum-item name="BUILDING_UNK21"/>
+        <enum-item name="BUILDING_CHANNELED"/>
         <enum-item name="BUILDING_HOLDER"/>
     </enum-type>
 
@@ -55,20 +55,6 @@
         </virtual-methods>
     </class-type>
 
-    -- assumed abstract classes
-
-    <class-type type-name='general_ref_item' inherits-from='general_ref'>
-        <int32_t name='item_id' ref-target='item'/>
-    </class-type>
-    <class-type type-name='general_ref_unit' inherits-from='general_ref'>
-        <int32_t name='unit_id' ref-target='unit'/>
-    </class-type>
-    <class-type type-name='general_ref_building' inherits-from='general_ref'>
-        <int32_t name='building_id' ref-target='building'/>
-    </class-type>
-
-    -- actual classes
-
     <class-type type-name='general_ref_artifactst' inherits-from='general_ref'>
         <int32_t name='artifact_id' ref-target='artifact_record'/>
     </class-type>
@@ -96,9 +82,14 @@
         <int32_t/>
     </class-type>
 
-    <class-type type-name='general_ref_unit_unk5' inherits-from='general_ref_unit'/>
+    <class-type type-name='general_ref_unit' inherits-from='general_ref'>
+        <int32_t name='unit_id' ref-target='unit'/>
+    </class-type>
     <class-type type-name='general_ref_contains_unitst' inherits-from='general_ref_unit'/>
-    <class-type type-name='general_ref_item_unk7' inherits-from='general_ref_item'/>
+
+    <class-type type-name='general_ref_item' inherits-from='general_ref'>
+        <int32_t name='item_id' ref-target='item'/>
+    </class-type>
     <class-type type-name='general_ref_contains_itemst' inherits-from='general_ref_item'/>
 
     <class-type type-name='general_ref_projectilest' inherits-from='general_ref'>
@@ -111,14 +102,84 @@
     <class-type type-name='general_ref_contained_in_itemst' inherits-from='general_ref_item'/>
     <class-type type-name='general_ref_unit_holderst' inherits-from='general_ref_unit'/>
     <class-type type-name='general_ref_unit_workerst' inherits-from='general_ref_unit'/>
-    <class-type type-name='general_ref_building_unk16' inherits-from='general_ref_building'/>
+
+    <class-type type-name='general_ref_building' inherits-from='general_ref'>
+        <int32_t name='building_id' ref-target='building'/>
+    </class-type>
     <class-type type-name='general_ref_building_civzone_assignedst' inherits-from='general_ref_building'/>
     <class-type type-name='general_ref_building_triggerst' inherits-from='general_ref_building'/>
     <class-type type-name='general_ref_building_triggertargetst' inherits-from='general_ref_building'/>
     <class-type type-name='general_ref_building_chainst' inherits-from='general_ref_building'/>
     <class-type type-name='general_ref_building_cagedst' inherits-from='general_ref_building'/>
-    <class-type type-name='general_ref_building_unk21' inherits-from='general_ref_building'/>
+    <class-type type-name='general_ref_building_channeled' inherits-from='general_ref_building'/>
     <class-type type-name='general_ref_building_holderst' inherits-from='general_ref_building'/>
+
+    <enum-type type-name='specific_ref_type'>
+        <enum-item name='BUILDING_GENERAL'/>
+        <enum-item name='UNIT_INVENTORY'/>
+        <enum-item name='JOB'/>
+        <enum-item name='BUILDING_PARTY'/>
+        <enum-item name='UNIT_TRAINEE'/>
+        <enum-item name='UNIT_ITEMOWNER'/>
+        <enum-item name='UNIT_TRADEBRINGER'/>
+        <enum-item name='UNIT_CAGEE'/>
+        <enum-item name='UNIT_BEATEE'/>
+        <enum-item name='UNIT_FOODRECEIVER'/>
+
+        <enum-item name='UNIT_KIDNAPEE'/>
+        <enum-item name='UNIT_PATIENT'/>
+        <enum-item name='UNIT_INFANT'/>
+        <enum-item name='ENTITY_STOLEN'/>
+        <enum-item name='ENTITY_OFFERED'/>
+        <enum-item name='ENTITY_ITEMOWNER'/>
+        <enum-item name='ACTIVITY'/>
+        <enum-item name='ITEM_GENERAL'/>
+        <enum-item name='CONTAINS_ITEM'/>
+        <enum-item name='CONTAINED_IN_ITEM'/>
+
+        <enum-item name='CONTAINS_UNIT'/>
+        <enum-item name='EFFECT'/>
+        <enum-item name='DRINK_AREA'/>
+        <enum-item name='BUILDING_TRIGGER'/>
+        <enum-item name='BUILDING_TRIGGERTARGET'/>
+        <enum-item name='BUILDING_CHAIN'/>
+        <enum-item name='BUILDING_CAGED'/>
+        <enum-item name='BUILDING_CIVZONE_ASSIGNED'/>
+        <enum-item name='BUILDING_CHANNELED'/>
+        <enum-item name='PETINFO_PET'/>
+
+        <enum-item name='PETINFO_OWNER'/>
+        <enum-item name='VERMIN_EVENT'/>
+        <enum-item name='VERMIN_ESCAPED_PET'/>
+        <enum-item name='ENTITY'/>
+        <enum-item name='PLOT_INFO'/>
+        <enum-item name='VIEWSCREEN'/>
+        <enum-item name='IS_NEMESIS'/>
+        <enum-item name='UNIT_ITEM_WRESTLE'/>
+        <enum-item name='IS_ARTIFACT'/>
+        <enum-item name='UNK39'/>
+
+        <enum-item name='UNK40'/>
+        <enum-item name='UNIT_SLAUGHTEREE'/>
+        <enum-item name='HIST_FIG'/>
+        <enum-item name='SITE'/>
+        <enum-item name='ARTIFACT'/>
+        <enum-item name='ITEM_IMPROVEMENT'/>
+        <enum-item name='COIN_FRONT'/>
+        <enum-item name='COIN_BACK'/>
+        <enum-item name='DETAIL_EVENT'/>
+        <enum-item name='SUBREGION'/>
+
+        <enum-item name='ART_IMAGE'/>
+        <enum-item name='CREATURE_DEF'/>
+        <enum-item name='PROJECTILE'/>
+    </enum-type>
+
+    <struct-type type-name='specific_ref'>
+        <enum type-name='specific_ref_type' name='type'/>
+        <pointer name='object'/>
+        <pointer name='unk'/>
+    </struct-type>
 </data-definition>
 
 <!--
