@@ -87,7 +87,7 @@
 
         <compound name='name' type-name='language_name'/>
 
-        <int32_t/>
+        <int16_t name='action_timer' comment='how long before the artifact maker becomes nervous'/>
 
         <df-flagarray name='flags'/>
 

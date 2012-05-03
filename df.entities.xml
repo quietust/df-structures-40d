@@ -178,8 +178,10 @@
             <stl-vector name='mount'>
                 <int16_t ref-target='creature_raw'/>
             </stl-vector>
+            <stl-vector name='minion' comment='trolls'>
+                <int16_t ref-target='creature_raw'/>
+            </stl-vector>
 
-            <stl-vector type-name='pointer'/>
             <stl-vector type-name='pointer'/>
             <stl-vector type-name='pointer'/>
 
