@@ -71,6 +71,7 @@
         <int8_t/>
         <int8_t/>
         <int16_t/>
+        <int32_t name='entity' ref-target='historical_entity'/>
         <compound name='activity_stats' type-name='entity_activity_statistics'/>
         <int32_t name='flags'/>
         <int32_t/>
