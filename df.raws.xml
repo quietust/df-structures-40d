@@ -119,9 +119,11 @@
                     </static-array>
                 </static-array>
             </static-array>
+        </compound>
 
-            -- Descriptors
+        -- Descriptors
 
+        <compound name='descriptors'>
             <stl-vector name='colors'>
                 <pointer type-name='descriptor_color'/>
             </stl-vector>
