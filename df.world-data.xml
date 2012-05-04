@@ -103,7 +103,7 @@
             </pointer>
         </stl-vector>
 
-        <static-array name="unk_a8" count="32">
+        <static-array name="unk_a8" count="34">
             <int16_t/>
             <int16_t/>
         </static-array>
@@ -130,39 +130,6 @@
             </pointer>
         </stl-vector>
 
-<!--
-        <pointer name="region_map" is-array='true'>
-            <pointer is-array='true'>
-                <int32_t name="unk_0"/>
-                <padding name="unk_4" size="4"/>
-                <stl-vector name="sites">
-                    <pointer type-name='world_site'/>
-                </stl-vector>
-                <df-flagarray name='flags'/>
-                <int16_t name="elevation" comment='~40 ocean -> ~100 plains -> ~200 mointains'/>
-                <int16_t name="wetness"/>
-                <int16_t name="vegetation"/>
-                <int16_t name="temperature"/>
-                <int16_t name="evilness"/>
-                <int16_t name="hilliness"/>
-                <int16_t name="unk_2c"/>
-                <int16_t name="savagery"/>
-                <int16_t name="unk_30"/>
-                <int16_t name="unk_32"/>
-                <int16_t name="unk_34"/>
-                <int16_t name="unk_36"/>
-                <int16_t name="unk_38"/>
-                <int16_t name="unk_3a"/>
-                <int16_t name="saltiness"/>
-                <compound name='unk_3e' type-name='coord'/>
-                <compound name='unk_44' type-name='coord'/>
-                <compound name='unk_4a' type-name='coord'/>
-                <int32_t name="region_id" ref-target='world_region'/>
-                <int32_t name="landmass_id" ref-target='world_landmass'/>
-                <int16_t name='geo_index' ref-target='world_geo_biome'/>
-            </pointer>
-        </pointer>
--->
         <df-flagarray name='flags'/>
 
         <compound name='history' type-name='world_history'/>
@@ -206,7 +173,40 @@
         <stl-vector name="regions">
             <pointer type-name='world_region'/>
         </stl-vector>
-        <pointer/>
+
+        <pointer name="region_map" is-array='true'>
+            <pointer is-array='true'>
+                <pointer/>
+                <stl-vector name="sites">
+                    <pointer type-name='world_site'/>
+                </stl-vector>
+                <df-flagarray name='flags'/>
+                <int16_t name="elevation"/>
+                <int16_t name="wetness"/>
+                <int16_t name="vegetation"/>
+                <int16_t name="temperature"/>
+                <int16_t name="evilness"/>
+                <int16_t name="hilliness"/>
+                <int16_t/>
+                <int16_t name="savagery"/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t name="saltiness"/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int32_t name="region_id" ref-target='world_region'/>
+            </pointer>
+        </pointer>
     </struct-type>
 </data-definition>
 
