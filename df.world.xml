@@ -481,11 +481,6 @@
             <compound type-name='language_name' name='name'/>
             <int32_t/>
             <int32_t/>
-            <int32_t/>
-            <int16_t/>
-            <int8_t/>
-            <int32_t/>
-            <int32_t/>
             <int8_t/>
             <int16_t/>
             <int32_t/>
