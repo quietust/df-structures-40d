@@ -119,8 +119,9 @@
                 <int32_t comment='-1'/>
                 <stl-vector type-name='int32_t'/>
                 <stl-vector type-name='int32_t'/>
-                <pointer name='dipscript' type-name='dipscript_info'/>
                 <int32_t/>
+                <int32_t/>
+                <pointer name='dipscript' type-name='dipscript_info'/>
                 <int32_t/>
                 <stl-vector type-name='pointer'/>
                 <stl-string/>
