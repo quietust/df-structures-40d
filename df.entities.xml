@@ -34,8 +34,9 @@
             <int32_t name='exported'/>
         </compound>
         <static-array name='recent_jobs' count='202' index-enum='job_type'>
-            <static-array count='65' type-name='int32_t'/>
-            <int32_t name='completed'/>
+            <static-array count='64' type-name='int32_t' index-enum='material_type'/>
+            <int32_t/>
+            <int32_t name='total'/>
         </static-array>
         <int32_t/>
         <static-array count='5' type-name='int32_t'/>
@@ -79,8 +80,8 @@
         <int32_t/>
         <int32_t/>
         <stl-vector type-name='pointer'/>
-        <int32_t/>
-        <int32_t/>
+        <pointer/>
+        <pointer/>
     </struct-type>
 
     <struct-type type-name='historical_entity' key-field='id'
