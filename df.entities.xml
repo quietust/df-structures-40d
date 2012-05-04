@@ -111,19 +111,46 @@
         </stl-vector>
 
         <compound name='resources'>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
+            <stl-vector name='digger_type'>
+                <int16_t ref-target='itemdef_weaponst'/>
+            </stl-vector>
+            <stl-vector name='weapon_type'>
+                <int16_t ref-target='itemdef_weaponst'/>
+            </stl-vector>
+            <stl-vector name='armor_type'>
+                <int16_t ref-target='itemdef_armorst'/>
+            </stl-vector>
+            <stl-vector name='ammo_type'>
+                <int16_t ref-target='itemdef_ammost'/>
+            </stl-vector>
+            <stl-vector name='helm_type'>
+                <int16_t ref-target='itemdef_helmst'/>
+            </stl-vector>
+            <stl-vector name='gloves_type'>
+                <int16_t ref-target='itemdef_glovesst'/>
+            </stl-vector>
+            <stl-vector name='shoes_type'>
+                <int16_t ref-target='itemdef_shoesst'/>
+            </stl-vector>
+            <stl-vector name='pants_type'>
+                <int16_t ref-target='itemdef_pantsst'/>
+            </stl-vector>
+            <stl-vector name='shield_type'>
+                <int16_t ref-target='itemdef_shieldst'/>
+            </stl-vector>
+            <stl-vector name='trapcomp_type'>
+                <int16_t ref-target='itemdef_trapcompst'/>
+            </stl-vector>
+            <stl-vector name='toy_type'>
+                <int16_t ref-target='itemdef_toyst'/>
+            </stl-vector>
+            <stl-vector name='instrument_type'>
+                <int16_t ref-target='itemdef_instrumentst'/>
+            </stl-vector>
+            <stl-vector name='siegeammo_type'>
+                <int16_t ref-target='itemdef_siegeammost'/>
+            </stl-vector>
+
             <compound name='weapon' type-name='material_vec_ref'/>
             <compound name='armor' type-name='material_vec_ref'/>
             <stl-vector name='leather'>
@@ -178,7 +205,7 @@
             <stl-vector name='mount'>
                 <int16_t ref-target='creature_raw'/>
             </stl-vector>
-            <stl-vector name='minion' comment='trolls'>
+            <stl-vector name='minion'>
                 <int16_t ref-target='creature_raw'/>
             </stl-vector>
 
