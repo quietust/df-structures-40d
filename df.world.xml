@@ -51,13 +51,39 @@
             <pointer/>
         </stl-vector>
         <stl-vector name='effects'>
-            <pointer/>
+            <pointer>
+                <int32_t/>
+                <int32_t/>
+                <int32_t/>
+                <int16_t/>
+                <int16_t/>
+                <int8_t/>
+                <int32_t/>
+                <int32_t/>
+                <int32_t/>
+                <int32_t/>
+            </pointer>
         </stl-vector>
         <stl-vector name='unk_100'>
-            <pointer/>
+            <pointer>
+                <int32_t/>
+                <int16_t/>
+                <int32_t/>
+                <int32_t/>
+                <int32_t/>
+                <int16_t/>
+                <int32_t/>
+                <int16_t/>
+            </pointer>
         </stl-vector>
         <stl-vector name='unk_110'>
-            <pointer/>
+            <pointer>
+                <int8_t/>
+                <int16_t/>
+                <int32_t/>
+                <int32_t/>
+                <int8_t/>
+            </pointer>
         </stl-vector>
 
         --

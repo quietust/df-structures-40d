@@ -72,7 +72,7 @@
 
 (defun find-plant-raw (key) $global.world.raws.matgloss_plant[key])
 (defun find-creature (key) $global.world.raws.creatures[key])
-(defun find-figure (key) (find-by-id $global.world.history.figures $id key))
+(defun find-figure (key) (find-by-id $global.world.world_data.history.figures $id key))
 
 (defun item-subtype-target (type subtype)
   (let* ((defs $global.world.raws.itemdefs)

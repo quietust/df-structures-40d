@@ -220,6 +220,8 @@
                 <uint16_t/>
             </static-array>
         </static-array>
+
+        <compound name='pos' type-name='coord16'/>
     </struct-type>
 
     <enum-type type-name='biome_type'>
