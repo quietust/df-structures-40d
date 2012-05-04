@@ -168,7 +168,7 @@
     </enum-type>
 
     <struct-type type-name='art_image'>
-        <code-helper name='find-instance'>$(find-instance $art_image_collection $$).images[$]</code-helper>
+        <code-helper name='find-instance'>$(find-instance $art_image_chunk $$).images[$]</code-helper>
         <code-helper name='describe'>(describe-obj $.name)</code-helper>
 
         <stl-vector name='elements'>
@@ -189,12 +189,12 @@
         <pointer type-name='general_ref'/>
         <int32_t name='year'/>
         <int32_t/>
-        <int32_t name='id' ref-target='art_image_collection'/>
+        <int32_t name='id' ref-target='art_image_chunk'/>
         <int16_t name='subid' ref-target='art_image' aux-value='$$.id'/>
     </struct-type>
 
-    <struct-type type-name='art_image_collection'
-                 instance-vector='$global.world.art_images' key-field='id'>
+    <struct-type type-name='art_image_chunk'
+                 instance-vector='$global.world.art_image_chunks' key-field='id'>
         <int32_t name='id' comment='art_image_*.dat'/>
         <static-array name='images' count='500'>
             <pointer type-name='art_image'/>
@@ -202,7 +202,7 @@
     </struct-type>
 
     <struct-type type-name='art_image_ref'>
-        <int32_t name='id' ref-target='art_image_collection'/>
+        <int32_t name='id' ref-target='art_image_chunk'/>
         <int16_t name='subid' ref-target='art_image' aux-value='$$.id'/>
     </struct-type>
 </data-definition>

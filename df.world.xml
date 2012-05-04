@@ -23,58 +23,41 @@
         <stl-vector name='drink_areas'>
             <pointer/>
         </stl-vector>
-        <stl-vector name='unk_48'>
-            <pointer type-name='coord2d16'/>
-        </stl-vector>
-        <stl-vector name='unk_54'>
-            <pointer type-name='coord2d16'/>
-        </stl-vector>
         <stl-vector name='unk_60'>
             <pointer type-name='coord2d16'/>
         </stl-vector>
-        <stl-vector name='unk_6C'>
-            <pointer/>
+        <stl-vector name='unk_70'>
+            <pointer type-name='coord2d16'/>
         </stl-vector>
-        <stl-vector name='unk_78'>
-            <pointer/>
+        <stl-vector name='unk_80'>
+            <pointer type-name='coord2d16'/>
         </stl-vector>
         <stl-vector name='unk_90'>
             <pointer/>
         </stl-vector>
-        <stl-vector name='unk_9C'>
+        <stl-vector name='unk_A0'>
             <pointer/>
         </stl-vector>
-        <stl-vector name='unk_A8'>
+        <stl-vector name='unk_B0'>
             <pointer/>
         </stl-vector>
-        <stl-vector name='unk_B4'>
+        <stl-vector name='unk_C0'>
+            <pointer/>
+        </stl-vector>
+        <stl-vector name='unk_D0'>
+            <pointer/>
+        </stl-vector>
+        <stl-vector name='unk_E0'>
             <pointer/>
         </stl-vector>
         <stl-vector name='effects'>
             <pointer/>
         </stl-vector>
-        <stl-vector name='unk_108'>
+        <stl-vector name='unk_100'>
             <pointer/>
         </stl-vector>
-
-        <stl-vector name='populations'>
-            <pointer>
-                <enum base-type='int8_t' name='type' type-name='world_population_type'/>
-
-                <compound is-union='true'>
-                    <int16_t name="race" ref-target='creature_raw'/>
-                    <int16_t name="plant" ref-target='matgloss_plant'/>
-                </compound>
-
-                <int32_t name="quantity"/>
-                <int8_t name="unk_8"/>
-
-                <compound name='population' type-name='world_population_ref'/>
-
-                <int32_t init-value='-1'/>
-                <int32_t init-value='-1'/>
-                <int32_t init-value='-1'/>
-            </pointer>
+        <stl-vector name='unk_110'>
+            <pointer/>
         </stl-vector>
 
         --
@@ -120,10 +103,10 @@
         -- Unknown
 
         <stl-vector name='unit_chunks'>
-            <pointer/>
+            <pointer type-name='unit_chunk'/>
         </stl-vector>
-        <stl-vector name='art_images'>
-            <pointer type-name='art_image_collection'/>
+        <stl-vector name='art_image_chunks'>
+            <pointer type-name='art_image_chunk'/>
         </stl-vector>
 
         -- Nemesis

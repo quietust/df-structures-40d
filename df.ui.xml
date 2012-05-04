@@ -70,14 +70,12 @@
         <int32_t comment='-1'/>
         <df-linked-list type-name='unit_list_link'/>
         <int8_t/>
-        <stl-vector type-name='pointer'/>
+        <stl-vector>
+            <pointer type-name='entity_trade_statistics'/>
+        </stl-vector>
         <int8_t/>
-        <stl-vector type-name='int32_t'/>
-        <stl-vector type-name='int32_t'/>
-        <stl-vector type-name='int32_t'/>
-        <stl-vector name='roadInfo' type-name='int32_t'/>
-        <stl-vector type-name='int32_t'/>
-        <stl-vector type-name='int32_t'/>
+        <compound type-name='coord_path' name='roadInfo1'/>
+        <compound type-name='coord_path' name='roadInfo2'/>
         <int16_t name='progress_population'/>
         <int16_t name='progress_trade'/>
         <int16_t name='progress_production'/>
@@ -108,22 +106,37 @@
         <compound type-name='entity_activity_statistics'/>
 
         <stl-vector type-name='pointer'/>
-        <stl-vector name='dip_meeting_vec'>
-            <pointer type-name='meeting_diplomat'/>
+        <stl-vector name='activities'>
+            <pointer type-name='activity'/>
         </stl-vector>
 
         <stl-vector name='dip_meeting_info'>
             <pointer>
                 <int32_t name='civ_id' ref-target='historical_entity'/>
-                <int16_t name='unk1'/>
+                <int16_t/>
+                <int16_t/>
                 <int32_t name='diplomat_id' ref-target='historical_figure'/>
-                <int32_t name='unk2' comment='-1'/>
-                <padding size='32' comment='0'/>
+                <int32_t comment='-1'/>
+                <stl-vector type-name='pointer'/>
+                <stl-vector type-name='pointer'/>
+                <int32_t/>
+                <int32_t/>
+                <int32_t/>
+                <stl-vector type-name='pointer'/>
+                <stl-vector type-name='pointer'/>
+                <stl-vector type-name='pointer'/>
                 <pointer name='dipscript' type-name='dipscript_info'/>
-                <padding size='16' comment='0'/>
                 <stl-string name='unk3'/>
                 <stl-string name='unk4'/>
-                <padding size='112' comment='0'/>
+                <stl-vector type-name='pointer'/>
+                <stl-vector type-name='pointer'/>
+                <stl-vector type-name='pointer'/>
+                <stl-vector type-name='pointer'/>
+                <stl-vector type-name='pointer'/>
+                <stl-vector type-name='pointer'/>
+                <stl-vector type-name='pointer'/>
+                <stl-vector type-name='pointer'/>
+                <stl-vector type-name='pointer'/>
             </pointer>
         </stl-vector>
 
@@ -189,8 +202,8 @@
             </pointer>
         </stl-vector>
 
-        <stl-vector name='pet_meetings'>
-            <pointer type-name='meeting_pet'/>
+        <stl-vector name='pet_info'>
+            <pointer type-name='pet_info'/>
         </stl-vector>
         <stl-vector name='parties'>
             <pointer type-name='party_info'/>

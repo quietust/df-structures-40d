@@ -350,10 +350,6 @@
             <uint32_t name='unk_144'/>
         </compound>
 
-        <stl-vector name='meetings'>
-            <pointer type-name='meeting_ref'/>
-        </stl-vector>
-
         <compound name='unknown4'>
             <compound name='population' type-name='world_population_ref'/>
 
@@ -613,6 +609,14 @@
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
 
         <bool name='active'/>
+    </struct-type>
+
+    <struct-type type-name='unit_chunk'
+                 instance-vector='$global.world.unit_chunks' key-field='id'>
+        <int32_t name='id' comment='unit_*.dat'/>
+        <static-array name='units' count='100'>
+            <pointer type-name='unit'/>
+        </static-array>
     </struct-type>
 
 </data-definition>

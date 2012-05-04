@@ -66,6 +66,22 @@
         <stl-vector type-name='bool'/>
     </struct-type>
 
+    <struct-type type-name='entity_trade_statistics'>
+        <int32_t/>
+        <int8_t/>
+        <int8_t/>
+        <int16_t/>
+        <compound name='activity_stats' type-name='entity_activity_statistics'/>
+        <int32_t name='flags'/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <stl-vector type-name='pointer'/>
+        <int32_t/>
+        <int32_t/>
+    </struct-type>
+
     <struct-type type-name='historical_entity' key-field='id'
                  instance-vector='$global.world.entities.all'>
         <int16_t name='type' comment='0 = civilization, 1-4 = group?'/>
@@ -233,7 +249,7 @@
             <stl-vector type-name='pointer'/>
         </compound>
 
-        <compound type-name='entity_activity_statistics'/>
+        <compound name='activity_stats' type-name='entity_activity_statistics'/>
 
         <int8_t/>
         <int16_t/>
