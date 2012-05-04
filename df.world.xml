@@ -17,11 +17,18 @@
                 <pointer type-name='vermin'/>
             </stl-vector>
             <stl-vector name='colonies'>
-                <pointer type-name='vermin'/>
+                <pointer type-name='coord16'/>
             </stl-vector>
         </compound>
         <stl-vector name='drink_areas'>
-            <pointer/>
+            <pointer>
+                <int32_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int8_t/>
+                <int16_t/>
+            </pointer>
         </stl-vector>
         <stl-vector name='unk_60'>
             <pointer type-name='coord2d16'/>
@@ -33,22 +40,58 @@
             <pointer type-name='coord2d16'/>
         </stl-vector>
         <stl-vector name='unk_90'>
-            <pointer/>
+            <pointer>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+            </pointer>
         </stl-vector>
         <stl-vector name='unk_A0'>
-            <pointer/>
+            <pointer>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+            </pointer>
         </stl-vector>
         <stl-vector name='unk_B0'>
-            <pointer/>
+            <pointer>
+                <int32_t/>
+                <int32_t/>
+                <int32_t/>
+                <int32_t/>
+            </pointer>
         </stl-vector>
         <stl-vector name='unk_C0'>
-            <pointer/>
+            <pointer type-name='coord16'/>
         </stl-vector>
         <stl-vector name='unk_D0'>
-            <pointer/>
+            <pointer>
+                <stl-vector type-name='int16_t'/>
+                <stl-vector type-name='int16_t'/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <stl-vector>
+                    <pointer type-name='unit'/>
+                </stl-vector>
+            </pointer>
         </stl-vector>
         <stl-vector name='unk_E0'>
-            <pointer/>
+            <pointer>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+            </pointer>
         </stl-vector>
         <stl-vector name='effects'>
             <pointer>
@@ -80,8 +123,8 @@
             <pointer>
                 <int8_t/>
                 <int16_t/>
-                <int32_t/>
-                <int32_t/>
+                <int32_t comment='30000'/>
+                <int32_t comment='30000'/>
                 <int8_t/>
             </pointer>
         </stl-vector>
@@ -310,7 +353,18 @@
 
         <compound name='schedules'>
             <stl-vector name='all'>
-                <pointer/>
+                <pointer>
+                    <int32_t name='id'/>
+                    <stl-vector>
+                        <pointer>
+                            <int16_t/>
+                            <int16_t/>
+                            <int16_t/>
+                            <int16_t/>
+                            <int8_t/>
+                        </pointer>
+                    </stl-vector>
+                </pointer>
             </stl-vector>
             <stl-vector name='bad' has-bad-pointers='true'>
                 <pointer/>
@@ -423,6 +477,7 @@
         <int16_t name='glass_gem' ref-target='matgloss_gem'/>
 
         <compound name='fortress'>
+            <stl-string/>
             <compound type-name='language_name' name='name'/>
             <int32_t/>
             <int32_t/>
