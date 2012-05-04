@@ -1,16 +1,15 @@
 <data-definition>
     <struct-type type-name='vermin' instance-vector='$global.world.vermin.all'>
-        <int32_t name='race' ref-target='creature_raw'/>
+        <int32_t/>
+        <int16_t name='race' ref-target='creature_raw'/>
         <compound name='pos' type-name='coord16'/>
-        <int16_t name="countdown" />
-        <bool name="visible" comment="1 = visible vermin" />
+        <bool name='visible'/>
 
-        <int16_t/>
-        <pointer name="item" type-name='item_critter'/>
+        <int16_t name='countdown' />
+        <pointer name='item' type-name='item_critter'/>
 
-        <int32_t name="amount" comment="The total number of vermin in this object. Decimal constant 10000001 means infinity (probably)." />
-
-        <int16_t name="unk_34" />
+        <int32_t name='flags'/>
+        <int16_t name='amount' />
     </struct-type>
 </data-definition>
 
