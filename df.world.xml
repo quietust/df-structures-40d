@@ -350,7 +350,9 @@
             <int32_t name='z_count'/>
         </compound>
 
-        <static-array count='16' type-name='int16_t'/>
+        <static-array count='16' name='stone_types'>
+            <int16_t ref-target='matgloss_stone'/>
+        </static-array>
 
         <static-array name='unknown_420d4'
                       count='2810' type-name='int16_t'/>
@@ -367,12 +369,8 @@
         <int32_t/>
         <static-array count='20000' type-name='int8_t'/>
         <int8_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <static-array count='3' type-name='int32_t' name='feature_type'/>
+        <static-array count='3' type-name='int32_t' name='feature_depth'/>
         <int32_t/>
         <int8_t/>
         <int32_t/>
@@ -405,7 +403,7 @@
         </compound>
         <int32_t/>
         <int32_t/>
-        <int16_t/>
+        <int16_t name='fortress_gate_z'/>
         <static-array count='480' type-name='int16_t'/>
         <static-array count='480' type-name='int16_t'/>
         <static-array count='960' type-name='int16_t'/>
@@ -418,60 +416,31 @@
         -- RAWs
 
         <compound name='raws' type-name='world_raws'/>
+        <int16_t name='lava_stone' ref-target='matgloss_stone'/>
+        <int16_t name='river_stone' ref-target='matgloss_stone'/>
+        <int16_t name='flux_stone' ref-target='matgloss_stone'/>
+        <int16_t name='sharp_stone' ref-target='matgloss_stone'/>
+        <int16_t name='glass_gem' ref-target='matgloss_gem'/>
 
-        <padding size='28'/>
-
-        <compound type-name='language_name' name='fortress_name'/>
-
-        <padding size='48'/>
-
-        <stl-vector type-name='pointer'/>
-<!--
-
-        <compound name='unk_59dc4'>
-            <compound name='regions' type-name='coord2d_path'/>
-            <stl-vector>
-                <pointer>
-                    <compound name='ref' type-name='world_population_ref'/>
-                    <stl-vector name='unk'>
-                        <int32_t/>
-                    </stl-vector>
-                </pointer>
-            </stl-vector>
-            <static-array type-name='int16_t' count='32'/>
+        <compound name='fortress'>
+            <compound type-name='language_name' name='name'/>
             <int32_t/>
             <int32_t/>
             <int32_t/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int32_t'/>
-            <df-flagarray name='unk_59e70'/>
+            <int16_t/>
+            <int8_t/>
+            <int32_t/>
+            <int32_t/>
+            <int8_t/>
+            <int16_t/>
+            <int32_t/>
+            <int16_t/>
+            <int16_t/>
+            <compound name='pos' type-name='coord2d16'/>
+            <int8_t/>
+            <int32_t/>
+            <stl-vector type-name='pointer'/>
         </compound>
-
-        <int32_t name='unk_59e78'/>
-
-        - hist figures
-
-        <stl-vector name='entity_populations'>
-            <pointer type-name='entity_population'/>
-        </stl-vector>
-
-        <int32_t name="unk_5e7a0"/>
-
-        <compound name='cur_savegame'>
-            <stl-string name='save_dir'/>
-            <padding size='4'/>
-
-            <static-array count='18'>
-                192be0
-                <stl-vector type-name='pointer'/>
-            </static-array>
-        </compound>
-
-        <int32_t name="unk_192cc4"/>
--->
     </struct-type>
 </data-definition>
 
