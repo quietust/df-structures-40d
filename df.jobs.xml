@@ -142,28 +142,19 @@
     <struct-type type-name='manager_order'>
         <enum name='job_type' base-type='int16_t' type-name='job_type'/>
         <int16_t name="item_subtype"/>
-
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-
+        <stl-string/>
         <int16_t name='material' comment='or matgloss, depends on context'/>
-
         <int16_t name="amount_left"/>
         <int16_t name="amount_total"/>
     </struct-type>
 
     <struct-type type-name='manager_order_template'>
         <enum name='job_type' base-type='int16_t' type-name='job_type'/>
-        <stl-string name="reaction_name"/>
-        <int16_t init-value='-1'/>
+        <stl-string/>
         <int16_t name="item_subtype"/>
-        <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
+        <int16_t name='material' comment='or matgloss, depends on context'/>
+        <int8_t/>
         <compound name="item_category" type-name='job_item_category'/>
-        <int32_t init-value='-1'/>
-        <int8_t init-value='1'/>
     </struct-type>
 
     <struct-type type-name='mandate'>

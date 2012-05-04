@@ -449,8 +449,8 @@
             <item-attr name='caption' value='Destroy Building'/>
             <item-attr name='type' value='Building'/>
         </enum-item>
-        <enum-item name='SmeltOre'>
-            <item-attr name='caption' value='Smelt Ore'/>
+        <enum-item name='MakeBars'>
+            <item-attr name='caption' value='Make Metal Bars'/>
             <item-attr name='type' value='Manufacture'/>
             <item-attr name='item' value='BAR'/>
             <item-attr name='skill' value='SMELT'/>
