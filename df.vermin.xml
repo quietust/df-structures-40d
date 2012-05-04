@@ -1,5 +1,11 @@
 <data-definition>
     <struct-type type-name='vermin' instance-vector='$global.world.vermin.all'>
+
+        <code-helper name='describe'>
+            (awhen (find-creature $.race)
+              (fmt "(~A)" $it.creature_id))
+        </code-helper>
+
         <int32_t/>
         <int16_t name='race' ref-target='creature_raw'/>
         <compound name='pos' type-name='coord16'/>
