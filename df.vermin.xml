@@ -1,7 +1,7 @@
 <data-definition>
     <struct-type type-name='vermin' instance-vector='$global.world.vermin.all'>
         <int32_t name='race' ref-target='creature_raw'/>
-        <compound name='pos' type-name='coord'/>
+        <compound name='pos' type-name='coord16'/>
         <int16_t name="countdown" />
         <bool name="visible" comment="1 = visible vermin" />
 
