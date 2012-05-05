@@ -7,14 +7,12 @@
 
     -- .data
 
-    <!-- Cursor: to find, look in the non-bss .data segment -->
     <global-object name='cursor'>
         <int32_t name='x'/>
         <int32_t name='y'/>
         <int32_t name='z'/>
     </global-object>
 
-    <!-- Designation selection rect: to find, look just after cursor for six -30000 values. -->
     <global-object name='selection_rect'>
         <int32_t name='start_x'/>
         <int32_t name='start_y'/>
@@ -46,12 +44,10 @@
     <global-object name='enabler' type-name='enabler'/>
     <global-object name='gps' type-name='graphic'/>
 
-    <!-- To find: search for strings in the welcome or textview screen, then trace pointers -->
     <global-object name='gview' type-name='interfacest'/>
 
     <global-object name='init' type-name='init'/>
 
-    <!-- To find: create squad, enter the 's' menu, trace pointers to squad -->
     <global-object name='ui' type-name='ui'/>
 
     <global-object name='ui_advmode' type-name='ui_advmode'/>
@@ -59,14 +55,17 @@
     <!-- To find: start creating a building, trace the build material item pointers -->
     <global-object name='ui_build_selector' type-name='ui_build_selector'/>
 
-    <!-- To find: place loo'k' cursor over a unit, trace pointers to unit -->
     <global-object name='ui_look_list' type-name='ui_look_list'/>
 
-    <!-- To find: select a unit in 'v'iew, open inventory page, trace unit.inventory.* pointers -->
     <global-object name='ui_sidebar_menus' type-name='ui_sidebar_menus'/>
 
-    <!-- To find: search for unit nickname, backtrace pointers to find the main unit list. -->
     <global-object name='world' type-name='world'/>
+
+    <global-object name='timed_events'>
+        <stl-vector>
+            <pointer type-name='timed_event'/>
+        </stl-vector>
+    </global-object>
 
     -- .bss primitive
 
@@ -81,7 +80,6 @@
         </static-array>
     </global-object>
 
-    <!-- To find: open workshop, create jobs, search for value changing +1 every time -->
     <global-object name='job_next_id' type-name='int32_t'/>
 
     <global-object name='pause_state' type-name='bool'/>

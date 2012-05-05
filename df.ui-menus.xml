@@ -148,8 +148,6 @@
                 inherits-from='interface_button_buttonst'/>
 
     <struct-type type-name='ui_sidebar_menus'>
-        dtor 0x8535ee0
-
         <compound name='workshop_job'>
             <stl-vector name='choices_all'>
                 <pointer type-name='interface_button_buildingst'/>
@@ -179,52 +177,28 @@
 
         <stl-vector type-name='pointer'/>
 
-        <int32_t name="unk_58"/>
-        <int32_t name="unk_5c"/>
-        <int32_t name="unk_60"/>
-        <int32_t name="unk_64"/>
+        <int32_t/>
+        <int32_t/>
 
         <compound name='unit'>
             <stl-vector name='inv_items'>
                 <pointer type-name='unit_inventory_item'/>
             </stl-vector>
-            <stl-vector name='inv_spatters'>
-                <pointer type-name='unit_spatter'/>
-            </stl-vector>
 
-            <int32_t name="unk_80"/>
-            <int32_t name="unk_84"/>
-            <int32_t name="unk_88"/>
-            <int32_t name="unk_8c"/>
-            <int32_t name="unk_90"/>
-
-            <stl-vector name='list'>
-                <int32_t refers-to='$global.world.units.other[0][$]'/>
-            </stl-vector>
-
-            <int32_t name="unk_a0"/>
-
-            <stl-vector name='skills'>
-                <int32_t refers-to='$global.ui_selected_unit.index.refers-to.status.skills[$]'/>
-            </stl-vector>
+            <int8_t/>
+            <int8_t/>
+            <static-array type-name='int32_t' count='529'/>
+            <int8_t/>
+            <int8_t/>
         </compound>
-
-        <padding size='5824'/>
 
         <stl-string/>
         <stl-vector>
             <pointer type-name='stl-string'/>
         </stl-vector>
 
-        <int32_t name="unk_17c0"/>
-        <int32_t name="unk_17c4"/>
-        <int32_t name="unk_17c8"/>
-
-        <stl-string/>
-
-        <int32_t name="unk_17d0"/>
-        <int32_t name="unk_17d4"/>
-        <int32_t name="unk_17d8"/>
+        <int32_t/>
+        <int32_t/>
     </struct-type>
 
     <struct-type type-name='ui_look_list'>
@@ -256,7 +230,8 @@
             <enum-item name='Preferences'/>
             <enum-item name='Wounds'/>
             <enum-item name='PrefLabor'/>
-            <enum-item name='PrefDogs'/>
+            <enum-item name='PrefPet'/>
+            <enum-item name='PrefSoldier'/>
         </enum>
     </struct-type>
 </data-definition>

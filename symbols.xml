@@ -24,9 +24,10 @@
         <global-address name='ui' value='0xa82a38'/>
         <global-address name='ui_advmode'/>
         <global-address name='ui_build_selector'/>
-        <global-address name='ui_look_list'/>
+        <global-address name='ui_look_list' value='0xe9d818'/>
         <global-address name='ui_sidebar_menus'/>
         <global-address name='world' value='0xacb278'/>
+        <global-address name='timed_events' value='0xb52df0'/>
 
         .bss primitive
 
@@ -37,9 +38,9 @@
         <global-address name='pause_state' value='0xf1719e'/>
 
         <global-address name='ui_building_item_cursor'/>
-        <global-address name='ui_look_cursor'/>
+        <global-address name='ui_look_cursor' value='0xaa926c'/>
         <global-address name='ui_selected_unit'/>
-        <global-address name='ui_unit_view_mode'/>
+        <global-address name='ui_unit_view_mode' value='0xe9e5f4'/>
         <global-address name='ui_workshop_in_add'/>
         <global-address name='ui_workshop_job_cursor'/>
 

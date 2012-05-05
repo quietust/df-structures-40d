@@ -181,20 +181,22 @@
                     <pointer type-name='world_site'/>
                 </stl-vector>
                 <df-flagarray name='flags'/>
-                <int16_t name="elevation"/>
-                <int16_t name="wetness"/>
-                <int16_t name="vegetation"/>
-                <int16_t name="temperature"/>
-                <int16_t name="evilness"/>
-                <int16_t name="hilliness"/>
-                <int16_t/>
-                <int16_t name="savagery"/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t name="saltiness"/>
+                <compound name='properties'>
+                    <int16_t name="elevation"/>
+                    <int16_t name="wetness"/>
+                    <int16_t name="vegetation"/>
+                    <int16_t name="temperature"/>
+                    <int16_t name="evilness"/>
+                    <int16_t name="hilliness"/>
+                    <int16_t/>
+                    <int16_t name="savagery"/>
+                    <int16_t/>
+                    <int16_t/>
+                    <int16_t/>
+                    <int16_t/>
+                    <int16_t/>
+                    <int16_t name="saltiness"/>
+                </compound>
                 <int16_t/>
                 <int16_t/>
                 <int16_t/>

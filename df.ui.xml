@@ -10,41 +10,24 @@
 
     <enum-type type-name='ui_sidebar_mode'>
         <enum-item name='Default'/>
-
-        -- 2
-
+        <enum-item name='Squads'/>
         <enum-item name='DesignateMine'/>
         <enum-item name='DesignateGatherPlants'/>
         <enum-item name='DesignateRemoveDesignation'/>
-        <enum-item name='DesignateSmooth'/>
+        <enum-item name='DesignateDetailStone'/>
         <enum-item name='DesignateCarveFortification'/>
-
-        -- 14
-
         <enum-item name='Stockpiles'/>
         <enum-item name='Build'/>
         <enum-item name='QueryBuilding'/>
-
-        -- 17
-
         <enum-item name='Orders'/>
-        <enum-item name='OrdersForbid'/>
         <enum-item name='OrdersRefuse'/>
         <enum-item name='OrdersWorkshop'/>
-        <enum-item name='OrdersZone'/>
-
-        -- 22
-
         <enum-item name='BuildingItems'/>
         <enum-item name='ViewUnits'/>
         <enum-item name='LookAround'/>
-
-        -- 25
-
-        <enum-item name='DesignateItemsClaim'/>
+        <enum-item name='DesignateReclaim'/>
         <enum-item name='DesignateChopTrees'/>
         <enum-item name='DesignateToggleEngravings'/>
-
     </enum-type>
 
     <struct-type type-name='ui'>
@@ -237,7 +220,7 @@
         <int16_t name='max_dig_depth'/>
         <int16_t name='min_dig_depth'/>
         <int16_t name='mood_timer'/>
-        <int16_t/>
+        <enum base-type='int16_t' name='sidebar_mode' type-name='ui_sidebar_mode'/>
         <int16_t/>
         <bool name='baron_needed'/>
         <bool name='count_needed'/>
@@ -329,6 +312,28 @@
             <compound name='custom_settings' type-name='stockpile_settings'/>
         </compound>
     </struct-type>
+
+    <enum-type type-name='timed_event_type' base-type='int16_t'>
+        <enum-item name='Caravan'/>
+        <enum-item name='Migrants'/>
+        <enum-item name='Diplomat'/>
+        <enum-item name='CivAttack'/>
+        <enum-item name='RiverAttack'/>
+        <enum-item name='ChasmAttack'/>
+        <enum-item name='MagmaAttack'/>
+        <enum-item name='TooDeep'/>
+        <enum-item name='Megabeast'/>
+        <enum-item name='Wildlife'/>
+    </enum-type>
+
+
+    <struct-type type-name='timed_event'>
+        <enum type-name='timed_event_type' name='type'/>
+        <int8_t name='season'/>
+        <int16_t name='season_ticks_remaining'/>
+        <pointer name='entity' type-name='historical_entity'/>
+    </struct-type>
+
 </data-definition>
 
 <!--
