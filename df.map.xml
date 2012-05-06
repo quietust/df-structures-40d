@@ -155,8 +155,8 @@
             <int32_t ref-target='item'/>
         </stl-vector>
 
-        <stl-vector name='effects'>
-            <pointer type-name='effect'/>
+        <stl-vector name='flows'>
+            <pointer type-name='flow'/>
         </stl-vector>
 
         <int32_t/>
@@ -261,7 +261,7 @@
         <enum-item name='SUBTERRANEAN_LAVA'/>
     </enum-type>
 
-    <enum-type type-name='effect_type' base-type='int16_t'>
+    <enum-type type-name='flow_type' base-type='int16_t'>
         <enum-item name='Miasma'/>
         <enum-item name='Steam' comment='only if material=1'/>
         <enum-item name='Mist'/>
@@ -279,8 +279,8 @@
         <enum-item name='MaterialGas'/>
     </enum-type>
 
-    <struct-type type-name='effect'>
-        <enum type-name='effect_type' base-type='int16_t' name='type'/>
+    <struct-type type-name='flow'>
+        <enum type-name='flow_type' base-type='int16_t' name='type'/>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <int16_t name='density'/>
