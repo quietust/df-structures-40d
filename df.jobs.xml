@@ -1,19 +1,4 @@
 <data-definition>
-    <bitfield-type type-name='job_item_category' base-type='uint32_t'>
-        <flag-bit/>
-        <flag-bit/>
-        <flag-bit name='furniture'/>
-        <flag-bit/>
-        <flag-bit/>
-        <flag-bit/>
-        <flag-bit/>
-        <flag-bit name='ammo'/>
-        <flag-bit/>
-        <flag-bit/>
-        <flag-bit/>
-        <flag-bit name='finished_goods'/>
-    </bitfield-type>
-
     <struct-type type-name='job_list_link'>
         <code-helper name='describe'>(describe-obj $.item)</code-helper>
         <pointer name='item' type-name='job'/>
@@ -63,7 +48,7 @@
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <int16_t name='item_subtype'/>
 
-        <compound name="item_category" type-name='job_item_category'/>
+        <compound name="item_category" type-name='item_category'/>
         <stl-vector type-name='pointer'/>
         <int16_t/>
 
@@ -154,7 +139,7 @@
         <int16_t name="item_subtype"/>
         <int16_t name='material' comment='or matgloss, depends on context'/>
         <int8_t/>
-        <compound name="item_category" type-name='job_item_category'/>
+        <compound name="item_category" type-name='item_category'/>
     </struct-type>
 
     <struct-type type-name='mandate'>

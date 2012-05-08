@@ -104,7 +104,7 @@
         <int16_t name="item_subtype"/>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
-        <compound name="item_category" type-name='job_item_category'/>
+        <compound name="item_category" type-name='item_category'/>
         <int32_t name="hist_figure_id" ref-target='historical_figure'/>
         <bool name="unk_48"/>
     </class-type>
