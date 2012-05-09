@@ -67,11 +67,11 @@
         <stl-vector type-name='bool'/>
     </struct-type>
 
-    <struct-type type-name='entity_trade_statistics'>
+    <struct-type type-name='caravan_state'>
         <int32_t/>
-        <int8_t/>
-        <int8_t/>
-        <int16_t/>
+        <int8_t name='trade_state' comment='1 = approaching depot; 2 = at depot; 3 = leaving'/>
+        <int8_t name='depot_notified' comment='has it warned you that you need a depot'/>
+        <int16_t name='time_remaining'/>
         <int32_t name='entity' ref-target='historical_entity'/>
         <compound name='activity_stats' type-name='entity_activity_statistics'/>
         <int32_t name='flags'/>
@@ -102,7 +102,7 @@
         </code-helper>
 
         <int16_t name='race' ref-target='creature_raw'/>
-        <int32_t name='unk5'/>
+        <int32_t name='flags'/> 0x10 = ancient ruin
 
         <stl-vector name='unk6a'>
             <pointer>
@@ -171,6 +171,7 @@
 
             <compound name='weapon' type-name='material_vec_ref'/>
             <compound name='armor' type-name='material_vec_ref'/>
+
             <stl-vector name='leather'>
                 <int16_t ref-target='creature_raw'/>
             </stl-vector>
@@ -180,7 +181,8 @@
             <stl-vector name='silk'>
                 <int16_t ref-target='creature_raw'/>
             </stl-vector>
-            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t' comment='populated with a 0 for each wood type available?'/>
+
             <stl-vector name='craft_metal'>
                 <enum base-type='int16_t' type-name='material_type'/>
             </stl-vector>
@@ -189,11 +191,19 @@
             <stl-vector name='bone'>
                 <int16_t ref-target='creature_raw'/>
             </stl-vector>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <compound name='other' type-name='material_vec_ref' comment='jade, etc.'/>
+            <stl-vector name='shell'>
+                <int16_t ref-target='creature_raw'/>
+            </stl-vector>
+            <stl-vector name='pearl'>
+                <int16_t ref-target='creature_raw'/>
+            </stl-vector>
+            <stl-vector name='ivory'>
+                <int16_t ref-target='creature_raw'/>
+            </stl-vector>
+            <stl-vector name='horn'>
+                <int16_t ref-target='creature_raw'/>
+            </stl-vector>
+            <compound name='other' type-name='material_vec_ref' comment='jade, amber, and coral'/>
             <compound name='crafts' type-name='material_vec_ref'/>
             <compound type-name='material_vec_ref'/>
             <compound name='wood' type-name='material_vec_ref'/>
@@ -272,8 +282,8 @@
         </stl-vector>
 
         <compound>
-            <compound name='flour_sugar' type-name='material_vec_ref'/>
-            <compound name='dye' type-name='material_vec_ref'/>
+            <compound name='mill_cookable' type-name='material_vec_ref'/>
+            <compound name='mill_dye' type-name='material_vec_ref'/>
             <static-array count='32'>
                 <stl-vector type-name='int16_t'/>
             </static-array>

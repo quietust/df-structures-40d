@@ -53,8 +53,8 @@
             <pointer type-name='unit'/>
             <int8_t/>
         </compound>
-        <stl-vector>
-            <pointer type-name='entity_trade_statistics'/>
+        <stl-vector name='caravans'>
+            <pointer type-name='caravan_state'/>
         </stl-vector>
         <int8_t/>
         <compound type-name='coord_path' name='roadInfo1'/>
