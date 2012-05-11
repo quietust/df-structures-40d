@@ -8,7 +8,7 @@
         <stl-vector name='material'>
             <enum base-type='int16_t' type-name='material_type'/>
         </stl-vector>
-        <stl-vector name='quantity' type='int32_t'/>
+        <stl-vector name='quantity' type-name='int32_t'/>
         <stl-vector name='item_vec'>
             <pointer><stl-vector><pointer type-name='item'/></stl-vector></pointer>
         </stl-vector>
