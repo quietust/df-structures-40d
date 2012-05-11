@@ -202,8 +202,16 @@
                     <enum-item name='Unit'/>
                     <enum-item name='Building'/>
                     <enum-item name='Vermin'/>
+                    <enum-item name='Flow'/>
+                    <enum-item name='Campfire'/>
+                    <enum-item name='Blood'/>
+                    <enum-item name='Vomit'/>
+                    <enum-item name='Slime'/>
+                    <enum-item name='Pus'/>
+                    <enum-item name='Ichor'/>
+                    <enum-item name='Goo'/>
                 </enum>
-                <int32_t comment='uninit'/>
+                <int32_t comment='amount' comment='used for blood, etc.'/>
                 <int32_t comment='uninit'/>
                 <compound is-union='true'>
                     <pointer name='item' type-name='item'/>
