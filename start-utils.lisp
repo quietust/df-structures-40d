@@ -78,10 +78,7 @@
 (defun make-csv ()
   (write-csv (make-instance 'type-context ;:os-type $windows
                             :executable-hashes (list (cons *windows-timestamp* 0)))
-             "windows/all.csv" "windows/globals.csv")
-  (write-csv (make-instance 'type-context ;:os-type $linux
-                            :executable-hashes (list (cons *linux-hash* 0)))
-             "linux/all.csv" "linux/globals.csv"))
+             "windows/all.csv" "windows/globals.csv"))
 
 (defun browse-list (start)
   (browse (loop for node = $start.next then $node.next
