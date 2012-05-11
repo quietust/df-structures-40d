@@ -76,7 +76,7 @@
       (export-csv stream context :globals? t))))
 
 (defun make-csv ()
-  (write-csv (make-instance 'type-context ;:os-type $windows
+  (write-csv (make-instance 'type-context ;:os-type $windows-msvc6
                             :executable-hashes (list (cons *windows-timestamp* 0)))
              "windows/all.csv" "windows/globals.csv"))
 
