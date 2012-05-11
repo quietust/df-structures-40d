@@ -372,16 +372,24 @@
         </compound>
 
         <pointer name='selected_building' type-name='building'/>
-        <enum base-type='int16_t' name='selected_stockpile_type' type-name='stockpile_category'/>
-        <int16_t/>
+        <compound name='build_type' is-union='true'>
+            <enum base-type='int16_t' name='building_type' type-name='building_type'/>
+            <enum base-type='int16_t' name='selected_stockpile_type' type-name='stockpile_category'/>
+        </compound>
+        <compound name='build_subtype' is-union='true'>
+            <enum base-type='int16_t' name='furnace_type' type-name='furnace_type'/>
+            <enum base-type='int16_t' name='workshop_type' type-name='workshop_type'/>
+            <enum base-type='int16_t' name='siegeengine_type' type-name='siegeengine_type'/>
+            <enum base-type='int16_t' name='trap_type' type-name='trap_type'/>
+        </compound>
         <bool/>
 
-        <int16_t/>
-        <int16_t/>
-        <int8_t/>
-        <int8_t/>
-        <int8_t/>
-        <int8_t/>
+        <int16_t name='build_width'/>
+        <int16_t name='build_height'/>
+        <int8_t name='build_direction_1'/>
+        <int8_t name='build_direction_2' comment='aqueduct only'/>
+        <int8_t name='build_direction_3' comment='aqueduct only'/>
+        <int8_t name='build_direction_4' comment='aqueduct only'/>
 
         <compound name='map'>
             52cdc

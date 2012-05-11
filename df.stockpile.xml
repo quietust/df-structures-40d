@@ -18,18 +18,20 @@
     </struct-type>
 
     <enum-type type-name='stockpile_category' base-type='int16_t'>
-        <enum-item name='Animals'/>
+        <enum-item name='Remove'/>
+        <enum-item name='Animal'/>
         <enum-item name='Food'/>
         <enum-item name='Furniture'/>
         <enum-item name='Graveyard'/>
         <enum-item name='Refuse'/>
         <enum-item name='Stone'/>
         <enum-item name='Ore'/>
+        <enum-item name='Mining'/>
         <enum-item name='Ammo'/>
         <enum-item name='Coins'/>
-        <enum-item name='Bars'/>
-        <enum-item name='Gems'/>
-        <enum-item name='Goods'/>
+        <enum-item name='BarBlock'/>
+        <enum-item name='Gem'/>
+        <enum-item name='FinishedGoods'/>
         <enum-item name='Leather'/>
         <enum-item name='Cloth'/>
         <enum-item name='Wood'/>
