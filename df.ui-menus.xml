@@ -13,15 +13,15 @@
             <pointer><stl-vector><pointer type-name='item'/></stl-vector></pointer>
         </stl-vector>
 
-        <stl-vector type='pointer'/>
-        <stl-vector type='int16_t'/>
-        <stl-vector type='pointer'/>
-        <stl-vector type='int16_t'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='int16_t'/>
 
-        <stl-vector type='pointer' comment='unk'/>
-        <stl-vector type='pointer' comment='unk'/>
-        <stl-vector type='pointer' comment='unk'/>
-        <stl-vector type='pointer'/>
+        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector type-name='pointer'/>
 
         <int16_t/>
         <int16_t/>
