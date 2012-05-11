@@ -1,62 +1,36 @@
 <data-definition>
     -- BUILDING COMPONENT ITEM SELECTION
 
-    <struct-type type-name='ui_build_item_req'>
-        <comment>
-            When creating a building, one record per required item type.
-            E.g. Soap Maker's workshop requires a bucket and a building material.
-        </comment>
-
-        <stl-vector name='candidates'>
-            <pointer type-name='item'/>
-        </stl-vector>
-        <stl-vector name='candidate_selected' type-name='bool'/>
-        <stl-vector name='unk_a0' type-name='int16_t'/>
-        <stl-vector name='candidate_enabled' type-name='bool'/>
-
-        <int32_t name="count_required"/>
-        <int16_t name="count_provided"/>
-    </struct-type>
-
     <struct-type type-name='ui_build_selector'>
-        <stl-vector name='requirements'>
-            <pointer type-name='ui_build_item_req'/>
+        <stl-vector name='item_type'>
+            <enum base-type='int32_t' type-name='item_type'/>
+        </stl-vector>
+        <stl-vector name='material'>
+            <enum base-type='int16_t' type-name='material_type'/>
+        </stl-vector>
+        <stl-vector name='quantity' type='int32_t'/>
+        <stl-vector name='item_vec'>
+            <pointer><stl-vector><pointer type-name='item'/></stl-vector></pointer>
         </stl-vector>
 
-        <int32_t name="building_type" comment='if -1, in Build menu; otherwise select item'/>
-        <int16_t name="building_subtype"/>
+        <stl-vector type='pointer'/>
+        <stl-vector type='int16_t'/>
+        <stl-vector type='pointer'/>
+        <stl-vector type='int16_t'/>
 
-        <int32_t name="stage" comment='0 no materials, 1 place, 2 select item'/>
+        <stl-vector type='pointer' comment='unk'/>
+        <stl-vector type='pointer' comment='unk'/>
+        <stl-vector type='pointer' comment='unk'/>
+        <stl-vector type='pointer'/>
 
-        <int16_t name="req_index"/>
-        <int16_t name="sel_index"/>
-
-        <int32_t name="is_grouped"/>
-
-        <stl-vector name='unk3'>
-            <pointer type-name='stl-string'/>
-        </stl-vector>
-        <stl-vector name='unk4'>
-            <pointer type-name='stl-string'/>
-        </stl-vector>
-
-        <static-array name='tiles' count='31'>
-            <static-array type-name='int32_t' count='31'/>
-        </static-array>
-
-        <int16_t name='unk5_0a'/>
-        <int16_t name='unk5_0b'/>
-
-        <int32_t name='unk5_1'/>
-        <int32_t name='unk5_2'/>
-        <int8_t name='unk5_3a'/>
-        <int8_t name='unk5_3b'/>
-        <int8_t name='unk5_3c'/>
-        <int8_t name='unk5_3d'/>
-        <int32_t name='unk5_4'/>
-        <stl-vector name='unk6'/>
-        <stl-vector name='unk7'/>
-        dtor: 0x85272c0
+        <int16_t/>
+        <int16_t/>
+        <int32_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int32_t/>
+        <int32_t/>
     </struct-type>
 
     -- MISC. SIDEBAR MENUS

@@ -23,9 +23,9 @@
         <global-address name='init' value='0xaa9288'/>
         <global-address name='ui' value='0xa82a38'/>
         <global-address name='ui_advmode'/>
-        <global-address name='ui_build_selector'/>
+        <global-address name='ui_build_selector' value='0xe9e508'/>
         <global-address name='ui_look_list' value='0xe9d818'/>
-        <global-address name='ui_sidebar_menus'/>
+        <global-address name='ui_sidebar_menus' value='0xea05b0'/>
         <global-address name='world' value='0xacb278'/>
         <global-address name='timed_events' value='0xb52df0'/>
 
