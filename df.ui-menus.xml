@@ -128,7 +128,7 @@
         <bool/>
     </class-type>
 
-    <class-type type-name='interface_button_button_selectorst'
+    <class-type type-name='interface_button_button_light_up_selectorst'
                 inherits-from='interface_button_buttonst'>
         <stl-string name='description'/>
         <pointer name='ui_sidebar_mode' type-name='int16_t'/>

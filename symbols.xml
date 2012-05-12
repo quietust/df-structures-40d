@@ -162,7 +162,7 @@
         <vtable-address name='interface_button_buildingst' value='0x75CCC0'/>
         <vtable-address name='interface_button_button_designate_selectst' value='0x75CE54'/>
         <vtable-address name='interface_button_button_donest' value='0x75CE68'/>
-        <vtable-address name='interface_button_button_selectorst' value='0x75CE04'/>
+        <vtable-address name='interface_button_button_light_up_selectorst' value='0x75CE04'/>
         <vtable-address name='interface_button_buttonst' value='0x75CCE8'/>
         <vtable-address name='interface_button_construction_building_selectorst' value='0x75CE2C'/>
         <vtable-address name='interface_button_construction_category_selectorst' value='0x75CE18'/>
