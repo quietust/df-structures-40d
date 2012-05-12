@@ -151,24 +151,24 @@
         <vtable-address name='history_event_war_peace_acceptedst' value='0x75C470'/>
         <vtable-address name='history_event_war_peace_rejectedst' value='0x75C4E4'/>
         <vtable-address name='history_eventst' value='0x75C71C'/>
+        <vtable-address name='interface_button_building_category_selectorst' value='0x758934'/>
+        <vtable-address name='interface_button_building_material_selectorst' value='0x758948'/>
         <vtable-address name='interface_button_building_new_jobst' value='0x758B40'/>
         <vtable-address name='interface_button_building_permit_foreign_armorst' value='0x758BA4'/>
         <vtable-address name='interface_button_building_permit_foreign_siegeammost' value='0x758B7C'/>
         <vtable-address name='interface_button_building_permit_foreign_weaponst' value='0x758B68'/>
         <vtable-address name='interface_button_building_permit_itemst' value='0x758B90'/>
         <vtable-address name='interface_button_building_permit_trapcompst' value='0x758B54'/>
-        <vtable-address name='interface_button_button_unk1st' value='0x75CCC0'/>
-        <vtable-address name='interface_button_button_unk2st' value='0x75CCD4'/>
+        <vtable-address name='interface_button_buildingst' value='0x75CCC0'/>
         <vtable-address name='interface_button_button_designate_selectst' value='0x75CE54'/>
         <vtable-address name='interface_button_button_donest' value='0x75CE68'/>
+        <vtable-address name='interface_button_button_selectorst' value='0x75CE04'/>
         <vtable-address name='interface_button_buttonst' value='0x75CCE8'/>
-        <vtable-address name='interface_button_building_category_selectorst' value='0x758934'/>
         <vtable-address name='interface_button_construction_building_selectorst' value='0x75CE2C'/>
         <vtable-address name='interface_button_construction_category_selectorst' value='0x75CE18'/>
         <vtable-address name='interface_button_construction_donest' value='0x75CE40'/>
-        <vtable-address name='interface_button_building_material_selectorst' value='0x758948'/>
-        <vtable-address name='interface_button_unk1st' value='0x75CE04'/>
-        <vtable-address name='interface_button_unk2st' value='0x758B2C'/>
+        <vtable-address name='interface_button_constructionst' value='0x75CCD4'/>
+        <vtable-address name='interface_buttonst' value='0x758B2C'/>
         <vtable-address name='item_actualst' value='0x753580'/>
         <vtable-address name='item_ammost' value='0x758EA0'/>
         <vtable-address name='item_amuletst' value='0x763400'/>

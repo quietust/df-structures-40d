@@ -70,6 +70,7 @@
         </virtual-methods>
     </class-type>
 
+
     <class-type type-name='interface_button_buildingst'
                 inherits-from='interface_button'>
         <pointer name='building' type-name='building'/>
@@ -78,33 +79,29 @@
     <class-type type-name='interface_button_building_category_selectorst'
                 inherits-from='interface_button_buildingst'>
         <int32_t name="category_id"/>
-        <int8_t name="unk_14"/>
+        <int8_t/>
     </class-type>
 
     <class-type type-name='interface_button_building_material_selectorst'
                 inherits-from='interface_button_buildingst'>
-        <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
-        <int8_t name="unk_1c"/>
+        <enum base-type='int32_t' name='material' type-name='material_type'/>
+        <int8_t/>
     </class-type>
 
     <class-type type-name='interface_button_building_new_jobst'
                 inherits-from='interface_button_buildingst'>
         <enum name="job_type" base-type='int32_t' type-name='job_type'/>
-        <stl-string name="reaction_name"/>
-        <int16_t name="unused_30"/>
-        <int16_t name="item_subtype"/>
+        <stl-string/>
+        <int16_t name='item_subtype'/>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
-        <compound name="item_category" type-name='item_category'/>
-        <int32_t name="hist_figure_id" ref-target='historical_figure'/>
-        <bool name="unk_48"/>
+        <int32_t/>
     </class-type>
 
     <class-type type-name='interface_button_constructionst'
                 inherits-from='interface_button'>
         <pointer name='unused_c'/>
     </class-type>
+
 
     <class-type type-name='interface_button_construction_donest'
                 inherits-from='interface_button_constructionst'/>
@@ -116,28 +113,34 @@
 
     <class-type type-name='interface_button_construction_building_selectorst'
                 inherits-from='interface_button_constructionst'>
-        <int16_t name="building_type"/>
-        <int16_t name="building_subtype"/>
-
-        <int32_t name="existing_count"/>
+        <enum base-type='int16_t' name='building_type' type-name='building_type'/>
+        <compound name='building_subtype' is-union='true'>
+            <enum base-type='int16_t' name='furnace_type' type-name='furnace_type'/>
+            <enum base-type='int16_t' name='workshop_type' type-name='workshop_type'/>
+            <enum base-type='int16_t' name='siegeengine_type' type-name='siegeengine_type'/>
+            <enum base-type='int16_t' name='trap_type' type-name='trap_type'/>
+        </compound>
     </class-type>
+
 
     <class-type type-name='interface_button_buttonst'
                 inherits-from='interface_button'>
         <bool/>
     </class-type>
 
-    <class-type type-name='interface_button_button_designate_selectst'
-                inherits-from='interface_button_buttonst'/>
+    <class-type type-name='interface_button_button_selectorst'
+                inherits-from='interface_button_buttonst'>
+        <stl-string name='description'/>
+        <pointer name='ui_sidebar_mode' type-name='int16_t'/>
+        <enum base-type='int16_t' name='new_sidebar_mode' type-name='ui_sidebar_mode'/>
+    </class-type>
 
     <class-type type-name='interface_button_button_donest'
                 inherits-from='interface_button_buttonst'/>
 
-    <class-type type-name='interface_button_button_open_bitem_designationst'
+    <class-type type-name='interface_button_button_designate_selectst'
                 inherits-from='interface_button_buttonst'/>
 
-    <class-type type-name='interface_button_button_open_traffic_designationst'
-                inherits-from='interface_button_buttonst'/>
 
     <struct-type type-name='ui_sidebar_menus'>
         <compound name='workshop_job'>
@@ -151,8 +154,7 @@
             <int32_t name="cursor"/>
             <int32_t name="category_id" comment='weapons, armor, etc'/>
 
-            <enum base-type='int16_t' name='material' type-name='material_type'/>
-            <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
+            <enum base-type='int32_t' name='material' type-name='material_type'/>
         </compound>
 
         <compound name='building'>
@@ -167,14 +169,17 @@
             <int32_t name="cursor"/>
         </compound>
 
-        <stl-vector type-name='pointer'/>
-
-        <int32_t/>
-        <int32_t/>
+        <compound name='designation'>
+            <stl-vector name='choices'>
+                <pointer type-name='interface_button_buttonst'/>
+            </stl-vector>
+            <int32_t/>
+            <int32_t/>
+        </compound>
 
         <compound name='unit'>
-            <stl-vector name='inv_items'>
-                <pointer type-name='unit_inventory_item'/>
+            <stl-vector name='selected_unit'>
+                <int32_t refers-to='$global.world.units.other[0][$]'/>
             </stl-vector>
 
             <int8_t/>
