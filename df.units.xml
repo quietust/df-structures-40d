@@ -225,7 +225,7 @@
         </stl-vector>
         <enum base-type='int32_t' name="mood_skill" type-name='job_skill'/>
         <int32_t/>
-        <int32_t/>
+        <int32_t name='mood_timeout' comment='insanity upon reaching zero'/>
         <compound name='body'>
             <stl-vector name='wounds' type-name='int16_t'/>
             <stl-vector name='flags' type-name='int32_t' comment='1=burning'/>

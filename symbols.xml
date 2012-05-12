@@ -39,7 +39,7 @@
 
         <global-address name='ui_building_item_cursor'/>
         <global-address name='ui_look_cursor' value='0xaa926c'/>
-        <global-address name='ui_selected_unit'/>
+        <global-address name='ui_selected_unit' value='0xea0558'/>
         <global-address name='ui_unit_view_mode' value='0xe9e5f4'/>
         <global-address name='ui_workshop_in_add'/>
         <global-address name='ui_workshop_job_cursor'/>
