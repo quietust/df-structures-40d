@@ -186,11 +186,11 @@
             <int8_t/>
         </compound>
 
-        <compound name='unk'>
-            <static-array count='23'>
+        <compound name='minimap'>
+            <static-array name='tiles' count='23'>
                 <static-array type-name='int32_t' count='23'/>
             </static-array>
-            <int8_t/>
+            <int8_t name='need_update'/>
             <int8_t/>
         </compound>
 
