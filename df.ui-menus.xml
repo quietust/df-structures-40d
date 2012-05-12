@@ -184,7 +184,12 @@
 
             <int8_t/>
             <int8_t/>
-            <static-array type-name='int32_t' count='529'/>
+        </compound>
+
+        <compound name='unk'>
+            <static-array count='23'/>
+                <static-array type-name='int32_t' count='23'/>
+            </static-array>
             <int8_t/>
             <int8_t/>
         </compound>
