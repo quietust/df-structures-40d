@@ -111,7 +111,7 @@
     <class-type type-name='general_ref_building_triggertargetst' inherits-from='general_ref_building'/>
     <class-type type-name='general_ref_building_chainst' inherits-from='general_ref_building'/>
     <class-type type-name='general_ref_building_cagedst' inherits-from='general_ref_building'/>
-    <class-type type-name='general_ref_building_channeled' inherits-from='general_ref_building'/>
+    <class-type type-name='general_ref_building_channeledst' inherits-from='general_ref_building'/>
     <class-type type-name='general_ref_building_holderst' inherits-from='general_ref_building'/>
 
     <enum-type type-name='specific_ref_type'>
