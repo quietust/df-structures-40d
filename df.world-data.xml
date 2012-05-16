@@ -4,10 +4,10 @@
         <enum-item name='Animal2'/>
         <enum-item name='Animal3'/>
         <enum-item name='Animal4'/>
-        <enum-item name='Plant1'/>
-        <enum-item name='Plant2'/>
-        <enum-item name='Plant3'/>
-        <enum-item name='Plant4'/>
+        <enum-item name='Plant_River'/>
+        <enum-item name='Plant_Swamp'/>
+        <enum-item name='Plant_Forest'/>
+        <enum-item name='Plant_Cave'/>
     </enum-type>
 
     <struct-type type-name='world_population'>
