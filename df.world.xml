@@ -33,7 +33,7 @@
         <stl-vector name='unk_60'>
             <pointer type-name='coord2d16'/>
         </stl-vector>
-        <stl-vector name='unk_70'>
+        <stl-vector name='chasm_tiles'>
             <pointer type-name='coord2d16'/>
         </stl-vector>
         <stl-vector name='unk_80'>
@@ -47,12 +47,10 @@
                 <int16_t/>
             </pointer>
         </stl-vector>
-        <stl-vector name='unk_A0'>
+        <stl-vector name='cavein_regions'>
             <pointer>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
+                <compound type-name='coord2d' name='pos'/>
+                <int16_t name='timer'/>
             </pointer>
         </stl-vector>
         <stl-vector name='unk_B0'>
@@ -119,14 +117,8 @@
                 <int16_t/>
             </pointer>
         </stl-vector>
-        <stl-vector name='unk_110'>
-            <pointer>
-                <int8_t/>
-                <int16_t/>
-                <int32_t comment='30000'/>
-                <int32_t comment='30000'/>
-                <int8_t/>
-            </pointer>
+        <stl-vector name='populations'>
+            <pointer type-name='world_population'>
         </stl-vector>
 
         --
