@@ -118,7 +118,7 @@
             </pointer>
         </stl-vector>
         <stl-vector name='populations'>
-            <pointer type-name='world_population'>
+            <pointer type-name='world_population'/>
         </stl-vector>
 
         --
