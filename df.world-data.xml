@@ -1,13 +1,30 @@
 <data-definition>
     <enum-type type-name="world_population_type">
-        <enum-item name='Animal1'/>
-        <enum-item name='Animal2'/>
-        <enum-item name='Animal3'/>
-        <enum-item name='Animal4'/>
+        <enum-item name='Animal_0'/>
+        <enum-item name='Animal_1'/>
+        <enum-item name='Animal_2'/>
+        <enum-item name='Animal_3'/>
         <enum-item name='Plant_River'/>
         <enum-item name='Plant_Swamp'/>
         <enum-item name='Plant_Forest'/>
         <enum-item name='Plant_Cave'/>
+        <enum-item name='Animal_VerminEater'/>
+        <enum-item name='Animal_VerminFlies'/>
+        <enum-item name='Animal_VerminSwamper'/>
+        <enum-item name='Animal_VerminCaveRiver'/>
+        <enum-item name='Animal_LargeCaveRiver'/>
+        <enum-item name='Animal_VerminChasm'/>
+        <enum-item name='Animal_LargeChasm'/>
+        <enum-item name='Animal_VerminLava'/>
+        <enum-item name='Animal_LargeLava'/>
+        <enum-item name='Animal_VerminSoil'/>
+        <enum-item name='Animal_VerminSoilColony'/>
+        <enum-item name='Animal_VerminGrounder'/>
+        <enum-item name='Animal_20'/>
+        <enum-item name='Animal_21'/>
+        <enum-item name='Animal_22'/>
+        <enum-item name='Animal_23'/>
+        <enum-item name='Animal_24'/>
     </enum-type>
 
     <struct-type type-name='world_population'>

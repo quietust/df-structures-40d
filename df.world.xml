@@ -39,11 +39,11 @@
         <stl-vector name='magmaflow_tiles'>
             <pointer type-name='coord2d16'/>
         </stl-vector>
-        <stl-vector name='unk_90'>
+        <stl-vector name='waterfalls'>
             <pointer>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
+                <enum type-name='flow_type' base-type='int16_t' name='type'/>
+                <int16_t name='x'/>
+                <int16_t name='y'/>
                 <int16_t/>
             </pointer>
         </stl-vector>
