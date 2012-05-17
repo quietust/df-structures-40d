@@ -75,7 +75,7 @@
                 </stl-vector>
             </pointer>
         </stl-vector>
-        <stl-vector name='unk_E0'>
+        <stl-vector name='fires'>
             <pointer>
                 <int16_t/>
                 <int16_t/>

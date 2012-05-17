@@ -221,7 +221,7 @@
                     <enum-item name='Ichor'/>
                     <enum-item name='Goo'/>
                     <enum-item name='ItemInBuilding'/>
-                    <enum-item name='Unk2'/>
+                    <enum-item name='Fire'/>
                 </enum>
                 <int16_t name='amount' comment='used for contaminants'/>
                 <compound is-union='true'>
