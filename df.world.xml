@@ -42,33 +42,25 @@
         <stl-vector name='waterfalls'>
             <pointer>
                 <enum type-name='flow_type' base-type='int16_t' name='type'/>
-                <int16_t name='x'/>
-                <int16_t name='y'/>
-                <int16_t/>
+                <compound type-name='coord16' name='pos'/>
             </pointer>
         </stl-vector>
         <stl-vector name='cavein_regions'>
             <pointer>
-                <compound type-name='coord2d' name='pos'/>
+                <compound type-name='coord16' name='pos'/>
                 <int16_t name='timer'/>
             </pointer>
         </stl-vector>
-        <stl-vector name='unk_B0'>
+        <stl-vector name='campfires'>
             <pointer>
-                <int32_t/>
-                <int32_t/>
-                <int32_t/>
-                <int32_t/>
+                <compound type-name='coord' name='pos'/>
+                <int32_t name='timer'/>
             </pointer>
         </stl-vector>
-        <stl-vector name='unk_C0'>
-            <pointer>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-            </pointer>
+        <stl-vector name='contaminated_tiles'>
+            <pointer type-name='coord16'/>
         </stl-vector>
-        <stl-vector name='unk_D0'>
+        <stl-vector name='river_attacks'> including spider webs?
             <pointer>
                 <stl-vector type-name='int16_t'/>
                 <stl-vector type-name='int16_t'/>
