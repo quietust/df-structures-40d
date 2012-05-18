@@ -1,13 +1,4 @@
 <data-definition>
-    <struct-type type-name='dipscript_info'>
-        <int32_t name='unk1' comment='uninit'/>
-        <stl-string name='script_file' comment='data/dipscript/dwarf_liaison'/>
-        <stl-vector name='script_steps' type-name='pointer'/>
-        <stl-vector name='unknown' comment='null'/>
-        <stl-string name='code' comment='DWARF_LIAISON etc'/>
-        <code-helper name='describe'>$.code</code-helper>
-    </struct-type>
-
     <enum-type type-name='ui_sidebar_mode'>
         <enum-item name='Default'/>
         <enum-item name='Squads'/>
@@ -94,34 +85,7 @@
         </stl-vector>
 
         <stl-vector name='dip_meeting_info'>
-            <pointer>
-                <int32_t name='civ_id' ref-target='historical_entity'/>
-                <int16_t/>
-                <int16_t/>
-                <int32_t name='diplomat_id' ref-target='historical_figure'/>
-                <int32_t comment='-1'/>
-                <stl-vector type-name='int32_t'/>
-                <stl-vector type-name='int32_t'/>
-                <int32_t/>
-                <int32_t/>
-                <pointer name='dipscript' type-name='dipscript_info'/>
-                <int32_t/>
-                <stl-vector type-name='pointer'/>
-                <stl-string/>
-                <stl-string/>
-                <int32_t/>
-                <stl-vector type-name='pointer'/>
-                <stl-vector type-name='int32_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int32_t'/>
-                <stl-vector type-name='int32_t'/>
-                <stl-vector type-name='int32_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int32_t'/>
-                <stl-vector type-name='int32_t'/>
-                <stl-vector type-name='int32_t'/>
-                <stl-vector type-name='int32_t'/>
-            </pointer>
+            <pointer type-name='meeting_diplomat_info'/>
         </stl-vector>
 
         <stl-vector name='royal_guards'><int32_t ref-target='unit'/></stl-vector>
