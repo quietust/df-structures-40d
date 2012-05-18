@@ -90,7 +90,7 @@
         <stl-vector name='effects'>
             <pointer>
                 <pointer/>
-                <pointer/>
+                <pointer type-name='job'/>
                 <int32_t name='type'/> 2 = falling into chasm
                 <int16_t name='foreground'/>
                 <int16_t name='background'/>
