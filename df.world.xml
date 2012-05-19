@@ -60,16 +60,14 @@
         <stl-vector name='contaminated_tiles'>
             <pointer type-name='coord16'/>
         </stl-vector>
-        <stl-vector name='river_attacks'> including spider webs?
+        <stl-vector name='web_clusters'>
             <pointer>
                 <stl-vector type-name='int16_t'/>
                 <stl-vector type-name='int16_t'/>
                 <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
+                <int16_t name='race' ref-target='creature_raw'/>
+                <compound type-name='coord2d16' name='pos_min'/>
+                <compound type-name='coord2d16' name='pos_max'/>
                 <stl-vector>
                     <pointer type-name='unit'/>
                 </stl-vector>
