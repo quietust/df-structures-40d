@@ -27,8 +27,14 @@
     </class-type>
 
     <struct-type type-name='interfacest'>
-        <int32_t name='original_fps'/>
-
+        <stl-vector name='reports'>
+            <pointer type-name='report'/>
+        </stl-vector>
+        <int32_t name='report_timer'/>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
         <compound name='view' type-name='viewscreen'/>
 
         <uint32_t name='flag'/>
