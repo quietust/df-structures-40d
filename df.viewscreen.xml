@@ -13,16 +13,12 @@
         <int8_t name='option_key_pressed'/>
         
         <virtual-methods>
-            <vmethod name='feed'> <pointer name='events'/> </vmethod>
             <vmethod name='logic'/>
             <vmethod name='render'/>
-            <vmethod name='resize'> <int32_t name='w'/> <int32_t name='h'/> </vmethod>
-            <vmethod name='help'/>
             <vmethod ret-type='bool' name='movies_okay'/>
             <vmethod ret-type='bool' name='is_option_screen'/>
             <vmethod ret-type='bool' name='is_save_screen'/>
             <vmethod is-destructor='true'/>
-            <vmethod ret-type='bool' name='key_conflict'> <int32_t/> </vmethod>
         </virtual-methods>
     </class-type>
 
@@ -35,8 +31,33 @@
         <int8_t/>
         <int8_t/>
         <int8_t/>
+
+        <static-array count='512' type-name='stl-string'/>
+
         <compound name='view' type-name='viewscreen'/>
 
+        <int32_t/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <int32_t/>
+        <static-array count='661' name='keybinds'>
+            <stl-string name='description'/>
+            <stl-string name='token'/>
+            <int8_t name='key'/>
+            <int32_t/>
+            <int8_t/>
+            <int8_t/>
+        </static-array>
+        <static-array count='661' type-name='int16_t'/>
+        <static-array count='256' type-name='int8_t'/>
+        <stl-string/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+
+<!--
         <uint32_t name='flag'/>
         <int32_t name='shutdown_interface_tickcount'/>
         <int32_t name='shutdown_interface_for_ms'/>
@@ -49,6 +70,7 @@
         <stl-vector name='supermovie_sound'>
             <pointer type-name='stl-string'/>
         </stl-vector>
+-->
 
         <static-array name='supermovie_sound_time' count='16' comment='SOUND_CHANNELNUM'>
             <static-array count='200' type-name='int32_t'/>
@@ -70,7 +92,6 @@
             <enum-item name='None'/>
             <enum-item name='StartGame'/>
             <enum-item name='Unk2'/>
-            <enum-item name='Arena'/>
             <enum-item name='About'/>
         </enum>
         <int32_t name="sel_menu_line"/>
