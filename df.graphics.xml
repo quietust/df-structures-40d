@@ -1,18 +1,48 @@
 <data-definition>
     <struct-type type-name='graphic'>
+        <stl-string/>
+        <stl-string/>
+        <stl-string/>
+        <compound name='drawInfo'>
+            <static-array name='drawarray' count='25'><static-array type-name='int8_t' count='80'/></static-array>
+            <stl-vector type-name='pointer'/>
+            <int32_t/>
+            <int8_t/>
+            <int32_t/>
+            <int32_t/>
+            <int32_t/>
+            <int32_t/>
+            <int32_t/>
+            <int32_t/>
+            <int32_t/>
+            <int32_t/>
+            <int32_t/>
+            <int32_t/>
+            <int8_t/>
+            <int8_t/>
+            <int32_t/>
+            <int16_t/>
+            <int8_t/>
+        </compound>
+
         <int32_t name='screenx'/>
         <int32_t name='screeny'/>
         <int8_t name='screenf'/>
         <int8_t name='screenb'/>
         <int8_t name='screenbright'/>
 
-        <pointer type-name='uint8_t' name='screen' is-array='true'/>
-        <pointer type-name='int32_t' name='screentexpos' is-array='true'/>
-        <pointer type-name='int8_t' name='screentexpos_addcolor' is-array='true'/>
-        <pointer type-name='uint8_t' name='screentexpos_grayscale' is-array='true'/>
-        <pointer type-name='uint8_t' name='screentexpos_cf' is-array='true'/>
-        <pointer type-name='uint8_t' name='screentexpos_cbr' is-array='true'/>
-
+        <static-array name='screentexpos' count='25'><static-array type-name='int32_t' count='80'/></static-array>
+        <static-array name='screentexpos_addcolor' count='25'><static-array type-name='int8_t' count='80'/></static-array>
+        <static-array name='screentexpos_grayscale' count='25'><static-array type-name='uint8_t' count='80'/></static-array>
+        <static-array name='screentexpos_cf' count='25'><static-array type-name='uint8_t' count='80'/></static-array>
+        <static-array name='screentexpos_cbr' count='25'><static-array type-name='uint8_t' count='80'/></static-array>
+        <static-array name='screen' count='25'><static-array count='80'>
+            <int8_t name='char'/>
+            <int8_t name='fore'/>
+            <int8_t name='back'/>
+            <int8_t name='bright'/>
+        </static-array></static-array>
+        
         <static-array type-name='int32_t' name='clipx' count='2'/>
         <static-array type-name='int32_t' name='clipy' count='2'/>
         <static-array type-name='int32_t' name='tex_pos' count='1'/>
@@ -22,143 +52,10 @@
         <static-array type-name='int64_t' name='print_time' count='100'/>
         <int32_t name='print_index'/>
         <int8_t name='display_frames'/>
-
-        <int16_t name='force_full_display_count'/>
-
-        <int8_t name='original_rect'/>
-
-        <int32_t name='dimx'/>
-        <int32_t name='dimy'/>
-
-        <int32_t name='mouse_x'/>
-        <int32_t name='mouse_y'/>
-
-        <pointer type-name='uint8_t' name='screen_limit'/>
     </struct-type>
 
     <struct-type type-name='enabler'>
-        <bool name='fullscreen'/>
-
-        <stl-deque name='overridden_grid_sizes'>
-            <int32_t/>
-            <int32_t/>
-        </stl-deque>
-
-        <pointer name='renderer'/>
-
-        <int32_t name='calculated_fps'/>
-        <int32_t name='calculated_gfps'/>
-        <stl-deque name='frame_timings' type-name='int32_t'/>
-        <stl-deque name='gframe_timings' type-name='int32_t'/>
-        <int32_t name='frame_sum'/>
-        <int32_t name='gframe_sum'/>
-        <int32_t name='frame_last'/>
-        <int32_t name='gframe_last'/>
-        <s-float name='fps'/>
-        <s-float name='gfps'/>
-        <s-float name='fps_per_gfps'/>
-        <uint32_t name='last_tick'/>
-        <s-float name='outstanding_frames'/>
-        <s-float name='outstanding_gframes'/>
-
-        <uint32_t name='async_frames'/>
-        <bool name='async_paused'/>
-
-        <compound name='async_tobox'>
-            <pointer name='sem'/>
-            <stl-deque name='queue'>
-                <enum name='cmd'>
-                    <enum-item name='pause'/>
-                    <enum-item name='start'/>
-                    <enum-item name='render'/>
-                    <enum-item name='inc'/>
-                    <enum-item name='set_fps'/>
-                </enum>
-                <int32_t name='val'/>
-            </stl-deque>
-            <pointer name='sem_fill'/>
-        </compound>
-
-        <compound name='async_frombox'>
-            <pointer name='sem'/>
-            <stl-deque name='queue'>
-                <enum name='msg'>
-                    <enum-item name='quit'/>
-                    <enum-item name='complete'/>
-                    <enum-item name='set_fps'/>
-                    <enum-item name='set_gfps'/>
-                    <enum-item name='push_resize'/>
-                    <enum-item name='pop_resize'/>
-                    <enum-item name='reset_textures'/>
-                </enum>
-                <compound is-union='true'>
-                    <int32_t name='fps'/>
-                    <compound>
-                        <int32_t name='x'/>
-                        <int32_t name='y'/>
-                    </compound>
-                </compound>
-            </stl-deque>
-            <pointer name='sem_fill'/>
-        </compound>
-
-        <compound name='async_zoom'>
-            <pointer name='sem'/>
-            <stl-deque name='queue'>
-                <enum>
-                    <enum-item name='zoom_in'/>
-                    <enum-item name='zoom_out'/>
-                    <enum-item name='zoom_reset'/>
-                    <enum-item name='zoom_fullscreen'/>
-                    <enum-item name='zoom_resetgrid'/>
-                </enum>
-            </stl-deque>
-            <pointer name='sem_fill'/>
-        </compound>
-
-        <pointer name='async_fromcomplete'/>
-
-        <uint32_t name='renderer_threadid'/>
-
-        <stl-string name='command_line'/>
-        <static-array name='ccolor' count='16'>
-            <static-array count='3' type-name='s-float'/>
-        </static-array>
-
-        <bitfield name='flag'>
-            <flag-bit name='render'/>
-            <flag-bit name='maxfps'/>
-        </bitfield>
-
-        <int8_t name='mouse_lbut'/>
-        <int8_t name='mouse_rbut'/>
-        <int8_t name='mouse_lbut_down'/>
-        <int8_t name='mouse_rbut_down'/>
-        <int8_t name='mouse_lbut_lift'/>
-        <int8_t name='mouse_rbut_lift'/>
-        <int8_t name='tracking_on'/>
-
-        <compound name='textures'>
-            <stl-vector type-name='pointer' name='raws'/>
-            <bool name='uploaded'/>
-            <uint32_t name='gl_catalog'/>
-            <pointer name='gl_texpos'/>
-        </compound>
-
-        <int32_t name='sync'/>
-
-        <stl-vector type-name='pointer' name='text_system'/>
-
-        <compound name='simticks'>
-            <pointer name='sem'/>
-            <int32_t name='value'/>
-        </compound>
-        <compound name='gputicks'>
-            <pointer name='sem'/>
-            <int32_t name='value'/>
-        </compound>
-
-        <uint32_t name='clock'/>
+        ...
     </struct-type>
 </data-definition>
 

@@ -86,21 +86,16 @@
     </struct-type>
 
     <class-type type-name='viewscreen_titlest' inherits-from='viewscreen'>
-        <static-string name='str_histories' size='256'/>
-        <static-string name='menu_items' size='256'/>
-        <enum base-type='int16_t' name="sel_subpage">
-            <enum-item name='None'/>
-            <enum-item name='StartGame'/>
-            <enum-item name='Unk2'/>
-            <enum-item name='About'/>
-        </enum>
-        <int32_t name="sel_menu_line"/>
-        <int32_t name="sel_submenu_line"/>
-        <int8_t name="unk_218"/>
-        <stl-vector name="unk_21c">
+        <static-string name='str_histories' size='200'/>
+        <static-string name='str_histories' size='200'/>
+        <int16_t/>
+        <int16_t name='cursor_pos'/>
+        <int16_t/>
+        <int8_t/>
+
+        <stl-vector name="sel_options">
             <int32_t/>
         </stl-vector>
-        <stl-vector name="unk_228"/>
         <stl-vector name="unk_234"/>
         <stl-vector name="start_savegames">
             <pointer/>
@@ -108,11 +103,11 @@
         <stl-vector name="continue_savegames">
             <pointer/>
         </stl-vector>
+
         <stl-string name="str_slaves"/>
         <stl-string name="str_chapter"/>
         <stl-string name="str_copyright"/>
         <stl-string name="str_version"/>
-        <stl-string name="str_unk"/>
         <stl-string name="str_programmed"/>
         <stl-string name="str_designed"/>
         <stl-string name="str_visit"/>
