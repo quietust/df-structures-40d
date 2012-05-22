@@ -49,7 +49,6 @@
             <int8_t/>
             <int8_t/>
         </static-array>
-        <static-array count='661' type-name='int16_t'/>
         <static-array count='256' type-name='int8_t'/>
         <stl-string/>
         <int32_t/>
