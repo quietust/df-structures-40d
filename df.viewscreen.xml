@@ -75,8 +75,8 @@
             <static-array count='200' type-name='int32_t'/>
         </static-array>
 
-        <padding name='supermoviebuffer' size='800000'/>
-        <padding name='supermoviebuffer_comp' size='1000000'/>
+        <static-array type-name='int8_t' name='supermoviebuffer' count='800000'/>
+        <static-array type-name='int8_t' name='supermoviebuffer_comp' count='1000000'/>
 
         <int32_t name='currentblocksize'/>
         <int32_t name='nextfilepos'/>
