@@ -1,9 +1,9 @@
 <data-definition>
     <enum-type type-name="world_population_type">
-        <enum-item name='Animal_0'/>
-        <enum-item name='Animal_1'/>
-        <enum-item name='Animal_2'/>
-        <enum-item name='Animal_3'/>
+        <enum-item name='Animal_Wildlife'/>
+        <enum-item name='Animal_FishPond'/>
+        <enum-item name='Animal_FishRiver'/>
+        <enum-item name='Animal_FishCaveRiver'/>
         <enum-item name='Plant_River'/>
         <enum-item name='Plant_Swamp'/>
         <enum-item name='Plant_Forest'/>
@@ -20,11 +20,11 @@
         <enum-item name='Animal_VerminSoil'/>
         <enum-item name='Animal_VerminSoilColony'/>
         <enum-item name='Animal_VerminGrounder'/>
-        <enum-item name='Animal_20'/>
-        <enum-item name='Animal_21'/>
-        <enum-item name='Animal_22'/>
-        <enum-item name='Animal_23'/>
-        <enum-item name='Animal_24'/>
+        <enum-item name='Animal_FishOcean'/>
+        <enum-item name='Tree_IndoorWet'/>
+        <enum-item name='Tree_IndoorDry'/>
+        <enum-item name='Tree_OutdoorWet'/>
+        <enum-item name='Tree_OutdoorDry'/>
     </enum-type>
 
     <struct-type type-name='world_population'>
@@ -33,6 +33,7 @@
         <compound is-union='true'>
             <int16_t name="race" ref-target='creature_raw'/>
             <int16_t name="plant" ref-target='matgloss_plant'/>
+            <int16_t name="tree" ref-target='matgloss_wood'/>
         </compound>
 
         <int32_t name="count_min" init-value='30000'/>
