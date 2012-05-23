@@ -19,7 +19,7 @@
         <enum-item name='Get'/>
 
         <enum-item name='CombatPrefs'/>
-        <enum-item name='Unk16'/>
+        <enum-item name='InteractHow'/>
         <enum-item name='Announcements'/>
         <enum-item name='Attack'/>
         <enum-item name='UseBuilding'/>
