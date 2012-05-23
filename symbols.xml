@@ -22,7 +22,7 @@
         <global-address name='gview' value='0xcc5f98'/>
         <global-address name='init' value='0xaa9288'/>
         <global-address name='ui' value='0xa82a38'/>
-        <global-address name='ui_advmode' value='0x'/>
+        <global-address name='ui_advmode' value='0xe9e438'/>
         <global-address name='ui_build_selector' value='0xe9e508'/>
         <global-address name='ui_look_list' value='0xe9d818'/>
         <global-address name='ui_sidebar_menus' value='0xea05b0'/>
