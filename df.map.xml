@@ -299,9 +299,7 @@
         <int16_t/>
         <int16_t/>
         <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
+        <compound type-name='coord16'/>
         <int16_t/>
         <int16_t/>
         <int16_t/>
