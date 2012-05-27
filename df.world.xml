@@ -1,6 +1,5 @@
 <data-definition>
     <struct-type type-name='world'>
-        dtor 89fff80
         <stl-vector name='gem_clusters'>
             <pointer type-name='mineral_cluster'/>
         </stl-vector>
@@ -12,14 +11,14 @@
             <pointer type-name='engraving'/>
         </stl-vector>
 
-        <compound name='vermin'>
-            <stl-vector name='all'>
-                <pointer type-name='vermin'/>
-            </stl-vector>
-            <stl-vector name='colonies'>
-                <pointer type-name='coord16'/>
-            </stl-vector>
-        </compound>
+        <stl-vector name='vermin'>
+            <pointer type-name='vermin'/>
+        </stl-vector>
+
+        <stl-vector name='unk_40'>
+            <pointer type-name='coord16'/>
+        </stl-vector>
+
         <stl-vector name='drink_areas'>
             <pointer>
                 <int32_t/>

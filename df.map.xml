@@ -293,6 +293,22 @@
         <int16_t/>
         <int32_t/>
     </struct-type>
+
+    <struct-type type-name='flood_info'>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <static-array type-name='int8_t' count='10'/>
+        <int8_t/>
+        <int8_t/>
+    </struct-type>
 </data-definition>
 
 <!--

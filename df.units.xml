@@ -553,7 +553,7 @@
             <enum-item name='Hardened' comment='COMBATHARDNESS'/>
             <enum-item name='TimeSinceBreak' comment='TIME_SINCE_BREAK'/>
             <enum-item name='OnBreak' comment='ON_BREAK'/>
-            <enum-item/>
+            <enum-item name='PrepareToDie'/>
             <enum-item name='CaveAdapt' comment='CAVE_ADAPT'/>
         </enum>
 

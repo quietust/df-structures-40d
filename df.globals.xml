@@ -65,6 +65,12 @@
         </stl-vector>
     </global-object>
 
+    <global-object name='floods'>
+        <stl-vector>
+            <pointer type-name='flood_info'/>
+        </stl-vector>
+    </global-object>
+
     -- .bss primitive
 
     <global-object name='cur_year' type-name='int32_t'/>
