@@ -1,4 +1,9 @@
 <data-definition>
+    <bitfield-type type-name='vermin_flags' base-type='uint32_t'>
+        <flag-bit/>
+        <flag-bit name='is_colony' comment='A vermin colony.'/>
+    </bitfield-type>
+
     <struct-type type-name='vermin' instance-vector='$global.world.vermin.all'>
 
         <code-helper name='describe'>
@@ -14,7 +19,7 @@
         <int16_t name='countdown' />
         <pointer name='item' type-name='item_critter'/>
 
-        <int32_t name='flags'/>
+        <compound name='flags' type-name='vermin_flags'/>
         <int16_t name='amount' />
     </struct-type>
 </data-definition>
