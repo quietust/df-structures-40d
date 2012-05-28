@@ -311,7 +311,7 @@
 
     <class-type type-name='building_shopst' inherits-from='building_actual'>
         <int32_t name='has_owner'/>
-        <int32_t name='owner' comment='type uncertain - not a unit ID or unit pointer'/>
+        <int32_t name='timer' comment='increments until reaching 200,000,000'/>
         <bitfield name='flags' base-type='uint16_t'>
             <flag-bit name='for_sale'/>
         </bitfield>
@@ -416,7 +416,7 @@
 
     <class-type type-name='building_wellst' inherits-from='building_actual'>
         <int16_t/>
-        <int8_t/>
+        <int8_t name='dir_flags'/> in use from north, south, east, and west
     </class-type>
 
     <class-type type-name='building_bridgest' inherits-from='building_actual'>
