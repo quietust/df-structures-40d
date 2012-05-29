@@ -65,9 +65,9 @@
         </stl-vector>
     </global-object>
 
-    <global-object name='floods'>
+    <global-object name='flows'>
         <stl-vector>
-            <pointer type-name='flood_info'/>
+            <pointer type-name='flow'/>
         </stl-vector>
     </global-object>
 

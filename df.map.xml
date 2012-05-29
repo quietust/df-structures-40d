@@ -284,26 +284,11 @@
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <int16_t name='density'/>
-        <int16_t name='x'/>
-        <int16_t name='y'/>
-        <int16_t name='z'/>
+        <compound type-name='coord16' name='pos'/>
         <int16_t/>
         <int16_t/>
         <int16_t/>
-        <int16_t/>
-        <int32_t/>
-    </struct-type>
-
-    <struct-type type-name='flood_info'>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <compound type-name='coord16'/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <static-array type-name='int8_t' count='10'/>
+        <static-array type-name='int8_t' count='10' name='blood_types'/>
         <int8_t/>
         <int8_t/>
     </struct-type>

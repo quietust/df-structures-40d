@@ -28,7 +28,7 @@
         <global-address name='ui_sidebar_menus' value='0xea05b0'/>
         <global-address name='world' value='0xacb278'/>
         <global-address name='timed_events' value='0xb52df0'/>
-        <global-address name='floods' value='0xe9d868'/>
+        <global-address name='flows' value='0xe9d868'/>
 
         .bss primitive
 
