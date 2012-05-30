@@ -94,7 +94,12 @@
 
         <pointer type-name='unit' name='owner'/>
 
-        <stl-vector name='unk7' type-name='pointer'/>
+        <stl-vector>
+            <pointer>
+                <pointer type-name='unit'/>
+                <int32_t/>
+            </pointer>
+        </stl-vector>
 
         <virtual-methods>
             <vmethod><pointer><stl-vector/></pointer></vmethod>

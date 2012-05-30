@@ -48,6 +48,13 @@
         <int16_t name='y'/>
     </struct-type>
 
+    <struct-type type-name='item_magicness'>
+        <int16_t name='type'/>
+        <int16_t name='value' comment='boosts item value by 50*this; when 10 or higher, changes the message for type 7'/>
+        <int16_t/>
+        <int32_t name='flags' comment='1=does not show up in item description or alter item value'/>
+    </struct-type>
+
     -- CORE ITEM
 
     <class-type type-name='item' original-name='itemst'
@@ -80,8 +87,19 @@
             (if (> $.wear 0) (fmt "wear: ~A" $.wear))
         </code-helper>
 
-        <int32_t name='magic'/>
-        <int32_t/>
+        <pointer name='magic'>
+            <stl-vector>
+                <pointer type-name='item_magicness'/>
+            </stl-vector>
+        </pointer>
+
+        <pointer>
+            <stl-vector>
+                <int32_t/>
+                <int32_t/>
+                <int32_t/>
+            </stl-vector>
+        </pointer>
 
         <uint16_t name='temperature'/>
         <uint16_t name='temperature_fraction'/>

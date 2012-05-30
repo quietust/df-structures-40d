@@ -118,7 +118,7 @@
             <item-attr name='generic_item' value='EXTRACT'/>
             <item-attr name='generic_item' value='POTION'/>
         </enum-item>
-        <enum-item name='ANY_GENERIC21'>
+        <enum-item name='ANY_BUTCHERABLE'>
             <item-attr name='generic_item' value='CAGE'/>
             <item-attr name='generic_item' value='ANIMALTRAP'/>
             <item-attr name='generic_item' value='CORPSE'/>
