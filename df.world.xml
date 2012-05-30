@@ -96,16 +96,14 @@
                 <int32_t name='timer'/>
             </pointer>
         </stl-vector>
-        <stl-vector name='unk_100'>
+        <stl-vector name='currency_descriptors'>
             <pointer>
-                <int32_t/>
-                <int16_t/>
-                <int32_t/>
-                <int32_t/>
-                <int32_t/>
-                <int16_t/>
-                <int32_t/>
-                <int16_t/>
+                <int32_t name='year'/>
+                <enum base-type='int16_t' name='material' type-name='material_type'/>
+                <int32_t name='entity' ref-target='historical_entity'/>
+                <int32_t name='ruler' ref-target='historical_figure'/>
+                <compound name='image_front' type-name='art_image_ref'/>
+                <compound name='image_back' type-name='art_image_ref'/>
             </pointer>
         </stl-vector>
         <stl-vector name='populations'>
