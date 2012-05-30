@@ -157,6 +157,7 @@
         </static-array>
 
         <stl-string name='mill_dye'/>
+        <int16_t name='mill_dye_color' ref-target='descriptor_color'/>
         <uint8_t name='tile'/>
         <uint8_t name='leaves'/>
         <int32_t name='growdur'/>

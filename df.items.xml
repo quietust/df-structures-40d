@@ -344,10 +344,10 @@
     <class-type type-name='item_threadst' inherits-from='item_actual'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
-        <int16_t/>
-        <int16_t/>
-        <int32_t/>
-        <int16_t/>
+        <enum base-type='int16_t' name='dye_material' type-name='material_type'/>
+        <int16_t name='dye_matgloss' refers-to='(matgloss-target $$._parent.dye_material $)'/>
+        <int32_t name='dye_maker' ref-target='historical_figure'/>
+        <int16_t name='dye_quality'/>
         <int16_t/>
         <int32_t/>
     </class-type>
