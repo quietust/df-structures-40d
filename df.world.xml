@@ -96,7 +96,7 @@
                 <int32_t name='timer'/>
             </pointer>
         </stl-vector>
-        <stl-vector name='currency_descriptors'>
+        <stl-vector name='coin_batches'>
             <pointer>
                 <int32_t name='year'/>
                 <enum base-type='int16_t' name='material' type-name='material_type'/>
