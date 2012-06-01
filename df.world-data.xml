@@ -1,4 +1,30 @@
 <data-definition>
+    <enum-type type-name='region_property_type'>
+        <enum-item name='elevation'/>
+        <enum-item name='rainfall'/>
+        <enum-item name='vegetation'/>
+        <enum-item name='temperature'/>
+        <enum-item name='evilness'/>
+        <enum-item name='drainage'/>
+        <enum-item/>
+        <enum-item name='savagery'/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item name='salinity'/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+    </enum-type>
+
     <enum-type type-name="world_population_type">
         <enum-item name='Animal_Wildlife'/>
         <enum-item name='Animal_FishPond'/>
@@ -98,11 +124,11 @@
         <stl-vector name="unk_84"/>
     </struct-type>
 -->
-    <struct-type type-name='world_region' instance-vector='$global.world.world_data.regions'>
+    <struct-type type-name='world_region' key-field='id' instance-vector='$global.world.world_data.regions'>
         <compound name='name' type-name='language_name'/>
         <code-helper name='describe'>(describe-obj $.name)</code-helper>
 
-        <int32_t name="index"/>
+        <int32_t name="id"/>
         <int32_t name="unk_64"/>
 
         <compound name='region_coords' type-name='coord2d16_path'/>
@@ -197,31 +223,7 @@
                     <pointer type-name='world_site'/>
                 </stl-vector>
                 <df-flagarray name='flags'/>
-                <compound name='properties'>
-                    <int16_t name="elevation"/>
-                    <int16_t name="wetness"/>
-                    <int16_t name="vegetation"/>
-                    <int16_t name="temperature"/>
-                    <int16_t name="evilness"/>
-                    <int16_t name="hilliness"/>
-                    <int16_t/>
-                    <int16_t name="savagery"/>
-                    <int16_t/>
-                    <int16_t/>
-                    <int16_t/>
-                    <int16_t/>
-                    <int16_t/>
-                    <int16_t name="saltiness"/>
-                </compound>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
+                <static-array name='properties' type-name='int16_t' count='23' index-enum='region_property_type'/>
                 <int32_t name="region_id" ref-target='world_region'/>
             </pointer>
         </pointer>

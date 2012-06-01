@@ -447,9 +447,13 @@
     </class-type>
 
     <class-type type-name='building_channelst' inherits-from='building_actual'>
-        <int32_t/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
+        <pointer type-name='building'/>
+        <stl-vector>
+            <pointer type-name='building'/>
+        </stl-vector>
+        <stl-vector name='ponded_fish'>
+            <int32_t ref-target='item'/>
+        </stl-vector>
         <int32_t/>
         <int64_t/>
         <int64_t/>

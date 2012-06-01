@@ -24,7 +24,13 @@
         <uint16_t name='temperature_fraction'/>
         <int32_t name='is_burning'/>
         <int32_t name='hitpoints'/>
-        <stl-vector/>
+        <stl-vector>
+            <pointer>
+                <int32_t/>
+                <int32_t/>
+                <int32_t/>
+            </pointer>
+        </stl-vector>
         <int32_t/>
     </class-type>
 </data-definition>

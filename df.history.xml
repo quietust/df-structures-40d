@@ -112,9 +112,26 @@
 
         <int32_t/>
 
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
+        <stl-vector>
+            <pointer>
+                <int16_t/>
+                <int32_t/>
+                <int16_t/>
+            </pointer>
+        </stl-vector>
+        <stl-vector>
+            <pointer>
+                <int16_t/>
+                <int32_t/>
+                <int32_t/>
+            </pointer>
+        </stl-vector>
+        <stl-vector>
+            <pointer>
+                <int16_t/>
+                <int32_t/>
+            </pointer>
+        </stl-vector>
     </struct-type>
 
     <enum-type type-name='history_event_type'>

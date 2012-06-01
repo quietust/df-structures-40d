@@ -107,7 +107,7 @@
         <stl-vector name='unk6a'>
             <pointer>
                 <int16_t name='unk1'/>
-                <int32_t name='unk2'/>
+                <int32_t ref-target='historical_entity'/>
                 <int16_t name='unk3'/>
             </pointer>
         </stl-vector>
