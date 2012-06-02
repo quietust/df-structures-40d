@@ -203,7 +203,7 @@
         <stl-vector type-name='pointer' comment='unk'/>
         <int32_t name='account'/>
         <int32_t/>
-        <int32_t/>
+        <pointer type-name='unit'/>
         <int32_t/>
         <int32_t/>
         <int32_t/>
@@ -232,7 +232,12 @@
             <stl-vector type-name='int8_t'/>
             <stl-vector type-name='int8_t'/>
             <stl-vector type-name='int16_t'/>
-            <pointer/>
+            <pointer name='body_parts'>
+                <stl-vector name='body'>
+                    <pointer type-name='body_part_raw'/>
+                </stl-vector>
+            </pointer>
+
             <int16_t/>
             <int32_t name='size'/>
             <int32_t name='blood_total'/>
