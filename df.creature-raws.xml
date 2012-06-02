@@ -365,7 +365,7 @@
         <enum-item name='EMBEDDED'/>
         <enum-item name='INTERNAL'/>
         <enum-item name='CIRCULATION'/>
-        <enum-item name='SKELETON'/>
+        <enum-item/>
 
         <enum-item name='LIMB'/>
         <enum-item name='GRASP'/>
