@@ -30,13 +30,13 @@
             </pointer>
         </stl-vector>
         <stl-vector name='caveriver_tiles'>
-            <pointer type-name='coord2d16'/>
+            <pointer type-name='coord16'/>
         </stl-vector>
         <stl-vector name='chasm_tiles'>
-            <pointer type-name='coord2d16'/>
+            <pointer type-name='coord16'/>
         </stl-vector>
         <stl-vector name='magmaflow_tiles'>
-            <pointer type-name='coord2d16'/>
+            <pointer type-name='coord16'/>
         </stl-vector>
         <stl-vector name='waterfalls'>
             <pointer>
