@@ -303,8 +303,7 @@
 
         <static-array type-name='int16_t' name='remains_color' count='3'/>
         <int16_t name='difficulty'/>
-        <int16_t/>
-        <static-array type-name='int16_t' name='riverattack' count='5'/>
+        <static-array type-name='int16_t' name='riverattack' count='6'/>
         <static-array type-name='int16_t' name='riverattack_group' count='2'/>
         <int16_t name='fat'/>
 
