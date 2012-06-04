@@ -542,11 +542,11 @@
 
     <struct-type type-name='unit_misc_trait'>
         <enum base-type='int16_t' name='id'>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
+            <enum-item name='RequestWaterCooldown'/> for thirsty patients
+            <enum-item name='RequestFoodCooldown'/> for hungry patients
+            <enum-item name='RequestRescueCooldown'/>
+            <enum-item name='GetDrinkCooldown'/>
+            <enum-item name='GetFoodCooldown'/>
             <enum-item name='Migrant'/>
             <enum-item name='RoomComplaint'/>
             <enum-item name='ResidentCreature' comment='upon reaching zero, it gets a name'/>
