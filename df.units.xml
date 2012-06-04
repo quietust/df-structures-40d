@@ -166,8 +166,8 @@
             <int8_t name='rations'/>
             <int8_t name='sleep_mode' comment='0=ground, 1=barracks, 2=room'/>
             <int32_t name='flags'/> 2=carry water, 4=stay close to station, 8=attack wild animals, 16=standing down
-            <int32_t/>
-            <int32_t/>
+            <int32_t name='patrol_duration'/>
+            <int32_t name='patrol_cooldown'/>
             <compound name='station_pos' type-name='coord16'/>
             <int32_t/>
         </compound>
