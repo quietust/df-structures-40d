@@ -267,10 +267,10 @@
         <enum-item name='Mist'/>
         <enum-item name='BloodyMist'/>
         <enum-item name='Dust'/>
-        <enum-item name='WaterFlood'/>
-        <enum-item comment='Water Antiflood?'/>
-        <enum-item comment='Magma Antiflood?'/>
-        <enum-item name='MagmaFlood'/>
+        <enum-item name='RiverFlood'/>
+        <enum-item name='Flood'/> material = liquid type
+        <enum-item name='Antiflood'/> material = liquid type
+        <enum-item name='MagmaInitialFlood'/>
         <enum-item name='MagmaMist'/>
         <enum-item name='Smoke'/>
         <enum-item name='Dragonfire'/>
