@@ -350,24 +350,24 @@
     </class-type>
 
     <class-type type-name='building_weaponrackst' inherits-from='building_actual'>
-        <stl-vector name='allowed_weapons' type-name='pointer'/>
-        <stl-vector name='allowed_weapons_2' type-name='pointer'/>
-        <static-array type-name='int16_t' count='32'/>
-        <int8_t/>
-        <int8_t/>
-        <int8_t/>
+        <stl-vector type-name='bool' name='allowed_weapons' index-refers-to='$global.world.raws.itemdefs.weapons[$]'/>
+        <stl-vector type-name='bool' name='allowed_siegeammo' index-refers-to='$global.world.raws.itemdefs.siegeammo[$]'/>
+        <static-array name='allowed_materials' type-name='bool' count='64' index-enum='material_type'/>
+        <bool name='permit_foreign_weapons'/>
+        <bool name='permit_foreign_siegeammo'/>
+        <bool name='permit_trapcomps'/>
         <int16_t/>
     </class-type>
 
     <class-type type-name='building_armorstandst' inherits-from='building_actual'>
-        <stl-vector name='allowed_armor' type-name='pointer'/>
-        <stl-vector name='allowed_helms' type-name='pointer'/>
-        <stl-vector name='allowed_shoes' type-name='pointer'/>
-        <stl-vector name='allowed_pants' type-name='pointer'/>
-        <stl-vector name='allowed_shields' type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <static-array type-name='int16_t' count='32'/>
-        <int8_t/>
+        <stl-vector type-name='bool' name='allowed_armor' index-refers-to='$global.world.raws.itemdefs.armor[$]'/>
+        <stl-vector type-name='bool' name='allowed_helms' index-refers-to='$global.world.raws.itemdefs.helms[$]'/>
+        <stl-vector type-name='bool' name='allowed_shoes' index-refers-to='$global.world.raws.itemdefs.shoes[$]'/>
+        <stl-vector type-name='bool' name='allowed_gloves' index-refers-to='$global.world.raws.itemdefs.gloves[$]'/>
+        <stl-vector type-name='bool' name='allowed_pants' index-refers-to='$global.world.raws.itemdefs.pants[$]'/>
+        <stl-vector type-name='bool' name='allowed_shields' index-refers-to='$global.world.raws.itemdefs.shields[$]'/>
+        <static-array name='allowed_materials' type-name='bool' count='64' index-enum='material_type'/>
+        <bool name='permit_foreign'/>
         <int16_t/>
     </class-type>
 
