@@ -117,7 +117,7 @@
             <vmethod name='extinguish'/>
             <vmethod ret-type='int8_t' name='getGloveHandedness'/>
             <vmethod name='setGloveHandedness'> <int8_t/> </vmethod>
-            <vmethod name='setRandSubtype'> <pointer/> </vmethod>
+            <vmethod name='setRandSubtype'> <pointer type-name='historical_entity'/> </vmethod>
             <vmethod/>
 
             <vmethod ret-type='int16_t' name='getWear'/>
@@ -334,11 +334,11 @@
             <vmethod/>
             <vmethod ret-type='bool' name='isEdibleVermin'/>
 
-            <vmethod name='getTile'/>
+            <vmethod ret-type='int8_t' name='getTile'/>
             <vmethod ret-type='bool' name='isRangedWeapon'/>
             <vmethod ret-type='bool' name='isClothing'/>
             <vmethod ret-type='bool' name='isWet'/>
-            <vmethod/>
+            <vmethod ret-type='int32_t' name='getCurrencyValue'/>
 
             -- 150
 
