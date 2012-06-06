@@ -318,7 +318,9 @@
         <int16_t/>
         <int16_t/>
         <int32_t/>
-        <stl-vector type-name='pointer'/>
+        <stl-vector name='temperatures'>
+            <pointer type-name='temperaturest'/>
+        </stl-vector>
         <int32_t/>
         <int32_t/>
 
@@ -460,7 +462,7 @@
             <stl-vector name='unk_718'/>
             <stl-vector name='unk_728'/>
 
-            <stl-vector name='acquintances'>
+            <stl-vector name='acquaintances'>
                 <pointer>
                     <int32_t name='unit_id' ref-target='unit'/>
                     <int32_t name='acquintance_level' comment='>= 30 -> long-term'/>

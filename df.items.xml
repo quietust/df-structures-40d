@@ -42,6 +42,11 @@
         <enum-item name='Artifact'/>
     </enum-type>
 
+    <struct-type type-name='temperaturest'>
+        <uint16_t name='whole'/>
+        <int16_t name='fraction'/>
+    </struct-type>
+
     <struct-type type-name='item_stockpile_ref'>
         <int32_t name='id' ref-target='building'/>
         <int16_t name='x'/>
@@ -383,8 +388,7 @@
             </stl-vector>
         </pointer>
 
-        <uint16_t name='temperature'/>
-        <uint16_t name='temperature_fraction'/>
+        <compound name='temperature' type-name='temperaturest'/>
 
         <int16_t name='wear'/>
         <int32_t name='wear_timer' comment='counts up to 806400'/>
