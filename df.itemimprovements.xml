@@ -14,7 +14,7 @@
     <struct-type type-name='dye_info'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
-        <int32_t name='dyer' ref-target='historical_figure'/>
+        <int32_t name='maker' ref-target='historical_figure'/>
         <enum base-type='int16_t' name='quality' type-name='item_quality'/>
         <int16_t name='skill_rating' comment='at the moment of creation'/>
         <int32_t/>
@@ -24,9 +24,8 @@
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <int32_t name='maker' ref-target='historical_figure'/>
-        <int32_t/>
         <enum base-type='int16_t' name='quality' type-name='item_quality'/>
-        <int32_t name='skill_rating' comment='at the moment of creation'/>
+        <int16_t name='skill_rating' comment='at the moment of creation'/>
         <int32_t/>
 
         <virtual-methods>
@@ -47,13 +46,10 @@
             </vmethod>
 
             <vmethod ret-type='improvement_type' name='getType'/>
-            <vmethod/>
+            <vmethod ret-type='bool' name='isDecoration'/> false for thread/cloth
             <vmethod is-destructor='true'/>
             <vmethod ret-type='int32_t' name='getDyeValue'>
                 <pointer/>
-            </vmethod>
-            <vmethod name='setShape'>
-                <int32_t name='shape' ref-target='descriptor_shape'/>
             </vmethod>
         </virtual-methods>
     </class-type>
@@ -62,16 +58,11 @@
         <compound name='image' type-name='art_image_ref'/>
     </class-type>
 
-    <class-type type-name='itemimprovement_coveredst' inherits-from='itemimprovement'>
-        <int32_t name='is_glazed'/>
-        <int32_t name='shape' ref-target='descriptor_shape'/>
-    </class-type>
+    <class-type type-name='itemimprovement_coveredst' inherits-from='itemimprovement'/>
 
     <class-type type-name='itemimprovement_rings_hangingst' inherits-from='itemimprovement'/>
 
-    <class-type type-name='itemimprovement_bandsst' inherits-from='itemimprovement'>
-        <int32_t name='shape' ref-target='descriptor_shape'/>
-    </class-type>
+    <class-type type-name='itemimprovement_bandsst' inherits-from='itemimprovement'/>
 
     <class-type type-name='itemimprovement_spikesst' inherits-from='itemimprovement'/>
 
