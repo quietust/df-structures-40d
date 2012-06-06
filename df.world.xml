@@ -86,7 +86,7 @@
         </stl-vector>
         <stl-vector name='effects'>
             <pointer>
-                <pointer/>
+                <int32_t/>
                 <pointer type-name='job'/>
                 <int32_t name='type'/> 2 = falling into chasm
                 <int16_t name='foreground'/>
@@ -94,6 +94,7 @@
                 <int8_t name='bright'/>
                 <compound type-name='coord' name='pos'/>
                 <int32_t name='timer'/>
+                <int32_t/>
             </pointer>
         </stl-vector>
         <stl-vector name='coin_batches'>

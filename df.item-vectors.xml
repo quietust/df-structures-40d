@@ -129,8 +129,8 @@
         <enum-item name='ANY_VMETHOD_F8'/>
         <enum-item name='ANY_EDIBLE_RAW'/>
 
-        <enum-item name='ANY_VMETHOD_E8'/>
-        <enum-item name='ANY_VMETHOD_EC'/>
+        <enum-item name='ANY_EDIBLE_CARNIVORE'/>
+        <enum-item name='ANY_EDIBLE_BONECARN'/>
         <enum-item name='ANY_EDIBLE_VERMIN'/>
         <enum-item name='ANY_GENERIC28'>
             <item-attr name='generic_item' value='BARREL'/>
