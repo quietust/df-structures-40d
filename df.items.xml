@@ -246,20 +246,21 @@
             <vmethod name='addStackSize'> <int32_t name='amount'/> </vmethod>
             <vmethod name='setStackSize'> <int32_t name='amount'/> </vmethod>
             <vmethod ret-type='bool' name='isAmmoClass'> <pointer type-name='stl-string'/> </vmethod>
-            <vmethod ret-type='bool' name='updateTempFromMap'>
-                <bool name='local'/> <bool name='contained'/> <bool name='adjust'/>
-                <int32_t name='multiplier'/>
+            <vmethod ret-type='bool' name='setTemperatureFromMap'>
+                <bool name='local'/> <bool name='contained'/>
             </vmethod>
 
             -- 100
 
-            <vmethod ret-type='bool' name='updateTemperature'>
-                <uint16_t name='temp'/> <bool name='local'/>
-                <bool name='contained'/> <bool name='adjust'/>
-                <int32_t name='multiplier'/>
+            <vmethod ret-type='bool' name='setTemperature'>
+                <uint16_t name='temp'/> <bool name='local'/> <bool name='contained'/>
             </vmethod>
-            <vmethod/>
-            <vmethod/>
+            <vmethod ret-type='bool' name='updateTemperatureFromMap'>
+                <bool name='local'/> <bool name='contained'/> <bool name='adjust'/>
+            </vmethod>
+            <vmethod ret-type='bool' name='updateTemperature'>
+                <uint16_t name='temp'/> <bool name='local'/> <bool name='contained'/> <bool name='adjust'/>
+            </vmethod>
             <vmethod ret-type='bool' name='updateFromWeather'/>
             <vmethod ret-type='bool' name='updateContaminants'/>
 
