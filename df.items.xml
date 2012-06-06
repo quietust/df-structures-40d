@@ -80,6 +80,283 @@
         </stl-vector>
 
         <virtual-methods>
+            <vmethod ret-type='item_type' name='getType'/>
+            <vmethod ret-type='int16_t' name='getSubtype'/>
+            <vmethod ret-type='material_type' name='getMaterial'/>
+            <vmethod ret-type='int16_t' name='getMatgloss'/>
+            <vmethod name='setSubtype'> <int16_t/> </vmethod>
+
+            <vmethod name='setMaterial'> <enum base-type='int16_t' name='material' type-name='material_type'/> </vmethod>
+            <vmethod name='setMatgloss'> <int16_t/> </vmethod>
+            <vmethod ret-type='material_type' name='getActualMaterial'
+                    comment='returns an actual material type, never a race'/>
+            <vmethod ret-type='int16_t' name='getActualMatgloss'
+                    comment='returns an actual matgloss'/>
+            <vmethod ret-type='int16_t' name='getRace'
+                    comment='only for creature-derived items'/>
+
+            -- 10
+
+            <vmethod/>
+            <vmethod ret-type='uint16_t' name='getSpecHeat'/>
+            <vmethod ret-type='uint16_t' name='getIgnitePoint'/>
+            <vmethod ret-type='uint16_t' name='getHeatdamPoint'/>
+            <vmethod ret-type='uint16_t' name='getColddamPoint'/>
+
+            <vmethod ret-type='uint16_t' name='getBoilingPoint'/>
+            <vmethod ret-type='uint16_t' name='getMeltingPoint'/>
+            <vmethod ret-type='uint16_t' name='getFixedTemp'/>
+            <vmethod ret-type='uint16_t' name='getTemperature'/>
+            <vmethod ret-type='bool' name='adjustTemperature'>
+                <uint16_t name='target'/>
+                <int32_t name='unk'/>
+            </vmethod>
+
+            -- 20
+
+            <vmethod name='extinguish'/>
+            <vmethod ret-type='int8_t' name='getGloveHandedness'/>
+            <vmethod name='setGloveHandedness'> <int8_t/> </vmethod>
+            <vmethod name='setRandSubtype'> <pointer/> </vmethod>
+            <vmethod/>
+
+            <vmethod ret-type='int16_t' name='getWear'/>
+            <vmethod name='setWear'> <int16_t/> </vmethod>
+            <vmethod ret-type='int32_t' name='getMaker'/>
+            <vmethod name='setMaker'> <int32_t name='unit_id'/> </vmethod>
+            <vmethod/>
+
+            -- 30
+
+            <vmethod/>
+            <vmethod name='getGloveFlags'>
+                <ret-type><pointer><df-flagarray/></pointer></ret-type>
+            </vmethod>
+            <vmethod/>
+            <vmethod name='ageItem'><int32_t name='amount'/></vmethod>
+            <vmethod ret-type='int32_t' name='getCritterUnk60'/>
+
+            <vmethod name='setCritterUnk60'> <int32_t/> </vmethod>
+            <vmethod name='incrementCritterUnk60'/>
+            <vmethod ret-type='int32_t' name='getRotTimer'/>
+            <vmethod name='setRotTimer'> <int32_t name='val'/> </vmethod>
+            <vmethod name='incrementRotTimer'/>
+
+            -- 40
+
+            <vmethod name='getAmmoType'>
+                <ret-type><pointer type-name='stl-string'/></ret-type>
+                <pointer type-name='stl-string'/>
+            </vmethod>
+            <vmethod ret-type='int16_t' name='getDamageType'/>
+            <vmethod ret-type='bool'/>
+            <vmethod ret-type='bool'/>
+            <vmethod ret-type='bool'/>
+
+            <vmethod ret-type='int16_t' name='getStickChance'/>
+            <vmethod name='addImprovementFromJob'/>
+            <vmethod ret-type='bool' name='isWeapon'/>
+            <vmethod ret-type='bool' name='isArmorNotClothing'/>
+            <vmethod ret-type='bool' name='canStoreInWeaponRack'/>
+
+            -- 50
+
+            <vmethod ret-type='bool' name='canStoreInArmorStand'/>
+            <vmethod ret-type='bool' name='isMillable'/>
+            <vmethod ret-type='bool' name='isProcessableThread'/>
+            <vmethod ret-type='bool' name='isProcessableVial'/>
+            <vmethod ret-type='bool' name='isProcessableBag'/>
+
+            <vmethod ret-type='bool' name='isProcessableBarrel'/>
+            <vmethod ret-type='bool' name='isEdiblePlant'/>
+            <vmethod ret-type='bool' name='isEdibleRaw'/>
+            <vmethod ret-type='bool' name='isEdibleCarnivore'/>
+            <vmethod ret-type='bool' name='isEdibleBonecarn'/>
+
+            -- 60
+
+            <vmethod ret-type='bool' name='moveToGround'>
+                <int16_t/> <int16_t/> <int16_t/>
+            </vmethod>
+            <vmethod ret-type='bool'/>
+            <vmethod ret-type='bool'/>
+            <vmethod name='assignQuality'/>
+            <vmethod name='notifyLostMasterwork'/>
+
+            <vmethod name='addMagic'/>
+            <vmethod name='magic_unk1'/>
+            <vmethod name='magic_unk2'/>
+            <vmethod name='magic_unk3'/>
+            <vmethod name='magic_unk4'/>
+
+            -- 70
+
+            <vmethod name='setDisplayColor'/>
+            <vmethod ret-type='bool' name='isDamagedByHeat'/>
+            <vmethod ret-type='bool' name='needTwoHandedWield'> <int32_t name='size'/> </vmethod>
+            <vmethod name='splitStack'>
+                <ret-type><pointer type-name='item'/></ret-type>
+                <int32_t/>
+                <int32_t/>
+            </vmethod>
+            <vmethod ret-type='bool' name='isTameableVermin'/>
+
+            <vmethod ret-type='bool' name='isDistillable'>
+                <bool name='checkKitchenSettings'/>
+            </vmethod>
+            <vmethod ret-type='bool' name='isDye'/>
+            <vmethod ret-type='bool' name='isMilkable'/>
+            <vmethod ret-type='bool' name='isSandBearing'/>
+            <vmethod ret-type='bool' name='isLyeBearing'/>
+
+            -- 80
+
+            <vmethod ret-type='bool' name='isAnimalProduct'/>
+            <vmethod/>
+            <vmethod ret-type='bool' name='addWear'>
+                <int32_t name='delta'/> <bool name='simple'/> <bool name='lose_masterwork'/>
+            </vmethod>
+            <vmethod name='addContaminant'>
+                <int32_t name='state'/>
+                <enum base-type='int32_t' name='material' type-name='material_type'/>
+                <int32_t name='size'/>
+            </vmethod>
+            <vmethod name='removeContaminantByIdx'>
+                <int32_t name='index'/> <int32_t name='amount'/>
+            </vmethod>
+
+            <vmethod/>
+            <vmethod/>
+            <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
+            <vmethod name='read_file'>
+                <pointer comment='file_compressorst'/>
+                <int32_t name='loadversion'/>
+            </vmethod>
+            <vmethod ret-type='bool' name='isOnGround'/>
+
+            -- 90
+
+            <vmethod/>
+            <vmethod name='addRandomDye'/>
+            <vmethod name='addImprovementFromClothOrDye'> <pointer type-name='item'/> </vmethod>
+            <vmethod name='propagateUnitRefs'/> add to unit.owned_items/traded_items
+            <vmethod ret-type='bool' name='isBag' comment='BOX made of cloth'/>
+
+            <vmethod ret-type='int32_t' name='getStackSize'/>
+            <vmethod name='addStackSize'> <int32_t name='amount'/> </vmethod>
+            <vmethod name='setStackSize'> <int32_t name='amount'/> </vmethod>
+            <vmethod ret-type='bool' name='isAmmoClass'> <pointer type-name='stl-string'/> </vmethod>
+            <vmethod ret-type='bool' name='updateTempFromMap'>
+                <bool name='local'/> <bool name='contained'/> <bool name='adjust'/>
+                <int32_t name='multiplier'/>
+            </vmethod>
+
+            -- 100
+
+            <vmethod ret-type='bool' name='updateTemperature'>
+                <uint16_t name='temp'/> <bool name='local'/>
+                <bool name='contained'/> <bool name='adjust'/>
+                <int32_t name='multiplier'/>
+            </vmethod>
+            <vmethod/>
+            <vmethod/>
+            <vmethod ret-type='bool' name='updateFromWeather'/>
+            <vmethod ret-type='bool' name='updateContaminants'/>
+
+            <vmethod ret-type='bool' name='checkTemperatureDamage'/>
+            <vmethod ret-type='bool' name='checkHeatColdDamage'/>
+            <vmethod ret-type='bool' name='checkMeltBoil'/>
+            <vmethod ret-type='int16_t' name='getMeleeSkill'/>
+            <vmethod ret-type='int16_t' name='getRangedSkill'/>
+
+            -- 110
+
+            <vmethod name='setQuality'> <int16_t name='quality'/> </vmethod>
+            <vmethod ret-type='int16_t' name='getQuality'/>
+            <vmethod ret-type='int16_t' name='getOverallQuality'/>
+            <vmethod ret-type='int32_t' name='getProjectileSize'/>
+            <vmethod ret-type='bool' name='isImprovable'>
+                <pointer type-name='job'/>
+                <int32_t/> <int32_t/>
+            </vmethod>
+
+            <vmethod ret-type='bool' name='isDyeable'/>
+            <vmethod ret-type='bool' name='isNotDyed'/>
+            <vmethod ret-type='bool' name='isDyed'/>
+            <vmethod ret-type='bool' name='canSewImage'/>
+            <vmethod/>
+
+            -- 120
+
+            <vmethod ret-type='bool' name='isProcessableVialAtStill'/>
+            <vmethod/>
+            <vmethod ret-type='int32_t' name='getBlockChance'/>
+            <vmethod/>
+            <vmethod ret-type='int16_t' name='getMakerRace'/>
+
+            <vmethod name='setMakerRace'> <int16_t/> </vmethod>
+            <vmethod ret-type='int8_t' name='getEffectiveArmorLevel'
+                    comment="adds 1 if it has [METAL_ARMOR_LEVELS] and it's made of an inorganic mat"/>
+            <vmethod/>
+            <vmethod ret-type='bool' name='canBeDyed'/>
+            <vmethod ret-type='bool' name='isDyeableCloth'/>
+
+            -- 130
+
+            <vmethod/>
+            <vmethod name='coverWithContaminant' comment='also stops fire; used for rain'>
+                <enum base-type='int32_t' name='material' type-name='material_type'/>
+            </vmethod>
+            <vmethod ret-type='bool' name='hasImprovements'/> any at all
+            <vmethod ret-type='bool' name='isImproved'/> not including dye or cloth modifiers
+            <vmethod name='getMagic'>
+                <ret-type><pointer><stl-vector><pointer type-name='item_magicness'/></stl-vector></pointer></ret-type>
+            </vmethod>
+
+            <vmethod name='getItemDescription'>
+                <pointer type-name='stl-string'/>
+                <int8_t name='mode'/>
+            </vmethod>
+            <vmethod name='getItemDescriptionPrefix' comment='"a " or "the "'>
+                <pointer type-name='stl-string'/>
+                <int8_t name='mode'/>
+            </vmethod>
+            <vmethod ret-type='int32_t' name='getImprovementsValue'> <int32_t name='entity_id' ref-target='historical_entity'/> </vmethod>
+            <vmethod ret-type='bool' name='isExtractBearingFish'/>
+            <vmethod ret-type='bool' name='isExtractBearingVermin'/>
+
+            -- 140
+
+            <vmethod ret-type='int32_t' name='getBaseWeight'/>
+            <vmethod ret-type='int32_t' name='getWeightShiftBits'/>
+            <vmethod ret-type='bool' name='isCollected'/>
+            <vmethod/>
+            <vmethod ret-type='bool' name='isEdibleVermin'/>
+
+            <vmethod name='getTile'/>
+            <vmethod ret-type='bool' name='isRangedWeapon'/>
+            <vmethod ret-type='bool' name='isClothing'/>
+            <vmethod ret-type='bool' name='isWet'/>
+            <vmethod/>
+
+            -- 150
+
+            <vmethod ret-type='bool' name='isAssignedToStockpile'/>
+            <vmethod ret-type='bool' name='isAssignedToThisStockpile'> <int32_t/> </vmethod>
+            <vmethod name='removeFromStockpile'/>
+            <vmethod name='clearStockpileAssignment'/>
+            <vmethod name='getStockpile'>
+                <ret-type><pointer type-name='item_stockpile_ref'/></ret-type>
+            </vmethod>
+
+            <vmethod name='addImprovement2'/>
+            <vmethod name='addImage'/>
+            <vmethod name='addImprovementsFromItem'/>
+            <vmethod ret-type='int32_t' name='getThreadDyeValue'> <int32_t comment='unused'/> </vmethod>
+            <vmethod/> calls 2nd vmethod on every itemimprovement
+            <vmethod ret-type='bool' name='isCritter'/>
+            <vmethod ret-type='bool' name='isArmorOrClothing'/> armor, shoes, pants, gloves, helm
+            <vmethod is-destructor='true'/>
         </virtual-methods>
     </class-type>
 
