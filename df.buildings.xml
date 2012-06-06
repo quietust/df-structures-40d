@@ -43,6 +43,14 @@
         <flag-bit name='justice'/>
     </bitfield-type>
 
+    <struct-type type-name='workshop_profile'>
+        <stl-vector name="permitted_workers">
+            <int32_t ref-target='unit'/>
+        </stl-vector>
+        <int32_t name="min_level"/>
+        <int32_t name="max_level" init-value='3000'/>
+    </struct-type>
+
     <class-type type-name='building' original-name='buildingst'
                 instance-vector='$global.world.buildings.all' key-field='id'>
 
@@ -102,106 +110,132 @@
         </stl-vector>
 
         <virtual-methods>
-            <vmethod><pointer><stl-vector/></pointer></vmethod>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
+            <vmethod name='setJobTimer'>
+                <enum base-type='int32_t' type-name='job_type'/>
+                <int16_t/>
+            </vmethod>
+            <vmethod ret-type='bool' name='isOnFire'/>
+            <vmethod name='updateFromWeather'/>
+            <vmethod name='updateTemperature'/>
+            <vmethod name='updateItems'/>
 
-            <vmethod/>
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
-            <vmethod/>
+            <vmethod name='updateTempFromTile'><uint16_t name='temp'/><bool/><bool/></vmethod>
+            <vmethod ret-type='bool' name='isNormalFurniture'/>
+            <vmethod ret-type='bool' name='isFarmPlot'/>
+            <vmethod name='getWorkshopProfile'>
+                <ret-type><pointer type-name='workshop_profile'/></ret-type>
+            </vmethod>
             <vmethod ret-type='building_type' name='getType'/>
 
             -- 10
 
             <vmethod ret-type='int16_t' name='getSubtype'/>
             <vmethod name='setSubtype'> <int16_t name='subtype'/> </vmethod>
-            <vmethod ret-type='bool'/>
-            <vmethod/>
-            <vmethod ret-type='bool'/>
+            <vmethod ret-type='bool' name='isActual'/>
+            <vmethod ret-type='int32_t' name='getNobleFurnitureType'/> 1/2/3/4 = weapon rack, armor stand, box, cabinet
+            <vmethod ret-type='bool' name='isCoffin2'/>
 
-            <vmethod/>
-            <vmethod ret-type='bool'/>
-            <vmethod/>
+            <vmethod name='updateAction'/>
+            <vmethod ret-type='bool' name='isStatueOrRestraint'/>
+            <vmethod name='setMaterialAmount'> <int32_t/> </vmethod>
             <vmethod name='setBuildStage'> <int16_t name='stage'/> </vmethod>
             <vmethod ret-type='int32_t' name='getBuildStage'/>
 
             -- 20
 
             <vmethod ret-type='int32_t' name='getMaxBuildStage'/>
-            <vmethod/>
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
-            <vmethod/>
+            <vmethod ret-type='int32_t' name='getArchitectureValue'
+                     comment='bridge: material*10 rough, material*30 smooth'/>
+            <vmethod ret-type='bool' name='isSettingOccupancy'/>
+            <vmethod ret-type='bool' name='isExtentShaped'/>
+            <vmethod name='updateOccupancy'>
+                <int32_t name='abs_x'/> <int32_t name='abs_y'/>
+            </vmethod>
 
-            <vmethod/>
-            <vmethod/>
-            <vmethod ret-type='bool'/>
-            <vmethod/>
+            <vmethod ret-type='int32_t' name='getRoomValue'> <pointer type-name='unit'/> </vmethod>
+            <vmethod ret-type='int32_t' name='getPersonalValue'> <pointer type-name='unit'/> </vmethod>
+            <vmethod ret-type='bool' name='canBeRoom'/>
+            <vmethod ret-type='int32_t' name='getConstructionValue'
+                     comment='bridge: material*10'/>
             <vmethod name='queueDestroy' comment='same as querying and pressing X'/>
 
             -- 30
 
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
+            <vmethod ret-type='bool' name='isImpassableTile'>
+                <int32_t name='rel_x'/> <int32_t name='rel_y'/>
+            </vmethod>
+            <vmethod ret-type='int32_t' name='getFreeCapacity'>
+                <bool name='exclude_in_room'/> <bool name='subtract_pending_jobs'/>
+            </vmethod>
+            <vmethod ret-type='bool' name='canStoreItem'>
+                <pointer type-name='item'/> <bool name='subtract_pending_jobs'/>
+            </vmethod>
             <vmethod name='getName'> <pointer type-name='stl-string' name='name'/> </vmethod>
             <vmethod name='getNameColor'/>
 
-            <vmethod name='initFarmSeasons'/>
+            modes 1/2 used by weapon racks and armor stands to select between items and materials; farm plot uses initSettingsEnable to set all season to Fallow
+            <vmethod name='initSettingsEnable'> <int8_t name='mode'/> </vmethod>
+            <vmethod name='initSettingsDisable'> <int8_t name='mode'/> </vmethod>
             <vmethod name='initBurialFlags'/>
             <vmethod name='clearBurialFlags'/>
             <vmethod name='clearBurialFlags2'/>
-            <vmethod/>
 
             -- 40
 
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'><int16_t/></vmethod>
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
+            <vmethod ret-type='int32_t' name='getClutterLevel' comment='1..10'/>
+            <vmethod ret-type='bool' name='needsDesign'/>
+            <vmethod ret-type='bool' name='canUseForMood'>
+                <enum base-type='int16_t' type-name='job_type'/>
+            </vmethod>
+            <vmethod ret-type='bool' name='canBeRoomSubset'/>
+            <vmethod ret-type='bool' name='isCoffin'/>
 
-            <vmethod ret-type='bool' name='isRoom'/>
-            <vmethod/>
-            <vmethod ret-type='bool'/>
-            <vmethod/>
-            <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
+            <vmethod ret-type='bool' name='canUseSpouseRoom'/>
+            <vmethod ret-type='bool' name='canMakeRoom' comment='false if already, or cannot be'/>
+            <vmethod ret-type='bool' name='isJustice'/>
+            <vmethod name='setContainedItems'/>
+            <vmethod name='detachUnit'> <pointer type-name='unit'/> </vmethod>
+
 
             -- 50
 
+            <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
             <vmethod name='read_file'>
                 <pointer comment='file_compressorst'/>
                 <int32_t name='loadversion'/>
             </vmethod>
-            <vmethod ret-type='bool'/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
+            <vmethod ret-type='bool' name='isImpassableAtCreation'
+                     comment='the true set looks like things where the unit should stand aside'/>
+            <vmethod name='categorize' comment='Add to world.buildings.other.*'> <bool/> </vmethod>
+            <vmethod name='uncategorize' comment='Remove from world.buildings.other.*'/>
 
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
+            <vmethod ret-type='int32_t' name='getBaseValue'/>
+            <vmethod name='setMachineState'> <int32_t name='new_state' comment='1 = active/open, 0 = inactive/closed'/> </vmethod>
+            <vmethod name='AdventurerInteract'/>
+            <vmethod ret-type='bool' name='needsMagma'/>
+            <vmethod name='removeUses'> <bool name='noscatter'/> <bool name='lost'/> </vmethod>
 
             -- 60
 
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
+            <vmethod name='deconstructItems'> <bool name='noscatter'/> <bool name='lost'/> </vmethod>
+            <vmethod name='updatePathfinding'/>
+            <vmethod ret-type='bool' name='takesFireDamage'/>
+            <vmethod name='populateSettingsMenu'/> for weapon racks and armor stands
+            <vmethod name='populateTaskList'/> for certain workshops
 
+            <vmethod ret-type='bool' name='isForbidden'/>
             <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod name='drawBuilding'>
-                <pointer/>
+            <vmethod ret-type='bool' name='isVisible'
+                     comment='used by stuff like open doors/floodgates'/>
+            <vmethod name='getDrawRectangle'>
                 <pointer/>
             </vmethod>
+            <vmethod name='drawBuilding'>
+                <pointer/>
+            </vmethod>
+
+            -- 70
+
             <vmethod is-destructor='true'/>
         </virtual-methods>
     </class-type>
@@ -292,17 +326,12 @@
     </enum-type>
 
     <class-type type-name='building_furnacest' inherits-from='building_actual'>
-        <static-array name='melt_remainder' type-name='int32_t' count='32' index-enum='material_type'/>
-
+        <static-array name='melt_remainder' type-name='int16_t' count='64' index-enum='material_type'/>
         <int16_t/>
 
         <enum base-type='int32_t' name="type" type-name='furnace_type'/>
 
-        <stl-vector name="permitted_workers">
-            <int32_t ref-target='unit'/>
-        </stl-vector>
-        <int16_t name="min_level"/>
-        <int16_t name="max_level"/>
+        <compound name='profile' type-name='workshop_profile'/>
     </class-type>
 
     <class-type type-name='building_tradedepotst' inherits-from='building_actual'/>
@@ -315,7 +344,7 @@
     </enum-type>
 
     <class-type type-name='building_shopst' inherits-from='building_actual'>
-        <int32_t name='has_owner'/>
+        <pointer type-name='unit' name='owner'/>
         <int32_t name='timer' comment='increments until reaching 200,000,000'/>
         <bitfield name='flags' base-type='uint16_t'>
             <flag-bit name='for_sale'/>
@@ -400,11 +429,7 @@
     <class-type type-name='building_workshopst' inherits-from='building_actual'>
         <enum base-type='int32_t' name="type" type-name='workshop_type'/>
 
-        <stl-vector name="permitted_workers">
-            <int32_t ref-target='unit'/>
-        </stl-vector>
-        <int16_t name="min_level"/>
-        <int16_t name="max_level"/>
+        <compound name='profile' type-name='workshop_profile'/>
     </class-type>
 
     <class-type type-name='building_cabinetst' inherits-from='building_actual'>
@@ -433,7 +458,7 @@
             <flag-bit name='unk'/>
         </bitfield>
         <int8_t name='timer'/>
-        <int8_t/>
+        <int8_t name='direction'/>
         <int32_t/>
     </class-type>
 
@@ -479,7 +504,7 @@
             <enum-item name='FireAtWill'/>
         </enum>
         <int8_t name='fire_timer'/>
-        <int16_t name='unk_timer'/>
+        <int16_t name='reload_timer'/>
     </class-type>
 
     <enum-type type-name='trap_type' base-type='int16_t'>
@@ -499,8 +524,7 @@
             <pointer type-name='item'/>
         </stl-vector>
         <stl-vector type-name='int32_t'/>
-        <stl-vector type-name='int32_t'/>
-        <int16_t/>
+        <compound name='profile' type-name='workshop_profile'/>
     </class-type>
 
     <class-type type-name='building_animaltrapst' inherits-from='building_actual'>
@@ -524,7 +548,7 @@
     <class-type type-name='building_chainst' inherits-from='building_actual'>
         <pointer name='assigned' type-name='unit'/>
         <pointer name='chained' type-name='unit'/>
-        <int16_t name='unk'/>
+        <int16_t/>
     </class-type>
 
     <class-type type-name='building_cagest' inherits-from='building_actual'>
@@ -577,7 +601,7 @@
         <stl-vector name='assigned_creature'>
             <int32_t ref-target='unit' comment='pretty sure not histfig'/>
         </stl-vector>
-        <stl-vector name='assigned_vermin'>
+        <stl-vector name='assigned_items'>
             <int32_t ref-target='item'/>
         </stl-vector>
         <enum base-type='int32_t' name="type" type-name='civzone_type'/>
