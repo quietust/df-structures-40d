@@ -170,259 +170,241 @@
                 instance-vector='$global.world.world_data.history.events' key-field='id'>
         <int32_t name='year'/>
         <int8_t name='season'/>
-        <int16_t name='seconds'/>
+        <int16_t name='season_ticks'/>
         <df-flagarray name='flags'/>
         <int32_t name='id'/>
 
         <virtual-methods>
             <vmethod ret-type='history_event_type' name='getType'/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
+            <vmethod name='getWarStatus'/>
+            <vmethod name='getAngerModifier'/>
+            <vmethod name='getHappinessModifier'/>
+            <vmethod name='madeFirstContact'/>
 
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
+            <vmethod name='wasArtifactHidden'/>
+            <vmethod name='getArtifactMakerUnitID'/>
+            <vmethod name='isArtifactPossessedByUnit'/>
+            <vmethod name='associateArtifactWithUnit'/>
+            <vmethod name='getKilledHistfigID'/>
 
             -- 10
 
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
+            <vmethod name='wasHistfigKilled'/>
+            <vmethod name='getEncasedDemonHistfigID'/>
+            <vmethod name='getEncasedDemonRegionID'/>
+            <vmethod name='getRelatedHistfigIDs'/>
+            <vmethod name='getRelatedSiteIDs'/>
 
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
+            <vmethod name='getRelatedArtifactIDs'/>
+            <vmethod name='getRelatedRegionIDs'/>
+            <vmethod name='getRelatedEntityIDs'/>
+            <vmethod name='isRelatedToHistfigID'/>
+            <vmethod name='isRelatedToSiteID'/>
 
             -- 20
 
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
+            <vmethod name='isRelatedToArtifactID'/>
+            <vmethod name='isRelatedToRegionID'/>
+            <vmethod name='isRelatedToEntityID'/>
+            <vmethod name='getSummary'/> "In x, some event happened"
+            <vmethod name='getDescription'/> "the happening of some event"
 
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-
-            -- 30
-
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
-
+            <vmethod name='populateArtImage'/>
             <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
             <vmethod name='read_file'>
                 <pointer comment='file_compressorst'/>
                 <int32_t name='loadversion'/>
             </vmethod>
-            <vmethod/>
             <vmethod is-destructor='true'/>
         </virtual-methods>
     </class-type>
 
     <class-type type-name='history_event_war_attacked_sitest' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='attacker' ref-target='historical_entity'/>
+        <int32_t name='defender_civ' ref-target='historical_entity'/>
+        <int32_t name='defender_group' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_war_destroyed_sitest' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='attacker' ref-target='historical_entity'/>
+        <int32_t name='defender_civ' ref-target='historical_entity'/>
+        <int32_t name='defender_group' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_created_sitest' inherits-from='history_event'>
-        <int32_t name='civ_id' ref-target='historical_entity'/>
-        <int32_t name='group_id' ref-target='historical_entity'/>
-        <int32_t name='site_id' ref-target='world_site'/>
+        <int32_t name='civ' ref-target='historical_entity'/>
+        <int32_t name='group' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_hist_figure_diedst' inherits-from='history_event'>
-        <int32_t name='hfid' ref-target='historical_figure'/>
-
-        <int32_t name='slayer' ref-target='historical_figure'/>
-
+        <int32_t name='victim' ref-target='historical_figure'/>
+        <int32_t name='killer' ref-target='historical_figure'/>
         <int32_t name='site' ref-target='world_site'/>
         <int32_t name='region' ref-target='world_region'/>
-
         <int16_t name='death_cause'/>
     </class-type>
 
     <class-type type-name='history_event_add_hf_entity_linkst' inherits-from='history_event'>
-        <int32_t name='entity_id' ref-target='historical_entity'/>
-        <int32_t name='hfid' ref-target='historical_figure'/>
+        <int32_t name='entity' ref-target='historical_entity'/>
+        <int32_t name='ruler' ref-target='historical_figure'/>
     </class-type>
 
     <class-type type-name='history_event_first_contactst' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='source' ref-target='historical_entity'/>
+        <int32_t name='destination' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_first_contact_failedst' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='source' ref-target='historical_entity'/>
+        <int32_t name='destination' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_topicagreement_concludedst' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int16_t/>
-        <int32_t/>
+        <int32_t name='source' ref-target='historical_entity'/>
+        <int32_t name='destination' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
+        <int16_t name='agreement_type'/>
+        <int32_t name='result'/>
     </class-type>
 
     <class-type type-name='history_event_topicagreement_rejectedst' inherits-from='history_event'>
-        <int16_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int16_t name='agreement_type'/>
+        <int32_t name='source' ref-target='historical_entity'/>
+        <int32_t name='destination' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_topicagreement_madest' inherits-from='history_event'>
-        <int16_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int16_t name='agreement_type'/>
+        <int32_t name='source' ref-target='historical_entity'/>
+        <int32_t name='destination' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_war_peace_acceptedst' inherits-from='history_event'>
         <int16_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='source' ref-target='historical_entity'/>
+        <int32_t name='destination' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_war_peace_rejectedst' inherits-from='history_event'>
         <int16_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='source' ref-target='historical_entity'/>
+        <int32_t name='destination' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_diplomat_lostst' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='entity' ref-target='historical_entity'/>
+        <int32_t name='involved' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_agreements_voidedst' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='source' ref-target='historical_entity'/>
+        <int32_t name='destination' ref-target='historical_entity'/>
     </class-type>
 
     <class-type type-name='history_event_merchantst' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='source' ref-target='historical_entity'/>
+        <int32_t name='destination' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
+        <df-flagarray name='flags'/>
     </class-type>
 
     <class-type type-name='history_event_artifact_hiddenst' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='artifact' ref-target='artifact_record'/>
+        <int32_t name='unit' ref-target='unit'/>
+        <int32_t name='histfig' ref-target='historical_figure'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_artifact_possessedst' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='artifact' ref-target='artifact_record'/>
+        <int32_t name='unit' ref-target='unit'/>
+        <int32_t name='histfig' ref-target='historical_figure'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_artifact_createdst' inherits-from='history_event'>
-        <int32_t name='artifact_id' ref-target='artifact_record'/>
-        <int32_t name='unit_id' ref-target='unit'/>
-        <int32_t name='hfid' ref-target='historical_figure'/>
+        <int32_t name='artifact' ref-target='artifact_record'/>
+        <int32_t name='unit' ref-target='unit'/>
+        <int32_t name='histfig' ref-target='historical_figure'/>
         <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_artifact_lostst' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-    </class-type>
-
-    <class-type type-name='history_event_artifact_foundst' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-    </class-type>
-
-    <class-type type-name='history_event_artifact_recoveredst' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-    </class-type>
-
-    <class-type type-name='history_event_artifact_droppedst' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-    </class-type>
-
-    <class-type type-name='history_event_demon_encasedst' inherits-from='history_event'>
-        <int32_t name='hfid' ref-target='historical_figure'/>
+        <int32_t name='artifact' ref-target='artifact_record'/>
         <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
+    <class-type type-name='history_event_artifact_foundst' inherits-from='history_event'>
+        <int32_t name='artifact' ref-target='artifact_record'/>
+        <int32_t name='unit' ref-target='unit'/>
+        <int32_t name='histfig' ref-target='historical_figure'/>
+        <int32_t name='site' ref-target='world_site'/>
+    </class-type>
+
+    <class-type type-name='history_event_artifact_recoveredst' inherits-from='history_event'>
+        <int32_t name='artifact' ref-target='artifact_record'/>
+        <int32_t name='unit' ref-target='unit'/>
+        <int32_t name='histfig' ref-target='historical_figure'/>
+        <int32_t name='site' ref-target='world_site'/>
+    </class-type>
+
+    <class-type type-name='history_event_artifact_droppedst' inherits-from='history_event'>
+        <int32_t name='artifact' ref-target='artifact_record'/>
+        <int32_t/>
+        <int32_t name='histfig' ref-target='historical_figure'/>
+        <int32_t name='site' ref-target='world_site'/>
+        <df-flagarray name='flags'/>
+    </class-type>
+
+    <class-type type-name='history_event_demon_encasedst' inherits-from='history_event'>
+        <int32_t name='demon' ref-target='historical_figure'/>
+        <int32_t name='region' ref-target='world_region'/>
+    </class-type>
+
     <class-type type-name='history_event_demon_releasedst' inherits-from='history_event'>
-        <int32_t name='hfid' ref-target='historical_figure'/>
+        <int32_t name='demon' ref-target='historical_figure'/>
         <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_reclaim_sitest' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='civ' ref-target='historical_entity'/>
+        <int32_t name='group' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_contact_lostst' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='civ' ref-target='historical_entity'/>
+        <int32_t name='group' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_hf_destroyed_sitest' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='histfig' ref-target='historical_figure'/>
+        <int32_t name='civ' ref-target='historical_entity'/>
+        <int32_t name='group' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_site_diedst' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='civ' ref-target='historical_entity'/>
+        <int32_t name='group' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <class-type type-name='history_event_site_abandonedst' inherits-from='history_event'>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='civ' ref-target='historical_entity'/>
+        <int32_t name='group' ref-target='historical_entity'/>
+        <int32_t name='site' ref-target='world_site'/>
     </class-type>
 
     <struct-type type-name='world_history'>
