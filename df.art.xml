@@ -180,7 +180,7 @@
 
         <int32_t name='event' ref-target='history_event'/>
         <compound name='name' type-name='language_name'/>
-        <int32_t/>
+        <enum base-type='int32_t' name='spec_ref_type' type-name='specific_ref_type'/>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <enum base-type='int16_t' name='quality' type-name='item_quality'/>
@@ -188,7 +188,8 @@
         <int32_t name='site' ref-target='world_site'/>
         <pointer type-name='general_ref'/>
         <int32_t name='year'/>
-        <int32_t/>
+        <int8_t name='season'/>
+        <int16_t name='season_ticks'/>
         <int32_t name='id' ref-target='art_image_chunk'/>
         <int16_t name='subid' ref-target='art_image' aux-value='$$.id'/>
     </struct-type>
