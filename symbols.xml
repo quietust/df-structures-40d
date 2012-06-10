@@ -294,7 +294,7 @@
         <vtable-address name='projst' value='0x7540B8'/>
         <vtable-address name='script_step_conditionalst' value='0x766350'/>
         <vtable-address name='script_step_constructtopiclistst' value='0x7662F8'/>
-        <vtable-address name='script_step_dipeventst' value='0x7662E8'/>
+        <vtable-address name='script_step_dipeventst' value='0x766390'/>
         <vtable-address name='script_step_diphistoryst' value='0x766328'/>
         <vtable-address name='script_step_discussst' value='0x766318'/>
         <vtable-address name='script_step_invasionst' value='0x7662D8'/>
@@ -302,7 +302,7 @@
         <vtable-address name='script_step_simpleactionst' value='0x766360'/>
         <vtable-address name='script_step_textviewerst' value='0x766380'/>
         <vtable-address name='script_step_topicdiscussionst' value='0x766308'/>
-        <vtable-address name='script_step_eventst' value='0x766390'/>
+        <vtable-address name='script_step_eventst' value='0x7662E8'/>
         <vtable-address name='script_stepst' value='0x766338'/>
         <vtable-address name='script_var_longst' value='0x76634C'/>
         <vtable-address name='script_var_unitst' value='0x766348'/>
@@ -371,9 +371,5 @@
         <vtable-address name='viewscreen_unitst' value='0x75CC60'/>
         <vtable-address name='viewscreen_wagesst' value='0x75C0F4'/>
         <vtable-address name='viewscreenst' value='0x75653C'/>
-        <vtable-address name='unk1st' value='0x753140'/>
-        <vtable-address name='unk2st' value='0x753144'/>
-        <vtable-address name='unk3st' value='0x753180'/>
-        <vtable-address name='unk4st' value='0x758BD8'/>
     </symbol-table>
 </data-definition>
