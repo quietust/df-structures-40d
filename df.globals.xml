@@ -76,13 +76,7 @@
     <global-object name='cur_year' type-name='int32_t'/>
     <global-object name='cur_year_tick' type-name='int32_t'/>
 
-    <global-object name='current_weather'>
-        <static-array count='5'>
-            <static-array count='5'>
-                <enum base-type='int8_t' type-name='weather_type'/>
-            </static-array>
-        </static-array>
-    </global-object>
+    <global-object name='current_weather' type-name='weather_type'/>
 
     <global-object name='job_next_id' type-name='int32_t'/>
 
