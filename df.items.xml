@@ -60,12 +60,6 @@
         <int32_t name='flags' comment='1=does not show up in item description or alter item value'/>
     </struct-type>
 
-    <struct-type type-name='item_contaminant'>
-        <int32_t name='state'/> 0/1 = solid/liquid?
-        <enum base-type='int32_t' name='material' type-name='material_type'/>
-        <int32_t name='amount'/>
-    </struct-type>
-
     -- CORE ITEM
 
     <class-type type-name='item' original-name='itemst'
@@ -388,7 +382,7 @@
 
         <pointer name='contaminants'>
             <stl-vector>
-                <pointer type-name='item_contaminant'/>
+                <pointer type-name='contaminant'/>
             </stl-vector>
         </pointer>
 

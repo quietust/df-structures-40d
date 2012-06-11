@@ -181,7 +181,7 @@
         <int32_t name='age_seconds'/>
         <int32_t name='age_years'/>
         <int32_t name='age_death'/>
-        <int32_t/>
+        <pointer type-name='unit'/>
         <compound name='relations'>
             <int32_t name='pet_owner_id' ref-target='unit'/>
             <int32_t name='spouse_id' ref-target='unit'/>
@@ -218,8 +218,8 @@
         </stl-vector>
         <int32_t name='account'/>
         <int32_t/>
-        <pointer type-name='unit'/>
-        <int32_t/>
+        <pointer type-name='unit' name='hunt_target'/>
+        <pointer type-name='building' name='destroy_target'/>
         <int32_t/>
         <int32_t/>
         <int32_t/>
@@ -247,11 +247,7 @@
             <stl-vector type-name='int8_t'/>
             <stl-vector type-name='int8_t'/>
             <stl-vector type-name='int16_t'/>
-            <pointer name='body_parts'>
-                <stl-vector name='body'>
-                    <pointer type-name='body_part_raw'/>
-                </stl-vector>
-            </pointer>
+            <pointer name='body_plan' type-name='body_info'/>
 
             <int16_t/>
             <int32_t name='size'/>
@@ -289,7 +285,9 @@
         </compound>
 
         <int32_t/>
-        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector name='contaminants'>
+            <pointer type-name='unit_contaminant'/>
+        </stl-vector>
         <stl-vector name='misc_traits'>
             <pointer type-name='unit_misc_trait'/>
         </stl-vector>
@@ -490,18 +488,10 @@
                  refers-to='$$._global._parent._global.body.body_plan.body_parts[$]'/>
 
         <int32_t comment='always 0'/>
-        <int32_t init-value='-1' comment='-1 unless suture'/>
     </struct-type>
 
-    <struct-type type-name='unit_spatter'>
-        <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
-
-        <int16_t name="unk_8"/>
-        <int16_t name="unk_a"/>
-        <int16_t name="unk_c"/>
-
-        <int32_t name="unk_10"/>
+    <struct-type type-name='unit_contaminant'>
+        <compound type-name='contaminant' name='contaminant'/>
         <int16_t name='body_part_id'
                  refers-to='$$._global._parent._global.body.body_plan.body_parts[$]'/>
         <int16_t name="unk_16"/>

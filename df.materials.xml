@@ -250,6 +250,12 @@
             <int16_t refers-to='(matgloss-target $$._parent._parent.material[$$._key] $)'/>
         </stl-vector>
     </struct-type>
+
+    <struct-type type-name='contaminant'>
+        <int32_t name='state'/> 0/1 = solid/liquid?
+        <enum base-type='int32_t' name='material' type-name='material_type'/>
+        <int32_t name='amount'/>
+    </struct-type>
 </data-definition>
 
 <!--

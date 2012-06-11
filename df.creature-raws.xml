@@ -230,6 +230,16 @@
         <enum-item/>
     </enum-type>
 
+    <struct-type type-name='body_info'>
+        <stl-vector name='body_parts'>
+            <pointer type-name='body_part_raw'/>
+        </stl-vector>
+
+        <stl-vector name='attacks'>
+            <pointer/>
+        </stl-vector>
+    </struct-type>
+
     <struct-type type-name='creature_raw' instance-vector='$global.world.raws.creatures'>
         <stl-string name='creature_id'/>
         <code-helper name='describe'>$.creature_id</code-helper>
@@ -333,10 +343,7 @@
             <pointer type-name='stl-string'/>
         </stl-vector>
 
-        <stl-vector name='body'>
-            <pointer type-name='body_part_raw'/>
-        </stl-vector>
-        <stl-vector name='attack' type-name='pointer'/>
+        <compound name='body_info' type-name='body_info'/>
 
         <static-array type-name='int32_t' count='7'/>
         <static-array type-name='int32_t' count='7'/>
