@@ -244,9 +244,9 @@
         <compound name='body'>
             <stl-vector name='wounds' type-name='int16_t'/>
             <stl-vector name='flags' type-name='int32_t' comment='1=burning'/>
-            <stl-vector type-name='int8_t'/>
-            <stl-vector type-name='int8_t'/>
-            <stl-vector type-name='int16_t'/>
+            <stl-vector name='nerves' type-name='int8_t'/>
+            <stl-vector name='bodyparts' type-name='int8_t'/>
+            <stl-vector name='insulation' type-name='int16_t'/>
             <pointer name='body_plan' type-name='body_info'/>
 
             <int16_t/>
@@ -306,19 +306,45 @@
         </stl-vector>
         <stl-vector name='demands' type-name='pointer'/>
         <static-array type-name='bool' name='labors' index-enum='unit_labor' count='91'/>
-        <int32_t/>
+        <int32_t name='total_exp'/> for attribute boosts
         <stl-vector type-name='pointer' comment='unk'/> probably unit_item_wrestle ptrs
         <stl-vector type-name='pointer' comment='unk'/> probably item IDs
         <stl-vector name='recent_events'>
             <pointer type-name='unit_thought'/>
         </stl-vector>
-        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector> same struct?
+            <pointer type-name='unit_thought'/>
+        </stl-vector>
         <int32_t name='happiness'/>
         <int16_t name='insanity_chance'/>
-        <stl-vector type-name='pointer' comment='unk'/>
-        <stl-vector type-name='pointer' comment='unk'/>
-        <stl-vector type-name='pointer'/> friends?
-        <stl-vector type-name='pointer' comment='unk'/>
+        <stl-vector>
+            <pointer>
+                <int16_t/>
+                <int16_t/>
+                <int32_t/>
+            </pointer>
+        </stl-vector>
+        <stl-vector>
+            <pointer>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+            </pointer>
+        </stl-vector>
+        <stl-vector>
+            <pointer>
+                <int32_t/>
+                <int32_t/>
+                <int32_t/>
+                <int32_t/>
+            </pointer>
+        </stl-vector>
+        <stl-vector>
+            <pointer>
+                <int32_t/>
+                <int32_t/>
+            </pointer>
+        </stl-vector>
         <int16_t/>
         <compound type-name='coord'/>
         <compound type-name='coord_path'/>
@@ -527,7 +553,7 @@
     <struct-type type-name='unit_thought'>
         <int16_t name="type"/>
         <int32_t name="age" comment='+1 per frame'/>
-        <int32_t name="subtype" init-value='-1'/>
+        <int16_t name="subtype" init-value='-1'/>
         <int32_t name="severity"/>
     </struct-type>
 
