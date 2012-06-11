@@ -419,9 +419,10 @@
     </struct-type>
 
     <struct-type type-name='body_part_raw'>
-        <stl-string/>
-        <stl-string/>
-        <int16_t/>
+        <stl-string name='token'/>
+        <stl-string name='name'/>
+        <code-helper name='describe'>$.name</code-helper>
+        <int16_t name='con_part_id'/>
         <static-array type-name='int8_t' name='flags' count='6'/>
     </struct-type>
 </data-definition>
