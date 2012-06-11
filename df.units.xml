@@ -124,7 +124,7 @@
         <enum base-type='int32_t' name='profession' type-name='profession'/>
         <enum base-type='int32_t' name='profession2' type-name='profession'/>
         <int32_t name='race' ref-target='creature_raw'/>
-        <int32_t name='sex'/>
+        <int32_t name='racegloss'/>
         <compound name='pos' type-name='coord'/>
         <compound name='old_pos' type-name='coord'>
             <comment>
@@ -145,7 +145,7 @@
         <compound name='flags2' type-name='unit_flags2'/>
         <int8_t/>
         <int16_t/>
-        <int8_t/>
+        <int8_t name='sex'/>
         <int32_t name='id'/>
         <int16_t/>
         <int32_t/>
