@@ -180,6 +180,48 @@
         <pointer name='object'/>
         <pointer name='unk'/>
     </struct-type>
+
+    <enum-type type-name='histfig_entity_link_type'> not at all certain about these values
+        <enum-item name='LEADER'/>
+        <enum-item name='GUARD'/>
+        <enum-item name='MEMBER'/>
+        <enum-item name='FORMER_MEMBER'/>
+        <enum-item name='MERCENARY'/>
+        <enum-item name='FORMER_MERCENARY'/>
+        <enum-item name='ENEMY'/>
+        <enum-item name='CRIMINAL'/>
+    </enum-type>
+
+    <struct-type type-name='histfig_entity_link'>
+        <enum base-type='int16_t' type-name='histfig_entity_link_type' name='type'/>
+        <int32_t name='entity_id' ref-target='historical_entity'/>
+        <int16_t name='link_strength'/>
+    </struct-type>
+
+    <enum-type type-name='histfig_site_link_type'>
+        <enum-item name='SHOPKEEPER'/>
+        <enum-item name='SEAT_OF_POWER'/>
+        <enum-item name='HANGOUT'/>
+        <enum-item name='HOME'/>
+    </enum-type>
+
+    <struct-type type-name='histfig_site_link'>
+        <enum base-type='int16_t' type-name='histfig_site_link_type' name='type'/>
+        <int32_t name='site_id' ref-target='world_site'/>
+        <int32_t/>
+    </struct-type>
+
+    <enum-type type-name='histfig_hf_link_type'>
+        <enum-item name='MOTHER'/>
+        <enum-item name='FATHER'/>
+        <enum-item name='SPOUSE'/>
+        <enum-item name='CHILD'/>
+    </enum-type>
+
+    <struct-type type-name='histfig_hf_link'>
+        <enum base-type='int16_t' type-name='histfig_hf_link_type' name='type'/>
+        <int32_t ref-target='historical_figure'/>
+    </struct-type>
 </data-definition>
 
 <!--

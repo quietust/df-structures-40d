@@ -26,25 +26,14 @@
 
         <int32_t/>
 
-        <stl-vector> corresponds to entity_links in modern versions
-            <pointer>
-                <int16_t/>
-                <int32_t/>
-                <int16_t/>
-            </pointer>
+        <stl-vector name='entity_links'>
+            <pointer type-name='histfig_entity_link'/>
         </stl-vector>
-        <stl-vector> corresponds to site_links in modern versions
-            <pointer>
-                <int16_t/>
-                <int32_t/>
-                <int32_t/>
-            </pointer>
+        <stl-vector name='site_links'>
+            <pointer type-name='histfig_site_link'/>
         </stl-vector>
-        <stl-vector> corresponds to histfig_links in modern versions
-            <pointer>
-                <int16_t/>
-                <int32_t/>
-            </pointer>
+        <stl-vector name='histfig_links'>
+            <pointer type-name='histfig_hf_link'/>
         </stl-vector>
     </struct-type>
 
