@@ -1,39 +1,36 @@
 <data-definition>
     <struct-type type-name='world_raws'>
-        -- Matglosses
+        <compound name='matgloss'>
+            <stl-vector name='wood'>
+                <pointer type-name='matgloss_wood'/>
+            </stl-vector>
+            <stl-vector name='stone'>
+                <pointer type-name='matgloss_stone'/>
+            </stl-vector>
+            <stl-vector name='gem'>
+                <pointer type-name='matgloss_gem'/>
+            </stl-vector>
+            <stl-vector name='plant'>
+                <pointer type-name='matgloss_plant'/>
+            </stl-vector>
+        </compound>
 
-        <stl-vector name='matgloss_wood'>
-            <pointer type-name='matgloss_wood'/>
-        </stl-vector>
-        <stl-vector name='matgloss_stone'>
-            <pointer type-name='matgloss_stone'/>
-        </stl-vector>
-        <stl-vector name='matgloss_gem'>
-            <pointer type-name='matgloss_gem'/>
-        </stl-vector>
-        <stl-vector name='matgloss_plant'>
-            <pointer type-name='matgloss_plant'/>
-        </stl-vector>
-
-        -- Creature RAWs
-
-        <stl-vector name='body_templates'>
-            <pointer type-name='body_template'/>
-        </stl-vector>
-
-        <stl-vector name='bodyglosses'>
-            <pointer key-field='id'>
-                <stl-string name='id'/>
-                <stl-string name='old'/>
-                <stl-string name='new'/>
-            </pointer>
-        </stl-vector>
+        <compound name='body'>
+            <stl-vector name='templates'>
+                <pointer type-name='body_template'/>
+            </stl-vector>
+            <stl-vector name='glosses'>
+                <pointer key-field='id'>
+                    <stl-string name='id'/>
+                    <stl-string name='old'/>
+                    <stl-string name='new'/>
+                </pointer>
+            </stl-vector>
+        </compound>
 
         <stl-vector name='creatures'>
             <pointer type-name='creature_raw'/>
         </stl-vector>
-
-        -- Item RAWs
 
         <compound name='itemdefs'>
 
@@ -82,29 +79,20 @@
             </stl-vector>
         </compound>
 
-        -- Entity RAWs
-
         <stl-vector name='entities'>
             <pointer type-name='entity_raw'/>
         </stl-vector>
 
-        -- Language RAWs
-
         <compound name='language'>
-            dtor 852bc90
-
             <stl-vector name='words'>
                 <pointer type-name='language_word'/>
             </stl-vector>
-
             <stl-vector name='symbols'>
                 <pointer type-name='language_symbol'/>
             </stl-vector>
-
             <stl-vector name='translations'>
                 <pointer type-name='language_translation'/>
             </stl-vector>
-
             <static-array name='word_table' count='2'>
                 <static-array count='38'>
                     <static-array name='words' count='6'>
@@ -120,8 +108,6 @@
                 </static-array>
             </static-array>
         </compound>
-
-        -- Descriptors
 
         <compound name='descriptors'>
             <stl-vector name='colors'>

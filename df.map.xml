@@ -159,8 +159,8 @@
             <pointer type-name='flow'/>
         </stl-vector>
 
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='unk_28'/>
+        <int32_t name='unk_2c'/>
 
         <static-array name='color' count='16'>
             <static-array count='16'>

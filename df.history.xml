@@ -1,90 +1,4 @@
 <data-definition>
-    <struct-type type-name='historical_kills'>
-        -- Important
-
-        <stl-vector name="events">
-            <int32_t ref-target='history_event'/>
-        </stl-vector>
-
-        -- Misc
-
-        <stl-vector name="killed_race">
-            <int16_t ref-target='creature_raw'/>
-        </stl-vector>
-        <stl-vector name="unk_30">
-            <int32_t comment='-1'/>
-        </stl-vector>
-        <stl-vector name="unk_40">
-            <int32_t comment='-1'/>
-        </stl-vector>
-        <stl-vector name="killed_site">
-            <int32_t ref-target='world_site'/>
-        </stl-vector>
-        <stl-vector name="killed_undead">
-            <bitfield base-type='uint16_t'>
-                <flag-bit name='skeletal'/>
-                <flag-bit name='zombie'/>
-                <flag-bit name='ghostly'/>
-            </bitfield>
-        </stl-vector>
-        <stl-vector name="killed_count" type-name='int32_t'/>
-    </struct-type>
-
-    <struct-type type-name='historical_figure_info'>
-        <pointer name="skills">
-            <stl-vector name="skills">
-                <enum base-type='int16_t' type-name='job_skill'/>
-            </stl-vector>
-            <stl-vector name="points" index-refers-to='$$._parent.skills[$]'>
-                <int32_t/>
-            </stl-vector>
-            <stl-vector name="unk_20">
-                <int16_t/>
-            </stl-vector>
-            <stl-vector name="unk_30">
-                <int32_t/>
-            </stl-vector>
-            <stl-vector name="unk_40" type-name='int16_t'/>
-            <stl-vector name="unk_50" type-name='int16_t'/>
-            <int16_t name="unk_60"/>
-        </pointer>
-
-        <pointer name="pets">
-            <stl-vector>
-                <int16_t ref-target='creature_raw'/>
-            </stl-vector>
-        </pointer>
-
-        <pointer name="masterpieces">
-            <stl-vector name="events">
-                <int32_t ref-target='history_event'/>
-            </stl-vector>
-            <stl-vector name="events2" comment='ones that were stolen??..'>
-                <int32_t ref-target='history_event'/>
-            </stl-vector>
-        </pointer>
-
-        <pointer name="unk_14">
-            <int16_t name="unk_0"/>
-            <int32_t name="site" ref-target='world_site'/>
-            <int32_t name="unk_8"/>
-            <int32_t name="unk_c"/>
-            <compound name='region' type-name='coord2d'/>
-            <int8_t name="unk_14"/>
-            <int32_t name="unk_18"/>
-            <int32_t name="unk_1c"/>
-        </pointer>
-
-        <pointer name="kills" type-name='historical_kills'/>
-
-        <pointer name="wounds">
-            <stl-vector name="events">
-                <int32_t ref-target='history_event'/>
-            </stl-vector>
-            <stl-bit-vector name="status"/>
-        </pointer>
-    </struct-type>
-
     <struct-type type-name='historical_figure' instance-vector='$global.world.world_data.history.figures' key-field='id'>
         <enum base-type='int32_t' name='profession' type-name='profession'/>
 
@@ -112,21 +26,21 @@
 
         <int32_t/>
 
-        <stl-vector>
+        <stl-vector> corresponds to entity_links in modern versions
             <pointer>
                 <int16_t/>
                 <int32_t/>
                 <int16_t/>
             </pointer>
         </stl-vector>
-        <stl-vector>
+        <stl-vector> corresponds to site_links in modern versions
             <pointer>
                 <int16_t/>
                 <int32_t/>
                 <int32_t/>
             </pointer>
         </stl-vector>
-        <stl-vector>
+        <stl-vector> corresponds to histfig_links in modern versions
             <pointer>
                 <int16_t/>
                 <int32_t/>

@@ -111,19 +111,7 @@
         </stl-vector>
         <int32_t/>
     </struct-type>
-<!--
-    <struct-type type-name='world_landmass'
-                 instance-vector='$global.world.world_data.landmasses'>
-        <compound name='name' type-name='language_name'/>
-        <code-helper name='describe'>(describe-obj $.name)</code-helper>
 
-        <int32_t name="index"/>
-        <int32_t name="area"/>
-
-        <stl-vector name="unk_74"/>
-        <stl-vector name="unk_84"/>
-    </struct-type>
--->
     <struct-type type-name='world_region' key-field='id' instance-vector='$global.world.world_data.regions'>
         <compound name='name' type-name='language_name'/>
         <code-helper name='describe'>(describe-obj $.name)</code-helper>
@@ -159,7 +147,7 @@
         <compound type-name='language_name' name='world_name'/>
 
         <static-array count='15' type-name='int8_t'/>
-        <int32_t/>
+        <int32_t name='save_folder_number'/>
         <int32_t name='next_site_id'/>
         <int32_t/>
         <int16_t name='world_width'/>
