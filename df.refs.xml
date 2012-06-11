@@ -183,11 +183,9 @@
 
     <enum-type type-name='histfig_entity_link_type'> not at all certain about these values
         <enum-item name='LEADER'/>
-        <enum-item name='GUARD'/>
+        <enum-item/>
         <enum-item name='MEMBER'/>
-        <enum-item name='FORMER_MEMBER'/>
         <enum-item name='MERCENARY'/>
-        <enum-item name='FORMER_MERCENARY'/>
         <enum-item name='ENEMY'/>
         <enum-item name='CRIMINAL'/>
     </enum-type>
