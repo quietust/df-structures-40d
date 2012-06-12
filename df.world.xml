@@ -335,16 +335,14 @@
             </stl-vector>
         </compound>
 
-        -- Adventure quests
-
         <df-linked-list name='quests' type-name='quest_list_link'/>
 
-        -- Unknown
-
-        <compound name='unk_4dcc'>
-            <static-array type-name='int8_t' count='500' comment='bool array?'/>
-            <static-array type-name='int8_t' count='250000'/>
-            <int32_t/>
+        <compound name='enemy_status_cache' comment='?'>
+            <static-array name='id_used' type-name='bool' count='500'/>
+            <static-array name='rel_map' count='500'>
+                <static-array type-name='int8_t' count='500'/>
+            </static-array>
+            <int32_t name='next_id'/>
         </compound>
 
         <compound name='schedules'>

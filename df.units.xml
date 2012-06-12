@@ -360,7 +360,7 @@
         <stl-vector name='temperatures'>
             <pointer type-name='temperaturest'/>
         </stl-vector>
-        <int32_t/>
+        <int32_t name='enemy_status_slot'/>
         <int32_t/>
 
 <!--
