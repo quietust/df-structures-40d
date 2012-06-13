@@ -307,7 +307,7 @@
 
             -- 130
 
-            <vmethod/>
+            <vmethod name='getCritBoost'/>
             <vmethod name='coverWithContaminant' comment='also stops fire; used for rain'>
                 <enum base-type='int32_t' name='material' type-name='material_type'/>
             </vmethod>

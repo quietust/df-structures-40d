@@ -91,23 +91,16 @@
         <stl-vector name='royal_guards'><int32_t ref-target='unit'/></stl-vector>
         <stl-vector name='fortress_guards'><int32_t ref-target='unit'/></stl-vector>
         <stl-vector name='aid_requesters'><int32_t ref-target='unit'/></stl-vector>
-        <int8_t/>
+        <int8_t name='game_over'/>
 
-        <compound name='invasions'>
+        <compound name='unk_d8e4'> corresponds to invasions in current version
             <int32_t/>
             <int32_t/>
             <int32_t/>
             <int32_t/>
             <int32_t/>
             <int16_t/>
-<!--
-            <stl-vector name='list' comment='goblins...'>
-                <pointer type-name='invasion_info'/>
-            </stl-vector>
-            <int32_t name='next_id'/>
--->
         </compound>
-
 
         <stl-vector name='crimes'>
             <pointer>
