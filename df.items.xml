@@ -152,9 +152,9 @@
                 <pointer type-name='stl-string'/>
             </vmethod>
             <vmethod ret-type='int16_t' name='getDamageType'/>
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
+            <vmethod ret-type='bool' name='isLiquipowder'/>
+            <vmethod ret-type='bool' name='isLiquid'/>
+            <vmethod ret-type='bool' name='isCritter1'/>
 
             <vmethod ret-type='int16_t' name='getStickChance'/>
             <vmethod name='addImprovementFromJob'/>
@@ -358,7 +358,7 @@
             <vmethod name='addImprovementsFromItem'/>
             <vmethod ret-type='int32_t' name='getThreadDyeValue'> <int32_t comment='unused'/> </vmethod>
             <vmethod/> calls 2nd vmethod on every itemimprovement
-            <vmethod ret-type='bool' name='isCritter'/>
+            <vmethod ret-type='bool' name='isCritter2'/>
             <vmethod ret-type='bool' name='isArmorOrClothing'/> armor, shoes, pants, gloves, helm
             <vmethod is-destructor='true'/>
         </virtual-methods>

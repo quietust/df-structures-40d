@@ -15,11 +15,11 @@
             </stl-vector>
         </compound>
 
-        <compound name='unk'>
-            <stl-vector>
+        <compound name='improved'>
+            <stl-vector name='items'>
                 <pointer type-name='item'/>
             </stl-vector>
-            <stl-vector type-name='int16_t'/>
+            <stl-vector name='category' type-name='int16_t'/>
         </compound>
 
         <compound name='all'>
