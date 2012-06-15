@@ -334,7 +334,7 @@
             <vmethod ret-type='int32_t' name='getBaseWeight'/>
             <vmethod ret-type='int32_t' name='getWeightShiftBits'/>
             <vmethod ret-type='bool' name='isCollected'/>
-            <vmethod/>
+            <vmethod ret-type='int32_t' name='getVolume'/>
             <vmethod ret-type='bool' name='isEdibleVermin'/>
 
             <vmethod ret-type='int8_t' name='getTile'/>

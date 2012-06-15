@@ -120,7 +120,7 @@
             <vmethod name='updateItems'/>
 
             <vmethod name='updateTempFromTile'><uint16_t name='temp'/><bool/><bool/></vmethod>
-            <vmethod ret-type='bool' name='isNormalFurniture'/>
+            <vmethod ret-type='bool' name='isColoredByMaterial'/>
             <vmethod ret-type='bool' name='isFarmPlot'/>
             <vmethod name='getWorkshopProfile'>
                 <ret-type><pointer type-name='workshop_profile'/></ret-type>
