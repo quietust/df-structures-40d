@@ -182,7 +182,7 @@
                 <int16_t/> <int16_t/> <int16_t/>
             </vmethod>
             <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
+            <vmethod ret-type='bool' name='isAnimal' comment='stored in Animal stockpiles'/>
             <vmethod name='assignQuality'/>
             <vmethod name='notifyLostMasterwork'/>
 
