@@ -80,36 +80,36 @@
     </struct-type>
 
     <bitfield-type type-name='job_item_flags1' base-type='uint32_t'>
-        <flag-bit name='improvable' comment='vtable[155]:eax,-1,-1'/>
-        <flag-bit name="butcherable" comment='(call 0074c6d0)'/>
-        <flag-bit name="millable" comment='vtable[79]'/>
-        <flag-bit name="buryable" comment='check for item flag "dead_dwarf"'/>
-        <flag-bit name="unrotten" comment='check for item flag "rotten"'/>
-        <flag-bit name="undisturbed" comment='check for item flag "spider_web"'/>
-        <flag-bit name="collected" comment='check for item flag "spider_web"'/>
-        <flag-bit name="sharpenable" comment='vtable[25]'/>
+        <flag-bit name='improvable'/>
+        <flag-bit name="butcherable"/>
+        <flag-bit name="millable"/>
+        <flag-bit name="buryable"/>
+        <flag-bit name="unrotten"/>
+        <flag-bit name="undisturbed"/>
+        <flag-bit name="collected"/>
+        <flag-bit name="sharpenable"/>
 
-        <flag-bit name="murdered" comment='check for item flag'/>
-        <flag-bit name="distillable" comment='vtable[105],1'/>
-        <flag-bit name="empty" comment='(call 00753a40)'/>
-        <flag-bit name="processable" comment='vtable[80]'/>
-        <flag-bit name="bag" comment='vtable[131]'/>
-        <flag-bit name="cookable" comment='(call 00753fe0)'/>
-        <flag-bit name="extract_bearing_plant" comment='vtable[164]'/>
-        <flag-bit name="extract_bearing_fish" comment='vtable[181]'/>
+        <flag-bit name="murdered"/>
+        <flag-bit name="distillable"/>
+        <flag-bit name="empty"/>
+        <flag-bit name="processable"/>
+        <flag-bit name="bag"/>
+        <flag-bit name="cookable"/>
+        <flag-bit name="extract_bearing_plant"/>
+        <flag-bit name="extract_bearing_fish"/>
 
-        <flag-bit name="extract_bearing_vermin" comment='vtable[182]'/>
-        <flag-bit name="processable_to_vial" comment='vtable[81]'/>
-        <flag-bit name="processable_to_bag" comment='vtable[82]'/>
-        <flag-bit name="processable_to_barrel" comment='vtable[83]'/>
-        <flag-bit name="alchemical" comment='vtable[74]'/>
-        <flag-bit name="tameable_vermin" comment='vtable[104]'/>
+        <flag-bit name="extract_bearing_vermin"/>
+        <flag-bit name="processable_to_vial"/>
+        <flag-bit name="processable_to_bag"/>
+        <flag-bit name="processable_to_barrel"/>
+        <flag-bit name="alchemical"/>
+        <flag-bit name="tameable_vermin"/>
         <flag-bit name="nearby"/>
-        <flag-bit name="sand_bearing" comment='vtable[108]'/>
+        <flag-bit name="sand_bearing"/>
 
-        <flag-bit name="glass" comment='check for material flag IS_GLASS'/>
-        <flag-bit name="milk" comment='(call 00753d30 - check if material has CHEESE_MAT?)'/>
-        <flag-bit name="milkable" comment='vtable[107],1,1'/>
+        <flag-bit name="glass"/>
+        <flag-bit name="milk"/>
+        <flag-bit name="milkable"/>
         <flag-bit name='finished_goods'/>
         <flag-bit name='ammo'/>
         <flag-bit name='furniture'/>
@@ -118,10 +118,10 @@
     </bitfield-type>
 
     <bitfield-type type-name='job_item_flags2' base-type='uint32_t'>
-        <flag-bit name="dye" comment='vtable[106]'/>
-        <flag-bit name="dyeable" comment='vtable[159]'/>
-        <flag-bit name="dyed" comment='vtable[161]'/>
-        <flag-bit name="sewn_imageless" comment='vtable[162]'/>
+        <flag-bit name="dye"/>
+        <flag-bit name="dyeable"/>
+        <flag-bit name="dyed"/>
+        <flag-bit name="sewn_imageless"/>
     </bitfield-type>
 
     <struct-type type-name='job_item_filter'>
