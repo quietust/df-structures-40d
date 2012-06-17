@@ -523,7 +523,9 @@
         <stl-vector name='linked_mechanisms'>
             <pointer type-name='item'/>
         </stl-vector>
-        <stl-vector type-name='int32_t'/>
+        <stl-vector name='observed_by_civs'>
+            <int32_t ref-target='historical_entity'/>
+        </stl-vector>
         <compound name='profile' type-name='workshop_profile'/>
     </class-type>
 

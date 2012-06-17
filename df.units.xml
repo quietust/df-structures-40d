@@ -308,7 +308,9 @@
         <static-array type-name='bool' name='labors' index-enum='unit_labor' count='91'/>
         <int32_t name='total_exp'/> for attribute boosts
         <stl-vector type-name='pointer' comment='unk'/> probably unit_item_wrestle ptrs
-        <stl-vector type-name='pointer' comment='unk'/> probably item IDs
+        <stl-vector name='observed_traps'>
+            <int32_t ref-target='building'/>
+        </stl-vector>
         <stl-vector name='recent_events'>
             <pointer type-name='unit_thought'/>
         </stl-vector>
