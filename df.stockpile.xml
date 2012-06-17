@@ -99,8 +99,10 @@
 
         <stl-vector type-name='bool' name='coins' index-enum='material_type'/>
 
-        <stl-vector type-name='bool' name='bars_mats' index-enum='material_type'/>
-        <stl-vector type-name='bool' name='blocks_mats' index-enum='material_type'/>
+        <compound name='bars_blocks'>
+            <stl-vector type-name='bool' name='bars_mats' index-enum='material_type'/>
+            <stl-vector type-name='bool' name='blocks_mats' index-enum='material_type'/>
+        </compound>
 
         <compound name='gems'>
             <stl-vector type-name='bool' name='rough_mats' index-enum='material_type'/>
