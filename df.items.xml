@@ -357,7 +357,10 @@
             <vmethod name='addImage'/>
             <vmethod name='addImprovementsFromItem'/>
             <vmethod ret-type='int32_t' name='getThreadDyeValue'> <int32_t comment='unused'/> </vmethod>
-            <vmethod/> calls 2nd vmethod on every itemimprovement
+            <vmethod name='getColorAndShape'>
+                <pointer name='colors'><vector type-name=int16_t'/></pointer>
+                <pointer name='shapes'><vector type-name=int16_t'/></pointer>
+            </vmethod>
             <vmethod ret-type='bool' name='isCritter2'/>
             <vmethod ret-type='bool' name='isArmorOrClothing'/> armor, shoes, pants, gloves, helm
             <vmethod is-destructor='true'/>
