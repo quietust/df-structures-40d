@@ -33,8 +33,8 @@
                 <ret-type><pointer type-name='art_image'/></ret-type>
             </vmethod>
             <vmethod name='getColorAndShape'>
-                <pointer name='colors'><vector type-name=int16_t'/></pointer>
-                <pointer name='shapes'><vector type-name=int16_t'/></pointer>
+                <pointer name='colors'><stl-vector type-name='int16_t'/></pointer>
+                <pointer name='shapes'><stl-vector type-name='int16_t'/></pointer>
             </vmethod>
             <vmethod name='clone'>
                 <ret-type><pointer type-name='itemimprovement'/></ret-type>
