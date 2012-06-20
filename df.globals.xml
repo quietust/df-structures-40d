@@ -41,8 +41,12 @@
         <enum-item name='NONE'/>
     </enum-type>
 
-    <global-object name='game_mode' type-name='game_mode'/>
-    <global-object name='game_type' type-name='game_type'/>
+    <global-object name='gamemode'>
+        <enum base-type='int32_t' type-name='game_mode'/>
+    </global-object>
+    <global-object name='gametype'>
+        <enum base-type='int32_t' type-name='game_type'/>
+    </global-object>
 
     <global-object name='ui_area_map_width' type-name='int8_t'/>
     <global-object name='ui_menu_width' type-name='int8_t'/>
