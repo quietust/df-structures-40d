@@ -17,10 +17,9 @@
     <struct-type type-name='init_display'>
         <df-flagarray name='flag' index-enum='init_display_flags'/>
 
-        <enum name="nickname_dwarf" type-name='init_nickname_mode'/>
-        <enum name="nickname_adventure" type-name='init_nickname_mode'/>
-        <enum name="nickname_legends" type-name='init_nickname_mode'/>
-        <enum name="nickname_dwarf2" type-name='init_nickname_mode'/>
+        <static-array name='nickname' count='4' index-enum='game_type'>
+            <enum type-name='init_nickname_mode'/>
+        </static-array>
 
         <enum name='windowed'>
             <enum-item name='True'/>

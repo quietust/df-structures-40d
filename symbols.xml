@@ -8,8 +8,8 @@
         <global-address name='cursor' value='0x789c1c'/>
         <global-address name='selection_rect' value='0x789c28'/>
 
-        <global-address name='control_mode' value='0x789c40'/>
-        <global-address name='game_mode' value='0x789c44'/>
+        <global-address name='game_mode' value='0x789c40'/>
+        <global-address name='game_type' value='0x789c44'/>
 
         <global-address name='ui_area_map_width' value='0x789c61'/>
         <global-address name='ui_menu_width' value='0x789c60'/>
