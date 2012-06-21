@@ -20,16 +20,11 @@
         <compound name='pos' type-name='coord16'/>
 
         <int32_t name='grow_counter'/>
-        <uint16_t name='temperature'/>
-        <uint16_t name='temperature_fraction'/>
+        <compound name='temperature' type-name='temperaturest'/>
         <int32_t name='is_burning'/>
         <int32_t name='hitpoints'/>
-        <stl-vector>
-            <pointer>
-                <int32_t/>
-                <int32_t/>
-                <int32_t/>
-            </pointer>
+        <stl-vector name='contaminants'>
+            <pointer type-name='contaminant'/>
         </stl-vector>
         <int32_t/>
     </class-type>

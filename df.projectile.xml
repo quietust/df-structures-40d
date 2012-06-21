@@ -62,11 +62,12 @@
     </class-type>
 
     <class-type type-name='proj_unitst' inherits-from='projectile'>
-        <pointer name='unit' type-name='unit' comment='?'/>
+        <pointer name='unit' type-name='unit'/>
     </class-type>
 
     <class-type type-name='proj_magicst' inherits-from='projectile'>
-        <pointer name='unk' comment='?'/>
+        <int16_t/>
+        <int16_t/>
     </class-type>
 </data-definition>
 
