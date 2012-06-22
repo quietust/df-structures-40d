@@ -259,9 +259,9 @@
         <compound name='counters'>
             <int32_t/>
             <int32_t/>
+            <int32_t name='move_timer'/>
             <int32_t/>
-            <int32_t/>
-            <int16_t/>
+            <int16_t name='death_cause' comment='used when thrown as projectile'/>
             <int16_t name='nausea'/>
             <int16_t name='winded'/>
             <int16_t name='stunned'/>

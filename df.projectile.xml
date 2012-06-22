@@ -24,19 +24,15 @@
 
         <int32_t name='distance_flown'/>
 
-        <int32_t name='unk14'/>
-        <int32_t name='unk15'/>
-        <int32_t name='unk16'/>
+        <compound name='unk_pos' type-name='coord'/>
 
         <bool name='collided' comment='or falling?'/>
 
         <int16_t name='fall_counter' comment='counts down from delay to 0, then it moves'/>
         <int16_t name='fall_delay'/>
 
-        <int32_t name='unk20'/>
-        <int32_t name='unk21'/>
-        <int32_t name='unk22'/>
-        <int32_t name='unk23'/>
+        <int32_t name='skill_level'/>
+        <int32_t name='throw_strength'/>
 
         <virtual-methods>
             <vmethod ret-type='projectile_type' name='getType'/>
@@ -49,10 +45,7 @@
                 <pointer comment='file_compressorst'/>
                 <int32_t name='loadversion'/>
             </vmethod>
-            <vmethod>
-                <pointer/>
-            </vmethod>
-            <vmethod ret-type='bool'/>
+            <vmethod name='drawSelf'/>
             <vmethod is-destructor='true'/>
         </virtual-methods>
     </class-type>
