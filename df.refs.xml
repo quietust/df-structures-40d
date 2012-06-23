@@ -129,9 +129,9 @@
         <enum-item name='UNIT_KIDNAPEE'/>
         <enum-item name='UNIT_PATIENT'/>
         <enum-item name='UNIT_INFANT'/>
+        <enum-item name='ENTITY_ITEMOWNER'/>
         <enum-item name='ENTITY_STOLEN'/>
         <enum-item name='ENTITY_OFFERED'/>
-        <enum-item name='ENTITY_ITEMOWNER'/>
         <enum-item name='ACTIVITY'/>
         <enum-item name='ITEM_GENERAL'/>
         <enum-item name='CONTAINS_ITEM'/>
