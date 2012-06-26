@@ -502,13 +502,23 @@
         <code-helper name='describe'>$.mode (describe-obj $.item)</code-helper>
 
         <enum base-type='int16_t' name='mode'>
-            <enum-item name='Carried'/>
-            <enum-item name='Weapon' comment='also shield, crutch'/>
+            <enum-item name='Hauled'/>
+            <enum-item name='Wielded'/>
             <enum-item name='Worn'/>
-            <enum-item name='InBody'/>
-            <enum-item name='Flask' comment='attached to clothing'/>
+            <enum-item/>
+            <enum-item/>
+            <enum-item/>
+            <enum-item name='InBodyPart'/>
+            <enum-item/>
+            <enum-item/>
+            <enum-item/>
+            <enum-item/>
+            <enum-item/>
+            <enum-item/>
+            <enum-item/>
+            <enum-item name='Flask'/>
             <enum-item name='StuckIn'/>
-            <enum-item name='Unk6'/>
+            <enum-item name='Unk16'/>
             <enum-item name='Shouldered'/>
         </enum>
 
