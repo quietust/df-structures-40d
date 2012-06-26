@@ -22,26 +22,32 @@
     </enum-type>
 
     <struct-type type-name='ui'>
-        <int32_t/>
-        <int32_t/>
-        <compound name='unk1'>
-            <int16_t/>
+        <int32_t name='gameover_type'/>
+        <int32_t name='gameover_sieger' ref-target='historical_entity'/>
+        <compound name='tax_collection'>
+            <int16_t name='state'/>
             <int32_t/>
-            <stl-vector/>
+            <stl-vector name='rooms'>
+                <pointer type-name='building'/>
+            </stl-vector>
             <int32_t/>
-            <int32_t/>
-            <int64_t/>
-            <int16_t/>
-            <int16_t/>
-            <int32_t comment='-1'/>
-            <int32_t comment='-1'/>
-            <int32_t comment='-1'/>
-            <int64_t comment='-1'/>
-            <int64_t comment='-1'/>
-            <int64_t comment='-1'/>
-            <pointer type-name='unit'/>
-            <pointer type-name='unit'/>
-            <pointer type-name='unit'/>
+            <int32_t comment='probably for tax collector'/>
+            <int32_t comment='probably for guard1'/>
+            <int32_t comment='probably for guard2'/>
+            <int16_t name='collected'/>
+            <int16_t name='quota'/>
+            <int32_t name='tc_x'/>
+            <int32_t name='tc_y'/>
+            <int32_t name='tc_z'/>
+            <int32_t name='guard1_x'/>
+            <int32_t name='guard2_x'/>
+            <int32_t name='guard1_y'/>
+            <int32_t name='guard2_y'/>
+            <int32_t name='guard1_z'/>
+            <int32_t name='guard2_z'/>
+            <pointer type-name='unit' name='collector'/>
+            <pointer type-name='unit' name='guard1'/>
+            <pointer type-name='unit' name='guard2'/>
             <int8_t/>
         </compound>
         <stl-vector name='caravans'>
@@ -93,13 +99,17 @@
         <stl-vector name='aid_requesters'><int32_t ref-target='unit'/></stl-vector>
         <int8_t name='game_over'/>
 
-        <compound name='unk_d8e4'> corresponds to invasions in current version
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int16_t/>
+        <compound name='siege'>
+            <int32_t name='attacker' ref-target='historical_entity'/>
+            <int32_t name='active_size1'/>
+            <int32_t name='active_size2'/>
+            <int32_t name='size'/>
+            <int32_t name='timeout'/>
+            <bitfield base-type='uint16_t' name='flags'>
+                <flag-bit name='active'/>
+                <flag-bit name='siege'/>
+                <flag-bit name='history'/>
+            </bitfield>
         </compound>
 
         <stl-vector name='crimes'>
