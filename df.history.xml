@@ -98,14 +98,14 @@
             </vmethod>
 
             <vmethod ret-type='bool' name='wasArtifactHidden'>
-                <int32_t name='artifact' ref-target='artifact'/>
+                <int32_t name='artifact' ref-target='artifact_record'/>
             </vmethod>
             <vmethod name='getArtifactMakerUnitID'>
-                <int32_t name='artifact' ref-target='artifact'/>
+                <int32_t name='artifact' ref-target='artifact_record'/>
                 <ret-type><int32_t ref-target='unit'/></ret-type>
             </vmethod>
             <vmethod ret-type='bool' name='isArtifactPossessedByUnit'>
-                <int32_t name='artifact' ref-target='artifact'/>
+                <int32_t name='artifact' ref-target='artifact_record'/>
                 <int32_t name='unit' ref-target='unit'/>
             </vmethod>
             <vmethod name='associateArtifactWithUnit'/>
@@ -135,7 +135,7 @@
             </vmethod>
 
             <vmethod name='getRelatedArtifactIDs'>
-                <pointer name='vec'><stl-vector><int32_t ref-target='artifact'/></stl-vector></pointer>
+                <pointer name='vec'><stl-vector><int32_t ref-target='artifact_record'/></stl-vector></pointer>
             </vmethod>
             <vmethod name='getRelatedRegionIDs'>
                 <pointer name='vec'><stl-vector><int32_t ref-target='world_region'/></stl-vector></pointer>
@@ -153,7 +153,7 @@
             -- 20
 
             <vmethod ret-type='bool' name='isRelatedToArtifactID'>
-                <int32_t name='artifact' ref-target='artifact'/>
+                <int32_t name='artifact' ref-target='artifact_record'/>
             </vmethod>
             <vmethod ret-type='bool' name='isRelatedToRegionID'>
                 <int32_t name='region' ref-target='world_region'/>
