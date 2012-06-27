@@ -79,40 +79,98 @@
 
         <virtual-methods>
             <vmethod ret-type='history_event_type' name='getType'/>
-            <vmethod name='getWarStatus'/>
-            <vmethod name='getAngerModifier'/>
-            <vmethod name='getHappinessModifier'/>
-            <vmethod name='madeFirstContact'/>
+            <vmethod ret-type='int32_t' name='getWarStatus'>
+                <int32_t name='entity1' ref-target='historical_entity'/>
+                <int32_t name='entity2' ref-target='historical_entity'/>
+            </vmethod>
+            <vmethod ret-type='int32_t' name='getAngerModifier'>
+                <int32_t name='entity1' ref-target='historical_entity'/>
+                <int32_t name='entity2' ref-target='historical_entity'/>
+            </vmethod>
+            <vmethod ret-type='int32_t' name='getHappinessModifier'>
+                <int32_t name='entity1' ref-target='historical_entity'/>
+                <int32_t name='entity2' ref-target='historical_entity'/>
+            </vmethod>
+            <vmethod ret-type='bool' name='madeFirstContact'>
+                <int32_t name='entity1' ref-target='historical_entity'/>
+                <int32_t name='entity2' ref-target='historical_entity'/>
+                <int32_t name='site' ref-target='world_site'/>
+            </vmethod>
 
-            <vmethod name='wasArtifactHidden'/>
-            <vmethod name='getArtifactMakerUnitID'/>
-            <vmethod name='isArtifactPossessedByUnit'/>
+            <vmethod ret-type='bool' name='wasArtifactHidden'>
+                <int32_t name='artifact' ref-target='artifact'/>
+            </vmethod>
+            <vmethod name='getArtifactMakerUnitID'>
+                <int32_t name='artifact' ref-target='artifact'/>
+                <ret-type><int32_t ref-target='unit'/></ret-type>
+            </vmethod>
+            <vmethod ret-type='bool' name='isArtifactPossessedByUnit'>
+                <int32_t name='artifact' ref-target='artifact'/>
+                <int32_t name='unit' ref-target='unit'/>
+            </vmethod>
             <vmethod name='associateArtifactWithUnit'/>
-            <vmethod name='getKilledHistfigID'/>
+            <vmethod ret-type='int32_t' name='getKilledHistfigID'>
+                <int32_t name='killer' ref-target='historical_figure'/>
+                <ret-type><int32_t ref-target='historical_figure'/></ret-type>
+            </vmethod>
 
             -- 10
 
-            <vmethod name='wasHistfigKilled'/>
-            <vmethod name='getEncasedDemonHistfigID'/>
-            <vmethod name='getEncasedDemonRegionID'/>
-            <vmethod name='getRelatedHistfigIDs'/>
-            <vmethod name='getRelatedSiteIDs'/>
+            <vmethod ret-type='bool' name='wasHistfigKilled'>
+                <int32_t name='victim' ref-target='historical_figure'/>
+            </vmethod>
+            <vmethod name='getEncasedDemonHistfigID'>
+                <int32_t name='region' ref-target='world_region'/>
+                <ret-type><int32_t ref-target='historical_figure'/></ret-type>
+            </vmethod>
+            <vmethod name='getEncasedDemonRegionID'>
+                <int32_t name='histfig' ref-target='historical_figure'/>
+                <ret-type><int32_t ref-target='world_region'/></ret-type>
+            </vmethod>
+            <vmethod name='getRelatedHistfigIDs'>
+                <pointer name='vec'><stl-vector><int32_t ref-target='historical_figure'/></stl-vector></pointer>
+            </vmethod>
+            <vmethod name='getRelatedSiteIDs'>
+                <pointer name='vec'><stl-vector><int32_t ref-target='world_site'/></stl-vector></pointer>
+            </vmethod>
 
-            <vmethod name='getRelatedArtifactIDs'/>
-            <vmethod name='getRelatedRegionIDs'/>
-            <vmethod name='getRelatedEntityIDs'/>
-            <vmethod name='isRelatedToHistfigID'/>
-            <vmethod name='isRelatedToSiteID'/>
+            <vmethod name='getRelatedArtifactIDs'>
+                <pointer name='vec'><stl-vector><int32_t ref-target='artifact'/></stl-vector></pointer>
+            </vmethod>
+            <vmethod name='getRelatedRegionIDs'>
+                <pointer name='vec'><stl-vector><int32_t ref-target='world_region'/></stl-vector></pointer>
+            </vmethod>
+            <vmethod name='getRelatedEntityIDs'>
+                <pointer name='vec'><stl-vector><int32_t ref-target='historical_entity'/></stl-vector></pointer>
+            </vmethod>
+            <vmethod ret-type='bool' name='isRelatedToHistfigID'>
+                <int32_t name='histfig' ref-target='historical_figure'/>
+            </vmethod>
+            <vmethod ret-type='bool' name='isRelatedToSiteID'>
+                <int32_t name='site' ref-target='world_site'/>
+            </vmethod>
 
             -- 20
 
-            <vmethod name='isRelatedToArtifactID'/>
-            <vmethod name='isRelatedToRegionID'/>
-            <vmethod name='isRelatedToEntityID'/>
-            <vmethod name='getSummary'/> "In x, some event happened"
-            <vmethod name='getDescription'/> "the happening of some event"
+            <vmethod ret-type='bool' name='isRelatedToArtifactID'>
+                <int32_t name='artifact' ref-target='artifact'/>
+            </vmethod>
+            <vmethod ret-type='bool' name='isRelatedToRegionID'>
+                <int32_t name='region' ref-target='world_region'/>
+            </vmethod>
+            <vmethod ret-type='bool' name='isRelatedToEntityID'>
+                <int32_t name='entity' ref-target='historical_entity'/>
+            </vmethod>
+            <vmethod name='getSummary'>
+                <pointer type-name='stl-string' name='str'/> "In x, some event happened"
+            </vmethod>
+            <vmethod name='getDescription'>
+                <pointer type-name='stl-string' name='str'/> "the happening of some event"
+            </vmethod>
 
-            <vmethod name='populateArtImage'/>
+            <vmethod name='populateArtImage'>
+                <pointer type-name='art_image' name='image'/>
+            </vmethod>
             <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
             <vmethod name='read_file'>
                 <pointer comment='file_compressorst'/>
