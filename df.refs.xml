@@ -206,7 +206,7 @@
     <struct-type type-name='histfig_site_link'>
         <enum base-type='int16_t' type-name='histfig_site_link_type' name='type'/>
         <int32_t name='site_id' ref-target='world_site'/>
-        <int32_t/>
+        <int32_t name='structure_id'/>
     </struct-type>
 
     <enum-type type-name='histfig_hf_link_type'>

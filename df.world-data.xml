@@ -53,6 +53,30 @@
         <enum-item name='Tree_OutdoorDry'/>
     </enum-type>
 
+    <enum-type type-name="site_structure_type" base-type='int16_t'>
+        <enum-item name='CraftShop'/>
+        <enum-item name='WeaponsmithsShop'/>
+        <enum-item name='ArmorsmithsShop'/>
+        <enum-item name='GeneralStore'/>
+        <enum-item name='FoodShop'/>
+        <enum-item name='MeadHall'/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item name='Hovel'/>
+        <enum-item name='Apartment'/>
+        <enum-item name='ApartmentRoom'/>
+    </enum-type>
+
+    <struct-type type-name='site_structure'>
+        <enum base-type='int16_t' name='type' type-name='site_structure_type'/>
+        <int16_t/>
+        <int32_t name='id'/>
+    </struct-type>
+
     <struct-type type-name='world_population'>
         <enum base-type='int8_t' name='type' type-name='world_population_type'/>
 
@@ -102,14 +126,10 @@
         <int32_t/>
         <df-flagarray name='flags'/>
 
-        <stl-vector>
-            <pointer>
-                <int16_t/>
-                <int16_t/>
-                <int32_t/>
-            </pointer>
+        <stl-vector name='structures'>
+            <pointer type-name='site_structure'/>
         </stl-vector>
-        <int32_t/>
+        <int32_t name='next_structure_id'/>
     </struct-type>
 
     <struct-type type-name='world_region' key-field='id' instance-vector='$global.world.world_data.regions'>
