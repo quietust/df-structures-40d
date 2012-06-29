@@ -11,6 +11,15 @@
         <pointer name='next' type-name='proj_list_link'/>
     </struct-type>
 
+    <bitfield-type type-name='projectile_flags' base-type='uint8_t'>
+        <flag-bit name='no_destroy_on_impact'/>
+        <flag-bit name='has_hit_ground'/>
+        <flag-bit name=''/>
+        <flag-bit name='can_hit_unit'/>
+        <flag-bit name='pierces_units'/>
+    </bitfield-type>
+
+
     <class-type type-name='projectile' original-name='projst' key-field='id'>
         <pointer name='link' type-name='proj_list_link'/>
 
@@ -20,13 +29,14 @@
         <compound name='origin_pos' type-name='coord'/>
         <compound name='target_pos' type-name='coord'/>
         <compound name='cur_pos' type-name='coord'/>
-        <compound name='prev_pos' type-name='coord'/>
-
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
         <int32_t name='distance_flown'/>
 
-        <compound name='unk_pos' type-name='coord'/>
+        <compound name='prev_pos' type-name='coord'/>
 
-        <bool name='collided' comment='or falling?'/>
+        <compound name='flags' type-name='projectile_flags'/>
 
         <int16_t name='fall_counter' comment='counts down from delay to 0, then it moves'/>
         <int16_t name='fall_delay'/>
@@ -36,10 +46,10 @@
 
         <virtual-methods>
             <vmethod ret-type='projectile_type' name='getType'/>
-            <vmethod ret-type='bool'>
-                <bool/>
+            <vmethod ret-type='bool' name='checkImpact'>
+                <bool name='noDamageFloor'/>
             </vmethod>
-            <vmethod ret-type='bool'/>
+            <vmethod ret-type='bool' name='checkMovement'/>
             <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
             <vmethod name='read_file'>
                 <pointer comment='file_compressorst'/>

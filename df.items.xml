@@ -123,7 +123,7 @@
             <vmethod name='setWear'> <int16_t/> </vmethod>
             <vmethod ret-type='int32_t' name='getMaker'/>
             <vmethod name='setMaker'> <int32_t name='unit_id'/> </vmethod>
-            <vmethod/>
+            <vmethod ret-type='int16_t' name='getCorpseRace' comment='used for flying body parts to see if they leave blood'/>
 
             -- 30
 
@@ -239,7 +239,7 @@
 
             -- 90
 
-            <vmethod/>
+            <vmethod ret-type='bool' name='isSplittable' comment='if false, you throw the entire stack at once'/>
             <vmethod name='addRandomDye'/>
             <vmethod name='addImprovementFromClothOrDye'> <pointer type-name='item'/> </vmethod>
             <vmethod name='propagateUnitRefs'/> add to unit.owned_items/traded_items
