@@ -135,7 +135,7 @@
             <vmethod name='getGloveFlags'>
                 <ret-type><pointer><df-flagarray/></pointer></ret-type>
             </vmethod>
-            <vmethod/>
+            <vmethod name='setSeedsPlantSkill'><int32_t name='level'/></vmethod>
             <vmethod name='ageItem'><int32_t name='amount'/></vmethod>
             <vmethod ret-type='int32_t' name='getCritterUnk60'/>
 
@@ -612,8 +612,8 @@
 
     <class-type type-name='item_seedsst' inherits-from='item_actual'>
         <int16_t name="plant" ref-target='matgloss_plant'/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='grow_counter'/>
+        <int32_t name='planting_skill'/>
     </class-type>
 
     <class-type type-name='item_plantst' inherits-from='item_actual'>
