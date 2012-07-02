@@ -21,8 +21,7 @@
             </comment>
         </flag-bit>
         <flag-bit/>
-        <flag-bit/>
-        <flag-bit/>
+        <flag-bit name='noise' count='2'/>
         <flag-bit name='by_manager'/>
         <flag-bit/>
         <flag-bit/>
