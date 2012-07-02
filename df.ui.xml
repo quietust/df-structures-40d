@@ -78,7 +78,7 @@
         <static-array name='guild_happiness' type-name='int16_t' count='16' index-enum='guild_id'/>
         <static-array name='labor_slowdown_timer' type-name='int16_t' count='16' index-enum='guild_id'/>
         <static-array name='currency_value' type-name='int32_t' count='64' index-enum='material_type'/>
-        <int32_t/>
+        <int32_t name='trees_removed'/>
         <int32_t/>
         <int32_t name='adamantine_mined'/>
         <int32_t/>

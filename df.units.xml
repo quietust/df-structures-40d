@@ -242,7 +242,7 @@
             <stl-vector name='insulation' type-name='int16_t'/>
             <pointer name='body_plan' type-name='body_info'/>
 
-            <int16_t/>
+            <int16_t name='weapon_hand_bp'/>
             <int32_t name='size'/>
             <int32_t name='blood_total'/>
             <int32_t name='blood_remaining'/>
