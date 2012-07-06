@@ -22,9 +22,7 @@
         <stl-vector name='drink_areas'>
             <pointer>
                 <int32_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
+                <compound type-name='coord16' name='pos'/>
                 <int8_t/>
                 <int16_t/>
             </pointer>
@@ -74,14 +72,12 @@
         </stl-vector>
         <stl-vector name='fires'>
             <pointer>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
+                <compound type-name='coord16' name='pos'/>
+                <int16_t comment='1000'/>
+                <uint16_t name='temperature_1'/>
+                <uint16_t comment='10000'/>
+                <uint16_t name='temperature_2'/>
+                <uint16_t name='temperature_3'/>
             </pointer>
         </stl-vector>
         <stl-vector name='effects'>

@@ -31,7 +31,7 @@
         <int32_t name='time_flown'/>
         <int32_t name='momentum'/>
         <int32_t name='min_hit_distance'/>
-        <int32_t name='distance_flown'/>
+        <int32_t/>
 
         <compound name='prev_pos' type-name='coord'/>
 
