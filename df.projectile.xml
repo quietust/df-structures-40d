@@ -16,9 +16,8 @@
         <flag-bit name='has_hit_ground'/>
         <flag-bit name=''/>
         <flag-bit name='can_hit_unit'/>
-        <flag-bit name='pierces_units'/>
+        <flag-bit name='pierces' comment='also destroys trees'/>
     </bitfield-type>
-
 
     <class-type type-name='projectile' original-name='projst' key-field='id'>
         <pointer name='link' type-name='proj_list_link'/>
@@ -29,9 +28,9 @@
         <compound name='origin_pos' type-name='coord'/>
         <compound name='target_pos' type-name='coord'/>
         <compound name='cur_pos' type-name='coord'/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='time_flown'/>
+        <int32_t name='momentum'/>
+        <int32_t name='min_hit_distance'/>
         <int32_t name='distance_flown'/>
 
         <compound name='prev_pos' type-name='coord'/>
