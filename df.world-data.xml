@@ -60,12 +60,12 @@
         <enum-item name='GeneralStore'/>
         <enum-item name='FoodShop'/>
         <enum-item name='MeadHall'/>
+        <enum-item name='Keep'/>
         <enum-item/>
         <enum-item/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item/>
+        <enum-item name='Ruin1'/>
+        <enum-item name='Ruin2'/>
+        <enum-item name='Ruin3'/>
         <enum-item name='Hovel'/>
         <enum-item name='Apartment'/>
         <enum-item name='ApartmentRoom'/>
