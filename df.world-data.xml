@@ -1,4 +1,17 @@
 <data-definition>
+    <enum-type type-name='region_biome_type'>
+        <enum-item name='SWAMP'/>
+        <enum-item name='DESERT'/>
+        <enum-item name='FOREST'/>
+        <enum-item name='MOUNTAINS'/>
+        <enum-item name='OCEAN'/>
+        <enum-item name='LAKE'/>
+        <enum-item name='GLACIER'/>
+        <enum-item name='TUNDRA'/>
+        <enum-item name='GRASSLAND'/>
+        <enum-item name='HILLS'/>
+    </enum-type>
+
     <enum-type type-name='region_property_type'>
         <enum-item name='elevation'/>
         <enum-item name='rainfall'/>
@@ -137,7 +150,7 @@
         <code-helper name='describe'>(describe-obj $.name)</code-helper>
 
         <int32_t name="id"/>
-        <int32_t name="unk_64"/>
+        <enum name='biome_type' type-name='region_biome_type' base-type='int32_t'/>
 
         <compound name='region_coords' type-name='coord2d16_path'/>
 
@@ -157,9 +170,9 @@
             </pointer>
         </stl-vector>
 
-        <static-array name="unk_a8" count="34">
-            <int16_t/>
-            <int16_t/>
+        <static-array name="tree_tiles" count="34" index-enum='biome_type'>
+            <int16_t name="tree1" ref-target='matgloss_wood'/>
+            <int16_t name="tree2" ref-target='matgloss_wood'/>
         </static-array>
 
         <int8_t name="unk_130"/>
