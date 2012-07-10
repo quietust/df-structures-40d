@@ -603,6 +603,7 @@
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
 
         <bool name='active'/>
+        <int32_t name='prefstring_seed' comment='feeds into a simple RNG to choose which prefstring to use'/>
     </struct-type>
 
     <struct-type type-name='unit_chunk'
