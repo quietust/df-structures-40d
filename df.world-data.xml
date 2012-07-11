@@ -125,8 +125,8 @@
             <enum-item name='Ruin'/>
         </enum>
 
-        <compound name='pos' type-name='coord2d16'/>
-        <compound name='pos2' type-name='coord2d16'/>
+        <compound name='region_indoor' type-name='coord2d16' comment='for subterranean wildlife'/>
+        <compound name='region_outdoor' type-name='coord2d16' comment='for outdoor wildlife'/>
 
         <int32_t name="id"/>
 
