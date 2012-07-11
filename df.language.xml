@@ -51,8 +51,12 @@
 
         <code-helper name='describe'>$.name</code-helper>
 
-        <stl-vector name='unknown1' comment='empty'/>
-        <stl-vector name='unknown2' comment='empty'/>
+        <stl-vector name="words_pre">
+            <pointer type-name='stl-string'/>
+        </stl-vector>
+        <stl-vector name="trans_pre">
+            <pointer type-name='stl-string'/>
+        </stl-vector>
 
         <stl-vector name='words' index-refers-to='$global.world.raws.language.words[$]'>
             <pointer type-name='stl-string'/>
@@ -63,8 +67,9 @@
                  instance-vector='$global.world.raws.language.symbols'>
         <stl-string name='name'/>
 
-        <stl-vector name='unknown' comment='empty'/>
-
+        <stl-vector name="words_str">
+            <pointer type-name='stl-string'/>
+        </stl-vector>
         <stl-vector name='words'>
             <int32_t ref-target='language_word'/>
         </stl-vector>
@@ -80,7 +85,7 @@
         </static-array>
 
         <int32_t name='language' ref-target='language_translation'/>
-        <int16_t name='unknown'/>
+        <int16_t/>
 
         <bool name='has_name'/>
 
