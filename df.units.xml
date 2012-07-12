@@ -213,8 +213,7 @@
         <int32_t/>
         <pointer type-name='unit' name='hunt_target'/>
         <pointer type-name='building' name='destroy_target'/>
-        <int32_t/>
-        <int32_t/>
+        <compound name='last_attack_dir' type-name='coord2d'/>
         <int32_t/>
         <int16_t name='siege_morale'/>
         <int16_t/>
