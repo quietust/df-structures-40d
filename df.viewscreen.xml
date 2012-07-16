@@ -14,7 +14,7 @@
         
         <virtual-methods>
             <vmethod name='logic'/>
-            <vmethod name='render'/>
+            <vmethod name='help'/>
             <vmethod ret-type='bool' name='movies_okay'/>
             <vmethod ret-type='bool' name='is_option_screen'/>
             <vmethod ret-type='bool' name='is_save_screen'/>
@@ -47,10 +47,13 @@
             <int8_t name='key'/>
             <int32_t/>
             <int8_t/>
-            <int8_t/>
+            <int8_t name='is_shift'/>
         </static-array>
         <static-array count='256' type-name='int8_t'/>
-        <stl-string/>
+        <int8_t name='supermovie_on'/>
+        <int32_t name='supermovie_pos'/>
+        <int32_t name='supermovie_delayrate'/>
+        <int32_t name='supermovie_delaystep'/>
         <int32_t/>
         <int32_t/>
         <int32_t/>
@@ -60,11 +63,6 @@
         <uint32_t name='flag'/>
         <int32_t name='shutdown_interface_tickcount'/>
         <int32_t name='shutdown_interface_for_ms'/>
-
-        <int8_t name='supermovie_on'/>
-        <int32_t name='supermovie_pos'/>
-        <int32_t name='supermovie_delayrate'/>
-        <int32_t name='supermovie_delaystep'/>
 
         <stl-vector name='supermovie_sound'>
             <pointer type-name='stl-string'/>
@@ -84,9 +82,180 @@
         <stl-string name='movie_file'/>
     </struct-type>
 
+    <class-type type-name='viewscreen_conversationst' inherits-from='viewscreen'>
+        <pointer/>
+        <int32_t/>
+        <int32_t/>
+        <int16_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_adventure_travelst' inherits-from='viewscreen'>
+        <int32_t/>
+        <int32_t/>
+        <stl-vector type-name='pointer'/>
+    </class-type>
+
+    <class-type type-name='viewscreen_dungeonmodest' inherits-from='viewscreen'>
+        <int32_t name="x"/>
+        <int32_t name="y"/>
+        <int32_t name="z"/>
+        <int8_t/>
+        <int8_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_dungeon_monsterstatusst'
+                inherits-from='viewscreen'>
+        <pointer name="unit" type-name="unit"/>
+
+        <int32_t name="inventory_cursor"/>
+        <int32_t name="body_part_cursor"/>
+
+        <stl-vector name="body_part">
+            <int16_t refers-to='$$._global.unit.body.body_plan.body_parts[$]'/>
+        </stl-vector>
+    </class-type>
+
+    <class-type type-name='viewscreen_dungeon_announcest' inherits-from='viewscreen'>
+        <int32_t/>
+        <int32_t/>
+        <int8_t/>
+        <int8_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_adventure_logst' inherits-from='viewscreen'>
+        <int8_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int8_t/>
+        <int32_t/>
+        <stl-vector name="sites" type-name='pointer'/>
+        <stl-vector name="tasks" type-name='pointer'/>
+        <stl-vector name="entities" type-name='pointer'/>
+        <stl-vector name="regions" type-name='pointer'/>
+    </class-type>
+
+    <class-type type-name='viewscreen_dungeon_wrestlest' inherits-from='viewscreen'>
+        <pointer type-name='unit'/>
+        <pointer type-name='unit'/>
+        <int8_t/>
+        <int32_t/>
+        <stl-vector type-name='pointer'/>
+        <int32_t/>
+        <stl-vector type-name='int8_t'/>
+        <stl-vector type-name='pointer'/>
+        <compound>
+            <int32_t/>
+            <int8_t/>
+            <int8_t/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+        </compound>
+    </class-type>
+
+    <class-type type-name='viewscreen_setupadventurest' inherits-from='viewscreen'>
+        <int8_t/>
+        <stl-string/>
+        <int32_t/>
+        <int32_t/>?
+        <int32_t/>?
+        <int16_t/>
+        <compound>
+            <compound type-name='language_name'/>
+            <int16_t/>
+            <int8_t/>
+            <static-array type-name='int32_t' count='34'/>
+            <int32_t/>
+            <int16_t/>
+        </compound>
+        <int32_t/>?
+        <int32_t/>?
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+    </class-type>
+
+    <class-type type-name='viewscreen_dwarfmodest' inherits-from='viewscreen'>
+        <int8_t/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+    </class-type>
+
+    <class-type type-name='viewscreen_selectitemst' inherits-from='viewscreen'>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <stl-vector type-name='pointer'/>
+        <pointer/>
+        <stl-vector type-name='pointer'/>
+        <static-string size='80'/>
+        <static-string size='200'/>
+        <static-string name='filter' size='80'/>
+        <int32_t/>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_export_regionst' inherits-from='viewscreen'>
+        <int8_t/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_new_regionst' inherits-from='viewscreen'>
+        <int8_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_legendsst' inherits-from='viewscreen'>
+        <stl-vector name='histfigs'>
+            <int32_t ref-target='historical_figure'/>
+        </stl-vector>
+        <stl-vector name='sites'>
+            <int32_t ref-target='world_site'/>
+        </stl-vector>
+        <stl-vector name='artifacts'>
+            <int32_t ref-target='artifact_record'/>
+        </stl-vector>
+        <stl-vector name='regions'>
+            <int32_t ref-target='world_region'/>
+        </stl-vector>
+        <stl-vector name='entities'>
+            <int32_t ref-target='historical_entity'/>
+        </stl-vector>
+        <int16_t/>
+        <int16_t/>
+        <stl-vector type-name='pointer'/>
+        <int32_t/>
+    </class-type>
+
     <class-type type-name='viewscreen_titlest' inherits-from='viewscreen'>
         <static-string name='str_histories' size='200'/>
-        <static-string name='str_histories' size='200'/>
+        <static-string size='200'/>
         <int16_t/>
         <int16_t name='cursor_pos'/>
         <int16_t/>
@@ -113,53 +282,8 @@
         <stl-string name="str_site"/>
     </class-type>
 
-    <class-type type-name='viewscreen_optionst' inherits-from='viewscreen'>
-        ...
-    </class-type>
 
-    <class-type type-name='viewscreen_dwarfmodest' inherits-from='viewscreen'>
-        <int8_t name="unk_10"/>
-        <padding size='3' comment='A necessary workaround for linux class alignment quirks'/>
-        <stl-vector name="unk_14"/>
-        <stl-vector name="unk_24"/>
-        <stl-vector type-name='int32_t' name="unk_34"/>
-        <stl-vector type-name='int32_t' name="unk_44"/>
-        <int32_t name="unk_54"/>
-        <int8_t name="unk_58"/>
-        <int8_t name="keyRepeat"/>
-        <padding size='12'/>
-    </class-type>
 
-    <class-type type-name='viewscreen_joblistst' inherits-from='viewscreen'>
-        <bool name="allow_zoom"/>
-
-        <int32_t name="cursor_pos"/>
-
-        <stl-vector name="jobs">
-            <pointer type-name='job'/>
-        </stl-vector>
-        <stl-vector name="units">
-            <pointer type-name="unit"/>
-        </stl-vector>
-    </class-type>
-
-    <class-type type-name='viewscreen_unitlistst' inherits-from='viewscreen'>
-        <bool name="allow_zoom"/>
-        <int32_t name="page"/>
-        <static-array name='cursor_pos' count='4'>
-            <int32_t refers-to='$$._global.units[$$._key][$]'/>
-        </static-array>
-        <static-array name='jobs' count='4'>
-            <stl-vector>
-                <pointer type-name='job'/>
-            </stl-vector>
-        </static-array>
-        <static-array name='units' count='4'>
-            <stl-vector>
-                <pointer type-name="unit"/>
-            </stl-vector>
-        </static-array>
-    </class-type>
 
     <class-type type-name='viewscreen_itemst' inherits-from='viewscreen'>
         <pointer name="item" type-name="item"/>
@@ -192,59 +316,6 @@
         </stl-vector>
         <stl-vector type-name='int32_t'/>
         <bool name='want_quantity'/>
-    </class-type>
-
-    <class-type type-name='viewscreen_dungeonmodest' inherits-from='viewscreen'>
-        <int32_t name="x"/>
-        <int32_t name="y"/>
-        <int32_t name="z"/>
-        <int32_t name="unk_1c"/>
-        <int32_t name="unk_20"/>
-        <int8_t name="unk_24"/>
-    </class-type>
-
-    <class-type type-name='viewscreen_dungeon_monsterstatusst'
-                inherits-from='viewscreen'>
-        <pointer name="unit" type-name="unit"/>
-
-        <int32_t name="inventory_cursor"/>
-        <int32_t name="body_part_cursor"/>
-
-        <stl-vector name="body_part">
-            <int16_t refers-to='$$._global.unit.body.body_plan.body_parts[$]'/>
-        </stl-vector>
-
-        <bool name="view_skills"/>
-
-        <stl-vector name="inventory">
-            <pointer type-name="unit_inventory_item"/>
-        </stl-vector>
-    </class-type>
-
-    <class-type type-name='viewscreen_choose_start_sitest' inherits-from='viewscreen'>
-        <compound name='region_pos' type-name='coord2d'/>
-
-        <int32_t name="reclaim_site" ref-target='world_site'/>
-
-        <stl-vector name="highlighted_sites">
-            <pointer type-name='world_site'/>
-        </stl-vector>
-        <stl-vector name="local_sites">
-            <pointer type-name='world_site'/>
-        </stl-vector>
-        <int32_t name="unk_74"/>
-
-        <int32_t name="civ_idx" refers-to='$$._global.available_civs[$]'/>
-
-        <stl-vector name="unk_12c"/>
-        <stl-vector name="unk_13c"/>
-        <int32_t name='unk_14c'/>
-        <int32_t name='unk_150'/>
-        <int16_t name="unk_154"/>
-        <int16_t name="unk_156"/>
-        <int16_t name="unk_158"/>
-        <int16_t name="unk_15a"/>
-        <int32_t name="unk_15c"/>
     </class-type>
 </data-definition>
 
