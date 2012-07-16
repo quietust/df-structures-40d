@@ -22,6 +22,10 @@
         </virtual-methods>
     </class-type>
 
+    <class-type type-name='viewscreen_layer' original-name='viewscreen_layerst' inherits-from='viewscreen'>
+        <stl-vector type-name='pointer' name='layer_objs'/>
+    </class-type>
+
     <struct-type type-name='interfacest'>
         <stl-vector name='reports'>
             <pointer type-name='report'/>
@@ -282,33 +286,54 @@
         <stl-string name="str_site"/>
     </class-type>
 
+    <class-type type-name='viewscreen_announcelistst' inherits-from='viewscreen'>
+        <int32_t name='position'/>
+    </class-type>
 
+    <class-type type-name='viewscreen_kitchenprefst' inherits-from='viewscreen'>
+        <int32_t/>
+        <stl-vector name='item_types'/>
+        <stl-vector name='item_subtypes'/>
+        <stl-vector name='materials'/>
+        <stl-vector name='matglosses'/>
+        <stl-vector name='quantities'/>
+        <stl-vector name='cur_flags'/>
+        <stl-vector name='valid_flags'/>
+    </class-type>
 
+    <class-type type-name='viewscreen_petst' inherits-from='viewscreen'>
+        <int32_t/>
+        <stl-vector name='pets' type-name='pointer' comment='unit OR item'/>
+        <stl-vector name='types' type-name='int8_t'/>
+        <stl-vector type-name='int32_t'/>
+        <stl-vector type-name='int8_t'/>
+        <stl-vector type-name='int8_t'/>
+    </class-type>
 
-    <class-type type-name='viewscreen_itemst' inherits-from='viewscreen'>
-        <pointer name="item" type-name="item"/>
+    <class-type type-name='viewscreen_pricest' inherits-from='viewscreen'>
+        <int16_t/>
+        <int32_t/>
+    </class-type>
 
-        <stl-vector name="entry_ref">
-            <pointer type-name="general_ref"/>
-        </stl-vector>
-        <stl-vector name="entry_indent" type-name='int16_t'/>
-        <stl-vector name="unk_34">
-            <pointer comment='NULL'/>
-        </stl-vector>
-        <stl-vector name="entry_string">
-            <pointer type-name='stl-string'/>
-        </stl-vector>
-        <stl-vector name="entry_reaction">
-            <int32_t/>
-        </stl-vector>
-        <int32_t name="cursor_pos"/>
+    <class-type type-name='viewscreen_justicest' inherits-from='viewscreen'>
+        <int16_t name='jails_needed'/>
+        <int16_t name='jails_present'/>
+        <int16_t/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <int32_t/>
+    </class-type>
 
-        <bool name="caption_uses"/>
-        <bool name="caption_contents"/>
+    <class-type type-name='viewscreen_wagesst' inherits-from='viewscreen'>
+        <int16_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_jobmanagementst' inherits-from='viewscreen'>
+        <int32_t/>
     </class-type>
 
     <class-type type-name='viewscreen_createquotast' inherits-from='viewscreen'>
-        <static-string name='str_filter' size='256'/>
+        <static-string name='str_filter' size='80'/>
         <int32_t name='top_idx'/>
         <int32_t name='sel_idx'/>
         <stl-vector name='orders'>
@@ -317,6 +342,340 @@
         <stl-vector type-name='int32_t'/>
         <bool name='want_quantity'/>
     </class-type>
+
+    <class-type type-name='viewscreen_unitjobsst' inherits-from='viewscreen'>
+        <int8_t/>
+        <int8_t/>
+        <int32_t/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+    </class-type>
+
+    <class-type type-name='viewscreen_treasurelistst' inherits-from='viewscreen'>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_entityst' inherits-from='viewscreen'>
+        <pointer name='entity' type-name='historical_entity'/>
+        <stl-vector type-name='pointer'/>
+        <int32_t/>?
+        <stl-vector type-name='pointer'/>
+        <int32_t/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <int32_t/>
+        <int16_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_civlistst' inherits-from='viewscreen'>
+        <int32_t/>
+        <stl-vector type-name='pointer'/>
+    </class-type>
+
+    <class-type type-name='viewscreen_squadst' inherits-from='viewscreen'>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_commandchainst' inherits-from='viewscreen'>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int8_t/>
+        <int16_t name='royalguards_needed'/>
+        <int16_t name='royalguards_present'/>
+        <int16_t name='fortguards_needed'/>
+        <int16_t name='fortguards_present'/>
+    </class-type>
+
+    <class-type type-name='viewscreen_overallstatusst' inherits-from='viewscreen'>
+        <int16_t name='cursor'/>
+        <int16_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_buildinglistst' inherits-from='viewscreen'>
+        <int32_t/>
+        <int8_t/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <int8_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_noblelistst' inherits-from='viewscreen'>
+        <int32_t/>
+        <stl-vector name='nobles'>
+            <pointer type-name='unit'/>
+        </stl-vector>
+        <stl-vector type-name='pointer'/>
+    </class-type>
+
+    <class-type type-name='viewscreen_noblest' inherits-from='viewscreen'>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_storesst' inherits-from='viewscreen'>
+        <static-string size='80'/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <compound>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+            <stl-vector type-name='pointer'/>
+        </compound>
+        <int8_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_itemst' inherits-from='viewscreen'>
+        <pointer name="item" type-name="item"/>
+
+        <stl-vector name="entry_ref">
+            <pointer type-name="general_ref"/>
+        </stl-vector>
+        <stl-vector type-name='pointer'/>
+        <int32_t name="cursor_pos"/>
+    </class-type>
+
+    <class-type type-name='viewscreen_buildingst' inherits-from='viewscreen'>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_jobst' inherits-from='viewscreen'>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_optionst' inherits-from='viewscreen'>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_savegamest' inherits-from='viewscreen'>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
+        <stl-string/>
+    </class-type>
+
+    <class-type type-name='viewscreen_keybindingsst' inherits-from='viewscreen'>
+        <stl-vector type-name='int32_t'/>
+        <int32_t/>
+        <int8_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_unitst' inherits-from='viewscreen'>
+        <pointer name="unit" type-name="unit"/>
+    </class-type>
+
+    <class-type type-name='viewscreen_customize_unitst' inherits-from='viewscreen'>
+        <pointer name="unit" type-name="unit"/>
+        <int8_t/>
+        <int8_t/>
+        <stl-string/>
+        <int8_t name='has_name'/>
+    </class-type>
+
+    <class-type type-name='viewscreen_movieplayerst' inherits-from='viewscreen'>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
+        <int32_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int32_t/>
+        <int8_t/>
+        <stl-string/>
+        <stl-string/>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <stl-vector type-name='pointer'/>
+    </class-type>
+
+    <class-type type-name='viewscreen_loadgamest' inherits-from='viewscreen'>
+        <int8_t/>
+        <int32_t/>
+        <stl-vector type-name='pointer'/>
+    </class-type>
+
+    <class-type type-name='viewscreen_layer_stockpilest' inherits-from='viewscreen_layer'>
+        <pointer/>
+        <int32_t/>
+        <int32_t/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+    </class-type>
+
+    <class-type type-name='viewscreen_layer_workshop_profilest' inherits-from='viewscreen_layer'>
+        <int32_t/>
+        <stl-vector type-name='pointer'/>
+    </class-type>
+
+    <class-type type-name='viewscreen_assigntradest' inherits-from='viewscreen'>
+        <int32_t/>
+        <stl-vector type-name='pointer'/>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_tradelistst' inherits-from='viewscreen'>
+        <int32_t/>
+        <int32_t/>
+        <stl-vector type-name='pointer'/>
+    </class-type>
+
+    <class-type type-name='viewscreen_barterst' inherits-from='viewscreen'>
+        <pointer type-name='unit' name='unit1'/>
+        <pointer type-name='unit' name='unit2'/>
+        <pointer type-name='building' name='building'/>
+        <static-array count='2'><stl-vector type-name='pointer'/></static-array>
+        <static-array count='2'><stl-vector type-name='pointer'/></static-array>
+        <stl-vector type-name='pointer'/>
+        <static-array count='2' type-name='int32_t'/>
+        <int8_t/>
+        <int16_t/>
+        <int8_t/>
+        <int32_t name='max_ask'/>
+        <int32_t name='max_offer'/>
+        <int32_t name='cur_ask'/>
+        <int32_t name='cur_offer'/>
+    </class-type>
+
+    <class-type type-name='viewscreen_tradegoodsst' inherits-from='viewscreen'>
+        <static-string size='200'/>
+        <stl-string/>
+        <stl-string/>
+        <int32_t/>
+        <int32_t/>
+        <pointer name='entity' type-name='historical_entity'/>
+        <int8_t/>
+        <int8_t/>
+        <static-array count='2'><stl-vector type-name='pointer'/></static-array>
+        <static-array count='2'><stl-vector type-name='pointer'/></static-array>
+        <static-array count='2' type-name='int32_t'/>
+        <int8_t/>
+        <int16_t/>
+        <int8_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_meetingst' inherits-from='viewscreen'>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_topicmeetingst' inherits-from='viewscreen'>
+        <int32_t/>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_topicmeeting_takerequest_dwarfst' inherits-from='viewscreen'>
+        <pointer name='units'/>
+        <int32_t/>
+        <int32_t/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <static-string size='200'/>
+    </class-type>
+
+    <class-type type-name='viewscreen_topicmeeting_takerequest_humanst' inherits-from='viewscreen'>
+        <static-string size='200'/>
+        <pointer name='units'/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_tradeagreementst' inherits-from='viewscreen'>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <static-string size='200'/>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_requestagreementst' inherits-from='viewscreen'>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <static-string size='200'/>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_textviewerst' inherits-from='viewscreen'>
+        <stl-string/>
+        <stl-string/>
+        <stl-vector type-name='pointer'/>
+        <stl-string/>
+        <stl-string/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <stl-string/>
+        <stl-string/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-string/>
+    </class-type>
+
+    <class-type type-name='viewscreen_setupdwarfgamest' inherits-from='viewscreen'>
+        <static-string size='200'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <int16_t name='mode'/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int32_t/>
+        <int8_t name='isInitialEmbark'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <int32_t/>?
+        <compound name='region_indoor' type-name='coord2d16'/>
+        <int16_t/>
+        <compound name='region_outdoor' type-name='coord2d16'/>
+        <int16_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='viewscreen_st' inherits-from='viewscreen'>
+    </class-type>
+
 </data-definition>
 
 <!--

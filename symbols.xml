@@ -317,6 +317,7 @@
         <vtable-address name='viewscreen_adventure_logst' value='0x75659C'/>
         <vtable-address name='viewscreen_adventure_travelst' value='0x756524'/>
         <vtable-address name='viewscreen_announcelistst' value='0x75C07C'/>
+        <vtable-address name='viewscreen_assigntradest' value='0x765E2C'/>
         <vtable-address name='viewscreen_barterst' value='0x765E5C'/>
         <vtable-address name='viewscreen_buildinglistst' value='0x75C1E4'/>
         <vtable-address name='viewscreen_buildingst' value='0x75C6E4'/>
@@ -338,8 +339,6 @@
         <vtable-address name='viewscreen_justicest' value='0x75C0DC'/>
         <vtable-address name='viewscreen_keybindingsst' value='0x75CC48'/>
         <vtable-address name='viewscreen_kitchenprefst' value='0x75C094'/>
-        <vtable-address name='viewscreen_layer_assigntradest' value='0x765E2C'/>
-        <vtable-address name='viewscreen_layer_noblelistst' value='0x75C1FC'/>
         <vtable-address name='viewscreen_layer_stockpilest' value='0x75CD84'/>
         <vtable-address name='viewscreen_layer_workshop_profilest' value='0x75CDB4'/>
         <vtable-address name='viewscreen_layerst' value='0x75CD9C'/>
@@ -348,6 +347,7 @@
         <vtable-address name='viewscreen_meetingst' value='0x765E8C'/>
         <vtable-address name='viewscreen_movieplayerst' value='0x75CC90'/>
         <vtable-address name='viewscreen_new_regionst' value='0x75B2F0'/>
+        <vtable-address name='viewscreen_noblelistst' value='0x75C1FC'/>
         <vtable-address name='viewscreen_noblest' value='0x75C214'/>
         <vtable-address name='viewscreen_optionst' value='0x75CC18'/>
         <vtable-address name='viewscreen_overallstatusst' value='0x75C1CC'/>
