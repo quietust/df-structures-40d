@@ -48,7 +48,7 @@
         <int16_t name='item_subtype'/>
 
         <compound name="item_category" type-name='item_category'/>
-        <stl-vector type-name='pointer'/>
+        <stl-string/>
         <int16_t/>
 
         <stl-vector name='items'>
@@ -146,7 +146,6 @@
         <pointer name="job" type-name='job'/>
         <pointer name="building" type-name='building'/>
     </struct-type>
-
 
     <struct-type type-name='manager_order'>
         <enum name='job_type' base-type='int16_t' type-name='job_type'/>
