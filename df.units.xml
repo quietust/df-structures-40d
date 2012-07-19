@@ -166,8 +166,8 @@
         </compound>
 
         <int16_t name='population_ref'/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='animal_leave_countdown' comment='once 0, it heads for the edge and leaves'/>
+        <int32_t name='collapse_countdown' comment='once 0, it collapses and dies'/>
         <enum type-name='mood_type' name='mood_type'/>
         <int16_t name='mood_claimedWorkshop'/>
         <int32_t name='pregnancy_timer'/>
@@ -330,12 +330,12 @@
                 <int16_t/>
             </pointer>
         </stl-vector>
-        <stl-vector>
+        <stl-vector name='friends' comment='possibly more'>
             <pointer>
+                <int32_t name='unit_id' ref-target='unit'/>
                 <int32_t/>
                 <int32_t/>
-                <int32_t/>
-                <int32_t/>
+                <int32_t name='flags'/> 0x01 == friend
             </pointer>
         </stl-vector>
         <stl-vector>

@@ -509,7 +509,7 @@
         <int16_t name='race' ref-target='creature_raw'/>
         <int32_t name='hist_figure_id' ref-target='historical_figure'/>
         <int32_t name='unit_id' ref-target='unit'/>
-        <int16_t/>
+        <int16_t name='racegloss'/>
         <int8_t name='sex' comment='-1 n/a, 0 female, 1 male'/>
         <int32_t/>
     </class-type>
