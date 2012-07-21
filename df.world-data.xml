@@ -19,8 +19,8 @@
         <enum-item name='temperature'/>
         <enum-item name='evilness'/>
         <enum-item name='drainage'/>
-        <enum-item/>
         <enum-item name='savagery'/>
+        <enum-item/>
         <enum-item/>
         <enum-item/>
         <enum-item/>
