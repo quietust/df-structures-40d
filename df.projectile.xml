@@ -14,7 +14,7 @@
     <bitfield-type type-name='projectile_flags' base-type='uint8_t'>
         <flag-bit name='no_destroy_on_impact'/>
         <flag-bit name='has_hit_ground'/>
-        <flag-bit name=''/>
+        <flag-bit/>
         <flag-bit name='can_hit_unit'/>
         <flag-bit name='pierces' comment='also destroys trees'/>
     </bitfield-type>
