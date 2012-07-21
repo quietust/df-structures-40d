@@ -60,7 +60,7 @@
         <enum-item name='FLUX'/>
     </enum-type>
 
-    <struct-type type-name='matgloss_stone' instance-vector='$global.world.raws.matgloss_stone'>
+    <struct-type type-name='matgloss_stone' instance-vector='$global.world.raws.matgloss.stone'>
         <stl-string name='id'/>
         <code-helper name='describe'>$.id</code-helper>
 
@@ -86,7 +86,7 @@
         <enum-item name='GLASS'/>
     </enum-type>
 
-    <struct-type type-name='matgloss_gem' instance-vector='$global.world.raws.matgloss_gem'>
+    <struct-type type-name='matgloss_gem' instance-vector='$global.world.raws.matgloss.gem'>
         <stl-string name='id'/>
         <code-helper name='describe'>$.id</code-helper>
 
@@ -134,7 +134,7 @@
         <enum-item name='MILL_DYE'/>
     </enum-type>
 
-    <struct-type type-name='matgloss_plant' instance-vector='$global.world.raws.matgloss_plant'>
+    <struct-type type-name='matgloss_plant' instance-vector='$global.world.raws.matgloss.plant'>
         <stl-string name='id'/>
         <code-helper name='describe'>$.id</code-helper>
 
@@ -223,7 +223,7 @@
         <enum-item name='BIOME_SUBTERRANEAN_LAVA'/>
     </enum-type>
 
-    <struct-type type-name='matgloss_wood' instance-vector='$global.world.raws.matgloss_wood'>
+    <struct-type type-name='matgloss_wood' instance-vector='$global.world.raws.matgloss.wood'>
         <stl-string name='id'/>
         <code-helper name='describe'>$.id</code-helper>
         <df-flagarray name='flags' index-enum='matgloss_wood_flags'/>

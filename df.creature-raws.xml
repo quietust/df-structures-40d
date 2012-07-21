@@ -411,7 +411,7 @@
         <static-array type-name='int8_t' name='flags' count='6'/>
     </struct-type>
 
-    <struct-type type-name='body_template' instance-vector='$global.world.raws.body_templates'>
+    <struct-type type-name='body_template' instance-vector='$global.world.raws.body.templates'>
         <stl-string name='id'/>
         <stl-vector name='parts'>
             <pointer type-name='body_part_template'/>
