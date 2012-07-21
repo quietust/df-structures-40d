@@ -206,8 +206,24 @@
         <xsl:param name='level' select='-1'/>
         <xsl:attribute name='ld:is-container'>true</xsl:attribute>
         <xsl:choose>
+            <xsl:when test='@pointer-type'>
+                <ld:field ld:meta='pointer' ld:is-container='true'>
+                    <xsl:attribute name='ld:level'><xsl:value-of select='$level'/></xsl:attribute>
+                    <xsl:attribute name='type-name'><xsl:value-of select='@pointer-type'/></xsl:attribute>
+                    <xsl:apply-templates select='@refers-to|@ref-target|@aux-value'/>
+                    <ld:field>
+                        <xsl:apply-templates select='@refers-to|@ref-target|@aux-value'/>
+                        <xsl:call-template name='lookup-type-ref'>
+                            <xsl:with-param name='name' select="@pointer-type"/>
+                            <xsl:with-param name="level" select="$level+1"/>
+                        </xsl:call-template>
+                    </ld:field>
+                </ld:field>
+                <xsl:apply-templates select='node()'/>
+            </xsl:when>
             <xsl:when test='@type-name'>
                 <ld:field>
+                    <xsl:apply-templates select='@refers-to|@ref-target|@aux-value'/>
                     <xsl:call-template name='lookup-type-ref'>
                         <xsl:with-param name='name' select="@type-name"/>
                         <xsl:with-param name="level" select="$level"/>
