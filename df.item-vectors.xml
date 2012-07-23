@@ -137,7 +137,7 @@
             <item-attr name='generic_item' value='BOX'/>
             BASE*
         </enum-item>
-        <enum-item name='ANY_GENERIC29'>
+        <enum-item name='ANY_CAN_ROT'>
             <item-attr name='generic_item' value='CORPSE'/>
             <item-attr name='generic_item' value='CORPSEPIECE'/>
             <item-attr name='generic_item' value='MEAT'/>
