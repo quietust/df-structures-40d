@@ -197,8 +197,8 @@
         <int32_t name='group_id' ref-target='historical_entity'/>
         <int32_t name='race_id' ref-target='creature_raw'/>
 
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int8_t'/>
+        <stl-vector name='farm_crops' type-name='int16_t' ref-target='matgloss_plant'/>
+        <stl-vector name='farm_seasons' type-name='int8_t'/>
 
         <static-array type-name='int16_t' count='3'/>
         <static-array type-name='int8_t' count='3'/>
