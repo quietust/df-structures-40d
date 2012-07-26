@@ -132,10 +132,9 @@
         <enum-item name='ANY_EDIBLE_CARNIVORE'/>
         <enum-item name='ANY_EDIBLE_BONECARN'/>
         <enum-item name='ANY_EDIBLE_VERMIN'/>
-        <enum-item name='ANY_GENERIC28'>
+        <enum-item name='ANY_FOOD_CONTAINER'>
             <item-attr name='generic_item' value='BARREL'/>
             <item-attr name='generic_item' value='BOX'/>
-            BASE*
         </enum-item>
         <enum-item name='ANY_CAN_ROT'>
             <item-attr name='generic_item' value='CORPSE'/>
