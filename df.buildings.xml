@@ -263,23 +263,21 @@
 
     <struct-type type-name='building_design'>
         <int32_t name='architect' ref-target='historical_figure'/>
-        <int32_t name='unk2' comment='-1'/>
-        <int16_t name='unk3'/>
-        <int32_t name='builder1' ref-target='historical_figure'/>
-        <int32_t name='unk5' comment='-1'/>
-        <int16_t name='unk6'/>
-        <int16_t name='build_timer1' comment='+1 per 10 frames while building'/>
-        <int32_t name='builder2' ref-target='historical_figure'/>
-        <int16_t name='build_timer2'/>
-        <int16_t name='unk8b'/>
-        <int16_t name='unk9'/>
+        <int16_t name='design_skill'/>
+        <int32_t name='builder' ref-target='historical_figure'/>
+        <int16_t name='build_skill'/>
+        <int16_t/>
+        <int32_t/>
+        <int16_t/>
+        <int16_t name='design_quality'/>
+        <int16_t name='build_quality'/>
         <bitfield name='flags' base-type='uint32_t'>
             <flag-bit name='rough' comment='rough gabbro road'/>
             <flag-bit name='built'/>
             <flag-bit name='designed'/>
         </bitfield>
-        <int32_t name='unk11'/>
-        <int32_t name='unk12'/>
+        <int32_t/>
+        <int32_t/>
     </struct-type>
 
     <class-type type-name='building_chairst' inherits-from='building_actual'>
