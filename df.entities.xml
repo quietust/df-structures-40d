@@ -239,19 +239,35 @@
             <stl-vector name='meat_fish_recipes'>
                 <pointer>
                     <int16_t name='subtype' ref-target='itemdef_foodst'/>
-                    <stl-vector type-name='int16_t'/>
-                    <stl-vector type-name='int16_t'/>
-                    <stl-vector type-name='int16_t'/>
-                    <stl-vector type-name='int16_t'/>
+                    <stl-vector name='item_type'>
+                        <enum base-type='int16_t' type-name='item_type'/>
+                    </stl-vector>
+                    <stl-vector name='item_subtype'>
+                        <int16_t refers-to='(item-subtype-target $$._parent._parent.item_type[$$._key] $)'/>
+                    </stl-vector>
+                    <stl-vector name='material' comment='for certain item types, these are creature/plant IDs'>
+                        <enum base-type='int16_t' type-name='material_type'/>
+                    </stl-vector>
+                    <stl-vector name='matgloss'>
+                        <int16_t refers-to='(matgloss-target $$._parent._parent.material[$$._key] $)'/>
+                    </stl-vector>
                 </pointer>
             </stl-vector>
             <stl-vector name='other_recipes'>
                 <pointer>
                     <int16_t name='subtype' ref-target='itemdef_foodst'/>
-                    <stl-vector type-name='int16_t'/>
-                    <stl-vector type-name='int16_t'/>
-                    <stl-vector type-name='int16_t'/>
-                    <stl-vector type-name='int16_t'/>
+                    <stl-vector name='item_type'>
+                        <enum base-type='int16_t' type-name='item_type'/>
+                    </stl-vector>
+                    <stl-vector name='item_subtype'>
+                        <int16_t refers-to='(item-subtype-target $$._parent._parent.item_type[$$._key] $)'/>
+                    </stl-vector>
+                    <stl-vector name='material' comment='for certain item types, these are creature/plant IDs'>
+                        <enum base-type='int16_t' type-name='material_type'/>
+                    </stl-vector>
+                    <stl-vector name='matgloss'>
+                        <int16_t refers-to='(matgloss-target $$._parent._parent.material[$$._key] $)'/>
+                    </stl-vector>
                 </pointer>
             </stl-vector>
 

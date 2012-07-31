@@ -174,7 +174,7 @@
             <stl-vector name='item_subtype'>
                 <int32_t refers-to='(item-subtype-target $$._parent._parent.item_type[$$._key] $)'/>
             </stl-vector>
-            <stl-vector name='material' comment='I think these are actually creature/plant IDs...'>
+            <stl-vector name='material' comment='for certain item types, these are creature/plant IDs'>
                 <enum base-type='int32_t' type-name='material_type'/>
             </stl-vector>
             <stl-vector name='matgloss'>
