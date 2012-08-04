@@ -353,7 +353,7 @@
                 <ret-type><pointer type-name='item_stockpile_ref'/></ret-type>
             </vmethod>
 
-            <vmethod name='addImprovement2'/>
+            <vmethod name='addDye'/>
             <vmethod name='addImage'/>
             <vmethod name='addImprovementsFromItem'/>
             <vmethod ret-type='int32_t' name='getThreadDyeValue'> <int32_t comment='unused'/> </vmethod>
@@ -715,8 +715,8 @@
 
     <class-type type-name='item_foodst' inherits-from='item_crafted'>
         <pointer name='subtype' type-name='itemdef_foodst'/>
-        <int32_t/>
-        <int16_t/>
+        <int32_t name='entity' ref-target='historical_entity'/>
+        <int16_t name='recipe_id'/>
         <stl-vector name='ingredients'>
             <pointer>
                 <int16_t/>
