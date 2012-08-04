@@ -394,7 +394,7 @@
         <int16_t name='wear'/>
         <int32_t name='wear_timer' comment='counts up to 806400'/>
 
-        <int32_t name='unk3' init-value='-1'/>
+        <int32_t name='temp_updated_frame' init-value='-1'/>
     </class-type>
 
     -- CRAFTED ITEM
@@ -406,7 +406,7 @@
 
         <int16_t name='maker_race' ref-target='creature_raw'/>
         <enum base-type='int16_t' name='quality' type-name='item_quality'/>
-        <int16_t/>
+        <int16_t name='skill_level'/>
         <int32_t name='maker' ref-target='historical_figure'/>
     </class-type>
 
@@ -511,7 +511,7 @@
         <int32_t name='unit_id' ref-target='unit'/>
         <int16_t name='racegloss'/>
         <int8_t name='sex' comment='-1 n/a, 0 female, 1 male'/>
-        <int32_t/>
+        <int32_t name='rot_timer'/>
     </class-type>
 
     <class-type type-name='item_weaponst' inherits-from='item_constructed'>
@@ -576,13 +576,13 @@
     <class-type type-name='item_anvilst' inherits-from='item_constructed'/>
 
     <class-type type-name='item_corpsepiecest' inherits-from='item_actual'>
-        <int16_t/>
+        <int16_t name='part_id'/>
         <int16_t name='race' ref-target='creature_raw'/>
-        <int16_t/>
-        <int8_t/>
+        <int16_t name='racegloss'/>
+        <int8_t name='sex'/>
         <int32_t name='hist_figure_id' ref-target='historical_figure'/>
         <int32_t name='unit_id' ref-target='unit'/>
-        <int8_t/>
+        <int8_t name='is_generic' comment='set to 1 and it shows up as "body part" instead of by name'/>
         <int32_t name='rot_timer'/>
     </class-type>
 
@@ -651,7 +651,7 @@
         <int16_t name='dye_matgloss' refers-to='(matgloss-target $$._parent.dye_material $)'/>
         <int32_t name='dye_maker' ref-target='historical_figure'/>
         <int16_t name='dye_quality'/>
-        <int16_t/>
+        <int16_t name='dye_skill'/>
         <int32_t/>
     </class-type>
 
