@@ -59,9 +59,9 @@
         <int16_t name='progress_population'/>
         <int16_t name='progress_trade'/>
         <int16_t name='progress_production'/>
-        <bool/>
-        <bool/>
-        <bool/>
+        <bool name='king_arrived'/>
+        <bool name='king_hasty'/>
+        <bool name='anvil_arrived'/>
         <bool name='economy_active'/>
         <bool/>
         <bool name='justice_active'/>
