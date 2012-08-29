@@ -406,17 +406,10 @@
             <int16_t ref-target='matgloss_stone'/>
         </static-array>
 
-        <static-array name='unknown_420d4'
-                      count='2810' type-name='int16_t'/>
-
+        <static-array count='2810' type-name='int16_t'/>
         <static-array count='20000' type-name='int32_t'/>
-        <static-array count='3' type-name='int32_t'/>
-        <int32_t/>
-        <static-array count='14364' type-name='int8_t'/>
-        <static-array count='65536' type-name='int8_t'/>
-        <static-array count='80' type-name='int8_t'/>
         <static-array count='20000' type-name='int32_t'/>
-        <int32_t/>
+        <static-array count='20000' type-name='int32_t'/>
         <static-array count='20000' type-name='int8_t' name='mapElevationRotation'/>
         <bool name='showFakeElevationDividers'/>
         <static-array count='3' type-name='int32_t' name='feature_type'/>
@@ -455,7 +448,7 @@
         </compound>
         <int16_t name='surface_z'/>
         <static-array count='480' type-name='int16_t'/>
-        <static-array count='480' type-name='int16_t'/>
+        <static-array count='480' type-name='int16_t' name='cliffEdgeXs'/> tiles more than 5 to the right of here get marked Subterranean when mined
         <static-array count='960' type-name='int16_t' name='chasmCenterXs'/> X-coordinates that turn red when the chasm is filled with magma
         <bool name='chasmIsDead'/>
         <int16_t name='chasm_magma_counter'/>
