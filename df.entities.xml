@@ -120,12 +120,12 @@
             </pointer>
         </stl-vector>
 
-        <stl-vector name='unit_ids'>
-            <int32_t ref-target='unit'/>
+        <stl-vector name='histfig_ids'>
+            <int32_t ref-target='historical_figure'/>
         </stl-vector>
 
         <stl-vector name='nemesis_ids'>
-            <int32_t ref-target='historical_figure'/>
+            <int32_t ref-target='nemesis_record'/>
         </stl-vector>
 
         <compound name='resources'>
