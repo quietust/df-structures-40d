@@ -263,7 +263,8 @@
             <int16_t/>
             <int16_t name='webbed'/>
             <int16_t name='paralysis'/>
-            <static-array type-name='int32_t' count='3'/>
+            <compound name='guts1_pos' type-name='coord16'/>
+            <compound name='guts2_pos' type-name='coord16'/>
             <int16_t name='soldier_mood_countdown'/>
             <enum name='soldier_mood' base-type='int16_t'>
                 <enum-item name='None' value='-1'/>
