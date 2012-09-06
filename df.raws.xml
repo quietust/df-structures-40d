@@ -7,8 +7,8 @@
             <stl-vector name='stone'>
                 <pointer type-name='matgloss_stone'/>
             </stl-vector>
-            <stl-vector name='gem'>
-                <pointer type-name='matgloss_gem'/>
+            <stl-vector name='metal'>
+                <pointer type-name='matgloss_metal'/>
             </stl-vector>
             <stl-vector name='plant'>
                 <pointer type-name='matgloss_plant'/>
