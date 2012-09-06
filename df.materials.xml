@@ -146,7 +146,7 @@
         <stl-string name='mill_name'/>
         <stl-string name='extract_name'/>
 
-        <static-array count='7'> // plant, CLOTH, EXTRACT, DRINK, CHEESE
+        <static-array count='5' name='temperatures'> // plant, CLOTH, EXTRACT, DRINK, CHEESE
             <uint16_t name='spec_heat'/>
             <uint16_t name='heatdam_point'/>
             <uint16_t name='colddam_point'/>
