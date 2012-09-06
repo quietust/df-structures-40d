@@ -11,8 +11,8 @@
         <global-address name='gamemode' value='0x9fc2b8'/>
         <global-address name='gametype' value='0x9fc2bc'/>
 
-        <global-address name='ui_area_map_width' value=''/>
-        <global-address name='ui_menu_width' value=''/>
+        <global-address name='ui_area_map_width'/>
+        <global-address name='ui_menu_width'/>
 
         .bss compound - THAT IS, NOT SIMPLE INTEGER VARIABLES!
 
@@ -20,39 +20,39 @@
         <global-address name='enabler' value='0x13814a0'/>
         <global-address name='gps' value='0x1707f38'/>
         <global-address name='gview' value='0x1393270'/>
-        <global-address name='init' value=''/>
+        <global-address name='init'/>
         <global-address name='ui' value='0x1381ed8'/>
         <global-address name='ui_advmode' value='0x1707e18'/>
-        <global-address name='ui_build_selector' value=''/>
-        <global-address name='ui_look_list' value=''/>
+        <global-address name='ui_build_selector'/>
+        <global-address name='ui_look_list'/>
         <global-address name='ui_sidebar_menus' value='0x1705318'/>
         <global-address name='world' value='0x156f810'/>
-        <global-address name='timed_events' value=''/>
-        <global-address name='flows' value=''/>
+        <global-address name='timed_events'/>
+        <global-address name='flows'/>
 
         .bss primitive
 
-        <global-address name='cur_year' value=''/>
-        <global-address name='cur_year_tick' value=''/>
+        <global-address name='cur_year'/>
+        <global-address name='cur_year_tick'/>
 
-        <global-address name='current_weather' value=''/>
+        <global-address name='current_weather'/>
 
-        <global-address name='job_next_id' value=''/>
-        <global-address name='pause_state' value=''/>
+        <global-address name='job_next_id'/>
+        <global-address name='pause_state'/>
 
         <global-address name='ui_building_item_cursor'/>
-        <global-address name='ui_look_cursor' value=''/>
-        <global-address name='ui_selected_unit' value=''/>
-        <global-address name='ui_unit_view_mode' value=''/>
+        <global-address name='ui_look_cursor'/>
+        <global-address name='ui_selected_unit'/>
+        <global-address name='ui_unit_view_mode'/>
         <global-address name='ui_workshop_in_add'/>
         <global-address name='ui_workshop_job_cursor'/>
 
-        <global-address name='window_x' value=''/>
-        <global-address name='window_y' value=''/>
-        <global-address name='window_z' value=''/>
+        <global-address name='window_x'/>
+        <global-address name='window_y'/>
+        <global-address name='window_z'/>
 
 <!--
-        <vtable-address name='' value=''/>
+        <vtable-address name=''/>
 -->
     </symbol-table>
 </data-definition>
