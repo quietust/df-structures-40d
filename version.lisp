@@ -1,2 +1,2 @@
-(defparameter *df-version-str* "v0.23.130.23a")
-(defparameter *windows-timestamp* #x45b03c59)
+(defparameter *df-version-str* "v0.28.181.40d")
+(defparameter *windows-timestamp* #x48c330df)
