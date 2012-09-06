@@ -20,4 +20,6 @@
 (reload)
 (resume)
 
+(open-annotations (concatenate 'string *df-version-str* ".lst"))
+
 (browse @global.*)
