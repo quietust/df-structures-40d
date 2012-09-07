@@ -404,7 +404,7 @@
 
     <struct-type type-name='feature'>
         <stl-vector name='population'>
-            <pointer type-name='world_population'/>
+            <pointer/>
         </stl-vector>
         <int32_t/>
         <pointer name='feature_specinfo'/>
