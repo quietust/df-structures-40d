@@ -79,13 +79,15 @@
         <stl-string name='first_name'/>
         <stl-string name='nickname'/>
 
-        <static-array name='parts' count='7'>
-            <int32_t name='word' ref-target='language_word'/>
-            <enum name='part_of_speech' type-name='part_of_speech'/>
+        <static-array name='words' count='7'>
+            <int32_t ref-target='language_word'/>
+        </static-array>
+        <static-array name='parts_of_speech' count='7'>
+            <enum base-type='int16_t' type-name='part_of_speech'/>
         </static-array>
 
         <int32_t name='language' ref-target='language_translation'/>
-        <int16_t/>
+        <int16_t name='unknown'/>
 
         <bool name='has_name'/>
 
@@ -99,11 +101,11 @@
                    (lwords $language.words))
               (flet ((get-words (start end)
                        (loop for i from start to end
-                         for word = $.parts[i].word
+                         for word = $.words[i]
                          collect $lwords[word].value))
                      (get-english (start end)
                        (loop for i from start to end
-                         for word = $.parts[i].word and ps = $.parts[i].part_of_speech
+                         for word = $.words[i] and ps = $.parts_of_speech[i]
                          collect $english[word].forms[ps])))
                 (list
                  (fmt "Name:~:(~@[ ~A~]~@[ '~A'~]~@[ ~{~A~}~]~@[ ~{~A~}~]~@[ ~{~A~}~]~)"
@@ -115,7 +117,7 @@
                  (fmt "aka~:(~@[ ~A~]~@[ ~{~A~}~]~@[ the ~A~]~@[ of ~{~A~}~]~)"
                       (if (> (length fname) 0) fname)
                       (flatten (get-english 0 1))
-                      (when (>= $.parts[5].word 0)
+                      (when (>= $.words[5] 0)
                         (apply #'format nil "~@[~A ~]~@[~A ~]~@[~A-~]~A" (get-english 2 5)))
                       (flatten (get-english 6 6)))))))
         </code-helper>
