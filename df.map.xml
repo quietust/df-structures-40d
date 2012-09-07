@@ -419,7 +419,7 @@
         <enum-item name='Discovered'/>
     </enum-type>
 
-    <struct-type type-name='feature_init' original-name='feature_initst'>
+    <struct-type type-name='feature_init'>
         <enum name='type' base-type='int16_t' type-name='feature_type'/>
         <stl-vector/>
         <df-flagarray name='flags' index-enum='feature_init_flags'/>
