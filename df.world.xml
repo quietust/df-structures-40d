@@ -1,15 +1,32 @@
 <data-definition>
     <struct-type type-name='world'>
-        <stl-vector name='gem_clusters'>
-            <pointer type-name='mineral_cluster'/>
-        </stl-vector>
-        <stl-vector name='stone_clusters'>
-            <pointer type-name='mineral_cluster'/>
-        </stl-vector>
-
         <stl-vector name='engravings'>
             <pointer type-name='engraving'/>
         </stl-vector>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+
+<!--
 
         <stl-vector name='vermin'>
             <pointer type-name='vermin'/>
@@ -19,35 +36,6 @@
             <pointer type-name='coord16'/>
         </stl-vector>
 
-        <stl-vector name='drink_areas'>
-            <pointer>
-                <int32_t/>
-                <compound type-name='coord16' name='pos'/>
-                <int8_t/>
-                <int16_t/>
-            </pointer>
-        </stl-vector>
-        <stl-vector name='caveriver_tiles'>
-            <pointer type-name='coord16'/>
-        </stl-vector>
-        <stl-vector name='chasm_tiles'>
-            <pointer type-name='coord16'/>
-        </stl-vector>
-        <stl-vector name='magmaflow_tiles'>
-            <pointer type-name='coord16'/>
-        </stl-vector>
-        <stl-vector name='waterfalls'>
-            <pointer>
-                <enum type-name='flow_type' base-type='int16_t' name='type'/>
-                <compound type-name='coord16' name='pos'/>
-            </pointer>
-        </stl-vector>
-        <stl-vector name='cavein_regions'>
-            <pointer>
-                <compound type-name='coord16' name='pos'/>
-                <int16_t name='timer'/>
-            </pointer>
-        </stl-vector>
         <stl-vector name='campfires'>
             <pointer>
                 <compound type-name='coord' name='pos'/>
@@ -106,6 +94,7 @@
         <stl-vector name='populations'>
             <pointer type-name='local_population'/>
         </stl-vector>
+-->
 
         --
 
@@ -128,6 +117,10 @@
                 <pointer type-name='historical_entity'/>
             </stl-vector>
         </compound>
+
+        -- Unknown
+
+        <padding size='80004' comment='0 bytes'/>
 
         -- Units
 
@@ -406,7 +399,7 @@
             <int16_t ref-target='matgloss_stone'/>
         </static-array>
 
-        <static-array count='53'/>
+        <static-array count='53'>
             <static-array count='53' type-name='int16_t'/>
         </static-array>
 

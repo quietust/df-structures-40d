@@ -79,77 +79,137 @@
         </code-helper>
     </struct-type>
 
-    <struct-type type-name='mineral_cluster'>
-        <int16_t name='x1'/>
-        <int16_t name='x2'/>
-        <int16_t name='y1'/>
-        <int16_t name='y2'/>
-        <int16_t name='z'/>
-        <int16_t name='color'/>
-        <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
-    </struct-type>
+    <enum-type type-name='tile_traffic' base-type='uint32_t'>
+        <enum-item name='Normal'/>
+        <enum-item name='Low'/>
+        <enum-item name='High'/>
+        <enum-item name='Restricted'/>
+    </enum-type>
 
-    <bitfield-type type-name='tile_color' base-type='uint8_t'>
-        <flag-bit name='color' count='4'/>
-        <flag-bit name='mud'/>
-        <flag-bit name='rain'/>
-        <flag-bit name='snow'/>
-        <flag-bit name='dry'/>
-    </bitfield-type>
+    <enum-type type-name='tile_dig_designation' base-type='uint32_t'>
+        <enum-item name='No' comment='no designation'/>
+        <enum-item name='Default' comment='dig walls, remove stairs and ramps, gather plants, fell trees'/>
+        <enum-item name='UpDownStair'/>
+        <enum-item name='Channel'/>
+        <enum-item name='Ramp'/>
+        <enum-item name='DownStair'/>
+        <enum-item name='UpStair'/>
+    </enum-type>
 
-    <bitfield-type type-name='tile_designation' base-type='uint32_t'>
-        <flag-bit name='pile'/>
-        <flag-bit/>
-        <flag-bit/>
-        <flag-bit/>
-        <flag-bit/>
-        <flag-bit/>
-        <flag-bit name='smooth'/>
-        <flag-bit name='dig'/>
+    <enum-type type-name='tile_liquid' base-type='uint32_t'>
+        <enum-item name='Water'/>
+        <enum-item name='Magma'/>
+    </enum-type>
 
-        <flag-bit name='fortification'/>
+    <bitfield-type type-name='tile_designation'>
+        <flag-bit name='flow_size' count='3' comment='liquid amount'/>
+        <flag-bit name='pile' comment='stockpile?'/>
+        <flag-bit name='dig' count='3' type-name='tile_dig_designation'/>
+        <flag-bit name='smooth' count='2'/>
         <flag-bit name='hidden'/>
-        <flag-bit/>
-        <flag-bit/>
-        <flag-bit name='stone_type' count='4'/>
 
-        <flag-bit/>
-        <flag-bit/>
-        <flag-bit/>
+        <flag-bit name='geolayer_index' count='4'/>
+        <flag-bit name='light'/>
+        <flag-bit name='subterranean'/>
+        <flag-bit name='outside'/>
+        <flag-bit name='biome' count='4'/>
+
+        <flag-bit name='liquid_type' type-name='tile_liquid'/>
+
+        <flag-bit name='water_table' comment='aquifer'/>
+        <flag-bit name='rained'/>
+
+        <flag-bit name='traffic' count='2' type-name='tile_traffic'/>
+
+        <flag-bit name='flow_forbid'/>
+        <flag-bit name='liquid_static'/>
+        <flag-bit name='moss'/>
+        <flag-bit name='feature'/>
+        <flag-bit name='water_stagnant'/>
+        <flag-bit name='water_salt'/>
     </bitfield-type>
+
+    <enum-type type-name='tile_building_occ' base-type='uint32_t'>
+        <enum-item name='None' comment='no building'/>
+        <enum-item name='Planned' comment='nothing built yet'/>
+        <enum-item name='Passable'/>
+        <enum-item name='Obstacle' comment='workshop tile; ~fortification'/>
+        <enum-item name='Well'/>
+        <enum-item name='Floored' comment='depot; lowered bridge'/>
+        <enum-item name='Impassable'/>
+        <enum-item name='Dynamic' comment='doors, grates, etc'/>
+    </enum-type>
 
     <bitfield-type type-name='tile_occupancy'>
+        <flag-bit name='building' count='3' type-name='tile_building_occ'/>
         <flag-bit name='unit' comment='standing'/>
         <flag-bit name='unit_grounded' comment='prone'/>
         <flag-bit name='item'/>
-        <flag-bit name='building' count='2'/>
-        <flag-bit name='moss'/>
-        <flag-bit name='water'/>
+        <flag-bit name='mud'/>
         <flag-bit name='vomit'/>
 
         <flag-bit name='arrow_color' count='4'/>
         <flag-bit name='blood_g' count='2'/>
         <flag-bit name='blood_b' count='2'/>
-
         <flag-bit name='pus' count='2'/>
         <flag-bit name='blood_m' count='2'/>
         <flag-bit name='blood_c' count='2'/>
         <flag-bit name='ichor' count='2'/>
-
         <flag-bit name='goo' count='2'/>
         <flag-bit name='slime' count='2'/>
         <flag-bit name='blood' count='2'/>
         <flag-bit name='arrow_variant'/>
-        <flag-bit name='lava'/>
+        <flag-bit name='snow'/>
     </bitfield-type>
 
     <enum-type type-name='block_flags'>
         <enum-item name='designated' comment='for jobs etc'/>
+        <enum-item name='update_temperature'/>
+        <enum-item name='update_liquid'/>
+        <enum-item name='update_liquid_twice'
+                  comment='Protects UpdateLiquid from being cleared the first time.'/>
     </enum-type>
+
+    <enum-type type-name='tile_liquid_flow_dir' base-type='uint16_t'>
+        <enum-item name='none'/>
+        <enum-item name='south'/>
+        <enum-item name='east'/>
+        <enum-item name='northeast'/>
+        <enum-item name='west'/>
+        <enum-item name='northwest'/>
+        <enum-item name='southeast'/>
+        <enum-item name='southwest'/>
+        <enum-item name='inv_8'/>
+        <enum-item name='inv_9'/>
+        <enum-item name='north'/>
+        <enum-item name='inv_b'/>
+        <enum-item name='inv_c'/>
+        <enum-item name='inv_d'/>
+        <enum-item name='inv_e'/>
+        <enum-item name='inv_f'/>
+    </enum-type>
+
+    <bitfield-type type-name='tile_liquid_flow' base-type='uint16_t'>
+        <flag-bit name='temp_flow_timer' count='3' comment='set when water sloshes around, counts down to zero'/>
+        <flag-bit name='unk_1' count='3'/>
+        <flag-bit name='perm_flow_dir' count='4' type-name='tile_liquid_flow_dir'/>
+        <flag-bit name='unk_2' count='6' comment='periodically set whenever perm_flow_dir is nonzero'/>
+    </bitfield-type>
+
+    <struct-type type-name='tile_bitmask' custom-methods='true'>
+        <static-array name='bits' count='16'>
+            <uint16_t/>
+        </static-array>
+    </struct-type>
 
     <struct-type type-name='map_block'>
         <df-flagarray name='flags' index-enum='block_flags'/>
+
+        <stl-vector name='block_events'>
+            <pointer type-name='block_square_event'/>
+        </stl-vector>
+18
+        <int32_t name='local_feature'/>
 
         <stl-vector name='items'>
             <int32_t ref-target='item'/>
@@ -159,12 +219,19 @@
             <pointer type-name='flow'/>
         </stl-vector>
 
-        <int32_t name='unk_28'/>
-        <int32_t name='unk_2c'/>
+        <compound name='flow_pool' type-name='flow_reuse_pool'/>
 
-        <static-array name='color' count='16'>
+        <stl-vector name='plants'>
+            <pointer type-name='plant'/>
+        </stl-vector>
+
+54
+        <compound name='map_pos' type-name='coord'/>
+        <compound name='region_pos' type-name='coord2d'/>
+
+        <static-array name='tiletype' count='16'>
             <static-array count='16'>
-                <compound type-name='tile_color'/>
+                <enum base-type='int16_t' type-name='tiletype'/>
             </static-array>
         </static-array>
         <static-array name='designation' count='16'>
@@ -172,33 +239,32 @@
                 <compound type-name='tile_designation'/>
             </static-array>
         </static-array>
-        <static-array name='tiletype' count='16'>
-            <static-array count='16'>
-                <enum base-type='int8_t' type-name='tiletype'/>
-            </static-array>
-        </static-array>
-
         <static-array name='occupancy' count='16'>
             <static-array count='16'>
                 <compound type-name='tile_occupancy'/>
             </static-array>
         </static-array>
-        <static-array count='16'>
+
+        <static-array name='unk9' count='16'>
             <static-array count='16'>
                 <int8_t/>
             </static-array>
         </static-array>
-        <static-array count='16' comment='temporary'>
+
+        <static-array name='path_cost' count='16'>
+            <comment>flood; 256*cost for straight, 362*cost for diagonal</comment>
             <static-array count='16'>
-                <uint32_t/>
+                <int32_t/>
             </static-array>
         </static-array>
-        <static-array name='passable' count='16' comment='temporary'>
+        <static-array name='path_tag' count='16'>
+            <comment>flood; sync to path_distance; same value; inc per run; reset to 0 on wraparound</comment>
             <static-array count='16'>
                 <uint16_t/>
             </static-array>
         </static-array>
-        <static-array count='16'>
+        <static-array name='walkable' count='16'>
+            <comment>0 = non-walkable; same nonzero at A and B = walkable from A to B</comment>
             <static-array count='16'>
                 <uint16_t/>
             </static-array>
@@ -215,14 +281,116 @@
             </static-array>
         </static-array>
 
-        <static-array count='16'>
+        <static-array name='unk13' count='16'>
             <static-array count='16'>
                 <uint16_t/>
             </static-array>
         </static-array>
+        <static-array name='liquid_flow' count='16'>
+            <static-array count='16'>
+                <compound type-name='tile_liquid_flow'/>
+            </static-array>
+        </static-array>
 
-        <compound name='pos' type-name='coord16'/>
+        <static-array name='region_offset' count='9'>
+            <uint8_t/>
+        </static-array>
     </struct-type>
+
+    <struct-type type-name='cave_column_link'>
+        <pointer name='item'/>
+        <pointer name='prev' type-name='cave_column_link'/>
+        <pointer name='next' type-name='cave_column_link'/>
+    </struct-type>
+
+    <struct-type type-name='map_block_column'>
+        <int16_t name="unk_0"/>
+        <int16_t name="unk_2"/>
+        <int16_t name="unk_4"/>
+
+        <stl-vector name="unk_8">
+            <pointer>
+                <static-array name='unk1' count='8' type-name='int16_t'/>
+                <static-array name='unk2' count='4' type-name='uint8_t'/>
+            </pointer>
+        </stl-vector>
+
+        <int16_t name="z_base"/>
+
+        <static-array name='cave_columns' count='16'>
+            <static-array count='16'>
+                <df-linked-list type-name='cave_column_link'/>
+            </static-array>
+        </static-array>
+
+        <stl-vector name='column_rectangles'>
+            <pointer/>
+        </stl-vector>
+
+        <int16_t name='unk_c2c'/>
+        <df-flagarray name='flags'/>
+
+        <int16_t name='tile_min_x'/>
+        <int16_t name='tile_min_y'/>
+        <int16_t name='unk_c3c' comment='uninitialized'/>
+        <int16_t name='unk_c3e'/>
+        <int16_t name='unk_c40'/>
+    </struct-type>
+
+    <enum-type type-name='block_square_event_type'>
+        <enum-item name='mineral'/>
+        <enum-item name='frozen_liquid'/>
+        <enum-item name='world_construction'/>
+        <enum-item name='material_spatter'/>
+        <enum-item name='grass'/>
+    </enum-type>
+
+    <class-type type-name='block_square_event' original-name='block_square_eventst'>
+        <virtual-methods>
+            <vmethod ret-type='block_square_event_type' name='getType'/>
+            <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
+            <vmethod name='read_file'>
+                <pointer comment='file_compressorst'/>
+                <int32_t name='loadversion'/>
+            </vmethod>
+            <vmethod ret-type='bool' name='isEmpty'/>
+            <vmethod is-destructor='true'/>
+
+            <vmethod name='checkTemperature'>
+                <int16_t name='x'/>
+                <int16_t name='y'/>
+                <int16_t name='temperature'/>
+            </vmethod>
+        </virtual-methods>
+    </class-type>
+
+    <class-type type-name='block_square_event_mineralst' inherits-from='block_square_event' custom-methods='true'>
+        <int32_t name='inorganic_mat' ref-target='inorganic_raw'/>
+        <compound name='tile_bitmask' type-name='tile_bitmask'/>
+        <bitfield name='flags'>
+            <flag-bit name='discovered'/>
+            <flag-bit name='cluster' comment='??'/>
+            <flag-bit name='vein' comment='??'/>
+        </bitfield>
+    </class-type>
+
+    <class-type type-name='block_square_event_frozen_liquidst' inherits-from='block_square_event'>
+        <static-array name='tiles' count='16'>
+            <static-array count='16'>
+                <enum base-type='int16_t' type-name='tiletype'/>
+            </static-array>
+        </static-array>
+        <static-array name='liquid_type' count='16'>
+            <static-array count='16'>
+                <enum base-type='int8_t' type-name='tile_liquid'/>
+            </static-array>
+        </static-array>
+    </class-type>
+
+    <class-type type-name='block_square_event_world_constructionst' inherits-from='block_square_event'>
+        <int32_t name='inorganic_mat' ref-target='inorganic_raw'/>
+        <compound name='tile_bitmask' type-name='tile_bitmask'/>
+    </class-type>
 
     <enum-type type-name='biome_type'>
         <enum-item name='MOUNTAIN'/>
@@ -252,14 +420,46 @@
         <enum-item name='DESERT_BADLAND'/>
         <enum-item name='DESERT_ROCK'/>
         <enum-item name='DESERT_SAND'/>
-        <enum-item name='OCEAN'/>
-        <enum-item name='INLAND_FRESHWATER'/>
-        <enum-item name='INLAND_BRACKISHWATER'/>
-        <enum-item name='INLAND_SALTWATER'/>
-        <enum-item name='SUBTERRANEAN_RIVER'/>
+        <enum-item name='OCEAN_TROPICAL'/>
+        <enum-item name='OCEAN_TEMPERATE'/>
+        <enum-item name='OCEAN_ARCTIC'/>
+        <enum-item name='POOL_TEMPERATE_FRESHWATER'/>
+        <enum-item name='POOL_TEMPERATE_BRACKISHWATER'/>
+        <enum-item name='POOL_TEMPERATE_SALTWATER'/>
+        <enum-item name='POOL_TROPICAL_FRESHWATER'/>
+        <enum-item name='POOL_TROPICAL_BRACKISHWATER'/>
+        <enum-item name='POOL_TROPICAL_SALTWATER'/>
+        <enum-item name='LAKE_TEMPERATE_FRESHWATER'/>
+        <enum-item name='LAKE_TEMPERATE_BRACKISHWATER'/>
+        <enum-item name='LAKE_TEMPERATE_SALTWATER'/>
+        <enum-item name='LAKE_TROPICAL_FRESHWATER'/>
+        <enum-item name='LAKE_TROPICAL_BRACKISHWATER'/>
+        <enum-item name='LAKE_TROPICAL_SALTWATER'/>
+        <enum-item name='RIVER_TEMPERATE_FRESHWATER'/>
+        <enum-item name='RIVER_TEMPERATE_BRACKISHWATER'/>
+        <enum-item name='RIVER_TEMPERATE_SALTWATER'/>
+        <enum-item name='RIVER_TROPICAL_FRESHWATER'/>
+        <enum-item name='RIVER_TROPICAL_BRACKISHWATER'/>
+        <enum-item name='RIVER_TROPICAL_SALTWATER'/>
+        <enum-item name='SUBTERRANEAN_WATER'/>
         <enum-item name='SUBTERRANEAN_CHASM'/>
         <enum-item name='SUBTERRANEAN_LAVA'/>
     </enum-type>
+
+    <bitfield-type type-name='construction_flags' base-type='uint8_t'>
+        <flag-bit name='no_build_item' comment='build item is created from scratch upon removing construction, does not exist beforehand'/>
+        <flag-bit name='top_of_wall' comment='used on the floors above constructed walls so you cannot remove them'/>
+    </bitfield-type>
+
+    <struct-type type-name='construction' instance-vector='$global.world.constructions' key-field='pos'>
+        <compound name='pos' type-name='coord'/>
+        <enum type-name='item_type' base-type='int16_t' name='item_type'/>
+        <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
+        <compound type-name='construction_flags' name='flags'/>
+        <enum base-type='int16_t' type-name='tiletype' name='original_tile'/>
+    </struct-type>
 
     <enum-type type-name='flow_type' base-type='int16_t'>
         <enum-item name='Miasma'/>
@@ -267,16 +467,14 @@
         <enum-item name='Mist'/>
         <enum-item name='BloodyMist'/>
         <enum-item name='Dust'/>
-        <enum-item name='RiverFlood'/>
-        <enum-item name='Flood'/> material = liquid type
-        <enum-item name='Antiflood'/> material = liquid type
-        <enum-item name='MagmaInitialFlood'/>
         <enum-item name='MagmaMist'/>
         <enum-item name='Smoke'/>
         <enum-item name='Dragonfire'/>
         <enum-item name='Fire'/>
         <enum-item name='Web'/>
         <enum-item name='MaterialGas'/>
+        <enum-item name='OceanWave'/>
+        <enum-item name='SeaFoam'/>
     </enum-type>
 
     <struct-type type-name='flow'>
@@ -292,6 +490,14 @@
         <int8_t/>
         <int8_t/>
     </struct-type>
+
+    <struct-type type-name='flow_reuse_pool'>
+        <int32_t name='reuse_idx'/>
+        <bitfield name='flags'>
+            <flag-bit name='active'/>
+        </bitfield>
+    </struct-type>
+
 </data-definition>
 
 <!--
