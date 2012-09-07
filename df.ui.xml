@@ -224,7 +224,6 @@
                 <stl-vector type-name='int32_t' name='shell' index-refers-to='$global.world.raws.creatures[$]'/>
                 <stl-vector type-name='int32_t' name='leather' index-refers-to='$global.world.raws.creatures[$]'/>
                 <stl-vector type-name='int32_t' name='silk' index-refers-to='$global.world.raws.creatures[$]'/>
-                <stl-vector type-name='int32_t' name='gems' index-refers-to='$global.world.raws.matgloss_gem[$]'/>
                 <stl-vector type-name='int32_t' name='stone' index-refers-to='$global.world.raws.matgloss_stone[$]'/>
                 <stl-vector type-name='int32_t' name='meat_fish' index-refers-to='$global.world.raws.creatures[$]'/>
                 <stl-vector type-name='int32_t' name='plants' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
@@ -257,7 +256,6 @@
                 <stl-vector name='shell' index-refers-to='$global.world.raws.creatures[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='leather' index-refers-to='$global.world.raws.creatures[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='silk' index-refers-to='$global.world.raws.creatures[$]'><pointer type-name='unit'/></stl-vector>
-                <stl-vector name='gems' index-refers-to='$global.world.raws.matgloss_gem[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='stone' index-refers-to='$global.world.raws.matgloss_stone[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='meat_fish' index-refers-to='$global.world.raws.creatures[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='plants' index-refers-to='$global.world.raws.matgloss_plant[$]'><pointer type-name='unit'/></stl-vector>

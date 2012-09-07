@@ -103,6 +103,39 @@
         <enum-item name='Baby'/>
     </enum-type>
 
+    <enum-type type-name='personality_facet_type'>
+        <enum-item name='ANXIETY'/>
+        <enum-item name='ANGER'/>
+        <enum-item name='DEPRESSION'/>
+        <enum-item name='SELF_CONSCIOUSNESS'/>
+        <enum-item name='IMMODERATION'/>
+        <enum-item name='VULNERABILITY'/>
+        <enum-item name='FRIENDLINESS'/>
+        <enum-item name='GREGARIOUSNESS'/>
+        <enum-item name='ASSERTIVENESS'/>
+        <enum-item name='ACTIVITY_LEVEL'/>
+        <enum-item name='EXCITEMENT_SEEKING'/>
+        <enum-item name='CHEERFULNESS'/>
+        <enum-item name='IMAGINATION'/>
+        <enum-item name='ARTISTIC_INTEREST'/>
+        <enum-item name='EMOTIONALITY'/>
+        <enum-item name='ADVENTUROUSNESS'/>
+        <enum-item name='INTELLECTUAL_CURIOSITY'/>
+        <enum-item name='LIBERALISM'/>
+        <enum-item name='TRUST'/>
+        <enum-item name='STRAIGHTFORWARDNESS'/>
+        <enum-item name='ALTRUISM'/>
+        <enum-item name='COOPERATION'/>
+        <enum-item name='MODESTY'/>
+        <enum-item name='SYMPATHY'/>
+        <enum-item name='SELF_EFFICACY'/>
+        <enum-item name='ORDERLINESS'/>
+        <enum-item name='DUTIFULNESS'/>
+        <enum-item name='ACHIEVEMENT_STRIVING'/>
+        <enum-item name='SELF_DISCIPLINE'/>
+        <enum-item name='CAUTIOUSNESS'/>
+    </enum-type>
+
     <struct-type type-name='unit' key-field='id' instance-vector='$global.world.units.all'>
         <compound type-name='language_name' name='name'/>
 

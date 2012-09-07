@@ -23,8 +23,6 @@
         <stl-vector type-name='pointer'/>
         <stl-vector type-name='pointer'/>
         <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
 
 <!--
 
@@ -159,6 +157,7 @@
             <stl-vector name='bad' has-bad-pointers='true'>
                 <pointer type-name='nemesis_record'/>
             </stl-vector>
+            <bool/>
         </compound>
 
         -- Items
@@ -170,7 +169,7 @@
                 <pointer type-name='item'/>
             </stl-vector>
 
-            <static-array name='other' count='82' index-enum='items_other_id'>
+            <static-array name='other' count='87' index-enum='items_other_id'>
                 <stl-vector>
                     <pointer type-name='item'/>
                 </stl-vector>
@@ -210,7 +209,7 @@
                 <pointer type-name='building'/>
             </stl-vector>
 
-            <static-array name='other' count='63' index-enum='buildings_other_id'>
+            <static-array name='other' count='76' index-enum='buildings_other_id'>
                 <stl-vector>
                     <pointer type-name='building'/>
                 </stl-vector>
@@ -219,27 +218,34 @@
             <stl-vector name='bad' has-bad-pointers='true'>
                 <pointer type-name='building'/>
             </stl-vector>
+            <bool/>
+            <bool/>
         </compound>
 
+        -- Machines
+
+        <stl-vector/>
+        <stl-vector/>
+
         <compound name='hauling'>
-            <static-array count='64' name='local_weapon' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.weapons[$]'/></static-array>
-            <static-array count='64' name='foreign_weapon' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.weapons[$]'/></static-array>
-            <static-array count='64' name='local_siegeammo' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.siegeammo[$]'/></static-array>
-            <static-array count='64' name='foreign_siegeammo' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.siegeammo[$]'/></static-array>
-            <static-array count='64' name='local_trapcomp' index-enum='material_type'><int8_t/></static-array>
-            <static-array count='64' name='foreign_trapcomp' index-enum='material_type'><int8_t/></static-array>
-            <static-array count='64' name='local_armor' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.armor[$]'/></static-array>
-            <static-array count='64' name='local_helm' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.helms[$]'/></static-array>
-            <static-array count='64' name='local_shoes' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.shoes[$]'/></static-array>
-            <static-array count='64' name='local_gloves' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.gloves[$]'/></static-array>
-            <static-array count='64' name='local_pants' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.pants[$]'/></static-array>
-            <static-array count='64' name='local_shield' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.shields[$]'/></static-array>
-            <static-array count='64' name='foreign_armor' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.armor[$]'/></static-array>
-            <static-array count='64' name='foreign_helm' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.helms[$]'/></static-array>
-            <static-array count='64' name='foreign_shoes' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.shoes[$]'/></static-array>
-            <static-array count='64' name='foreign_gloves' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.gloves[$]'/></static-array>
-            <static-array count='64' name='foreign_pants' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.pants[$]'/></static-array>
-            <static-array count='64' name='foreign_shields' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.shields[$]'/></static-array>
+            <static-array count='59' name='local_weapon' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.weapons[$]'/></static-array>
+            <static-array count='59' name='foreign_weapon' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.weapons[$]'/></static-array>
+            <static-array count='59' name='local_siegeammo' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.siegeammo[$]'/></static-array>
+            <static-array count='59' name='foreign_siegeammo' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.siegeammo[$]'/></static-array>
+            <static-array count='59' name='local_trapcomp' index-enum='material_type'><int8_t/></static-array>
+            <static-array count='59' name='foreign_trapcomp' index-enum='material_type'><int8_t/></static-array>
+            <static-array count='59' name='local_armor' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.armor[$]'/></static-array>
+            <static-array count='59' name='local_helm' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.helms[$]'/></static-array>
+            <static-array count='59' name='local_shoes' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.shoes[$]'/></static-array>
+            <static-array count='59' name='local_gloves' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.gloves[$]'/></static-array>
+            <static-array count='59' name='local_pants' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.pants[$]'/></static-array>
+            <static-array count='59' name='local_shield' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.shields[$]'/></static-array>
+            <static-array count='59' name='foreign_armor' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.armor[$]'/></static-array>
+            <static-array count='59' name='foreign_helm' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.helms[$]'/></static-array>
+            <static-array count='59' name='foreign_shoes' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.shoes[$]'/></static-array>
+            <static-array count='59' name='foreign_gloves' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.gloves[$]'/></static-array>
+            <static-array count='59' name='foreign_pants' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.pants[$]'/></static-array>
+            <static-array count='59' name='foreign_shields' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.shields[$]'/></static-array>
             <int32_t name='num_stockpiling_jobs'/>
             <int32_t name='num_stone_jobs'/>
             <int32_t name='num_wood_jobs'/>
@@ -295,31 +301,19 @@
             <stl-vector name='all'>
                 <pointer type-name='plant'/>
             </stl-vector>
-            <stl-vector name='shrub_forest'>
+            <stl-vector name='shrub_dry'>
                 <pointer type-name='plant'/>
             </stl-vector>
-            <stl-vector name='shrub_swamp'>
+            <stl-vector name='shrub_wet'>
                 <pointer type-name='plant'/>
             </stl-vector>
-            <stl-vector name='shrub_river'>
+            <stl-vector name='tree_dry'>
                 <pointer type-name='plant'/>
             </stl-vector>
-            <stl-vector name='shrub_cave'>
+            <stl-vector name='tree_wet'>
                 <pointer type-name='plant'/>
             </stl-vector>
-            <stl-vector name='unknown'>
-                <pointer type-name='plant'/>
-            </stl-vector>
-            <stl-vector name='tree_outside_dry'>
-                <pointer type-name='plant'/>
-            </stl-vector>
-            <stl-vector name='tree_outside_wet'>
-                <pointer type-name='plant'/>
-            </stl-vector>
-            <stl-vector name='tree_inside_dry'>
-                <pointer type-name='plant'/>
-            </stl-vector>
-            <stl-vector name='tree_inside_wet'>
+            <stl-vector name='empty'>
                 <pointer type-name='plant'/>
             </stl-vector>
         </compound>
@@ -355,24 +349,12 @@
         </compound>
 
         <pointer name='selected_building' type-name='building'/>
-        <compound name='build_type' is-union='true'>
-            <enum base-type='int16_t' name='building_type' type-name='building_type'/>
-            <enum base-type='int16_t' name='selected_stockpile_type' type-name='stockpile_category'/>
-        </compound>
-        <compound name='build_subtype' is-union='true'>
-            <enum base-type='int16_t' name='furnace_type' type-name='furnace_type'/>
-            <enum base-type='int16_t' name='workshop_type' type-name='workshop_type'/>
-            <enum base-type='int16_t' name='siegeengine_type' type-name='siegeengine_type'/>
-            <enum base-type='int16_t' name='trap_type' type-name='trap_type'/>
-        </compound>
-        <bool/>
+        <enum base-type='int16_t' name='selected_stockpile_type' type-name='stockpile_category'/>
+        <bool name='update_selected_building'/>
 
-        <int16_t name='build_width'/>
-        <int16_t name='build_height'/>
-        <int8_t name='build_direction_1'/>
-        <int8_t name='build_direction_2' comment='aqueduct only'/>
-        <int8_t name='build_direction_3' comment='aqueduct only'/>
-        <int8_t name='build_direction_4' comment='aqueduct only'/>
+        <int16_t name='building_width'/>
+        <int16_t name='building_height'/>
+        <int8_t name='build_direction'/>
 
         <compound name='map'>
             52cdc
@@ -387,35 +369,35 @@
                 </pointer>
             </pointer>
 
+            <stl-vector name='map_block_columns'>
+                <pointer type-name='map_block_column'/>
+            </stl-vector>
+            <pointer name='column_index' is-array='true'>
+                <pointer is-array='true'>
+                    <pointer type-name='map_block_column'/>
+                </pointer>
+            </pointer>
+
             <int32_t name='x_count_block'/>
             <int32_t name='y_count_block'/>
             <int32_t name='z_count_block'/>
             <int32_t name='x_count'/>
             <int32_t name='y_count'/>
             <int32_t name='z_count'/>
+            <int32_t name='region_x'/>
+            <int32_t name='region_y'/>
+            <int32_t name='region_z'/>
+
+            <static-array count='53'>
+                <static-array count='53' type-name='int16_t'/>
+            </static-array>
         </compound>
 
-        <static-array count='16' name='stone_types'>
-            <int16_t ref-target='matgloss_stone'/>
-        </static-array>
-
-        <static-array count='53'>
-            <static-array count='53' type-name='int16_t'/>
-        </static-array>
-
-        <static-array count='20000' type-name='int32_t'/>
-        <static-array count='20000' type-name='int32_t'/>
-        <static-array count='20000' type-name='int32_t'/>
-        <static-array count='20000' type-name='int8_t' name='mapElevationRotation'/>
-        <bool name='showFakeElevationDividers'/>
-        <static-array count='3' type-name='int32_t' name='feature_type'/>
-        <static-array count='3' type-name='int32_t' name='feature_depth'/>
-        <int32_t/>
-        <int8_t/>
-        <int32_t/>
-        <int32_t/>
+<!--
         <compound type-name='world_data' name='world_data'/>
-        <int32_t/>
+-->     <padding size='1920'/>
+
+<!--
         <compound name='worldgen'>
             <int16_t name='state'/>
             <int32_t name='num_rejects'/>
@@ -442,24 +424,12 @@
             <int32_t name='rivers_total'/>
             <int32_t name='rivers_cur'/>
         </compound>
-        <int16_t name='surface_z'/>
-        <static-array count='480' type-name='int16_t'/>
-        <static-array count='480' type-name='int16_t' name='cliffEdgeXs'/> tiles more than 5 to the right of here get marked Subterranean when mined
-        <static-array count='960' type-name='int16_t' name='chasmCenterXs'/> X-coordinates that turn red when the chasm is filled with magma
-        <bool name='chasmIsDead'/>
-        <int16_t name='chasm_magma_counter'/>
-        <int32_t name='chasm_anger'/>
         <int32_t name='orphaned_flows_unk_28'/> corresponds to map_block.unk_28
         <int32_t name='orphaned_flows_unk_2c'/> corresponds to map_block.unk_2c
-
+-->     <padding size='616'/>
         -- RAWs
 
         <compound name='raws' type-name='world_raws'/>
-        <int16_t name='lava_stone' ref-target='matgloss_stone'/>
-        <int16_t name='river_stone' ref-target='matgloss_stone'/>
-        <int16_t name='flux_stone' ref-target='matgloss_stone'/>
-        <int16_t name='sharp_stone' ref-target='matgloss_stone'/>
-        <int16_t name='glass_gem' ref-target='matgloss_gem'/>
 
         <compound name='fortress'>
             <stl-string/>

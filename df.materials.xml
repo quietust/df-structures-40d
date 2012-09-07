@@ -128,8 +128,8 @@
             <stl-vector type-name='int16_t' name='probability'/>
         </compound>
 
-        <stl-vector/>
-        <stl-vector name='reaction_class'/>
+        <stl-vector name='reaction_class' pointer-type='stl-string'/>
+        <stl-vector name='reactions' type-name='int32_t'/>
         <int32_t name='value'/>
 
         <compound name='environment_spec'>
@@ -177,7 +177,7 @@
         <stl-string name='id'/>
         <code-helper name='describe'>$.id</code-helper>
 
-        <df-flagarray name='flags' index-enum='matgloss_plant_flags'/>
+        <df-flagarray name='flags' index-enum='matgloss_metal_flags'/>
         <stl-string name='name'/>
         <stl-string name='adj'/>
 
@@ -421,10 +421,10 @@
         <stl-string name='id'/>
         <code-helper name='describe'>$.id</code-helper>
         <df-flagarray name='flags' index-enum='matgloss_wood_flags'/>
-        <int8_t name='tile'/>
-        <int8_t name='dead_tile'/>
-        <int8_t name='sapling_tile'/>
-        <int8_t name='dead_sapling_tile'/>
+        <uint8_t name='tile'/>
+        <uint8_t name='dead_tile'/>
+        <uint8_t name='sapling_tile'/>
+        <uint8_t name='dead_sapling_tile'/>
         <stl-string name='name'/>
         <stl-string name='adj'/>
         <stl-vector name='prefstring'>

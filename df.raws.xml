@@ -7,11 +7,11 @@
             <stl-vector name='stone'>
                 <pointer type-name='matgloss_stone'/>
             </stl-vector>
-            <stl-vector name='metal'>
-                <pointer type-name='matgloss_metal'/>
-            </stl-vector>
             <stl-vector name='plant'>
                 <pointer type-name='matgloss_plant'/>
+            </stl-vector>
+            <stl-vector name='metal'>
+                <pointer type-name='matgloss_metal'/>
             </stl-vector>
         </compound>
 
@@ -94,7 +94,7 @@
                 <pointer type-name='language_translation'/>
             </stl-vector>
             <static-array name='word_table' count='2'>
-                <static-array count='38'>
+                <static-array count='60'>
                     <static-array name='words' count='6'>
                         <stl-vector index-refers-to='$$._parent._parent.parts[$$._key][$]'>
                             <int32_t ref-target='language_word'/>

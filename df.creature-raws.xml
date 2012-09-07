@@ -266,13 +266,17 @@
         <static-array type-name='stl-string' name='bowman_name' count='2'/>
         <static-array type-name='stl-string' name='specname_male' count='3'/>
         <static-array type-name='stl-string' name='specname_female' count='3'/>
+        <stl-string/>
+        <stl-string/>
+        <stl-string/>
+        <stl-string/>
 
         <uint8_t name='tile'/>
         <uint8_t name='alttile'/>
         <int8_t name='bloodtype'/>
         <uint8_t name='glowtile'/>
 
-        <static-array count='7'> // body, SILK, LEATHER, BONE, EXTRACT, CHEESE, DRINK
+        <static-array name='temperatures' count='7'> // body, SILK, LEATHER, BONE, EXTRACT, CHEESE, DRINK
             <uint16_t name='spec_heat'/>
             <uint16_t name='heatdam_point'/>
             <uint16_t name='colddam_point'/>
@@ -283,7 +287,8 @@
         </static-array>
         <uint16_t name='homeotherm'/>
 
-        <int32_t/>
+        <uint16_t name='min_temp'/>
+        <uint16_t name='max_temp'/>
 
         <static-array type-name='int16_t' name='color' count='3'/>
         <static-array type-name='int16_t' name='population_number' count='2'/>
@@ -305,21 +310,21 @@
         <int16_t name='buildingdestroyer'/>
         <int16_t name='damblock'/>
         <enum base-type='int16_t' name='itemcorpse_itemtype' type-name='item_type'/>
-        <int16_t name='itemcorpse_itemsubtype'/>
+        <int16_t name='itemcorpse_subtype' refers-to='(item-subtype-target $$._parent.itemcorpse_type $)'/>
         <enum base-type='int16_t' name='itemcorpse_material' type-name='material_type'/>
-        <int16_t name="itemcorpse_matgloss" comment='unused?'/>
+        <int16_t name='itemcorpse_matgloss' refers-to='(matgloss-target $$._parent.itemcorpse_material $)'/>
         <int16_t name='itemcorpse_quality'/>
-        <int16_t name='has_racegloss'/>
+        <enum base-type='int16_t' name='racegloss' type-name='material_type'/>
 
         <static-array type-name='int16_t' name='remains_color' count='3'/>
         <int16_t name='difficulty'/>
-        <static-array type-name='int16_t' name='riverattack' count='6'/>
-        <static-array type-name='int16_t' name='riverattack_group' count='2'/>
         <int16_t name='fat'/>
 
         <static-array type-name='int16_t' name='glowcolor' count='3'/>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <int16_t name="layering"/>
+        <int16_t name='beach_frequency'/>
 
         <int32_t name='speed'/>
         <int32_t name='modvalue'/>
@@ -335,9 +340,15 @@
         <static-array type-name='int32_t' name='maxage' count='2'/>
         <int32_t name='baby'/>
         <int32_t name='child'/>
-        <int32_t name='add_version'/>
+        <int32_t name='density'/>
+        <static-array name='densities' count='6'>
+            <int32_t name='solid_density'/>
+            <int32_t name='liquid_density'/>
+        </static-array>
 
-        <static-array type-name='int8_t' name='flags' count='40'/>
+        <int32_t name='swim_speed'/>
+        <int32_t name='trade_capacity'/>
+        <int32_t/>
 
         <stl-vector name='prefstring'>
             <pointer type-name='stl-string'/>
@@ -345,18 +356,40 @@
 
         <compound name='body_info' type-name='body_info'/>
 
-        <static-array type-name='int32_t' count='7'/>
-        <static-array type-name='int32_t' count='7'/>
-        <static-array count='7'>
-            <static-array type-name='int32_t' count='88'/>
-        </static-array>
-        <static-array count='7'>
-            <static-array type-name='int32_t' count='88'/>
-        </static-array>
-        <static-array type-name='int8_t' count='7'/>
-        <static-array count='7'>
-            <static-array type-name='int8_t' count='88'/>
-        </static-array>
+        <compound name='personality'>
+            <static-array type-name='int16_t' name='a' count='30' index-enum='personality_facet_type'/>
+            <static-array type-name='int16_t' name='b' count='30' index-enum='personality_facet_type'/>
+            <static-array type-name='int16_t' name='c' count='30' index-enum='personality_facet_type'/>
+        </compound>
+        <stl-vector type-name='int16_t' name='sphere'/>
+
+        <df-flagarray name='flags' index-enum='creature_raw_flags'/>
+        <compound name='graphics'>
+            <static-array name='texpos' type-name='int32_t' count='6'/>
+            <static-array name='texpos_gs' type-name='int32_t' count='6'/>
+            <static-array name='entity_link_texpos' count='6'>
+                <static-array type-name='int32_t' count='23'/>
+            </static-array>
+            <static-array name='entity_link_texpos_gs' count='6'>
+                <static-array type-name='int32_t' count='23'/>
+            </static-array>
+            <padding size='240'/>
+            <static-array name='profession_texpos' count='6'>
+                <static-array type-name='int32_t' count='114'/>
+            </static-array>
+            <static-array name='profession_texpos_gs' count='6'>
+                <static-array type-name='int32_t' count='114'/>
+            </static-array>
+
+            <static-array name='add_color' type-name='int8_t' count='6'/>
+            <static-array name='entity_link_add_color' count='6'>
+                <static-array type-name='int8_t' count='23'/>
+            </static-array>
+            <padding size='30'/>
+            <static-array name='profession_add_color' count='6'>
+                <static-array type-name='int8_t' count='114'/>
+            </static-array>
+        </compound>
 
         <stl-vector name='speech_1' type-name='int8_t'/>
         <stl-vector name='speech_2' type-name='int32_t'/>
