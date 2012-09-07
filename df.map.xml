@@ -225,7 +225,6 @@
             <pointer type-name='plant'/>
         </stl-vector>
 
-54
         <compound name='map_pos' type-name='coord'/>
         <compound name='region_pos' type-name='coord2d'/>
 
@@ -391,6 +390,41 @@
         <int32_t name='stone' ref-target='matgloss_stone'/>
         <compound name='tile_bitmask' type-name='tile_bitmask'/>
     </class-type>
+
+    <enum-type type-name='feature_type' base-type='int16_t'>
+        <enum-item name='outdoor_river'/>
+        <enum-item name='underground_river'/>
+        <enum-item name='underground_pool'/>
+        <enum-item name='magma_pool'/>
+        <enum-item name='magma_pipe'/>
+        <enum-item name='chasm'/>
+        <enum-item name='bottomless_pit'/>
+        <enum-item name='glowing_pit'/>
+    </enum-type>
+
+    <struct-type type-name='feature'>
+        <stl-vector name='population'>
+            <pointer type-name='world_population'/>
+        </stl-vector>
+        <int32_t/>
+        <pointer name='feature_specinfo'/>
+        <int16_t/>
+        <int16_t/>
+    </struct-type>
+
+    <enum-type type-name='feature_init_flags'>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item name='Discovered'/>
+    </enum-type>
+
+    <struct-type type-name='feature_init' original-name='feature_initst'>
+        <enum name='type' base-type='int16_t' type-name='feature_type'/>
+        <stl-vector/>
+        <df-flagarray name='flags' index-enum='feature_init_flags'/>
+        <pointer name='feature' type-name='feature'/>
+    </struct-type>
 
     <enum-type type-name='biome_type'>
         <enum-item name='MOUNTAIN'/>

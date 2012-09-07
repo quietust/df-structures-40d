@@ -432,17 +432,17 @@
         <compound name='raws' type-name='world_raws'/>
 
         <compound name='unk_5d110'>
-            <compound name='regions' type-name='coord2d_path'/>
             <stl-vector name='unk1'>
                 <pointer>
 <!--
                     <compound name='ref' type-name='world_population_ref'/>
--->
                     <stl-vector name='unk'>
                         <int32_t/>
                     </stl-vector>
+-->
                 </pointer>
             </stl-vector>
+            <compound name='regions' type-name='coord2d_path'/>
         </compound>
 
         <compound name='flow_engine'>
@@ -457,8 +457,6 @@
             <stl-vector name='unk7a' type-name='int16_t'/>
             <stl-vector name='unk7b' type-name='int16_t'/>
             <stl-vector name='unk7c' type-name='int16_t'/>
-            <stl-vector name='unk7_cntdn' type-name='int16_t'/>
-
             <stl-vector name='unk8' type-name='int32_t'/>
             <df-flagarray name='flags'/>
         </compound>
@@ -468,7 +466,7 @@
         <int32_t name='frame_counter' comment='increases by 1 every time . is pressed'/>
 
         <stl-vector name='orphaned_flows' comment='flows that are not tied to a map_block'>
-            <pointer type-name='flow_info'/>
+            <pointer type-name='flow'/>
         </stl-vector>
 
         <compound name='pathfinder'>
