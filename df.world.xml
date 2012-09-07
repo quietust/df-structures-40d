@@ -431,23 +431,74 @@
 
         <compound name='raws' type-name='world_raws'/>
 
-        <compound name='fortress'>
-            <stl-string/>
-            <compound type-name='language_name' name='name'/>
-            <int32_t/>
-            <int32_t name='site'/>
-            <int8_t/>
-            <int16_t/>
-            <int32_t/>
-            <int16_t/>
-            <int16_t/>
-            <compound name='pos' type-name='coord2d16'/>
+        <compound name='unk_5d110'>
+            <compound name='regions' type-name='coord2d_path'/>
+            <stl-vector name='unk1'>
+                <pointer>
+<!--
+                    <compound name='ref' type-name='world_population_ref'/>
+-->
+                    <stl-vector name='unk'>
+                        <int32_t/>
+                    </stl-vector>
+                </pointer>
+            </stl-vector>
         </compound>
-        <bool name='needPathfindingUpdate'/>
-        <int32_t/>
-        <stl-vector name='orphaned_flows'>
-            <pointer type-name='flow'/>
+
+        <compound name='flow_engine'>
+            <int8_t name='rnd_16'/>
+            <int16_t name='rnd_256'/>
+            <int16_t name='rnd_pos'/>
+            <static-array name='rnd_x' type-name='int16_t' count='16'/>
+            <static-array name='rnd_y' type-name='int16_t' count='16'/>
+
+            <int32_t name='block_idx' refers-to='$$._global.map.map_blocks[$]'/>
+
+            <stl-vector name='unk7a' type-name='int16_t'/>
+            <stl-vector name='unk7b' type-name='int16_t'/>
+            <stl-vector name='unk7c' type-name='int16_t'/>
+            <stl-vector name='unk7_cntdn' type-name='int16_t'/>
+
+            <stl-vector name='unk8' type-name='int32_t'/>
+            <df-flagarray name='flags'/>
+        </compound>
+
+        <bool name="reindex_pathfinding" comment='forces map_block.passable to be recomputed'/>
+
+        <int32_t name='frame_counter' comment='increases by 1 every time . is pressed'/>
+
+        <stl-vector name='orphaned_flows' comment='flows that are not tied to a map_block'>
+            <pointer type-name='flow_info'/>
         </stl-vector>
+
+        <compound name='pathfinder'>
+            <static-array name='boundary_heap' count='80000'>
+                <comment>A heap of current boundary tiles.</comment>
+                <int32_t name='total_cost'/>
+                <int32_t name='local_cost'/>
+                <int16_t name='x'/>
+                <int16_t name='y'/>
+                <int32_t name='z'/>
+            </static-array>
+            <int32_t name='heap_count'/>
+
+            <int32_t name='next_path_cost'/>
+            <bool name='wipe_path_cost'/>
+            <uint16_t name='next_path_tag'/>
+            <bool name='wipe_path_tag'/>
+
+            <int16_t name='next_walkable_id'/>
+            <int16_t name='plant_update_step'/>
+        </compound>
+
+        <compound name='cur_savegame'>
+            <stl-vector name='map_features'>
+                <pointer type-name='feature_init'/>
+            </stl-vector>
+            <static-array count='13'>
+                <stl-vector/>
+            </static-array>
+        </compound>
     </struct-type>
 </data-definition>
 
