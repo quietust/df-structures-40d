@@ -218,14 +218,20 @@
             <stl-vector name='bad' has-bad-pointers='true'>
                 <pointer type-name='building'/>
             </stl-vector>
-            <bool/>
-            <bool/>
+            <bool name='check_bridge_collapse'/>
+            <bool name='check_machine_collapse' comment='?'/>
         </compound>
 
-        -- Machines
+        -- Machines (connected groups of gears and so on)
 
-        <stl-vector/>
-        <stl-vector/>
+        <compound name='machines'>
+            <stl-vector name='all'>
+                <pointer type-name='machine'/>
+            </stl-vector>
+            <stl-vector name='bad' has-bad-pointers='true'>
+                <pointer type-name='machine'/>
+            </stl-vector>
+        </compound>
 
         <compound name='hauling'>
             <static-array count='59' name='local_weapon' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.weapons[$]'/></static-array>

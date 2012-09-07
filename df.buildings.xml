@@ -1,54 +1,182 @@
 <data-definition>
     <enum-type type-name='building_type'>
-        <enum-item name="Chair"/>
-        <enum-item name="Bed"/>
-        <enum-item name="Table"/>
-        <enum-item name="Coffin"/>
-        <enum-item name="FarmPlot"/>
-        <enum-item name="Furnace"/>
-        <enum-item name="TradeDepot"/>
-        <enum-item name="Shop"/>
-        <enum-item name="Door"/>
-        <enum-item name="Floodgate"/>
-        <enum-item name="Box"/>
-        <enum-item name="Weaponrack"/>
-        <enum-item name="Armorstand"/>
-        <enum-item name="Workshop"/>
-        <enum-item name="Cabinet"/>
-        <enum-item name="Statue"/>
-        <enum-item name="Window"/>
-        <enum-item name="Well"/>
-        <enum-item name="Bridge"/>
-        <enum-item name="Aqueduct"/>
-        <enum-item name="Road"/>
-        <enum-item name="Channel"/>
-        <enum-item name="SiegeEngine"/>
-        <enum-item name="Trap"/>
-        <enum-item name="AnimalTrap"/>
-        <enum-item name="Support"/>
-        <enum-item name="ArcheryTarget"/>
-        <enum-item name="Chain"/>
-        <enum-item name="Cage"/>
-        <enum-item name="Stockpile"/>
-        <enum-item name="Civzone"/>
-        <enum-item name="Weapon"/>
-        <enum-item name="Wagon"/>
+        <enum-attr name='classname'/>
+
+        <enum-item name="NONE" value='-1'/>
+
+        <enum-item name="Chair">
+            <item-attr name='classname' value='building_chairst'/>
+        </enum-item>
+        <enum-item name="Bed">
+            <item-attr name='classname' value='building_bedst'/>
+        </enum-item>
+        <enum-item name="Table">
+            <item-attr name='classname' value='building_tablest'/>
+        </enum-item>
+        <enum-item name="Coffin">
+            <item-attr name='classname' value='building_coffinst'/>
+        </enum-item>
+        <enum-item name="FarmPlot">
+            <item-attr name='classname' value='building_farmplotst'/>
+        </enum-item>
+        <enum-item name="Furnace">
+            <item-attr name='classname' value='building_furnacest'/>
+        </enum-item>
+        <enum-item name="TradeDepot">
+            <item-attr name='classname' value='building_tradedepotst'/>
+        </enum-item>
+        <enum-item name="Shop">
+            <item-attr name='classname' value='building_shopst'/>
+        </enum-item>
+        <enum-item name="Door">
+            <item-attr name='classname' value='building_doorst'/>
+        </enum-item>
+        <enum-item name="Floodgate">
+            <item-attr name='classname' value='building_floodgatest'/>
+        </enum-item>
+        <enum-item name="Box">
+            <item-attr name='classname' value='building_boxst'/>
+        </enum-item>
+        <enum-item name="Weaponrack">
+            <item-attr name='classname' value='building_weaponrackst'/>
+        </enum-item>
+        <enum-item name="Armorstand">
+            <item-attr name='classname' value='building_armorstandst'/>
+        </enum-item>
+        <enum-item name="Workshop">
+            <item-attr name='classname' value='building_workshopst'/>
+        </enum-item>
+        <enum-item name="Cabinet">
+            <item-attr name='classname' value='building_cabinetst'/>
+        </enum-item>
+        <enum-item name="Statue">
+            <item-attr name='classname' value='building_statuest'/>
+        </enum-item>
+        <enum-item name="WindowGlass">
+            <item-attr name='classname' value='building_window_glassst'/>
+        </enum-item>
+        <enum-item name="WindowGem">
+            <item-attr name='classname' value='building_window_gemst'/>
+        </enum-item>
+        <enum-item name="Well">
+            <item-attr name='classname' value='building_wellst'/>
+        </enum-item>
+        <enum-item name="Bridge">
+            <item-attr name='classname' value='building_bridgest'/>
+        </enum-item>
+        <enum-item name="RoadDirt">
+            <item-attr name='classname' value='building_road_dirtst'/>
+        </enum-item>
+        <enum-item name="RoadPaved">
+            <item-attr name='classname' value='building_road_pavedst'/>
+        </enum-item>
+        <enum-item name="SiegeEngine">
+            <item-attr name='classname' value='building_siegeenginest'/>
+        </enum-item>
+        <enum-item name="Trap">
+            <item-attr name='classname' value='building_trapst'/>
+        </enum-item>
+        <enum-item name="AnimalTrap">
+            <item-attr name='classname' value='building_animaltrapst'/>
+        </enum-item>
+        <enum-item name="Support">
+            <item-attr name='classname' value='building_supportst'/>
+        </enum-item>
+        <enum-item name="ArcheryTarget">
+            <item-attr name='classname' value='building_archerytargetst'/>
+        </enum-item>
+        <enum-item name="Chain">
+            <item-attr name='classname' value='building_chainst'/>
+        </enum-item>
+        <enum-item name="Cage">
+            <item-attr name='classname' value='building_cagest'/>
+        </enum-item>
+        <enum-item name="Stockpile">
+            <item-attr name='classname' value='building_stockpilest'/>
+        </enum-item>
+        <enum-item name="Civzone">
+            <item-attr name='classname' value='building_civzonest'/>
+        </enum-item>
+        <enum-item name="Weapon">
+            <item-attr name='classname' value='building_weaponst'/>
+        </enum-item>
+        <enum-item name="Wagon">
+            <item-attr name='classname' value='building_wagonst'/>
+        </enum-item>
+        <enum-item name="ScrewPump">
+            <item-attr name='classname' value='building_screw_pumpst'/>
+        </enum-item>
+        <enum-item name="Construction">
+            <item-attr name='classname' value='building_constructionst'/>
+        </enum-item>
+        <enum-item name="Hatch">
+            <item-attr name='classname' value='building_hatchst'/>
+        </enum-item>
+        <enum-item name="GrateWall">
+            <item-attr name='classname' value='building_grate_wallst'/>
+        </enum-item>
+        <enum-item name="GrateFloor">
+            <item-attr name='classname' value='building_grate_floorst'/>
+        </enum-item>
+        <enum-item name="BarsVertical">
+            <item-attr name='classname' value='building_bars_verticalst'/>
+        </enum-item>
+        <enum-item name="BarsFloor">
+            <item-attr name='classname' value='building_bars_floorst'/>
+        </enum-item>
+        <enum-item name="GearAssembly">
+            <item-attr name='classname' value='building_gear_assemblyst'/>
+        </enum-item>
+        <enum-item name="AxleHorizontal">
+            <item-attr name='classname' value='building_axle_horizontalst'/>
+        </enum-item>
+        <enum-item name="AxleVertical">
+            <item-attr name='classname' value='building_axle_verticalst'/>
+        </enum-item>
+        <enum-item name="WaterWheel">
+            <item-attr name='classname' value='building_water_wheelst'/>
+        </enum-item>
+        <enum-item name="Windmill">
+            <item-attr name='classname' value='building_windmillst'/>
+        </enum-item>
     </enum-type>
 
     <bitfield-type type-name='building_flags'>
         <flag-bit name='exists' comment='actually built, not just ordered'/>
-        <flag-bit/>
+        <flag-bit name='site_blocked' comment='items on ground on site'/>
         <flag-bit name='room_collision' comment='major intersection with another room?'/>
         <flag-bit/>
         <flag-bit name='justice'/>
+        <flag-bit name='almost_deleted' comment='when requesting delete while in_update'/>
+        <flag-bit name='in_update'/>
     </bitfield-type>
 
-    <struct-type type-name='workshop_profile'>
-        <stl-vector name="permitted_workers">
-            <int32_t ref-target='unit'/>
-        </stl-vector>
-        <int32_t name="min_level"/>
-        <int32_t name="max_level" init-value='3000'/>
+    <bitfield-type type-name='door_flags' base-type='uint16_t'>
+        <flag-bit name='forbidden'/>
+        <flag-bit name='internal'/>
+        <flag-bit name='taken_by_invaders'/>
+        <flag-bit name='used_by_intruder'/>
+        <flag-bit name='closed'/>
+        <flag-bit name='operated_by_mechanisms'/>
+        <flag-bit name='pet_passable'/>
+    </bitfield-type>
+
+    <bitfield-type type-name='gate_flags' base-type='uint16_t'>
+        <flag-bit name='closed'/>
+        <flag-bit name='closing'/>
+        <flag-bit name='opening'/>
+        <flag-bit name='collapsing' comment='?; bridge'/>
+        <flag-bit name='has_support' comment='bridge'/>
+    </bitfield-type>
+
+    <struct-type type-name='building_extents'>
+        <pointer name='extents' type-name='uint8_t' is-array='true'>
+            <comment>0 - not room; 1 in stockpile; 2 wall; 3 inner; 4 distance boundary.</comment>
+        </pointer>
+        <int32_t name='x'/>
+        <int32_t name='y'/>
+        <int32_t name='width'/>
+        <int32_t name='height'/>
     </struct-type>
 
     <struct-type type-name='building_drawBuffer'>
@@ -86,15 +214,7 @@
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
 
-        <compound name='room'>
-            <pointer name='extents' type-name='uint8_t' is-array='true'>
-                <comment>0 - not room; 1 in stockpile; 2 wall; 3 inner; 4 distance boundary.</comment>
-            </pointer>
-            <int32_t name='x'/>
-            <int32_t name='y'/>
-            <int32_t name='width'/>
-            <int32_t name='height'/>
-        </compound>
+        <compound name='room' type-name='building_extents'/>
 
         <int32_t name='age'/>
         <int16_t name='race' ref-target='creature_raw'/>
@@ -258,6 +378,14 @@
             <vmethod is-destructor='true'/>
         </virtual-methods>
     </class-type>
+
+    <struct-type type-name='workshop_profile'>
+        <stl-vector name="permitted_workers">
+            <int32_t ref-target='unit'/>
+        </stl-vector>
+        <int32_t name="min_level"/>
+        <int32_t name="max_level" init-value='3000'/>
+    </struct-type>
 
     <class-type type-name='building_actual' inherits-from='building'
                 original-name='building_actualst'>
@@ -432,15 +560,16 @@
         <enum-item name="Butchers"/>
         <enum-item name="Leatherworks"/>
         <enum-item name="Tanners"/>
-        <enum-item name="Clothes"/>
+        <enum-item name="Clothiers"/>
         <enum-item name="Fishery"/>
         <enum-item name="Still"/>
         <enum-item name="Loom"/>
-        <enum-item name="Mill"/>
+        <enum-item name="Quern"/>
         <enum-item name="Kennels"/>
         <enum-item name="Kitchen"/>
         <enum-item name="Ashery"/>
         <enum-item name="Dyers"/>
+        <enum-item name="Millstone"/>
     </enum-type>
 
     <class-type type-name='building_workshopst' inherits-from='building_actual'>
@@ -458,6 +587,14 @@
     </class-type>
 
     <class-type type-name='building_windowst' inherits-from='building_actual'>
+        <int16_t/>
+    </class-type>
+
+    <class-type type-name='building_window_glassst' inherits-from='building_windowst'>
+        <int16_t/>
+    </class-type>
+
+    <class-type type-name='building_window_gemst' inherits-from='building_windowst'>
         <int16_t/>
     </class-type>
 
@@ -479,28 +616,16 @@
         <int32_t/>
     </class-type>
 
-    <class-type type-name='building_aqueductst' inherits-from='building_actual'>
-        <int32_t/>
-        <int16_t/>
-    </class-type>
-
     <class-type type-name='building_roadst' inherits-from='building_actual'>
-        <int32_t/>
     </class-type>
 
-    <class-type type-name='building_channelst' inherits-from='building_actual'>
-        <pointer type-name='building'/>
-        <stl-vector>
-            <pointer type-name='building'/>
-        </stl-vector>
-        <stl-vector name='ponded_fish'>
-            <int32_t ref-target='item'/>
-        </stl-vector>
-        <int32_t/>
-        <int64_t/>
-        <int64_t/>
-        <int32_t/>
-        <int16_t/>
+    <class-type type-name='building_road_dirtst' inherits-from='building_roadst'>
+        <int32_t name='material_amount'/>
+    </class-type>
+
+    <class-type type-name='building_road_pavedst' inherits-from='building_roadst'>
+        <int32_t name='material_amount'/>
+        <int16_t name='terrain_purge_timer' init-value='500'/>
     </class-type>
 
     <enum-type type-name='siegeengine_type' base-type='int16_t'>
@@ -616,6 +741,8 @@
         <enum-item name="FoodShop"/>
         <enum-item name="MeadHall"/>
         <enum-item name="ThroneRoom"/>
+        <enum-item name="ActivityZone"/>
+        <enum-item name="Temple"/>
     </enum-type>
 
     <class-type type-name='building_civzonest' inherits-from='building'>
