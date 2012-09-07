@@ -365,7 +365,7 @@
     </class-type>
 
     <class-type type-name='block_square_event_mineralst' inherits-from='block_square_event' custom-methods='true'>
-        <int32_t name='inorganic_mat' ref-target='inorganic_raw'/>
+        <int16_t name='stone' ref-target='matgloss_stone'/>
         <compound name='tile_bitmask' type-name='tile_bitmask'/>
         <bitfield name='flags'>
             <flag-bit name='discovered'/>
@@ -388,7 +388,7 @@
     </class-type>
 
     <class-type type-name='block_square_event_world_constructionst' inherits-from='block_square_event'>
-        <int32_t name='inorganic_mat' ref-target='inorganic_raw'/>
+        <int32_t name='stone' ref-target='matgloss_stone'/>
         <compound name='tile_bitmask' type-name='tile_bitmask'/>
     </class-type>
 
