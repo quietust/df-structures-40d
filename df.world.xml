@@ -497,6 +497,8 @@
                 <stl-vector/>
             </static-array>
         </compound>
+        <bool/>
+        <bool/>
     </struct-type>
 </data-definition>
 
