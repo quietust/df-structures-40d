@@ -1,29 +1,43 @@
 <data-definition>
     <enum-type type-name='general_ref_type'>
         <enum-item name="ARTIFACT"/>
+        <enum-item name="IS_ARTIFACT"/>
+        <enum-item name="NEMESIS"/>
+        <enum-item name="IS_NEMESIS"/>
+        <enum-item name="ITEM"/>
         <enum-item name="ITEM_TYPE"/>
         <enum-item name="COINBATCH"/>
         <enum-item name="MAPSQUARE"/>
         <enum-item name="ENTITY_ART_IMAGE"/>
-        <enum-item name="UNIT"/>
         <enum-item name="CONTAINS_UNIT"/>
-        <enum-item name="ITEM"/>
         <enum-item name="CONTAINS_ITEM"/>
+        <enum-item name="CONTAINED_IN_ITEM"/>
         <enum-item name="PROJECTILE"/>
+        <enum-item name="UNIT"/>
         <enum-item name="UNIT_TRAINEE"/>
         <enum-item name="UNIT_ITEMOWNER"/>
         <enum-item name="UNIT_TRADEBRINGER"/>
-        <enum-item name="CONTAINED_IN_ITEM"/>
         <enum-item name="UNIT_HOLDER"/>
         <enum-item name="UNIT_WORKER"/>
+        <enum-item name="UNIT_CAGEE"/>
+        <enum-item name="UNIT_BEATEE"/>
+        <enum-item name="UNIT_FOODRECEIVER"/>
+        <enum-item name="UNIT_KIDNAPEE"/>
+        <enum-item name="UNIT_PATIENT"/>
+        <enum-item name="UNIT_INFANT"/>
+        <enum-item name="UNIT_SLAUGHTEREE"/>
         <enum-item name="BUILDING"/>
         <enum-item name="BUILDING_CIVZONE_ASSIGNED"/>
         <enum-item name="BUILDING_TRIGGER"/>
         <enum-item name="BUILDING_TRIGGERTARGET"/>
         <enum-item name="BUILDING_CHAIN"/>
         <enum-item name="BUILDING_CAGED"/>
-        <enum-item name="BUILDING_CHANNELED"/>
         <enum-item name="BUILDING_HOLDER"/>
+        <enum-item name="BUILDING_WELL_TAG"/>
+        <enum-item name="ENTITY"/>
+        <enum-item name="ENTITY_STOLEN"/>
+        <enum-item name="ENTITY_OFFERED"/>
+        <enum-item name="ENTITY_ITEMOWNER"/>
     </enum-type>
 
     <class-type type-name='general_ref' original-name='general_refst'>
@@ -46,6 +60,16 @@
             <vmethod name='getBuilding'>
                 <ret-type><pointer type-name='building'/></ret-type>
             </vmethod>
+            <vmethod name='getEntity'>
+                <ret-type><pointer type-name='historical_entity'/></ret-type>
+            </vmethod>
+            <vmethod name='getArtifact'>
+                <ret-type><pointer type-name='artifact_record'/></ret-type>
+            </vmethod>
+            <vmethod name='getNemesis'>
+                <ret-type><pointer type-name='nemesis_record'/></ret-type>
+            </vmethod>
+
             <vmethod name='setID'> <int32_t/> </vmethod>
             <vmethod ret-type='int32_t' name='getID'/>
             <vmethod is-destructor='true'/>
@@ -59,6 +83,14 @@
         <int32_t name='artifact_id' ref-target='artifact_record'/>
     </class-type>
 
+    <class-type type-name='general_ref_nemesisst' inherits-from='general_ref'>
+        <int32_t name='nemesis_id' ref-target='nemesis_record'/>
+    </class-type>
+
+    <class-type type-name='general_ref_itemst' inherits-from='general_ref'>
+        <int32_t name='item_id' ref-target='item'/>
+    </class-type>
+
     <class-type type-name='general_ref_item_typest' inherits-from='general_ref'>
         <enum base-type='int32_t' name='type' type-name='item_type'/>
         <int32_t name='subtype' refers-to='(item-subtype-target $$._parent.type $)'/>
@@ -67,11 +99,10 @@
     </class-type>
 
     <class-type type-name='general_ref_coinbatchst' inherits-from='general_ref'>
-        <int32_t/>
+        <int32_t name='batch'/>
     </class-type>
 
     <class-type type-name='general_ref_mapsquarest' inherits-from='general_ref'>
-        <int8_t/>
         <int16_t/>
         <int16_t/>
         <int16_t/>
@@ -82,70 +113,60 @@
         <int32_t/>
     </class-type>
 
-    <class-type type-name='general_ref_unit' inherits-from='general_ref'>
-        <int32_t name='unit_id' ref-target='unit'/>
-    </class-type>
-    <class-type type-name='general_ref_contains_unitst' inherits-from='general_ref_unit'/>
-
-    <class-type type-name='general_ref_item' inherits-from='general_ref'>
-        <int32_t name='item_id' ref-target='item'/>
-    </class-type>
-    <class-type type-name='general_ref_contains_itemst' inherits-from='general_ref_item'/>
-
     <class-type type-name='general_ref_projectilest' inherits-from='general_ref'>
         <int32_t name='projectile_id' ref-target='projectile'/>
     </class-type>
 
-    <class-type type-name='general_ref_unit_traineest' inherits-from='general_ref_unit'/>
-    <class-type type-name='general_ref_unit_itemownerst' inherits-from='general_ref_unit'/>
-    <class-type type-name='general_ref_unit_tradebringerst' inherits-from='general_ref_unit'/>
-    <class-type type-name='general_ref_contained_in_itemst' inherits-from='general_ref_item'/>
-    <class-type type-name='general_ref_unit_holderst' inherits-from='general_ref_unit'/>
-    <class-type type-name='general_ref_unit_workerst' inherits-from='general_ref_unit'/>
+    <class-type type-name='general_ref_unitst' inherits-from='general_ref'>
+        <int32_t name='unit_id' ref-target='unit'/>
+    </class-type>
 
-    <class-type type-name='general_ref_building' inherits-from='general_ref'>
+    <class-type type-name='general_ref_buildingst' inherits-from='general_ref'>
         <int32_t name='building_id' ref-target='building'/>
     </class-type>
-    <class-type type-name='general_ref_building_civzone_assignedst' inherits-from='general_ref_building'/>
-    <class-type type-name='general_ref_building_triggerst' inherits-from='general_ref_building'/>
-    <class-type type-name='general_ref_building_triggertargetst' inherits-from='general_ref_building'/>
-    <class-type type-name='general_ref_building_chainst' inherits-from='general_ref_building'/>
-    <class-type type-name='general_ref_building_cagedst' inherits-from='general_ref_building'/>
-    <class-type type-name='general_ref_building_channeledst' inherits-from='general_ref_building'/>
-    <class-type type-name='general_ref_building_holderst' inherits-from='general_ref_building'/>
+
+    <class-type type-name='general_ref_entityst' inherits-from='general_ref'>
+        <int32_t name='entity_id' ref-target='historical_entity'/>
+    </class-type>
+
+    <class-type type-name='general_ref_is_artifactst' inherits-from='general_ref_artifactst'/>
+    <class-type type-name='general_ref_is_nemesisst' inherits-from='general_ref_nemesisst'/>
+    <class-type type-name='general_ref_contains_unitst' inherits-from='general_ref_unitst'/>
+    <class-type type-name='general_ref_contains_itemst' inherits-from='general_ref_itemst'/>
+    <class-type type-name='general_ref_contained_in_itemst' inherits-from='general_ref_itemst'/>
+    <class-type type-name='general_ref_unit_traineest' inherits-from='general_ref_unitst'/>
+    <class-type type-name='general_ref_unit_itemownerst' inherits-from='general_ref_unitst'>
+    <class-type type-name='general_ref_unit_tradebringerst' inherits-from='general_ref_unitst'/>
+    <class-type type-name='general_ref_unit_holderst' inherits-from='general_ref_unitst'/>
+    <class-type type-name='general_ref_unit_workerst' inherits-from='general_ref_unitst'/>
+    <class-type type-name='general_ref_unit_cageest' inherits-from='general_ref_unitst'/>
+    <class-type type-name='general_ref_unit_beateest' inherits-from='general_ref_unitst'/>
+    <class-type type-name='general_ref_unit_foodreceiverst' inherits-from='general_ref_unitst'/>
+    <class-type type-name='general_ref_unit_kidnapeest' inherits-from='general_ref_unitst'/>
+    <class-type type-name='general_ref_unit_patientst' inherits-from='general_ref_unitst'/>
+    <class-type type-name='general_ref_unit_infantst' inherits-from='general_ref_unitst'/>
+    <class-type type-name='general_ref_unit_slaughtereest' inherits-from='general_ref_unitst'/>
+    <class-type type-name='general_ref_building_civzone_assignedst' inherits-from='general_ref_buildingst'/>
+    <class-type type-name='general_ref_building_triggerst' inherits-from='general_ref_buildingst'/>
+    <class-type type-name='general_ref_building_triggertargetst' inherits-from='general_ref_buildingst'/>
+    <class-type type-name='general_ref_building_chainst' inherits-from='general_ref_buildingst'/>
+    <class-type type-name='general_ref_building_cagedst' inherits-from='general_ref_buildingst'/>
+    <class-type type-name='general_ref_building_holderst' inherits-from='general_ref_buildingst'/>
+    <class-type type-name='general_ref_building_well_tagst' inherits-from='general_ref_buildingst'>
+        <bool name='unk'/>
+    </class-type>
+    <class-type type-name='general_ref_entity_stolenst' inherits-from='general_ref_entityst'/>
+    <class-type type-name='general_ref_entity_offeredst' inherits-from='general_ref_entityst'/>
+    <class-type type-name='general_ref_entity_itemownerst' inherits-from='general_ref_entityst'/>
 
     <enum-type type-name='specific_ref_type'>
         <enum-item name='BUILDING_GENERAL'/>
         <enum-item name='UNIT_INVENTORY'/>
         <enum-item name='JOB'/>
         <enum-item name='BUILDING_PARTY'/>
-        <enum-item name='UNIT_TRAINEE'/>
-        <enum-item name='UNIT_ITEMOWNER'/>
-        <enum-item name='UNIT_TRADEBRINGER'/>
-        <enum-item name='UNIT_CAGEE'/>
-        <enum-item name='UNIT_BEATEE'/>
-        <enum-item name='UNIT_FOODRECEIVER'/>
-
-        <enum-item name='UNIT_KIDNAPEE'/>
-        <enum-item name='UNIT_PATIENT'/>
-        <enum-item name='UNIT_INFANT'/>
-        <enum-item name='ENTITY_ITEMOWNER'/>
-        <enum-item name='ENTITY_STOLEN'/>
-        <enum-item name='ENTITY_OFFERED'/>
         <enum-item name='ACTIVITY'/>
         <enum-item name='ITEM_GENERAL'/>
-        <enum-item name='CONTAINS_ITEM'/>
-        <enum-item name='CONTAINED_IN_ITEM'/>
-
-        <enum-item name='CONTAINS_UNIT'/>
         <enum-item name='EFFECT'/>
-        <enum-item name='DRINK_AREA'/>
-        <enum-item name='BUILDING_TRIGGER'/>
-        <enum-item name='BUILDING_TRIGGERTARGET'/>
-        <enum-item name='BUILDING_CHAIN'/>
-        <enum-item name='BUILDING_CAGED'/>
-        <enum-item name='BUILDING_CIVZONE_ASSIGNED'/>
-        <enum-item name='BUILDING_CHANNELED'/>
         <enum-item name='PETINFO_PET'/>
 
         <enum-item name='PETINFO_OWNER'/>
@@ -154,13 +175,10 @@
         <enum-item name='ENTITY'/>
         <enum-item name='PLOT_INFO'/>
         <enum-item name='VIEWSCREEN'/>
-        <enum-item name='IS_NEMESIS'/>
         <enum-item name='UNIT_ITEM_WRESTLE'/>
-        <enum-item name='IS_ARTIFACT'/>
-        <enum-item name='UNK39'/>
+        <enum-item name='UNKNOWN'/>
 
-        <enum-item name='UNK40'/>
-        <enum-item name='UNIT_SLAUGHTEREE'/>
+        <enum-item name='DEFAULT'/>
         <enum-item name='HIST_FIG'/>
         <enum-item name='SITE'/>
         <enum-item name='ARTIFACT'/>
@@ -168,11 +186,10 @@
         <enum-item name='COIN_FRONT'/>
         <enum-item name='COIN_BACK'/>
         <enum-item name='DETAIL_EVENT'/>
-        <enum-item name='SUBREGION'/>
 
+        <enum-item name='SUBREGION'/>
         <enum-item name='ART_IMAGE'/>
         <enum-item name='CREATURE_DEF'/>
-        <enum-item name='PROJECTILE'/>
     </enum-type>
 
     <struct-type type-name='specific_ref'>
@@ -181,13 +198,30 @@
         <pointer name='unk'/>
     </struct-type>
 
-    <enum-type type-name='histfig_entity_link_type'> not at all certain about these values
+    <enum-type type-name='histfig_entity_link_type'>
         <enum-item name='LEADER'/>
+        <enum-item name='MAYOR'/>
         <enum-item name='GUARD'/>
-        <enum-item name='MEMBER'/>
+        <enum-item name='ROYAL_GUARD'/>
         <enum-item name='MERCENARY'/>
+        <enum-item name='FORMER_MERCENARY'/>
         <enum-item name='ENEMY'/>
         <enum-item name='CRIMINAL'/>
+        <enum-item name='MEMBER'/>
+        <enum-item name='FORMER_MEMBER'/>
+        <enum-item name='MANAGER'/>
+        <enum-item name='BOOKKEEPER'/>
+        <enum-item name='BROKER'/>
+        <enum-item name='SHERIFF'/>
+        <enum-item name='GUARD_CAPTAIN'/>
+        <enum-item name='MERCHANT_NOBILITY'/>
+        <enum-item name='OUTPOST_LIAISON'/>
+        <enum-item name='DIPLOMAT'/>
+        <enum-item name='HIGH_PRIEST'/>
+        <enum-item name='SLAVE'/>
+        <enum-item name='FORMER_SLAVE'/>
+        <enum-item name='PRISONER'/>
+        <enum-item name='FORMER_PRISONER'/>
     </enum-type>
 
     <struct-type type-name='histfig_entity_link'>
@@ -201,6 +235,7 @@
         <enum-item name='SEAT_OF_POWER'/>
         <enum-item name='HANGOUT'/>
         <enum-item name='HOME'/>
+        <enum-item name='PRIEST'/>
     </enum-type>
 
     <struct-type type-name='histfig_site_link'>
@@ -214,6 +249,8 @@
         <enum-item name='FATHER'/>
         <enum-item name='SPOUSE'/>
         <enum-item name='CHILD'/>
+        <enum-item name='DEITY'/>
+        <enum-item name='LOVER'/>
     </enum-type>
 
     <struct-type type-name='histfig_hf_link'>

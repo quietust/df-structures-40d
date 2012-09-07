@@ -4,7 +4,6 @@
         <enum-item name='BAR' comment='Bars, such as metal, fuel, or soap.'/>
         <enum-item name='SMALLGEM' comment='Cut gemstones usable in jewelers workshop'/>
         <enum-item name='BLOCKS' comment='Blocks of any kind.'/>
-        <enum-item name='ORE' comment='Metal ore, including coal'/>
         <enum-item name='ROUGH' comment='Rough gemstones.'/>
         <enum-item name='STONE' comment='Raw mined stone.'/>
         <enum-item name='WOOD' comment='Wooden logs.'/>
@@ -34,7 +33,6 @@
         <enum-item name='GLOVES' comment='Armor and clothing worn on the hands.'/>
         <enum-item name='BOX' comment='Chests (wood), coffers (stone), boxes (glass), and bags (cloth or leather).'/>
         <enum-item name='BIN' comment='Bins.'/>
-        <enum-item name='SAND' comment='Sand gathered from the river.'/>
         <enum-item name='ARMORSTAND' comment='Armor stands.'/>
         <enum-item name='WEAPONRACK' comment='Weapon racks.'/>
         <enum-item name='CABINET' comment='Cabinets.'/>
@@ -66,9 +64,7 @@
         <enum-item name='CLOTH' comment='Cloth made at the loom.'/>
         <enum-item name='TOTEM' comment='Skull totems.'/>
         <enum-item name='SKULL' comment='Skulls. Material is a creature ID.'/>
-        <enum-item name='SHIRT' comment='Shirts. Obsoleted in version 0.22.107.21a'/>
         <enum-item name='PANTS' comment='Armor and clothing worn on the legs.'/>
-        <enum-item name='CLOAK' comment='Cloaks. Obsoleted in version 0.22.107.21a'/>
         <enum-item name='BACKPACK' comment='Backpacks.'/>
         <enum-item name='QUIVER' comment='Quivers.'/>
         <enum-item name='CATAPULTPARTS' comment='Catapult parts.'/>
@@ -80,13 +76,18 @@
         <enum-item name='EXTRACT' comment='Plant/creature extract.'/>
         <enum-item name='POTION' comment='Potions.'/>
         <enum-item name='DRINK' comment='Alcoholic drinks.'/>
-        <enum-item name='POWDER_ORGANIC' comment='Powders such as flour, sugar, or dye.'/>
+        <enum-item name='POWDER_MISC' comment='Powders such as flour, sugar, or dye.'/>
         <enum-item name='CHEESE' comment='Pieces of cheese.'/>
         <enum-item name='FOOD' comment='Prepared meals. Subtypes come from item_food.txt'/>
         <enum-item name='LIQUID_MISC' comment='Liquids such as water, lye, and extracts.'/>
         <enum-item name='COIN' comment='Coins.'/>
         <enum-item name='GLOB' comment='Fat, tallow, pastes/pressed objects, and small bits of molten rock/metal.'/>
-        <enum-item name='ROCK' comment='Small rocks (usually sharpened and/or thrown in adventurer mode)'/>
+        <enum-item name='ROCK' comment='Small rocks (usually thrown in adventurer mode)'/>
+        <enum-item name='PIPE_SECTION' comment='Pipe sections, used for making screw pumps.'/>
+        <enum-item name='HATCH_COVER' comment='Hatch covers.'/>
+        <enum-item name='GRATE' comment='Grates.'/>
+        <enum-item name='QUERN' comment='Querns.'/>
+        <enum-item name='MILLSTONE' comment='Millstones.'/>
     </enum-type>
 
     <class-type type-name='itemdef' original-name='itemdefst'>
