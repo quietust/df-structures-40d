@@ -53,17 +53,49 @@
             <item-attr name='type' value='Digging'/>
             <item-attr name='skill' value='MINING'/>
         </enum-item>
+        <enum-item name='CarveUpwardStaircase'>
+            <item-attr name='caption' value='Carve Upward Staircase'/>
+            <item-attr name='type' value='Digging'/>
+            <item-attr name='skill' value='MINING'/>
+        </enum-item>
+        <enum-item name='CarveDownwardStaircase'>
+            <item-attr name='caption' value='Carve Downward Staircase'/>
+            <item-attr name='type' value='Digging'/>
+            <item-attr name='skill' value='MINING'/>
+        </enum-item>
+        <enum-item name='CarveUpDownStaircase'>
+            <item-attr name='caption' value='Carve Up/Down Staircase'/>
+            <item-attr name='type' value='Digging'/>
+            <item-attr name='skill' value='MINING'/>
+        </enum-item>
+        <enum-item name='CarveRamp'>
+            <item-attr name='caption' value='Carve Ramp'/>
+            <item-attr name='type' value='Digging'/>
+            <item-attr name='skill' value='MINING'/>
+        </enum-item>
+        <enum-item name='DigChannel'>
+            <item-attr name='caption' value='Dig Channel'/>
+            <item-attr name='type' value='Digging'/>
+            <item-attr name='skill' value='MINING'/>
+        </enum-item>
         <enum-item name='FellTree'>
             <item-attr name='caption' value='Fell Tree'/>
             <item-attr name='type' value='Gathering'/>
             <item-attr name='skill' value='WOODCUTTING'/>
             <item-attr name='item' value='WOOD'/>
         </enum-item>
+
+        -- 10
+
         <enum-item name='GatherPlants'>
             <item-attr name='caption' value='Gather Plants'/>
             <item-attr name='type' value='Gathering'/>
             <item-attr name='skill' value='HERBALISM'/>
             <item-attr name='item' value='PLANT'/>
+        </enum-item>
+        <enum-item name='RemoveConstruction'>
+            <item-attr name='caption' value='Remove Construction'/>
+            <item-attr name='type' value='Building'/>
         </enum-item>
         <enum-item name='CollectWebs'>
             <item-attr name='caption' value='Collect Webs'/>
@@ -85,9 +117,6 @@
             <item-attr name='caption' value='Eat'/>
             <item-attr name='type' value='LifeSupport'/>
         </enum-item>
-
-        -- 10
-
         <enum-item name='GetProvisions'>
             <item-attr name='caption' value='Get Provisions'/>
             <item-attr name='type' value='LifeSupport'/>
@@ -104,6 +133,9 @@
             <item-attr name='caption' value='Fill Waterskin'/>
             <item-attr name='type' value='LifeSupport'/>
         </enum-item>
+
+        -- 20
+
         <enum-item name='Sleep'>
             <item-attr name='caption' value='Sleep'/>
             <item-attr name='type' value='LifeSupport'/>
@@ -137,9 +169,6 @@
             <item-attr name='caption' value='Kidnap'/>
             <item-attr name='type' value='Crime'/>
         </enum-item>
-
-        -- 20
-
         <enum-item name='BeatCriminal'>
             <item-attr name='caption' value='Beat Criminal'/>
             <item-attr name='type' value='LawEnforcement'/>
@@ -156,6 +185,9 @@
             <item-attr name='caption' value='Guard Tax Collector'/>
             <item-attr name='type' value='LawEnforcement'/>
         </enum-item>
+
+        -- 30
+
         <enum-item name='CatchLiveLandAnimal'>
             <item-attr name='caption' value='Catch Live Land Animal'/>
             <item-attr name='type' value='Gathering'/>
@@ -185,9 +217,6 @@
             <item-attr name='type' value='Hauling'/>
             <item-attr name='labor' value='HAUL_BODY'/>
         </enum-item>
-
-        -- 30
-
         <enum-item name='StoreItemInStockpile'>
             <item-attr name='caption' value='Store Item in Stockpile'/>
             <item-attr name='type' value='Hauling'/>
@@ -204,6 +233,9 @@
             <item-attr name='caption' value='Store Item in Cabinet'/>
             <item-attr name='type' value='Hauling'/>
         </enum-item>
+
+        -- 40
+
         <enum-item name='StoreWeapon'>
             <item-attr name='caption' value='Store Weapon'/>
             <item-attr name='type' value='Hauling'/>
@@ -227,9 +259,6 @@
             <item-attr name='caption' value='Seek Infant'/>
             <item-attr name='type' value='LifeSupport'/>
         </enum-item>
-
-        -- 40
-
         <enum-item name='AttendParty'>
             <item-attr name='caption' value='Attend Party'/>
             <item-attr name='type' value='Leisure'/>
@@ -244,6 +273,9 @@
             <item-attr name='caption' value='Go Shopping'/>
             <item-attr name='type' value='LifeSupport'/>
         </enum-item>
+
+        -- 50
+
         <enum-item name='GoShopping2'>
             <item-attr name='caption' value='Go Shopping'/>
             <item-attr name='type' value='LifeSupport'/>
@@ -260,8 +292,8 @@
             <item-attr name='caption' value='Pickup Equipment'/>
             <item-attr name='type' value='LifeSupport'/>
         </enum-item>
-        <enum-item name='ChasmItem'>
-            <item-attr name='caption' value='Chasm Item'/>
+        <enum-item name='DumpItem'>
+            <item-attr name='caption' value='Dump Item'/>
             <item-attr name='type' value='Hauling'/>
             <item-attr name='labor' value='HAUL_REFUSE'/>
         </enum-item>
@@ -269,9 +301,6 @@
             <item-attr name='caption' value='Strange Mood (Crafter)'/>
             <item-attr name='type' value='StrangeMood'/>
         </enum-item>
-
-        -- 50
-
         <enum-item name='StrangeMoodJeweller'>
             <item-attr name='caption' value='Strange Mood (Jeweller)'/>
             <item-attr name='type' value='StrangeMood'/>
@@ -288,6 +317,9 @@
             <item-attr name='caption' value='Strange Mood (Brooding)'/>
             <item-attr name='type' value='StrangeMood'/>
         </enum-item>
+
+        -- 60
+
         <enum-item name='StrangeMoodFell'>
             <item-attr name='caption' value='Strange Mood (Fell)'/>
             <item-attr name='type' value='StrangeMood'/>
@@ -312,9 +344,6 @@
             <item-attr name='caption' value='Strange Mood (Clothier)'/>
             <item-attr name='type' value='StrangeMood'/>
         </enum-item>
-
-        -- 60
-
         <enum-item name='StrangeMoodGlassmaker'>
             <item-attr name='caption' value='Strange Mood (Glassmaker)'/>
             <item-attr name='type' value='StrangeMood'/>
@@ -332,6 +361,9 @@
             <item-attr name='type' value='Manufacture'/>
             <item-attr name='item' value='DOOR'/>
         </enum-item>
+
+        -- 70
+
         <enum-item name='ConstructFloodgate'>
             <item-attr name='caption' value='Construct Floodgate'/>
             <item-attr name='type' value='Manufacture'/>
@@ -362,9 +394,6 @@
             <item-attr name='type' value='Manufacture'/>
             <item-attr name='item' value='BOX'/>
         </enum-item>
-
-        -- 70
-
         <enum-item name='ConstructBin'>
             <item-attr name='caption' value='Construct Bin'/>
             <item-attr name='type' value='Manufacture'/>
@@ -385,6 +414,9 @@
             <item-attr name='type' value='Manufacture'/>
             <item-attr name='item' value='CABINET'/>
         </enum-item>
+
+        -- 80
+
         <enum-item name='ConstructStatue'>
             <item-attr name='caption' value='Construct Statue'/>
             <item-attr name='type' value='Manufacture'/>
@@ -426,9 +458,6 @@
             <item-attr name='item' value='SMALLGEM'/>
             <item-attr name='skill' value='CUTGEM'/>
         </enum-item>
-
-        -- 80
-
         <enum-item name='CutGlass'>
             <item-attr name='caption' value='Cut Glass'/>
             <item-attr name='type' value='Manufacture'/>
@@ -449,12 +478,16 @@
             <item-attr name='caption' value='Destroy Building'/>
             <item-attr name='type' value='Building'/>
         </enum-item>
-        <enum-item name='MakeBars'>
-            <item-attr name='caption' value='Make Metal Bars'/>
+
+        -- 90
+
+        <enum-item name='SmeltOre'>
+            <item-attr name='caption' value='Smelt Ore'/>
             <item-attr name='type' value='Manufacture'/>
             <item-attr name='item' value='BAR'/>
             <item-attr name='skill' value='SMELT'/>
         </enum-item>
+        <enum-item/>
         <enum-item name='MeltMetalObject'>
             <item-attr name='caption' value='Melt a Metal Object'/>
             <item-attr name='type' value='Manufacture'/>
@@ -462,7 +495,7 @@
             <item-attr name='skill' value='SMELT'/>
         </enum-item>
         <enum-item name='ExtractStrands'>
-            <item-attr name='caption' value='Extract Adamantine Strands'/>
+            <item-attr name='caption' value='Extract Metal Strands'/>
             <item-attr name='type' value='Manufacture'/>
             <item-attr name='item' value='THREAD'/>
             <item-attr name='skill' value='EXTRACT_STRAND'/>
@@ -484,9 +517,6 @@
             <item-attr name='skill' value='PLANT'/>
             <item-attr name='item' value='PLANT'/>
         </enum-item>
-
-        -- 90
-
         <enum-item name='TrainHuntingAnimal'>
             <item-attr name='caption' value='Train Hunting Animal'/>
             <item-attr name='type' value='UnitHandling'/>
@@ -503,6 +533,9 @@
             <item-attr name='item' value='WEAPON'/>
             <item-attr name='skill_metal' value='FORGE_WEAPON'/>
         </enum-item>
+
+        -- 100
+
         <enum-item name='ForgeAnvil'>
             <item-attr name='caption' value='Forge Anvil'/>
             <item-attr name='type' value='Manufacture'/>
@@ -542,9 +575,6 @@
             <item-attr name='caption' value='Stud With'/>
             <item-attr name='type' value='Improvement'/>
         </enum-item>
-
-        -- 100
-
         <enum-item name='ButcherAnimal'>
             <item-attr name='caption' value='Butcher an Animal'/>
             <item-attr name='type' value='Manufacture'/>
@@ -565,6 +595,9 @@
             <item-attr name='item' value='POWDER_MISC'/>
             <item-attr name='skill' value='MILLING'/>
         </enum-item>
+
+        -- 110
+
         <enum-item name='BaitTrap'>
             <item-attr name='caption' value='Bait Trap'/>
             <item-attr name='type' value='Hauling'/>
@@ -606,9 +639,6 @@
             <item-attr name='item' value='LIQUID_MISC'/>
             <item-attr name='skill' value='PROCESSPLANTS'/>
         </enum-item>
-
-        -- 110
-
         <enum-item name='PrepareMeal'>
             <item-attr name='caption' value='Prepare Meal'/>
             <item-attr name='type' value='Manufacture'/>
@@ -627,6 +657,9 @@
             <item-attr name='item' value='GLOVES'/>
             <item-attr name='skill_metal' value='FORGE_ARMOR'/>
         </enum-item>
+
+        -- 120
+
         <enum-item name='MakeShoes'>
             <item-attr name='caption' value='Make Shoes'/>
             <item-attr name='type' value='Manufacture'/>
@@ -636,14 +669,6 @@
         <enum-item name='MakeShield'>
             <item-attr name='caption' value='Make Shield'/>
             <item-attr name='item' value='SHIELD'/>
-            <item-attr name='skill_metal' value='FORGE_ARMOR'/>
-        </enum-item>
-        <enum-item name='MakeShirt'>
-            <item-attr name='caption' value='Make Shirt (Obsolete)'/>
-            <item-attr name='skill_metal' value='FORGE_ARMOR'/>
-        </enum-item>
-        <enum-item name='MakeCloak'>
-            <item-attr name='caption' value='Make Cloak (Obsolete)'/>
             <item-attr name='skill_metal' value='FORGE_ARMOR'/>
         </enum-item>
         <enum-item name='MakeCage'>
@@ -663,9 +688,6 @@
             <item-attr name='item' value='FLASK'/>
             <item-attr name='skill_metal' value='METALCRAFT'/>
         </enum-item>
-
-        -- 120
-
         <enum-item name='MakeGoblet'>
             <item-attr name='caption' value='Make Goblet'/>
             <item-attr name='type' value='Manufacture'/>
@@ -701,6 +723,9 @@
             <item-attr name='type' value='Manufacture'/>
             <item-attr name='item' value='BARREL'/>
         </enum-item>
+
+        -- 130
+
         <enum-item name='MakeBucket'>
             <item-attr name='caption' value='Make Bucket'/>
             <item-attr name='type' value='Manufacture'/>
@@ -729,9 +754,6 @@
             <item-attr name='caption' value='Decorate With'/>
             <item-attr name='type' value='Improvement'/>
         </enum-item>
-
-        -- 130
-
         <enum-item name='MakeBackpack'>
             <item-attr name='caption' value='Make Backpack'/>
             <item-attr name='type' value='Manufacture'/>
@@ -759,6 +781,9 @@
             <item-attr name='type' value='SiegeWeapon'/>
             <item-attr name='skill' value='SIEGEOPERATE'/>
         </enum-item>
+
+        -- 140
+
         <enum-item name='LoadBallista'>
             <item-attr name='caption' value='Load Ballista'/>
             <item-attr name='type' value='SiegeWeapon'/>
@@ -786,9 +811,6 @@
             <item-attr name='item' value='TRAPCOMP'/>
             <item-attr name='skill_metal' value='FORGE_WEAPON'/>
         </enum-item>
-
-        -- 140
-
         <enum-item name='LoadCageTrap'>
             <item-attr name='caption' value='Load Cage Trap'/>
             <item-attr name='type' value='Hauling'/>
@@ -812,6 +834,9 @@
         <enum-item name='CastSpell'>
             <item-attr name='caption' value='Cast Spell'/>
         </enum-item>
+
+        -- 150
+
         <enum-item name='LinkBuildingToTrigger'>
             <item-attr name='caption' value='Link a Building to Trigger'/>
             <item-attr name='type' value='Building'/>
@@ -833,9 +858,6 @@
             <item-attr name='possible_item' value='LIQUID_MISC'/>
             <item-attr name='skill' value='BREWING'/>
         </enum-item>
-
-        -- 150
-
         <enum-item name='ExtractFromRawFish'>
             <item-attr name='caption' value='Extract from Raw Fish'/>
             <item-attr name='type' value='Manufacture'/>
@@ -862,6 +884,9 @@
             <item-attr name='caption' value='Chain Animal'/>
             <item-attr name='type' value='UnitHandling'/>
         </enum-item>
+
+        -- 160
+
         <enum-item name='UnchainAnimal'>
             <item-attr name='caption' value='Unchain Animal'/>
             <item-attr name='type' value='UnitHandling'/>
@@ -882,9 +907,6 @@
             <item-attr name='caption' value='Release Small Creature'/>
             <item-attr name='type' value='UnitHandling'/>
         </enum-item>
-
-        -- 160
-
         <enum-item name='HandleSmallCreature'>
             <item-attr name='caption' value='Handle Small Creature'/>
             <item-attr name='type' value='UnitHandling'/>
@@ -906,16 +928,15 @@
             <item-attr name='type' value='Hauling'/>
             <item-attr name='labor' value='RECOVER_WOUNDED'/>
         </enum-item>
+
+        -- 170
+
         <enum-item name='DrainAquarium'>
             <item-attr name='caption' value='Drain Aquarium'/>
             <item-attr name='type' value='Hauling'/>
         </enum-item>
         <enum-item name='FillAquarium'>
             <item-attr name='caption' value='Fill Aquarium'/>
-            <item-attr name='type' value='Hauling'/>
-        </enum-item>
-        <enum-item name='DrainPond'>
-            <item-attr name='caption' value='Drain Pond'/>
             <item-attr name='type' value='Hauling'/>
         </enum-item>
         <enum-item name='FillPond'>
@@ -927,9 +948,6 @@
             <item-attr name='type' value='LifeSupport'/>
             <item-attr name='labor' value='FEED_WATER_CIVILIANS'/>
         </enum-item>
-
-        -- 170
-
         <enum-item name='GiveFood'>
             <item-attr name='caption' value='Give Food'/>
             <item-attr name='type' value='LifeSupport'/>
@@ -949,14 +967,17 @@
             <item-attr name='caption' value='Recover Pet'/>
             <item-attr name='type' value='UnitHandling'/>
         </enum-item>
-        <enum-item name='UnpondSmallAnimal'>
-            <item-attr name='caption' value='Unpond Small Animal'/>
+        <enum-item name='PitLargeAnimal'>
+            <item-attr name='caption' value='Pit/Pond Large Animal'/>
             <item-attr name='type' value='UnitHandling'/>
         </enum-item>
-        <enum-item name='PondSmallAnimal'>
-            <item-attr name='caption' value='Pond Small Animal'/>
+        <enum-item name='PitSmallAnimal'>
+            <item-attr name='caption' value='Pit/Pond Small Animal'/>
             <item-attr name='type' value='UnitHandling'/>
         </enum-item>
+
+        -- 180
+
         <enum-item name='SlaughterAnimal'>
             <item-attr name='caption' value='Slaughter Animal'/>
             <item-attr name='type' value='Gathering'/>
@@ -986,9 +1007,6 @@
             <item-attr name='material' value='LYE'/>
             <item-attr name='skill' value='LYE_MAKING'/>
         </enum-item>
-
-        -- 180
-
         <enum-item name='MakePotashFromLye'>
             <item-attr name='caption' value='Make Potash From Lye'/>
             <item-attr name='type' value='Manufacture'/>
@@ -1023,6 +1041,9 @@
             <item-attr name='material' value='POTASH'/>
             <item-attr name='skill' value='POTASH_MAKING'/>
         </enum-item>
+
+        -- 190
+
         <enum-item name='DyeThread'>
             <item-attr name='caption' value='Dye Thread'/>
             <item-attr name='type' value='Improvement'/>
@@ -1036,6 +1057,55 @@
         <enum-item name='SewImage'>
             <item-attr name='caption' value='Sew Image'/>
             <item-attr name='type' value='Improvement'/>
+        </enum-item>
+        <enum-item name='MakePipeSection'>
+            <item-attr name='caption' value='Make Pipe Section'/>
+            <item-attr name='type' value='Manufacture'/>
+            <item-attr name='item' value='PIPE_SECTION'/>
+        </enum-item>
+        <enum-item name='OperatePump'>
+            <item-attr name='caption' value='Operate Pump'/>
+            <item-attr name='skill' value='OPERATE_PUMP'/>
+        </enum-item>
+        <enum-item name='ManageWorkOrders'>
+            <item-attr name='caption' value='Manage Work Orders'/>
+            <item-attr name='skill' value='ORGANIZATION'/>
+        </enum-item>
+        <enum-item name='UpdateStockpileRecords'>
+            <item-attr name='caption' value='Update Stockpile Records'/>
+            <item-attr name='skill' value='RECORD_KEEPING'/>
+        </enum-item>
+        <enum-item name='TradeAtDepot'>
+            <item-attr name='caption' value='Trade at Depot'/>
+            <item-attr name='skill' value='APPRAISAL'/>
+        </enum-item>
+        <enum-item name='ConstructHatchCover'>
+            <item-attr name='caption' value='Construct Hatch Cover'/>
+            <item-attr name='type' value='Manufacture'/>
+            <item-attr name='item' value='HATCH_COVER'/>
+        </enum-item>
+        <enum-item name='ConstructGrate'>
+            <item-attr name='caption' value='Construct Grate'/>
+            <item-attr name='type' value='Manufacture'/>
+            <item-attr name='item' value='GRATE'/>
+        </enum-item>
+
+        -- 200
+
+        <enum-item name='RemoveStairs'>
+            <item-attr name='caption' value='Remove Stairs/Ramps'/>
+            <item-attr name='type' value='Digging'/>
+            <item-attr name='skill' value='MINING'/>
+        </enum-item>
+        <enum-item name='ConstructQuern'>
+            <item-attr name='caption' value='Construct Quern'/>
+            <item-attr name='type' value='Manufacture'/>
+            <item-attr name='item' value='QUERN'/>
+        </enum-item>
+        <enum-item name='ConstructMillstone'>
+            <item-attr name='caption' value='Construct Millstone'/>
+            <item-attr name='type' value='Manufacture'/>
+            <item-attr name='item' value='MILLSTONE'/>
         </enum-item>
     </enum-type>
 </data-definition>

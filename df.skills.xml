@@ -4,8 +4,10 @@
     <enum-type type-name='profession' base-type='int16_t'>
         <enum-attr name='caption'/>
         <enum-attr name='military' type-name='bool' default-value='false'/>
+        <enum-attr name='parent' type-name='profession' default-value='NONE'/>
         <enum-attr name='can_assign_labor' type-name='bool' default-value='true'
                    comment='Can be assigned any labors, i.e. not child or baby'/>
+        <enum-attr name='color' type-name='int8_t' default-value='-1'/>
 
         <enum-item name='NONE' value='-1'/>
 
@@ -13,376 +15,604 @@
 
         <enum-item name='MINER'>
             <item-attr name='caption' value='Miner'/>
+            <item-attr name='color' value='7'/>
+        </enum-item>
+        <enum-item name='WOODWORKER'>
+            <item-attr name='caption' value='Woodworker'/>
+            <item-attr name='color' value='14'/>
         </enum-item>
         <enum-item name='CARPENTER'>
             <item-attr name='caption' value='Carpenter'/>
+            <item-attr name='parent' value='WOODWORKER'/>
+            <item-attr name='color' value='14'/>
+        </enum-item>
+        <enum-item name='BOWYER'>
+            <item-attr name='caption' value='Bowyer'/>
+            <item-attr name='parent' value='WOODWORKER'/>
+            <item-attr name='color' value='14'/>
+        </enum-item>
+        <enum-item name='WOODCUTTER'>
+            <item-attr name='caption' value='Woodcutter'/>
+            <item-attr name='parent' value='WOODWORKER'/>
+            <item-attr name='color' value='14'/>
+        </enum-item>
+        <enum-item name='STONEWORKER'>
+            <item-attr name='caption' value='Stoneworker'/>
+            <item-attr name='color' value='15'/>
+        </enum-item>
+        <enum-item name='ENGRAVER'>
+            <item-attr name='caption' value='Engraver'/>
+            <item-attr name='parent' value='STONEWORKER'/>
+            <item-attr name='color' value='15'/>
         </enum-item>
         <enum-item name='MASON'>
             <item-attr name='caption' value='Mason'/>
+            <item-attr name='parent' value='STONEWORKER'/>
+            <item-attr name='color' value='15'/>
         </enum-item>
-        <enum-item name='TRAPPER'>
-            <item-attr name='caption' value='Trapper'/>
+        <enum-item name='RANGER'>
+            <item-attr name='caption' value='Ranger'/>
+            <item-attr name='color' value='2'/>
         </enum-item>
-        <enum-item name='METALSMITH'>
-            <item-attr name='caption' value='Metalsmith'/>
-        </enum-item>
-        <enum-item name='JEWELER'>
-            <item-attr name='caption' value='Jeweler'/>
-        </enum-item>
-        <enum-item name='CRAFTSMAN'>
-            <item-attr name='caption' value='Craftsman'/>
-        </enum-item>
-        <enum-item name='KING'>
-            <item-attr name='caption' value='King'/>
-            <item-attr name='can_assign_labor' value='false'/>
-        </enum-item>
-        <enum-item name='KING_CONSORT'>
-            <item-attr name='caption' value='King Consort'/>
-            <item-attr name='can_assign_labor' value='false'/>
-        </enum-item>
-        <enum-item name='FISHERMAN'>
-            <item-attr name='caption' value='Fisherman'/>
+        <enum-item name='ANIMAL_CARETAKER'>
+            <item-attr name='caption' value='Animal Caretaker'/>
+            <item-attr name='parent' value='RANGER'/>
+            <item-attr name='color' value='2'/>
         </enum-item>
 
         -- 10
 
-        <enum-item name='FARMER'>
-            <item-attr name='caption' value='Farmer'/>
+        <enum-item name='ANIMAL_TRAINER'>
+            <item-attr name='caption' value='Animal Trainer'/>
+            <item-attr name='parent' value='RANGER'/>
+            <item-attr name='color' value='2'/>
         </enum-item>
-        <enum-item name='MECHANIC'>
-            <item-attr name='caption' value='Mechanic'/>
+        <enum-item name='HUNTER'>
+            <item-attr name='caption' value='Hunter'/>
+            <item-attr name='parent' value='RANGER'/>
+            <item-attr name='color' value='2'/>
         </enum-item>
-        <enum-item name='MANAGER'>
-            <item-attr name='caption' value='Manager'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='TRAPPER'>
+            <item-attr name='caption' value='Trapper'/>
+            <item-attr name='parent' value='RANGER'/>
+            <item-attr name='color' value='2'/>
         </enum-item>
-        <enum-item name='MAYOR'>
-            <item-attr name='caption' value='Mayor'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='ANIMAL_DISSECTOR'>
+            <item-attr name='caption' value='Animal Dissector'/>
+            <item-attr name='parent' value='RANGER'/>
+            <item-attr name='color' value='2'/>
         </enum-item>
-        <enum-item name='GOVERNOR'>
-            <item-attr name='caption' value='Governor'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='METALSMITH'>
+            <item-attr name='caption' value='Metalsmith'/>
+            <item-attr name='color' value='8'/>
         </enum-item>
-        <enum-item name='BROKER'>
-            <item-attr name='caption' value='Broker'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='FURNACE_OPERATOR'>
+            <item-attr name='caption' value='Furnace Operator'/>
+            <item-attr name='parent' value='METALSMITH'/>
+            <item-attr name='color' value='8'/>
         </enum-item>
-        <enum-item name='MINISTER_TRADE'>
-            <item-attr name='caption' value='Trade Minister'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='WEAPONSMITH'>
+            <item-attr name='caption' value='Weaponsmith'/>
+            <item-attr name='parent' value='METALSMITH'/>
+            <item-attr name='color' value='8'/>
         </enum-item>
-        <enum-item name='GUILDMASTER'>
-            <item-attr name='caption' value='Guildmaster'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='ARMORER'>
+            <item-attr name='caption' value='Armorer'/>
+            <item-attr name='parent' value='METALSMITH'/>
+            <item-attr name='color' value='8'/>
         </enum-item>
-        <enum-item name='BOOKKEEPER'>
-            <item-attr name='caption' value='Bookkeeper'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='BLACKSMITH'>
+            <item-attr name='caption' value='Blacksmith'/>
+            <item-attr name='parent' value='METALSMITH'/>
+            <item-attr name='color' value='8'/>
         </enum-item>
-        <enum-item name='TREASURER'>
-            <item-attr name='caption' value='Treasurer'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='METALCRAFTER'>
+            <item-attr name='caption' value='Metalcrafter'/>
+            <item-attr name='parent' value='METALSMITH'/>
+            <item-attr name='color' value='8'/>
         </enum-item>
 
         -- 20
 
-        <enum-item name='HOARDMASTER'>
-            <item-attr name='caption' value='Hoardmaster'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='JEWELER'>
+            <item-attr name='caption' value='Jeweler'/>
+            <item-attr name='color' value='10'/>
         </enum-item>
-        <enum-item name='TAXCOLLECTOR'>
-            <item-attr name='caption' value='Tax Collector'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='GEM_CUTTER'>
+            <item-attr name='caption' value='Gem Cutter'/>
+            <item-attr name='parent' value='JEWELER'/>
+            <item-attr name='color' value='10'/>
         </enum-item>
-        <enum-item name='EXECUTIONER'>
-            <item-attr name='caption' value='hammerer'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='GEM_SETTER'>
+            <item-attr name='caption' value='Gem Setter'/>
+            <item-attr name='parent' value='JEWELER'/>
+            <item-attr name='color' value='10'/>
         </enum-item>
-        <enum-item name='SHERIFF'>
-            <item-attr name='caption' value='Sheriff'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='CRAFTSMAN'>
+            <item-attr name='caption' value='Craftsman'/>
+            <item-attr name='color' value='9'/>
         </enum-item>
-        <enum-item name='BARON'>
-            <item-attr name='caption' value='Baron'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='WOODCRAFTER'>
+            <item-attr name='caption' value='Woodcrafter'/>
+            <item-attr name='parent' value='CRAFTSMAN'/>
+            <item-attr name='color' value='9'/>
         </enum-item>
-        <enum-item name='COUNT'>
-            <item-attr name='caption' value='Count'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='STONECRAFTER'>
+            <item-attr name='caption' value='Stonecrafter'/>
+            <item-attr name='parent' value='CRAFTSMAN'/>
+            <item-attr name='color' value='9'/>
         </enum-item>
-        <enum-item name='DUKE'>
-            <item-attr name='caption' value='Duke'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='LEATHERWORKER'>
+            <item-attr name='caption' value='Leatherworker'/>
+            <item-attr name='parent' value='CRAFTSMAN'/>
+            <item-attr name='color' value='9'/>
         </enum-item>
-        <enum-item name='BARON_CONSORT'>
-            <item-attr name='caption' value='Baron Consort'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='BONE_CARVER'>
+            <item-attr name='caption' value='Bone Carver'/>
+            <item-attr name='parent' value='CRAFTSMAN'/>
+            <item-attr name='color' value='9'/>
         </enum-item>
-        <enum-item name='COUNT_CONSORT'>
-            <item-attr name='caption' value='Count Consort'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='WEAVER'>
+            <item-attr name='caption' value='Weaver'/>
+            <item-attr name='parent' value='CRAFTSMAN'/>
+            <item-attr name='color' value='9'/>
         </enum-item>
-        <enum-item name='DUKE_CONSORT'>
-            <item-attr name='caption' value='Duke Consort'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='CLOTHIER'>
+            <item-attr name='caption' value='Clothier'/>
+            <item-attr name='parent' value='CRAFTSMAN'/>
+            <item-attr name='color' value='9'/>
         </enum-item>
 
         -- 30
 
-        <enum-item name='GUILD_MINER'>
-            <item-attr name='caption' value='Miners Guild'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='GLASSMAKER'>
+            <item-attr name='caption' value='Glassmaker'/>
+            <item-attr name='parent' value='CRAFTSMAN'/>
+            <item-attr name='color' value='9'/>
         </enum-item>
-        <enum-item name='GUILD_CARPENTER'>
-            <item-attr name='caption' value='Carpenters Guild'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='STRAND_EXTRACTOR'>
+            <item-attr name='caption' value='Strand Extractor'/>
+            <item-attr name='parent' value='CRAFTSMAN'/>
+            <item-attr name='color' value='9'/>
         </enum-item>
-        <enum-item name='GUILD_MASON'>
-            <item-attr name='caption' value='Masons Guild'/>
+        <enum-item name='KING'>
+            <item-attr name='caption' value='King'/>
             <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='13'/>
         </enum-item>
-        <enum-item name='GUILD_METALSMITH'>
-            <item-attr name='caption' value='Metalsmiths Guild'/>
+        <enum-item name='KING_CONSORT'>
+            <item-attr name='caption' value='King Consort'/>
             <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='11'/>
         </enum-item>
-        <enum-item name='GUILD_JEWELER'>
-            <item-attr name='caption' value='Jewelers Guild'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='FISHERY_WORKER'>
+            <item-attr name='caption' value='Fishery Worker'/>
+            <item-attr name='color' value='1'/>
         </enum-item>
-        <enum-item name='GUILD_CRAFTSMAN'>
-            <item-attr name='caption' value='Craftsmen Guild'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='FISHERMAN'>
+            <item-attr name='caption' value='Fisherman'/>
+            <item-attr name='parent' value='FISHERY_WORKER'/>
+            <item-attr name='color' value='1'/>
         </enum-item>
-        <enum-item name='HOUSE_DEATH'>
-            <item-attr name='caption' value='House Rash'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='FISH_DISSECTOR'>
+            <item-attr name='caption' value='Fish Dissector'/>
+            <item-attr name='parent' value='FISHERY_WORKER'/>
+            <item-attr name='color' value='1'/>
         </enum-item>
-        <enum-item name='HOUSE_ANIMAL'>
-            <item-attr name='caption' value='House Fer'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='FISH_CLEANER'>
+            <item-attr name='caption' value='Fish Cleaner'/>
+            <item-attr name='parent' value='FISHERY_WORKER'/>
+            <item-attr name='color' value='1'/>
         </enum-item>
-        <enum-item name='HOUSE_FARMER'>
-            <item-attr name='caption' value='House Ber'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='FARMER'>
+            <item-attr name='caption' value='Farmer'/>
+            <item-attr name='color' value='6'/>
         </enum-item>
-        <enum-item name='PHILOSOPHER'>
-            <item-attr name='caption' value='Philosopher'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='CHEESE_MAKER'>
+            <item-attr name='caption' value='Cheese Maker'/>
+            <item-attr name='parent' value='FARMER'/>
+            <item-attr name='color' value='6'/>
         </enum-item>
 
         -- 40
 
-        <enum-item name='ADVISOR'>
-            <item-attr name='caption' value='Advisor'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='MILKER'>
+            <item-attr name='caption' value='Milker'/>
+            <item-attr name='parent' value='FARMER'/>
+            <item-attr name='color' value='6'/>
         </enum-item>
-        <enum-item name='CULT_AXE'>
-            <item-attr name='caption' value='Order of the Axe'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='COOK'>
+            <item-attr name='caption' value='Cook'/>
+            <item-attr name='parent' value='FARMER'/>
+            <item-attr name='color' value='6'/>
         </enum-item>
-        <enum-item name='CULT_MACE'>
-            <item-attr name='caption' value='Order of the Mace'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='THRESHER'>
+            <item-attr name='caption' value='Thresher'/>
+            <item-attr name='parent' value='FARMER'/>
+            <item-attr name='color' value='6'/>
         </enum-item>
-        <enum-item name='CULT_SWORD'>
-            <item-attr name='caption' value='Order of the Sword'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='MILLER'>
+            <item-attr name='caption' value='Miller'/>
+            <item-attr name='parent' value='FARMER'/>
+            <item-attr name='color' value='6'/>
         </enum-item>
-        <enum-item name='CULT_HAMMER'>
-            <item-attr name='caption' value='Order of the Hammer'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='BUTCHER'>
+            <item-attr name='caption' value='Butcher'/>
+            <item-attr name='parent' value='FARMER'/>
+            <item-attr name='color' value='6'/>
         </enum-item>
-        <enum-item name='CULT_CROSSBOW'>
-            <item-attr name='caption' value='Order of the Crossbow'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='TANNER'>
+            <item-attr name='caption' value='Tanner'/>
+            <item-attr name='parent' value='FARMER'/>
+            <item-attr name='color' value='6'/>
         </enum-item>
-        <enum-item name='CULT_SPEAR'>
-            <item-attr name='caption' value='Order of the Spear'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='DYER'>
+            <item-attr name='caption' value='Dyer'/>
+            <item-attr name='parent' value='FARMER'/>
+            <item-attr name='color' value='6'/>
         </enum-item>
-        <enum-item name='ALCHEMIST'>
-            <item-attr name='caption' value='Alchemist'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='PLANTER'>
+            <item-attr name='caption' value='Planter'/>
+            <item-attr name='parent' value='FARMER'/>
+            <item-attr name='color' value='6'/>
         </enum-item>
-        <enum-item name='DUNGEONMASTER'>
-            <item-attr name='caption' value='Dungeon Master'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='HERBALIST'>
+            <item-attr name='caption' value='Herbalist'/>
+            <item-attr name='parent' value='FARMER'/>
+            <item-attr name='color' value='6'/>
         </enum-item>
-        <enum-item name='MERCHANT'>
-            <item-attr name='caption' value='Merchant'/>
-            <item-attr name='can_assign_labor' value='false'/>
+        <enum-item name='BREWER'>
+            <item-attr name='caption' value='Brewer'/>
+            <item-attr name='parent' value='FARMER'/>
+            <item-attr name='color' value='6'/>
         </enum-item>
 
         -- 50
 
+        <enum-item name='SOAP_MAKER'>
+            <item-attr name='caption' value='Soap Maker'/>
+            <item-attr name='parent' value='FARMER'/>
+            <item-attr name='color' value='6'/>
+        </enum-item>
+        <enum-item name='POTASH_MAKER'>
+            <item-attr name='caption' value='Potash Maker'/>
+            <item-attr name='parent' value='FARMER'/>
+            <item-attr name='color' value='6'/>
+        </enum-item>
+        <enum-item name='LYE_MAKER'>
+            <item-attr name='caption' value='Lye Maker'/>
+            <item-attr name='parent' value='FARMER'/>
+            <item-attr name='color' value='6'/>
+        </enum-item>
+        <enum-item name='WOOD_BURNER'>
+            <item-attr name='caption' value='Wood Burner'/>
+            <item-attr name='parent' value='FARMER'/>
+            <item-attr name='color' value='6'/>
+        </enum-item>
+        <enum-item name='ENGINEER'>
+            <item-attr name='caption' value='Engineer'/>
+            <item-attr name='color' value='12'/>
+        </enum-item>
+        <enum-item name='MECHANIC'>
+            <item-attr name='caption' value='Mechanic'/>
+            <item-attr name='parent' value='ENGINEER'/>
+            <item-attr name='color' value='12'/>
+        </enum-item>
+        <enum-item name='SIEGE_ENGINEER'>
+            <item-attr name='caption' value='Siege Engineer'/>
+            <item-attr name='parent' value='ENGINEER'/>
+            <item-attr name='color' value='12'/>
+        </enum-item>
+        <enum-item name='SIEGE_OPERATOR'>
+            <item-attr name='caption' value='Siege Operator'/>
+            <item-attr name='parent' value='ENGINEER'/>
+            <item-attr name='color' value='12'/>
+        </enum-item>
+        <enum-item name='PUMP_OPERATOR'>
+            <item-attr name='caption' value='Pump Operator'/>
+            <item-attr name='parent' value='ENGINEER'/>
+            <item-attr name='color' value='12'/>
+        </enum-item>
+        <enum-item name='CLERK'>
+            <item-attr name='caption' value='Clerk'/>
+            <item-attr name='parent' value='ADMINISTRATOR'/>
+            <item-attr name='color' value='5'/>
+        </enum-item>
+
+        -- 60
+
+        <enum-item name='ADMINISTRATOR'>
+            <item-attr name='caption' value='Administrator'/>
+            <item-attr name='color' value='5'/>
+        </enum-item>
+        <enum-item name='TRADER'>
+            <item-attr name='caption' value='Trader'/>
+            <item-attr name='parent' value='ADMINISTRATOR'/>
+            <item-attr name='color' value='5'/>
+        </enum-item>
+        <enum-item name='ARCHITECT'>
+            <item-attr name='caption' value='Architect'/>
+            <item-attr name='parent' value='ADMINISTRATOR'/>
+            <item-attr name='color' value='5'/>
+        </enum-item>
+        <enum-item name='ALCHEMIST'>
+            <item-attr name='caption' value='Alchemist'/>
+            <item-attr name='color' value='5'/>
+        </enum-item>
+        <enum-item name='TAXCOLLECTOR'>
+            <item-attr name='caption' value='Tax Collector'/>
+            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='14'/>
+        </enum-item>
+        <enum-item name='EXECUTIONER'>
+            <item-attr name='caption' value='Hammerer'/>
+            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='8'/>
+        </enum-item>
+        <enum-item name='BARON'>
+            <item-attr name='caption' value='Baron'/>
+            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='5'/>
+        </enum-item>
+        <enum-item name='COUNT'>
+            <item-attr name='caption' value='Count'/>
+            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='5'/>
+        </enum-item>
+        <enum-item name='DUKE'>
+            <item-attr name='caption' value='Duke'/>
+            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='5'/>
+        </enum-item>
+        <enum-item name='BARON_CONSORT'>
+            <item-attr name='caption' value='Baron Consort'/>
+            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='5'/>
+        </enum-item>
+
+        -- 70
+
+        <enum-item name='COUNT_CONSORT'>
+            <item-attr name='caption' value='Count Consort'/>
+            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='5'/>
+        </enum-item>
+        <enum-item name='DUKE_CONSORT'>
+            <item-attr name='caption' value='Duke Consort'/>
+            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='5'/>
+        </enum-item>
+        <enum-item name='PHILOSOPHER'>
+            <item-attr name='caption' value='Philosopher'/>
+            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='5'/>
+        </enum-item>
+        <enum-item name='ADVISOR'>
+            <item-attr name='caption' value='Advisor'/>
+            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='5'/>
+        </enum-item>
+        <enum-item name='DUNGEONMASTER'>
+            <item-attr name='caption' value='Dungeon Master'/>
+            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='5'/>
+        </enum-item>
+        <enum-item name='MERCHANT'>
+            <item-attr name='caption' value='Merchant'/>
+            <item-attr name='color' value='7'/>
+        </enum-item>
         <enum-item name='DIPLOMAT'>
             <item-attr name='caption' value='Diplomat'/>
             <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='15'/>
         </enum-item>
         <enum-item name='GUILDREP'>
             <item-attr name='caption' value='Guild Representative'/>
             <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='15'/>
         </enum-item>
         <enum-item name='MERCHANTBARON'>
             <item-attr name='caption' value='Merchant Baron'/>
             <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='15'/>
         </enum-item>
         <enum-item name='MERCHANTPRINCE'>
             <item-attr name='caption' value='Merchant Prince'/>
             <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='15'/>
         </enum-item>
+
+        -- 80
+
         <enum-item name='OUTPOSTLIAISON'>
             <item-attr name='caption' value='Outpost Liaison'/>
             <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='15'/>
         </enum-item>
         <enum-item name='DRUID'>
             <item-attr name='caption' value='Druid'/>
             <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='color' value='11'/>
         </enum-item>
         <enum-item name='CHAMPION'>
             <item-attr name='caption' value='Champion'/>
             <item-attr name='can_assign_labor' value='false'/>
             <item-attr name='military' value='true'/>
+            <item-attr name='color' value='15'/>
         </enum-item>
         <enum-item name='HAMMERMAN'>
             <item-attr name='caption' value='Hammerman'/>
             <item-attr name='military' value='true'/>
+            <item-attr name='color' value='5'/>
         </enum-item>
         <enum-item name='MASTER_HAMMERMAN'>
             <item-attr name='caption' value='Hammer Lord'/>
             <item-attr name='military' value='true'/>
-            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='parent' value='HAMMERMAN'/>
+            <item-attr name='color' value='13'/>
         </enum-item>
         <enum-item name='SPEARMAN'>
             <item-attr name='caption' value='Spearman'/>
             <item-attr name='military' value='true'/>
+            <item-attr name='color' value='6'/>
         </enum-item>
-
-        -- 60
-
         <enum-item name='MASTER_SPEARMAN'>
             <item-attr name='caption' value='Spearmaster'/>
             <item-attr name='military' value='true'/>
-            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='parent' value='SPEARMAN'/>
+            <item-attr name='color' value='14'/>
         </enum-item>
         <enum-item name='CROSSBOWMAN'>
             <item-attr name='caption' value='Crossbowman'/>
             <item-attr name='military' value='true'/>
+            <item-attr name='color' value='2'/>
         </enum-item>
         <enum-item name='MASTER_CROSSBOWMAN'>
             <item-attr name='caption' value='Elite Crossbowman'/>
             <item-attr name='military' value='true'/>
-            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='parent' value='CROSSBOWMAN'/>
+            <item-attr name='color' value='10'/>
         </enum-item>
         <enum-item name='WRESTLER'>
             <item-attr name='caption' value='Wrestler'/>
             <item-attr name='military' value='true'/>
+            <item-attr name='color' value='7'/>
         </enum-item>
+
+        -- 90
+
         <enum-item name='MASTER_WRESTLER'>
             <item-attr name='caption' value='Elite Wrestler'/>
             <item-attr name='military' value='true'/>
-            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='parent' value='WRESTLER'/>
+            <item-attr name='color' value='15'/>
         </enum-item>
         <enum-item name='AXEMAN'>
             <item-attr name='caption' value='Axeman'/>
             <item-attr name='military' value='true'/>
+            <item-attr name='color' value='1'/>
         </enum-item>
         <enum-item name='MASTER_AXEMAN'>
             <item-attr name='caption' value='Axe Lord'/>
             <item-attr name='military' value='true'/>
-            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='parent' value='AXEMAN'/>
+            <item-attr name='color' value='9'/>
         </enum-item>
         <enum-item name='SWORDSMAN'>
             <item-attr name='caption' value='Swordsman'/>
             <item-attr name='military' value='true'/>
+            <item-attr name='color' value='3'/>
         </enum-item>
         <enum-item name='MASTER_SWORDSMAN'>
             <item-attr name='caption' value='Swordsmaster'/>
             <item-attr name='military' value='true'/>
-            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='parent' value='SWORDSMAN'/>
+            <item-attr name='color' value='11'/>
         </enum-item>
         <enum-item name='MACEMAN'>
             <item-attr name='caption' value='Maceman'/>
             <item-attr name='military' value='true'/>
+            <item-attr name='color' value='4'/>
         </enum-item>
-
-        -- 70
-
         <enum-item name='MASTER_MACEMAN'>
             <item-attr name='caption' value='Mace Lord'/>
             <item-attr name='military' value='true'/>
-            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='parent' value='MACEMAN'/>
+            <item-attr name='color' value='12'/>
         </enum-item>
         <enum-item name='PIKEMAN'>
             <item-attr name='caption' value='Pikeman'/>
             <item-attr name='military' value='true'/>
+            <item-attr name='color' value='6'/>
         </enum-item>
         <enum-item name='MASTER_PIKEMAN'>
             <item-attr name='caption' value='Pikemaster'/>
             <item-attr name='military' value='true'/>
-            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='parent' value='PIKEMAN'/>
+            <item-attr name='color' value='14'/>
         </enum-item>
         <enum-item name='BOWMAN'>
             <item-attr name='caption' value='Bowman'/>
             <item-attr name='military' value='true'/>
+            <item-attr name='color' value='2'/>
         </enum-item>
+
+        -- 100
+
         <enum-item name='MASTER_BOWMAN'>
             <item-attr name='caption' value='Elite Bowman'/>
             <item-attr name='military' value='true'/>
-            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='parent' value='BOWMAN'/>
+            <item-attr name='color' value='10'/>
         </enum-item>
         <enum-item name='BLOWGUNMAN'>
             <item-attr name='caption' value='Blowgunner'/>
             <item-attr name='military' value='true'/>
+            <item-attr name='color' value='8'/>
         </enum-item>
         <enum-item name='MASTER_BLOWGUNMAN'>
             <item-attr name='caption' value='Master Blowgunner'/>
             <item-attr name='military' value='true'/>
-            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='parent' value='BLOWGUNMAN'/>
+            <item-attr name='color' value='8'/>
         </enum-item>
         <enum-item name='RECRUIT'>
             <item-attr name='caption' value='Recruit'/>
             <item-attr name='military' value='true'/>
+            <item-attr name='color' value='8'/>
         </enum-item>
         <enum-item name='TRAINED_HUNTER'>
             <item-attr name='caption' value='Hunting Animal'/>
+            <item-attr name='color' value='15'/>
         </enum-item>
         <enum-item name='TRAINED_WAR'>
             <item-attr name='caption' value='War Animal'/>
+            <item-attr name='color' value='8'/>
         </enum-item>
-
-        -- 80
-
         <enum-item name='MASTER_THIEF'>
             <item-attr name='caption' value='Master Thief'/>
+            <item-attr name='parent' value='THIEF'/>
+            <item-attr name='color' value='8'/>
         </enum-item>
         <enum-item name='THIEF'>
             <item-attr name='caption' value='Thief'/>
+            <item-attr name='color' value='8'/>
         </enum-item>
         <enum-item name='STANDARD'>
             <item-attr name='caption' value='Peasant'/>
+            <item-attr name='color' value='-1'/>
         </enum-item>
         <enum-item name='CHILD'>
             <item-attr name='caption' value='Child'/>
             <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='parent' value='STANDARD'/>
+            <item-attr name='color' value='4'/>
         </enum-item>
+
+        -- 110
+
         <enum-item name='BABY'>
             <item-attr name='caption' value='Baby'/>
             <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='parent' value='STANDARD'/>
+            <item-attr name='color' value='4'/>
         </enum-item>
         <enum-item name='DRUNK'>
             <item-attr name='caption' value='Drunk'/>
             <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='parent' value='STANDARD'/>
+            <item-attr name='color' value='6'/>
         </enum-item>
         <enum-item name='LASHER'>
             <item-attr name='caption' value='Lasher'/>
             <item-attr name='military' value='true'/>
+            <item-attr name='color' value='8'/>
         </enum-item>
         <enum-item name='MASTER_LASHER'>
             <item-attr name='caption' value='Master Lasher'/>
             <item-attr name='military' value='true'/>
-            <item-attr name='can_assign_labor' value='false'/>
+            <item-attr name='parent' value='LASHER'/>
+            <item-attr name='color' value='8'/>
         </enum-item>
     </enum-type>
 
@@ -461,6 +691,9 @@
 
         -- 20
 
+        <enum-item name='DISSECT_VERMIN'>
+            <item-attr name='caption' value='Small Animal Dissection'/>
+        </enum-item>
         <enum-item name='LEATHER'>
             <item-attr name='caption' value='Leatherworking'/>
         </enum-item>
@@ -473,6 +706,9 @@
         <enum-item name='ALCHEMIST'>
             <item-attr name='caption' value='Alchemy'/>
         </enum-item>
+        <enum-item name='SOAP_MAKER'>
+            <item-attr name='caption' value='Soap Maker'/>
+        </enum-item>
         <enum-item name='WEAVER'>
             <item-attr name='caption' value='Weaving'/>
         </enum-item>
@@ -482,8 +718,17 @@
         <enum-item name='MILLER'>
             <item-attr name='caption' value='Milling'/>
         </enum-item>
-        <enum-item name='FARMING_WORKSHOP'>
-            <item-attr name='caption' value='Farming (Workshop)'/>
+        <enum-item name='PROCESS_PLANT'>
+            <item-attr name='caption' value='Plant Processing'/>
+        </enum-item>
+
+        -- 30
+
+        <enum-item name='MAKE_CHEESE'>
+            <item-attr name='caption' value='Cheese Making'/>
+        </enum-item>
+        <enum-item name='MILK'>
+            <item-attr name='caption' value='Milking'/>
         </enum-item>
         <enum-item name='COOK'>
             <item-attr name='caption' value='Cooking'/>
@@ -491,9 +736,6 @@
         <enum-item name='PLANT'>
             <item-attr name='caption' value='Farming (Fields)'/>
         </enum-item>
-
-        -- 30
-
         <enum-item name='HERBALIST'>
             <item-attr name='caption' value='Plant Gathering'/>
         </enum-item>
@@ -503,32 +745,53 @@
         <enum-item name='CLEAN_FISH'>
             <item-attr name='caption' value='Fish Cleaning'/>
         </enum-item>
+        <enum-item name='DISSECT_FISH'>
+            <item-attr name='caption' value='Fish Dissection'/>
+        </enum-item>
         <enum-item name='HUNT'>
             <item-attr name='caption' value='Hunting'/>
         </enum-item>
         <enum-item name='SMELT'>
             <item-attr name='caption' value='Furnace Operating'/>
         </enum-item>
-        <enum-item name='EXTRACT_ADAMANTINE'>
-            <item-attr name='caption' value='Adamantine Extraction'/>
-        </enum-item>
-        <enum-item name='WORK_ADAMANTINE'>
-            <item-attr name='caption' value='Adamantine Working'/>
-        </enum-item>
-        <enum-item name='FORGE'>
-            <item-attr name='caption' value='Metalsmithing'/>
-        </enum-item>
-        <enum-item name='GEM'>
-            <item-attr name='caption' value='Jeweling'/>
-        </enum-item>
-        <enum-item name='CRAFT'>
-            <item-attr name='caption' value='Craftsworking'/>
-        </enum-item>
 
         -- 40
 
+        <enum-item name='FORGE_WEAPON'>
+            <item-attr name='caption' value='Weaponsmithing'/>
+        </enum-item>
+        <enum-item name='FORGE_ARMOR'>
+            <item-attr name='caption' value='Armoring'/>
+        </enum-item>
+        <enum-item name='FORGE_FURNITURE'>
+            <item-attr name='caption' value='Blacksmithing'/>
+        </enum-item>
+        <enum-item name='METAL_CRAFT'>
+            <item-attr name='caption' value='Metalcrafting'/>
+        </enum-item>
+        <enum-item name='CUT_GEM'>
+            <item-attr name='caption' value='Gem Cutting'/>
+        </enum-item>
+        <enum-item name='ENCRUST_GEM'>
+            <item-attr name='caption' value='Gem Setting'/>
+        </enum-item>
+        <enum-item name='WOOD_CRAFT'>
+            <item-attr name='caption' value='Woodcrafting'/>
+        </enum-item>
+        <enum-item name='STONE_CRAFT'>
+            <item-attr name='caption' value='Stonecrafting'/>
+        </enum-item>
+        <enum-item name='BONE_CARVE'>
+            <item-attr name='caption' value='Bone Carving'/>
+        </enum-item>
         <enum-item name='GLASSMAKER'>
             <item-attr name='caption' value='Glassmaking'/>
+        </enum-item>
+
+        -- 50
+
+        <enum-item name='EXTRACT_STRAND'>
+            <item-attr name='caption' value='Strand Extraction'/>
         </enum-item>
         <enum-item name='AXE'>
             <item-attr name='caption' value='Axe-fighting'/>
@@ -558,7 +821,7 @@
             <item-attr name='caption' value='Blowgun-fighting'/>
         </enum-item>
 
-        -- 50
+        -- 60
 
         <enum-item name='PIKE'>
             <item-attr name='caption' value='Pike-fighting'/>
@@ -587,250 +850,539 @@
         <enum-item name='WEAPON_NUMBER'>
             <item-attr name='caption' value='Weapon Number'/>
         </enum-item>
-        <enum-item name='ASHERY'>
-            <item-attr name='caption' value='Ashery Operating'/>
+        <enum-item name='POTASH_MAKING'>
+            <item-attr name='caption' value='Potash Making'/>
         </enum-item>
 
-        -- 60
+        -- 70
 
+        <enum-item name='LYE_MAKING'>
+            <item-attr name='caption' value='Lye Making'/>
+        </enum-item>
         <enum-item name='DYER'>
             <item-attr name='caption' value='Dyeing'/>
         </enum-item>
         <enum-item name='BURN_WOOD'>
             <item-attr name='caption' value='Wood Burning'/>
         </enum-item>
+        <enum-item name='OPERATE_PUMP'>
+            <item-attr name='caption' value='Pump Operating'/>
+        </enum-item>
     </enum-type>
 
     ----- SKILL -----
 
+    <enum-type type-name='job_skill_class' comment='not in DF'>
+        <enum-item name='Normal'/>
+        <enum-item name='Medical'/>
+        <enum-item name='Personal'/>
+        <enum-item name='Social'/>
+        <enum-item name='Cultural'/>
+        <enum-item name='MilitaryWeapon'/>
+        <enum-item name='MilitaryAttack'/>
+        <enum-item name='MilitaryDefense'/>
+        <enum-item name='MilitaryMisc'/>
+    </enum-type>
+
     <enum-type type-name='job_skill'>
         <enum-attr name='caption'/>
+        <enum-attr name='caption_noun'/>
+        <enum-attr name='profession' type-name='profession' default-value='NONE'/>
+        <enum-attr name='labor' type-name='unit_labor' default-value='NONE'/>
+        <enum-attr name='type' type-name='job_skill_class' default-value='Normal'/>
 
         <enum-item name='NONE' value='-1'/>
 
         -- 0
 
         <enum-item name='MINING'>
-            <item-attr name='caption' value='Miner'/>
+            <item-attr name='caption' value='Mining'/>
+            <item-attr name='caption_noun' value='Miner'/>
+            <item-attr name='profession' value='MINER'/>
+            <item-attr name='labor' value='MINE'/>
         </enum-item>
         <enum-item name='WOODCUTTING'>
-            <item-attr name='caption' value='Wood Cutter'/>
+            <item-attr name='caption' value='Wood Cutting'/>
+            <item-attr name='caption_noun' value='Wood Cutter'/>
+            <item-attr name='profession' value='WOODCUTTER'/>
+            <item-attr name='labor' value='CUTWOOD'/>
         </enum-item>
         <enum-item name='CARPENTRY'>
-            <item-attr name='caption' value='Carpenter'/>
+            <item-attr name='caption' value='Carpentry'/>
+            <item-attr name='caption_noun' value='Carpenter'/>
+            <item-attr name='profession' value='CARPENTER'/>
+            <item-attr name='labor' value='CARPENTER'/>
         </enum-item>
         <enum-item name='DETAILSTONE'>
-            <item-attr name='caption' value='Engraver'/>
+            <item-attr name='caption' value='Engraving'/>
+            <item-attr name='caption_noun' value='Engraver'/>
+            <item-attr name='profession' value='ENGRAVER'/>
+            <item-attr name='labor' value='DETAIL'/>
         </enum-item>
         <enum-item name='MASONRY'>
-            <item-attr name='caption' value='Mason'/>
+            <item-attr name='caption' value='Masonry'/>
+            <item-attr name='caption_noun' value='Mason'/>
+            <item-attr name='profession' value='MASON'/>
+            <item-attr name='labor' value='MASON'/>
         </enum-item>
         <enum-item name='ANIMALTRAIN'>
-            <item-attr name='caption' value='Animal Trainer'/>
+            <item-attr name='caption' value='Animal Training'/>
+            <item-attr name='caption_noun' value='Animal Trainer'/>
+            <item-attr name='profession' value='ANIMAL_TRAINER'/>
+            <item-attr name='labor' value='ANIMALTRAIN'/>
         </enum-item>
         <enum-item name='ANIMALCARE'>
-            <item-attr name='caption' value='Animal Caretaker'/>
+            <item-attr name='caption' value='Animal Caretaking'/>
+            <item-attr name='caption_noun' value='Animal Caretaker'/>
+            <item-attr name='profession' value='ANIMAL_CARETAKER'/>
+            <item-attr name='labor' value='ANIMALCARE'/>
         </enum-item>
         <enum-item name='DISSECT_FISH'>
-            <item-attr name='caption' value='Fish Dissector'/>
+            <item-attr name='caption' value='Fish Dissection'/>
+            <item-attr name='caption_noun' value='Fish Dissector'/>
+            <item-attr name='profession' value='FISH_DISSECTOR'/>
+            <item-attr name='labor' value='DISSECT_FISH'/>
         </enum-item>
         <enum-item name='DISSECT_VERMIN'>
-            <item-attr name='caption' value='Animal Dissector'/>
+            <item-attr name='caption' value='Animal Dissection'/>
+            <item-attr name='caption_noun' value='Animal Dissector'/>
+            <item-attr name='profession' value='ANIMAL_DISSECTOR'/>
+            <item-attr name='labor' value='DISSECT_VERMIN'/>
         </enum-item>
         <enum-item name='PROCESSFISH'>
-            <item-attr name='caption' value='Fish Cleaner'/>
+            <item-attr name='caption' value='Fish Cleaning'/>
+            <item-attr name='caption_noun' value='Fish Cleaner'/>
+            <item-attr name='profession' value='FISH_CLEANER'/>
+            <item-attr name='labor' value='CLEAN_FISH'/>
         </enum-item>
 
         -- 10
 
         <enum-item name='BUTCHER'>
-            <item-attr name='caption' value='Butcher'/>
+            <item-attr name='caption' value='Butchery'/>
+            <item-attr name='caption_noun' value='Butcher'/>
+            <item-attr name='profession' value='BUTCHER'/>
+            <item-attr name='labor' value='BUTCHER'/>
         </enum-item>
         <enum-item name='TRAPPING'>
-            <item-attr name='caption' value='Trapper'/>
+            <item-attr name='caption' value='Trapping'/>
+            <item-attr name='caption_noun' value='Trapper'/>
+            <item-attr name='profession' value='TRAPPER'/>
+            <item-attr name='labor' value='TRAPPER'/>
         </enum-item>
         <enum-item name='TANNER'>
-            <item-attr name='caption' value='Tanner'/>
+            <item-attr name='caption' value='Tanning'/>
+            <item-attr name='caption_noun' value='Tanner'/>
+            <item-attr name='profession' value='TANNER'/>
+            <item-attr name='labor' value='TANNER'/>
         </enum-item>
         <enum-item name='WEAVING'>
-            <item-attr name='caption' value='Weaver'/>
+            <item-attr name='caption' value='Weaving'/>
+            <item-attr name='caption_noun' value='Weaver'/>
+            <item-attr name='profession' value='WEAVER'/>
+            <item-attr name='labor' value='WEAVER'/>
         </enum-item>
         <enum-item name='BREWING'>
-            <item-attr name='caption' value='Brewer'/>
+            <item-attr name='caption' value='Brewing'/>
+            <item-attr name='caption_noun' value='Brewer'/>
+            <item-attr name='profession' value='BREWER'/>
+            <item-attr name='labor' value='BREWER'/>
         </enum-item>
         <enum-item name='ALCHEMY'>
-            <item-attr name='caption' value='Alchemist'/>
+            <item-attr name='caption' value='Alchemy'/>
+            <item-attr name='caption_noun' value='Alchemist'/>
+            <item-attr name='profession' value='ALCHEMIST'/>
+            <item-attr name='labor' value='ALCHEMIST'/>
         </enum-item>
         <enum-item name='CLOTHESMAKING'>
-            <item-attr name='caption' value='Clothes Maker'/>
+            <item-attr name='caption' value='Clothes Making'/>
+            <item-attr name='caption_noun' value='Clothier'/>
+            <item-attr name='profession' value='CLOTHIER'/>
+            <item-attr name='labor' value='CLOTHESMAKER'/>
         </enum-item>
         <enum-item name='MILLING'>
-            <item-attr name='caption' value='Miller'/>
+            <item-attr name='caption' value='Milling'/>
+            <item-attr name='caption_noun' value='Miller'/>
+            <item-attr name='profession' value='MILLER'/>
+            <item-attr name='labor' value='MILLER'/>
         </enum-item>
         <enum-item name='PROCESSPLANTS'>
-            <item-attr name='caption' value='Thresher'/>
+            <item-attr name='caption' value='Threshing'/>
+            <item-attr name='caption_noun' value='Thresher'/>
+            <item-attr name='profession' value='THRESHER'/>
+            <item-attr name='labor' value='PROCESS_PLANT'/>
         </enum-item>
         <enum-item name='CHEESEMAKING'>
-            <item-attr name='caption' value='Cheese Maker'/>
+            <item-attr name='caption' value='Cheese Making'/>
+            <item-attr name='caption_noun' value='Cheese Maker'/>
+            <item-attr name='profession' value='CHEESE_MAKER'/>
+            <item-attr name='labor' value='MAKE_CHEESE'/>
         </enum-item>
 
         -- 20
 
         <enum-item name='MILK'>
-            <item-attr name='caption' value='Milker'/>
+            <item-attr name='caption' value='Milking'/>
+            <item-attr name='caption_noun' value='Milker'/>
+            <item-attr name='profession' value='MILKER'/>
+            <item-attr name='labor' value='MILK'/>
         </enum-item>
         <enum-item name='COOK'>
-            <item-attr name='caption' value='Cook'/>
+            <item-attr name='caption' value='Cooking'/>
+            <item-attr name='caption_noun' value='Cook'/>
+            <item-attr name='profession' value='COOK'/>
+            <item-attr name='labor' value='COOK'/>
         </enum-item>
         <enum-item name='PLANT'>
-            <item-attr name='caption' value='Grower'/>
+            <item-attr name='caption' value='Growing'/>
+            <item-attr name='caption_noun' value='Grower'/>
+            <item-attr name='profession' value='PLANTER'/>
+            <item-attr name='labor' value='PLANT'/>
         </enum-item>
         <enum-item name='HERBALISM'>
-            <item-attr name='caption' value='Herbalist'/>
+            <item-attr name='caption' value='Herbalism'/>
+            <item-attr name='caption_noun' value='Herbalist'/>
+            <item-attr name='profession' value='HERBALIST'/>
+            <item-attr name='labor' value='HERBALIST'/>
         </enum-item>
         <enum-item name='FISH'>
-            <item-attr name='caption' value='Fisherman'/>
+            <item-attr name='caption' value='Fishing'/>
+            <item-attr name='caption_noun' value='Fisherman'/>
+            <item-attr name='profession' value='FISHERMAN'/>
+            <item-attr name='labor' value='FISH'/>
         </enum-item>
         <enum-item name='SMELT'>
-            <item-attr name='caption' value='Furnace Operator'/>
+            <item-attr name='caption' value='Furnace Operation'/>
+            <item-attr name='caption_noun' value='Furnace Operator'/>
+            <item-attr name='profession' value='FURNACE_OPERATOR'/>
+            <item-attr name='labor' value='SMELT'/>
         </enum-item>
-        <enum-item name='EXTRACT_ADAMANTINE'>
-            <item-attr name='caption' value='Adamantine Extractor'/>
+        <enum-item name='EXTRACT_STRAND'>
+            <item-attr name='caption' value='Strand Extraction'/>
+            <item-attr name='caption_noun' value='Strand Extractor'/>
+            <item-attr name='profession' value='STRAND_EXTRACTOR'/>
+            <item-attr name='labor' value='EXTRACT_STRAND'/>
         </enum-item>
         <enum-item name='FORGE_WEAPON'>
-            <item-attr name='caption' value='Weaponsmith'/>
+            <item-attr name='caption' value='Weaponsmithing'/>
+            <item-attr name='caption_noun' value='Weaponsmith'/>
+            <item-attr name='profession' value='WEAPONSMITH'/>
+            <item-attr name='labor' value='FORGE_WEAPON'/>
         </enum-item>
         <enum-item name='FORGE_ARMOR'>
-            <item-attr name='caption' value='Armorsmith'/>
+            <item-attr name='caption' value='Armorsmithing'/>
+            <item-attr name='caption_noun' value='Armorsmith'/>
+            <item-attr name='profession' value='ARMORER'/>
+            <item-attr name='labor' value='FORGE_ARMOR'/>
         </enum-item>
         <enum-item name='FORGE_FURNITURE'>
-            <item-attr name='caption' value='Metalsmith'/>
+            <item-attr name='caption' value='Metalsmithing'/>
+            <item-attr name='caption_noun' value='Metalsmith'/>
+            <item-attr name='profession' value='BLACKSMITH'/>
+            <item-attr name='labor' value='FORGE_FURNITURE'/>
         </enum-item>
 
         -- 30
 
         <enum-item name='CUTGEM'>
-            <item-attr name='caption' value='Gem Cutter'/>
+            <item-attr name='caption' value='Gem Cutting'/>
+            <item-attr name='caption_noun' value='Gem Cutter'/>
+            <item-attr name='profession' value='GEM_CUTTER'/>
+            <item-attr name='labor' value='CUT_GEM'/>
         </enum-item>
         <enum-item name='ENCRUSTGEM'>
-            <item-attr name='caption' value='Gem Setter'/>
+            <item-attr name='caption' value='Gem Setting'/>
+            <item-attr name='caption_noun' value='Gem Setter'/>
+            <item-attr name='profession' value='GEM_SETTER'/>
+            <item-attr name='labor' value='ENCRUST_GEM'/>
         </enum-item>
         <enum-item name='WOODCRAFT'>
-            <item-attr name='caption' value='Wood Crafter'/>
+            <item-attr name='caption' value='Wood Crafting'/>
+            <item-attr name='caption_noun' value='Wood Crafter'/>
+            <item-attr name='profession' value='WOODCRAFTER'/>
+            <item-attr name='labor' value='WOOD_CRAFT'/>
         </enum-item>
         <enum-item name='STONECRAFT'>
-            <item-attr name='caption' value='Stone Crafter'/>
+            <item-attr name='caption' value='Stone Crafting'/>
+            <item-attr name='caption_noun' value='Stone Crafter'/>
+            <item-attr name='profession' value='STONECRAFTER'/>
+            <item-attr name='labor' value='STONE_CRAFT'/>
         </enum-item>
         <enum-item name='METALCRAFT'>
-            <item-attr name='caption' value='Metal Crafter'/>
+            <item-attr name='caption' value='Metal Crafting'/>
+            <item-attr name='caption_noun' value='Metal Crafter'/>
+            <item-attr name='profession' value='METALCRAFTER'/>
+            <item-attr name='labor' value='METAL_CRAFT'/>
         </enum-item>
         <enum-item name='GLASSMAKER'>
-            <item-attr name='caption' value='Glassmaker'/>
-        </enum-item>
-        <enum-item name='ADAMANTINE_WORK'>
-            <item-attr name='caption' value='Adamantine Worker'/>
-        </enum-item>
-        <enum-item name='ADAMANTINE_SMELT'>
-            <item-attr name='caption' value='Adamantine Smelter'/>
-        </enum-item>
-        <enum-item name='ADAMANTINE_WEAVE'>
-            <item-attr name='caption' value='Adamantine Weaver'/>
+            <item-attr name='caption' value='Glassmaking'/>
+            <item-attr name='caption_noun' value='Glassmaker'/>
+            <item-attr name='profession' value='GLASSMAKER'/>
+            <item-attr name='labor' value='GLASSMAKER'/>
         </enum-item>
         <enum-item name='LEATHERWORK'>
-            <item-attr name='caption' value='Leatherworker'/>
+            <item-attr name='caption' value='Leatherworkering'/>
+            <item-attr name='caption_noun' value='Leatherworker'/>
+            <item-attr name='profession' value='LEATHERWORKER'/>
+            <item-attr name='labor' value='LEATHER'/>
+        </enum-item>
+        <enum-item name='BONECARVE'>
+            <item-attr name='caption' value='Bone Carving'/>
+            <item-attr name='caption_noun' value='Bone Carver'/>
+            <item-attr name='profession' value='BONE_CARVER'/>
+            <item-attr name='labor' value='BONE_CARVE'/>
+        </enum-item>
+        <enum-item name='UNARMED'>
+            <item-attr name='caption' value='Wrestling'/>
+            <item-attr name='caption_noun' value='Wrestler'/>
+            <item-attr name='profession' value='WRESTLER'/>
+            <item-attr name='type' value='MilitaryWeapon'/>
+        </enum-item>
+        <enum-item name='AXE'>
+            <item-attr name='caption' value='Axe'/>
+            <item-attr name='caption_noun' value='Axeman'/>
+            <item-attr name='profession' value='AXEMAN'/>
+            <item-attr name='type' value='MilitaryWeapon'/>
         </enum-item>
 
         -- 40
 
-        <enum-item name='BONECARVE'>
-            <item-attr name='caption' value='Bone Carver'/>
-        </enum-item>
-        <enum-item name='UNARMED'>
-            <item-attr name='caption' value='Wrestler'/>
-        </enum-item>
-        <enum-item name='AXE'>
-            <item-attr name='caption' value='Axeman'/>
-        </enum-item>
         <enum-item name='SWORD'>
-            <item-attr name='caption' value='Swordsman'/>
+            <item-attr name='caption' value='Sword'/>
+            <item-attr name='caption_noun' value='Swordsman'/>
+            <item-attr name='profession' value='SWORDSMAN'/>
+            <item-attr name='type' value='MilitaryWeapon'/>
         </enum-item>
         <enum-item name='DAGGER'>
-            <item-attr name='caption' value='Knife User'/>
+            <item-attr name='caption' value='Knife'/>
+            <item-attr name='caption_noun' value='Knife User'/>
+            <item-attr name='type' value='MilitaryWeapon'/>
         </enum-item>
         <enum-item name='MACE'>
-            <item-attr name='caption' value='Maceman'/>
+            <item-attr name='caption' value='Mace'/>
+            <item-attr name='caption_noun' value='Maceman'/>
+            <item-attr name='profession' value='MACEMAN'/>
+            <item-attr name='type' value='MilitaryWeapon'/>
         </enum-item>
         <enum-item name='HAMMER'>
-            <item-attr name='caption' value='Hammerman'/>
+            <item-attr name='caption' value='Hammer'/>
+            <item-attr name='caption_noun' value='Hammerman'/>
+            <item-attr name='profession' value='HAMMERMAN'/>
+            <item-attr name='type' value='MilitaryWeapon'/>
         </enum-item>
         <enum-item name='SPEAR'>
-            <item-attr name='caption' value='Spearman'/>
+            <item-attr name='caption' value='Spear'/>
+            <item-attr name='caption_noun' value='Spearman'/>
+            <item-attr name='profession' value='SPEARMAN'/>
+            <item-attr name='type' value='MilitaryWeapon'/>
         </enum-item>
         <enum-item name='CROSSBOW'>
-            <item-attr name='caption' value='Crossbowman'/>
+            <item-attr name='caption' value='Crossbow'/>
+            <item-attr name='caption_noun' value='Crossbowman'/>
+            <item-attr name='profession' value='CROSSBOWMAN'/>
+            <item-attr name='type' value='MilitaryWeapon'/>
         </enum-item>
         <enum-item name='SHIELD'>
-            <item-attr name='caption' value='Shield User'/>
+            <item-attr name='caption' value='Shield'/>
+            <item-attr name='caption_noun' value='Shield User'/>
+            <item-attr name='type' value='MilitaryDefense'/>
+        </enum-item>
+        <enum-item name='ARMOR'>
+            <item-attr name='caption' value='Armor'/>
+            <item-attr name='caption_noun' value='Armor User'/>
+            <item-attr name='type' value='MilitaryDefense'/>
+        </enum-item>
+        <enum-item name='SIEGECRAFT'>
+            <item-attr name='caption' value='Siege Engineering'/>
+            <item-attr name='caption_noun' value='Siege Engineer'/>
+            <item-attr name='profession' value='SIEGE_ENGINEER'/>
+            <item-attr name='labor' value='SIEGECRAFT'/>
+        </enum-item>
+        <enum-item name='SIEGEOPERATE'>
+            <item-attr name='caption' value='Siege Operation'/>
+            <item-attr name='caption_noun' value='Siege Operator'/>
+            <item-attr name='profession' value='SIEGE_OPERATOR'/>
+            <item-attr name='labor' value='SIEGEOPERATE'/>
         </enum-item>
 
         -- 50
 
-        <enum-item name='ARMOR'>
-            <item-attr name='caption' value='Armor User'/>
-        </enum-item>
-        <enum-item name='SIEGECRAFT'>
-            <item-attr name='caption' value='Engineer'/>
-        </enum-item>
-        <enum-item name='SIEGEOPERATE'>
-            <item-attr name='caption' value='Operator'/>
-        </enum-item>
         <enum-item name='BOWYER'>
-            <item-attr name='caption' value='Bowyer'/>
+            <item-attr name='caption' value='Bowmaking'/>
+            <item-attr name='caption_noun' value='Bowyer'/>
+            <item-attr name='profession' value='BOWYER'/>
+            <item-attr name='labor' value='BOWYER'/>
         </enum-item>
         <enum-item name='PIKE'>
-            <item-attr name='caption' value='Pikeman'/>
+            <item-attr name='caption' value='Pike'/>
+            <item-attr name='caption_noun' value='Pikeman'/>
+            <item-attr name='profession' value='PIKEMAN'/>
+            <item-attr name='type' value='MilitaryWeapon'/>
         </enum-item>
         <enum-item name='WHIP'>
-            <item-attr name='caption' value='Lasher'/>
+            <item-attr name='caption' value='Lash'/>
+            <item-attr name='caption_noun' value='Lasher'/>
+            <item-attr name='profession' value='LASHER'/>
+            <item-attr name='type' value='MilitaryWeapon'/>
         </enum-item>
         <enum-item name='BOW'>
-            <item-attr name='caption' value='Bowman'/>
+            <item-attr name='caption' value='Bow'/>
+            <item-attr name='caption_noun' value='Bowman'/>
+            <item-attr name='profession' value='BOWMAN'/>
+            <item-attr name='type' value='MilitaryWeapon'/>
         </enum-item>
         <enum-item name='BLOWGUN'>
-            <item-attr name='caption' value='Blowgunner'/>
+            <item-attr name='caption' value='Blowgun'/>
+            <item-attr name='caption_noun' value='Blowgunner'/>
+            <item-attr name='profession' value='BLOWGUNMAN'/>
+            <item-attr name='type' value='MilitaryWeapon'/>
         </enum-item>
         <enum-item name='THROW'>
-            <item-attr name='caption' value='Thrower'/>
+            <item-attr name='caption' value='Throwing'/>
+            <item-attr name='caption_noun' value='Thrower'/>
+            <item-attr name='type' value='MilitaryAttack'/>
         </enum-item>
         <enum-item name='MECHANICS'>
-            <item-attr name='caption' value='Mechanic'/>
+            <item-attr name='caption' value='Machinery'/>
+            <item-attr name='caption_noun' value='Mechanic'/>
+            <item-attr name='profession' value='MECHANIC'/>
+            <item-attr name='labor' value='MECHANIC'/>
+        </enum-item>
+        <enum-item name='MAGIC_NATURE'>
+            <item-attr name='caption' value='Nature'/>
+            <item-attr name='caption_noun' value='Druid'/>
+        </enum-item>
+        <enum-item name='SNEAK'>
+            <item-attr name='caption' value='Ambush'/>
+            <item-attr name='caption_noun' value='Ambusher'/>
+            <item-attr name='profession' value='HUNTER'/>
+            <item-attr name='labor' value='HUNT'/>
+        </enum-item>
+        <enum-item name='DESIGNBUILDING'>
+            <item-attr name='caption' value='Building Design'/>
+            <item-attr name='caption_noun' value='Building Designer'/>
+            <item-attr name='profession' value='ARCHITECT'/>
+            <item-attr name='labor' value='ARCHITECT'/>
         </enum-item>
 
         -- 60
 
-        <enum-item name='MAGIC_NATURE'>
-            <item-attr name='caption' value='Druid'/>
-        </enum-item>
-        <enum-item name='SNEAK'>
-            <item-attr name='caption' value='Ambusher'/>
-        </enum-item>
-        <enum-item name='DESIGNBUILDING'>
-            <item-attr name='caption' value='Building Designer'/>
-        </enum-item>
         <enum-item name='WOOD_BURNING'>
-            <item-attr name='caption' value='Wood Burner'/>
+            <item-attr name='caption' value='Wood Burning'/>
+            <item-attr name='caption_noun' value='Wood Burner'/>
+            <item-attr name='profession' value='WOOD_BURNER'/>
+            <item-attr name='labor' value='BURN_WOOD'/>
         </enum-item>
         <enum-item name='LYE_MAKING'>
-            <item-attr name='caption' value='Lye Maker'/>
+            <item-attr name='caption' value='Lye Making'/>
+            <item-attr name='caption_noun' value='Lye Maker'/>
+            <item-attr name='profession' value='LYE_MAKER'/>
+            <item-attr name='labor' value='LYE_MAKING'/>
         </enum-item>
         <enum-item name='SOAP_MAKING'>
-            <item-attr name='caption' value='Soaper'/>
+            <item-attr name='caption' value='Soap Making'/>
+            <item-attr name='caption_noun' value='Soaper'/>
+            <item-attr name='profession' value='SOAP_MAKER'/>
+            <item-attr name='labor' value='SOAP_MAKER'/>
         </enum-item>
         <enum-item name='POTASH_MAKING'>
-            <item-attr name='caption' value='Potash Maker'/>
+            <item-attr name='caption' value='Potash Making'/>
+            <item-attr name='caption_noun' value='Potash Maker'/>
+            <item-attr name='profession' value='POTASH_MAKER'/>
+            <item-attr name='labor' value='POTASH_MAKING'/>
         </enum-item>
         <enum-item name='DYER'>
-            <item-attr name='caption' value='Dyer'/>
+            <item-attr name='caption' value='Dyeing'/>
+            <item-attr name='caption_noun' value='Dyer'/>
+            <item-attr name='profession' value='DYER'/>
+            <item-attr name='labor' value='DYER'/>
+        </enum-item>
+        <enum-item name='OPERATE_PUMP'>
+            <item-attr name='caption' value='Pump Operation'/>
+            <item-attr name='caption_noun' value='Pump Operator'/>
+            <item-attr name='profession' value='PUMP_OPERATOR'/>
+            <item-attr name='labor' value='OPERATE_PUMP'/>
+        </enum-item>
+        <enum-item name='SWIMMING'>
+            <item-attr name='caption' value='Swimming'/>
+            <item-attr name='caption_noun' value='Swimmer'/>
+            <item-attr name='type' value='Personal'/>
+        </enum-item>
+        <enum-item name='PERSUASION'>
+            <item-attr name='caption' value='Persuasion'/>
+            <item-attr name='caption_noun' value='Persuader'/>
+            <item-attr name='type' value='Social'/>
+        </enum-item>
+        <enum-item name='NEGOTIATION'>
+            <item-attr name='caption' value='Negotiation'/>
+            <item-attr name='caption_noun' value='Negotiator'/>
+            <item-attr name='type' value='Social'/>
+        </enum-item>
+        <enum-item name='JUDGING_INTENT'>
+            <item-attr name='caption' value='Judging Intent'/>
+            <item-attr name='caption_noun' value='Judge of Intent'/>
+            <item-attr name='type' value='Social'/>
+        </enum-item>
+
+        -- 70
+
+        <enum-item name='APPRAISAL'>
+            <item-attr name='caption' value='Appraisal'/>
+            <item-attr name='caption_noun' value='Appraiser'/>
+            <item-attr name='profession' value='TRADER'/>
+        </enum-item>
+        <enum-item name='ORGANIZATION'>
+            <item-attr name='caption' value='Organization'/>
+            <item-attr name='caption_noun' value='Organizer'/>
+            <item-attr name='profession' value='ADMINISTRATOR'/>
+        </enum-item>
+        <enum-item name='RECORD_KEEPING'>
+            <item-attr name='caption' value='Record Keeping'/>
+            <item-attr name='caption_noun' value='Record Keeper'/>
+            <item-attr name='profession' value='CLERK'/>
+        </enum-item>
+        <enum-item name='LYING'>
+            <item-attr name='caption' value='Lying'/>
+            <item-attr name='caption_noun' value='Liar'/>
+            <item-attr name='type' value='Social'/>
+        </enum-item>
+        <enum-item name='INTIMIDATION'>
+            <item-attr name='caption' value='Intimidation'/>
+            <item-attr name='caption_noun' value='Intimidator'/>
+            <item-attr name='type' value='Social'/>
+        </enum-item>
+        <enum-item name='CONVERSATION'>
+            <item-attr name='caption' value='Conversation'/>
+            <item-attr name='caption_noun' value='Conversationalist'/>
+            <item-attr name='type' value='Social'/>
+        </enum-item>
+        <enum-item name='COMEDY'>
+            <item-attr name='caption' value='Comedy'/>
+            <item-attr name='caption_noun' value='Comedian'/>
+            <item-attr name='type' value='Social'/>
+        </enum-item>
+        <enum-item name='FLATTERY'>
+            <item-attr name='caption' value='Flattery'/>
+            <item-attr name='caption_noun' value='Flatterer'/>
+            <item-attr name='type' value='Social'/>
+        </enum-item>
+        <enum-item name='CONSOLE'>
+            <item-attr name='caption' value='Consoling'/>
+            <item-attr name='caption_noun' value='Consoler'/>
+            <item-attr name='type' value='Social'/>
+        </enum-item>
+        <enum-item name='PACIFY'>
+            <item-attr name='caption' value='Pacification'/>
+            <item-attr name='caption_noun' value='Pacifier'/>
+            <item-attr name='type' value='Social'/>
+        </enum-item>
+
+        -- 80
+
+        <enum-item name='TRACKING'>
+            <item-attr name='caption' value='Tracking'/>
+            <item-attr name='caption_noun' value='Tracker'/>
+            <item-attr name='type' value='Personal'/>
         </enum-item>
     </enum-type>
 </data-definition>
