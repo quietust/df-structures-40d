@@ -5,9 +5,9 @@
         <enum-item name='LOCKPICKER'/>
         <enum-item name='AMPHIBIOUS'/>
         <enum-item name='AQUATIC'/>
-        <enum-item name='MISCHEVIOUS'/>
+        <enum-item name='MISCHIEVIOUS'/>
         <enum-item name='PATTERNFLIER'/>
-        <enum-item name='CURIOUSBEAST'/>
+        <enum-item name='CURIOUSBEAST_ANY'/>
 
         <enum-item name='CURIOUSBEAST_ITEM'/>
         <enum-item name='CURIOUSBEAST_GUZZLER'/>
@@ -15,219 +15,234 @@
         <enum-item name='VERMINHUNTER'/>
         <enum-item name='VERMIN_EATER'/>
         <enum-item name='VERMIN_GROUNDER'/>
-        <enum-item name='VERMIN_FLIES'/>
-        <enum-item name='VERMIN_SWAMPER'/>
+        <enum-item name='VERMIN_ROTTER'/>
+        <enum-item name='MUNDANE'/>
 
         -- 10
 
-        <enum-item name='VERMIN_RIVER'/>
-        <enum-item name='VERMIN_CAVERIVER'/>
-        <enum-item name='VERMIN_CHASM'/>
-        <enum-item name='VERMIN_LAVA'/>
+        <enum-item name='SWIMS_LEARNED'/>
         <enum-item name='VERMIN_SOIL'/>
         <enum-item name='VERMIN_SOIL_COLONY'/>
-        <enum-item name='SMALLAQUATIC_SWAMP'/>
-        <enum-item name='SMALLAQUATIC_RIVER'/>
+        <enum-item name='CANNOT_UNDEAD'/>
+        <enum-item name='CURIOUSBEAST_EATER'/>
+        <enum-item name='NO_EAT'/>
+        <enum-item name='NO_DRINK'/>
+        <enum-item name='NO_SLEEP'/>
 
-        <enum-item name='SMALLAQUATIC_CAVERIVER'/>
         <enum-item name='COMMON_DOMESTIC'/>
         <enum-item name='WAGON_PULLER'/>
         <enum-item name='PACK_ANIMAL'/>
         <enum-item name='LARGE_ROAMING'/>
-        <enum-item name='LARGE_CAVERIVER'/>
-        <enum-item name='LARGE_CHASM'/>
-        <enum-item name='LARGE_LAVA'/>
+        <enum-item name='VERMIN_FISH'/>
+        <enum-item name='FLIER'/>
+        <enum-item name='LARGE_PREDATOR'/>
+        <enum-item name='MAGMA_VISION'/>
 
         -- 20
 
-        <enum-item/>
-        <enum-item name='SMALLAQUATIC_OCEAN'/>
-        <enum-item name='FLIER'/>
-        <enum-item name='LARGE_PREDATOR'/>
         <enum-item name='LOOSE_CLUSTERS'/>
         <enum-item name='FIREIMMUNE'/>
         <enum-item name='FIREIMMUNE_SUPER'/>
         <enum-item name='WEBBER'/>
-
         <enum-item name='WEBIMMUNE'/>
         <enum-item name='FANCIFUL'/>
         <enum-item name='FISHITEM'/>
-        <enum-item name='SESSILE_LAND'/>
+        <enum-item name='IMMOBILE_LAND'/>
+
         <enum-item name='IMMOLATE'/>
         <enum-item name='MILKABLE'/>
         <enum-item name='NO_SPRING'/>
         <enum-item name='NO_SUMMER'/>
-
-        -- 30
-
         <enum-item name='NO_AUTUMN'/>
         <enum-item name='NO_WINTER'/>
         <enum-item name='BENIGN'/>
         <enum-item name='VERMIN_NOROAM'/>
+
+        -- 30
+
         <enum-item name='VERMIN_NOTRAP'/>
         <enum-item name='VERMIN_NOFISH'/>
         <enum-item name='EXTRACT_PERMANENT'/>
         <enum-item name='EXTRACT_PARALYZE'/>
-
         <enum-item name='EXTRACT_STUN'/>
         <enum-item name='EXTRACT_PARALYZE_INTERMITTENT'/>
         <enum-item name='EXTRACT_STUN_INTERMITTENT'/>
         <enum-item name='AMBUSHPREDATOR'/>
+
         <enum-item name='CHITIN'/>
         <enum-item name='GNAWER'/>
         <enum-item name='NOT_BUTCHERABLE'/>
-        <enum-item name='BUTCHERABLE_NONSTANDARD'/>
-
-        -- 40
-
+        <enum-item/> probably the defunct BUTCHERABLE_NONSTANDARD
         <enum-item name='COOKABLE_LIVE'/>
         <enum-item name='EXTRACT_COOKABLE'/>
         <enum-item name='FIREBREATH'/>
         <enum-item name='DRAGONFIREBREATH'/>
+
+        -- 40
+
         <enum-item name='MEANDERER'/>
         <enum-item name='THICKWEB'/>
         <enum-item name='TRAINABLE'/>
         <enum-item name='PET'/>
-
         <enum-item name='PET_EXOTIC'/>
         <enum-item name='CAN_CIV'/>
         <enum-item name='CAN_SPEAK'/>
         <enum-item name='CAN_LEARN'/>
+
         <enum-item name='UTTERANCES'/>
         <enum-item name='BONECARN'/>
         <enum-item name='CARNIVORE'/>
         <enum-item name='UNDERSWIM'/>
-
-        -- 50
-
         <enum-item name='NOEXERT'/>
         <enum-item name='NOPAIN'/>
         <enum-item name='EXTRAVISION'/>
         <enum-item name='NOBREATHE'/>
+
+        -- 50
+
         <enum-item name='NOSTUN'/>
         <enum-item name='NONAUSEA'/>
         <enum-item name='NOBLEED'/>
         <enum-item name='TRANCES'/>
-
         <enum-item name='NOEMOTION'/>
-        <enum-item name='RECKLESS'/>
+        <enum-item name='SLOW_LEARNER'/>
         <enum-item name='NOSTUCKINS'/>
         <enum-item name='SEVERONBREAKS'/>
+
         <enum-item name='NOSKULL'/>
         <enum-item name='NOSKIN'/>
         <enum-item name='NOBONES'/>
         <enum-item name='NOMEAT'/>
-
-        -- 60
-
         <enum-item name='PARALYZEIMMUNE'/>
         <enum-item name='NOFEAR'/>
         <enum-item name='CANOPENDOORS'/>
-        <enum-item name='ITEMCORPSE'/>
-        <enum-item name='ITEMCORPSE_RACEGLOSS'/>
-        <enum-item name='ITEMCORPSE_SHARPSTONE'/>
+        <enum-item/>
+
+        -- 60
+
+        <enum-item/>
         <enum-item name='NOSMELLYROT'/>
         <enum-item name='REMAINS_UNDETERMINED'/>
-
         <enum-item name='HASSHELL'/>
         <enum-item name='PEARL'/>
         <enum-item name='IVORY'/>
         <enum-item name='HORN'/>
         <enum-item name='NARROW'/>
+
         <enum-item name='STOUT'/>
         <enum-item name='LIKES_FIGHTING'/>
         <enum-item name='VERMIN_HATEABLE'/>
-
-        -- 70
-
         <enum-item name='VEGETATION'/>
         <enum-item name='MAGICAL'/>
         <enum-item name='GOOD'/>
         <enum-item name='NATURAL'/>
         <enum-item name='EVIL'/>
+
+        -- 70
+
         <enum-item name='SAVAGE'/>
         <enum-item name='BABY'/>
         <enum-item name='CHILD'/>
-
         <enum-item name='MULTIPLE_LITTER_RARE'/>
         <enum-item name='MOUNT'/>
         <enum-item name='MOUNT_EXOTIC'/>
-        <enum-item name='RIVERATTACK_MOUNTS'/>
-        <enum-item name='RIVERATTACK_RESIDENT'/>
-        <enum-item name='RIVERATTACK_CANUSEWELL'/>
+        <enum-item name='FEATURE_ATTACK_GROUP'/>
+        <enum-item name='VERMIN_ROTTER'/>
+
+        <enum-item name='BIOME_POOL_TEMPERATE_BRACKISHWATER'/>
         <enum-item name='EQUIPS'/>
         <enum-item name='ENDING'/>
-
-        -- 80
-
         <enum-item name='DEFENDER'/>
         <enum-item name='NOTHOUGHT'/>
         <enum-item name='TRAPAVOID'/>
         <enum-item name='CAVE_ADAPT'/>
         <enum-item name='MEGABEAST'/>
+
+        -- 80
+
         <enum-item name='SEMIMEGABEAST'/>
         <enum-item name='ALL_ACTIVE'/>
         <enum-item name='DIURNAL'/>
-
         <enum-item name='NOCTURNAL'/>
         <enum-item name='CREPUSCULAR'/>
         <enum-item name='MATUTINAL'/>
         <enum-item name='VESPERTINE'/>
         <enum-item name='LIGHT_GEN'/>
+
         <enum-item name='BIOME_MOUNTAIN'/>
         <enum-item name='BIOME_GLACIER'/>
         <enum-item name='BIOME_TUNDRA'/>
-
-        -- 90
-
         <enum-item name='BIOME_SWAMP_TEMPERATE_FRESHWATER'/>
         <enum-item name='BIOME_SWAMP_TEMPERATE_SALTWATER'/>
         <enum-item name='BIOME_MARSH_TEMPERATE_FRESHWATER'/>
         <enum-item name='BIOME_MARSH_TEMPERATE_SALTWATER'/>
         <enum-item name='BIOME_SWAMP_TROPICAL_FRESHWATER'/>
+
+        -- 90
+
         <enum-item name='BIOME_SWAMP_TROPICAL_SALTWATER'/>
         <enum-item name='BIOME_SWAMP_MANGROVE'/>
         <enum-item name='BIOME_MARSH_TROPICAL_FRESHWATER'/>
-
         <enum-item name='BIOME_MARSH_TROPICAL_SALTWATER'/>
         <enum-item name='BIOME_FOREST_TAIGA'/>
         <enum-item name='BIOME_FOREST_TEMPERATE_CONIFER'/>
         <enum-item name='BIOME_FOREST_TEMPERATE_BROADLEAF'/>
         <enum-item name='BIOME_FOREST_TROPICAL_CONIFER'/>
+
         <enum-item name='BIOME_FOREST_TROPICAL_DRY_BROADLEAF'/>
         <enum-item name='BIOME_FOREST_TROPICAL_MOIST_BROADLEAF'/>
         <enum-item name='BIOME_GRASSLAND_TEMPERATE'/>
-
-        -- A0
-
         <enum-item name='BIOME_SAVANNA_TEMPERATE'/>
         <enum-item name='BIOME_SHRUBLAND_TEMPERATE'/>
         <enum-item name='BIOME_GRASSLAND_TROPICAL'/>
         <enum-item name='BIOME_SAVANNA_TROPICAL'/>
         <enum-item name='BIOME_SHRUBLAND_TROPICAL'/>
+
+        -- A0
+
         <enum-item name='BIOME_DESERT_BADLAND'/>
         <enum-item name='BIOME_DESERT_ROCK'/>
         <enum-item name='BIOME_DESERT_SAND'/>
+        <enum-item name='BIOME_OCEAN_TROPICAL'/>
+        <enum-item name='BIOME_OCEAN_TEMPERATE'/>
+        <enum-item name='BIOME_OCEAN_ARCTIC'/>
+        <enum-item name='BIOME_POOL_TEMPERATE_FRESHWATER'/>
+        <enum-item name='BIOME_SUBTERRANEAN_WATER'/>
 
-        <enum-item name='BIOME_OCEAN'/>
-        <enum-item name='BIOME_INLAND_FRESHWATER'/>
-        <enum-item name='BIOME_INLAND_BRACKISHWATER'/>
-        <enum-item name='BIOME_INLAND_SALTWATER'/>
-        <enum-item name='BIOME_SUBTERRANEAN_RIVER'/>
         <enum-item name='BIOME_SUBTERRANEAN_CHASM'/>
         <enum-item name='BIOME_SUBTERRANEAN_LAVA'/>
         <enum-item name='FEMALE'/>
-
-        -- B0
-
         <enum-item name='MALE'/>
         <enum-item name='NO_GENDER'/>
         <enum-item name='LISP'/>
         <enum-item name='MATERIAL'/>
         <enum-item name='MATERIAL_USE_RACEGLOSS'/>
-        <enum-item name='MATERIAL_USE_SHARPSTONE'/>
+
+        -- B0
+
         <enum-item name='ALCOHOL_DEPENDENT'/>
-        <enum-item/>
+        <enum-item name='SWIMS_INNATE'/>
+        <enum-item name='BIOME_POOL_TEMPERATE_SALTWATER'/>
+        <enum-item name='BIOME_POOL_TROPICAL_FRESHWATER'/>
+        <enum-item name='BIOME_POOL_TROPICAL_BRACKISHWATER'/>
+        <enum-item name='BIOME_POOL_TROPICAL_SALTWATER'/>
+        <enum-item name='BIOME_LAKE_TEMPERATE_FRESHWATER'/>
+        <enum-item name='BIOME_LAKE_TEMPERATE_BRACKISHWATER'/>
+
+        <enum-item name='BIOME_LAKE_TEMPERATE_SALTWATER'/>
+        <enum-item name='BIOME_LAKE_TROPICAL_FRESHWATER'/>
+        <enum-item name='BIOME_LAKE_TROPICAL_BRACKISHWATER'/>
+        <enum-item name='BIOME_LAKE_TROPICAL_SALTWATER'/>
+        <enum-item name='BIOME_RIVER_TEMPERATE_FRESHWATER'/>
+        <enum-item name='BIOME_RIVER_TEMPERATE_BRACKISHWATER'/>
+        <enum-item name='BIOME_RIVER_TEMPERATE_SALTWATER'/>
+        <enum-item name='BIOME_RIVER_TROPICAL_FRESHWATER'/>
+
+        -- C0
+
+        <enum-item name='BIOME_RIVER_TROPICAL_BRACKISHWATER'/>
+        <enum-item name='BIOME_RIVER_TROPICAL_SALTWATER'/>
+        <enum-item name='POWER'/>
     </enum-type>
 
     <struct-type type-name='body_info'>
