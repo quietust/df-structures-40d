@@ -82,7 +82,7 @@
         <flag-bit name='improvable'/>
         <flag-bit name="butcherable"/>
         <flag-bit name="millable"/>
-        <flag-bit name="buryable"/>
+        <flag-bit name="allow_buryable"/>
         <flag-bit name="unrotten"/>
         <flag-bit name="undisturbed"/>
         <flag-bit name="collected"/>
@@ -121,6 +121,17 @@
         <flag-bit name="dyeable"/>
         <flag-bit name="dyed"/>
         <flag-bit name="sewn_imageless"/>
+        <flag-bit name="glass_making"/>
+        <flag-bit name="screw"/>
+        <flag-bit name="building_material"/>
+        <flag-bit name="fire_safe"/>
+
+        <flag-bit name="magma_safe"/>
+        <flag-bit name="deep_material"/>
+        <flag-bit name="melt_designated"/>
+        <flag-bit name="non_economic"/>
+        <flag-bit name="allow_melt_dump"/>
+        <flag-bit name="allow_artifact"/>
     </bitfield-type>
 
     <struct-type type-name='job_item_filter'>

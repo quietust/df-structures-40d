@@ -77,6 +77,8 @@
         <stl-vector name='general_refs'>
             <pointer type-name='general_ref'/>
         </stl-vector>
+        <int8_t/>
+        <int8_t/>
 
         <virtual-methods>
             <vmethod ret-type='item_type' name='getType'/>
@@ -94,9 +96,13 @@
             <vmethod ret-type='int16_t' name='getRace'
                     comment='only for creature-derived items'/>
 
+            <vmethod ret-type='bool'/>
+            <vmethod ret-type='bool'/>
+            <vmethod ret-type='bool'/>
+            <vmethod ret-type='bool'/>
             -- 10
 
-            <vmethod/>
+            <vmethod name='clearLastTempUpdateTS'/>
             <vmethod ret-type='uint16_t' name='getSpecHeat'/>
             <vmethod ret-type='uint16_t' name='getIgnitePoint'/>
             <vmethod ret-type='uint16_t' name='getHeatdamPoint'/>
@@ -105,6 +111,8 @@
             <vmethod ret-type='uint16_t' name='getBoilingPoint'/>
             <vmethod ret-type='uint16_t' name='getMeltingPoint'/>
             <vmethod ret-type='uint16_t' name='getFixedTemp'/>
+            <vmethod ret-type='int32_t' name='getDensity'/>
+
             <vmethod ret-type='uint16_t' name='getTemperature'/>
             <vmethod ret-type='bool' name='adjustTemperature'>
                 <uint16_t name='target'/>
@@ -116,7 +124,7 @@
             <vmethod name='extinguish'/>
             <vmethod ret-type='int8_t' name='getGloveHandedness'/>
             <vmethod name='setGloveHandedness'> <int8_t/> </vmethod>
-            <vmethod name='setRandSubtype'> <pointer type-name='historical_entity'/> </vmethod>
+            <vmethod name='pickRandomSubtype'> <pointer type-name='historical_entity'/> </vmethod>
             <vmethod/>
 
             <vmethod ret-type='int16_t' name='getWear'/>
@@ -199,8 +207,8 @@
             <vmethod ret-type='bool' name='needTwoHandedWield'> <int32_t name='size'/> </vmethod>
             <vmethod name='splitStack'>
                 <ret-type><pointer type-name='item'/></ret-type>
-                <int32_t/>
-                <int32_t/>
+                <int32_t name='stack_size'/>
+                <bool name='preserve_containment'/>
             </vmethod>
             <vmethod ret-type='bool' name='isTameableVermin'/>
 
@@ -215,7 +223,10 @@
             -- 80
 
             <vmethod ret-type='bool' name='isAnimalProduct'/>
-            <vmethod/>
+            <vmethod name='getStorageInfo'>
+                <pointer type-name='int32_t' name='item_type'/>
+                <pointer type-name='int32_t'/>
+            </vmethod>
             <vmethod ret-type='bool' name='addWear'>
                 <int32_t name='delta'/> <bool name='simple'/> <bool name='lose_masterwork'/>
             </vmethod>
@@ -278,7 +289,7 @@
             <vmethod name='setQuality'> <int16_t name='quality'/> </vmethod>
             <vmethod ret-type='int16_t' name='getQuality'/>
             <vmethod ret-type='int16_t' name='getOverallQuality'/>
-            <vmethod ret-type='int32_t' name='getProjectileSize'/>
+            <vmethod ret-type='int32_t' name='getDamage'/>
             <vmethod ret-type='bool' name='isImprovable'>
                 <pointer type-name='job'/>
                 <int32_t/> <int32_t/>
@@ -288,12 +299,17 @@
             <vmethod ret-type='bool' name='isNotDyed'/>
             <vmethod ret-type='bool' name='isDyed'/>
             <vmethod ret-type='bool' name='canSewImage'/>
-            <vmethod/>
+            <vmethod ret-type='bool' name='canAddSewnImage'/>
 
             -- 120
 
             <vmethod ret-type='bool' name='isProcessableVialAtStill'/>
-            <vmethod/>
+            <vmethod ret-type='bool' name='isSimilarToItem'>
+                <enum base-type='int16_t' name='item_type' type-name='item_type'/>
+                <int16_t name='item_subtype'/>
+                <enum base-type='int16_t' name='material' type-name='material_type'/>
+                <int16_t name='matgloss'/>
+            </vmethod>
             <vmethod ret-type='int32_t' name='getBlockChance'/>
             <vmethod/>
             <vmethod ret-type='int16_t' name='getMakerRace'/>
@@ -307,7 +323,7 @@
 
             -- 130
 
-            <vmethod name='getCritBoost'/>
+            <vmethod ret-type='int32_t' name='getCritBoost'/>
             <vmethod name='coverWithContaminant' comment='also stops fire; used for rain'>
                 <enum base-type='int32_t' name='material' type-name='material_type'/>
             </vmethod>
@@ -345,7 +361,7 @@
 
             -- 150
 
-            <vmethod ret-type='bool' name='isAssignedToStockpile'/>
+            <vmethod ret-type='bool' name='isAssignedToAnyStockpile'/>
             <vmethod ret-type='bool' name='isAssignedToThisStockpile'> <int32_t/> </vmethod>
             <vmethod name='removeFromStockpile'/>
             <vmethod name='clearStockpileAssignment'/>
@@ -408,6 +424,7 @@
         <enum base-type='int16_t' name='quality' type-name='item_quality'/>
         <int16_t name='skill_level'/>
         <int32_t name='maker' ref-target='historical_figure'/>
+        <int32_t name='masterpiece_event' ref-target='history_event'/>
     </class-type>
 
     -- CONSTRUCTED ITEM
@@ -429,8 +446,11 @@
 
     -- LIQUID/POWER
 
-    <class-type type-name='item_liquipowder' inherits-from='item_actual' original-name='item_liquipowderst'/>
+    <class-type type-name='item_liquipowder' inherits-from='item_actual' original-name='item_liquipowderst'>
+        <int32_t/>
+    </class-type>
     <class-type type-name='item_liquid' inherits-from='item_liquipowder' original-name='item_liquidst'/>
+
     <class-type type-name='item_powder' inherits-from='item_liquipowder' original-name='item_powderst'/>
 
     -- Specific Items
@@ -446,10 +466,6 @@
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
     <class-type type-name='item_blocksst' inherits-from='item_actual'>
-        <enum base-type='int16_t' name='material' type-name='material_type'/>
-        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
-    </class-type>
-    <class-type type-name='item_orest' inherits-from='item_actual'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
@@ -510,6 +526,7 @@
         <int32_t name='hist_figure_id' ref-target='historical_figure'/>
         <int32_t name='unit_id' ref-target='unit'/>
         <int16_t name='racegloss'/>
+        <int16_t/>
         <int8_t name='sex' comment='-1 n/a, 0 female, 1 male'/>
         <int32_t name='rot_timer'/>
     </class-type>
@@ -579,6 +596,7 @@
         <int16_t name='part_id'/>
         <int16_t name='race' ref-target='creature_raw'/>
         <int16_t name='racegloss'/>
+        <int16_t/>
         <int8_t name='sex'/>
         <int32_t name='hist_figure_id' ref-target='historical_figure'/>
         <int32_t name='unit_id' ref-target='unit'/>
@@ -650,6 +668,7 @@
         <enum base-type='int16_t' name='dye_material' type-name='material_type'/>
         <int16_t name='dye_matgloss' refers-to='(matgloss-target $$._parent.dye_material $)'/>
         <int32_t name='dye_maker' ref-target='historical_figure'/>
+        <int32_t name='masterpiece_event' ref-target='history_event'/>
         <int16_t name='dye_quality'/>
         <int16_t name='dye_skill'/>
         <int32_t/>
@@ -702,7 +721,7 @@
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
 
-    <class-type type-name='item_powder_organicst' inherits-from='item_powder'>
+    <class-type type-name='item_powder_miscst' inherits-from='item_powder'>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
@@ -750,6 +769,12 @@
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
+
+    <class-type type-name='item_pipe_sectionst' inherits-from='item_constructed'/>
+    <class-type type-name='item_hatch_coverst' inherits-from='item_constructed'/>
+    <class-type type-name='item_gratest' inherits-from='item_constructed'/>
+    <class-type type-name='item_quernst' inherits-from='item_constructed'/>
+    <class-type type-name='item_millstonest' inherits-from='item_constructed'/>
 </data-definition>
 
 <!--
