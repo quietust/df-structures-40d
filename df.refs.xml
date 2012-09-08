@@ -135,7 +135,7 @@
     <class-type type-name='general_ref_contains_itemst' inherits-from='general_ref_itemst'/>
     <class-type type-name='general_ref_contained_in_itemst' inherits-from='general_ref_itemst'/>
     <class-type type-name='general_ref_unit_traineest' inherits-from='general_ref_unitst'/>
-    <class-type type-name='general_ref_unit_itemownerst' inherits-from='general_ref_unitst'>
+    <class-type type-name='general_ref_unit_itemownerst' inherits-from='general_ref_unitst'/>
     <class-type type-name='general_ref_unit_tradebringerst' inherits-from='general_ref_unitst'/>
     <class-type type-name='general_ref_unit_holderst' inherits-from='general_ref_unitst'/>
     <class-type type-name='general_ref_unit_workerst' inherits-from='general_ref_unitst'/>
