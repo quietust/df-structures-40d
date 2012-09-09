@@ -1,10 +1,10 @@
 <data-definition>
     <struct-type type-name='graphic'>
-        <stl-string/>
-        <stl-string/>
-        <stl-string/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
         <compound name='drawInfo'>
-            <static-array name='drawarray' count='25'><static-array type-name='int8_t' count='80'/></static-array>
+            <static-array name='drawarray' count='200'><static-array type-name='int8_t' count='200'/></static-array>
             <stl-vector type-name='pointer'/>
             <int32_t/>
             <int8_t/>
@@ -27,16 +27,16 @@
 
         <int32_t name='screenx'/>
         <int32_t name='screeny'/>
-        <int8_t name='screenf'/>
-        <int8_t name='screenb'/>
+        <int16_t name='screenf'/>
+        <int16_t name='screenb'/>
         <int8_t name='screenbright'/>
 
-        <static-array name='screentexpos' count='25'><static-array type-name='int32_t' count='80'/></static-array>
-        <static-array name='screentexpos_addcolor' count='25'><static-array type-name='int8_t' count='80'/></static-array>
-        <static-array name='screentexpos_grayscale' count='25'><static-array type-name='uint8_t' count='80'/></static-array>
-        <static-array name='screentexpos_cf' count='25'><static-array type-name='uint8_t' count='80'/></static-array>
-        <static-array name='screentexpos_cbr' count='25'><static-array type-name='uint8_t' count='80'/></static-array>
-        <static-array name='screen' count='25'><static-array count='80'>
+        <static-array name='screentexpos' count='200'><static-array type-name='int32_t' count='200'/></static-array>
+        <static-array name='screentexpos_addcolor' count='200'><static-array type-name='int8_t' count='200'/></static-array>
+        <static-array name='screentexpos_grayscale' count='200'><static-array type-name='uint8_t' count='200'/></static-array>
+        <static-array name='screentexpos_cf' count='200'><static-array type-name='uint8_t' count='200'/></static-array>
+        <static-array name='screentexpos_cbr' count='200'><static-array type-name='uint8_t' count='200'/></static-array>
+        <static-array name='screen' count='200'><static-array count='200'>
             <int8_t name='char'/>
             <int8_t name='fore'/>
             <int8_t name='back'/>
@@ -52,6 +52,8 @@
         <static-array type-name='int64_t' name='print_time' count='100'/>
         <int32_t name='print_index'/>
         <int8_t name='display_frames'/>
+        <int16_t name='force_full_display_count'/>
+        <int8_t name='original_rect'/>
     </struct-type>
 
     <struct-type type-name='enabler'>

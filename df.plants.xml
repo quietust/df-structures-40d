@@ -17,10 +17,14 @@
         <compound name='temperature' type-name='temperaturest'/>
         <int32_t name='is_burning'/>
         <int32_t name='hitpoints'/>
+        <int16_t name='update_order'/>
         <stl-vector name='contaminants'>
             <pointer type-name='contaminant'/>
         </stl-vector>
         <int32_t/>
+        <uint16_t/>
+        <uint16_t/>
+        <uint16_t/>
     </class-type>
 </data-definition>
 

@@ -32,23 +32,25 @@
     <struct-type type-name='job' key-field='id'>
         <int32_t name='id'/>
         <pointer name='list_link' type-name='job_list_link'/>
-        <enum name='job_type' base-type='int32_t' type-name='job_type'/>
+        <enum name='job_type' base-type='int16_t' type-name='job_type'/>
 
         <code-helper name='describe'>$.job_type</code-helper>
 
         <compound name='pos' type-name='coord'/>
 
         <int32_t name='completion_timer' comment='-1 per 10 frames'/>
-        <uint16_t name='unk4a'/>
-        <uint16_t name='unk4b'/>
-
+        <int32_t/>
         <compound name='flags' type-name='job_flags'/>
+
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
+        <int16_t/>
+        <int16_t/>
         <int16_t name='item_subtype'/>
 
         <compound name="item_category" type-name='item_category'/>
-        <stl-string/>
+        <stl-string name='reaction_name'/>
+        <int16_t/>
         <int16_t/>
 
         <stl-vector name='items'>
@@ -160,11 +162,15 @@
 
     <struct-type type-name='manager_order'>
         <enum name='job_type' base-type='int16_t' type-name='job_type'/>
+        <int16_t/>
         <int16_t name="item_subtype"/>
-        <stl-string/>
-        <int16_t name='material' comment='or matgloss, depends on context'/>
+        <stl-string name='reaction_name'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
+        <compound name='item_cat' type-name='item_category'/>
         <int16_t name="amount_left"/>
         <int16_t name="amount_total"/>
+        <int32_t name='approved'/>
     </struct-type>
 
     <struct-type type-name='manager_order_template'>

@@ -487,7 +487,9 @@
             <item-attr name='item' value='BAR'/>
             <item-attr name='skill' value='SMELT'/>
         </enum-item>
-        <enum-item/>
+        <enum-item name='CustomReaction'>
+            <item-attr name='caption' value='Perform Custom Reaction'/>
+        </enum-item>
         <enum-item name='MeltMetalObject'>
             <item-attr name='caption' value='Melt a Metal Object'/>
             <item-attr name='type' value='Manufacture'/>

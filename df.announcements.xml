@@ -12,6 +12,13 @@
         <int16_t/>
         <int32_t name='repeat_count' comment='100 => displays: x101'/>
     </struct-type>
+
+    <struct-type type-name='popup_message'>
+        <stl-string name='text'/>
+
+        <int16_t name='color' init-value='7'/>
+        <bool name='bright' init-value='true'/>
+    </struct-type>
 </data-definition>
 
 <!--

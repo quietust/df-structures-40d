@@ -147,7 +147,7 @@
         <enum-item name='MOUNT'/>
         <enum-item name='MOUNT_EXOTIC'/>
         <enum-item name='FEATURE_ATTACK_GROUP'/>
-        <enum-item name='VERMIN_ROTTER'/>
+        <enum-item name='VERMIN_MICRO'/>
 
         <enum-item name='BIOME_POOL_TEMPERATE_BRACKISHWATER'/>
         <enum-item name='EQUIPS'/>

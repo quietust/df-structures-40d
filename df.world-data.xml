@@ -39,32 +39,51 @@
     </enum-type>
 
     <enum-type type-name="world_population_type">
-        <enum-item name='Animal_Wildlife'/>
-        <enum-item name='Animal_FishPond'/>
-        <enum-item name='Animal_FishRiver'/>
-        <enum-item name='Animal_FishCaveRiver'/>
-        <enum-item name='Plant_River'/>
-        <enum-item name='Plant_Swamp'/>
-        <enum-item name='Plant_Forest'/>
-        <enum-item name='Plant_Cave'/>
-        <enum-item name='Animal_VerminEater'/>
-        <enum-item name='Animal_VerminFlies'/>
-        <enum-item name='Animal_VerminSwamper'/>
-        <enum-item name='Animal_VerminCaveRiver'/>
-        <enum-item name='Animal_LargeCaveRiver'/>
-        <enum-item name='Animal_VerminChasm'/>
-        <enum-item name='Animal_LargeChasm'/>
-        <enum-item name='Animal_VerminLava'/>
-        <enum-item name='Animal_LargeLava'/>
-        <enum-item name='Animal_VerminSoil'/>
-        <enum-item name='Animal_VerminSoilColony'/>
-        <enum-item name='Animal_VerminGrounder'/>
-        <enum-item name='Animal_FishOcean'/>
-        <enum-item name='Tree_IndoorWet'/>
-        <enum-item name='Tree_IndoorDry'/>
-        <enum-item name='Tree_OutdoorWet'/>
-        <enum-item name='Tree_OutdoorDry'/>
+        <enum-item name='Animal'/>
+        <enum-item name='Vermin'/>
+        <enum-item name='Unk2'/>
+        <enum-item name='VerminInnumerable'/>
+        <enum-item name='ColonyInsect'/>
+        <enum-item name='Tree'/>
+        <enum-item name='Grass'/>
+        <enum-item name='Bush'/>
     </enum-type>
+
+    <struct-type type-name='world_population_ref'>
+        <int16_t name="region_x"/>
+        <int16_t name="region_y"/>
+        <int16_t name="feature_idx" init-value="-1"/>
+        <int32_t/>
+        <int32_t name="population_idx"/>
+    </struct-type>
+
+    <struct-type type-name='local_population'>
+        <enum base-type='int8_t' name='type' type-name='world_population_type'/>
+
+        <compound is-union='true'>
+            <int16_t name="race" ref-target='creature_raw'/>
+            <int16_t name="plant" ref-target='matgloss_plant'/>
+            <int16_t name="tree" ref-target='matgloss_wood'/>
+        </compound>
+
+        <int32_t name="quantity"/>
+        <bool name="known" comment='in ui.tasks.known_*'/>
+
+        <compound name='population' type-name='world_population_ref'/>
+    </struct-type>
+
+    <struct-type type-name='world_population'>
+        <enum base-type='int16_t' name='type' type-name='world_population_type'/>
+
+        <compound is-union='true'>
+            <int16_t name="race" ref-target='creature_raw'/>
+            <int16_t name="plant" ref-target='matgloss_plant'/>
+            <int16_t name="tree" ref-target='matgloss_wood'/>
+        </compound>
+
+        <int32_t name="count_min" init-value='10000001'/>
+        <int32_t name="count_max" init-value='10000001'/>
+    </struct-type>
 
     <enum-type type-name="site_structure_type" base-type='int16_t'>
         <enum-item name='CraftShop'/>
@@ -88,31 +107,6 @@
         <enum base-type='int16_t' name='type' type-name='site_structure_type'/>
         <int16_t/>
         <int32_t name='id'/>
-    </struct-type>
-
-    <struct-type type-name='local_population'>
-        <enum base-type='int8_t' name='type' type-name='world_population_type'/>
-
-        <compound is-union='true'>
-            <int16_t name="race" ref-target='creature_raw'/>
-            <int16_t name="plant" ref-target='matgloss_plant'/>
-            <int16_t name="tree" ref-target='matgloss_wood'/>
-        </compound>
-
-        <int32_t name="count_min" init-value='30000'/>
-        <int32_t name="count_max" init-value='30000'/>
-
-        <int8_t name='flags'/>
-    </struct-type>
-
-    <struct-type type-name='region_population'>
-        <enum base-type='int16_t' name='type' type-name='world_population_type'/>
-
-        <compound is-union='true'>
-            <int16_t name="race" ref-target='creature_raw'/>
-            <int16_t name="plant" ref-target='matgloss_plant'/>
-            <int16_t name="tree" ref-target='matgloss_wood'/>
-        </compound>
     </struct-type>
 
     <struct-type type-name='world_site' key-field='id'

@@ -3,6 +3,9 @@
         <stl-vector name='engravings'>
             <pointer type-name='engraving'/>
         </stl-vector>
+        <stl-vector name='vermin'>
+            <pointer type-name='vermin'/>
+        </stl-vector>
         <stl-vector type-name='pointer'/>
         <stl-vector type-name='pointer'/>
         <stl-vector type-name='pointer'/>
@@ -11,10 +14,9 @@
         <stl-vector type-name='pointer'/>
         <stl-vector type-name='pointer'/>
         <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
+        <stl-vector name='constructions'>
+            <pointer type-name='construction'/>
+        </stl-vector>
         <stl-vector type-name='pointer'/>
         <stl-vector type-name='pointer'/>
         <stl-vector type-name='pointer'/>
@@ -25,10 +27,6 @@
         <stl-vector type-name='pointer'/>
 
 <!--
-
-        <stl-vector name='vermin'>
-            <pointer type-name='vermin'/>
-        </stl-vector>
 
         <stl-vector name='unk_40'>
             <pointer type-name='coord16'/>
@@ -79,10 +77,12 @@
                 <int32_t/>
             </pointer>
         </stl-vector>
+-->
         <stl-vector name='coin_batches'>
             <pointer>
                 <int32_t name='year'/>
                 <enum base-type='int16_t' name='material' type-name='material_type'/>
+                <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
                 <int32_t name='entity' ref-target='historical_entity'/>
                 <int32_t name='ruler' ref-target='historical_figure'/>
                 <compound name='image_front' type-name='art_image_ref'/>
@@ -92,7 +92,6 @@
         <stl-vector name='populations'>
             <pointer type-name='local_population'/>
         </stl-vector>
--->
 
         --
 

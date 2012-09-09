@@ -9,7 +9,7 @@
             <int32_t name='plant'/>
             <int32_t name='drink'/>
         </compound>
-        <static-array name='unit_counts' type-name='int16_t' count='88' index-enum='profession'/>
+        <static-array name='unit_counts' type-name='int16_t' count='114' index-enum='profession'/>
         <int16_t/>
         <int16_t/>
         <int16_t/>
@@ -17,7 +17,7 @@
         <int16_t name='other_animals'/>
         <int16_t/>
         <int32_t/>
-        <static-array name='item_counts' type-name='int32_t' count='110' index-enum='item_type'/>
+        <static-array name='item_counts' type-name='int32_t' count='118' index-enum='item_type'/>
         <stl-vector name='created_weapons' type-name='int32_t' index-refers-to='$global.world.raws.itemdefs.weapons[$]'/>
         <compound name='wealth'>
             <int32_t name='total'/>
@@ -33,8 +33,8 @@
             <int32_t/>
             <int32_t name='exported'/>
         </compound>
-        <static-array name='recent_jobs' count='202' index-enum='job_type'>
-            <static-array count='64' type-name='int32_t' index-enum='material_type'/>
+        <static-array name='recent_jobs' count='217' index-enum='job_type'>
+            <static-array count='59' type-name='int32_t' index-enum='material_type'/>
             <int32_t/>
             <int32_t name='total'/>
         </static-array>
@@ -48,23 +48,20 @@
         <int32_t/>
         <int32_t name='num_artifacts'/>
         <int32_t/>
-        <int8_t name='found_gold'/>
-        <int8_t name='found_coal'/>
-        <int8_t name='found_copper'/>
-        <int8_t name='found_silver'/>
-        <int8_t name='found_tin'/>
-        <int8_t name='found_zinc'/>
-        <int8_t name='found_iron'/>
-        <int8_t name='found_platinum'/>
-        <int8_t name='found_adamantine'/>
-        <int8_t name='found_caveriver'/>
-        <int8_t name='found_chasm'/>
-        <int8_t name='found_magma'/>
-        <stl-vector type-name='bool'/>
-        <stl-vector name='known_creatures' type-name='bool'/>
-        <stl-vector type-name='bool'/>
-        <stl-vector name='known_plants' type-name='bool'/>
-        <stl-vector type-name='bool'/>
+        <stl-vector type-name='bool' index-refers-to='$global.world.raws.creatures[$]'/>
+        <stl-vector name='known_creatures' type-name='bool' index-refers-to='$global.world.raws.creatures[$]'/>
+        <stl-vector type-name='bool' index-refers-to='$global.world.raws.matgloss.plant[$]'/>
+        <stl-vector name='known_plants' type-name='bool' index-refers-to='$global.world.raws.matgloss.plant[$]'/>
+        <stl-vector type-name='bool' index-refers-to='$global.world.raws.matgloss.wood[$]'/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <stl-vector type-name='int16_t' name='found_minerals' ref-target='matgloss_stone'/>
+        <bitfield name='found_misc'>
+            <flag-bit name='deep'/>
+        </bitfield>
     </struct-type>
 
     <struct-type type-name='caravan_state'>

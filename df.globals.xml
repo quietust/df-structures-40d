@@ -35,8 +35,6 @@
         <enum-item name='ADVENTURE_MAIN'/>
         <enum-item name='VIEW_LEGENDS'/>
         <enum-item name='DWARF_RECLAIM'/>
-        <enum-item name='DWARF_ARENA'/>
-        <enum-item name='ADVENTURE_ARENA'/>
         <enum-item name='num'/>
         <enum-item name='NONE'/>
     </enum-type>
@@ -97,6 +95,8 @@
 
     <global-object name='cur_year' type-name='int32_t'/>
     <global-object name='cur_year_tick' type-name='int32_t'/>
+    <global-object name='cur_season' type-name='int8_t'/>
+    <global-object name='cur_season_tick' type-name='int16_t'/>
 
     <global-object name='current_weather' type-name='weather_type'/>
 

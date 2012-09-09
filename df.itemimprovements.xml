@@ -97,7 +97,9 @@
 
     <struct-type type-name='engraving' instance-vector='$global.world.engravings'>
         <int32_t name='artist' ref-target='historical_figure'/>
-        <int16_t/>
+        <int32_t name='masterpiece_event' ref-target='history_event'/>
+        <enum base-type='int32_t' name="skill_rating" type-name='skill_rating'
+              comment='at the moment of creation'/>
         <compound name='pos' type-name='coord16'/>
         <compound name='flags' type-name='engraving_flags'/>
         <int8_t name='tile'/>
