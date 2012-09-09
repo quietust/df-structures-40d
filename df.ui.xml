@@ -2,27 +2,96 @@
     <enum-type type-name='ui_sidebar_mode'>
         <enum-item name='Default'/>
         <enum-item name='Squads'/>
+
+        -- 2
+
         <enum-item name='DesignateMine'/>
+        <enum-item name='DesignateRemoveRamps'/>
+        <enum-item name='DesignateUpStair'/>
+        <enum-item name='DesignateDownStair'/>
+        <enum-item name='DesignateUpDownStair'/>
+        <enum-item name='DesignateUpRamp'/>
+        <enum-item name='DesignateChannel'/>
         <enum-item name='DesignateGatherPlants'/>
         <enum-item name='DesignateRemoveDesignation'/>
-        <enum-item name='DesignateDetailStone'/>
+        <enum-item name='DesignateSmooth'/>
+        <enum-item name='DesignateEngrave'/>
         <enum-item name='DesignateCarveFortification'/>
+
+        -- 14
+
         <enum-item name='Stockpiles'/>
         <enum-item name='Build'/>
         <enum-item name='QueryBuilding'/>
+
+        -- 17
+
         <enum-item name='Orders'/>
+        <enum-item name='OrdersForbid'/>
         <enum-item name='OrdersRefuse'/>
         <enum-item name='OrdersWorkshop'/>
+        <enum-item name='OrdersZone'/>
+
+        -- 22
+
         <enum-item name='BuildingItems'/>
         <enum-item name='ViewUnits'/>
         <enum-item name='LookAround'/>
-        <enum-item name='DesignateReclaim'/>
+
+        -- 25
+
+        <enum-item name='DesignateItemsClaim'/>
+        <enum-item name='DesignateItemsForbid'/>
+        <enum-item name='DesignateItemsMelt'/>
+        <enum-item name='DesignateItemsUnmelt'/>
+        <enum-item name='DesignateItemsDump'/>
+        <enum-item name='DesignateItemsUndump'/>
+        <enum-item name='DesignateItemsHide'/>
+        <enum-item name='DesignateItemsUnhide'/>
+
+        -- 33
+
         <enum-item name='DesignateChopTrees'/>
         <enum-item name='DesignateToggleEngravings'/>
+
+        -- 35
+
+        <enum-item name='Hotkeys'/>
+        <enum-item name='Visualize'/>
+
+        -- 37
+
+        <enum-item name='DesignateTrafficHigh'/>
+        <enum-item name='DesignateTrafficNormal'/>
+        <enum-item name='DesignateTrafficLow'/>
+        <enum-item name='DesignateTrafficRestricted'/>
+
+        -- 41
+
+        <enum-item name='Zones'/>
+        <enum-item name='ZonesPitInfo'/>
+
+        -- 43
+
+        <enum-item name='DesignateRemoveConstruction'/>
+
+        <enum-item name='DepotAccess'/>
+        <enum-item name='Notes'/>
     </enum-type>
 
+    <struct-type type-name='ui_hotkey'>
+        <stl-string name='name'/>
+        <enum base-type='int16_t' name='cmd'>
+            <enum-item name='None' value='-1'/>
+            <enum-item name='Zoom'/>
+        </enum>
+        <int32_t name='x'/>
+        <int32_t name='y'/>
+        <int32_t name='z'/>
+    </struct-type>
+
     <struct-type type-name='ui'>
-        <int32_t name='gameover_type'/>
+        <int16_t name='gameover_type'/>
         <int32_t name='gameover_sieger' ref-target='historical_entity'/>
         <compound name='tax_collection'>
             <int16_t name='state'/>
@@ -36,15 +105,10 @@
             <int32_t comment='probably for guard2'/>
             <int16_t name='collected'/>
             <int16_t name='quota'/>
-            <int32_t name='tc_x'/>
-            <int32_t name='tc_y'/>
-            <int32_t name='tc_z'/>
-            <int32_t name='guard1_x'/>
-            <int32_t name='guard2_x'/>
-            <int32_t name='guard1_y'/>
-            <int32_t name='guard2_y'/>
-            <int32_t name='guard1_z'/>
-            <int32_t name='guard2_z'/>
+            <compound type-name='coord' name='collector_pos'/>
+            <static-array type-name='int16_t' count='2' name='guard_pos_x'/>
+            <static-array type-name='int16_t' count='2' name='guard_pos_y'/>
+            <static-array type-name='int16_t' count='2' name='guard_pos_z'/>
             <pointer type-name='unit' name='collector'/>
             <pointer type-name='unit' name='guard1'/>
             <pointer type-name='unit' name='guard2'/>
@@ -54,34 +118,32 @@
             <pointer type-name='caravan_state'/>
         </stl-vector>
         <int8_t/>
-        <compound type-name='coord_path' name='roadInfo1'/>
-        <compound type-name='coord_path' name='roadInfo2'/>
+        <int16_t name='fortress_rank'/>
         <int16_t name='progress_population'/>
         <int16_t name='progress_trade'/>
         <int16_t name='progress_production'/>
         <bool name='king_arrived'/>
         <bool name='king_hasty'/>
-        <bool name='anvil_arrived'/>
         <bool name='economy_active'/>
         <bool/>
         <bool name='justice_active'/>
+        <int16_t/>
         <int16_t/>
         <compound name='incoming_king'>
             <int32_t name='desired_architecture'/>
             <int32_t name='desired_roads'/>
             <int32_t name='desired_offerings'/>
         </compound>
-        <static-array name='nobles_enabled' type-name='int16_t' count='88' index-enum='profession'/>
-        <static-array name='nobles_arrived' type-name='int16_t' count='88' index-enum='profession'/>
-        <static-array name='units_killed' type-name='int16_t' count='88' index-enum='profession'/>
-        <static-array name='guild_wages' type-name='int32_t' count='16' index-enum='guild_id'/>
-        <static-array name='guild_happiness' type-name='int16_t' count='16' index-enum='guild_id'/>
-        <static-array name='labor_slowdown_timer' type-name='int16_t' count='16' index-enum='guild_id'/>
-        <static-array name='currency_value' type-name='int32_t' count='64' index-enum='material_type'/>
+        <static-array name='nobles_enabled' type-name='int16_t' count='114' index-enum='profession'/>
+        <static-array name='nobles_arrived' type-name='int16_t' count='114' index-enum='profession'/>
+        <static-array name='units_killed' type-name='int16_t' count='114' index-enum='profession'/>
+        <static-array name='guild_wages' type-name='int32_t' count='6' index-enum='guild_id'/>
+        <static-array name='guild_happiness' type-name='int16_t' count='6' index-enum='guild_id'/>
+        <static-array name='labor_slowdown_timer' type-name='int16_t' count='6' index-enum='guild_id'/>
+        <stl-vector name='currency_value' type-name='int32_t' index-refers-to='$global.world.raws.matgloss.metal[$]'/>
         <int32_t name='trees_removed'/>
         <int32_t/>
-        <int32_t name='adamantine_mined'/>
-        <int32_t/>
+        <int32_t name='fortress_age'/>
 
         <compound type-name='entity_activity_statistics' name='activity_stats'/>
 
@@ -123,7 +185,6 @@
                     <enum-item name='DisorderlyConduct'/>
                     <enum-item name='BuildingDestruction'/>
                     <enum-item name='Vandalism'/>
-                    <enum-item name='ViolateMiningOrder'/>
                 </enum>
 
                 <compound name='punishments'>
@@ -182,10 +243,9 @@
             </stl-vector>
             <stl-vector name='exc_type' type-name='int8_t'/>
         </compound>
+        <stl-vector name='economic_stone' type-name='bool' index-refers-to='$global.world.raws.matgloss.stone[$]'/>
         <int32_t/>
         <int16_t/>
-        <int16_t name='max_dig_depth'/>
-        <int16_t name='min_dig_depth'/>
         <int16_t name='mood_timer'/>
         <enum base-type='int16_t' name='sidebar_mode' type-name='ui_sidebar_mode'/>
         <int16_t/>
@@ -199,9 +259,6 @@
 
         <stl-vector name='farm_crops' type-name='int16_t' ref-target='matgloss_plant'/>
         <stl-vector name='farm_seasons' type-name='int8_t'/>
-
-        <static-array type-name='int16_t' count='3'/>
-        <static-array type-name='int8_t' count='3'/>
 
         <compound name='economy_prices'>
             <compound name='price_adjustment'>
@@ -224,7 +281,7 @@
                 <stl-vector type-name='int32_t' name='shell' index-refers-to='$global.world.raws.creatures[$]'/>
                 <stl-vector type-name='int32_t' name='leather' index-refers-to='$global.world.raws.creatures[$]'/>
                 <stl-vector type-name='int32_t' name='silk' index-refers-to='$global.world.raws.creatures[$]'/>
-                <stl-vector type-name='int32_t' name='stone' index-refers-to='$global.world.raws.matgloss_stone[$]'/>
+                <stl-vector type-name='int32_t' name='stone_gems' index-refers-to='$global.world.raws.matgloss_stone[$]'/>
                 <stl-vector type-name='int32_t' name='meat_fish' index-refers-to='$global.world.raws.creatures[$]'/>
                 <stl-vector type-name='int32_t' name='plants' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
                 <stl-vector type-name='int32_t' name='drinks' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
@@ -256,7 +313,7 @@
                 <stl-vector name='shell' index-refers-to='$global.world.raws.creatures[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='leather' index-refers-to='$global.world.raws.creatures[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='silk' index-refers-to='$global.world.raws.creatures[$]'><pointer type-name='unit'/></stl-vector>
-                <stl-vector name='stone' index-refers-to='$global.world.raws.matgloss_stone[$]'><pointer type-name='unit'/></stl-vector>
+                <stl-vector name='stone_gems' index-refers-to='$global.world.raws.matgloss_stone[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='meat_fish' index-refers-to='$global.world.raws.creatures[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='plants' index-refers-to='$global.world.raws.matgloss_plant[$]'><pointer type-name='unit'/></stl-vector>
                 <stl-vector name='drinks' index-refers-to='$global.world.raws.matgloss_plant[$]'><pointer type-name='unit'/></stl-vector>
@@ -276,6 +333,71 @@
 
             <compound name='custom_settings' type-name='stockpile_settings'/>
         </compound>
+
+        <static-array count='4'>
+            <static-array count='768'>
+                <int16_t name='unk1'/>
+                <int16_t name='unk2'/>
+            </static-array>
+        </static-array>
+
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int8_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int16_t/>
+        <stl-vector/>
+        <int16_t/>
+        <int32_t/>
+        <int8_t/>
+        <int8_t/>
+        <int16_t/>
+        <int16_t/>
+        <stl-vector/>
+
+        <compound name='main'>
+            <static-array name='hotkeys' type-name='ui_hotkey' count='16'/>
+
+            <int32_t name='traffic_cost_high'/>
+            <int32_t name='traffic_cost_normal'/>
+            <int32_t name='traffic_cost_low'/>
+            <int32_t name='traffic_cost_restricted'/>
+
+            <pointer name='fortress_entity' type-name='historical_entity'
+                     comment='entity pointed to by group_id'/>
+
+            <enum base-type='int16_t' name='mode' type-name='ui_sidebar_mode'/>
+
+            <int16_t name='unk1'/>
+
+            <int16_t name='selected_traffic_cost'
+                     comment='For changing the above costs.'/>
+
+            <bool name='autosave_request'/>
+            <bool/>
+            <int32_t/>
+
+            <int16_t name='selected_hotkey'/>
+            <bool name='in_rename_hotkey'/>
+        </compound>
+
     </struct-type>
 
     <enum-type type-name='timed_event_type' base-type='int16_t'>
@@ -291,12 +413,13 @@
         <enum-item name='Wildlife'/>
     </enum-type>
 
-
     <struct-type type-name='timed_event'>
         <enum type-name='timed_event_type' name='type'/>
         <int8_t name='season'/>
         <int16_t name='season_ticks_remaining'/>
         <pointer name='entity' type-name='historical_entity'/>
+        <int16_t/>
+        <int32_t/>
     </struct-type>
 
 </data-definition>

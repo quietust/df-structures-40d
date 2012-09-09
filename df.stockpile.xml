@@ -1,22 +1,4 @@
 <data-definition>
-    <struct-type type-name='stockpile_settings_food'>
-        <stl-vector type-name='bool' name='meat_fish' index-refers-to='$global.world.raws.creatures[$]'/>
-        <stl-vector type-name='bool' name='unprepared_fish' index-refers-to='$global.world.raws.creatures[$]'/>
-        <stl-vector type-name='bool' name='plants' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
-        <stl-vector type-name='bool' name='drink_plant' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
-        <stl-vector type-name='bool' name='drink_animal' index-refers-to='$global.world.raws.creatures[$]'/>
-        <stl-vector type-name='bool' name='cheese_plant' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
-        <stl-vector type-name='bool' name='cheese_animal' index-refers-to='$global.world.raws.creatures[$]'/>
-        <stl-vector type-name='bool' name='seeds' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
-        <stl-vector type-name='bool' name='leaves' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
-        <stl-vector type-name='bool' name='powder_plant' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
-        <stl-vector type-name='bool' name='powder_animal' index-refers-to='$global.world.raws.creatures[$]'/>
-        <stl-vector type-name='bool' name='glob' index-enum='material_type'/>
-        <stl-vector type-name='bool' name='extract_plant' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
-        <stl-vector type-name='bool' name='extract_animal' index-refers-to='$global.world.raws.creatures[$]'/>
-        <stl-vector type-name='bool' name='liquid_misc' index-enum='material_type'/>
-    </struct-type>
-
     <enum-type type-name='stockpile_category' base-type='int16_t'>
         <enum-item name='Remove'/>
         <enum-item name='Animal'/>
@@ -25,8 +7,7 @@
         <enum-item name='Graveyard'/>
         <enum-item name='Refuse'/>
         <enum-item name='Stone'/>
-        <enum-item name='Ore'/>
-        <enum-item name='Mining'/>
+        <enum-item name='Unused'/>
         <enum-item name='Ammo'/>
         <enum-item name='Coins'/>
         <enum-item name='BarBlock'/>
@@ -47,10 +28,9 @@
         <flag-bit name='graveyard'/>
         <flag-bit name='refuse'/>
         <flag-bit name='stone'/>
-        <flag-bit name='ore'/>
         <flag-bit name='ammo'/>
-
         <flag-bit name='coins'/>
+
         <flag-bit name='bars'/>
         <flag-bit name='gems'/>
         <flag-bit name='finished_goods'/>
@@ -58,7 +38,6 @@
         <flag-bit name='cloth'/>
         <flag-bit name='wood'/>
         <flag-bit name='weapons'/>
-
         <flag-bit name='armor'/>
     </bitfield-type>
 
@@ -72,46 +51,75 @@
         </compound>
 
         <compound name='food'>
-            <compound type-name='stockpile_settings_food' name='type'/>
+            <stl-vector type-name='bool' name='meat_fish' index-refers-to='$global.world.raws.creatures[$]'/>
+            <stl-vector type-name='bool' name='unprepared_fish' index-refers-to='$global.world.raws.creatures[$]'/>
+            <stl-vector type-name='bool' name='plants' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
+            <stl-vector type-name='bool' name='drink_plant' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
+            <stl-vector type-name='bool' name='drink_animal' index-refers-to='$global.world.raws.creatures[$]'/>
+            <stl-vector type-name='bool' name='cheese_plant' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
+            <stl-vector type-name='bool' name='cheese_animal' index-refers-to='$global.world.raws.creatures[$]'/>
+            <stl-vector type-name='bool' name='seeds' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
+            <stl-vector type-name='bool' name='leaves' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
+            <stl-vector type-name='bool' name='powder_plant' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
+            <stl-vector type-name='bool' name='powder_animal' index-refers-to='$global.world.raws.creatures[$]'/>
+            <stl-vector type-name='bool' name='glob' index-enum='material_type'/>
+            <stl-vector type-name='bool' name='extract_plant' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
+            <stl-vector type-name='bool' name='extract_animal' index-refers-to='$global.world.raws.creatures[$]'/>
+            <stl-vector type-name='bool' name='liquid_misc' index-enum='material_type'/>
             <bool name='prepared_meals'/>
         </compound>
 
         <compound name='furniture'>
             <stl-vector type-name='bool' name='type' index-enum='item_type'/>
             <stl-vector type-name='bool' name='mats' index-enum='material_type'/>
+            <stl-vector type-name='bool' name='metals' index-refers-to='$global.world.raws.matgloss.metal[$]'/>
             <bool name='sand_bags'/>
         </compound>
 
         <int32_t/>
 
         <compound name='refuse'>
-            <stl-vector type-name='bool' name='type' index-enum='item_type'/>
+            <stl-vector type-name='bool' name='items' index-enum='item_type'/>
+            <stl-vector type-name='bool' name='corpses' index-refers-to='$global.world.raws.creatures[$]'/>
+            <stl-vector type-name='bool' name='parts' index-refers-to='$global.world.raws.creatures[$]'/>
+            <bool name='fresh_raw_hide'/>
+            <bool name='rotten_raw_hide'/>
         </compound>
 
         <stl-vector type-name='bool' name='stone' index-refers-to='$global.world.raws.matgloss_stone[$]'/>
 
-        <stl-vector type-name='bool' name='ore' index-enum='material_type'/>
+        <stl-vector type-name='bool'/>
 
         <compound name='ammo'>
             <stl-vector type-name='bool' name='type' index-refers-to='$global.world.raws.itemdefs.ammo[$]'/>
             <stl-vector type-name='bool' name='mats' index-enum='material_type'/>
+            <stl-vector type-name='bool' name='metals' index-refers-to='$global.world.raws.matgloss.metal[$]'/>
+            <static-array type-name='bool' name='quality_core' count='7' index-enum='item_quality'/>
+            <static-array type-name='bool' name='quality_total' count='7' index-enum='item_quality'/>
         </compound>
 
-        <stl-vector type-name='bool' name='coins' index-enum='material_type'/>
+        <stl-vector type-name='bool' name='coins' index-refers-to='$global.world.raws.matgloss.metal[$]'/>
 
         <compound name='bars_blocks'>
             <stl-vector type-name='bool' name='bars_mats' index-enum='material_type'/>
+            <stl-vector type-name='bool' name='bars_metals' index-refers-to='$global.world.raws.matgloss.metal[$]'/>
             <stl-vector type-name='bool' name='blocks_mats' index-enum='material_type'/>
+            <stl-vector type-name='bool' name='blocks_metals' index-refers-to='$global.world.raws.matgloss.metal[$]'/>
         </compound>
 
         <compound name='gems'>
-            <stl-vector type-name='bool' name='rough_mats' index-enum='material_type'/>
-            <stl-vector type-name='bool' name='cut_mats' index-enum='material_type'/>
+            <stl-vector type-name='bool' name='rough_gem' index-refers-to='$global.world.raws.matgloss.stone[$]'/>
+            <stl-vector type-name='bool' name='rough_glass' index-enum='material_type'/>
+            <stl-vector type-name='bool' name='cut_gem' index-refers-to='$global.world.raws.matgloss.stone[$]'/>
+            <stl-vector type-name='bool' name='cut_glass' index-enum='material_type'/>
         </compound>
 
         <compound name='finished_goods'>
             <stl-vector type-name='bool' name='type' index-enum='item_type'/>
             <stl-vector type-name='bool' name='mats' index-enum='material_type'/>
+            <stl-vector type-name='bool' name='metals' index-refers-to='$global.world.raws.matgloss.metal[$]'/>
+            <static-array type-name='bool' name='quality_core' count='7' index-enum='item_quality'/>
+            <static-array type-name='bool' name='quality_total' count='7' index-enum='item_quality'/>
         </compound>
 
         <stl-vector type-name='bool' name='leather' index-refers-to='$global.world.raws.creatures[$]'/>
@@ -121,8 +129,6 @@
             <stl-vector type-name='bool' name='thread_plant' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
             <stl-vector type-name='bool' name='cloth_silk' index-refers-to='$global.world.raws.creatures[$]'/>
             <stl-vector type-name='bool' name='cloth_plant' index-refers-to='$global.world.raws.matgloss_plant[$]'/>
-            <bool name='thread_adamantine'/>
-            <bool name='cloth_adamantine'/>
         </compound>
 
         <stl-vector type-name='bool' name='wood' index-refers-to='$global.world.raws.matgloss_wood[$]'/>
@@ -131,8 +137,11 @@
             <stl-vector type-name='bool' name='weapon_type' index-refers-to='$global.world.raws.itemdefs.weapons[$]'/>
             <stl-vector type-name='bool' name='trapcomp_type' index-refers-to='$global.world.raws.itemdefs.trapcomps[$]'/>
             <stl-vector type-name='bool' name='mats' index-enum='material_type'/>
-            <bool name='local'/>
-            <bool name='foreign'/>
+            <stl-vector type-name='bool' name='metals' index-refers-to='$global.world.raws.matgloss.metal[$]'/>
+            <static-array type-name='bool' name='quality_core' count='7' index-enum='item_quality'/>
+            <static-array type-name='bool' name='quality_total' count='7' index-enum='item_quality'/>
+            <bool name='usable'/>
+            <bool name='unusable'/>
         </compound>
 
         <compound name='armor'>
@@ -143,9 +152,14 @@
             <stl-vector type-name='bool' name='legs' index-refers-to='$global.world.raws.itemdefs.pants[$]'/>
             <stl-vector type-name='bool' name='shield' index-refers-to='$global.world.raws.itemdefs.shields[$]'/>
             <stl-vector type-name='bool' name='mats' index-enum='material_type'/>
-            <bool name='local'/>
-            <bool name='foreign'/>
+            <stl-vector type-name='bool' name='metals' index-refers-to='$global.world.raws.matgloss.metal[$]'/>
+            <static-array type-name='bool' name='quality_core' count='7' index-enum='item_quality'/>
+            <static-array type-name='bool' name='quality_total' count='7' index-enum='item_quality'/>
+            <bool name='usable'/>
+            <bool name='unusable'/>
         </compound>
+        <bool name='allow_organic' init-value='true'/>
+        <bool name='allow_inorganic' init-value='true'/>
     </struct-type>
 </data-definition>
 

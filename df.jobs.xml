@@ -211,16 +211,6 @@
         <enum-item name='Metalsmiths'/>
         <enum-item name='Jewelers'/>
         <enum-item name='Craftsmen'/>
-        <enum-item name='HouseFer'/>
-        <enum-item name='HouseBer'/>
-        <enum-item name='HouseRash'/>
-        <enum-item name='OrderAxe'/>
-        <enum-item name='OrderMace'/>
-        <enum-item name='OrderSword'/>
-        <enum-item name='OrderHammer'/>
-        <enum-item name='OrderCrossbow'/>
-        <enum-item name='OrderSpear'/>
-        <enum-item name='Philosophers'/>
     </enum-type>
 
     <struct-type type-name='unit_demand'>
