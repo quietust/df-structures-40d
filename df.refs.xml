@@ -242,6 +242,7 @@
         <enum base-type='int16_t' type-name='histfig_site_link_type' name='type'/>
         <int32_t name='site_id' ref-target='world_site'/>
         <int32_t name='structure_id'/>
+        <int32_t/>
     </struct-type>
 
     <enum-type type-name='histfig_hf_link_type'>
@@ -256,6 +257,28 @@
     <struct-type type-name='histfig_hf_link'>
         <enum base-type='int16_t' type-name='histfig_hf_link_type' name='type'/>
         <int32_t ref-target='historical_figure'/>
+        <int16_t name='strength'/>
+    </struct-type>
+
+    <enum-type type-name='entity_entity_link_type'>
+        <enum-item name='PARENT'/>
+        <enum-item name='LOCAL_GOV'/>
+    </enum-type>
+
+    <struct-type type-name='entity_entity_link'>
+        <enum base-type='int16_t' type-name='entity_entity_link_type' name='type'/>
+        <int32_t ref-target='historical_entity'/>
+        <int16_t name='strength'/>
+    </struct-type>
+
+    <enum-type type-name='entity_site_link_type'>
+        <enum-item name='SITE'/>
+    </enum-type>
+
+    <struct-type type-name='entity_site_link'>
+        <enum base-type='int16_t' type-name='entity_site_link_type' name='type'/>
+        <int32_t ref-target='world_site'/>
+        <int16_t name='strength'/>
     </struct-type>
 </data-definition>
 

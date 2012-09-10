@@ -1,9 +1,10 @@
 <data-definition>
     <struct-type type-name='historical_figure' instance-vector='$global.world.world_data.history.figures' key-field='id'>
-        <enum base-type='int32_t' name='profession' type-name='profession'/>
+        <enum base-type='int16_t' name='profession' type-name='profession'/>
 
         <int16_t name='race' ref-target='creature_raw'/>
         <int16_t name='racegloss'/>
+        <int16_t/>
 
         <int8_t name='sex' comment='-1 n/a, 0 female, 1 male'/>
         <int32_t name='age_death'/>
@@ -12,6 +13,8 @@
         <int32_t/>
 
         <compound type-name='language_name' name='name'/>
+        <compound type-name='language_name' name='squad_name'/>
+        <int32_t/>
 
         <code-helper name='describe'>
             (describe-obj $.name)
@@ -35,6 +38,10 @@
         <stl-vector name='histfig_links'>
             <pointer type-name='histfig_hf_link'/>
         </stl-vector>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
     </struct-type>
 
     <class-type type-name='history_event_collection' original-name='history_event_collectionst'

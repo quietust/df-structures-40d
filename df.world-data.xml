@@ -238,7 +238,7 @@
         <stl-vector name="vein_type">
             <enum base-type='int8_t' type-name='inclusion_type'/>
         </stl-vector>
-        <stl-vector name="vein_unk_38" comment='density??'>
+        <stl-vector name="vein_frequency">
             <int8_t/>
         </stl-vector>
 
@@ -332,10 +332,10 @@
         <int16_t/>
         <int32_t name='world_width2'/>
         <int32_t name='world_height2'/>
-        <pointer type-name='uint32_t' is-array='true' comment='align(width,4)*height'/>
-        <pointer type-name='uint32_t' is-array='true' comment='align(width,4)*height'/>
+        <pointer type-name='uint32_t' is-array='true' comment='(width+1)*(height+1)'/>
+        <pointer type-name='uint32_t' is-array='true' comment='(width+1)*(height+1)'/>
         <pointer type-name='uint32_t' is-array='true' comment='width*height'/>
-        <pointer type-name='uint8_t' is-array='true' comment='align(width,4)*height'/>
+        <pointer type-name='uint8_t' is-array='true' comment='(width+1)*(height+1)'/>
         <compound>
             <stl-vector>
                 <pointer>
@@ -411,13 +411,13 @@
             <pointer name="table" is-array='true'>
                 <pointer is-array='true'>
                     <stl-vector>
-                        <pointer/>
+                        <pointer name='world_construction'/>
                     </stl-vector>
                 </pointer>
             </pointer>
         </compound>
         <stl-vector name="world_constructions">
-            <pointer/>
+            <pointer name='world_construction'/>
         </stl-vector>
         <int32_t name='next_construction_id'/>
         <compound name='worldgen_parms'>
@@ -503,7 +503,9 @@
                         <int32_t/>
                     </stl-vector>
                     <stl-vector name='unk2'>
-                        <static-array count='16'><static-array count='16' type-name='int8_t'/></static-array>
+                        <pointer>
+                            <static-array count='16'><static-array count='16' type-name='int8_t'/></static-array>
+                        </pointer>
                     </stl-vector>
                 </pointer>
             </pointer>
@@ -573,25 +575,27 @@
             </pointer>
         </stl-vector>
         <stl-vector/>
-        <pointer is-array='true' comment='map features?'>
-            <int16_t name='x'/>
-            <int16_t name='y'/>
-            <pointer name='features'>
-                <static-array name='feature_init' count='16'>
-                    <static-array count='16'>
-                        <stl-vector><pointer type-name='feature_init'/></stl-vector>
+        <pointer is-array='true' name='feature_map'>
+            <pointer is-array='true'>
+                <int16_t name='x'/>
+                <int16_t name='y'/>
+                <pointer name='features'>
+                    <static-array name='feature_init' count='16'>
+                        <static-array count='16'>
+                            <stl-vector><pointer type-name='feature_init'/></stl-vector>
+                        </static-array>
                     </static-array>
-                </static-array>
+                </pointer>
+                <pointer/>
             </pointer>
-            <pointer/>
         </pointer>
         <stl-string name='save_folder_name'/>
         <df-flagarray/>
         <stl-vector/>
         <stl-vector/>
         <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
+        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int16_t'/>
         <int32_t/>
         <int8_t/>
         <int32_t/>

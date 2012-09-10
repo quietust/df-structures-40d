@@ -24,8 +24,9 @@
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <int32_t name='maker' ref-target='historical_figure'/>
+        <int32_t name='masterpiece_event' ref-target='history_event'/>
         <enum base-type='int16_t' name='quality' type-name='item_quality'/>
-        <int16_t name='skill_rating' comment='at the moment of creation'/>
+        <int32_t name='skill_rating' comment='at the moment of creation'/>
         <int32_t/>
 
         <virtual-methods>

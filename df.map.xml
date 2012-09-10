@@ -269,14 +269,19 @@
     </struct-type>
 
     <struct-type type-name='map_block_column'>
-        <int16_t name="unk_0"/>
-        <int16_t name="unk_2"/>
-        <int16_t name="unk_4"/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t name='ground_level'/>
 
-        <stl-vector name="unk_8">
+        <stl-vector name='unmined_glyphs'>
             <pointer>
-                <static-array name='unk1' count='8' type-name='int16_t'/>
-                <static-array name='unk2' count='4' type-name='uint8_t'/>
+                <static-array name='x' count='4' type-name='int16_t'/>
+                <static-array name='y' count='4' type-name='int16_t'/>
+                <static-array name='tile' count='4' type-name='uint8_t'/>
             </pointer>
         </stl-vector>
 
@@ -292,7 +297,7 @@
             <pointer/>
         </stl-vector>
 
-        <int16_t name='unk_c2c'/>
+        <int16_t/>
         <df-flagarray name='flags'/>
 
         <int16_t name='tile_min_x'/>
@@ -373,8 +378,8 @@
             <pointer type-name='world_population'/>
         </stl-vector>
         <int32_t/>
-        <int32_t/>
-        <pointer comment='feature_specinfo'/>
+        <int16_t/>
+        <pointer name='specinfo'/>
         <stl-vector type-name='int16_t'/>
         <stl-vector type-name='int16_t'/>
         <stl-vector type-name='int16_t'/>
@@ -395,7 +400,7 @@
                 <int16_t/>
                 <int32_t/>
                 <int32_t/>
-                <pointer comment='feature_alteration_spec_info'/>
+                <pointer name='alteration_spec_info'/>
             </pointer>
         </stl-vector>
         <df-flagarray name='flags' index-enum='feature_init_flags'/>

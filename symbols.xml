@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <data-definition>
-    <symbol-table name='v0.28.181.40d' os-type='windows-msvc8'>
+    <symbol-table name='v0.28.181.40d' os-type='windows-msvc2005'>
         <binary-timestamp value='0x48c330df'/>
 
         .data
@@ -34,6 +34,8 @@
 
         <global-address name='cur_year' value='0xd8bf28'/>
         <global-address name='cur_year_tick' value='0xcdef08'/>
+        <global-address name='cur_season' value='0xcdef12'/>
+        <global-address name='cur_season_tick' value='0xd45804'/>
 
         <global-address name='current_weather'/>
 

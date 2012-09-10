@@ -102,18 +102,10 @@
         <int32_t name='flags'/> 0x10 = ancient ruin
 
         <stl-vector name='entity_links'>
-            <pointer>
-                <int16_t name='type'/>
-                <int32_t name='target' ref-target='historical_entity'/>
-                <int16_t name='strength'/>
-            </pointer>
+            <pointer type-name='entity_entity_link'/>
         </stl-vector>
-        <stl-vector name='unk_links'>
-            <pointer>
-                <int16_t name='type'/>
-                <int32_t name='target'/>
-                <int32_t name='strength'/>
-            </pointer>
+        <stl-vector name='site_links'>
+            <pointer type-name='entity_site_link'/>
         </stl-vector>
 
         <stl-vector name='histfig_ids'>
@@ -181,7 +173,7 @@
             <stl-vector name='silk'>
                 <int16_t ref-target='creature_raw'/>
             </stl-vector>
-            <stl-vector/>
+            <stl-vector type-name='int16_t'/>
             <stl-vector name='craft_metal'>
                 <int16_t ref-target='matgloss_metal'/>
             </stl-vector>
@@ -224,7 +216,9 @@
             <stl-vector name='plant'>
                 <int16_t ref-target='matgloss_plant'/>
             </stl-vector>
-            <stl-vector type-name='int16_t'/>
+            <stl-vector name='seeds'>
+                <int16_t ref-target='matgloss_plant'/>
+            </stl-vector>
             <compound name='wood_products' comment='lye, charcoal, potash, pearlash, and coke'>
                 <stl-vector name='item_type'>
                     <enum base-type='int16_t' type-name='item_type'/>
@@ -300,15 +294,15 @@
             <int16_t/>
 
             <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int32_t'/>
-            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int32_t' name='civ_symbols_art_id'/>
+            <stl-vector type-name='int16_t' name='civ_symbols_art_subid'/>
             <stl-vector type-name='int8_t'/>
             <stl-vector type-name='int8_t'/>
             <stl-vector type-name='int8_t'/>
             <stl-vector type-name='int8_t'/>
             <stl-vector type-name='int16_t'/>
             <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int32_t'/>
+            <stl-vector type-name='pointer'/>
         </compound>
 
         <compound name='unknown1b'>
