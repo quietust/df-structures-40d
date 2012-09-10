@@ -19,6 +19,7 @@
         <enum-item name='temperature'/>
         <enum-item name='evilness'/>
         <enum-item name='drainage'/>
+        <enum-item name='volcanism'/>
         <enum-item name='savagery'/>
         <enum-item/>
         <enum-item/>
@@ -42,11 +43,11 @@
         <enum-item name='Animal'/>
         <enum-item name='Vermin'/>
         <enum-item name='Unk2'/>
-        <enum-item name='VerminInnumerable'/>
-        <enum-item name='ColonyInsect'/>
+        <enum-item name='VerminSoil'/>
+        <enum-item name='VerminColony'/>
         <enum-item name='Tree'/>
-        <enum-item name='Grass'/>
-        <enum-item name='Bush'/>
+        <enum-item name='Unk6'/>
+        <enum-item name='Shrub'/>
     </enum-type>
 
     <struct-type type-name='world_population_ref'>
@@ -85,30 +86,6 @@
         <int32_t name="count_max" init-value='10000001'/>
     </struct-type>
 
-    <enum-type type-name="site_structure_type" base-type='int16_t'>
-        <enum-item name='CraftShop'/>
-        <enum-item name='WeaponsmithsShop'/>
-        <enum-item name='ArmorsmithsShop'/>
-        <enum-item name='GeneralStore'/>
-        <enum-item name='FoodShop'/>
-        <enum-item name='MeadHall'/>
-        <enum-item name='Keep'/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item name='Ruin1'/>
-        <enum-item name='Ruin2'/>
-        <enum-item name='Ruin3'/>
-        <enum-item name='Hovel'/>
-        <enum-item name='Apartment'/>
-        <enum-item name='ApartmentRoom'/>
-    </enum-type>
-
-    <struct-type type-name='site_structure'>
-        <enum base-type='int16_t' name='type' type-name='site_structure_type'/>
-        <int16_t/>
-        <int32_t name='id'/>
-    </struct-type>
-
     <struct-type type-name='world_site' key-field='id'
                  instance-vector='$global.world.world_data.sites'>
         <compound name='name' type-name='language_name'/>
@@ -117,20 +94,10 @@
 
         <int32_t name="civ_id" ref-target='historical_entity'/>
         <int32_t name="owner1" ref-target='historical_entity'/>
+        <int32_t name="owner2" ref-target='historical_entity'/>
 
-        <enum base-type='int32_t' name="type">
-            <enum-item name='PlayerFortress'/>
-            <enum-item name='DarkFortress'/>
-            <enum-item name='Cave'/>
-            <enum-item name='MountainHalls'/>
-            <enum-item name='ForestRetreat'/>
-            <enum-item name='Town'/>
-            <enum-item name='LostFortress'/>
-            <enum-item name='Ruin'/>
-        </enum>
-
-        <compound name='region_indoor' type-name='coord2d16' comment='for subterranean wildlife'/>
-        <compound name='region_outdoor' type-name='coord2d16' comment='for outdoor wildlife'/>
+        <enum base-type='int16_t' name="type" type-name='site_type'/>
+        <compound name='region' type-name='coord2d'/>
 
         <int32_t name="id"/>
 
@@ -138,15 +105,35 @@
             <int32_t ref-target='nemesis_record'/>
         </stl-vector>
         <stl-vector type-name='int32_t'/>
+        <stl-vector name="animals">
+            <pointer type-name='world_population'/>
+        </stl-vector>
+        <stl-vector/>
+        <stl-vector/>
 
         <int32_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
         <int32_t/>
         <df-flagarray name='flags'/>
 
-        <stl-vector name='structures'>
-            <pointer type-name='site_structure'/>
+        <stl-vector name='abstract_buildings'>
+            <pointer/>
         </stl-vector>
-        <int32_t name='next_structure_id'/>
+        <int32_t name='next_building_id'/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <compound type-name='coord'/>
+        <int32_t/>
+        <stl-vector/>
+        <stl-vector/>
     </struct-type>
 
     <struct-type type-name='world_region' key-field='id' instance-vector='$global.world.world_data.regions'>
@@ -154,9 +141,9 @@
         <code-helper name='describe'>(describe-obj $.name)</code-helper>
 
         <int32_t name="id"/>
-        <enum name='biome_type' type-name='region_biome_type' base-type='int32_t'/>
+        <enum name='biome_type' type-name='region_biome_type' base-type='int16_t'/>
 
-        <compound name='region_coords' type-name='coord2d16_path'/>
+        <compound name='region_coords' type-name='coord2d_path'/>
 
         <int32_t name="unk_88"/>
         <int32_t name="unk_8c"/>
@@ -164,79 +151,210 @@
         <int32_t name="unk_94"/>
 
         <stl-vector name='populations'>
-            <pointer type-name='region_population'/>
+            <pointer type-name='world_population'/>
         </stl-vector>
 
-        <static-array name="tree_tiles" count="34" index-enum='biome_type'>
+        <static-array name="tree_tiles" count="51" index-enum='biome_type'>
             <int16_t name="tree1" ref-target='matgloss_wood'/>
             <int16_t name="tree2" ref-target='matgloss_wood'/>
         </static-array>
 
-        <int8_t name="unk_130"/>
-        <int8_t name="unk_131"/>
-        <int8_t name="unk_132"/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
+        <int16_t/>
+        <stl-vector/>
+        <int32_t/>
+    </struct-type>
+
+    <struct-type type-name='region_map_entry'>
+        <int32_t name="unk_0"/>
+        <padding name="unk_4" size="4"/>
+        <stl-vector name="sites">
+            <pointer type-name='world_site'/>
+        </stl-vector>
+        <df-flagarray name='flags'/>
+        <int16_t name="elevation" comment='~40 ocean -> ~100 plains -> ~200 mointains'/>
+        <int16_t name="rainfall"/>
+        <int16_t name="vegetation"/>
+        <int16_t name="temperature"/>
+        <int16_t name="evilness"/>
+        <int16_t name="drainage"/>
+        <int16_t name="volcanism"/>
+        <int16_t name="savagery"/>
+        <int16_t name="unk_30" comment='3'/>
+        <int16_t name="unk_32" comment='0'/>
+        <int16_t name="unk_34" comment='0'/>
+        <int16_t name="unk_36" comment='0'/>
+        <int16_t name="unk_38" comment='0'/>
+        <int16_t name="unk_3a" comment='0-5000'/>
+        <int16_t name="salinity"/>
+        <compound name='unk_3e' type-name='coord'/>
+        <compound name='unk_44' type-name='coord'/>
+        <compound name='unk_4a' type-name='coord'/>
+        <int32_t name="region_id" ref-target='world_region'/>
+<!--
+        <int32_t name="landmass_id" ref-target='world_landmass'/>
+        <int16_t name='geo_index' ref-target='world_geo_biome'/>
+-->     <int32_t name='landmass_id'/><int16_T name='geo_index'/>
     </struct-type>
 
     <struct-type type-name='world_data'>
         <compound type-name='language_name' name='world_name'/>
 
         <static-array count='15' type-name='int8_t'/>
-        <int32_t name='save_folder_number'/>
         <int32_t name='next_site_id'/>
         <int32_t/>
         <int16_t name='world_width'/>
         <int16_t name='world_height'/>
-        <stl-vector>
-            <pointer>
-                <int16_t/>
-                <int16_t/>
-                <stl-vector type-name='int32_t'/>
-            </pointer>
-        </stl-vector>
-
-        <df-flagarray name='flags'/>
+        <stl-vector/>
 
         <compound name='history' type-name='world_history'/>
-
-        <static-array count='9'>
-            <stl-vector type-name='int32_t'/>
-        </static-array>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-
+        <padding size='16'/>
+        <int16_t/>
+        <int16_t/>
         <static-array count='3' type-name='int16_t'/>
         <static-array count='3' type-name='int16_t'/>
         <int32_t/>
+        <int16_t/>
+        <int32_t/>
+        <int16_t/>
+        <int32_t/>
+        <int32_t/>
+        <pointer/>
+        <pointer/>
+        <pointer/>
+        <pointer/>
+        <stl-vector/>
+        <padding size='24'/>
+        <int16_t/>
+        <int16_t/>
+        <int32_t/>
+        <stl-vector/>
+        <int32_t/>
+        <compound name='worldgen_parms'>
+            <stl-string name='title'/>
+            <uint32_t name='seed'/>
+            <uint32_t name='history_seed'/>
+            <uint32_t name='name_seed'/>
+            <int32_t name='dim_x'/>
+            <int32_t name='dim_y'/>
+            <stl-string name='custom_name'/>
+            <bool name='has_seed'/>
+            <bool name='has_history_seed'/>
+            <bool name='has_name_seed'/>
+            <int32_t name='peak_number_min'/>
+            <int32_t name='ocean_edge_min'/>
+            <int32_t name='volcano_min'/>
+            <static-array name='region_counts' count='3'>
+                <static-array type-name='int32_t' count='10' index-enum='region_biome_type'/>
+            </static-array>
+            <static-array type-name='int32_t' name='river_mins' count='2'/>
+            <int32_t name='subregion_max'/>
+            <int32_t name='cave_min_size'/>
+            <int32_t name='cave_max_size'/>
+            <int32_t name='mountain_cave_min'/>
+            <int32_t name='non_mountain_cave_min'/>
+            <int32_t name='total_civ_number'/>
+            <int32_t name='rain_ranges_1'/>
+            <int32_t name='rain_ranges_0'/>
+            <int32_t name='rain_ranges_2'/>
+            <int32_t name='drainage_ranges_1'/>
+            <int32_t name='drainage_ranges_0'/>
+            <int32_t name='drainage_ranges_2'/>
+            <int32_t name='savagery_ranges_1'/>
+            <int32_t name='savagery_ranges_0'/>
+            <int32_t name='savagery_ranges_2'/>
+            <int32_t name='volcanism_ranges_1'/>
+            <int32_t name='volcanism_ranges_0'/>
+            <int32_t name='volcanism_ranges_2'/>
+            <static-array count='4' name='ranges'>
+                <static-array type-name='int32_t' count='24' index-enum='region_property_type'/>
+            </static-array>
+            <int32_t name='beast_end_year'/>
+            <int32_t name='end_year'/>
+            <int32_t name='beast_end_year_percent'/>
+            <int32_t name='total_civ_population'/>
+            <int32_t name='site_cap'/>
+            <int32_t name='elevation_ranges_1'/>
+            <int32_t name='elevation_ranges_0'/>
+            <int32_t name='elevation_ranges_2'/>
+            <static-array name='sq_counts' count='3'>
+                <int32_t name='good'/>
+                <int32_t name='evil'/>
+            </static-array>
+            <static-array type-name='int32_t' name='elevation_frequency' count='6'/>
+            <static-array type-name='int32_t' name='rain_frequency' count='6'/>
+            <static-array type-name='int32_t' name='drainage_frequency' count='6'/>
+            <static-array type-name='int32_t' name='savagery_frequency' count='6'/>
+            <static-array type-name='int32_t' name='temperature_frequency' count='6'/>
+            <static-array type-name='int32_t' name='volcanism_frequency' count='6'/>
+            <pointer name='ps'/> dtor 83bed90
+            <int32_t name='reveal_all_history'/>
+            <int32_t name='cull_historical_figures'/>
+            <int32_t name='erosion_cycle_count'/>
+            <int32_t name='periodically_erode_extremes'/>
+            <int32_t name='orographic_precipitation'/>
+            <int32_t name='playable_civilization_required'/>
+            <int32_t name='all_caves_visible'/>
+            <int32_t name='show_embark_river'/>
+            <int32_t name='show_embark_pool'/>
+            <int32_t name='show_embark_m_pool'/>
+            <int32_t name='show_embark_m_pipe'/>
+            <int32_t name='show_embark_chasm'/>
+            <int32_t name='show_embark_pit'/>
+            <int32_t name='show_embark_other'/>
+            <bool/>
+        </compound>
+        <stl-string name='version'/>
         <int32_t/>
         <int32_t/>
         <int32_t/>
-        <stl-vector>
-            <pointer>
-                <static-array count='3'>
-                    <stl-vector>
-                        <pointer>
-                            <int16_t/>
-                            <int16_t/>
-                            <int16_t/>
-                            <int16_t/>
-                            <int8_t/>
-                            <int32_t/>
-                            <int32_t/>
-                        </pointer>
-                    </stl-vector>
-                </static-array>
-                <int32_t/>
-                <int32_t/>
-                <int32_t/>
-            </pointer>
-        </stl-vector>
+        <int32_t/>
+        <int32_t/>
         <stl-vector name="sites">
             <pointer type-name='world_site'/>
         </stl-vector>
+        <stl-vector/>
+        <stl-vector/>
         <stl-vector name="regions">
             <pointer type-name='world_region'/>
         </stl-vector>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <pointer name="region_map" is-array='true'>
+            <pointer is-array='true' type-name='region_map_entry'/>
+        </pointer>
+        <pointer/>
+        <int32_t/>
+        <stl-vector/>
+        <stl-vector/>
+        <pointer/>
+        <stl-string name='save_folder_name'/>
+        <df-flagarray/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <int32_t/>
+        <int8_t/>
+        <int32_t/>
+        <int8_t/>
+        <int32_t/>
+        <int32_t/>
+        <stl-vector/>
+<!--
 
         <pointer name="region_map" is-array='true'>
             <pointer is-array='true'>
@@ -249,6 +367,7 @@
                 <int32_t name="region_id" ref-target='world_region'/>
             </pointer>
         </pointer>
+-->
     </struct-type>
 </data-definition>
 

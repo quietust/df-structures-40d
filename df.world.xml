@@ -398,9 +398,7 @@
             </static-array>
         </compound>
 
-<!--
         <compound type-name='world_data' name='world_data'/>
--->     <padding size='1920'/>
 
 <!--
         <compound name='worldgen'>
@@ -494,14 +492,12 @@
             <int16_t name='plant_update_step'/>
         </compound>
 
-        <compound name='cur_savegame'>
-            <stl-vector name='map_features'>
-                <pointer type-name='feature_init'/>
-            </stl-vector>
-            <static-array count='13'>
-                <stl-vector/>
-            </static-array>
-        </compound>
+        <stl-vector name='map_features'>
+            <pointer type-name='feature_init'/>
+        </stl-vector>
+        <static-array count='13'>
+            <stl-vector/>
+        </static-array>
         <bool/>
         <bool/>
     </struct-type>

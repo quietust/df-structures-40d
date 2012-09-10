@@ -101,19 +101,18 @@
         <int16_t name='race' ref-target='creature_raw'/>
         <int32_t name='flags'/> 0x10 = ancient ruin
 
-        <stl-vector name='unk6a'>
+        <stl-vector name='entity_links'>
             <pointer>
-                <int16_t name='unk1'/>
-                <int32_t ref-target='historical_entity'/>
-                <int16_t name='unk3'/>
+                <int16_t name='type'/>
+                <int32_t name='target' ref-target='historical_entity'/>
+                <int16_t name='strength'/>
             </pointer>
         </stl-vector>
-        <stl-vector name='unk6b'>
+        <stl-vector name='unk_links'>
             <pointer>
-                <int16_t name='unk1'/>
-                <int32_t name='unk2'/>
-                <int32_t name='unk2b'/>
-                <int16_t name='unk3'/>
+                <int16_t name='type'/>
+                <int32_t name='target'/>
+                <int32_t name='strength'/>
             </pointer>
         </stl-vector>
 
@@ -167,7 +166,11 @@
             </stl-vector>
 
             <compound name='weapon' type-name='material_vec_ref'/>
+            <compound type-name='material_vec_ref'/>
             <compound name='armor' type-name='material_vec_ref'/>
+            <compound type-name='material_vec_ref'/>
+            <compound type-name='material_vec_ref'/>
+            <compound type-name='material_vec_ref'/>
 
             <stl-vector name='leather'>
                 <int16_t ref-target='creature_raw'/>
@@ -178,12 +181,16 @@
             <stl-vector name='silk'>
                 <int16_t ref-target='creature_raw'/>
             </stl-vector>
-            <stl-vector name='lye' type-name='int16_t' comment='If non-empty, allows bringing lye at embark - populated with a 0 for each wood type available'/>
+            <stl-vector/>
             <stl-vector name='craft_metal'>
-                <enum base-type='int16_t' type-name='material_type'/>
+                <int16_t ref-target='matgloss_metal'/>
             </stl-vector>
-            <compound name='stone' type-name='material_vec_ref'/>
-            <compound name='gem' type-name='material_vec_ref'/>
+            <stl-vector name='stone'>
+                <int16_t ref-target='matgloss_stone'/>
+            </stl-vector>
+            <stl-vector name='gem'>
+                <int16_t ref-target='matgloss_stone'/>
+            </stl-vector>
             <stl-vector name='bone'>
                 <int16_t ref-target='creature_raw'/>
             </stl-vector>
@@ -217,6 +224,14 @@
             <stl-vector name='plant'>
                 <int16_t ref-target='matgloss_plant'/>
             </stl-vector>
+            <stl-vector type-name='int16_t'/>
+            <compound name='wood_products' comment='lye, charcoal, potash, pearlash, and coke'>
+                <stl-vector name='item_type'>
+                    <enum base-type='int16_t' type-name='item_type'/>
+                </stl-vector>
+                <stl-vector type-name='int16_t' name='item_subtype'/>
+                <compound name='material' type-name='material_vec_ref'/>
+            </compound>
             <stl-vector name='wagon'>
                 <int16_t ref-target='creature_raw'/>
             </stl-vector>
@@ -287,29 +302,43 @@
             <stl-vector type-name='int16_t'/>
             <stl-vector type-name='int32_t'/>
             <stl-vector type-name='int16_t'/>
-            <stl-vector>
-                <pointer>
-                    <int32_t/>
-                    <stl-vector type-name='int16_t'/>
-                    <stl-vector type-name='int16_t'/>
-                    <stl-vector type-name='pointer'/>
-                </pointer>
-            </stl-vector>
-            <stl-vector>
-                <pointer>
-                    <int16_t/>
-                    <int16_t/>
-                    <int16_t/>
-                    <int32_t/>
-                    <int32_t/>
-                    <int32_t/>
-                    <int8_t/>
-                    <int16_t/>
-                    <pointer/>
-                    <pointer/>
-                </pointer>
-            </stl-vector>
+            <stl-vector type-name='int8_t'/>
+            <stl-vector type-name='int8_t'/>
+            <stl-vector type-name='int8_t'/>
+            <stl-vector type-name='int8_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int32_t'/>
         </compound>
+
+        <compound name='unknown1b'>
+            <int16_t init-value='-1'/>
+            <int32_t init-value='-1'/>
+            <int32_t/>
+            <int16_t/>
+            <int16_t/>
+            <int16_t/>
+            <int16_t/>
+
+            <df-flagarray name='flags'/>
+
+            <stl-vector name='unk32a' type-name='pointer' comment='empty'/>
+            <stl-vector name='unk32b' type-name='int32_t'/>
+            <stl-vector name='unk32c' type-name='int32_t'/>
+            <stl-vector name='unk32d' type-name='int32_t'/>
+            <stl-vector name='unk32e' type-name='pointer'/>
+            <stl-vector name='unk32f' type-name='pointer'/>
+
+            <int16_t name='unk33'/>
+
+            <stl-vector name='unk34a' type-name='int16_t'/>
+            <stl-vector name='unk34b' type-name='int16_t'/>
+            <stl-vector name='unk34c' type-name='int16_t'/>
+            <stl-vector name='unk34d' type-name='pointer' comment='empty'/>
+            <stl-vector name='unk34e' type-name='pointer' comment='empty'/>
+        </compound>
+
+        <stl-vector name='unk45' type-name='pointer'/>
 
         <compound name='activity_stats' type-name='entity_activity_statistics'/>
 
@@ -324,6 +353,7 @@
         <int32_t/>
 
         <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
         <stl-vector name='hist_figures'>
             <pointer type-name='historical_figure'/>
         </stl-vector>
@@ -334,12 +364,25 @@
         <compound>
             <compound name='mill_cookable' type-name='material_vec_ref'/>
             <compound name='mill_dye' type-name='material_vec_ref'/>
-            <static-array count='32'>
+            <static-array count='30'>
                 <stl-vector type-name='int16_t'/>
+            </static-array>
+            <int32_t/>
+            <static-array count='7'>
+                <stl-vector/>
             </static-array>
         </compound>
         <int32_t/>
+        <int16_t/>
+        <int16_t/>
+        <int8_t/>
         <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int16_t/>
+        <stl-vector/>
+        <stl-vector/>
+        <int16_t/>
     </struct-type>
 </data-definition>
 

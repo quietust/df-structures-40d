@@ -37,6 +37,10 @@
         </stl-vector>
     </struct-type>
 
+    <class-type type-name='history_event_collection' original-name='history_event_collectionst'
+                instance-vector='$global.world.world_data.history.event_collections.all'>
+    </class-type>
+
     <enum-type type-name='history_event_type'>
         <enum-item name='WAR_ATTACKED_SITE'/>
         <enum-item name='WAR_DESTROYED_SITE'/>
@@ -372,15 +376,39 @@
         <stl-vector name='events'>
             <pointer type-name='history_event'/>
         </stl-vector>
-
         <stl-vector name='figures'>
             <pointer type-name='historical_figure'/>
+        </stl-vector>
+
+        <compound name='event_collections'>
+            <stl-vector name='all'>
+                <pointer type-name='history_event_collection'/>
+            </stl-vector>
+            <static-array name='other' count='7'>
+                <stl-vector>
+                    <pointer type-name='history_event_collection'/>
+                </stl-vector>
+            </static-array>
+        </compound>
+
+        <stl-vector name='ages'>
+            <pointer/>
         </stl-vector>
 
         <stl-vector name='unk1' type-name='int32_t'/>
         <stl-vector name='unk2' type-name='int16_t'/>
 
         <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <stl-vector/>
+        <bool/>
+        <stl-vector/>
     </struct-type>
 </data-definition>
 

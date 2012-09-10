@@ -2,14 +2,14 @@
     <enum-type type-name='entity_raw_flags'>
         <enum-item name='CIV_CONTROLLABLE'/>
         <enum-item name='INDIV_CONTROLLABLE'/>
-        <enum-item name='MOUNTAIN_SETTLEMENTS'/>
-        <enum-item name='FOREST_SETTLEMENTS'/>
-        <enum-item name='PLAINS_SETTLEMENTS'/>
+        <enum-item/> MOUNTAIN_SETTLEMENTS
+        <enum-item/> FOREST_SETTLEMENTS
+        <enum-item/> PLAINS_SETTLEMENTS
         <enum-item name='SIEGER'/>
         <enum-item name='AMBUSHER'/>
         <enum-item name='BABYSNATCHER'/>
 
-        <enum-item name='NUISANCE'/>
+        <enum-item name='ITEM_THIEF'/>
         <enum-item name='CLOTHING'/>
         <enum-item name='CURRENCY_BY_YEAR'/>
         <enum-item name='METAL_PREF'/>
@@ -31,6 +31,39 @@
         <enum-item name='COMMON_DOMESTIC_MOUNT'/>
         <enum-item name='COMMON_DOMESTIC_PET'/>
         <enum-item name='SUBTERRANEAN_CLOTHING'/>
+        <enum-item name='USE_EVIL_WOOD'/>
+        <enum-item name='USE_GOOD_WOOD'/>
+        <enum-item name='USE_EVIL_PLANTS'/>
+        <enum-item name='USE_GOOD_PLANTS'/>
+
+        <enum-item name='USE_GOOD_ANIMALS'/>
+        <enum-item name='USE_ANY_PET_RACE'/>
+        <enum-item name='USE_MISC_PROCESSED_WOOD_PRODUCTS'/>
+        <enum-item name='IMPROVED_BOWS'/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item name='INVADERS_IGNORE_NEUTRALS'/>
+
+        <enum-item name='AT_PEACE_WITH_WILDLIFE'/>
+        <enum-item name='EQUIPMENT_IMPROVEMENTS'/>
+        <enum-item name='ABUSE_BODIES'/>
+        <enum-item name='UNDEAD_CANDIDATE'/>
+        <enum-item name='CAN_HAVE_MILITARY_LEADER'/>
+        <enum-item name='SKULKING'/>
+        <enum-item name='DIPLOMAT'/>
+        <enum-item name='MERCHANT_NOBILITY'/>
+
+        <enum-item name='TREE_CAP_DIPLOMACY'/>
+        <enum-item name='DIPLOMAT_BODYGUARDS'/>
+        <enum-item name='MERCHANT_BODYGUARDS'/>
+        <enum-item name='CAN_HAVE_MILITARY_SITE_LEADER'/>
+        <enum-item name='MAYOR'/>
+        <enum-item name='WANDERER'/>
+        <enum-item name='BEAST_HUNTER'/>
+        <enum-item name='SCOUT'/>
+
+        <enum-item name='WILL_ACCEPT_TRIBUTE'/>
     </enum-type>
 
     <enum-type type-name='site_type'>
@@ -40,10 +73,58 @@
         <enum-item name='CAVE_DETAILED'/>
         <enum-item name='TREE_CITY'/>
         <enum-item name='CITY'/>
-        <enum-item/>
-        <enum-item/>
-        <enum-item name='FORTRESS'/>
-        <enum-item/>
+        <enum-item name='RUIN'/>
+    </enum-type>
+
+    <enum-type type-name='world_construction_type'>
+        <enum-item name='ROAD'/>
+        <enum-item name='TUNNEL'/>
+        <enum-item name='BRIDGE'/>
+        <enum-item name='WALL'/>
+    </enum-type>
+
+    <enum-type type-name='ethic_type'>
+        <enum-item name='KILL_ENTITY_MEMBER'/>
+        <enum-item name='KILL_NEUTRAL'/>
+        <enum-item name='KILL_ENEMY'/>
+        <enum-item name='KILL_ANIMAL'/>
+        <enum-item name='KILL_PLANT'/>
+        <enum-item name='TORTURE_AS_EXAMPLE'/>
+        <enum-item name='TORTURE_FOR_INFORMATION'/>
+        <enum-item name='TORTURE_FOR_FUN'/>
+        <enum-item name='TORTURE_ANIMALS'/>
+        <enum-item name='TREASON'/>
+        <enum-item name='OATH_BREAKING'/>
+        <enum-item name='LYING'/>
+        <enum-item name='VANDALISM'/>
+        <enum-item name='TRESPASSING'/>
+        <enum-item name='THEFT'/>
+        <enum-item name='ASSAULT'/>
+        <enum-item name='SLAVERY'/>
+        <enum-item name='EAT_SAPIENT_OTHER'/>
+        <enum-item name='EAT_SAPIENT_KILL'/>
+        <enum-item name='MAKE_TROPHY_SAME_RACE'/>
+        <enum-item name='MAKE_TROPHY_SAPIENT'/>
+        <enum-item name='MAKE_TROPHY_ANIMAL'/>
+    </enum-type>
+
+    <enum-type type-name='ethic_response' base-type='int16_t'>
+        <enum-item name='NOT_APPLICABLE'/>
+        <enum-item name='ACCEPTABLE'/>
+        <enum-item name='PERSONAL_MATTER'/>
+        <enum-item name='JUSTIFIED_IF_NO_REPERCUSSIONS'/>
+        <enum-item name='JUSTIFIED_IF_GOOD_REASON'/>
+        <enum-item name='JUSTIFIED_IF_EXTREME_REASON'/>
+        <enum-item name='JUSTIFIED_IF_SELF_DEFENSE'/>
+        <enum-item name='ONLY_IF_SANCTIONED'/>
+        <enum-item name='MISGUIDED'/>
+        <enum-item name='SHUN'/>
+        <enum-item name='APPALLING'/>
+        <enum-item name='PUNISH_REPRIMAND'/>
+        <enum-item name='PUNISH_SERIOUS'/>
+        <enum-item name='PUNISH_EXILE'/>
+        <enum-item name='PUNISH_CAPITAL'/>
+        <enum-item name='UNTHINKABLE'/>
     </enum-type>
 
     <struct-type type-name='entity_raw' instance-vector='$global.world.raws.entities'>
@@ -146,48 +227,85 @@
             </stl-vector>
         </compound>
 
-        <static-array type-name='int32_t' name='currency_value' index-enum='material_type' count='64'/>
+        <stl-vector name='currency_value' type-name='int32_t' index-refers-to='$global.world.raws.matgloss.metal[$]'/>
 
         <df-flagarray name='flags' index-enum='entity_raw_flags'/>
         <stl-string name='translation'/>
 
         <compound name='symbols'>
-            <static-array name='symbols1' count='2'>
-                <static-array count='6'>
+            <static-array name='symbols1' count='13'>
+                <static-array count='12'>
                     <stl-vector type-name='int32_t'/>
                 </static-array>
             </static-array>
-            <static-array name='symbols2' count='2'>
-                <static-array count='6'>
+            <static-array name='symbols2' count='13'>
+                <static-array count='12'>
                     <stl-vector type-name='int32_t'/>
                 </static-array>
             </static-array>
-            <static-array name='symbols3' count='2'>
-                <static-array count='6'>
-                    <stl-vector type-name='int32_t'/>
-                </static-array>
-            </static-array>
-            <static-array name='symbols4' count='2'>
-                <static-array count='6'>
-                    <stl-vector type-name='int32_t'/>
-                </static-array>
-            </static-array>
-            <static-array name='symbols5' count='2'>
-                <static-array count='6'>
-                    <stl-vector type-name='int32_t'/>
-                </static-array>
-            </static-array>
-            <static-array name='symbols6' count='2'>
-                <static-array count='6'>
-                    <stl-vector type-name='int32_t'/>
-                </static-array>
-            </static-array>
-            <static-array name='select_symbol' count='3'>
+            <static-array name='select_symbol' count='13'>
                 <stl-vector/>
             </static-array>
-            <static-array name='cull_symbol' count='3'>
+            <static-array name='subselect_symbol' count='13'>
                 <stl-vector/>
             </static-array>
+            <static-array name='cull_symbol' count='13'>
+                <stl-vector/>
+            </static-array>
+        </compound>
+
+        <compound name='habitat'>
+            <static-array name='sphere_alignment' type-name='int32_t' count='130' index-enum='sphere_type'/>
+            <static-array name='art_facet_modifier' type-name='int32_t' count='4' index-enum='art_facet_type'/>
+            <static-array name='art_image_element_modifier' type-name='int32_t' count='5' index-enum='art_image_element_type'/>
+            <static-array name='item_improvement_modifier' type-name='int32_t'
+                          count='9' index-enum='improvement_type'/>
+            <int32_t name='adventure_tier'/>
+            <static-array name='friendly_color' type-name='int16_t' count='3'/>
+
+            <enum type-name='site_type' base-type='int32_t' name='default_site_type'/>
+            <static-array name='likes_site' type-name='int8_t' count='7' index-enum='site_type'/>
+            <static-array name='tolerates_site' type-name='int8_t' count='7' index-enum='site_type'/>
+            <stl-vector name='leader_type'/>
+            <stl-vector name='site_leader_type'/>
+            <static-array name='biome_support' type-name='int32_t' count='51' index-enum='biome_type'/>
+            <static-array name='start_biome' type-name='int8_t' count='51' index-enum='biome_type'/>
+
+            <static-array name='active_season' type-name='int8_t' count='4'/>
+        </compound>
+
+        <compound name='progress_trigger'>
+            <int16_t name='population'/>
+            <int16_t name='production'/>
+            <int16_t name='trade'/>
+        </compound>
+
+        <static-array name='ethic' count='22' index-enum='ethic_type'>
+            <enum base-type='int16_t' type-name='ethic_response'/>
+        </static-array>
+
+        <int32_t name='start_group_number'/>
+        <int32_t name='max_site_pop_number'/>
+        <int32_t name='max_pop_number'/>
+        <int32_t name='max_starting_civ_number'/>
+
+        <stl-vector name='religion'>
+            <int16_t/>
+        </stl-vector>
+        <stl-vector name='religion_sphere'>
+            <enum base-type='int16_t' type-name='sphere_type'/>
+        </stl-vector>
+
+        <compound name='jobs'>
+            <static-array name='permitted_job' type-name='bool'
+                          index-enum='profession' count='114'/>
+            <static-array name='permitted_labor' type-name='bool'
+                          index-enum='unit_labor' count='102'/>
+            <static-array name='permitted_skill' type-name='bool'
+                          index-enum='job_skill' count='81'/>
+
+            <static-array name='world_construction' type-name='bool'
+                          index-enum='world_construction_type' count='4'/>
         </compound>
     </struct-type>
 </data-definition>

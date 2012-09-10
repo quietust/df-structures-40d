@@ -160,6 +160,13 @@
         <enum base-type='int16_t' name="verb" type-name='art_image_property_verb'/>
     </class-type>
 
+    <enum-type type-name='art_facet_type'>
+        <enum-item name="OWN_RACE"/>
+        <enum-item name="FANCIFUL"/>
+        <enum-item name="GOOD"/>
+        <enum-item name="EVIL"/>
+    </enum-type>
+
     <struct-type type-name='art_image'>
         <code-helper name='find-instance'>$(find-instance $art_image_chunk $$).images[$]</code-helper>
         <code-helper name='describe'>(describe-obj $.name)</code-helper>

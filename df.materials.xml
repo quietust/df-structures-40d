@@ -30,7 +30,6 @@
         <enum-item name='VOMIT'/>
         <enum-item name='BLOOD_NONSPECIFIC'/>
         <enum-item name='SLIME'/>
-        <enum-item name='BLOOD'/>
         <enum-item name='SALT'/>
         <enum-item name='BLOOD_SPECIFIC'/>
         <enum-item name='PLANT_ALCOHOL'/>

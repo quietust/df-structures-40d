@@ -208,7 +208,7 @@
         <stl-vector name='block_events'>
             <pointer type-name='block_square_event'/>
         </stl-vector>
-        <int32_t name='local_feature'/>
+        <int16_t name='feature'/>
         <int32_t/>
 
         <stl-vector name='items'>
@@ -264,6 +264,12 @@
         </static-array>
         <static-array name='walkable' count='16'>
             <comment>0 = non-walkable; same nonzero at A and B = walkable from A to B</comment>
+            <static-array count='16'>
+                <uint16_t/>
+            </static-array>
+        </static-array>
+        <static-array name='map_edge_distance' count='16'>
+            <comment>1 at walkable map edge; then +1 per 10 tiles it seems; 0 in dug tunnels</comment>
             <static-array count='16'>
                 <uint16_t/>
             </static-array>
@@ -404,7 +410,7 @@
 
     <struct-type type-name='feature'>
         <stl-vector name='population'>
-            <pointer/>
+            <pointer type-name='world_population'/>
         </stl-vector>
         <int32_t/>
         <int32_t/>
