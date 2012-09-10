@@ -117,6 +117,9 @@
                 <pointer type-name='descriptor_shape'/>
             </stl-vector>
         </compound>
+        <stl-vector name='reactions'>
+            <pointer type-name='reaction'/>
+        </stl-vector>
     </struct-type>
 </data-definition>
 

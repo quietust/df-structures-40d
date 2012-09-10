@@ -94,6 +94,10 @@
         <flag-bit name='north'/>
         <flag-bit name='south'/>
         <flag-bit name='hidden'/>
+        <flag-bit name='northwest'/>
+        <flag-bit name='northeast'/>
+        <flag-bit name='southwest'/>
+        <flag-bit name='southeast'/>
     </bitfield-type>
 
     <struct-type type-name='engraving' instance-vector='$global.world.engravings'>

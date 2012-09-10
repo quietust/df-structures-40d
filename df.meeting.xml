@@ -131,7 +131,15 @@
         </stl-vector>
         <pointer name="location" type-name="building"/>
         <int32_t name="timer" comment='-1 per 10'/>
-        <int32_t name='id'/>
+        <int32_t/>
+    </struct-type>
+
+    <struct-type type-name='room_rent_info'>
+        <stl-vector name='elements'>
+            <pointer type-name='building'/>
+        </stl-vector>
+        <int32_t name='rent_value'/>
+        <int32_t init-value='0'/>
     </struct-type>
 </data-definition>
 

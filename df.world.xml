@@ -435,16 +435,6 @@
         <compound name='raws' type-name='world_raws'/>
 
         <compound name='unk_5d110'>
-            <stl-vector name='unk1'>
-                <pointer>
-<!--
-                    <compound name='ref' type-name='world_population_ref'/>
-                    <stl-vector name='unk'>
-                        <int32_t/>
-                    </stl-vector>
--->
-                </pointer>
-            </stl-vector>
             <compound name='regions' type-name='coord2d_path'/>
         </compound>
 

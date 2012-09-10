@@ -56,8 +56,10 @@
             <stl-string name='token'/>
             <int8_t name='key'/>
             <int32_t/>
-            <int8_t/>
+            <int16_t/>
             <int8_t name='is_shift'/>
+            <int8_t/>
+            <int8_t/>
         </static-array>
         <int32_t/>
         <int32_t/>

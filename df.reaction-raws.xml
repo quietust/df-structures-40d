@@ -1,0 +1,75 @@
+<data-definition>
+    <enum-type type-name='reaction_flags'>
+        <enum-item name='SMELTER'/>
+        <enum-item name='FUEL'/>
+    </enum-type>
+
+    <struct-type type-name='reaction'
+                instance-vector='$global.world.raws.reactions'>
+        <stl-string name="code"/>
+        <stl-string name="name"/>
+
+        <code-helper name='describe'>$.code</code-helper>
+
+        <df-flagarray name='flags' index-enum='reaction_flags'/>
+
+        <stl-vector name="reagents">
+            <pointer type-name='reaction_reagent'/>
+        </stl-vector>
+        <stl-vector name="products">
+            <pointer type-name='reaction_product'/>
+        </stl-vector>
+    </struct-type>
+
+    <class-type type-name='reaction_reagent' original-name='reaction_reagentst'>
+        <int16_t name='count'/>
+
+        <virtual-methods>
+            <vmethod/>
+            <vmethod/>
+            <vmethod/>
+            <vmethod/>
+        </virtual-methods>
+    </class-type>
+
+    <class-type type-name='reaction_reagent_itemst' inherits-from='reaction_reagent'>
+        <enum base-type='int16_t' name='item_type' type-name='item_type'/>
+        <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
+    </class-type>
+
+    <class-type type-name='reaction_reagent_classst' inherits-from='reaction_reagent'>
+        <stl-string name='class'/>
+    </class-type>
+
+    <class-type type-name='reaction_reagent_metal_orest' inherits-from='reaction_reagent'>
+        <stl-string name='metal_name'/>
+        <int16_t name='metal' ref-target='matgloss_metal'/>
+    </class-type>
+
+    <class-type type-name='reaction_product' original-name='reaction_productst'>
+        <virtual-methods>
+            <vmethod/>
+            <vmethod name='produceProduct'/>
+            <vmethod name='getDescription'/>
+        </virtual-methods>
+    </class-type>
+
+    <class-type type-name='reaction_product_itemst' inherits-from='reaction_product'>
+        <enum base-type='int16_t' name='item_type' type-name='item_type'/>
+        <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
+
+        <int16_t name='probability'/>
+        <int16_t name='count'/>
+    </class-type>
+</data-definition>
+
+<!--
+Local Variables:
+indent-tabs-mode: nil
+nxml-child-indent: 4
+End:
+-->

@@ -101,6 +101,7 @@
         <enum-item name='Raving'/>
         <enum-item name='Berserk'/>
         <enum-item name='Baby'/>
+        <enum-item name='Traumatized'/>
     </enum-type>
 
     <enum-type type-name='personality_facet_type'>
@@ -515,20 +516,10 @@
             <enum-item name='Hauled'/>
             <enum-item name='Wielded'/>
             <enum-item name='Worn'/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
             <enum-item name='InBodyPart'/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
             <enum-item name='Flask'/>
             <enum-item name='StuckIn'/>
-            <enum-item name='Unk16'/>
+            <enum-item name='Unk6'/>
             <enum-item name='Shouldered'/>
         </enum>
 
@@ -586,7 +577,6 @@
 
         <int32_t name="rating"/>
         <uint32_t name="experience"/>
-        <int32_t name="unk_c"/>
     </struct-type>
 
     <struct-type type-name='unit_preference'>

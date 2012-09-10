@@ -221,7 +221,9 @@
         <stl-vector name='parties'>
             <pointer type-name='party_info'/>
         </stl-vector>
-        <stl-vector name='room_rent' type-name='pointer'/>
+        <stl-vector name='room_rent'>
+            <pointer type-name='room_rent_info'/>
+        </stl-vector>
 
         <stl-vector name='dipscripts'>
             <pointer type-name='dipscript_info'/>

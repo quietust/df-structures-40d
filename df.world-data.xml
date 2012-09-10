@@ -166,10 +166,7 @@
             <pointer type-name='world_population'/>
         </stl-vector>
 
-        <static-array name="tree_tiles" count="51" index-enum='biome_type'>
-            <int16_t name="tree1" ref-target='matgloss_wood'/>
-            <int16_t name="tree2" ref-target='matgloss_wood'/>
-        </static-array>
+        <static-array name='biome_tile_counts' type-name='int32_t' count="51" index-enum='biome_type'/>
 
         <stl-vector/>
         <stl-vector/>
