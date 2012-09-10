@@ -12,7 +12,7 @@
               (fmt "(~A)" $it.creature_id))
         </code-helper>
 
-        <compound name='pos' type-name='coord16'/>
+        <compound name='pos' type-name='coord'/>
         <bool name='visible'/>
 
         <int16_t name='countdown' />

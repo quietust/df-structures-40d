@@ -657,9 +657,8 @@
         <stl-vector type-name='pointer'/>
         <stl-vector type-name='pointer'/>
         <int32_t/>?
-        <compound name='region_indoor' type-name='coord2d16'/>
+        <compound name='region' type-name='coord2d'/>
         <int16_t/>
-        <compound name='region_outdoor' type-name='coord2d16'/>
         <int16_t/>
         <int32_t/>
         <int32_t/>

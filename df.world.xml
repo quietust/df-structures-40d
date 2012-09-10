@@ -29,7 +29,7 @@
 <!--
 
         <stl-vector name='unk_40'>
-            <pointer type-name='coord16'/>
+            <pointer type-name='coord'/>
         </stl-vector>
 
         <stl-vector name='campfires'>
@@ -39,7 +39,7 @@
             </pointer>
         </stl-vector>
         <stl-vector name='contaminated_tiles'>
-            <pointer type-name='coord16'/>
+            <pointer type-name='coord'/>
         </stl-vector>
         <stl-vector name='web_clusters'>
             <pointer>
@@ -47,8 +47,8 @@
                 <stl-vector type-name='int16_t'/>
                 <int16_t/>
                 <int16_t name='race' ref-target='creature_raw'/>
-                <compound type-name='coord2d16' name='pos_min'/>
-                <compound type-name='coord2d16' name='pos_max'/>
+                <compound type-name='coord16' name='pos_min'/>
+                <compound type-name='coord16' name='pos_max'/>
                 <stl-vector>
                     <pointer type-name='unit'/>
                 </stl-vector>
@@ -56,7 +56,7 @@
         </stl-vector>
         <stl-vector name='fires'>
             <pointer>
-                <compound type-name='coord16' name='pos'/>
+                <compound type-name='coord' name='pos'/>
                 <int16_t comment='1000'/>
                 <uint16_t name='temperature_1'/>
                 <uint16_t comment='10000'/>

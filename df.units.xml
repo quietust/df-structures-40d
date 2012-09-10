@@ -286,7 +286,7 @@
             <int32_t name='flags'/> 2=carry water, 4=stay close to station, 8=attack wild animals, 16=standing down
             <int32_t name='patrol_duration'/>
             <int32_t name='patrol_cooldown'/>
-            <compound name='station_pos' type-name='coord16'/>
+            <compound name='station_pos' type-name='coord'/>
             <int32_t/>
         </compound>
 
@@ -388,8 +388,8 @@
             <int16_t/>
             <int16_t name='webbed'/>
             <int16_t name='paralysis'/>
-            <compound name='guts1_pos' type-name='coord16'/>
-            <compound name='guts2_pos' type-name='coord16'/>
+            <compound name='guts1_pos' type-name='coord'/>
+            <compound name='guts2_pos' type-name='coord'/>
             <int16_t name='soldier_mood_countdown'/>
             <enum name='soldier_mood' base-type='int16_t'>
                 <enum-item name='None' value='-1'/>
