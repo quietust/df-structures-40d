@@ -392,7 +392,28 @@
         </compound>
 
         <stl-vector name='ages'>
-            <pointer/>
+            <pointer>
+                <int32_t/>
+                <compound>
+                    <int16_t/>
+                    <int32_t/>
+                    <int32_t/>
+                    <int32_t/>
+                    <stl-string/>
+                    <int32_t/>
+                </compound>
+                <compound>
+                    <int32_t/>
+                    <int32_t/>
+                    <int32_t/>
+                    <int32_t/>
+                    <int32_t/>
+                    <int32_t/>
+                    <stl-vector type-name='int32_t'/>
+                    <int32_t/>
+                    <int32_t/>
+                </compound>
+            </pointer>
         </stl-vector>
 
         <stl-vector name='unk1' type-name='int32_t'/>
