@@ -49,14 +49,14 @@
         <enum-item name='IGNEOUS_EXTRUSIVE'/>
         <enum-item name='METAMORPHIC'/>
 
-        <enum-item/>
-        <enum-item/>
+        <enum-item name='GEM'/> can't find the code that sets this
+        <enum-item name='METAL_ORE'/>
         <enum-item name='AQUIFER'/>
         <enum-item name='SOIL_ANY'/>
         <enum-item name='SOIL_OCEAN'/>
         <enum-item name='SOIL_SAND'/>
         <enum-item name='SEDIMENTARY_OCEAN_DEEP'/>
-        <enum-item/>
+        <enum-item name='THREAD_METAL'/>
 
         <enum-item name='DEEP'/>
         <enum-item name='SOIL'/>
