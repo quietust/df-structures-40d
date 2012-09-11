@@ -116,11 +116,11 @@
         <enum-item name='PARALYZEIMMUNE'/>
         <enum-item name='NOFEAR'/>
         <enum-item name='CANOPENDOORS'/>
-        <enum-item/>
+        <enum-item name='ITEMCORPSE'/>
 
         -- 60
 
-        <enum-item/>
+        <enum-item name='ITEMCORPSE_USE_RACEGLOSS'/>
         <enum-item name='NOSMELLYROT'/>
         <enum-item name='REMAINS_UNDETERMINED'/>
         <enum-item name='HASSHELL'/>
