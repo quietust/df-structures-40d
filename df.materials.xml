@@ -49,7 +49,7 @@
         <enum-item name='IGNEOUS_EXTRUSIVE'/>
         <enum-item name='METAMORPHIC'/>
 
-        <enum-item name='GEM'/> can't find the code that sets this
+        <enum-item name='GEM'/>
         <enum-item name='METAL_ORE'/>
         <enum-item name='AQUIFER'/>
         <enum-item name='SOIL_ANY'/>

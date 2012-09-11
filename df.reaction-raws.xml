@@ -26,7 +26,7 @@
 
         <virtual-methods>
             <vmethod/>
-            <vmethod/>
+            <vmethod name='finalize'/>
             <vmethod/>
             <vmethod/>
         </virtual-methods>
@@ -50,7 +50,7 @@
 
     <class-type type-name='reaction_product' original-name='reaction_productst'>
         <virtual-methods>
-            <vmethod/>
+            <vmethod name='finalize'/>
             <vmethod name='produceProduct'/>
             <vmethod name='getDescription'/>
         </virtual-methods>
