@@ -254,6 +254,113 @@
         </stl-vector>
     </struct-type>
 
+    <struct-type type-name='world_region_feature'>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
+        <int32_t/>
+        <df-flagarray/>
+    </struct-type>
+
+    <struct-type type-name='world_region_details'>
+        <static-array count='17' name='biome'>
+            <static-array type-name='int8_t' count='17'
+                          comment='lower 4 bits: biome 1..9; |=0x30 if fort'/>
+        </static-array>
+        <static-array count='17' name='elevation'>
+            <static-array type-name='int16_t' count='17'/>
+        </static-array>
+
+        <static-array count='16'>
+            <static-array type-name='uint32_t' count='16'/>
+        </static-array>
+        <static-array count='17'>
+            <static-array type-name='int16_t' count='16'/>
+        </static-array>
+        <static-array count='16'>
+            <static-array type-name='int16_t' count='17'/>
+        </static-array>
+        <static-array count='16'>
+            <static-array type-name='int8_t' count='16'/>
+        </static-array>
+        <static-array count='16'>
+            <static-array type-name='int8_t' count='16'/>
+        </static-array>
+        <static-array count='16'>
+            <static-array type-name='int8_t' count='16'/>
+        </static-array>
+
+        <compound name='pos' type-name='coord2d'/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+
+        -- Rivers crossing embark tile edges
+        <compound name='rivers_vertical'>
+            <static-array name='x_min' count='16'>
+                <static-array type-name='int16_t' count='17'/>
+            </static-array>
+            <static-array name='x_max' count='16'>
+                <static-array type-name='int16_t' count='17'/>
+            </static-array>
+            <static-array name='active' count='16'>
+                <static-array type-name='int8_t' count='17'/>
+            </static-array>
+            <static-array name='local_id' count='16'>
+                <static-array type-name='int16_t' count='17'/>
+            </static-array>
+        </compound>
+
+        <compound name='rivers_horizontal'>
+            <static-array name='y_min' count='17'>
+                <static-array type-name='int16_t' count='16'/>
+            </static-array>
+            <static-array name='y_max' count='17'>
+                <static-array type-name='int16_t' count='16'/>
+            </static-array>
+            <static-array name='active' count='17'>
+                <static-array type-name='int8_t' count='16'/>
+            </static-array>
+            <static-array name='local_id' count='17'>
+                <static-array type-name='int16_t' count='16'/>
+            </static-array>
+        </compound>
+
+        <static-array count='16' name='features'>
+            <static-array count='16'>
+                <stl-vector pointer-type='world_region_feature'/>
+            </static-array>
+        </static-array>
+
+        <int16_t name='lava_stone' ref-target='matgloss_stone'/>
+
+        <static-array count='16' name='elevation2'>
+            <static-array type-name='int16_t' count='16'/>
+        </static-array>
+
+        <static-array count='16'>
+            <static-array type-name='int32_t' count='16'/>
+        </static-array>
+    </struct-type>
+
     <struct-type type-name='region_map_entry'>
         <int32_t name="unk_0"/>
         <padding name="unk_4" size="4"/>
@@ -334,63 +441,8 @@
         <pointer type-name='uint32_t' is-array='true' comment='width*height'/>
         <pointer type-name='uint8_t' is-array='true' comment='(width+1)*(height+1)'/>
         <compound>
-            <stl-vector>
-                <pointer>
-                    <static-array count='17'><static-array count='17' type-name='int8_t'/></static-array>
-                    <static-array count='17'><static-array count='17' type-name='int16_t'/></static-array>
-                    <static-array count='16'><static-array count='16' type-name='int32_t'/></static-array>
-                    <static-array count='17'><static-array count='16'><int16_t/><int16_t/></static-array></static-array>
-                    <static-array count='16'><static-array count='17'><int16_t/><int16_t/></static-array></static-array>
-                    <static-array count='16'><static-array count='16' type-name='int8_t'/></static-array>
-                    <static-array count='16'><static-array count='16' type-name='int8_t'/></static-array>
-                    <static-array count='16'><static-array count='16' type-name='int8_t'/></static-array>
-                    <int16_t/>
-                    <int16_t/>
-                    <int16_t/>
-                    <int16_t/>
-                    <int16_t/>
-                    <int16_t/>
-                    <int16_t/>
-                    <static-array count='16'><static-array count='17' type-name='int16_t'/></static-array>
-                    <static-array count='16'><static-array count='17' type-name='int16_t'/></static-array>
-                    <static-array count='16'><static-array count='17' type-name='int8_t'/></static-array>
-                    <static-array count='16'><static-array count='17' type-name='int16_t'/></static-array>
-                    <static-array count='17'><static-array count='16' type-name='int16_t'/></static-array>
-                    <static-array count='17'><static-array count='16' type-name='int16_t'/></static-array>
-                    <static-array count='17'><static-array count='16' type-name='int8_t'/></static-array>
-                    <static-array count='17'><static-array count='16' type-name='int16_t'/></static-array>
-                    <static-array count='16'>
-                      <static-array count='16'>
-                        <stl-vector>
-                            <pointer>
-                                <int16_t/>
-                                <int16_t/>
-                                <int16_t/>
-                                <int16_t/>
-                                <int16_t/>
-                                <int16_t/>
-                                <int16_t/>
-                                <int16_t/>
-                                <int16_t/>
-                                <int16_t/>
-                                <int16_t/>
-                                <int16_t/>
-                                <int16_t/>
-                                <int16_t/>
-                                <int16_t/>
-                                <int8_t/>
-                                <int8_t/>
-                                <int8_t/>
-                                <int8_t/>
-                                <int32_t/>
-                                <df-flagarray/>
-                            </pointer>
-                        </stl-vector>
-                      </static-array>
-                    </static-array>
-                    <int16_t/>
-                    <padding size='1536'/>
-                </pointer>
+            <stl-vector name='region_details'>
+                <pointer type-name='world_region_details'/>
             </stl-vector>
             <int32_t/>
             <int32_t/>
