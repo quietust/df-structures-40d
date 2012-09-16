@@ -1,11 +1,12 @@
 <data-definition>
-    -- init.h
-
     <enum-type type-name='init_display_flags'>
         <enum-item name='VARIED_GROUND_TILES'/>
         <enum-item name='ENGRAVINGS_START_OBSCURED'/>
         <enum-item name='USE_GRAPHICS'/>
         <enum-item name='BLACK_SPACE'/>
+        <enum-item name='SHOW_IMP_QUALITY'/>
+        <enum-item name='SHOW_FLOW_AMOUNTS'/>
+        <enum-item name='PARTIAL_PRINT'/>
     </enum-type>
 
     <enum-type type-name='init_nickname_mode'>
@@ -28,8 +29,62 @@
         </enum>
 
         <int32_t/>
-        <int32_t name='fps_cap_1'/>
-        <int32_t name='fps_cap_2'/>
+        <static-array name='fps_cap' type-name='int32_t' count='2'/>
+        <static-array name='g_fps_cap' type-name='int32_t' count='2'/>
+        <uint8_t name='sky_tile'/>
+        <static-array name='sky_color' type-name='int16_t' count='3'/>
+        <uint8_t name='chasm_tile'/>
+        <static-array name='chasm_color' type-name='int16_t' count='3'/>
+        <int16_t name='idlers'/>
+        <int16_t name='show_embark_river'/>
+        <int16_t name='show_embark_pool'/>
+        <int16_t name='show_embark_m_pool'/>
+        <int16_t name='show_embark_m_pipe'/>
+        <int16_t name='show_embark_chasm'/>
+        <int16_t name='show_embark_pit'/>
+        <int16_t name='show_embark_other'/>
+        <int16_t name='show_embark_tunnel'/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t name='grid_x'/>
+        <int32_t name='grid_y'/>
+        <int32_t name='fullgrid_x'/>
+        <int32_t name='fullgrid_y'/>
+        <int32_t/>
+    </struct-type>
+
+    <enum-type type-name='init_adventurer_flags'>
+        <enum-item name='MORE'/>
+        <enum-item name='ADVENTURER_TRAPS'/>
+        <enum-item name='ADVENTURER_ALWAYS_CENTER'/>
+    </enum-type>
+
+    <struct-type type-name='init_adventurer'>
+        <df-flagarray name='flags' index-enum='init_adventurer_flags'/>
+        <int32_t name="display_length"/>
+        <int32_t name='adventurer_z_views_type'/>
+        <int16_t name='adventurer_z_views_num'/>
+    </struct-type>
+
+    <enum-type type-name='init_dwarf_flags'>
+        <enum-item name='COFFIN_NO_PETS_DEFAULT'/>
+    </enum-type>
+
+    <struct-type type-name='init_dwarf'>
+        <df-flagarray name='flags' index-enum='init_dwarf_flags'/>
+        <int32_t name="population_cap"/>
+        <int32_t name="baby_child_cap_num"/>
+        <int32_t name="baby_child_cap_percent"/>
+        <static-array name='path_cost' type-name='int32_t' count='4'/>
+        <int16_t name="embark_rectangle_x"/>
+        <int16_t name="embark_rectangle_y"/>
+        <int16_t name="store_dist_item_decrease"/>
+        <int16_t name="store_dist_seed_combine"/>
+        <int16_t name="store_dist_bucket_combine"/>
+        <int16_t name="store_dist_barrel_combine"/>
+        <int16_t name="store_dist_bin_combine"/>
     </struct-type>
 
     <enum-type type-name='init_media_flags'>
@@ -39,6 +94,9 @@
 
     <struct-type type-name='init_media'>
         <df-flagarray name='flag' index-enum='init_media_flags'/>
+        <int32_t name='volume'/>
+        <int32_t name='key_hold_ms'/>
+        <int32_t name='recenter_interface_shutdown_ms'/>
     </struct-type>
 
     <enum-type type-name='init_input_flags'>
@@ -47,7 +105,6 @@
     </enum-type>
 
     <struct-type type-name='init_input'>
-        <int32_t name='key_hold_ms'/>
         <df-flagarray name='flag' index-enum='init_input_flags'/>
     </struct-type>
 
@@ -66,57 +123,49 @@
         <int32_t name='large_font_dispy'/>
     </struct-type>
 
-    <enum-type type-name='init_adventurer_flags'>
-        <enum-item name='MORE'/>
-        <enum-item name='ADVENTURER_TRAPS'/>
-    </enum-type>
-
     <enum-type type-name='init_game_flags'>
         <enum-item name='TEMPERATURE'/>
         <enum-item name='WEATHER'/>
+        <enum-item name='ECONOMY'/>
+        <enum-item name='ZERO_RENT'/>
+        <enum-item name='AUTOSAVE_SEASONAL'/>
+        <enum-item name='AUTOSAVE_YEARLY'/>
+        <enum-item name='AUTOSAVE_PAUSE'/>
+        <enum-item name='AUTOBACKUP'/>
+
+        <enum-item name='INITIAL_SAVE'/>
+        <enum-item name='INVADERS'/>
+        <enum-item name='CAVEINS'/>
+        <enum-item name='ARTIFACTS'/>
+        <enum-item name='LOG_MAP_REJECTS'/>
+        <enum-item name='PAUSE_ON_LOAD'/>
+        <enum-item name='EMBARK_WARNING_ALWAYS'/>
     </enum-type>
+
+    <struct-type type-name='init_game'>
+        <df-flagarray name='flags' index-enum='init_game_flags'/>
+    </struct-type>
+
+    <enum-type type-name='init_window_flags'>
+        <enum-item name='TOPMOST'/>
+        <enum-item name='VSYNC_ON'/>
+        <enum-item name='VSYNC_OFF'/>
+        <enum-item name='TEXTURE_PARAM_LINEAR'/>
+    </enum-type>
+
+    <struct-type type-name='init_window'>
+        <df-flagarray name='flags' index-enum='init_window_flags'/>
+    </struct-type>
 
     <struct-type type-name='init'>
         <compound name='display' type-name='init_display'/>
-        <compound name='adventurer'>
-            <df-flagarray name='flags' index-enum='init_adventurer_flags'/>
-            <int32_t name="display_length"/>
-            <int32_t name="population_cap"/>
-        </compound>
+        <compound name='adventurer' type-name='init_adventurer'/>
+        <compound name='dwarf' type-name='init_dwarf'/>
         <compound name='media' type-name='init_media'/>
         <compound name='input' type-name='init_input'/>
         <compound name='font' type-name='init_font'/>
-        <compound name='game'>
-            <df-flagarray name='flags' index-enum='init_game_flags'/>
-        </compound>
-    </struct-type>
-
-    -- texture_handler.h
-
-    <struct-type type-name='tile_page'>
-        <stl-string name='token'/>
-        <stl-string name='filename'/>
-
-        <int16_t name='tile_dim_x'/>
-        <int16_t name='tile_dim_y'/>
-        <int16_t name='page_dim_x'/>
-        <int16_t name='page_dim_y'/>
-
-        <stl-vector name='texpos' type-name='int32_t'/>
-        <stl-vector name='datapos' type-name='int32_t'/>
-        <stl-vector name='texpos_gs' type-name='int32_t'/>
-        <stl-vector name='datapos_gs' type-name='int32_t'/>
-
-        <bool name='loaded'/>
-    </struct-type>
-
-    <struct-type type-name='texture_handler'>
-        <stl-vector name='page'>
-            <pointer type-name='tile_page'/>
-        </stl-vector>
-
-        <stl-vector name='texpos' type-name='int32_t'/>
-        <stl-vector name='datapos' type-name='int32_t'/>
+        <compound name='game' type-name='init_game'/>
+        <compound name='window' type-name='init_window'/>
     </struct-type>
 </data-definition>
 

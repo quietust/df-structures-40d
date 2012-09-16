@@ -474,7 +474,6 @@
 "stockpile_settings" :STATUS :VERIFIED
 "task_kill_nemesisst" :STATUS :UNCHECKED
 "temperaturest" :STATUS :VERIFIED
-"texture_handler" :STATUS :UNCHECKED
 "tile_bitmask" :STATUS :VERIFIED
 "tile_building_occ" :STATUS :UNCHECKED
 "tile_designation" :STATUS :VERIFIED
@@ -483,7 +482,6 @@
 "tile_liquid_flow" :STATUS :UNCHECKED
 "tile_liquid_flow_dir" :STATUS :UNCHECKED
 "tile_occupancy" :STATUS :VERIFIED
-"tile_page" :STATUS :UNCHECKED
 "tile_traffic" :STATUS :UNCHECKED
 "tiletype" :STATUS :VERIFIED
 "tiletype_material" :STATUS :UNCHECKED
