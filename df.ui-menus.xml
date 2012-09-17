@@ -222,6 +222,8 @@
                     <enum-item name='Goo'/>
                     <enum-item name='ItemInBuilding'/>
                     <enum-item name='Fire'/>
+                    <enum-item name='Water'/>
+                    <enum-item name='Magma'/>
                 </enum>
                 <int16_t name='amount' comment='used for contaminants'/>
                 <compound is-union='true'>
