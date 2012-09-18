@@ -13,13 +13,17 @@
             <item-attr name='item' value='WEAPON'/>
         </enum-item>
         <enum-item name='ANY_WEAPON'>
-            <item-attr name='generic_item' value='WEAPON'/>
-            <item-attr name='generic_item' value='TRAPCOMP'/>
+           <item-attr name='generic_item' value='WEAPON'/>
+           <item-attr name='generic_item' value='TRAPCOMP'/>
         </enum-item>
+        <enum-item name='ANY_SPIKE'>
+           <item-attr name='generic_item' value='WEAPON'/>
+           <item-attr name='generic_item' value='TRAPCOMP'/>
+        </enum-item>
+
         <enum-item name='ANY_TRUE_ARMOR'>
             <item-attr name='generic_item' value='ARMOR'/>
         </enum-item>
-
         <enum-item name='ANY_ARMOR_HELM'>
             <item-attr name='generic_item' value='HELM'/>
         </enum-item>
@@ -32,12 +36,12 @@
         <enum-item name='ANY_ARMOR_GLOVES'>
             <item-attr name='generic_item' value='GLOVES'/>
         </enum-item>
-        <enum-item name='ANY_ARMOR_PANTS'>
-            <item-attr name='generic_item' value='PANTS'/>
-        </enum-item>
 
         -- 10
 
+        <enum-item name='ANY_ARMOR_PANTS'>
+            <item-attr name='generic_item' value='PANTS'/>
+        </enum-item>
         <enum-item name='QUIVER'>
             <item-attr name='item' value='QUIVER'/>
         </enum-item>
@@ -50,11 +54,11 @@
         <enum-item name='WOOD'>
             <item-attr name='item' value='WOOD'/>
         </enum-item>
+
         <enum-item name='STONE'>
             <item-attr name='item' value='STONE'/>
             <item-attr name='item' value='ORE'/>
         </enum-item>
-
         <enum-item name='ROCK'>
             <item-attr name='item' value='ROCK'/>
         </enum-item>
@@ -95,14 +99,16 @@
             <item-attr name='generic_item' value='FOOD'/>
         </enum-item>
         <enum-item name='ANY_GENERIC18'>
-            <item-attr name='generic_item' value='SAND'/>
             <item-attr name='generic_item' value='EXTRACT'/>
             <item-attr name='generic_item' value='POTION'/>
             <item-attr name='generic_item' value='DRINK'/>
-            <item-attr name='generic_item' value='POWDER_ORGANIC'/>
+            <item-attr name='generic_item' value='POWDER_MISC'/>
             <item-attr name='generic_item' value='LIQUID_MISC'/>
-            <item-attr name='generic_item' value='GLOB'/>
+            <item-attr name='generic_item' value='GLOB'/> fat and tallow only
         </enum-item>
+
+        -- 20
+
         <enum-item name='ANY_GENERIC19'>
             <item-attr name='generic_item' value='CAGE'/>
             <item-attr name='generic_item' value='ANIMALTRAP'/>
@@ -110,9 +116,6 @@
             <item-attr name='generic_item' value='VERMIN'/>
             <item-attr name='generic_item' value='PLANT'/>
         </enum-item>
-
-        -- 20
-
         <enum-item name='ANY_GENERIC20'>
             <item-attr name='generic_item' value='FLASK'/>
             <item-attr name='generic_item' value='EXTRACT'/>
@@ -127,30 +130,32 @@
         </enum-item>
         <enum-item name='ANY_FURNITURE'/>
         <enum-item name='ANY_ANIMAL'/>
-        <enum-item name='ANY_EDIBLE_RAW'/>
 
+        <enum-item name='ANY_EDIBLE_RAW'/>
         <enum-item name='ANY_EDIBLE_CARNIVORE'/>
         <enum-item name='ANY_EDIBLE_BONECARN'/>
         <enum-item name='ANY_EDIBLE_VERMIN'/>
         <enum-item name='ANY_FOOD_CONTAINER'>
             <item-attr name='generic_item' value='BARREL'/>
-            <item-attr name='generic_item' value='BOX'/>
+            <item-attr name='generic_item' value='BOX'/> only if bag
         </enum-item>
+
+        -- 30
+
         <enum-item name='ANY_CAN_ROT'>
             <item-attr name='generic_item' value='CORPSE'/>
             <item-attr name='generic_item' value='CORPSEPIECE'/>
+            <item-attr name='generic_item' value='REMAINS'/>
             <item-attr name='generic_item' value='MEAT'/>
             <item-attr name='generic_item' value='FISH'/>
             <item-attr name='generic_item' value='FISH_RAW'/>
             <item-attr name='generic_item' value='PLANT'/>
             <item-attr name='generic_item' value='LEAVES'/>
+            <item-attr name='generic_item' value='SKIN_RAW'/>
             <item-attr name='generic_item' value='CHEESE'/>
             <item-attr name='generic_item' value='FOOD'/>
             <item-attr name='generic_item' value='GLOB'/>
         </enum-item>
-
-        -- 30
-
         <enum-item name='ANY_MURDERED'>
             <item-attr name='generic_item' value='CORPSE'/>
             <item-attr name='generic_item' value='CORPSEPIECE'/>
@@ -188,20 +193,20 @@
             <item-attr name='generic_item' value='BALLISTAARROWHEAD'/>
             <item-attr name='generic_item' value='COIN'/>
         </enum-item>
-        <enum-item name='ANY_GENERIC33'>
+        <enum-item name='ANY_CLOTHING'>
             <item-attr name='generic_item' value='ARMOR'/>
             <item-attr name='generic_item' value='SHOES'/>
             <item-attr name='generic_item' value='HELM'/>
             <item-attr name='generic_item' value='GLOVES'/>
             <item-attr name='generic_item' value='PANTS'/>
         </enum-item>
+
         <enum-item name='ANY_GENERIC34'>
             <item-attr name='generic_item' value='WEAPON'/>
             <item-attr name='generic_item' value='TRAPCOMP'/>
             <item-attr name='generic_item' value='SIEGEAMMO'/>
         </enum-item>
-
-        <enum-item name='ANY_GENERIC35'>
+        <enum-item name='ANY_COMBAT_ARMOR'>
             <item-attr name='generic_item' value='ARMOR'/>
             <item-attr name='generic_item' value='SHOES'/>
             <item-attr name='generic_item' value='SHIELD'/>
@@ -215,21 +220,28 @@
         <enum-item name='FLOODGATE'>
             <item-attr name='item' value='FLOODGATE'/>
         </enum-item>
+        <enum-item name='HATCH_COVER'>
+            <item-attr name='item' value='HATCH_COVER'/>
+        </enum-item>
+
+        -- 40
+
+        <enum-item name='GRATE'>
+            <item-attr name='item' value='GRATE'/>
+        </enum-item>
         <enum-item name='CAGE'>
             <item-attr name='item' value='CAGE'/>
         </enum-item>
         <enum-item name='FLASK'>
             <item-attr name='item' value='FLASK'/>
         </enum-item>
-
-        -- 40
-
         <enum-item name='WINDOW'>
             <item-attr name='item' value='WINDOW'/>
         </enum-item>
         <enum-item name='GOBLET'>
             <item-attr name='item' value='GOBLET'/>
         </enum-item>
+
         <enum-item name='INSTRUMENT'>
             <item-attr name='item' value='INSTRUMENT'/>
         </enum-item>
@@ -239,13 +251,15 @@
         <enum-item name='BUCKET'>
             <item-attr name='item' value='BUCKET'/>
         </enum-item>
-
         <enum-item name='BARREL'>
             <item-attr name='item' value='BARREL'/>
         </enum-item>
         <enum-item name='CHAIN'>
             <item-attr name='item' value='CHAIN'/>
         </enum-item>
+
+        -- 50
+
         <enum-item name='ANIMALTRAP'>
             <item-attr name='item' value='ANIMALTRAP'/>
         </enum-item>
@@ -255,17 +269,21 @@
         <enum-item name='CHAIR'>
             <item-attr name='item' value='CHAIR'/>
         </enum-item>
-
-        -- 50
-
         <enum-item name='COFFIN'>
             <item-attr name='item' value='COFFIN'/>
         </enum-item>
         <enum-item name='TABLE'>
             <item-attr name='item' value='TABLE'/>
         </enum-item>
+
         <enum-item name='STATUE'>
             <item-attr name='item' value='STATUE'/>
+        </enum-item>
+        <enum-item name='QUERN'>
+            <item-attr name='item' value='QUERN'/>
+        </enum-item>
+        <enum-item name='MILLSTONE'>
+            <item-attr name='item' value='MILLSTONE'/>
         </enum-item>
         <enum-item name='BOX'>
             <item-attr name='item' value='BOX'/>
@@ -274,9 +292,8 @@
             <item-attr name='item' value='BIN'/>
         </enum-item>
 
-        <enum-item name='SAND'>
-            <item-attr name='item' value='SAND'/>
-        </enum-item>
+        -- 60
+
         <enum-item name='ARMORSTAND'>
             <item-attr name='item' value='ARMORSTAND'/>
         </enum-item>
@@ -289,12 +306,10 @@
         <enum-item name='ANVIL'>
             <item-attr name='item' value='ANVIL'/>
         </enum-item>
-
-        -- 60
-
         <enum-item name='CATAPULTPARTS'>
             <item-attr name='item' value='CATAPULTPARTS'/>
         </enum-item>
+
         <enum-item name='BALLISTAPARTS'>
             <item-attr name='item' value='BALLISTAPARTS'/>
         </enum-item>
@@ -307,9 +322,14 @@
         <enum-item name='ANY_WEBS'>
             <item-attr name='generic_item' value='THREAD'/>
         </enum-item>
+        <enum-item name='PIPE_SECTION'>
+            <item-attr name='item' value='PIPE_SECTION'/>
+        </enum-item>
+
+        -- 70
 
         <enum-item name='ANY_ENCASED'/>
-        <enum-item name='ANY_ITEM_FLAG_400'/>
+        <enum-item name='ANY_IN_CONSTRUCTION'/>
         <enum-item name='DRINK'>
             <item-attr name='item' value='DRINK'/>
         </enum-item>
@@ -320,16 +340,14 @@
             <item-attr name='item' value='LIQUID_MISC'/>
         </enum-item>
 
-        -- 70
-
         <enum-item name='EXTRACT'>
             <item-attr name='item' value='EXTRACT'/>
         </enum-item>
         <enum-item name='POTION'>
             <item-attr name='item' value='POTION'/>
         </enum-item>
-        <enum-item name='POWDER_ORGANIC'>
-            <item-attr name='item' value='POWDER_ORGANIC'/>
+        <enum-item name='POWDER_MISC'>
+            <item-attr name='item' value='POWDER_MISC'/>
         </enum-item>
         <enum-item name='ANY_GENERIC73'>
             <item-attr name='generic_item' value='FLASK'/>
@@ -340,19 +358,22 @@
             <item-attr name='generic_item' value='BOX'/>
             <item-attr name='generic_item' value='MEAT'/>
             <item-attr name='generic_item' value='FISH'/>
+            <item-attr name='generic_item' value='FISH_RAW'/>
             <item-attr name='generic_item' value='VERMIN'/>
             <item-attr name='generic_item' value='SEEDS'/>
             <item-attr name='generic_item' value='PLANT'/>
             <item-attr name='generic_item' value='LEAVES'/>
             <item-attr name='generic_item' value='EXTRACT'/>
             <item-attr name='generic_item' value='DRINK'/>
-            <item-attr name='generic_item' value='POWDER_ORGANIC'/>
+            <item-attr name='generic_item' value='POWDER_MISC'/>
             <item-attr name='generic_item' value='CHEESE'/>
-            <item-attr name='generic_item' value='GLOB'/>
+            <item-attr name='generic_item' value='GLOB'/> rendered fat only
         </enum-item>
         <enum-item name='ANY_GENERIC74'>
             <item-attr name='generic_item' value='BOX'/>
         </enum-item>
+
+        -- 80
 
         <enum-item name='VERMIN'>
             <item-attr name='generic_item' value='VERMIN'/>
@@ -371,10 +392,8 @@
             <item-attr name='item' value='GLOB'/>
         </enum-item>
 
-        -- 80
-
-        <enum-item name='ANY_UNKNOWN_80'/>
-        <enum-item name='ANY_MELT'/>
+        <enum-item name='ANY_UNKNOWN_85'/>
+        <enum-item name='ANY_UNKNOWN_86' comment='formerly ANY_MELT'/>
 
         <enum-item name='BAD'/>
     </enum-type>
