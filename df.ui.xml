@@ -356,7 +356,7 @@
         <int32_t/>
         <int32_t/>
         <int32_t/>
-        <int8_t/>
+        <int8_t comment='0x2 = have Mayor'/>
         <int32_t/>
         <int32_t/>
         <int32_t/>
