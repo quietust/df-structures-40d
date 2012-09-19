@@ -10,13 +10,13 @@
             <int32_t name='drink'/>
         </compound>
         <static-array name='unit_counts' type-name='int16_t' count='114' index-enum='profession'/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
+        <int16_t name='population'/>
+        <int16_t name='omnivores'/>
+        <int16_t name='carnivores'/>
         <int16_t name='trained_animals'/>
         <int16_t name='other_animals'/>
-        <int16_t/>
-        <int32_t/>
+        <int16_t name='non_nobles'/>
+        <int32_t name='combat_aptitude' comment='sum of all attribute bonuses, armor exp levels, shield exp levels, wrestling exp levels, and the highest weapon skill levels'/>
         <static-array name='item_counts' type-name='int32_t' count='118' index-enum='item_type'/>
         <stl-vector name='created_weapons' type-name='int32_t' index-refers-to='$global.world.raws.itemdefs.weapons[$]'/>
         <compound name='wealth'>
