@@ -15,7 +15,7 @@
         <int16_t name='carnivores'/>
         <int16_t name='trained_animals'/>
         <int16_t name='other_animals'/>
-        <int16_t name='non_nobles'/>
+        <int16_t name='potential_soldiers'/>
         <int32_t name='combat_aptitude' comment='sum of all attribute bonuses, armor exp levels, shield exp levels, wrestling exp levels, and the highest weapon skill levels'/>
         <static-array name='item_counts' type-name='int32_t' count='118' index-enum='item_type'/>
         <stl-vector name='created_weapons' type-name='int32_t' index-refers-to='$global.world.raws.itemdefs.weapons[$]'/>
