@@ -343,8 +343,8 @@
         <int32_t/>
         <int32_t name='offerings' comment='uncertain'/>
         <static-array count='10' type-name='int32_t'/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='thievery_magnitude'/>
+        <int32_t name='attack_magnitude'/>
 
         <stl-vector type-name='pointer'/>
         <stl-vector type-name='pointer'/>

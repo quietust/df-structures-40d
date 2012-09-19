@@ -125,7 +125,7 @@
         <bool name='king_arrived'/>
         <bool name='king_hasty'/>
         <bool name='economy_active'/>
-        <bool/>
+        <bool name='skip_job_satisfaction_check'/>
         <bool name='justice_active'/>
         <int16_t/>
         <int16_t/>

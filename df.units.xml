@@ -340,7 +340,7 @@
         </stl-vector>
         <compound name='job'>
             <int32_t name='account'/>
-            <int32_t/>
+            <int32_t name='satisfaction' comment='had enough work to do'/>
             <pointer type-name='unit' name='hunt_target'/>
             <pointer type-name='building' name='destroy_target'/>
             <compound name='last_attack_dir' type-name='coord2d'/>
