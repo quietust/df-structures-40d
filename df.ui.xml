@@ -405,7 +405,7 @@
         <enum-item name='CivAttack'/>
         <enum-item name='FeatureAttack'/>
         <enum-item name='Megabeast'/>
-        <enum-item name='Wildlife'/>
+        <enum-item name='CuriousBeasts'/>
     </enum-type>
 
     <struct-type type-name='timed_event'>
