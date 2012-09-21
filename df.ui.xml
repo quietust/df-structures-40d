@@ -351,16 +351,16 @@
         <stl-vector type-name='int32_t'/>
         <stl-vector type-name='int16_t'/>
         <stl-vector type-name='int16_t'/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int8_t comment='0x2 = have Mayor'/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int16_t/>
+        <int32_t name='mayor_nemesis' ref-target='nemesis_record'/>
+        <int32_t name='manager_nemesis' ref-target='nemesis_record'/>
+        <int32_t name='bookkeeper_nemesis' ref-target='nemesis_record'/>
+        <int32_t name='broker_nemesis' ref-target='nemesis_record'/>
+        <int32_t name='sheriff_nemesis' ref-target='nemesis_record'/>
+        <int8_t comment='0x1 = need Manager; 0x2 = have Mayor'/>
+        <int32_t name='manager_timer'/>
+        <int32_t name='bookkeeper_timer'/>
+        <int32_t name='bookkeeper_precision_reached'/>
+        <int16_t name='bookkeeper_accuracy_level'/>
         <stl-vector/>
         <int16_t/>
         <int32_t/>

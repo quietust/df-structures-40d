@@ -13,16 +13,16 @@
         <int8_t name='option_key_pressed'/>
         
         <virtual-methods>
+            <vmethod name='update'/>
+            <vmethod ret-type='bool' name='use_update_vmethod'/>
+            <vmethod name='feed'/>
             <vmethod name='logic'/>
-            <vmethod ret-type='int8_t'/>
-            <vmethod/>
-            <vmethod/>
-            <vmethod/>
+            <vmethod name='render'/>
             <vmethod name='help'/>
             <vmethod ret-type='int8_t' name='movies_okay'/>
             <vmethod ret-type='int8_t' name='is_option_screen'/>
             <vmethod ret-type='int8_t' name='is_save_screen'/>
-            <vmethod/>
+            <vmethod ret-type='bool' name='key_conflict'/>
             <vmethod is-destructor='true'/>
         </virtual-methods>
     </class-type>
@@ -964,10 +964,10 @@
         <int32_t/>
         <int32_t/>?30
         <compound>
-            <static-array cont='6'>
+            <static-array count='6'>
                 <stl-vector/>
             </static-array>
-            <static-array cont='6'>
+            <static-array count='6'>
                 <stl-vector/>
             </static-array>
         </compound>
