@@ -229,7 +229,9 @@
             <pointer type-name='dipscript_info'/>
         </stl-vector>
 
-        <stl-vector name='dipscript_popups' type-name='pointer'/>
+        <stl-vector name='dipscript_popups'>
+            <pointer type-name='dipscript_popup_info'/>
+        </stl-vector>
 
         <compound name='kitchen'>
             <stl-vector name='item_type'>
@@ -356,18 +358,30 @@
         <int32_t name='bookkeeper_nemesis' ref-target='nemesis_record'/>
         <int32_t name='broker_nemesis' ref-target='nemesis_record'/>
         <int32_t name='sheriff_nemesis' ref-target='nemesis_record'/>
-        <int8_t comment='0x1 = need Manager; 0x2 = have Mayor'/>
+        <int32_t name='noble_flags' comment='0x1 = need Manager; 0x2 = have Mayor'/>
         <int32_t name='manager_timer'/>
         <int32_t name='bookkeeper_timer'/>
         <int32_t name='bookkeeper_precision_reached'/>
         <int16_t name='bookkeeper_accuracy_level'/>
-        <stl-vector/>
+
+        <stl-vector>
+            <pointer>
+                <int8_t/>
+                <int16_t/>
+                <int16_t/>
+                <stl-string/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+            </pointer>
+        </stl-vector>
         <int16_t/>
         <int32_t/>
         <int8_t/>
         <int8_t/>
         <int16_t/>
         <int16_t/>
+
         <stl-vector/>
 
         <compound name='main'>

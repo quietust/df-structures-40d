@@ -23,8 +23,8 @@
         </stl-vector>
         <int32_t/>
         <uint16_t/>
-        <uint16_t/>
-        <uint16_t/>
+        <uint16_t name='min_safe_temp'/>
+        <uint16_t name='max_safe_temp'/>
     </class-type>
 </data-definition>
 

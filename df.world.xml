@@ -3,42 +3,24 @@
         <stl-vector name='engravings'>
             <pointer type-name='engraving'/>
         </stl-vector>
-        <stl-vector name='vermin'>
-            <pointer type-name='vermin'/>
-        </stl-vector>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector name='constructions'>
-            <pointer type-name='construction'/>
-        </stl-vector>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-
-<!--
-
-        <stl-vector name='unk_40'>
+        <compound name='vermin'>
+            <stl-vector name='all'>
+                <pointer type-name='vermin'/>
+            </stl-vector>
+            <stl-vector name='colonies'>
+                <pointer type-name='vermin'/>
+            </stl-vector>
+        </compound>
+        <stl-vector>
             <pointer type-name='coord'/>
         </stl-vector>
-
         <stl-vector name='campfires'>
             <pointer>
                 <compound type-name='coord' name='pos'/>
                 <int32_t name='timer'/>
             </pointer>
         </stl-vector>
-        <stl-vector name='contaminated_tiles'>
+        <stl-vector comment='probably contaminated_tiles'>
             <pointer type-name='coord'/>
         </stl-vector>
         <stl-vector name='web_clusters'>
@@ -49,9 +31,7 @@
                 <int16_t name='race' ref-target='creature_raw'/>
                 <compound type-name='coord2d' name='pos_min'/>
                 <compound type-name='coord2d' name='pos_max'/>
-                <stl-vector>
-                    <pointer type-name='unit'/>
-                </stl-vector>
+                <stl-vector type-name='int32_t'/>
             </pointer>
         </stl-vector>
         <stl-vector name='fires'>
@@ -64,11 +44,66 @@
                 <uint16_t name='temperature_3'/>
             </pointer>
         </stl-vector>
+        <stl-vector>
+            <pointer>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int8_t/>
+                <stl-vector type-name='int16_t'/>
+                <stl-vector type-name='int16_t'/>
+                <stl-vector type-name='int16_t'/>
+                <stl-vector type-name='int16_t'/>
+            </pointer>
+        </stl-vector>
+        <stl-vector>
+            <pointer>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int8_t/>
+                <int8_t/>
+                <int8_t/>
+            </pointer>
+        </stl-vector>
+        <stl-vector name='constructions'>
+            <pointer type-name='construction'/>
+        </stl-vector>
+        <stl-vector>
+            <pointer>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+            </pointer>
+        </stl-vector>
+        <stl-vector>
+            <pointer>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+            </pointer>
+        </stl-vector>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
+
         <stl-vector name='effects'>
             <pointer>
                 <int32_t/>
                 <pointer type-name='job'/>
-                <int32_t name='type'/> 2 = falling into chasm
+                <int16_t name='type'/> 2 = falling into chasm
                 <int16_t name='foreground'/>
                 <int16_t name='background'/>
                 <int8_t name='bright'/>
@@ -77,7 +112,6 @@
                 <int32_t/>
             </pointer>
         </stl-vector>
--->
         <stl-vector name='coin_batches'>
             <pointer>
                 <int32_t name='year'/>
