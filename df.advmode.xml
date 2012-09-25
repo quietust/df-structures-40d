@@ -19,14 +19,17 @@
         <enum-item name='Get'/>
 
         <enum-item name='CombatPrefs'/>
+        <enum-item name='MovementPrefs'/>
         <enum-item name='InteractHow'/>
+        <enum-item name='Move'/>
         <enum-item name='Announcements'/>
+
         <enum-item name='Attack'/>
         <enum-item name='UseBuilding'/>
-
         <enum-item name='Travel'/>
         <enum-item name='Wrestle'/>
         <enum-item name='AttackConfirm'/>
+
         <enum-item name='WrestleConfirm'/>
         <enum-item name='SleepConfirm'/>
     </enum-type>
@@ -34,9 +37,6 @@
     <struct-type type-name='ui_advmode'>
         <enum base-type='int16_t' name='menu' type-name='ui_advmode_menu'/>
 
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
         <int8_t/>
         <int8_t/>
         <int8_t/>
@@ -45,23 +45,40 @@
         <int16_t/>
         <int8_t/>
         <int8_t/>
-        <int8_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
 
         <stl-vector type-name='pointer'/>
         <stl-vector type-name='pointer'/>
 
         <int32_t/>
 
-        <compound name='searched_tiles' type-name='coord_path'/>
+        <stl-vector type-name='int32_t' name='searched_x'/>
+        <stl-vector type-name='int32_t' name='searched_y'/>
+        <stl-vector type-name='int32_t' name='searched_z'/>
+        <stl-vector type-name='int32_t'/>
+
+        <int8_t/>
+
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int8_t/>
+        <int16_t/>?
+        <int8_t/>
+        <int16_t/>
+        <int16_t/>
+        <int32_t/>
+        <int32_t/>
+        <int16_t/>
+        <int16_t/>
         <stl-vector type-name='pointer'/>
-
-        <int8_t/>
-
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int8_t/>
-
+        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer'/>
     </struct-type>
 
     <struct-type type-name='quest_list_link'>
@@ -84,9 +101,8 @@
 
         <compound name='target_pos' type-name='coord2d'/>
         <compound name='giver_pos' type-name='coord2d'/>
-
-        <int32_t/>
-        <int32_t/>
+        <compound type-name='coord2d'/>
+        <compound type-name='coord2d'/>
     </class-type>
 
     <class-type type-name='task_kill_nemesisst' inherits-from='adv_task'>
