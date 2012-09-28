@@ -477,10 +477,8 @@
             </pointer>
         </stl-vector>
         <int16_t name='adv_sleep_timer' comment='and some other things'/>
-        <int32_t/><int32_t/><int32_t/> 32-bit coord
-        <stl-vector type-name='int32_t'/> 32-bit coord path
-        <stl-vector type-name='int32_t'/>
-        <stl-vector type-name='int32_t'/>
+        <compound type-name='coord32'/>
+        <compound type-name='coord32_path'/>
         <int32_t name='hist_figure_id' ref-target='historical_figure'/>
         <int16_t name='stance_okay_1'/>
         <int16_t name='stance_okay_2'/>

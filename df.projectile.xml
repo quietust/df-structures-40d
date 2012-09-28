@@ -25,9 +25,9 @@
         <int32_t name='id'/>
         <pointer name='firer' type-name='unit'/>
 
-        <compound name='origin_pos' type-name='coord'/>
-        <compound name='target_pos' type-name='coord'/>
-        <compound name='cur_pos' type-name='coord'/>
+        <compound name='origin_pos' type-name='coord32'/>
+        <compound name='target_pos' type-name='coord32'/>
+        <compound name='cur_pos' type-name='coord32'/>
         <int32_t name='time_flown'/>
         <int32_t name='momentum'/>
         <int32_t name='min_hit_distance'/>
@@ -42,6 +42,7 @@
 
         <int32_t name='skill_level'/>
         <int32_t name='throw_strength'/>
+        <int32_t/>
 
         <virtual-methods>
             <vmethod ret-type='projectile_type' name='getType'/>
@@ -55,6 +56,7 @@
                 <int32_t name='loadversion'/>
             </vmethod>
             <vmethod name='drawSelf'/>
+            <vmethod ret-type='bool' name='isNull'/>
             <vmethod is-destructor='true'/>
         </virtual-methods>
     </class-type>
