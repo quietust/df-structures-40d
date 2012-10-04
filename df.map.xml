@@ -332,8 +332,6 @@
         <enum-item name='mineral'/>
         <enum-item name='frozen_liquid'/>
         <enum-item name='world_construction'/>
-        <enum-item name='material_spatter'/>
-        <enum-item name='grass'/>
     </enum-type>
 
     <class-type type-name='block_square_event' original-name='block_square_eventst'>
@@ -346,12 +344,6 @@
             </vmethod>
             <vmethod ret-type='bool' name='isEmpty'/>
             <vmethod is-destructor='true'/>
-
-            <vmethod name='checkTemperature'>
-                <int16_t name='x'/>
-                <int16_t name='y'/>
-                <int16_t name='temperature'/>
-            </vmethod>
         </virtual-methods>
     </class-type>
 
@@ -400,7 +392,7 @@
         </stl-vector>
         <int32_t/>
         <int16_t/>
-        <pointer name='specinfo'/>
+        <pointer name='spec_info' type-name='feature_specinfo'/>
         <stl-vector type-name='int16_t'/>
         <stl-vector type-name='int16_t'/>
         <stl-vector type-name='int16_t'/>
@@ -416,17 +408,67 @@
 
     <struct-type type-name='feature_init'>
         <enum name='type' base-type='int16_t' type-name='feature_type'/>
-        <stl-vector name='alterations'>
-            <pointer>
-                <int16_t/>
-                <int32_t/>
-                <int32_t/>
-                <pointer name='alteration_spec_info'/>
-            </pointer>
-        </stl-vector>
+        <stl-vector name='alterations' pointer-type='feature_alteration'/>
         <df-flagarray name='flags' index-enum='feature_init_flags'/>
         <pointer name='feature' type-name='feature'/>
     </struct-type>
+
+    <struct-type type-name='feature_alteration' original-name='feature_alterationst'>
+        <int16_t/>
+        <int32_t/>
+        <int32_t/>
+        <pointer name='spec_info' type-name='feature_alteration_spec_info'/>
+    </struct-type>
+
+    <enum-type type-name='feature_specinfo_type'>
+        <enum-item name='cave_underworld_spike'/>
+        <enum-item name='cave_lava_shaft'/>
+    </enum-type>
+
+    <class-type type-name='feature_specinfo' original-name='feature_specinfost'>
+        <virtual-methods>
+            <vmethod ret-type='feature_specinfo_type' name='getType'/>
+            <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
+            <vmethod name='read_file'>
+                <pointer comment='file_compressorst'/>
+                <int32_t name='loadversion'/>
+            </vmethod>
+            <vmethod is-destructor='true'/>
+        </virtual-methods>
+    </class-type>
+
+    <class-type type-name='feature_specinfo_cave_lava_shaftst' inherits-from='feature_specinfo'>
+        <int32_t/>
+    </class-type>
+
+    <struct-type type-name='underworld_spike_level_info'>
+        <int16_t/>
+        <stl-vector type-name='int32_t'/>
+        <stl-vector type-name='int32_t'/>
+        <stl-vector type-name='int32_t'/>
+    </struct-type>
+
+    <class-type type-name='feature_specinfo_cave_underworld_spikest' inherits-from='feature_specinfo'>
+        <stl-vector name='spikes' pointer-type='underworld_spike_level_info'/>
+    </class-type>
+
+    <class-type type-name='feature_alteration_spec_info' original-name='feature_alteration_spec_infost'>
+        <virtual-methods>
+            <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
+            <vmethod name='read_file'>
+                <pointer comment='file_compressorst'/>
+                <int32_t name='loadversion'/>
+            </vmethod>
+            <vmethod is-destructor='true'/>
+        </virtual-methods>
+    </class-type>
+
+    <class-type type-name='feature_alteration_spec_info_underworld_spike_level_infost' inherits-from='feature_alteration_spec_info'>
+        <int16_t/>
+        <stl-vector type-name='int32_t'/>
+        <stl-vector type-name='int32_t'/>
+        <stl-vector type-name='int32_t'/>
+    </class-type>
 
     <enum-type type-name='biome_type'>
         <enum-item name='MOUNTAIN'/>
