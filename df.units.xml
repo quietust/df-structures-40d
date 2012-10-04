@@ -624,7 +624,8 @@
                  instance-vector='$global.world.unit_chunks' key-field='id'>
         <int32_t name='id' comment='unit_*.dat'/>
         <static-array name='units' count='100'>
-            <pointer type-name='unit'/>
+            <stl-vector name='items' pointer-type='item'/>
+            <pointer name='unit' type-name='unit'/>
         </static-array>
     </struct-type>
 
