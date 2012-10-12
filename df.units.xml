@@ -448,10 +448,10 @@
         </stl-vector>
         <int32_t name='happiness'/>
         <int16_t name='insanity_chance'/>
-        <stl-vector>
+        <stl-vector name='grievances'>
             <pointer>
-                <int16_t/>
-                <int16_t/>
+                <int16_t name='type'/>
+                <int16_t name='guild'/>
                 <int32_t/>
             </pointer>
         </stl-vector>
