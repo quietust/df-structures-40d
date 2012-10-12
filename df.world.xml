@@ -11,7 +11,7 @@
                 <pointer type-name='vermin'/>
             </stl-vector>
         </compound>
-        <stl-vector>
+        <stl-vector name='unk_30'>
             <pointer type-name='coord'/>
         </stl-vector>
         <stl-vector name='campfires'>
@@ -20,7 +20,7 @@
                 <int32_t name='timer'/>
             </pointer>
         </stl-vector>
-        <stl-vector comment='probably contaminated_tiles'>
+        <stl-vector name='unk_50' comment='probably contaminated_tiles'>
             <pointer type-name='coord'/>
         </stl-vector>
         <stl-vector name='web_clusters'>
@@ -44,11 +44,9 @@
                 <uint16_t name='temperature_3'/>
             </pointer>
         </stl-vector>
-        <stl-vector>
+        <stl-vector name='unk_80'>
             <pointer>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
+                <compound type-name='coord'/>
                 <int8_t/>
                 <stl-vector type-name='int16_t'/>
                 <stl-vector type-name='int16_t'/>
@@ -56,13 +54,13 @@
                 <stl-vector type-name='int16_t'/>
             </pointer>
         </stl-vector>
-        <stl-vector>
+        <stl-vector name='unk_90'>
             <pointer>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
+                <int16_t name='x1'/>
+                <int16_t name='y1'/>
+                <int16_t name='x2'/>
+                <int16_t name='y2'/>
+                <int16_t name='z'/>
                 <int8_t/>
                 <int8_t/>
                 <int8_t/>
@@ -71,8 +69,21 @@
         <stl-vector name='constructions'>
             <pointer type-name='construction'/>
         </stl-vector>
-        <stl-vector>
+        <stl-vector name='unk_B0'>
             <pointer>
+                <int16_t name='x1'/>
+                <int16_t name='y1'/>
+                <int16_t name='x2'/>
+                <int16_t name='y2'/>
+                <int16_t name='z'/>
+            </pointer>
+        </stl-vector>
+        <stl-vector name='unk_C0'>
+            <pointer>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
                 <int16_t/>
                 <int16_t/>
                 <int16_t/>
@@ -80,24 +91,26 @@
                 <int16_t/>
             </pointer>
         </stl-vector>
-        <stl-vector>
+        <stl-vector name='unk_D0'>
             <pointer>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
             </pointer>
         </stl-vector>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
+        <stl-vector name='unk_E0'>
+            <pointer>
+            </pointer>
+        </stl-vector>
+        <stl-vector name='unk_F0'>
+            <pointer>
+            </pointer>
+        </stl-vector>
+        <stl-vector name='unk_100'>
+            <pointer>
+            </pointer>
+        </stl-vector>
+        <stl-vector name='unk_110'>
+            <pointer>
+            </pointer>
+        </stl-vector>
 
         <stl-vector name='effects'>
             <pointer>
@@ -434,36 +447,40 @@
 
         <compound type-name='world_data' name='world_data'/>
 
-<!--
         <compound name='worldgen'>
             <int16_t name='state'/>
             <int32_t name='num_rejects'/>
+            <static-array count='53' type-name='int32_t'/>
+            <static-array count='53' type-name='int32_t'/>
+            <int16_t name='rejection_reason'/>
             <int32_t name='lakes_total'/>
             <int32_t/>
             <int16_t/>
             <int32_t name='lakes_cur'/>
-            <int32_t/>
-            <stl-vector type-name='pointer'/>
-            <stl-vector type-name='pointer'/>
-            <stl-vector type-name='pointer'/>
+            <int8_t/>
+            <int32_t name='finalized_civ_mats'/>
+            <int32_t name='finalized_art'/>
+            <int32_t name='finalized_uniforms'/>
             <int32_t name='finalized_sites'/>
-            <int32_t name='finalized_histfigs'/>
-            <int32_t name='finalized_site_units'/>
+            <int32_t/>
+            <int32_t/>
             <stl-vector type-name='pointer'/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
+            <stl-vector type-name='pointer'/>
+            <int32_t name='width'/>
+            <int32_t name='height'/>
             <stl-vector type-name='pointer'/>
             <stl-vector type-name='pointer'/>
             <int32_t name='rivers_total'/>
             <int32_t name='rivers_cur'/>
+            <int8_t/>
+            <stl-string/>
+            <uint32_t name='last_seed'/>
+            <uint32_t name='last_history_seed'/>
+            <uint32_t name='last_name_seed'/>
         </compound>
-        <int32_t name='orphaned_flows_unk_28'/> corresponds to map_block.unk_28
-        <int32_t name='orphaned_flows_unk_2c'/> corresponds to map_block.unk_2c
--->     <padding size='616'/>
+
+        <compound name='orphaned_flow_pool' type-name='flow_reuse_pool'/>
+
         -- RAWs
 
         <compound name='raws' type-name='world_raws'/>
