@@ -162,9 +162,12 @@
             </stl-vector>
         </compound>
 
-        -- Unknown
+        -- Region coordinates used during worldgen
 
-        <padding size='80004' comment='0 bytes'/>
+        <compound name='worldgen_regions'>
+            <static-array name='coords' count='20000' type-name='coord2d'/>
+            <int16_t name='next_slot'/>
+        </compound>
 
         -- Units
 
