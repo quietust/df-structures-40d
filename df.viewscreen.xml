@@ -27,25 +27,109 @@
         </virtual-methods>
     </class-type>
 
+    <class-type type-name='layer_object' original-name='layer_objectst'>
+        <bool name='enabled'/>
+        <bool name='active'/>
+
+        <virtual-methods>
+            No destructor anywhere:
+            <vmethod ret-type='int32_t' name='getFirstVisible'/>
+            <vmethod ret-type='int32_t' name='getLastVisible'/>
+            <vmethod ret-type='int32_t' name='getX1'/>
+            <vmethod ret-type='int32_t' name='getY1'/>
+            <vmethod ret-type='int32_t' name='getX2'/>
+
+            <vmethod ret-type='int32_t' name='getY2'/>
+            <vmethod ret-type='int32_t' comment='list 1; button,base -1'/>
+            <vmethod ret-type='int32_t' name='getListCursor'/>
+            <vmethod name='setListCursor'> <int32_t/> </vmethod>
+            <vmethod name='feed'/>
+
+            <vmethod ret-type='bool' name='isSetMouseLRCur'/>
+            <vmethod ret-type='bool' name='isSetMouseLCur'/>
+            <vmethod ret-type='bool' name='isSetMouseRCur'/>
+            <vmethod ret-type='int32_t' name='getMouseLCur'/>
+            <vmethod ret-type='int32_t' name='getMouseRCur'/>
+
+            <vmethod> <pointer type-name='int32_t'/> <pointer type-name='int32_t'/> </vmethod>
+            <vmethod> <pointer type-name='int32_t'/> <pointer type-name='int32_t'/> </vmethod>
+            <vmethod ret-type='int32_t' name='getListLength'/>
+            <vmethod name='setListLength'> <int32_t/> </vmethod>
+            <vmethod ret-type='int32_t'/>
+
+            <vmethod ret-type='int32_t'/>
+            <vmethod ret-type='int32_t'/>
+            <vmethod ret-type='int32_t'/>
+        </virtual-methods>
+    </class-type>
+
+    <class-type type-name='layer_object_listst' inherits-from='layer_object'>
+        <int32_t name='cursor'/>
+        <int32_t name='num_entries'/>
+        <int32_t name='x1'/>
+        <int32_t name='y1'/>
+        <int32_t name='page_size'/>
+        <int32_t name='x2'/>
+        <int32_t name='y2'/>
+        <int32_t name='mouse_l_cur'/>
+        <int32_t name='mouse_r_cur'/>
+        <bool/>
+        <int32_t name='flag' comment='for standardscrolling'/>
+        <int32_t/>
+        <int32_t/>
+    </class-type>
+
+    <class-type type-name='layer_object_buttonst' inherits-from='layer_object'>
+        <int32_t name='x1'/>
+        <int32_t name='y1'/>
+        <int32_t name='x2'/>
+        <int32_t name='y2'/>
+        <int32_t name='mouse_l_cur'/>
+        <int32_t name='mouse_r_cur'/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t/>
+        <int8_t/>
+        <int8_t/>
+    </class-type>
+
     <class-type type-name='viewscreen_layer' original-name='viewscreen_layerst' inherits-from='viewscreen'>
-        <stl-vector type-name='pointer' name='layer_objs'/>
+        <stl-vector name="layer_objects">
+            <pointer type-name='layer_object'/>
+        </stl-vector>
     </class-type>
 
     <struct-type type-name='interfacest'>
-        <stl-vector name='reports'>
-            <pointer type-name='report'/>
-        </stl-vector>
-        <stl-vector name='popups'>
-            <pointer type-name='popup_message'/>
-        </stl-vector>
-        <int32_t name='report_timer'/>
+        <compound name='announcements'>
+            <stl-vector name='reports'>
+                <pointer type-name='report'/>
+            </stl-vector>
+            <stl-vector name='popups'>
+                <pointer type-name='popup_message'/>
+            </stl-vector>
+            <int32_t name='report_timer'/>
+        </compound>
+        <int8_t name='current_key'/>
+        <int8_t name='current_shift'/>
         <int8_t/>
-        <int8_t/>
-        <int8_t/>
-        <int8_t/>
-        <int8_t/>
+        <int8_t name='current_ctrl'/>
+        <int8_t name='current_alt'/>
 
-        <static-array count='2048' type-name='stl-string'/>
+        <static-array count='256' name='keyNames'>
+            <stl-string name='normal'/>
+            <stl-string name='shift'/>
+            <stl-string name='ctrl'/>
+            <stl-string name='ctrl_shift'/>
+            <stl-string name='alt'/>
+            <stl-string name='alt_shift'/>
+            <stl-string name='alt_ctrl'/>
+            <stl-string name='alt_ctrl_shift'/>
+        </static-array>
 
         <compound name='view' type-name='viewscreen'/>
 
@@ -63,8 +147,8 @@
             <int32_t/>
             <int16_t/>
             <int8_t name='is_shift'/>
-            <int8_t/>
-            <int8_t/>
+            <int8_t name='is_ctrl'/>
+            <int8_t name='is_alt'/>
         </static-array>
         <int32_t/>
         <int32_t/>
@@ -810,16 +894,34 @@
         <int32_t/>
     </class-type>
 
+    <struct-type type-name='assign_trade_status'> assumed
+        <pointer name='item' type-name='item'/>
+        <int32_t name="distance"/>
+        <enum base-type='int8_t' name="status">
+            <enum-item name='RemoveTrading' value='-2'/>
+            <enum-item name='RemovePending'/>
+            <enum-item name='None'/>
+            <enum-item name='AddPending'/>
+            <enum-item name='Pending'/>
+            <enum-item name='Trading'/>
+        </enum>
+        <bool name='unk' comment='mandate?'/>
+        <int32_t name="value"/>
+        <int32_t name="weight"/>
+    </struct-type>
+
     <class-type type-name='viewscreen_layer_assigntradest' inherits-from='viewscreen_layer'>
-        <stl-vector type-name='pointer'/>
-        <int32_t/>
+        <stl-vector name='info'>
+            <pointer type-name='assign_trade_status'/>
+        </stl-vector>
+        <pointer name='depot' type-name='building_tradedepotst'/>
         <static-array count='44'>
             <stl-vector type-name='pointer'/>
         </static-array>
-        <stl-vector type-name='pointer'/>
-        <int8_t/>
-        <int8_t/>
-        <int8_t/>
+        <stl-vector name='visible_lists' type-name='int16_t'/>
+        <bool name='sort_distance'/>
+        <bool name='pending_on_top'/>
+        <bool name='filter_mandates'/>
         <int32_t/>?
         <int8_t/>
         <int32_t/>?

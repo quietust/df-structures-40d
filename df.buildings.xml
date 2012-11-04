@@ -685,7 +685,7 @@
     </struct-type>
 
     <class-type type-name='building_trapst' inherits-from='building_actual'>
-        <enum base-type='int16_t' type-name='trap_type'/>
+        <enum base-type='int16_t' name='trap_type' type-name='trap_type'/>
         <int8_t name='state' comment='1 = pulled, tripped/needs reloading'/>
         <int16_t/>
         <int16_t/>

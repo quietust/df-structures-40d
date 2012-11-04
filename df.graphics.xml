@@ -37,7 +37,7 @@
         <static-array name='screentexpos_cf' count='200'><static-array type-name='uint8_t' count='200'/></static-array>
         <static-array name='screentexpos_cbr' count='200'><static-array type-name='uint8_t' count='200'/></static-array>
         <static-array name='screen' count='200'><static-array count='200'>
-            <int8_t name='char'/>
+            <int8_t name='chr'/>
             <int8_t name='fore'/>
             <int8_t name='back'/>
             <int8_t name='bright'/>

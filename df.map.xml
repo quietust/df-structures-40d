@@ -197,7 +197,7 @@
         </stl-vector>
 
         <stl-vector name='flows'>
-            <pointer type-name='flow'/>
+            <pointer type-name='flow_info'/>
         </stl-vector>
 
         <compound name='flow_pool' type-name='flow_reuse_pool'/>
@@ -555,7 +555,7 @@
         <enum-item name='SeaFoam'/>
     </enum-type>
 
-    <struct-type type-name='flow'>
+    <struct-type type-name='flow_info'>
         <enum type-name='flow_type' base-type='int16_t' name='type'/>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>

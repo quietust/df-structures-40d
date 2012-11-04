@@ -87,7 +87,7 @@
 
     <global-object name='flows'>
         <stl-vector>
-            <pointer type-name='flow'/>
+            <pointer type-name='flow_info'/>
         </stl-vector>
     </global-object>
 

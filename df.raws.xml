@@ -22,8 +22,8 @@
             <stl-vector name='glosses'>
                 <pointer key-field='id'>
                     <stl-string name='id'/>
-                    <stl-string name='old'/>
-                    <stl-string name='new'/>
+                    <stl-string name='oldtext'/>
+                    <stl-string name='newtext'/>
                 </pointer>
             </stl-vector>
         </compound>

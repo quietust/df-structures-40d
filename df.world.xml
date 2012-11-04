@@ -513,7 +513,7 @@
         <int32_t name='frame_counter' comment='increases by 1 every time . is pressed'/>
 
         <stl-vector name='orphaned_flows' comment='flows that are not tied to a map_block'>
-            <pointer type-name='flow'/>
+            <pointer type-name='flow_info'/>
         </stl-vector>
 
         <compound name='pathfinder'>

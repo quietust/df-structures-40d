@@ -231,7 +231,7 @@
                     <pointer name='unit' type-name='unit'/>
                     <pointer name='building' type-name='building'/>
                     <pointer name='vermin' type-name='vermin'/>
-                    <pointer name='flow' type-name='flow'/>
+                    <pointer name='flow' type-name='flow_info'/>
                 </compound>
             </pointer>
         </stl-vector>

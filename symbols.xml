@@ -16,19 +16,27 @@
 
         .bss compound - THAT IS, NOT SIMPLE INTEGER VARIABLES!
 
-        <global-address name='cursor_unit_list'/>
+        <global-address name='created_item_type' value='0x156f7cc'/>
+        <global-address name='created_item_subtype' value='0x1707f14'/>
+        <global-address name='created_item_material' value='0x1705304'/>
+        <global-address name='created_item_matgloss' value='0x1381ea8'/>
+        <global-address name='created_item_count' value='0x1381e78'/>
         <global-address name='enabler' value='0x13814a0'/>
+        <global-address name='flows' value='0x1707e08'/>
         <global-address name='gps' value='0x1707f38'/>
         <global-address name='gview' value='0x1393270'/>
         <global-address name='init' value='0x1706cf8'/>
+        <global-address name='timed_events' value='0x1381e88'/>
         <global-address name='ui' value='0x1381ed8'/>
         <global-address name='ui_advmode' value='0x1707e18'/>
-        <global-address name='ui_build_selector'/>
-        <global-address name='ui_look_list'/>
+        <global-address name='ui_build_selector' value='0x1706ae0'/>
+        <global-address name='ui_building_assign_type' value='0x1707f24'/>
+        <global-address name='ui_building_assign_is_marked' value='0x1381ec8'/>
+        <global-address name='ui_building_assign_units' value='0x156f7fc'/>
+        <global-address name='ui_building_assign_items' value='0x1381eb8'/>
+        <global-address name='ui_look_list' value='0x1707f04'/>
         <global-address name='ui_sidebar_menus' value='0x1705318'/>
         <global-address name='world' value='0x156f810'/>
-        <global-address name='timed_events' value='0x1381e88'/>
-        <global-address name='flows'/>
 
         .bss primitive
 
@@ -37,21 +45,56 @@
         <global-address name='cur_season' value='0xcdef12'/>
         <global-address name='cur_season_tick' value='0xd45804'/>
 
-        <global-address name='current_weather'/>
+        <global-address name='current_weather' value='0x1381458'/>
 
         <global-address name='job_next_id'/>
         <global-address name='pause_state' value='0x138147f'/>
+        <global-address name='process_dig' value='0x1381471'/>
+        <global-address name='process_jobs' value='0x1381472'/>
 
-        <global-address name='ui_building_item_cursor'/>
-        <global-address name='ui_look_cursor'/>
-        <global-address name='ui_selected_unit'/>
-        <global-address name='ui_unit_view_mode'/>
-        <global-address name='ui_workshop_in_add'/>
-        <global-address name='ui_workshop_job_cursor'/>
+        <global-address name='ui_building_in_assign' value='0x138147c'/>
+        <global-address name='ui_building_in_resize' value='0x138147d'/> ???
+        <global-address name='ui_building_item_cursor' value='0xd8bf24'/>
+        <global-address name='ui_look_cursor' value='0xd73860'/>
+        <global-address name='ui_selected_unit' value='0xd870f4'/>
+        <global-address name='ui_unit_view_mode' value='0xd59d60'/>
+        <global-address name='ui_workshop_in_add' value='0xd45802'/>
+        <global-address name='ui_workshop_job_cursor' value='0x1381454'/>
 
         <global-address name='window_x' value='0xd457f4'/>
         <global-address name='window_y' value='0xd73868'/>
         <global-address name='window_z' value='0xd73844'/>
+
+        <global-address name='debug_nopause' value='0x138148e'/>
+        <global-address name='debug_nomoods' value='0x138148f'/>
+        <global-address name='debug_combat' value='0x1381490'/>
+        <global-address name='debug_wildlife' value='0x1381491'/>
+        <global-address name='debug_nodrink' value='0x1381492'/>
+        <global-address name='debug_noeat' value='0x1381493'/>
+        <global-address name='debug_nosleep' value='0x1381494'/>
+        <global-address name='debug_showambush' value='0x1381495'/>
+        <global-address name='debug_fastmining' value='0x1381496'/>
+        <global-address name='debug_nothought' value='0x1381497'/>
+        <global-address name='debug_noberserk' value='0x1381498'/>
+        <global-address name='debug_turbospeed' value='0x1381499'/>
+
+
+        <global-address name='art_image_chunk_next_id' value='0xd73858'/>
+        <global-address name='artifact_next_id' value='0xd59d74'/>
+        <global-address name='building_next_id' value='0xd870f0'/>
+        <global-address name='entity_next_id' value='0x138144c'/>
+        <global-address name='hist_event_collection_next_id' value='0xd59d64'/>
+        <global-address name='hist_event_next_id' value='0xd8dd3c'/>
+        <global-address name='hist_figure_next_id' value='0xd457fc'/>
+        <global-address name='item_next_id' value='0xd0ae44'/>
+        <global-address name='job_next_id' value='0xcdeefc'/>
+        <global-address name='machine_next_id' value='0xd7385c'/>
+        <global-address name='nemesis_next_id' value='0x1381448'/>
+        <global-address name='proj_next_id' value='0xd7384c'/>
+        <global-address name='schedule_next_id' value='0xcdee28'/>
+        <global-address name='task_next_id' value='0xd0ae38'/>
+        <global-address name='unit_chunk_next_id' value='0xd457f0'/>
+        <global-address name='unit_next_id' value='0xd59d6c'/>
 
 <!--
         <vtable-address name=''/>
