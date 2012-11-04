@@ -176,7 +176,14 @@
                 <pointer type-name='unit'/>
             </stl-vector>
 
-            <static-array name='other' count='4'>
+            <stl-vector name='active'>
+                <comment>
+                    not sorted; [0] is adventurer; removed if kidnapped etc but not if dead
+                </comment>
+                <pointer type-name='unit'/>
+            </stl-vector>
+
+            <static-array name='other' count='3'>
                 <stl-vector>
                     <pointer type-name='unit'/>
                 </stl-vector>
