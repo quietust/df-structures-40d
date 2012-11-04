@@ -137,8 +137,8 @@
     </bitfield-type>
 
     <struct-type type-name='job_item_filter'>
-        <enum base-type='int16_t' name="item_type" type-name='item_type'/>
-        <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
+        <enum base-type='int32_t' name="item_type" type-name='item_type'/>
+        <int32_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
 
@@ -150,12 +150,20 @@
             </stl-vector>
         </pointer>
 
-        <bool name="use_matgloss_1"/>
-        <bool name="use_matgloss_2"/>
+        <bool name="use_matgloss"/>
 
         <compound name="flags2" type-name='job_item_flags2'/>
         <bool name="use_flags2"/>
 
+        <stl-string name='reaction_class'/>
+        <int16_t name="metal_ore" ref-target='matgloss_metal'/>
+
+        <bool name="use_metal_ore"/>
+        <bool name="use_reaction_class"/>
+
+        <compound name='pos' type-name='coord'/>
+
+        <pointer name="unit" type-name='unit'/>
         <pointer name="job" type-name='job'/>
         <pointer name="building" type-name='building'/>
     </struct-type>

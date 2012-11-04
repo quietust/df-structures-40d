@@ -1,54 +1,115 @@
 <data-definition>
     -- BUILDING COMPONENT ITEM SELECTION
 
-    <struct-type type-name='ui_build_selector'>
-        <compound name='criteria'>
-            <stl-vector name='item_types'>
-                <enum base-type='int32_t' type-name='item_type'/>
-            </stl-vector>
-            <stl-vector name='materials'>
-                <enum base-type='int16_t' type-name='material_type'/>
-            </stl-vector>
-            <stl-vector name='quantities' type-name='int32_t'/>
-            <stl-vector name='item_vecs'>
-                <pointer><stl-vector><pointer type-name='item'/></stl-vector></pointer>
-            </stl-vector>
-        </compound>
+    <struct-type type-name='ui_build_item_req'>
+        <comment>
+            When creating a building, one record per required item type.
+        </comment>
 
-        <compound name='improved'>
-            <stl-vector name='items'>
-                <pointer type-name='item'/>
-            </stl-vector>
-            <stl-vector name='category' type-name='int16_t'/>
-        </compound>
+        <compound name='filter' type-name='job_item_filter'/>
 
-        <compound name='all'>
-            <stl-vector name='items'>
-                <pointer type-name='item'/>
-            </stl-vector>
-            <stl-vector name='category' type-name='int16_t'/>
-        </compound>
-
-        <compound name='visible'>
-            <stl-vector name='items'>
-                <pointer type-name='item'/>
-            </stl-vector>
-            <stl-vector name='selected' type-name='int8_t'/>
-            <stl-vector name='category' type-name='int16_t'/>
-        </compound>
-
-        <stl-vector name='selected_items'>
+        <stl-vector name='candidates'>
             <pointer type-name='item'/>
         </stl-vector>
+        <stl-vector name='candidate_selected' type-name='bool'/>
+        <stl-vector name='unk_a0' type-name='int16_t'/>
+        <stl-vector name='candidate_enabled' type-name='bool'/>
 
-        <int16_t name='categories_required'/>
-        <int16_t name='categories_total'/>
-        <int32_t name='cursor_position'/>
-        <int16_t name='cur_category'/>
+        <int16_t name="count_required"/>
+        <int16_t name="count_max" comment='if 0, fixed at required'/>
+        <int16_t name="count_provided"/>
+    </struct-type>
+
+    <enum-type type-name='build_req_choice_type'>
+        <enum-item name='General'/>
+        <enum-item name='Specific'/>
+    </enum-type>
+
+    <class-type type-name='build_req_choicest'>
+        <comment>One choice in the build item selector.</comment>
+        <int32_t name="distance"/>
+
+        <virtual-methods>
+            <vmethod ret-type='build_req_choice_type' name='getType'/>
+            <vmethod name='getName'>
+                <pointer type-name='stl-string' name='str'/>
+            </vmethod>
+            <vmethod ret-type='int32_t'/>
+            <vmethod ret-type='bool' name='isCandidate'>
+                <int32_t name='item_id'/>
+            </vmethod>
+            <vmethod ret-type='bool'/>
+            <vmethod ret-type='int32_t' name='getUsedCount'/>
+            <vmethod ret-type='int32_t' name='getNumCandidates'/>
+            <vmethod/>
+        </virtual-methods>
+    </class-type>
+
+    <class-type type-name='build_req_choice_genst' inherits-from='build_req_choicest'>
+        <enum base-type='int16_t' name="item_type" type-name='item_type'/>
+        <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
+
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
+
+        <stl-vector name="candidates">
+            <int32_t>
+                <code-helper name='refers-to'>
+                    (let* ((selector $global.ui_build_selector)
+                           (req $selector.requirements[$selector.req_index]))
+                      $req.candidates[$])
+                </code-helper>
+            </int32_t>
+        </stl-vector>
+
+        <int32_t name="used_count"/>
+    </class-type>
+
+    <class-type type-name='build_req_choice_specst' inherits-from='build_req_choicest'>
+        <pointer name='candidate' type-name='item'/>
+        <int32_t name='candidate_id'>
+            <code-helper name='refers-to'>
+                (let* ((selector $global.ui_build_selector)
+                       (req $selector.requirements[$selector.req_index]))
+                  $req.candidates[$])
+            </code-helper>
+        </int32_t>
+    </class-type>
+
+    <struct-type type-name='ui_build_selector'>
+        <stl-vector name='requirements'>
+            <pointer type-name='ui_build_item_req'/>
+        </stl-vector>
+
+        <stl-vector name='choices'>
+            <pointer type-name='build_req_choicest'/>
+        </stl-vector>
+
+        <enum base-type='int32_t' name="building_type"
+              type-name='building_type' comment='if -1, in Build menu; otherwise select item'/>
+        <int16_t name="building_subtype"/>
+
+        <int32_t name="stage" comment='0 no materials, 1 place, 2 select item'/>
+
+        <int16_t name="req_index"/>
+        <int16_t name="sel_index"/>
+
+        <int32_t name="is_grouped"/>
+
+        <stl-vector name='errors'>
+            <pointer type-name='stl-string'/>
+        </stl-vector>
+
+        <static-array name='tiles' count='10'>
+            <static-array type-name='int32_t' count='10'/>
+        </static-array>
+
         <int16_t/>
-        <int16_t name='min_items_needed'/>
-        <int32_t/>
-        <int32_t/>
+
+        <compound name='plate_info' type-name='pressure_plate_info'/>
+
+        <stl-vector name='unk6' type-name='int16_t'/>
+        <stl-vector name='unk7' type-name='int16_t'/>
     </struct-type>
 
     -- MISC. SIDEBAR MENUS
