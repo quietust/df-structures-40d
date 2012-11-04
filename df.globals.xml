@@ -123,18 +123,6 @@
 
     <global-object name='world' type-name='world'/>
 
-    <global-object name='timed_events'>
-        <stl-vector>
-            <pointer type-name='timed_event'/>
-        </stl-vector>
-    </global-object>
-
-    <global-object name='flows'>
-        <stl-vector>
-            <pointer type-name='flow_info'/>
-        </stl-vector>
-    </global-object>
-
     -- .bss primitive
 
     <global-object name='art_image_chunk_next_id' type-name='int32_t'/>
@@ -166,8 +154,6 @@
             </static-array>
         </static-array>
     </global-object>
-
-    <global-object name='job_next_id' type-name='int32_t'/>
 
     <global-object name='pause_state' type-name='bool'/>
 
