@@ -413,7 +413,7 @@
         <pointer name='feature' type-name='feature'/>
     </struct-type>
 
-    <struct-type type-name='feature_alteration' original-name='feature_alterationst'>
+    <struct-type type-name='feature_alteration'>
         <int16_t/>
         <int32_t/>
         <int32_t/>
