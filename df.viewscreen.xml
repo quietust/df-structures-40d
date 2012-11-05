@@ -788,24 +788,17 @@
 
     <class-type type-name='viewscreen_layer_stockpilest' inherits-from='viewscreen_layer'>
         <pointer name="settings" type-name='stockpile_settings'/>
-        <int32_t name='cur_group'/>
-        <int32_t name='cur_list'/>
-        <stl-vector name="group_ids" type-name='int32_t'/>
-        <stl-vector name="group_bits" type-name='int32_t'/>
-        <stl-vector name="list_ids" type-name='int32_t'/>
-<!--
         <enum name="cur_group" type-name='stockpile_list' base-type='int32_t'/>
         <enum name="cur_list" type-name='stockpile_list' base-type='int32_t'/>
         <stl-vector name="group_ids">
             <enum type-name='stockpile_list' base-type='int32_t'/>
         </stl-vector>
         <stl-vector name="group_bits">
-            <compound type-name='stockpile_group_set'/>
+            <compound type-name='item_category'/>
         </stl-vector>
         <stl-vector name="list_ids">
             <enum type-name='stockpile_list' base-type='int32_t'/>
         </stl-vector>
--->
         <stl-vector name="item_names">
             <pointer type-name='stl-string'/>
         </stl-vector>
