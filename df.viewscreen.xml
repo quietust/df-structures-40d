@@ -14,7 +14,7 @@
         
         <virtual-methods>
             <vmethod name='update'/>
-            <vmethod ret-type='bool' name='use_update_vmethod'/>
+            <vmethod ret-type='bool' name='use_old_interface' comment='use update instead of feed+logic+render'/>
             <vmethod name='feed'/>
             <vmethod name='logic'/>
             <vmethod name='render'/>
@@ -560,11 +560,18 @@
     </class-type>
 
     <class-type type-name='viewscreen_unitjobsst' inherits-from='viewscreen'>
-        <int8_t/>
-        <int8_t/>
-        <int32_t/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
+        <enum base-type='int8_t' name="mode">
+            <enum-item name='Jobs'/>
+            <enum-item name='Units'/>
+        </enum>
+        <bool name="allow_zoom"/>
+        <int32_t name="cursor_pos"/>
+        <stl-vector name="jobs">
+            <pointer type-name='job'/>
+        </stl-vector>
+        <stl-vector name="units">
+            <pointer type-name="unit"/>
+        </stl-vector>
     </class-type>
 
     <class-type type-name='viewscreen_treasurelistst' inherits-from='viewscreen'>
