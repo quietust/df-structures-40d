@@ -871,9 +871,9 @@
     </class-type>
 
     <class-type type-name='viewscreen_tradelistst' inherits-from='viewscreen'>
-        <int32_t/>
-        <int32_t/>
-        <stl-vector type-name='pointer'/>
+        <int32_t name='cursor' comment='speculated'/>
+        <pointer name='depot' type-name='building_tradedepotst'/>
+        <stl-vector name='caravans' pointer-type='caravan_state'/>
     </class-type>
 
     <class-type type-name='viewscreen_tradegoodsst' inherits-from='viewscreen'>
