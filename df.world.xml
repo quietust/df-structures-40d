@@ -546,9 +546,9 @@
         <stl-vector name='map_features'>
             <pointer type-name='feature_init'/>
         </stl-vector>
-        <stl-vector comment='related to map feature creatures'/>
-        <stl-vector comment='related to map feature creatures'/>
-        <stl-vector comment='related to map feature creatures'/>
+        <stl-vector type-name='int16_t' comment='related to map feature creatures'/>
+        <stl-vector type-name='int16_t' comment='related to map feature creatures'/>
+        <stl-vector type-name='int16_t' comment='related to map feature creatures'/>
         <stl-vector/>
         <stl-vector/>
         <stl-vector/>

@@ -652,6 +652,7 @@
         <int32_t/>
         <int32_t/>
         <stl-vector/>
+        <int32_t/>
     </struct-type>
 </data-definition>
 
