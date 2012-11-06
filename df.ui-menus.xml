@@ -235,15 +235,21 @@
                 <pointer type-name='interface_button_buttonst'/>
             </stl-vector>
             <int32_t/>
-            <int32_t/>
+            <int32_t/> int8?
+            <int32_t/> int8?
         </compound>
 
         <compound name='unit'>
-            <stl-vector name='selected_unit'>
-                <int32_t refers-to='$global.world.units.other[0][$]'/>
+            <stl-vector name='inv_items'>
+                <pointer type-name='unit_inventory_item'/>
+            </stl-vector>
+            <stl-vector name='inv_spatters'>
+                <pointer type-name='unit_contaminant'/>
+            </stl-vector>
+            <stl-vector name='list'>
+                <int32_t refers-to='$global.world.units.active[$]'/>
             </stl-vector>
 
-            <int8_t/>
             <int8_t/>
         </compound>
 
@@ -255,13 +261,20 @@
             <int8_t/>
         </compound>
 
+        <static-array type-name='int32_t' count='926'/>
+
         <stl-string/>
         <stl-vector>
             <pointer type-name='stl-string'/>
         </stl-vector>
 
         <int32_t/>
+        <int32_t/>?
+        <int8_t/>
+        <stl-string/>
+        <int8_t/>
         <int32_t/>
+        <int8_t/>
     </struct-type>
 
     <struct-type type-name='ui_look_list'>
