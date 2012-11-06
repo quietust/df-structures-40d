@@ -895,8 +895,8 @@
         </stl-vector>
         <stl-vector name="trader_selected" type-name='bool'/>
         <stl-vector name="broker_selected" type-name='bool'/>
-        <stl-vector name="trader_count" type-name='int32_t'/>
-        <stl-vector name="broker_count" type-name='int32_t'/>
+        <int32_t name="trader_cursor"/>
+        <int32_t name="broker_cursor"/>
         <bool name="in_right_pane"/>
         <int16_t name='trade_reply'/>
         <int8_t/>
