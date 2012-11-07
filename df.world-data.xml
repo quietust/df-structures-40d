@@ -392,7 +392,7 @@
     </struct-type>
 
     <struct-type type-name='world_data'>
-        <compound type-name='language_name' name='world_name'/>
+        <compound type-name='language_name' name='name'/>
 
         <static-array count='15' type-name='int8_t'/>
         <int32_t name='next_site_id'/>
