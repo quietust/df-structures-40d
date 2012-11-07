@@ -1,6 +1,5 @@
 <data-definition>
-    <struct-type type-name='report'
-                 instance-vector='$global.gview.reports'>
+    <struct-type type-name='report'>
         <static-string name='text' size='90'/>
         <code-helper name='describe'>$.text</code-helper>
 

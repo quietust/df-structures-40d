@@ -40,7 +40,7 @@
     </class-type>
 
     <class-type type-name='reaction_reagent_classst' inherits-from='reaction_reagent'>
-        <stl-string name='class'/>
+        <stl-string name='reaction_class'/>
     </class-type>
 
     <class-type type-name='reaction_reagent_metal_orest' inherits-from='reaction_reagent'>

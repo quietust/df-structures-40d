@@ -39,7 +39,7 @@
         </code-helper>
     </struct-type>
 
-    <struct-type type-name='coord32' custom-methods='true'>
+    <struct-type type-name='coord32'>
         <int32_t name='x' init-value='-30000'/>
         <int32_t name='y' init-value='-30000'/>
         <int32_t name='z' init-value='-30000'/>
@@ -47,7 +47,7 @@
         <code-helper name='describe'>(fmt "(~A,~A,~A)" $.x $.y $.z)</code-helper>
     </struct-type>
 
-    <struct-type type-name='coord32_path' custom-methods='true'>
+    <struct-type type-name='coord32_path'>
         <stl-vector type-name='int32_t' name='x'/>
         <stl-vector type-name='int32_t' name='y'/>
         <stl-vector type-name='int32_t' name='z'/>

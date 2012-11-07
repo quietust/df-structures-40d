@@ -123,7 +123,7 @@
         <stl-string name="name_plural"/>
         <int32_t name='damage'/>
         <enum base-type='int32_t' name='damage_type' type-name='damage_type'/>
-        <stl-string name="class"/>
+        <stl-string name="ammo_class"/>
         <int16_t name="stick_chance"/>
     </class-type>
 
@@ -280,10 +280,10 @@
     </class-type>
 
     <class-type type-name='itemdef_siegeammost' inherits-from='itemdef'
-                instance-vector='$global.world.raws.itemdefs.siege_ammo'>
+                instance-vector='$global.world.raws.itemdefs.siegeammo'>
         <stl-string name="name"/>
         <stl-string name="name_plural"/>
-        <stl-string name="class"/>
+        <stl-string name="ammo_class"/>
     </class-type>
 
     <enum-type type-name='toy_flags'>
