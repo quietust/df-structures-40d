@@ -534,39 +534,41 @@
         <int16_t name="unk_16"/>
     </struct-type>
 
+    <enum-type base-type='int16_t' type-name='misc_trait_type'>
+        <enum-item name='RequestWaterCooldown'/> for thirsty patients
+        <enum-item name='RequestFoodCooldown'/> for hungry patients
+        <enum-item name='RequestRescueCooldown'/>
+        <enum-item name='GetDrinkCooldown'/>
+        <enum-item name='GetFoodCooldown'/>
+        <enum-item name='Migrant'/>
+        <enum-item name='RoomComplaint'/>
+        <enum-item name='ResidentCreature' comment='upon reaching zero, it gets a name'/>
+        <enum-item/>
+        <enum-item name='ClaimTrinketCooldown'/>
+        <enum-item name='ClaimClothingCooldown'/>
+        <enum-item name='WantsDrink' comment='ALCOHOLIC'/>
+        <enum-item name='LikesOutdoors' comment='MOUNTAIN'/>
+        <enum-item name='Hardened' comment='COMBATHARDNESS'/>
+        <enum-item name='TimeSinceBreak' comment='TIME_SINCE_BREAK'/>
+        <enum-item name='OnBreak' comment='ON_BREAK'/>
+        <enum-item name='PrepareToDie'/>
+        <enum-item name='CaveAdapt' comment='CAVE_ADAPT'/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+        <enum-item/>
+    </enum-type>
+
     <struct-type type-name='unit_misc_trait'>
-        <enum base-type='int16_t' name='id'>
-            <enum-item name='RequestWaterCooldown'/> for thirsty patients
-            <enum-item name='RequestFoodCooldown'/> for hungry patients
-            <enum-item name='RequestRescueCooldown'/>
-            <enum-item name='GetDrinkCooldown'/>
-            <enum-item name='GetFoodCooldown'/>
-            <enum-item name='Migrant'/>
-            <enum-item name='RoomComplaint'/>
-            <enum-item name='ResidentCreature' comment='upon reaching zero, it gets a name'/>
-            <enum-item/>
-            <enum-item name='ClaimTrinketCooldown'/>
-            <enum-item name='ClaimClothingCooldown'/>
-            <enum-item name='WantsDrink' comment='ALCOHOLIC'/>
-            <enum-item name='LikesOutdoors' comment='MOUNTAIN'/>
-            <enum-item name='Hardened' comment='COMBATHARDNESS'/>
-            <enum-item name='TimeSinceBreak' comment='TIME_SINCE_BREAK'/>
-            <enum-item name='OnBreak' comment='ON_BREAK'/>
-            <enum-item name='PrepareToDie'/>
-            <enum-item name='CaveAdapt' comment='CAVE_ADAPT'/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-            <enum-item/>
-        </enum>
+        <enum base-type='int16_t' type-name='misc_trait_type' name='id'/>
 
         <code-helper name='describe'>(fmt "id=~A value=~A" $.id $.value)</code-helper>
 

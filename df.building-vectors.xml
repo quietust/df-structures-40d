@@ -118,7 +118,8 @@
             <item-attr name='building' value='Bed'/>
         </enum-item>
         <enum-item name='ROAD'>
-            <item-attr name='building' value='Road'/>
+            <item-attr name='building' value='RoadDirt'/>
+            <item-attr name='building' value='RoadPaved'/>
         </enum-item>
         <enum-item name='FARM_PLOT'>
             <item-attr name='building' value='FarmPlot'/>

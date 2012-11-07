@@ -57,7 +57,6 @@
 
         <enum-item name='STONE'>
             <item-attr name='item' value='STONE'/>
-            <item-attr name='item' value='ORE'/>
         </enum-item>
         <enum-item name='ROCK'>
             <item-attr name='item' value='ROCK'/>
