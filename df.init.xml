@@ -44,10 +44,10 @@
         <int16_t name='show_embark_pit'/>
         <int16_t name='show_embark_other'/>
         <int16_t name='show_embark_tunnel'/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='cur_grid_x'/>
+        <int32_t name='cur_grid_y'/>
+        <int32_t name='prev_grid_x'/>
+        <int32_t name='prev_grid_y'/>
         <int32_t name='grid_x'/>
         <int32_t name='grid_y'/>
         <int32_t name='fullgrid_x'/>
