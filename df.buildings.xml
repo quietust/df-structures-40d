@@ -615,15 +615,15 @@
     </class-type>
 
     <class-type type-name='building_bridgest' inherits-from='building_actual'>
-        <bitfield name='flags' base-type='uint16_t'>
-            <flag-bit name='closed'/>
-            <flag-bit name='closing'/>
-            <flag-bit name='opening'/>
-            <flag-bit/>
-            <flag-bit name='unk'/>
-        </bitfield>
+        <compound name='gate_flags' type-name='gate_flags' init-value='1'/>
         <int8_t name='timer'/>
-        <int8_t name='direction'/>
+        <enum name='direction' base-type='int8_t'>
+            <enum-item name='Retracting' value='-1'/>
+            <enum-item name='Left'/>
+            <enum-item name='Right'/>
+            <enum-item name='Up'/>
+            <enum-item name='Down'/>
+        </enum>
         <int32_t name='material_amount'/>
     </class-type>
 
@@ -687,9 +687,13 @@
     <class-type type-name='building_trapst' inherits-from='building_actual'>
         <enum base-type='int16_t' name='trap_type' type-name='trap_type'/>
         <int8_t name='state' comment='1 = pulled, tripped/needs reloading'/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
+        <int16_t name='ready_timeout' comment='plate not active if > 0'/>
+        <int16_t name='fill_timer'/>
+        <bitfield base-type='uint16_t' name='stop_flags'>
+            <flag-bit name='disabled'/>
+            <flag-bit name='disabling'/>
+            <flag-bit name='enabling'/>
+        </bitfield>
         <stl-vector name='linked_mechanisms'>
             <pointer type-name='item'/>
         </stl-vector>
