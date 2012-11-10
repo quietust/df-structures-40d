@@ -470,6 +470,94 @@
         <stl-vector type-name='int32_t'/>
     </class-type>
 
+    <enum-type type-name='world_construction_type'>
+        <enum-item name='ROAD'/>
+        <enum-item name='TUNNEL'/>
+        <enum-item name='BRIDGE'/>
+        <enum-item name='WALL'/>
+    </enum-type>
+
+    <class-type type-name='world_construction_square' original-name='world_construction_squarest'>
+        <code-helper name='describe'> (describe-obj $.region_pos) </code-helper>
+
+        <compound name='region_pos' type-name='coord2d'/>
+        <int32_t name='construction_id' ref-target='world_construction'/>
+
+        <stl-vector name='embark_x' type-name='int16_t'/>
+        <stl-vector name='embark_y' type-name='int16_t'/>
+        <stl-vector name='embark_unk' type-name='int16_t'/>
+        <stl-vector name='embark_z' type-name='int16_t'/>
+
+        <virtual-methods>
+            <vmethod ret-type='world_construction_type' name='getType'/>
+            <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
+            <vmethod name='read_file'>
+                <pointer comment='file_compressorst'/>
+                <int32_t name='loadversion'/>
+            </vmethod>
+            <vmethod is-destructor='true'/>
+            <vmethod comment='10 parms, possibly responsible for actually placing it on the map'/>
+        </virtual-methods>
+    </class-type>
+
+    <class-type type-name='world_construction_square_roadst' inherits-from='world_construction_square'>
+        <int16_t/>
+        <int16_t/>
+        <int16_t name='material'/>
+        <int16_t name='matgloss'/>
+    </class-type>
+
+    <class-type type-name='world_construction_square_tunnelst' inherits-from='world_construction_square'/>
+
+    <class-type type-name='world_construction_square_bridgest' inherits-from='world_construction_square'>
+        <int32_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t name='material'/>
+        <int16_t name='matgloss'/>
+    </class-type>
+
+    <class-type type-name='world_construction_square_wallst' inherits-from='world_construction_square'>
+        <int16_t/>
+        <int16_t/>
+        <int16_t name='material'/>
+        <int16_t name='matgloss'/>
+    </class-type>
+
+    <class-type type-name='world_construction' original-name='world_constructionst'
+                instance-vector='$global.world.world_data.constructions.list' key-field='id'>
+        <int32_t name='id'/>
+
+        <compound name='square_pos' type-name='coord2d_path'/>
+
+        <virtual-methods>
+            <vmethod ret-type='world_construction_type' name='getType'/>
+            <vmethod name='getName'><ret-type><pointer type-name='language_name'/></ret-type></vmethod>
+            <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
+            <vmethod name='read_file'>
+                <pointer comment='file_compressorst'/>
+                <int32_t name='loadversion'/>
+            </vmethod>
+            <vmethod is-destructor='true'/>
+        </virtual-methods>
+    </class-type>
+
+    <class-type type-name='world_construction_roadst' inherits-from='world_construction'>
+        <compound type-name='language_name' name='name'/>
+    </class-type>
+
+    <class-type type-name='world_construction_tunnelst' inherits-from='world_construction'>
+        <compound type-name='language_name' name='name'/>
+    </class-type>
+
+    <class-type type-name='world_construction_bridgest' inherits-from='world_construction'>
+        <compound type-name='language_name' name='name'/>
+    </class-type>
+
+    <class-type type-name='world_construction_wallst' inherits-from='world_construction'>
+        <compound type-name='language_name' name='name'/>
+    </class-type>
+
     <enum-type type-name='biome_type'>
         <enum-item name='MOUNTAIN'/>
         <enum-item name='GLACIER'/>
