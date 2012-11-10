@@ -7,15 +7,15 @@
         <flag-bit name='hostile' comment='Item owned by hostile'/>
         <flag-bit name='in_inventory' comment='Item in a creature or workshop inventory'/>
 
-        <flag-bit name='unk1' comment='unknown, lost (artifact)?, unusable, unseen'/>
+        <flag-bit name='removed' comment='completely invisible and with no position'/>
         <flag-bit name='in_building' comment='Part of a building (including mechanisms, bodies in coffins)'/>
-        <flag-bit name='unk2' comment='unknown, unseen'/>
+        <flag-bit name='container' comment='Set on anything that contains or contained items?'/>
         <flag-bit name='dead_dwarf' comment='Dwarfs dead body or body part'/>
 
         <flag-bit name='rotten' comment='Rotten food'/>
         <flag-bit name='spider_web' comment='Thread in spider web'/>
         <flag-bit name='construction' comment='Material used in construction'/>
-        <flag-bit name='unk3' comment='unknown, unseen, unusable'/>
+        <flag-bit name='encased' comment='Item encased in ice or obsidian'/>
 
         <flag-bit name='unk4' comment='unknown, unseen'/>
         <flag-bit name='murder' comment='Implies murder - used in fell moods'/>
@@ -28,8 +28,14 @@
         <flag-bit name='forbid' comment='Forbidden item'/>
 
         <flag-bit name='unk6' comment='unknown, unseen'/>
-        <flag-bit name='dump' comment='Designated for chasming'/>
+        <flag-bit name='dump' comment='Designated for dumping'/>
         <flag-bit name='on_fire' comment='Indicates if item is on fire, Will Set Item On Fire if Set!'/>
+        <flag-bit name='melt' comment='Designated for melting, if applicable'/>
+
+        <flag-bit name='hidden' comment='Hidden item'/>
+        <flag-bit name='in_chest' comment='Stored in chest/part of well?'/>
+        <flag-bit name='unk7' comment='unknown, unseen'/>
+        <flag-bit name='artifact2' comment='Artifact ?'/>
     </bitfield-type>
 
     <enum-type type-name='item_quality' base-type='int16_t'>
