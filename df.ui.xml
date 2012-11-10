@@ -364,23 +364,23 @@
         <int32_t name='bookkeeper_precision_reached'/>
         <int16_t name='bookkeeper_accuracy_level'/>
 
-        <stl-vector>
-            <pointer>
-                <int8_t/>
-                <int16_t/>
-                <int16_t/>
-                <stl-string/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-            </pointer>
-        </stl-vector>
-        <int16_t/>
-        <int32_t/>
-        <int8_t/>
-        <int8_t/>
-        <int16_t/>
-        <int16_t/>
+        <compound name='notes'>
+            <stl-vector name='notes'>
+                <pointer>
+                    <uint8_t name='tile'/>
+                    <int16_t name='fg_color'/>
+                    <int16_t name='bg_color'/>
+                    <stl-string name='name'/>
+                    <compound name='pos' type-name='coord'/>
+                </pointer>
+            </stl-vector>
+            <int16_t name='sym_selector'/>
+            <int32_t name='cur_note_index'/>
+            <bool name='in_edit_name_mode'/>
+            <uint8_t name='sym_tile'/>
+            <int16_t name='sym_fg_color'/>
+            <int16_t name='sym_bg_color'/>
+        </compound>
 
         <stl-vector/>
 
