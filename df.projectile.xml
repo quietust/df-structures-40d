@@ -33,7 +33,7 @@
         <int32_t name='min_hit_distance'/>
         <int32_t/>
 
-        <compound name='prev_pos' type-name='coord'/>
+        <compound name='prev_pos' type-name='coord32'/>
 
         <compound name='flags' type-name='projectile_flags'/>
 
