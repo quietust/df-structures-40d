@@ -1086,7 +1086,7 @@
         <int8_t/>
         <int8_t/>
         <int8_t/>
-        <compound>
+        <compound name='unk1'>
             <static-array count='103'>
                 <stl-vector/>
             </static-array>
@@ -1097,7 +1097,7 @@
         <compound type-name='language_name'/>
         <compound type-name='language_name'/>
         <int8_t/>
-        <compound>
+        <compound name='unk2'>
             <int16_t/>
             <int16_t/>
             <int16_t/>
