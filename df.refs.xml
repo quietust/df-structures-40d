@@ -194,8 +194,18 @@
 
     <struct-type type-name='specific_ref'>
         <enum type-name='specific_ref_type' name='type'/>
-        <pointer name='object'/>
-        <pointer name='unk'/>
+        <compound is-union='true'>
+            <pointer name='object'/>
+            <pointer name='unit' type-name='unit'/>
+            <pointer name='pet' type-name='pet_info'/>
+            <pointer name='screen' type-name='viewscreen'/>
+            <pointer name='vermin' type-name='vermin'/>
+            <pointer name='effect' type-name='effect_info'/>
+            <pointer name='job' type-name='job'/>
+        </compound>
+        <compound is-union='true' name='arg2'>
+            <pointer name='wrestle'/>
+        </compound>
     </struct-type>
 
     <enum-type type-name='histfig_entity_link_type'>
