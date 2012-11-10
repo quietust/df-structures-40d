@@ -492,8 +492,8 @@
         </stl-vector>
         <int32_t name='enemy_status_slot'/>
         <static-array name='traits' index-enum='personality_facet_type' type-name='int16_t' count='30'/>
-        <int32_t/>
-        <int8_t/>
+        <compound type-name='tile_designation' name='liquid_type'/> guess
+        <uint8_t name='liquid_depth'/> guess
         <int32_t/>
         <int32_t/>
         <int32_t/>
