@@ -371,7 +371,7 @@
     </class-type>
 
     <class-type type-name='block_square_event_world_constructionst' inherits-from='block_square_event'>
-        <int32_t name='stone' ref-target='matgloss_stone'/>
+        <int32_t name='construction_id' ref-target='world_construction'/>
         <compound name='tile_bitmask' type-name='tile_bitmask'/>
     </class-type>
 
