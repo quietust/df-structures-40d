@@ -365,7 +365,7 @@
         <int16_t name='bookkeeper_accuracy_level'/>
 
         <compound name='notes'>
-            <stl-vector name='notes'>
+            <stl-vector name='list'>
                 <pointer>
                     <uint8_t name='tile'/>
                     <int16_t name='fg_color'/>
