@@ -102,10 +102,11 @@
             <vmethod ret-type='int16_t' name='getRace'
                     comment='only for creature-derived items'/>
 
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
-            <vmethod ret-type='bool'/>
+            <vmethod ret-type='bool' name='isSharpStone'/>
+            <vmethod ret-type='bool' name='isCrystalGlassable'/>
+            <vmethod ret-type='bool' name='isMetalOre'> <int16_t name='matIndex'/> </vmethod>
+            <vmethod ret-type='bool' name='isReactionClass'> <pointer type-name='stl-string' name='reaction_class'/> </vmethod>
+
             -- 10
 
             <vmethod name='clearLastTempUpdateTS'/>
@@ -130,6 +131,10 @@
             <vmethod name='extinguish'/>
             <vmethod ret-type='int8_t' name='getGloveHandedness'/>
             <vmethod name='setGloveHandedness'> <int8_t/> </vmethod>
+            <vmethod ret-type='bool' name='isSpike'/>
+            <vmethod ret-type='bool' name='isScrew'/>
+            <vmethod ret-type='bool' name='isBuildMat'/>
+            <vmethod ret-type='bool' name='isTemperatureSafe'> <int8_t comment='1 fire, 2 magma'/> </vmethod>
             <vmethod name='pickRandomSubtype'> <pointer type-name='historical_entity'/> </vmethod>
             <vmethod/>
 
@@ -158,6 +163,7 @@
             <vmethod ret-type='int32_t' name='getRotTimer'/>
             <vmethod name='setRotTimer'> <int32_t name='val'/> </vmethod>
             <vmethod name='incrementRotTimer'/>
+            <vmethod/>
 
             -- 40
 
@@ -236,6 +242,11 @@
             <vmethod ret-type='bool' name='addWear'>
                 <int32_t name='delta'/> <bool name='simple'/> <bool name='lose_masterwork'/>
             </vmethod>
+            <vmethod ret-type='bool' name='incWearTimer'> <int32_t name='delta'/> </vmethod>
+            <vmethod ret-type='bool' name='checkWearDestroy'>
+                <bool name='simple'/> <bool name='lose_masterwork'/>
+            </vmethod>
+
             <vmethod name='addContaminant'>
                 <int32_t name='state'/>
                 <enum base-type='int32_t' name='material' type-name='material_type'/>
@@ -261,11 +272,14 @@
             <vmethod name='addImprovementFromClothOrDye'> <pointer type-name='item'/> </vmethod>
             <vmethod name='propagateUnitRefs'/> add to unit.owned_items/traded_items
             <vmethod ret-type='bool' name='isBag' comment='BOX made of cloth'/>
+            <vmethod/>
 
             <vmethod ret-type='int32_t' name='getStackSize'/>
             <vmethod name='addStackSize'> <int32_t name='amount'/> </vmethod>
             <vmethod name='setStackSize'> <int32_t name='amount'/> </vmethod>
             <vmethod ret-type='bool' name='isAmmoClass'> <pointer type-name='stl-string'/> </vmethod>
+            <vmethod/>
+            <vmethod/>
             <vmethod ret-type='bool' name='setTemperatureFromMap'>
                 <bool name='local'/> <bool name='contained'/>
             </vmethod>
@@ -295,6 +309,7 @@
             <vmethod name='setQuality'> <int16_t name='quality'/> </vmethod>
             <vmethod ret-type='int16_t' name='getQuality'/>
             <vmethod ret-type='int16_t' name='getOverallQuality'/>
+            <vmethod ret-type='int16_t' name='getImprovementQuality'/>
             <vmethod ret-type='int32_t' name='getDamage'/>
             <vmethod ret-type='bool' name='isImprovable'>
                 <pointer type-name='job'/>
