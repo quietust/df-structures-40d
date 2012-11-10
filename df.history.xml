@@ -899,10 +899,10 @@
             </static-array>
         </compound>
 
-        <stl-vector name='ages'>
+        <stl-vector name='eras'>
             <pointer>
                 <int32_t/>
-                <compound>
+                <compound name='unk1'>
                     <int16_t/>
                     <int32_t/>
                     <int32_t/>
@@ -910,7 +910,7 @@
                     <stl-string name='name'/>
                     <int32_t/>
                 </compound>
-                <compound>
+                <compound name='unk2'>
                     <int32_t/>
                     <int32_t/>
                     <int32_t/>
