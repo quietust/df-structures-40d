@@ -49,7 +49,7 @@
     </enum-type>
 
     <struct-type type-name='temperaturest'>
-        <uint16_t name='whole'/>
+        <uint16_t name='whole' init-value='10050'/>
         <int16_t name='fraction'/>
     </struct-type>
 
