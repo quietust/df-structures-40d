@@ -12,11 +12,12 @@
     </struct-type>
 
     <bitfield-type type-name='projectile_flags' base-type='uint8_t'>
-        <flag-bit name='no_destroy_on_impact'/>
+        <flag-bit name='no_impact_destroy'/>
         <flag-bit name='has_hit_ground'/>
-        <flag-bit/>
-        <flag-bit name='can_hit_unit'/>
-        <flag-bit name='pierces' comment='also destroys trees'/>
+        <flag-bit name='bouncing'/>
+        <flag-bit name='high_flying'/>
+
+        <flag-bit name='piercing'/>
     </bitfield-type>
 
     <class-type type-name='projectile' original-name='projst' key-field='id'>
@@ -28,10 +29,10 @@
         <compound name='origin_pos' type-name='coord32'/>
         <compound name='target_pos' type-name='coord32'/>
         <compound name='cur_pos' type-name='coord32'/>
-        <int32_t name='time_flown'/>
-        <int32_t name='momentum'/>
+        <int32_t name='distance_flown'/>
+        <int32_t name='fall_threshold'/>
         <int32_t name='min_hit_distance'/>
-        <int32_t/>
+        <int32_t name='min_ground_distance'/>
 
         <compound name='prev_pos' type-name='coord32'/>
 
@@ -40,7 +41,7 @@
         <int16_t name='fall_counter' comment='counts down from delay to 0, then it moves'/>
         <int16_t name='fall_delay'/>
 
-        <int32_t name='skill_level'/>
+        <int32_t name='hit_rating'/>
         <int32_t name='throw_strength'/>
         <int32_t/>
 
