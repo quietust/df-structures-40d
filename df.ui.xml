@@ -150,7 +150,7 @@
 
         <stl-vector type-name='pointer'/>
         <stl-vector name='activities'>
-            <pointer type-name='activity'/>
+            <pointer type-name='activity_info'/>
         </stl-vector>
 
         <stl-vector name='dip_meeting_info'>
