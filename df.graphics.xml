@@ -109,12 +109,12 @@
         <int32_t name='mouse_y_prev'/>
         <int32_t name='mouse_x'/>
         <int32_t name='mouse_y'/>
-        <int32_t name='mouse_lbut'/>
-        <int32_t name='mouse_rbut'/>
-        <int32_t name='mouse_lbut_down'/>
-        <int32_t name='mouse_rbut_down'/>
-        <int32_t name='mouse_lbut_up'/>
-        <int32_t name='mouse_rbut_up'/>
+        <int8_t name='mouse_lbut'/>
+        <int8_t name='mouse_rbut'/>
+        <int8_t name='mouse_lbut_down'/>
+        <int8_t name='mouse_rbut_down'/>
+        <int8_t name='mouse_lbut_up'/>
+        <int8_t name='mouse_rbut_up'/>
         <stl-vector/>
         <static-array name='ccolor' count='16'>
             <static-array count='3' type-name='s-float'/>
