@@ -1028,11 +1028,10 @@
             <enum-item name='Notes'/>
         </enum>
 
-        <compound>
             <compound name='region_pos' type-name='coord2d'/>
             <int32_t name="reclaim_site" ref-target='world_site'/>
             <compound name='biome_rgn' type-name='coord2d_path'/>
-        </compound>
+
         <compound name='embark_pos_min' type-name='coord2d'/>
         <compound name='embark_pos_max' type-name='coord2d'/>
         <compound name='embark_biome_rgn' type-name='coord2d'
