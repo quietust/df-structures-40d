@@ -41,7 +41,7 @@ sub emit_find_instance(\%$) {
     my $keyfield = $tag->getAttribute('key-field');
     my $keyfield_tag = find_subfield $tag, $keyfield;
     my $keytype = 'int';
-    my $vectype = "std::vector<$typename*>";
+    my $vectype = "stl::vector<$typename*>";
 
     if ($keyfield) {
         die "Could not find field $keyfield in $typename\n" unless $keyfield_tag;
@@ -72,10 +72,10 @@ sub emit_find_instance(\%$) {
         with_emit_static {
             emit_block {
                 emit "return ", $instance_vector, ";";
-            } "std::vector<$typename*>& ${typename}::get_vector() ";
+            } "stl::vector<$typename*>& ${typename}::get_vector() ";
 
             emit_block {
-                emit "std::vector<$typename*> &vec_ = get_vector();";
+                emit "stl::vector<$typename*> &vec_ = get_vector();";
 
                 if ($keyfield) {
                     emit "return binsearch_in_vector(vec_, id_);";

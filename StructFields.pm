@@ -78,7 +78,7 @@ our $cur_init_value = undef;
 sub add_simple_init($);
 
 my %custom_primitive_handlers = (
-    'stl-string' => sub { return "std::string"; },
+    'stl-string' => sub { return "stl::string"; },
 );
 
 my %custom_primitive_inits = (
@@ -95,18 +95,18 @@ my %custom_container_handlers = (
     'stl-vector' => sub {
         my $item = get_container_item_type($_, -void => 'void*');
         $item = 'char' if $item eq 'bool';
-        return "std::vector<$item >";
+        return "stl::vector<$item >";
     },
     'stl-deque' => sub {
         my $item = get_container_item_type($_, -void => 'void*');
-        return "std::deque<$item >";
+        return "stl::deque<$item >";
     },
     'stl-set' => sub {
         my $item = get_container_item_type($_, -void => 'void*');
-        return "std::set<$item >";
+        return "stl::set<$item >";
     },
     'stl-bit-vector' => sub {
-        return "std::vector<bool>";
+        return "stl::vector<bool>";
     },
     'df-flagarray' => sub {
         my $type = decode_type_name_ref($_, -attr_name => 'index-enum', -force_type => 'enum-type') || 'int';
