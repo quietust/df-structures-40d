@@ -15,8 +15,27 @@
         <enum-item name='REPLACE_ALL'/>
     </enum-type>
 
+    <enum-type type-name='init_z_view'>
+        <enum-item name='OFF'/>
+        <enum-item name='UNHIDDEN'/>
+        <enum-item name='CREATURE'/>
+        <enum-item name='ON'/>
+    </enum-type>
+
+    <enum-type type-name='init_idlers' base-type='int16_t'>
+        <enum-item name='OFF' value='-1'/>
+        <enum-item name='TOP'/>
+        <enum-item name='BOTTOM'/>
+    </enum-type>
+
+    <enum-type type-name='init_show_embark' base-type='int16_t'>
+        <enum-item name='NO'/>
+        <enum-item name='FINDER'/>
+        <enum-item name='ALWAYS'/>
+    </enum-type>
+
     <struct-type type-name='init_display'>
-        <df-flagarray name='flag' index-enum='init_display_flags'/>
+        <df-flagarray name='flags' index-enum='init_display_flags'/>
 
         <static-array name='nickname' count='4' index-enum='game_type'>
             <enum type-name='init_nickname_mode'/>
@@ -35,15 +54,15 @@
         <static-array name='sky_color' type-name='int16_t' count='3'/>
         <uint8_t name='chasm_tile'/>
         <static-array name='chasm_color' type-name='int16_t' count='3'/>
-        <int16_t name='idlers'/>
-        <int16_t name='show_embark_river'/>
-        <int16_t name='show_embark_pool'/>
-        <int16_t name='show_embark_m_pool'/>
-        <int16_t name='show_embark_m_pipe'/>
-        <int16_t name='show_embark_chasm'/>
-        <int16_t name='show_embark_pit'/>
-        <int16_t name='show_embark_other'/>
-        <int16_t name='show_embark_tunnel'/>
+        <enum name="idlers" base-type='int16_t' type-name='init_idlers'/>
+        <enum name="show_embark_river" base-type='int16_t' type-name='init_show_embark'/>
+        <enum name="show_embark_pool" base-type='int16_t' type-name='init_show_embark'/>
+        <enum name="show_embark_m_pool" base-type='int16_t' type-name='init_show_embark'/>
+        <enum name="show_embark_m_pipe" base-type='int16_t' type-name='init_show_embark'/>
+        <enum name="show_embark_chasm" base-type='int16_t' type-name='init_show_embark'/>
+        <enum name="show_embark_pit" base-type='int16_t' type-name='init_show_embark'/>
+        <enum name="show_embark_other" base-type='int16_t' type-name='init_show_embark'/>
+        <enum name="show_embark_tunnel" base-type='int16_t' type-name='init_show_embark'/>
         <int32_t name='cur_grid_x'/>
         <int32_t name='cur_grid_y'/>
         <int32_t name='prev_grid_x'/>
@@ -64,8 +83,8 @@
     <struct-type type-name='init_adventurer'>
         <df-flagarray name='flags' index-enum='init_adventurer_flags'/>
         <int32_t name="display_length"/>
-        <int32_t name='adventurer_z_views_type'/>
-        <int16_t name='adventurer_z_views_num'/>
+        <enum name="adventurer_z_view" type-name='init_z_view'/>
+        <int16_t name="adventurer_z_view_size"/>
     </struct-type>
 
     <enum-type type-name='init_dwarf_flags'>
