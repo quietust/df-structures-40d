@@ -401,6 +401,7 @@
             </vmethod>
             <vmethod name='drawBuilding'>
                 <pointer type-name='building_drawbuffer' name='buffer'/>
+                <pointer name='unknown'/>
             </vmethod>
             <vmethod is-destructor='true'/>
         </virtual-methods>
