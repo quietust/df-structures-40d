@@ -255,7 +255,7 @@
     </struct-type>
 
     <struct-type type-name='world_region_feature'>
-        <int16_t/>
+        <int16_t name='feature_idx'/>
         <int16_t/>
         <int16_t/>
         <int16_t/>
