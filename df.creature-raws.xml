@@ -255,6 +255,15 @@
         </stl-vector>
     </struct-type>
 
+    <enum-type type-name='creature_graphics_role'>
+        <enum-item name='DEFAULT'/>
+        <enum-item name='GUARD'/>
+        <enum-item name='ROYALGUARD'/>
+        <enum-item name='ZOMBIE'/>
+        <enum-item name='SKELETON'/>
+        <enum-item name='ADVENTURER'/>
+    </enum-type>
+
     <struct-type type-name='creature_raw' instance-vector='$global.world.raws.creatures'>
         <stl-string name='creature_id'/>
         <code-helper name='describe'>$.creature_id</code-helper>
@@ -380,29 +389,29 @@
 
         <df-flagarray name='flags' index-enum='creature_raw_flags'/>
         <compound name='graphics'>
-            <static-array name='texpos' type-name='int32_t' count='6'/>
-            <static-array name='texpos_gs' type-name='int32_t' count='6'/>
-            <static-array name='entity_link_texpos' count='6'>
-                <static-array type-name='int32_t' count='23'/>
+            <static-array name='texpos' type-name='int32_t' count='6' index-enum='creature_graphics_role'/>
+            <static-array name='texpos_gs' type-name='int32_t' count='6' index-enum='creature_graphics_role'/>
+            <static-array name='entity_link_texpos' count='6' index-enum='creature_graphics_role'>
+                <static-array type-name='int32_t' count='23' index-enum='histfig_entity_link_type'/>
             </static-array>
-            <static-array name='entity_link_texpos_gs' count='6'>
-                <static-array type-name='int32_t' count='23'/>
+            <static-array name='entity_link_texpos_gs' count='6' index-enum='creature_graphics_role'>
+                <static-array type-name='int32_t' count='23' index-enum='histfig_entity_link_type'/>
             </static-array>
             <padding size='240'/>
-            <static-array name='profession_texpos' count='6'>
-                <static-array type-name='int32_t' count='114'/>
+            <static-array name='profession_texpos' count='6' index-enum='creature_graphics_role'>
+                <static-array type-name='int32_t' count='114' index-enum='profession'/>
             </static-array>
-            <static-array name='profession_texpos_gs' count='6'>
-                <static-array type-name='int32_t' count='114'/>
+            <static-array name='profession_texpos_gs' count='6' index-enum='creature_graphics_role'>
+                <static-array type-name='int32_t' count='114' index-enum='profession'/>
             </static-array>
 
-            <static-array name='add_color' type-name='int8_t' count='6'/>
-            <static-array name='entity_link_add_color' count='6'>
-                <static-array type-name='int8_t' count='23'/>
+            <static-array name='add_color' type-name='bool' count='6' index-enum='creature_graphics_role'/>
+            <static-array name='entity_link_add_color' count='6' index-enum='creature_graphics_role'>
+                <static-array type-name='bool' count='23' index-enum='histfig_entity_link_type'/>
             </static-array>
             <padding size='30'/>
-            <static-array name='profession_add_color' count='6'>
-                <static-array type-name='int8_t' count='114'/>
+            <static-array name='profession_add_color' count='6' index-enum='creature_graphics_role'>
+                <static-array type-name='bool' count='114' index-enum='profession'/>
             </static-array>
         </compound>
 
