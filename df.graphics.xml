@@ -90,7 +90,10 @@
         <int32_t name='windowedy'/>
         <int32_t name='fullscreenx'/>
         <int32_t name='fullscreeny'/>
-        <int32_t/> int8?
+        <bitfield name='flag'>
+            <flag-bit name='render'/>
+            <flag-bit name='maxfps'/>
+        </bitfield>
         <int8_t name='tracking_on'/>
         <stl-string name='command_line'/>
         <bool name='windowed'/>
