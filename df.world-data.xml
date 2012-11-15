@@ -86,56 +86,6 @@
         <int32_t name="count_max" init-value='10000001'/>
     </struct-type>
 
-    <struct-type type-name='world_site' key-field='id'
-                 instance-vector='$global.world.world_data.sites'>
-        <compound name='name' type-name='language_name'/>
-
-        <code-helper name='describe'>(describe-obj $.name)</code-helper>
-
-        <int32_t name="civ_id" ref-target='historical_entity'/>
-        <int32_t name="owner1" ref-target='historical_entity'/>
-        <int32_t name="owner2" ref-target='historical_entity'/>
-
-        <enum base-type='int16_t' name="type" type-name='site_type'/>
-        <compound name='region' type-name='coord2d'/>
-
-        <int32_t name="id"/>
-
-        <stl-vector name="nemesis">
-            <int32_t ref-target='nemesis_record'/>
-        </stl-vector>
-        <stl-vector type-name='int32_t'/>
-        <stl-vector name="animals">
-            <pointer type-name='world_population'/>
-        </stl-vector>
-        <stl-vector/>
-        <stl-vector/>
-
-        <int32_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int32_t/>
-        <df-flagarray name='flags'/>
-
-        <stl-vector name='abstract_buildings'>
-            <pointer/>
-        </stl-vector>
-        <int32_t name='next_building_id'/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <compound type-name='coord'/>
-        <int32_t/>
-        <stl-vector/>
-        <stl-vector/>
-    </struct-type>
-
     <struct-type type-name='world_landmass'
                  instance-vector='$global.world.world_data.landmasses'>
         <compound name='name' type-name='language_name'/>
