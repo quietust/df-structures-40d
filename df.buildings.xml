@@ -883,6 +883,16 @@
         <int8_t name='timer'/>
     </class-type>
 
+    <class-type type-name='building_bars_verticalst' inherits-from='building_actual'>
+        <compound name='gate_flags' type-name='gate_flags' init-value='1'/>
+        <int8_t name='timer'/>
+    </class-type>
+
+    <class-type type-name='building_bars_floorst' inherits-from='building_actual'>
+        <compound name='gate_flags' type-name='gate_flags' init-value='1'/>
+        <int8_t name='timer'/>
+    </class-type>
+
     <class-type type-name='building_gear_assemblyst' inherits-from='building_actual'>
         <compound name='machine' type-name='machine_info'/>
         <bitfield name='gear_flags'>
