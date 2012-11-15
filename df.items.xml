@@ -583,8 +583,6 @@
         <compound name='stockpile' type-name='item_stockpile_ref'/>
     </class-type>
 
-    <class-type type-name='item_sandst' inherits-from='item_powder'/>
-
     <class-type type-name='item_armorstandst' inherits-from='item_constructed'/>
 
     <class-type type-name='item_weaponrackst' inherits-from='item_constructed'/>
