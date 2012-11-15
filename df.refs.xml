@@ -301,6 +301,12 @@
         <int32_t ref-target='world_site'/>
         <int16_t name='strength'/>
     </struct-type>
+
+    <struct-type type-name='site_hf_link'>
+        <enum base-type='int16_t' type-name='histfig_site_link_type' name='type'/>
+        <int32_t ref-target='historical_entity'/>
+    </struct-type>
+
 </data-definition>
 
 <!--

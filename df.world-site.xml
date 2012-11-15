@@ -11,13 +11,8 @@
     </enum-type>
 
     <class-type type-name='abstract_building' original-name='abstract_buildingst'>
-        <int32_t/>
-        <stl-vector>
-            <pointer>
-                <int16_t/>
-                <int32_t/>
-            </pointer>
-        </stl-vector>
+        <int32_t name='id'/>
+        <stl-vector name='links' pointer-type='site_hf_link'/>
         <df-flagarray name='flags'/>
         <pointer>
             <stl-vector type-name='int32_t'/>
@@ -26,7 +21,7 @@
             <int16_t/>
             <int16_t/>
         </pointer>
-        <int32_t comment='not initialized/saved/loaded, assumed member of base class'/>
+        <int32_t name='site' ref-target='world_site'/>
 
         <virtual-methods>
             <vmethod ret-type='abstract_building_type' name='getType'/>
@@ -125,7 +120,7 @@
         <int32_t/>
         <df-flagarray name='flags'/>
 
-        <stl-vector name='abstract_buildings'>
+        <stl-vector name='buildings'>
             <pointer type-name='abstract_building'/>
         </stl-vector>
         <int32_t name='next_building_id'/>
