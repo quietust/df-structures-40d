@@ -141,8 +141,8 @@
         <static-array name='ccolor' count='16'>
             <static-array count='3' type-name='s-float'/>
         </static-array>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='window_x'/>
+        <int32_t name='window_y'/>
         <stl-vector/>
         <int32_t/>
         <static-array type-name='int64_t' count='100'/>
