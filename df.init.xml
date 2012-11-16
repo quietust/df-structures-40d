@@ -63,14 +63,14 @@
         <enum name="show_embark_pit" base-type='int16_t' type-name='init_show_embark'/>
         <enum name="show_embark_other" base-type='int16_t' type-name='init_show_embark'/>
         <enum name="show_embark_tunnel" base-type='int16_t' type-name='init_show_embark'/>
-        <int32_t name='cur_grid_x'/>
-        <int32_t name='cur_grid_y'/>
-        <int32_t name='prev_grid_x'/>
-        <int32_t name='prev_grid_y'/>
         <int32_t name='grid_x'/>
         <int32_t name='grid_y'/>
-        <int32_t name='fullgrid_x'/>
-        <int32_t name='fullgrid_y'/>
+        <int32_t name='orig_grid_x'/>
+        <int32_t name='orig_grid_y'/>
+        <int32_t name='small_grid_x'/>
+        <int32_t name='small_grid_y'/>
+        <int32_t name='large_grid_x'/>
+        <int32_t name='large_grid_y'/>
         <int32_t/>
     </struct-type>
 
@@ -114,8 +114,6 @@
     <struct-type type-name='init_media'>
         <df-flagarray name='flag' index-enum='init_media_flags'/>
         <int32_t name='volume'/>
-        <int32_t name='key_hold_ms'/>
-        <int32_t name='recenter_interface_shutdown_ms'/>
     </struct-type>
 
     <enum-type type-name='init_input_flags'>
@@ -124,6 +122,8 @@
     </enum-type>
 
     <struct-type type-name='init_input'>
+        <int32_t name='key_hold_ms'/>
+        <int32_t name='recenter_interface_shutdown_ms'/>
         <df-flagarray name='flag' index-enum='init_input_flags'/>
     </struct-type>
 

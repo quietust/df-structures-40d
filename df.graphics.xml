@@ -107,45 +107,45 @@
                 <int32_t name='y'/>
             </compound>
         </compound>
-        <int32_t name='windowedx'/>
-        <int32_t name='windowedy'/>
-        <int32_t name='fullscreenx'/>
-        <int32_t name='fullscreeny'/>
+        <int32_t name='desired_windowed_width'/>
+        <int32_t name='desired_windowed_height'/>
+        <int32_t name='desired_fullscreen_width'/>
+        <int32_t name='desired_fullscreen_height'/>
         <bitfield name='flag'>
             <flag-bit name='render'/>
             <flag-bit name='maxfps'/>
         </bitfield>
         <int8_t name='tracking_on'/>
         <stl-string name='command_line'/>
-        <bool name='windowed'/>
-        <int8_t/>
-        <int64_t name='frequency'/>
-        <int64_t/>
-        <int64_t/>
-        <int64_t name='g_fps_cap'/>
-        <int64_t/>
-        <int64_t/>
-        <int64_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t name='mouse_x_prev'/>
-        <int32_t name='mouse_y_prev'/>
+        <int8_t name='create_full_screen'/>
+        <int8_t name='inactive_mode'/>
+        <int64_t name='qfpr'/>
+        <int64_t name='main_qprate'/>
+        <int64_t name='qprate'/>
+        <int64_t name='g_qprate'/>
+        <int64_t name='qpc'/>
+        <int64_t name='qpc2'/>
+        <int64_t name='g_qpc'/>
+        <int32_t name='now'/>
+        <int32_t name='current_render_count'/>
+        <int32_t name='secondary_render_count'/>
+        <int32_t name='oldmouse_x'/>
+        <int32_t name='oldmouse_y'/>
         <int32_t name='mouse_x'/>
         <int32_t name='mouse_y'/>
         <int8_t name='mouse_lbut'/>
         <int8_t name='mouse_rbut'/>
         <int8_t name='mouse_lbut_down'/>
         <int8_t name='mouse_rbut_down'/>
-        <int8_t name='mouse_lbut_up'/>
-        <int8_t name='mouse_rbut_up'/>
-        <stl-vector/>
+        <int8_t name='mouse_lbut_lift'/>
+        <int8_t name='mouse_rbut_lift'/>
+        <stl-vector name='file_info'/> of text_system_file_info
         <static-array name='ccolor' count='16'>
             <static-array count='3' type-name='s-float'/>
         </static-array>
         <int32_t name='window_x'/>
         <int32_t name='window_y'/>
-        <stl-vector/>
+        <stl-vector/> textures?
         <int32_t/>
         <static-array type-name='int64_t' count='100'/>
         <int8_t/>
@@ -153,30 +153,30 @@
         <stl-vector/>
         <stl-vector/>
         <stl-vector/>
-        <stl-vector/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <stl-vector name='gridrect'/>
+        <int32_t name='next_gridrect_id'/>
+        <int32_t name='next_texture_id'/>
+        <int32_t name='next_texture_data_id'/>
         <int64_t/>?
-        <int64_t/>
-        <int64_t/>
-        <int64_t/>
-        <int64_t/>
-        <int64_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>?
-        <int32_t/>?
-        <int32_t/>?
-        <int32_t/>?
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int8_t/>
+        <s-double name='locx'/>
+        <s-double name='locy'/>
+        <s-double name='locz'/>
+        <s-double name='center_x'/>
+        <s-double name='center_y'/>
+        <s-float name='color_r'/>
+        <s-float name='color_g'/>
+        <s-float name='color_b'/>
+        <s-float name='color_a'/>
+        <s-float name='clear_r'/>
+        <s-float name='clear_g'/>
+        <s-float name='clear_b'/>
+        <s-float name='clear_a'/>
+        <s-float name='fade_r'/>
+        <s-float name='fade_g'/>
+        <s-float name='fade_b'/>
+        <s-float name='fade_a'/>
+        <s-float name='fade_t'/>
+        <int8_t name='buffer_draw'/>
     </struct-type>
 </data-definition>
 
