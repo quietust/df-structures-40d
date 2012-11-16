@@ -1,8 +1,27 @@
 <data-definition>
+    <struct-type type-name='tile_page' key-field='token'>
+        <stl-string name='token'/>
+        <stl-string name='filename'/>
+
+        <int16_t name='tile_dim_x'/>
+        <int16_t name='tile_dim_y'/>
+        <int16_t name='page_dim_x'/>
+        <int16_t name='page_dim_y'/>
+
+        <stl-vector name='texpos' type-name='int32_t'/>
+        <stl-vector name='datapos' type-name='int32_t'/>
+        <stl-vector name='texpos_gs' type-name='int32_t'/>
+        <stl-vector name='datapos_gs' type-name='int32_t'/>
+
+        <bool name='loaded'/>
+    </struct-type>
+
     <struct-type type-name='graphic'>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
+        <stl-vector name='tile_pages'>
+            <pointer type-name='tile_page'/>
+        </stl-vector>
+        <stl-vector name='texpos' type-name='int32_t'/>
+        <stl-vector name='datapos' type-name='int32_t'/>
         <compound name='drawInfo'>
             <static-array name='drawarray' count='200'><static-array type-name='int8_t' count='200'/></static-array>
             <stl-vector type-name='pointer'/>
