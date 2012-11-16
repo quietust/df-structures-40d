@@ -96,6 +96,14 @@
         <global-address name='unit_chunk_next_id' value='0xd457f0'/>
         <global-address name='unit_next_id' value='0xd59d6c'/>
 
+        code pointers
+
+        <global-address name='func_render' value='0x658ff0' comment='no parms'/>
+        <global-address name='func_item_categorize' value='0x6e7360' comment='this=edi, parm1=stack'/>
+        <global-address name='func_item_uncategorize' value='0x6e81d0' comment='this=eax'/>
+
+        vtable pointers
+
         <vtable-address name='abstract_building_dark_towerst' value='0x974828'/>
         <vtable-address name='abstract_building_home_apartment_roomst' value='0x9747f8'/>
         <vtable-address name='abstract_building_home_apartmentst' value='0x9747c8'/>
