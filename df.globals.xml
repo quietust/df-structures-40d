@@ -209,14 +209,6 @@
     <global-object name='debug_nothought' type-name='bool' comment='All units have happiness locked at 100'/>
     <global-object name='debug_noberserk' type-name='bool' comment='Insanity can only result in Crazed or Melancholy, never Berserk'/>
     <global-object name='debug_turbospeed' type-name='bool' comment='All units move and work at maximum speed'/>
-
-    <global-object name='debug_turbospeed' type-name='bool' comment='All units move and work at maximum speed'/>
-
-    -- code
-
-    <global-object name='func_render' type-name='uint32_t' comment='no parms'/>
-    <global-object name='func_item_categorize' type-name='uint32_t' comment='this=edi, parm1=stack'/>
-    <global-object name='func_item_uncategorize' type-name='uint32_t' comment='this=eax'/>
 </data-definition>
 
 <!--
