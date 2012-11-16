@@ -17,11 +17,13 @@
     </struct-type>
 
     <struct-type type-name='graphic'>
-        <stl-vector name='tile_pages'>
-            <pointer type-name='tile_page'/>
-        </stl-vector>
-        <stl-vector name='texpos' type-name='int32_t'/>
-        <stl-vector name='datapos' type-name='int32_t'/>
+        <compound name='texture'>
+            <stl-vector name='page'>
+                <pointer type-name='tile_page'/>
+            </stl-vector>
+            <stl-vector name='texpos' type-name='int32_t'/>
+            <stl-vector name='datapos' type-name='int32_t'/>
+        </compound>
         <compound name='drawInfo'>
             <static-array name='drawarray' count='200'><static-array type-name='int8_t' count='200'/></static-array>
             <stl-vector type-name='pointer'/>
