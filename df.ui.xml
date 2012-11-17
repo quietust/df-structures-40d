@@ -242,19 +242,19 @@
         </stl-vector>
 
         <compound name='kitchen'>
-            <stl-vector name='item_type'>
+            <stl-vector name='item_types'>
                 <enum base-type='int32_t' type-name='item_type'/>
             </stl-vector>
-            <stl-vector name='item_subtype'>
+            <stl-vector name='item_subtypes'>
                 <int32_t refers-to='(item-subtype-target $$._parent._parent.item_type[$$._key] $)'/>
             </stl-vector>
-            <stl-vector name='material' comment='for certain item types, these are creature/plant IDs'>
+            <stl-vector name='materials' comment='for certain item types, these are creature/plant IDs'>
                 <enum base-type='int32_t' type-name='material_type'/>
             </stl-vector>
-            <stl-vector name='matgloss'>
+            <stl-vector name='matglosses'>
                 <int32_t refers-to='(matgloss-target $$._parent._parent.material[$$._key] $)'/>
             </stl-vector>
-            <stl-vector name='exc_type' type-name='int8_t'/>
+            <stl-vector name='exc_types' type-name='int8_t'/>
         </compound>
         <stl-vector name='economic_stone' type-name='bool' index-refers-to='$global.world.raws.matgloss.stone[$]'/>
         <int32_t/>
