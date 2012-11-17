@@ -121,6 +121,7 @@
         <prim-type ld:meta='number' ld:subtype='uint64_t' ld:unsigned='true' ld:bits='64'/>
         <prim-type ld:meta='number' ld:subtype='bool' ld:bits='8'/>
         <prim-type ld:meta='number' ld:subtype='s-float' ld:bits='32'/>
+        <prim-type ld:meta='number' ld:subtype='s-double' ld:bits='64'/>
         <prim-type ld:meta='number' ld:subtype='flag-bit' ld:bits='1'/>
 
         <prim-type ld:meta='bytes' ld:subtype='padding'/>
@@ -134,7 +135,7 @@
         <prim-type ld:meta='primitive' ld:subtype='stl-string'/>
     </ld:primitive-types>
 
-    <xsl:template match='int8_t|uint8_t|int16_t|uint16_t|int32_t|uint32_t|int64_t|uint64_t|bool|flag-bit|s-float|padding|static-string|ptr-string|stl-string'>
+    <xsl:template match='int8_t|uint8_t|int16_t|uint16_t|int32_t|uint32_t|int64_t|uint64_t|bool|flag-bit|s-float|s-double|padding|static-string|ptr-string|stl-string'>
         <xsl:param name='level' select='-1'/>
         <ld:field>
             <xsl:apply-templates select='@*'/>
