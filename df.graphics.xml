@@ -102,7 +102,7 @@
             <uint32_t name='wParam'/>
             <uint32_t name='lParam'/>
             <uint32_t name='time'/>
-            <compound name='ptr'>
+            <compound name='pt'>
                 <int32_t name='x'/>
                 <int32_t name='y'/>
             </compound>
@@ -147,7 +147,14 @@
         <int32_t name='window_y'/>
         <stl-vector/> textures?
         <int32_t/>
-        <static-array type-name='int64_t' count='100'/>
+        <int32_t/>?
+        <static-array count='100'>
+            <int32_t name='vKey'/>
+            <int8_t name='shift'/>
+            <int8_t name='capslock'/>
+            <int8_t name='alt'/>
+            <int8_t name='ctrl'/>
+        </static-array>
         <int8_t/>
         <stl-vector/>
         <stl-vector/>
@@ -157,7 +164,9 @@
         <int32_t name='next_gridrect_id'/>
         <int32_t name='next_texture_id'/>
         <int32_t name='next_texture_data_id'/>
-        <int64_t/>?
+        <int32_t/>?
+        <int32_t/>?
+        <int32_t/>?
         <s-double name='locx'/>
         <s-double name='locy'/>
         <s-double name='locz'/>
