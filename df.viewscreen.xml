@@ -13,9 +13,9 @@
         <int8_t name='option_key_pressed'/>
         
         <virtual-methods>
-            <vmethod name='update'/>
-            <vmethod ret-type='bool' name='use_old_interface' comment='use update instead of feed+logic+render'/>
-            <vmethod name='feed'/>
+            <vmethod name='view'/>
+            <vmethod ret-type='bool' name='is_legacy_screen' comment='use update instead of feed+logic+render'/>
+            <vmethod name='input'/>
             <vmethod name='logic'/>
             <vmethod name='render'/>
             <vmethod name='help'/>
