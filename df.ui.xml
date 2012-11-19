@@ -349,12 +349,16 @@
             </static-array>
         </static-array>
 
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
+        <stl-vector name='unk_mapedge_x' type-name='int16_t'/>
+        <stl-vector name='unk_mapedge_y' type-name='int16_t'/>
+        <stl-vector name='unk_mapedge_z' type-name='int16_t'/>
+
+        <compound name='map_edge'>
+            <stl-vector name='surface_x' type-name='int16_t'/>
+            <stl-vector name='surface_y' type-name='int16_t'/>
+            <stl-vector name='surface_z' type-name='int16_t'/>
+        </compound>
+
         <stl-vector type-name='int16_t'/>
         <stl-vector type-name='int16_t'/>
         <stl-vector type-name='int16_t'/>
@@ -380,9 +384,10 @@
             <uint8_t name='sym_tile'/>
             <int16_t name='sym_fg_color'/>
             <int16_t name='sym_bg_color'/>
+            <stl-vector>
+                <pointer type-name='stl-string'/>
+            </stl-vector>
         </compound>
-
-        <stl-vector/>
 
         <compound name='main'>
             <static-array name='hotkeys' type-name='ui_hotkey' count='16'/>
