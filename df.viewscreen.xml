@@ -142,7 +142,7 @@
         <stl-bit-vector/>
         <stl-vector type-name='pointer'/>
         <int32_t/>
-        <static-array count='1117' name='keybinds'>
+        <static-array count='1117' name='keybinds' index-enum='interface_key'>
             <stl-string name='description'/>
             <stl-string name='token'/>
             <int8_t name='key'/>
