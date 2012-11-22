@@ -47,7 +47,6 @@
 
         <global-address name='current_weather' value='0x1381458'/>
 
-        <global-address name='job_next_id'/>
         <global-address name='pause_state' value='0x138147f'/>
         <global-address name='process_dig' value='0x1381471'/>
         <global-address name='process_jobs' value='0x1381472'/>
