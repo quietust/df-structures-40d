@@ -430,7 +430,7 @@
     <struct-type type-name='timed_event'>
         <enum type-name='timed_event_type' name='type'/>
         <int8_t name='season'/>
-        <int16_t name='season_ticks_remaining'/>
+        <int16_t name='season_ticks' comment='1 tick = 10 frames; 0 = end of season'/>
         <pointer name='entity' type-name='historical_entity'/>
         <int16_t/>
         <int16_t/>
