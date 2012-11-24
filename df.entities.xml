@@ -323,7 +323,7 @@
             <int16_t/>
             <int16_t/>
 
-            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t' comment='general_ref_entity_art_image points here'/>
             <stl-vector type-name='int32_t' name='civ_symbols_art_id'/>
             <stl-vector type-name='int16_t' name='civ_symbols_art_subid'/>
             <stl-vector type-name='int8_t'/>

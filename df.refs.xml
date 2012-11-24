@@ -109,15 +109,15 @@
 
     <class-type type-name='general_ref_mapsquare' inherits-from='general_ref'
                 original-name='general_ref_mapsquarest'>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
+        <enum base-type='int16_t' name='tiletype' type-name='tiletype'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
 
     <class-type type-name='general_ref_entity_art_image' inherits-from='general_ref'
                 original-name='general_ref_entity_art_imagest'>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='entity_id' ref-target='historical_entity'/>
+        <int32_t comment='points to field in entity.resources'/>
     </class-type>
 
     <class-type type-name='general_ref_projectile' inherits-from='general_ref'
@@ -165,7 +165,7 @@
     <class-type type-name='general_ref_building_holderst' inherits-from='general_ref_building'/>
     <class-type type-name='general_ref_building_well_tag' inherits-from='general_ref_building'
                 original-name='general_ref_building_well_tagst'>
-        <bool name='unk'/>
+        <int8_t name='direction'/>
     </class-type>
     <class-type type-name='general_ref_entity_stolenst' inherits-from='general_ref_entity'/>
     <class-type type-name='general_ref_entity_offeredst' inherits-from='general_ref_entity'/>
