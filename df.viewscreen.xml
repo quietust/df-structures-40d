@@ -547,7 +547,7 @@
     </class-type>
 
     <class-type type-name='viewscreen_jobmanagementst' inherits-from='viewscreen'>
-        <int32_t/>
+        <int32_t name='sel_idx'/>
     </class-type>
 
     <class-type type-name='viewscreen_createquotast' inherits-from='viewscreen'>
@@ -577,7 +577,7 @@
     </class-type>
 
     <class-type type-name='viewscreen_treasurelistst' inherits-from='viewscreen'>
-        <int32_t/>
+        <int32_t name='sel_idx'/>
     </class-type>
 
     <class-type type-name='viewscreen_entityst' inherits-from='viewscreen'>
@@ -936,7 +936,7 @@
         <int32_t/>
     </class-type>
 
-    <class-type type-name='viewscreen_topicmeeting_takerequestst' inherits-from='viewscreen'>
+    <class-type type-name='viewscreen_topicmeeting_takerequestsst' inherits-from='viewscreen'>
         <static-string size='200'/>
         <pointer name='units'/>
         <int32_t/>
