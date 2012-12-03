@@ -167,11 +167,11 @@
         <int32_t/>?
         <int32_t/>?
         <int32_t/>?
-        <s-double name='locx'/>
-        <s-double name='locy'/>
-        <s-double name='locz'/>
-        <s-double name='center_x'/>
-        <s-double name='center_y'/>
+        <d-float name='locx'/>
+        <d-float name='locy'/>
+        <d-float name='locz'/>
+        <d-float name='center_x'/>
+        <d-float name='center_y'/>
         <s-float name='color_r'/>
         <s-float name='color_g'/>
         <s-float name='color_b'/>
