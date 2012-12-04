@@ -15,7 +15,10 @@
 
         <int32_t name='grow_counter'/>
         <compound name='temperature' type-name='temperaturest'/>
-        <int32_t name='is_burning'/>
+        <bitfield name='damage_flags'>
+            <flag-bit name='is_burning'/>
+            <flag-bit name='is_drowning' comment='speculated'/>
+        </bitfield>
         <int32_t name='hitpoints'/>
         <int16_t name='update_order'/>
         <stl-vector name='contaminants'>
