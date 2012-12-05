@@ -649,12 +649,10 @@
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <int16_t name='density'/>
         <compound type-name='coord' name='pos'/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
+        <compound type-name='coord' name='dest'/>
         <static-array type-name='int8_t' count='10' name='blood_types'/>
-        <int8_t/>
-        <int8_t/>
+        <bool name='expanding' init-value='1'/>
+        <bool name='reuse'/>
     </struct-type>
 
     <struct-type type-name='flow_reuse_pool'>
