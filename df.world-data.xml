@@ -341,6 +341,44 @@
         <int16_t name='geo_index' ref-target='world_geo_biome'/>
     </struct-type>
 
+    <struct-type type-name='entity_claim_mask'>
+        <pointer name="map" is-array='true'>
+            <pointer is-array='true'>
+                <stl-vector name='entities'>
+                    <int32_t ref-target='historical_entity'/>
+                </stl-vector>
+                <stl-vector name='region_masks'>
+                    <pointer>
+                        <static-array count='16'><static-array count='16' type-name='uint8_t' comment='1  bit per entity'/></static-array>
+                    </pointer>
+                </stl-vector>
+            </pointer>
+        </pointer>
+        <int16_t name="width"/>
+        <int16_t name="height"/>
+    </struct-type>
+
+    <struct-type type-name='moving_party'>
+        <compound name='pos' type-name='coord2d' comment='global block x/y'/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int32_t/>
+        <stl-vector name='members' type-name='int32_t' ref-target='nemesis_record'/> guessed
+        <int32_t name="entity_id" ref-target='historical_entity'/>
+        <df-flagarray name='flags'/>
+        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int16_t'/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int16_t/>
+        <int32_t name="region_id" ref-target='world_region'/> guessed
+    </struct-type>
+
     <struct-type type-name='world_data'>
         <compound type-name='language_name' name='name'/>
 
@@ -350,29 +388,7 @@
         <int16_t name='world_width'/>
         <int16_t name='world_height'/>
 
-        <stl-vector>
-            <pointer>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int32_t/>
-                <stl-vector type-name='int32_t'/>
-                <int32_t/>
-                <df-flagarray name='flags'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int32_t/>
-            </pointer>
-        </stl-vector>
+        <stl-vector name='travel' pointer-type='moving_party'/>
 
         <compound name='history' type-name='world_history'/>
         <padding size='16'/>
@@ -390,18 +406,18 @@
         <pointer type-name='uint32_t' is-array='true' comment='(width+1)*(height+1)'/>
         <pointer type-name='uint32_t' is-array='true' comment='width*height'/>
         <pointer type-name='uint8_t' is-array='true' comment='(width+1)*(height+1)'/>
-        <compound>
+        <compound name='details'>
             <stl-vector name='region_details'>
                 <pointer type-name='world_region_details'/>
             </stl-vector>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int16_t/>
-            <int16_t/>
-            <int16_t/>
-            <int16_t/>
+            <int32_t name='adv_region_x'/>
+            <int32_t name='adv_region_y'/>
+            <int32_t name='adv_emb_x'/>
+            <int32_t name='adv_emb_y'/>
+            <int16_t name='unk_x1'/>
+            <int16_t name='unk_y1'/>
+            <int16_t name='unk_x2'/>
+            <int16_t name='unk_y2'/>
         </compound>
 
         <compound name='constructions'>
@@ -494,22 +510,10 @@
         </compound>
         <stl-string name='version'/>
         <int32_t/>
-        <static-array count='2'>
-            <pointer name="table" is-array='true'>
-                <pointer is-array='true'>
-                    <stl-vector name='unk1'>
-                        <int32_t/>
-                    </stl-vector>
-                    <stl-vector name='unk2'>
-                        <pointer>
-                            <static-array count='16'><static-array count='16' type-name='int8_t'/></static-array>
-                        </pointer>
-                    </stl-vector>
-                </pointer>
-            </pointer>
-            <int16_t name="width"/>
-            <int16_t name="height"/>
-        </static-array>
+
+        <compound name="entity_claims1" type-name='entity_claim_mask'/>
+        <compound name="entity_claims2" type-name='entity_claim_mask'/>
+
         <stl-vector name="sites">
             <pointer type-name='world_site'/>
         </stl-vector>

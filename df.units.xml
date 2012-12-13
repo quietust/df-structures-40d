@@ -516,12 +516,12 @@
 
         <int32_t name='hist_figure_id' ref-target='historical_figure'/>
         <compound name='status2'>
-            <int16_t name='able_stand'/>
-            <int16_t name='able_stand_impair'/>
-            <int16_t name='able_grasp'/>
-            <int16_t name='able_grasp_impair'/>
-            <int16_t name='able_fly' comment='guess from 23a layout'/>
-            <int16_t name='able_fly_impair' comment='guess from 23a layout'/>
+            <int16_t name='limbs_stand_max'/>
+            <int16_t name='limbs_stand_count'/>
+            <int16_t name='limbs_grasp_max'/>
+            <int16_t name='limbs_grasp_count'/>
+            <int16_t name='limbs_fly_max'/>
+            <int16_t name='limbs_fly_count'/>
             <int32_t name='specialattack_cooldown'/>
             <stl-vector name='body_part_temperature'>
                 <pointer type-name='temperaturest'/>
