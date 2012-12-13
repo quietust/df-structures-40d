@@ -406,19 +406,18 @@
         <pointer type-name='uint32_t' is-array='true' comment='(width+1)*(height+1)'/>
         <pointer type-name='uint32_t' is-array='true' comment='width*height'/>
         <pointer type-name='uint8_t' is-array='true' comment='(width+1)*(height+1)'/>
-        <compound name='details'>
-            <stl-vector name='region_details'>
-                <pointer type-name='world_region_details'/>
-            </stl-vector>
-            <int32_t name='adv_region_x'/>
-            <int32_t name='adv_region_y'/>
-            <int32_t name='adv_emb_x'/>
-            <int32_t name='adv_emb_y'/>
-            <int16_t name='unk_x1'/>
-            <int16_t name='unk_y1'/>
-            <int16_t name='unk_x2'/>
-            <int16_t name='unk_y2'/>
-        </compound>
+
+        <stl-vector name='region_details'>
+            <pointer type-name='world_region_details'/>
+        </stl-vector>
+        <int32_t name='adv_region_x'/>
+        <int32_t name='adv_region_y'/>
+        <int32_t name='adv_emb_x'/>
+        <int32_t name='adv_emb_y'/>
+        <int16_t name='unk_x1'/>
+        <int16_t name='unk_y1'/>
+        <int16_t name='unk_x2'/>
+        <int16_t name='unk_y2'/>
 
         <compound name='constructions'>
             <int16_t name="width"/>

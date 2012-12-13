@@ -348,10 +348,10 @@
 
             <stl-vector name='unk32a' type-name='pointer' comment='empty'/>
             <stl-vector name='unk32b' type-name='int32_t'/>
-            <stl-vector name='unk32c' type-name='int32_t'/>
+            <stl-vector name='unk32c' type-name='int32_t'/> probably worship
             <stl-vector name='unk32d' type-name='int32_t'/>
             <stl-vector name='unk32e' type-name='pointer'/>
-            <stl-vector name='unk32f' type-name='pointer'/>
+            <stl-vector name='unk32f' type-name='pointer'/> probably diplomacy
 
             <int16_t name='unk33'/>
 
