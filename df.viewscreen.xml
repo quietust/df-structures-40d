@@ -295,9 +295,11 @@
 
     <class-type type-name='viewscreen_dwarfmodest' inherits-from='viewscreen'>
         <int8_t/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='int32_t' name='jeweler_cutgem' ref-target='matgloss_stone'/> plus the 3 glass types at the end
+        <stl-vector type-name='int32_t' name='jeweler_encrust' ref-target='matgloss_stone'/>
+        <stl-vector name='unit_labor_list'>
+            <enum type-name='unit_labor' base-type='int32_t'/>
+        </stl-vector>
         <int32_t/>
     </class-type>
 
