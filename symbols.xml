@@ -200,6 +200,8 @@
         <vtable-address name='building_window_glassst' value='0x97db8c'/>
         <vtable-address name='building_workshopst' value='0x97e10c'/>
         <vtable-address name='buildingst' value='0x979a84'/>
+        <vtable-address name='cave_columnst' value='0x9790bc'/>
+        <vtable-address name='cave_column_rectanglest' value='0x9790c8'/>
         <vtable-address name='feature_alteration_spec_info_underworld_spike_level_infost' value='0x98a788'/>
         <vtable-address name='feature_alteration_spec_infost' value='0x98a778'/>
         <vtable-address name='feature_specinfo_cave_lava_shaftst' value='0x98a7d0'/>
@@ -561,5 +563,9 @@
         <vtable-address name='world_construction_tunnelst' value='0x9c4c34'/>
         <vtable-address name='world_construction_wallst' value='0x9c4c4c'/>
         <vtable-address name='world_constructionst' value='0x9c4c04'/>
+        <vtable-address name='world_gen_param_seedst' value='0x9a807c'/>
+        <vtable-address name='world_gen_param_charst' value='0x9a8054'/>
+        <vtable-address name='world_gen_param_memberst' value='0x9a802c'/>
+        <vtable-address name='world_gen_param_valuest' value='0x9a8004'/>
     </symbol-table>
 </data-definition>
