@@ -275,7 +275,7 @@
             <vmethod name='addStackSize'> <int32_t name='amount'/> </vmethod>
             <vmethod name='setStackSize'> <int32_t name='amount'/> </vmethod>
             <vmethod ret-type='bool' name='isAmmoClass'> <pointer type-name='stl-string'/> </vmethod>
-            <vmethod/>
+            <vmethod ret-type='bool' name='isAutoClean' comment='delete on_ground every season when in ANY_AUTO_CLEAN; default true'/>
             <vmethod/>
             <vmethod ret-type='bool' name='setTemperatureFromMap'>
                 <bool name='local'/> <bool name='contained'/>

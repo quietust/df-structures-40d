@@ -97,7 +97,8 @@
             <item-attr name='generic_item' value='CHEESE'/>
             <item-attr name='generic_item' value='FOOD'/>
         </enum-item>
-        <enum-item name='ANY_GENERIC18'>
+        <enum-item name='ANY_AUTO_CLEAN'>
+            disappears at beginning of season if on floor
             <item-attr name='generic_item' value='EXTRACT'/>
             <item-attr name='generic_item' value='POTION'/>
             <item-attr name='generic_item' value='DRINK'/>

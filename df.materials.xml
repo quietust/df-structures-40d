@@ -227,7 +227,7 @@
         </compound>
 
         <stl-vector name='reaction_class' pointer-type='stl-string'/>
-        <stl-vector name='reactions' type-name='int32_t'/>
+        <stl-vector type-name='int32_t' name='economic_uses' ref-target='reaction'/>
         <int32_t name='value'/>
 
         <compound name='environment_spec'>
