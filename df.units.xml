@@ -438,8 +438,8 @@
                 </compound>
             </pointer>
 
-            <int32_t/>
-            <int32_t/>
+            <int32_t name='demand_timeout' init-value='1000'/>
+            <int32_t name='mandate_timeout' init-value='1000'/>
             <stl-vector/>
             <stl-vector/>
             <int8_t/>
