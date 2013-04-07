@@ -494,14 +494,7 @@
                     <int16_t/>
                 </pointer>
             </stl-vector>
-            <stl-vector name='acquaintances'>
-                <pointer>
-                    <int32_t name='unit_id' ref-target='unit'/>
-                    <int32_t name='strength'/>
-                    <int32_t name='age'/>
-                    <int32_t name='flags'/> 0x01 == friend, 0x02 = grudge
-                </pointer>
-            </stl-vector>
+            <stl-vector name='acquaintances' pointer-type='unit_acquaintance'/>
             <stl-vector>
                 <pointer>
                     <int32_t/>
@@ -611,6 +604,16 @@
         <code-helper name='describe'>(fmt "id=~A value=~A" $.id $.value)</code-helper>
 
         <int32_t name='value'/>
+    </struct-type>
+
+    <struct-type type-name='unit_acquaintance'>
+        <int32_t name='unit_id' ref-target='unit'/>
+        <int32_t name='strength' comment='>= 30 -> long-term'/>
+        <int32_t name='timer' comment='+1 per 10 frames; limit at 1 year'/>
+        <bitfield name='flags'>
+            <flag-bit name='friend'/>
+            <flag-bit name='grudge'/>
+        </bitfield>
     </struct-type>
 
     <struct-type type-name='unit_thought'>
