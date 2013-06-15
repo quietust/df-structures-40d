@@ -50,9 +50,14 @@
 
     <class-type type-name='reaction_product' original-name='reaction_productst'>
         <virtual-methods>
-            <vmethod name='finalize'/>
-            <vmethod name='produceProduct'/>
-            <vmethod name='getDescription'/>
+            <vmethod name='resolveTokens'/>
+            <vmethod name='produce'>
+                <pointer type-name='unit'/>
+                <pointer name='out_items'><stl-vector pointer-type='item'/></pointer>
+            </vmethod>
+            <vmethod name='getDescription'>
+                <pointer type-name='stl-string' name='desc'/>
+            </vmethod>
         </virtual-methods>
     </class-type>
 
