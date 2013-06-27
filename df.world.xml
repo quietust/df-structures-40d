@@ -25,13 +25,13 @@
         </stl-vector>
         <stl-vector name='web_clusters'>
             <pointer>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <int16_t/>
+                <stl-vector type-name='int16_t' name='x'/>
+                <stl-vector type-name='int16_t' name='y'/>
+                <int16_t name='z'/>
                 <int16_t name='race' ref-target='creature_raw'/>
                 <compound type-name='coord2d' name='pos_min'/>
                 <compound type-name='coord2d' name='pos_max'/>
-                <stl-vector type-name='int32_t'/>
+                <stl-vector type-name='int32_t' name='ambushers' ref-target='unit'/>
             </pointer>
         </stl-vector>
         <stl-vector name='fires'>
