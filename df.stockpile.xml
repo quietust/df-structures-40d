@@ -1,4 +1,17 @@
 <data-definition>
+    <enum-type type-name='hauler_type'>
+        <enum-item name='Any'/>
+        <enum-item name='Stone'/>
+        <enum-item name='Wood'/>
+        <enum-item name='Item'/>
+        <enum-item name='Bin'/>
+        <enum-item name='Body'/>
+        <enum-item name='Food'/>
+        <enum-item name='Refuse'/>
+        <enum-item name='Furniture'/>
+        <enum-item name='Animal'/>
+    </enum-type>
+
     <enum-type type-name='stockpile_category' base-type='int16_t'>
         <enum-item name='Remove'/>
         <enum-item name='Animal'/>

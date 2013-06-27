@@ -153,8 +153,7 @@
         </compound>
 
         -- Region coordinates used during worldgen
-
-        <compound name='worldgen_regions'>
+        <compound name='worldgen_coord_buf'>
             <static-array name='coords' count='20000' type-name='coord2d'/>
             <int16_t name='next_slot'/>
         </compound>
@@ -186,12 +185,8 @@
 
         -- Unknown
 
-        <stl-vector name='unit_chunks'>
-            <pointer type-name='unit_chunk'/>
-        </stl-vector>
-        <stl-vector name='art_image_chunks'>
-            <pointer type-name='art_image_chunk'/>
-        </stl-vector>
+        <stl-vector name='unit_chunks' pointer-type='unit_chunk'/>
+        <stl-vector name='art_image_chunks' pointer-type='art_image_chunk'/>
 
         -- Nemesis
 
@@ -298,26 +293,8 @@
             <static-array count='59' name='foreign_gloves' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.gloves[$]'/></static-array>
             <static-array count='59' name='foreign_pants' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.pants[$]'/></static-array>
             <static-array count='59' name='foreign_shields' index-enum='material_type'><stl-vector type-name='int8_t' index-refers-to='$global.world.raws.itemdefs.shields[$]'/></static-array>
-            <int32_t name='num_stockpiling_jobs'/>
-            <int32_t name='num_stone_jobs'/>
-            <int32_t name='num_wood_jobs'/>
-            <int32_t name='num_item_jobs'/>
-            <int32_t name='num_bin_jobs'/>
-            <int32_t name='num_burial_jobs'/>
-            <int32_t name='num_food_jobs'/>
-            <int32_t name='num_refuse_jobs'/>
-            <int32_t name='num_furniture_jobs'/>
-            <int32_t name='num_animal_jobs'/>
-            <int32_t name='num_total_haulers'/>
-            <int32_t name='num_stone_haulers'/>
-            <int32_t name='num_wood_haulers'/>
-            <int32_t name='num_item_haulers'/>
-            <int32_t name='num_bin_haulers'/>
-            <int32_t name='num_body_haulers'/>
-            <int32_t name='num_food_haulers'/>
-            <int32_t name='num_refuse_haulers'/>
-            <int32_t name='num_furniture_haulers'/>
-            <int32_t name='num_animal_haulers'/>
+            <static-array type-name='int32_t' name='num_jobs' count='10' index-enum='hauler_type'/>
+            <static-array type-name='int32_t' name='num_haulers' count='10' index-enum='hauler_type'/>
 
             <int8_t/>
             <int8_t name='prepared_meal'/>
@@ -373,11 +350,11 @@
         <df-linked-list name='quests' type-name='quest_list_link'/>
 
         <compound name='enemy_status_cache' comment='?'>
-            <static-array name='id_used' type-name='bool' count='500'/>
+            <static-array name='slot_used' type-name='bool' count='500'/>
             <static-array name='rel_map' count='500'>
                 <static-array type-name='int8_t' count='500'/>
             </static-array>
-            <int32_t name='next_id'/>
+            <int32_t name='next_slot'/>
         </compound>
 
         <compound name='schedules'>
@@ -440,14 +417,15 @@
             <int32_t name='region_y'/>
             <int32_t name='region_z'/>
 
-            <static-array count='53'>
-                <static-array count='53' type-name='int16_t'/>
+            <static-array name='distance_lookup' count='53'>
+                <static-array count='53' type-name='int16_t'
+                              comment='Appears to be precomputed rounded integer distances'/>
             </static-array>
         </compound>
 
         <compound type-name='world_data' name='world_data'/>
 
-        <compound name='worldgen'>
+        <compound name='worldgen_status'>
             <int16_t name='state'/>
             <int32_t name='num_rejects'/>
             <static-array count='53' type-name='int32_t'/>
@@ -536,9 +514,9 @@
         <stl-vector name='map_features'>
             <pointer type-name='feature_init'/>
         </stl-vector>
-        <stl-vector type-name='int16_t' comment='related to map feature creatures'/>
-        <stl-vector type-name='int16_t' comment='related to map feature creatures'/>
-        <stl-vector type-name='int16_t' comment='related to map feature creatures'/>
+        <stl-vector type-name='int16_t' name='feature_x'/>
+        <stl-vector type-name='int16_t' name='feature_y'/>
+        <stl-vector type-name='int16_t' name='feature_idx' comment='same as map_block.feature'/>
         <stl-vector/>
         <stl-vector/>
         <stl-vector/>
