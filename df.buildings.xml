@@ -400,8 +400,8 @@
                 <pointer type-name='building_drawbuffer' name='buffer'/>
             </vmethod>
             <vmethod name='drawBuilding'>
-                <pointer type-name='building_drawbuffer' name='buffer'/>
-                <pointer name='unknown'/>
+                <pointer name='buffer' type-name='building_drawbuffer'/>
+                <int16_t name='z_offset' comment='building_wellst only'/>
             </vmethod>
             <vmethod is-destructor='true'/>
         </virtual-methods>
