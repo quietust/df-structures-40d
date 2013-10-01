@@ -267,7 +267,7 @@
         <int8_t name='sex'/>
         <int32_t name='id'/>
         <int16_t/>
-        <int32_t/>
+        <int32_t name='schedule_id' ref-target='schedule_info'/>
         <int32_t name='civ_id' ref-target='historical_entity'/>
 
         <compound name='patrol_route' type-name='coord_path'/>
