@@ -388,8 +388,6 @@
         <compound name='tile_bitmask' type-name='tile_bitmask'/>
         <bitfield name='flags'>
             <flag-bit name='discovered'/>
-            <flag-bit name='cluster' comment='??'/>
-            <flag-bit name='vein' comment='??'/>
         </bitfield>
     </class-type>
 
