@@ -421,8 +421,8 @@
 
         <compound name='history' type-name='world_history'/>
         <padding size='16'/>
-        <int16_t/>
-        <int16_t/>
+        <int16_t name='flip_latitude'/>
+        <int16_t name='flip_longitude'/>
         <static-array count='3' type-name='int16_t'/>
         <static-array count='3' type-name='int16_t'/>
         <int32_t/>
