@@ -257,7 +257,7 @@
         </static-array>
 
         <compound name='pos' type-name='coord2d'/>
-        <int16_t/>
+        <int16_t name='unk12e8'/>
         <int16_t/>
         <int16_t/>
         <int16_t/>
