@@ -211,7 +211,7 @@
 
         <static-array name='tiletype' count='16'>
             <static-array count='16'>
-                <enum base-type='int16_t' type-name='tiletype'/>
+                <enum base-type='int16_t' type-name='tiletype' init-value='OpenSpace'/>
             </static-array>
         </static-array>
         <static-array name='designation' count='16'>
@@ -357,11 +357,9 @@
         <int16_t/>
         <df-flagarray name='flags'/>
 
-        <int16_t name='tile_min_x'/>
-        <int16_t name='tile_min_y'/>
+        <compound name='map_pos' type-name='coord2d' comment='top left in tiles'/>
         <int16_t name='unk_c3c' comment='uninitialized'/>
-        <int16_t name='unk_c3e'/>
-        <int16_t name='unk_c40'/>
+        <compound name='region_pos' type-name='coord2d'/>
     </struct-type>
 
     <enum-type type-name='block_square_event_type'>

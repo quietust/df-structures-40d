@@ -372,7 +372,7 @@
             <stl-vector name='flags' type-name='int32_t' comment='1=burning'/>
             <pointer name='body_plan' type-name='body_info'/>
 
-            <int16_t name='weapon_hand_bp'/>
+            <int16_t name='weapon_bp' refers-to='$$._parent.body_plan.body_parts[$]' init-value='-1'/>
             <int32_t name='size'/>
             <int32_t name='blood_max'/>
             <int32_t name='blood_count'/>
