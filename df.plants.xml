@@ -24,8 +24,8 @@
         <stl-vector name='contaminants'>
             <pointer type-name='contaminant'/>
         </stl-vector>
-        <int32_t/>
-        <uint16_t/>
+        <int32_t name='temperature_tile_tick' comment='speculated'/>
+        <uint16_t name='temperature_tile' comment='speculated'/>
         <uint16_t name='min_safe_temp'/>
         <uint16_t name='max_safe_temp'/>
     </class-type>
