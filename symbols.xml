@@ -79,6 +79,8 @@
         <global-address name='debug_noberserk' value='0x1381498'/>
         <global-address name='debug_turbospeed' value='0x1381499'/>
 
+        <global-address name='save_on_exit' value='0x1381473'/>
+
 
         <global-address name='art_image_chunk_next_id' value='0xd73858'/>
         <global-address name='artifact_next_id' value='0xd59d74'/>
