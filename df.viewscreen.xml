@@ -114,7 +114,7 @@
             </stl-vector>
             <int32_t name='report_timer'/>
         </compound>
-        <int8_t name='current_key'/>
+        <uint8_t name='current_key'/>
         <int8_t name='current_shift'/>
         <int8_t/>
         <int8_t name='current_ctrl'/>
@@ -143,7 +143,7 @@
         <static-array count='1117' name='keybinds' index-enum='interface_key'>
             <stl-string name='description'/>
             <stl-string name='token'/>
-            <int8_t name='key'/>
+            <uint8_t name='key'/>
             <int32_t/>
             <int16_t/>
             <int8_t name='is_shift'/>
