@@ -50,8 +50,8 @@
 
         <compound name="item_category" type-name='item_category'/>
         <stl-string name='reaction_name'/>
-        <int16_t/>
-        <int16_t/>
+        <int16_t name='recheck_cntdn' comment='for process_jobs; assumed same as current version'/>
+        <int16_t name='unk10b_cntdn'/>
 
         <stl-vector name='items'>
             <pointer type-name='job_item_ref'/>

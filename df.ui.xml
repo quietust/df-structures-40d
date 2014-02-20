@@ -154,7 +154,7 @@
         <int32_t/>
         <int32_t name='fortress_age'/>
 
-        <compound type-name='entity_activity_statistics' name='activity_stats'/>
+        <compound type-name='entity_activity_statistics' name='tasks'/>
 
         <stl-vector type-name='pointer'/>
         <stl-vector name='activities'>
@@ -259,7 +259,7 @@
         <stl-vector name='economic_stone' type-name='bool' index-refers-to='$global.world.raws.matgloss.stone[$]'/>
         <int32_t/>
         <int16_t/>
-        <int16_t name='mood_timer'/>
+        <int16_t name='mood_cooldown'/>
         <int32_t name='civ_id' ref-target='historical_entity'/>
         <int32_t name='site_id' ref-target='world_site'/>
         <int32_t name='group_id' ref-target='historical_entity'/>

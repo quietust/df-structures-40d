@@ -256,7 +256,7 @@
 
         <compound name='path'>
             <compound name='dest' type-name='coord'/>
-            <int16_t/>
+            <int16_t name='unk_ae' comment='-1 unless dest valid'/>
             <compound name='path' type-name='coord_path'/>
         </compound>
 
@@ -629,7 +629,7 @@
 
         <code-helper name='describe'>$.id</code-helper>
 
-        <int32_t name="rating"/>
+        <enum base-type='int32_t' name="rating" type-name='skill_rating'/>
         <uint32_t name="experience"/>
     </struct-type>
 
