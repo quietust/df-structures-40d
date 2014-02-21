@@ -371,7 +371,7 @@
                 <pointer type-name='stl-string'/>
                 <int8_t name='mode'/>
             </vmethod>
-            <vmethod ret-type='int32_t' name='getImprovementsValue'> <int32_t name='entity_id' ref-target='historical_entity'/> </vmethod>
+            <vmethod ret-type='int32_t' name='getImprovementsValue'> <pointer type-name='caravan_state' name='caravan'/> </vmethod>
             <vmethod ret-type='bool' name='isExtractBearingFish'/>
             <vmethod ret-type='bool' name='isExtractBearingVermin'/>
 
