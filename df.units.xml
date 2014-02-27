@@ -377,7 +377,7 @@
             <int32_t/>
             <int32_t name='job_counter'/>
             <int32_t/>
-            <int16_t name='death_cause' comment='used when thrown as projectile'/>
+            <enum base-type='int16_t' name='death_cause' type-name='death_type' comment='used when thrown as a projectile'/>
             <int16_t name='nausea'/>
             <int16_t name='winded'/>
             <int16_t name='stunned'/>
