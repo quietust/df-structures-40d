@@ -320,8 +320,8 @@
             <int32_t name='rider_mount_id' ref-target='unit'/>
             <int32_t name='lover_id' ref-target='unit'/>
         </compound>
-        <int16_t/>
-        <int16_t/>
+        <int16_t name='mount_type'/>
+        <int16_t name='killer_profession'/>
         <stl-vector name='inventory' pointer-type='unit_inventory_item'/>
         <stl-vector name='owned_items'>
             <int32_t ref-target='item'/>
