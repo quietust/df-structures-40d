@@ -1,4 +1,15 @@
 <data-definition>
+    <struct-type type-name='activity_info'>
+        <int32_t name='unk1' comment='uninitialized'/>
+        <pointer name='person1' type-name='unit' comment='diplomat'/>
+        <pointer name='person2' type-name='unit' comment='count'/>
+        <pointer name='place' type-name='building'/>
+        <int16_t name='unk2' comment='1'/>
+        <int8_t name='unk3' comment='3'/>
+        <int16_t name='unk4' comment='0'/>
+        <int32_t name='unk5' comment='-1'/>
+    </struct-type>
+
     <struct-type type-name='dipscript_info'>
         <int32_t name='unk1' comment='uninit'/>
         <stl-string name='script_file' comment='data/dipscript/dwarf_liaison'/>
@@ -22,55 +33,15 @@
         <int32_t comment='-1'/>
         <stl-vector type-name='int32_t'/>
         <stl-vector type-name='int32_t'/>
-        <pointer> same as in caravan_state
-            <static-array count='103'>
-                <stl-vector type-name='int8_t'/>
-            </static-array>
-        </pointer>
-        <pointer> same as in caravan_state
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int8_t'/>
-        </pointer>
+        <pointer type-name='entity_sell_requests' name='sell_requests'/>
+        <pointer type-name='entity_buy_requests' name='buy_requests'/>
         <pointer name='dipscript' type-name='dipscript_info'/>
         <int32_t/>
         <stl-vector type-name='pointer'/> active_script_vars
         <stl-string/>
         <stl-string/>
         <int32_t/>
-        <stl-vector>
-            <pointer>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int32_t/>
-                <int32_t/>
-                <int32_t/>
-                <int8_t/>
-                <int16_t/>
-                <pointer>
-                    <pointer> same as in caravan_state
-                        <static-array count='103'>
-                            <stl-vector type-name='int8_t'/>
-                        </static-array>
-                    </pointer>
-                    <static-array count='103'>
-                        <stl-vector type-name='int32_t'/>
-                    </static-array>
-                </pointer>
-                <pointer>
-                    <pointer> same as in caravan_state
-                        <stl-vector type-name='int16_t'/>
-                        <stl-vector type-name='int16_t'/>
-                        <stl-vector type-name='int16_t'/>
-                        <stl-vector type-name='int16_t'/>
-                        <stl-vector type-name='int8_t'/>
-                    </pointer>
-                    <stl-vector type-name='int32_t'/>
-                </pointer>
-            </pointer>
-        </stl-vector>
+        <stl-vector pointer-type='meeting_event' name='events'/>
         <stl-vector type-name='int32_t'/>
         <stl-vector type-name='int16_t'/>
         <stl-vector type-name='int32_t'/>
@@ -83,15 +54,26 @@
         <stl-vector type-name='int32_t'/>
     </struct-type>
 
-    <struct-type type-name='activity_info'>
-        <int32_t name='unk1' comment='uninitialized'/>
-        <pointer name='person1' type-name='unit' comment='diplomat'/>
-        <pointer name='person2' type-name='unit' comment='count'/>
-        <pointer name='place' type-name='building'/>
-        <int16_t name='unk2' comment='1'/>
-        <int8_t name='unk3' comment='3'/>
-        <int16_t name='unk4' comment='0'/>
-        <int32_t name='unk5' comment='-1'/>
+    <enum-type type-name='meeting_event_type' base-type='int16_t'>
+        <enum-item name="DiscussCurrent"/>
+        <enum-item name="RequestPeace"/>
+        <enum-item name="TreeQuota"/>
+        <enum-item name="ExportAgreement"/>
+        <enum-item name="ImportAgreement"/>
+        <enum-item name="PleasantPlace"/>
+    </enum-type>
+
+    <struct-type type-name='meeting_event'>
+        <enum base-type='int16_t' type-name='meeting_event_type' name='type'/>
+        <int16_t name='subtype'/>
+        <int16_t/>
+        <int32_t/>
+        <int32_t/>
+        <int32_t name='year'/>
+        <int8_t name='season'/>
+        <int16_t name='season_tick'/>
+        <pointer type-name='entity_sell_prices' name='sell_prices'/>
+        <pointer type-name='entity_buy_prices' name='buy_prices'/>
     </struct-type>
 
     <struct-type type-name='pet_info'>
