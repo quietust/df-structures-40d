@@ -423,7 +423,7 @@
             <pointer type-name='world_population'/>
         </stl-vector>
         <int32_t/>
-        <int16_t/>
+        <int16_t comment='attack intensity'/>
         <pointer name='spec_info' type-name='feature_specinfo'/>
         <stl-vector type-name='int16_t'/>
         <stl-vector type-name='int16_t'/>

@@ -432,9 +432,9 @@
         <int8_t name='season'/>
         <int16_t name='season_ticks' comment='1 tick = 10 frames; 0 = end of season'/>
         <pointer name='entity' type-name='historical_entity'/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
+        <int16_t name='feature_idx'/>
+        <int16_t name='feature_x'/>
+        <int16_t name='feature_y'/>
     </struct-type>
 
 </data-definition>
