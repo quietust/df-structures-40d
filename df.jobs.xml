@@ -45,13 +45,13 @@
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <int16_t/>
-        <int16_t/>
+        <enum base-type='int16_t' name='item_type' type-name='item_type'/>
         <int16_t name='item_subtype'/>
 
         <compound name="item_category" type-name='item_category'/>
         <stl-string name='reaction_name'/>
         <int16_t name='recheck_cntdn' comment='for process_jobs; assumed same as current version'/>
-        <int16_t name='unk10b_cntdn'/>
+        <int16_t name='wait_timer' comment='for units to leave build sites; to recheck stockpiles'/>
 
         <stl-vector name='items'>
             <pointer type-name='job_item_ref'/>

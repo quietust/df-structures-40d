@@ -17,7 +17,7 @@
         <flag-bit name='construction' comment='Material used in construction'/>
         <flag-bit name='encased' comment='Item encased in ice or obsidian'/>
 
-        <flag-bit name='unk4' comment='unknown, unseen'/>
+        <flag-bit name='bound_artifact' comment='will not be dropped'/>
         <flag-bit name='murder' comment='Implies murder - used in fell moods'/>
         <flag-bit name='foreign' comment='Item is imported'/>
         <flag-bit name='trader' comment='Item ownwed by trader'/>
@@ -27,7 +27,7 @@
         <flag-bit name='artifact' comment='Artifact ?'/>
         <flag-bit name='forbid' comment='Forbidden item'/>
 
-        <flag-bit name='unk6' comment='unknown, unseen'/>
+        <flag-bit name='already_uncategorized' comment='unknown, unseen'/>
         <flag-bit name='dump' comment='Designated for dumping'/>
         <flag-bit name='on_fire' comment='Indicates if item is on fire, Will Set Item On Fire if Set!'/>
         <flag-bit name='melt' comment='Designated for melting, if applicable'/>

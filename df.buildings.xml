@@ -241,10 +241,10 @@
 
         <pointer type-name='unit' name='owner'/>
 
-        <stl-vector>
+        <stl-vector name='job_claim_suppress'>
             <pointer>
-                <pointer type-name='unit'/>
-                <int32_t/>
+                <pointer name='unit' type-name='unit'/>
+                <int32_t name='timer'/>
             </pointer>
         </stl-vector>
 
