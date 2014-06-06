@@ -94,18 +94,7 @@
                 <pointer type-name='language_translation'/>
             </stl-vector>
             <static-array name='word_table' count='2'>
-                <static-array count='60'>
-                    <static-array name='words' count='6'>
-                        <stl-vector index-refers-to='$$._parent._parent.parts[$$._key][$]'>
-                            <int32_t ref-target='language_word'/>
-                        </stl-vector>
-                    </static-array>
-                    <static-array name='parts' count='6'>
-                        <stl-vector>
-                            <enum base-type='int32_t' type-name='part_of_speech'/>
-                        </stl-vector>
-                    </static-array>
-                </static-array>
+                <static-array type-name='language_word_table' count='60'/>
             </static-array>
         </compound>
 
