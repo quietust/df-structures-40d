@@ -290,8 +290,8 @@
     </struct-type>
 
     <class-type type-name='cave_column' original-name='cave_columnst'>
-        <int16_t/>
-        <int16_t/>
+        <int16_t name='z1'/>
+        <int16_t name='z2'/>
         <int16_t/>
         <int8_t/>
 
@@ -306,11 +306,8 @@
 
     <class-type type-name='cave_column_rectangle' original-name='cave_column_rectanglest'>
         <int32_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
+        <compound type-name='coord2d'/>
+        <compound type-name='coord'/>
         <stl-vector type-name='int16_t'/>
         <stl-vector type-name='int16_t'/>
         <stl-vector type-name='int16_t'/>
@@ -465,6 +462,8 @@
                 <pointer comment='file_compressorst'/>
                 <int32_t name='loadversion'/>
             </vmethod>
+            <vmethod name='adjustPosition'><int32_t name='dx'/><int32_t name='dy'/><int32_t name='dz'/></vmethod>
+            <vmethod/>
             <vmethod is-destructor='true'/>
         </virtual-methods>
     </class-type>

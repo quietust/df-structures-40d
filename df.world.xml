@@ -48,10 +48,10 @@
             <pointer>
                 <compound type-name='coord'/>
                 <int8_t/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
+                <stl-vector name='x1' type-name='int16_t'/>
+                <stl-vector name='y1' type-name='int16_t'/>
+                <stl-vector name='x2' type-name='int16_t'/>
+                <stl-vector name='y2' type-name='int16_t'/>
             </pointer>
         </stl-vector>
         <stl-vector name='ocean_waves'>
@@ -91,24 +91,40 @@
                 <int16_t/>
             </pointer>
         </stl-vector>
-        <stl-vector name='unk_D0'>
-            <pointer>
-            </pointer>
-        </stl-vector>
-        <stl-vector name='unk_E0'>
-            <pointer>
-            </pointer>
-        </stl-vector>
+        <stl-vector name='unk_D0' pointer-type='engraving'/>
+        <stl-vector name='unk_E0' pointer-type='construction'/>
         <stl-vector name='unk_F0'>
             <pointer>
+                <int16_t name='region_x'/>
+                <int16_t name='region_y'/>
+                <int16_t name='unk4'/>
+                <int16_t name='unk6'/>
+                <int16_t name='feature_idx'/>
+                <int16_t name='unka'/>
+                <int16_t name='unkc'/>
+                <int16_t name='unke'/>
+                <int16_t name='unk10'/>
             </pointer>
         </stl-vector>
         <stl-vector name='unk_100'>
             <pointer>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int8_t/>
+                <stl-vector type-name='int16_t'/>
+                <stl-vector type-name='int16_t'/>
+                <stl-vector type-name='int16_t'/>
+                <stl-vector type-name='int16_t'/>
             </pointer>
         </stl-vector>
         <stl-vector name='unk_110'>
             <pointer>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
+                <int16_t/>
             </pointer>
         </stl-vector>
 
