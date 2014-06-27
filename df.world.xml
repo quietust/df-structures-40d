@@ -1,171 +1,114 @@
 <data-definition>
+
+    <struct-type type-name='campfire'>
+        <compound type-name='coord' name='pos'/>
+        <int32_t name='timer'/>
+    </struct-type>
+
+    <struct-type type-name='web_cluster'>
+        <stl-vector type-name='int16_t' name='x'/>
+        <stl-vector type-name='int16_t' name='y'/>
+        <int16_t name='z'/>
+        <int16_t name='race' ref-target='creature_raw'/>
+        <compound type-name='coord2d' name='pos_min'/>
+        <compound type-name='coord2d' name='pos_max'/>
+        <stl-vector type-name='int32_t' name='ambushers' ref-target='unit'/>
+    </struct-type>
+
+    <struct-type type-name='fire'>
+        <compound type-name='coord' name='pos'/>
+        <int16_t name='timer'/>
+        <uint16_t name='temperature'/>
+        <uint16_t name='unk1' comment='10000'/>
+        <uint16_t name='unk2'/>
+        <uint16_t name='unk3'/>
+    </struct-type>
+
+    <struct-type type-name='ocean_wave'>
+        <int16_t name='x1'/>
+        <int16_t name='y1'/>
+        <int16_t name='x2'/>
+        <int16_t name='y2'/>
+        <int16_t name='z'/>
+        <int8_t/>
+        <int8_t/>
+        <int8_t/>
+    </struct-type>
+
+    <struct-type type-name='coin_batch'>
+        <int32_t name='year'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
+        <int32_t name='entity' ref-target='historical_entity'/>
+        <int32_t name='ruler' ref-target='historical_figure'/>
+        <compound name='image_front' type-name='art_image_ref'/>
+        <compound name='image_back' type-name='art_image_ref'/>
+    </struct-type>
+
+
+    <struct-type type-name='world_unk_6c'>
+        <compound type-name='coord'/>
+        <int8_t/>
+        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int16_t'/>
+    </struct-type>
+
+    <struct-type type-name='world_unk_90'>
+        <int16_t name='x1'/>
+        <int16_t name='y1'/>
+        <int16_t name='x2'/>
+        <int16_t name='y2'/>
+        <int16_t name='z'/>
+    </struct-type>
+
+    <struct-type type-name='world_unk_9c'>
+        <int16_t name='region_x'/>
+        <int16_t name='region_y'/>
+        <int16_t name='unk4'/>
+        <int16_t name='unk6'/>
+        <int16_t name='feature_idx'/>
+        <int16_t name='unka'/>
+        <int16_t name='unkc'/>
+        <int16_t name='unke'/>
+        <int16_t name='unk10'/>
+    </struct-type>
+
+
     <struct-type type-name='world'>
-        <stl-vector name='engravings'>
-            <pointer type-name='engraving'/>
-        </stl-vector>
+        <stl-vector name='engravings' pointer-type='engraving'/>
         <compound name='vermin'>
-            <stl-vector name='all'>
-                <pointer type-name='vermin'/>
-            </stl-vector>
-            <stl-vector name='colonies'>
-                <pointer type-name='vermin'/>
-            </stl-vector>
+            <stl-vector name='all' pointer-type='vermin'/>
+            <stl-vector name='colonies' pointer-type='vermin'/>
         </compound>
-        <stl-vector name='unk_30'>
-            <pointer type-name='coord'/>
-        </stl-vector>
-        <stl-vector name='campfires'>
-            <pointer>
-                <compound type-name='coord' name='pos'/>
-                <int32_t name='timer'/>
-            </pointer>
-        </stl-vector>
-        <stl-vector name='unk_50' comment='probably contaminated_tiles'>
-            <pointer type-name='coord'/>
-        </stl-vector>
-        <stl-vector name='web_clusters'>
-            <pointer>
-                <stl-vector type-name='int16_t' name='x'/>
-                <stl-vector type-name='int16_t' name='y'/>
-                <int16_t name='z'/>
-                <int16_t name='race' ref-target='creature_raw'/>
-                <compound type-name='coord2d' name='pos_min'/>
-                <compound type-name='coord2d' name='pos_max'/>
-                <stl-vector type-name='int32_t' name='ambushers' ref-target='unit'/>
-            </pointer>
-        </stl-vector>
-        <stl-vector name='fires'>
-            <pointer>
-                <compound type-name='coord' name='pos'/>
-                <int16_t comment='1000'/>
-                <uint16_t name='temperature_1'/>
-                <uint16_t comment='10000'/>
-                <uint16_t name='temperature_2'/>
-                <uint16_t name='temperature_3'/>
-            </pointer>
-        </stl-vector>
-        <stl-vector name='unk_80'>
-            <pointer>
-                <compound type-name='coord'/>
-                <int8_t/>
-                <stl-vector name='x1' type-name='int16_t'/>
-                <stl-vector name='y1' type-name='int16_t'/>
-                <stl-vector name='x2' type-name='int16_t'/>
-                <stl-vector name='y2' type-name='int16_t'/>
-            </pointer>
-        </stl-vector>
-        <stl-vector name='ocean_waves'>
-            <pointer>
-                <int16_t name='x1'/>
-                <int16_t name='y1'/>
-                <int16_t name='x2'/>
-                <int16_t name='y2'/>
-                <int16_t name='z'/>
-                <int8_t/>
-                <int8_t/>
-                <int8_t/>
-            </pointer>
-        </stl-vector>
-        <stl-vector name='constructions'>
-            <pointer type-name='construction'/>
-        </stl-vector>
-        <stl-vector name='unk_B0'>
-            <pointer>
-                <int16_t name='x1'/>
-                <int16_t name='y1'/>
-                <int16_t name='x2'/>
-                <int16_t name='y2'/>
-                <int16_t name='z'/>
-            </pointer>
-        </stl-vector>
-        <stl-vector name='unk_C0'>
-            <pointer>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-            </pointer>
-        </stl-vector>
+        <stl-vector name='unk_30' pointer-type='coord'/>
+        <stl-vector name='campfires' pointer-type='campfire'/>
+        <stl-vector name='unk_50' pointer-type='coord' comment='probably contaminated_tiles'/>
+        <stl-vector name='web_clusters' pointer-type='web_cluster'/>
+        <stl-vector name='fires' pointer-type='fire'/>
+        <stl-vector name='unk_80' pointer-type='world_unk_6c'/>
+        <stl-vector name='ocean_waves' pointer-type='ocean_wave'/>
+        <stl-vector name='constructions' pointer-type='construction'/>
+        <stl-vector name='unk_B0' pointer-type='world_unk_90'/>
+        <stl-vector name='unk_C0' pointer-type='world_unk_9c'/>
+
         <stl-vector name='unk_D0' pointer-type='engraving'/>
         <stl-vector name='unk_E0' pointer-type='construction'/>
-        <stl-vector name='unk_F0'>
-            <pointer>
-                <int16_t name='region_x'/>
-                <int16_t name='region_y'/>
-                <int16_t name='unk4'/>
-                <int16_t name='unk6'/>
-                <int16_t name='feature_idx'/>
-                <int16_t name='unka'/>
-                <int16_t name='unkc'/>
-                <int16_t name='unke'/>
-                <int16_t name='unk10'/>
-            </pointer>
-        </stl-vector>
-        <stl-vector name='unk_100'>
-            <pointer>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int8_t/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-                <stl-vector type-name='int16_t'/>
-            </pointer>
-        </stl-vector>
-        <stl-vector name='unk_110'>
-            <pointer>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-            </pointer>
-        </stl-vector>
+        <stl-vector name='unk_F0' pointer-type='world_unk_9c'/>
+        <stl-vector name='unk_100' pointer-type='world_unk_6c'/>
+        <stl-vector name='unk_110' pointer-type='world_unk_90'/>
 
-        <stl-vector name='effects'>
-            <pointer type-name='effect_info'/>
-        </stl-vector>
-        <stl-vector name='coin_batches'>
-            <pointer>
-                <int32_t name='year'/>
-                <enum base-type='int16_t' name='material' type-name='material_type'/>
-                <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
-                <int32_t name='entity' ref-target='historical_entity'/>
-                <int32_t name='ruler' ref-target='historical_figure'/>
-                <compound name='image_front' type-name='art_image_ref'/>
-                <compound name='image_back' type-name='art_image_ref'/>
-            </pointer>
-        </stl-vector>
-        <stl-vector name='populations'>
-            <pointer type-name='local_population'/>
-        </stl-vector>
+        <stl-vector name='effects' pointer-type='effect_info'/>
+        <stl-vector name='coin_batches' pointer-type='coin_batch'/>
+        <stl-vector name='populations' pointer-type='local_population'/>
 
-        --
-
-        <stl-vector name='manager_orders'>
-            <pointer type-name='manager_order'/>
-        </stl-vector>
-
-        <stl-vector name='mandates'>
-            <pointer type-name='mandate'/>
-        </stl-vector>
-
-        --  Entities
+        <stl-vector name='manager_orders' pointer-type='manager_order'/>
+        <stl-vector name='mandates' pointer-type='mandate'/>
 
         <compound name='entities'>
-            <stl-vector name='all'>
-                <pointer type-name='historical_entity'/>
-            </stl-vector>
-
-            <stl-vector name='bad' has-bad-pointers='true'>
-                <pointer type-name='historical_entity'/>
-            </stl-vector>
+            <stl-vector name='all' pointer-type='historical_entity'/>
+            <stl-vector name='bad' pointer-type='historical_entity' has-bad-pointers='true'/>
         </compound>
 
         -- Region coordinates used during worldgen
@@ -174,120 +117,64 @@
             <int16_t name='next_slot'/>
         </compound>
 
-        -- Units
-
         <compound name='units'>
-            <stl-vector name='all'>
-                <pointer type-name='unit'/>
-            </stl-vector>
+            <stl-vector name='all' pointer-type='unit'/>
 
-            <stl-vector name='active'>
-                <comment>
-                    not sorted; [0] is adventurer; removed if kidnapped etc but not if dead
-                </comment>
-                <pointer type-name='unit'/>
-            </stl-vector>
+            <stl-vector name='active' pointer-type='unit' comment='not sorted; [0] is adventurer; removed if kidnapped etc but not if dead'/>
 
             <static-array name='other' count='3'>
-                <stl-vector>
-                    <pointer type-name='unit'/>
-                </stl-vector>
+                <stl-vector pointer-type='unit'/>
             </static-array>
 
-            <stl-vector name='bad' has-bad-pointers='true'>
-                <pointer type-name='unit'/>
-            </stl-vector>
+            <stl-vector name='bad' pointer-type='unit' has-bad-pointers='true'/>
         </compound>
-
-        -- Unknown
 
         <stl-vector name='unit_chunks' pointer-type='unit_chunk'/>
         <stl-vector name='art_image_chunks' pointer-type='art_image_chunk'/>
 
-        -- Nemesis
-
         <compound name='nemesis'>
-            <stl-vector name='all'>
-                <pointer type-name='nemesis_record'/>
-            </stl-vector>
+            <stl-vector name='all' pointer-type='nemesis_record'/>
 
-            <stl-vector name='bad' has-bad-pointers='true'>
-                <pointer type-name='nemesis_record'/>
-            </stl-vector>
+            <stl-vector name='bad' pointer-type='nemesis_record' has-bad-pointers='true'/>
             <bool/>
         </compound>
 
-        -- Items
-
         <compound name='items'>
-            dtor 852f4b0
-
-            <stl-vector name='all'>
-                <pointer type-name='item'/>
-            </stl-vector>
+            <stl-vector name='all' pointer-type='item'/>
 
             <static-array name='other' count='87' index-enum='items_other_id'>
-                <stl-vector>
-                    <pointer type-name='item'/>
-                </stl-vector>
+                <stl-vector pointer-type='item'/>
             </static-array>
 
-            <stl-vector name='bad' has-bad-pointers='true'>
-                <pointer type-name='item'/>
-            </stl-vector>
+            <stl-vector name='bad' pointer-type='item' has-bad-pointers='true'/>
 
             <stl-vector name='bad_tag' type-name='int32_t'/>
         </compound>
 
-        -- Artifacts
-
         <compound name='artifacts'>
-            <stl-vector name='all'>
-                <pointer type-name='artifact_record'/>
-            </stl-vector>
+            <stl-vector name='all' pointer-type='artifact_record'/>
 
-            <stl-vector name='bad' has-bad-pointers='true'>
-                <pointer type-name='artifact_record'/>
-            </stl-vector>
+            <stl-vector name='bad' pointer-type='artifact_record' has-bad-pointers='true'/>
         </compound>
 
-        -- Jobs and projectiles
-
         <df-linked-list name='job_list' type-name='job_list_link'/>
-
         <df-linked-list name='proj_list' type-name='proj_list_link'/>
 
-        -- Buildings
-
         <compound name='buildings'>
-            dtor 85316f0
-
-            <stl-vector name='all'>
-                <pointer type-name='building'/>
-            </stl-vector>
+            <stl-vector name='all' pointer-type='building'/>
 
             <static-array name='other' count='76' index-enum='buildings_other_id'>
-                <stl-vector>
-                    <pointer type-name='building'/>
-                </stl-vector>
+                <stl-vector pointer-type='building'/>
             </static-array>
 
-            <stl-vector name='bad' has-bad-pointers='true'>
-                <pointer type-name='building'/>
-            </stl-vector>
+            <stl-vector name='bad' pointer-type='building' has-bad-pointers='true'/>
             <bool name='check_bridge_collapse'/>
             <bool name='check_machine_collapse' comment='?'/>
         </compound>
 
-        -- Machines (connected groups of gears and so on)
-
         <compound name='machines'>
-            <stl-vector name='all'>
-                <pointer type-name='machine'/>
-            </stl-vector>
-            <stl-vector name='bad' has-bad-pointers='true'>
-                <pointer type-name='machine'/>
-            </stl-vector>
+            <stl-vector name='all' pointer-type='machine'/>
+            <stl-vector name='bad' pointer-type='machine' has-bad-pointers='true'/>
         </compound>
 
         <compound name='hauling'>
@@ -343,24 +230,12 @@
         </compound>
 
         <compound name='plants'>
-            <stl-vector name='all'>
-                <pointer type-name='plant'/>
-            </stl-vector>
-            <stl-vector name='shrub_dry'>
-                <pointer type-name='plant'/>
-            </stl-vector>
-            <stl-vector name='shrub_wet'>
-                <pointer type-name='plant'/>
-            </stl-vector>
-            <stl-vector name='tree_dry'>
-                <pointer type-name='plant'/>
-            </stl-vector>
-            <stl-vector name='tree_wet'>
-                <pointer type-name='plant'/>
-            </stl-vector>
-            <stl-vector name='empty'>
-                <pointer type-name='plant'/>
-            </stl-vector>
+            <stl-vector name='all' pointer-type='plant'/>
+            <stl-vector name='shrub_dry' pointer-type='plant'/>
+            <stl-vector name='shrub_wet' pointer-type='plant'/>
+            <stl-vector name='tree_dry' pointer-type='plant'/>
+            <stl-vector name='tree_wet' pointer-type='plant'/>
+            <stl-vector name='empty' pointer-type='plant'/>
         </compound>
 
         <df-linked-list name='quests' type-name='quest_list_link'/>
@@ -388,9 +263,7 @@
 
         <compound name='map'>
             52cdc
-            <stl-vector name='map_blocks'>
-                <pointer type-name='map_block'/>
-            </stl-vector>
+            <stl-vector name='map_blocks' pointer-type='map_block'/>
             <pointer name='block_index' is-array='true'>
                 <pointer is-array='true'>
                     <pointer is-array='true'>
@@ -399,9 +272,7 @@
                 </pointer>
             </pointer>
 
-            <stl-vector name='map_block_columns'>
-                <pointer type-name='map_block_column'/>
-            </stl-vector>
+            <stl-vector name='map_block_columns' pointer-type='map_block_column'/>
             <pointer name='column_index' is-array='true'>
                 <pointer is-array='true'>
                     <pointer type-name='map_block_column'/>
@@ -488,9 +359,7 @@
 
         <int32_t name='frame_counter' comment='increases by 1 every time . is pressed'/>
 
-        <stl-vector name='orphaned_flows' comment='flows that are not tied to a map_block'>
-            <pointer type-name='flow_info'/>
-        </stl-vector>
+        <stl-vector name='orphaned_flows' pointer-type='flow_info' comment='flows that are not tied to a map_block'/>
 
         <compound name='pathfinder'>
             <static-array name='boundary_heap' count='80000'>
@@ -512,22 +381,20 @@
             <int16_t name='plant_update_step'/>
         </compound>
 
-        <stl-vector name='map_features'>
-            <pointer type-name='feature_init'/>
-        </stl-vector>
+        <stl-vector name='map_features' pointer-type='feature_init'/>
         <stl-vector type-name='int16_t' name='feature_x'/>
         <stl-vector type-name='int16_t' name='feature_y'/>
         <stl-vector type-name='int16_t' name='feature_idx' comment='same as map_block.feature'/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
+        <stl-vector pointer-type='feature_init'/>
+        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int16_t'/>
         <bool/>
         <bool/>
     </struct-type>
