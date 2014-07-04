@@ -34,10 +34,42 @@
         <enum-item name='SleepConfirm'/>
     </enum-type>
 
+    <struct-type type-name='conversation'>
+        <stl-string name='conv_title'/>
+        <enum base-type='int32_t' name='state'>
+            <enum-item name='started'/>
+            <enum-item name='active'/>
+            <enum-item name='finished'/>
+            <enum-item name='quit'/>
+        </enum>
+        <stl-vector type-name='int16_t' name='talk_choices' />
+
+        <int32_t name='unk_30' ref-target='unit'/>
+        <int32_t name='unk_34' ref-target='historical_figure'/>
+
+        <int32_t name='unk_3c' ref-target='unit'/>
+        <int32_t name='unk_40' ref-target='historical_figure'/>
+
+        <int32_t name='unk_48' ref-target='unit'/>
+        <int32_t name='unk_4c' ref-target='historical_figure'/>
+
+
+        <stl-vector name='speech'>
+            <pointer>
+                <stl-vector name='text' pointer-type='stl-string' comment='wordwrap'/>
+                <int32_t name='speaker_unit' ref-target='unit'/>
+                <int32_t name='speaker_hf' ref-target='historical_figure'/>
+                <int16_t name='fg'/>
+                <int16_t name='bg'/>
+                <int16_t name='bright'/>
+            </pointer>
+        </stl-vector>
+    </struct-type>
+
     <struct-type type-name='ui_advmode'>
         <enum base-type='int16_t' name='menu' type-name='ui_advmode_menu'/>
 
-        <int8_t/>
+        <bool name='travel_clouds'/>
         <int8_t/>
         <int8_t/>
         <int32_t/>
@@ -58,33 +90,9 @@
                 <int32_t name='histfig_id' ref-target='historical_figure'/>
             </pointer>
         </stl-vector>
-        <stl-vector name='conversations'>
-            <pointer>
-                <stl-string name='conv_title'/>
-                <int32_t name='state'/> 0=started, 1=active, 2=finished
-                <stl-vector type-name='int16_t' name='talk_choices' />
-                <int32_t ref-target='unit'/>
-                <int32_t ref-target='historical_figure'/>
+        <stl-vector name='conversations' pointer-type='conversation'/>
 
-                <int32_t ref-target='unit'/>
-                <int32_t ref-target='historical_figure'/>
-
-                <int32_t ref-target='unit'/>
-                <int32_t ref-target='historical_figure'/>
-
-                <stl-vector name='speech'>
-                    <pointer>
-                        <stl-vector name='text' pointer-type='stl-string'/>
-                        <int32_t name='speaker_unit' ref-target='unit'/>
-                        <int32_t name='speaker_hf' ref-target='historical_figure'/>
-                        <int16_t name='fg'/>
-                        <int16_t name='bg'/>
-                        <int16_t name='bright'/>
-                    </pointer>
-                </stl-vector>
-            </pointer>
-        </stl-vector>
-        <int32_t/>
+        <int32_t name='talk_target_cursor'/>
 
         <stl-vector type-name='int32_t' name='searched_x'/>
         <stl-vector type-name='int32_t' name='searched_y'/>
@@ -97,6 +105,7 @@
         <int32_t/>
         <int32_t/>
         <int8_t/>
+
         <int16_t/>?
         <int8_t/>
         <int16_t/>
@@ -105,9 +114,9 @@
         <int32_t/>
         <int16_t/>
         <int16_t/>
+        <stl-vector type-name='pointer' name='interact_options'/>
         <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer'/>
+        <stl-vector type-name='pointer' name='move_options'/>
     </struct-type>
 
     <struct-type type-name='quest_list_link'>
