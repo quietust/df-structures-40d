@@ -28,6 +28,24 @@
         <uint16_t name='temperature_tile' comment='speculated'/>
         <uint16_t name='min_safe_temp'/>
         <uint16_t name='max_safe_temp'/>
+
+        <virtual-methods>
+            <vmethod name='addContaminant'>
+                <int16_t/>
+                <int16_t/>
+                <enum base-type='int32_t' name='material' type-name='material_type'/>
+                <int32_t name='size'/>
+            </vmethod>
+            <vmethod name='removeContaminantByIdx'>
+                <int32_t name='index'/> <int32_t name='amount'/>
+            </vmethod>
+            <vmethod name='removeContaminantByType'>
+                <int16_t/>
+                <int16_t/>
+                <enum base-type='int32_t' name='material' type-name='material_type'/>
+                <int32_t name='amount'/>
+            </vmethod>
+        </virtual-methods>
     </class-type>
 </data-definition>
 
