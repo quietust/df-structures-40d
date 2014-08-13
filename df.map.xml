@@ -527,7 +527,7 @@
                 <int32_t name='loadversion'/>
             </vmethod>
             <vmethod is-destructor='true'/>
-            <vmethod comment='10 parms, possibly responsible for actually placing it on the map'/>
+            <vmethod><int32_t/><int32_t/><int32_t/><int32_t/><int32_t/><int32_t/><int32_t/><int32_t/><int32_t/><int32_t/></vmethod>
         </virtual-methods>
     </class-type>
 

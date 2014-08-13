@@ -25,10 +25,10 @@
         <int16_t name='count'/>
 
         <virtual-methods>
-            <vmethod/>
-            <vmethod name='finalize'/>
-            <vmethod/>
-            <vmethod/>
+            <vmethod><int32_t/><int32_t/><int32_t/><int32_t/></vmethod>
+            <vmethod name='finalize'><int32_t/></vmethod>
+            <vmethod><pointer/></vmethod>
+            <vmethod name='getName'><pointer name='str' type-name='stl-string'/></vmethod>
         </virtual-methods>
     </class-type>
 

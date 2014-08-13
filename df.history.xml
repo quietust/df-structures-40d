@@ -357,9 +357,15 @@
             </vmethod>
             <vmethod name='getSummary'>
                 <pointer type-name='stl-string' name='str'/> "In x, some event happened"
+                <int32_t/>
+                <int32_t/>
+                <int32_t/>
             </vmethod>
             <vmethod name='getDescription'>
                 <pointer type-name='stl-string' name='str'/> "the happening of some event"
+                <int32_t/>
+                <int32_t/>
+                <int32_t/>
             </vmethod>
             <vmethod name='populateArtImage'>
                 <pointer type-name='art_image' name='image'/>
@@ -367,7 +373,7 @@
             <vmethod/>
 
             <vmethod/>
-            <vmethod/>
+            <vmethod ret-type='bool'><int32_t/></vmethod>
             <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
             <vmethod name='read_file'>
                 <pointer comment='file_compressorst'/>

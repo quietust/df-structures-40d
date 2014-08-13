@@ -384,7 +384,7 @@
             <vmethod name='removeUses'> <bool name='noscatter'/> <bool name='lost'/> </vmethod>
             <vmethod name='deconstructItems'> <bool name='noscatter'/> <bool name='lost'/> </vmethod>
             <vmethod name='updatePathfinding'/>
-            <vmethod ret-type='bool' name='takesFireDamage'/>
+            <vmethod ret-type='bool' name='takesFireDamage'><int32_t name='fire_level'/></vmethod>
             <vmethod name='populateSettingsMenu'/> for weapon racks and armor stands
 
             <vmethod name='populateTaskList'/> for certain workshops
@@ -392,7 +392,7 @@
             <vmethod ret-type='bool' name='isHidden'/>
             <vmethod/>
             <vmethod ret-type='bool' name='isVisible'
-                     comment='used by stuff like open doors/floodgates'/>
+                     comment='used by stuff like open doors/floodgates'><pointer/></vmethod>
 
             -- 80
 

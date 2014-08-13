@@ -26,17 +26,12 @@
                 <pointer type-name='int8_t' name='sym'/>
                 <pointer type-name='int32_t'/>
             </vmethod>
-            <vmethod name='getName1'>
+            <vmethod name='getName'>
                 <pointer type-name='stl-string'/>
                 <pointer/>
-                <pointer/>
-            </vmethod>
-            <vmethod name='getName2'>
-                <pointer type-name='stl-string'/>
                 <pointer/>
             </vmethod>
             <vmethod/>
-
             <vmethod name='getColorAndShape'>
                 <pointer name='colors'><stl-vector type-name='int16_t'/></pointer>
                 <pointer name='shapes'><stl-vector type-name='int16_t'/></pointer>

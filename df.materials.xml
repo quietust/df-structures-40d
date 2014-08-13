@@ -557,7 +557,7 @@
     </struct-type>
 
     <struct-type type-name='contaminant'>
-        <int16_t name='state'/> always 1
+        <int16_t name='type'/>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <int32_t name='amount'/>
