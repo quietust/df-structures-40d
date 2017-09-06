@@ -265,16 +265,18 @@
 
         <static-array type-name='int32_t' count='926'/>
 
-        <stl-string/>
-        <stl-vector>
-            <pointer type-name='stl-string'/>
-        </stl-vector>
+        <compound name='command_line'>
+            <stl-string name='original'/>
+            <stl-vector name='arg_vecv' pointer-type='stl-string'/>
 
-        <int32_t/>
-        <int32_t/>?
-        <int8_t/>
-        <stl-string/>
-        <int8_t/>
+            <int32_t name="gen_id"/>
+            <int32_t name="world_seed"/>
+            <bool name="use_seed"/>
+
+            <stl-string name='world_param'/>
+            <int8_t name="use_param"/>
+        </compound>
+
         <int32_t/>
         <int8_t/>
     </struct-type>
