@@ -345,16 +345,16 @@
             <int16_t/>
             <pointer comment='df_job' name='current_job' type-name='job'/>
             <stl-vector name='mood_item_type'>
-                <enum base-type='int32_t' type-name='item_type'/>
+                <enum base-type='int16_t' type-name='item_type'/>
             </stl-vector>
             <stl-vector name='mood_item_subtype'>
-                <int32_t refers-to='(item-subtype-target $$._parent._parent.mood_item_type[$$._key] $)'/>
+                <int16_t refers-to='(item-subtype-target $$._parent._parent.mood_item_type[$$._key] $)'/>
             </stl-vector>
             <stl-vector name='mood_material'>
-                <enum base-type='int32_t' type-name='material_type'/>
+                <enum base-type='int16_t' type-name='material_type'/>
             </stl-vector>
             <stl-vector name='mood_matgloss'>
-                <int32_t refers-to='(matgloss-target $$._parent._parent.mood_material[$$._key] $)'/>
+                <int16_t refers-to='(matgloss-target $$._parent._parent.mood_material[$$._key] $)'/>
             </stl-vector>
             <enum base-type='int32_t' name="mood_skill" type-name='job_skill'/>
             <int32_t/>
