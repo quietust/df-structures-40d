@@ -94,7 +94,7 @@
                 <pointer type-name='language_translation'/>
             </stl-vector>
             <static-array name='word_table' count='2'>
-                <static-array type-name='language_word_table' count='60'/>
+                <static-array type-name='language_word_table' index-enum='language_name_category' count='60'/>
             </static-array>
         </compound>
 
