@@ -53,8 +53,8 @@
         <global-address name='process_dig' value='0x1381471'/>
         <global-address name='process_jobs' value='0x1381472'/>
 
-        <global-address name='ui_building_in_assign' value='0x138147c'/>
-        <global-address name='ui_building_in_resize' value='0x138147d'/> ???
+        <global-address name='ui_building_in_assign' value='0x138147d'/>
+        <global-address name='ui_building_in_resize' value='0x138147c'/>
         <global-address name='ui_building_item_cursor' value='0xd8bf24'/>
         <global-address name='ui_look_cursor' value='0xd73860'/>
         <global-address name='ui_selected_unit' value='0xd870f4'/>
