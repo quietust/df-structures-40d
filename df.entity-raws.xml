@@ -120,6 +120,22 @@
         <enum-item name='UNTHINKABLE'/>
     </enum-type>
 
+    <enum-type type-name='entity_name_type'>
+        <enum-item name='OTHER'/>
+        <enum-item name='CIV'/>
+        <enum-item name='SITE'/>
+        <enum-item name='VESSEL'/>
+        <enum-item name='RELIGION'/>
+        <enum-item name='TEMPLE'/>
+        <enum-item name='WAR'/>
+        <enum-item name='BATTLE'/>
+        <enum-item name='SIEGE'/>
+        <enum-item name='ROAD'/>
+        <enum-item name='BRIDGE'/>
+        <enum-item name='TUNNEL'/>
+        <enum-item name='WALL'/>
+    </enum-type>
+
     <struct-type type-name='entity_raw' instance-vector='$global.world.raws.entities'>
         <stl-string name='code'/>
 
@@ -226,15 +242,15 @@
         <stl-string name='translation'/>
 
         <compound name='symbols'>
-            <static-array name='symbols1' count='13' type-name='language_word_table'/>
-            <static-array name='symbols2' count='13' type-name='language_word_table'/>
-            <static-array name='select_symbol' count='13'>
+            <static-array name='symbols1' count='13' index-enum='entity_name_type' type-name='language_word_table'/>
+            <static-array name='symbols2' count='13' index-enum='entity_name_type' type-name='language_word_table'/>
+            <static-array name='select_symbol' index-enum='entity_name_type' count='13'>
                 <stl-vector pointer-type='stl-string'/>
             </static-array>
-            <static-array name='subselect_symbol' count='13'>
+            <static-array name='subselect_symbol' index-enum='entity_name_type' count='13'>
                 <stl-vector pointer-type='stl-string'/>
             </static-array>
-            <static-array name='cull_symbol' count='13'>
+            <static-array name='cull_symbol' index-enum='entity_name_type' count='13'>
                 <stl-vector pointer-type='stl-string'/>
             </static-array>
         </compound>
