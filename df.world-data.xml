@@ -86,6 +86,18 @@
         <int32_t name="count_max" init-value='10000001'/>
     </struct-type>
 
+    <struct-type type-name='embark_note'>
+        <int8_t name='tile'/>
+        <int16_t name='fg_color'/>
+        <int16_t name='bg_color'/>
+        <stl-string name='name'/>
+        <compound name='pos' type-name='coord2d'/>
+        <int16_t name='left'/>
+        <int16_t name='right'/>
+        <int16_t name='top'/>
+        <int16_t name='bottom'/>
+    </struct-type>
+
     <struct-type type-name='world_landmass'
                  instance-vector='$global.world.world_data.landmasses'>
         <compound name='name' type-name='language_name'/>
@@ -590,20 +602,7 @@
         </pointer>
         <pointer is-array='true' type-name='int32_t' comment='2D array, size ceil(width/16) * ceil(height/16)'/>
         <int32_t/>
-        <stl-vector>
-            <pointer>
-                <int8_t/>
-                <int16_t/>
-                <int32_t/>
-                <stl-string/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-                <int16_t/>
-            </pointer>
-        </stl-vector>
+        <stl-vector name="embark_notes" pointer-type='embark_note'/>
         <stl-vector/>
         <pointer is-array='true' name='feature_map'>
             <pointer is-array='true'>

@@ -1079,14 +1079,14 @@
             <int16_t/>
             <int16_t/>
         </compound>
-        <stl-vector/>
-        <stl-vector/>
+        <stl-vector name="notes_order" type-name='int32_t' refers-to='$global.world.world_data.embark_notes[$]'/>
+        <stl-vector name="cur_note_name" pointer-type='stl-string'/>
         <int8_t/>
         <int32_t/>
         <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
+        <int8_t name="note_tile"/>
+        <int16_t name="note_fg_color"/>
+        <int16_t name="note_bg_color"/>
         <int32_t/>
     </class-type>
 
