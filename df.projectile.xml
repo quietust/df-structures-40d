@@ -43,7 +43,7 @@
 
         <int32_t name='hit_rating'/>
         <int32_t name='throw_strength'/>
-        <int32_t/>
+        <int32_t name='unk_1'/>
 
         <virtual-methods>
             <vmethod ret-type='projectile_type' name='getType'/>

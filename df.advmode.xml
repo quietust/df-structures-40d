@@ -132,15 +132,15 @@
         <int32_t name='id'/>
 
         <int32_t name='quest_giver_id' ref-target='historical_figure'/>
-        <int32_t ref-target='world_site'/>
-        <int32_t/>
+        <int32_t name='unk_1' ref-target='world_site'/>
+        <int32_t name='unk_2'/>
         <int32_t name='adventurer_id' ref-target='historical_figure'/>
-        <int32_t/>
+        <int32_t name='unk_3'/>
 
         <compound name='target_pos' type-name='coord2d'/>
         <compound name='giver_pos' type-name='coord2d'/>
-        <compound type-name='coord2d'/>
-        <compound type-name='coord2d'/>
+        <compound name='unk_4' type-name='coord2d'/>
+        <compound name='unk_5' type-name='coord2d'/>
     </class-type>
 
     <class-type type-name='task_kill_nemesisst' inherits-from='adv_task'>
