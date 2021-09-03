@@ -115,8 +115,6 @@
         <enum-item name='SeekDrinkAreaForWater'/>
         <enum-item name='ManageWorkOrders'/>
         <enum-item name='UpdateStockpileRecords'/>
-        <enum-item name='UpgradeSquadEquipment'/>
-        <enum-item name='PrepareEquipmentManifests'/>
         <enum-item name='WanderDepot'/>
         <enum-item name='SeekUpdateOffice'/>
         <enum-item name='SeekManageOffice'/>
@@ -178,6 +176,16 @@
         <enum-item name='MillBuilding'/>
         <enum-item name='HeadForEdge'/>
         <enum-item name='MillingFlood'/>
+    </enum-type>
+
+    <enum-type type-name='unit_idle_type' base-type='int16_t'>
+        <enum-item name='NearWagon'/>
+        <enum-item name='RandomLocation'/>
+        <enum-item name='Bedroom'/>
+        <enum-item name='MeetingHall'/>
+        <enum-item name='StatueGarden'/>
+        <enum-item name='Zoo'/>
+        <enum-item name='CivZone'/>
     </enum-type>
 </data-definition>
 

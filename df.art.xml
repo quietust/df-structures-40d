@@ -24,7 +24,7 @@
             </vmethod>
             <vmethod name='getSymbol'>
                 <pointer type-name='int8_t' name='sym'/>
-                <pointer type-name='int32_t'/>
+                <pointer type-name='int16_t'/>
             </vmethod>
             <vmethod name='getName'>
                 <pointer type-name='stl-string'/>

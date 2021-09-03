@@ -104,6 +104,17 @@
         <stl-vector pointer-type="layer_object" name="layer_objects"/>
     </class-type>
 
+    <struct-type type-name='interfacekeyst'>
+        <stl-string name='description'/>
+        <stl-string name='token'/>
+        <uint8_t name='key'/>
+        <int32_t name='last_used_for_held'/>
+        <int16_t/>
+        <int8_t name='is_shift'/>
+        <int8_t name='is_ctrl'/>
+        <int8_t name='is_alt'/>
+    </struct-type>
+
     <struct-type type-name='interfacest'>
         <compound name='announcements'>
             <stl-vector name='reports'>
@@ -116,7 +127,7 @@
         </compound>
         <uint8_t name='current_key'/>
         <int8_t name='current_shift'/>
-        <int8_t/>
+        <int8_t name='current_caps'/>
         <int8_t name='current_ctrl'/>
         <int8_t name='current_alt'/>
 
@@ -133,27 +144,17 @@
 
         <compound name='view' type-name='viewscreen'/>
 
-        <int32_t/>
-        <stl-bit-vector/>
-        <stl-bit-vector/>
-        <stl-bit-vector/>
-        <stl-bit-vector/>
-        <stl-vector type-name='pointer'/>
-        <int32_t/>
-        <static-array count='1117' name='keybinds' index-enum='interface_key'>
-            <stl-string name='description'/>
-            <stl-string name='token'/>
-            <uint8_t name='key'/>
-            <int32_t/>
-            <int16_t/>
-            <int8_t name='is_shift'/>
-            <int8_t name='is_ctrl'/>
-            <int8_t name='is_alt'/>
-        </static-array>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <static-array count='63' type-name='int32_t'/>
+        <int32_t name='time'/>
+        <stl-vector name='inputbuffer' type-name='uint8_t'/>
+        <stl-bit-vector name='inputbuffer_shift'/>
+        <stl-bit-vector name='inputbuffer_caps'/>
+        <stl-bit-vector name='inputbuffer_ctrl'/>
+        <stl-bit-vector name='inputbuffer_alt'/>
+        <uint32_t name='flag'/>
+        <static-array count='1117' name='keybinds' type-name='interfacekeyst' index-enum='interface_key'/>
+        <int32_t name='shutdown_interface_tickcount'/>
+        <int32_t name='shutdown_interface_for_ms'/>
+        <static-array count='256' name='keyboardstate' type-name='int8_t'/>
         <int8_t name='supermovie_on'/>
         <int32_t name='supermovie_pos'/>
         <int32_t name='supermovie_delayrate'/>

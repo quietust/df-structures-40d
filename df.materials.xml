@@ -193,16 +193,8 @@
         <static-array type-name='int16_t' name='build_color' count='3'/>
         <static-array type-name='int16_t' name='tile_color' count='3'/>
 
-        <uint16_t name='spec_heat'/>
-        <uint16_t name='heatdam_point'/>
-        <uint16_t name='colddam_point'/>
-        <uint16_t name='ignite_point'/>
-        <uint16_t name='melting_point'/>
-        <uint16_t name='boiling_point'/>
-        <uint16_t name='fixed_temp'/>
-
-        <int32_t name='solid_density'/>
-        <int32_t name='liquid_density'/>
+        <compound name='temperature' type-name='temperature_raw'/>
+        <compound name='density' type-name='density_raw'/>
 
         <uint8_t name='item_symbol'/>
 
@@ -285,16 +277,8 @@
         <int32_t name='damage_perc'/>
         <int32_t name='block_perc'/>
 
-        <uint16_t name='spec_heat'/>
-        <uint16_t name='heatdam_point'/>
-        <uint16_t name='colddam_point'/>
-        <uint16_t name='ignite_point'/>
-        <uint16_t name='melting_point'/>
-        <uint16_t name='boiling_point'/>
-        <uint16_t name='fixed_temp'/>
-
-        <int32_t name='solid_density'/>
-        <int32_t name='liquid_density'/>
+        <compound name='temperature' type-name='temperature_raw'/>
+        <compound name='density' type-name='density_raw'/>
 
         <int32_t name='value'/>
         <stl-vector/>
@@ -388,6 +372,29 @@
         <enum-item name='BIOME_RIVER_TROPICAL_SALTWATER'/>
     </enum-type>
 
+    <enum-type type-name='plant_material_type'>
+        <enum-item name='STRUCTURAL'/>
+        <enum-item name='CLOTH'/>
+        <enum-item name='EXTRACT'/>
+        <enum-item name='DRINK'/>
+        <enum-item name='CHEESE'/>
+    </enum-type>
+
+    <struct-type type-name='temperature_raw'>
+        <uint16_t name='spec_heat'/>
+        <uint16_t name='heatdam_point'/>
+        <uint16_t name='colddam_point'/>
+        <uint16_t name='ignite_point'/>
+        <uint16_t name='melting_point'/>
+        <uint16_t name='boiling_point'/>
+        <uint16_t name='fixed_temp'/>
+    </struct-type>
+
+    <struct-type type-name='density_raw'>
+        <int32_t name='solid'/>
+        <int32_t name='liquid'/>
+    </struct-type>
+
     <struct-type type-name='matgloss_plant' instance-vector='$global.world.raws.matgloss.plant'>
         <stl-string name='id'/>
         <code-helper name='describe'>$.id</code-helper>
@@ -400,20 +407,8 @@
         <stl-string name='mill_name'/>
         <stl-string name='extract_name'/>
 
-        <static-array name='temperatures' count='5'> // plant, CLOTH, EXTRACT, DRINK, CHEESE
-            <uint16_t name='spec_heat'/>
-            <uint16_t name='heatdam_point'/>
-            <uint16_t name='colddam_point'/>
-            <uint16_t name='ignite_point'/>
-            <uint16_t name='melting_point'/>
-            <uint16_t name='boiling_point'/>
-            <uint16_t name='fixed_temp'/>
-        </static-array>
-
-        <static-array name='densities' count='5'> // plant, CLOTH, EXTRACT, DRINK, CHEESE
-            <int32_t name='solid_density'/>
-            <int32_t name='liquid_density'/>
-        </static-array>
+        <static-array name='temperatures' index-enum='plant_material_type' count='5' type-name='temperature_raw'/>
+        <static-array name='densities' index-enum='plant_material_type' count='5' type-name='density_raw'/>
 
         <stl-string name='mill_dye'/>
         <int16_t name='mill_dye_color' ref-target='descriptor_color'/>
@@ -529,15 +524,9 @@
             <pointer type-name='stl-string'/>
         </stl-vector>
 
-        <uint16_t name='spec_heat'/>
-        <uint16_t name='heatdam_point'/>
-        <uint16_t name='colddam_point'/>
-        <uint16_t name='ignite_point'/>
-        <uint16_t name='melting_point'/>
-        <uint16_t name='boiling_point'/>
-        <uint16_t name='fixed_temp'/>
-        <int32_t name='solid_density'/>
-        <int32_t name='liquid_density'/>
+        <compound name='temperature' type-name='temperature_raw'/>
+        <compound name='density' type-name='density_raw'/>
+
         <static-array type-name='int8_t' name='color' count='3'/>
         <static-array type-name='int8_t' name='dead_color' count='3'/>
         <static-array type-name='int8_t' name='sapling_color' count='3'/>
@@ -562,6 +551,17 @@
         <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <int32_t name='amount'/>
     </struct-type>
+
+    <bitfield-type type-name='matgloss_blood' base-type='uint8_t'>
+        <flag-bit name='blood'/>
+        <flag-bit name='blood_g'/>
+        <flag-bit name='blood_b'/>
+        <flag-bit name='pus'/>
+        <flag-bit name='blood_m'/>
+        <flag-bit name='blood_c'/>
+        <flag-bit name='ichor'/>
+        <flag-bit name='goo'/>
+    </bitfield-type>
 </data-definition>
 
 <!--

@@ -25,7 +25,12 @@
         <int16_t name='count'/>
 
         <virtual-methods>
-            <vmethod><int32_t/><int32_t/><int32_t/><int32_t/></vmethod>
+            <vmethod name='isAvailable' ret-type='bool'>
+                <pointer name='avail_stones'><stl-vector type-name='int32_t' ref-target='matgloss_stone'/></pointer>
+                <pointer name='avail_ores'><stl-vector type-name='int32_t' ref-target='matgloss_metal'/></pointer>
+                <pointer name='reaction_classes'><stl-vector type-name='stl-string'/></pointer>
+                <pointer name='avail_reaction_classes'><stl-vector type-name='int32_t'/></pointer>
+            </vmethod>
             <vmethod name='finalize'><int32_t/></vmethod>
             <vmethod><pointer/></vmethod>
             <vmethod name='getName'><pointer name='str' type-name='stl-string'/></vmethod>

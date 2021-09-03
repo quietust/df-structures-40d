@@ -453,8 +453,8 @@
         <int8_t name="armorlevel"/>
         <int16_t name="ubstep"/>
         <int16_t name="lbstep"/>
-        <int16_t name="mainblock"/>
-        <int16_t name="secondblock"/>
+        <int32_t name="mainblock"/>
+        <int32_t name="secondblock"/>
         <int32_t name="material_size"/>
 
         <compound name='props' type-name='armor_properties'/>

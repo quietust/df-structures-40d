@@ -263,12 +263,14 @@
 
         <compound name='flags1' type-name='unit_flags1'/>
         <compound name='flags2' type-name='unit_flags2'/>
-        <int8_t name='diplomat_state'/>
-        <enum base-type='int16_t' name='diplomat_target' type-name='profession'/>
-        <int16_t/>
+        <compound name='meeting'>
+            <int8_t name='diplomat_state'/>
+            <enum base-type='int16_t' name='diplomat_target_prof' type-name='profession'/>
+            <enum base-type='int16_t' name='diplomat_target_noble' type-name='ui_noble_type'/>
+        </compound>
         <int8_t name='sex'/>
         <int32_t name='id'/>
-        <int16_t/>
+        <enum base-type='int16_t' name='idle_location_type' type-name='unit_idle_type'/>
         <int32_t name='schedule_id' ref-target='schedule_info'/>
         <int32_t name='civ_id' ref-target='historical_entity'/>
 
@@ -342,7 +344,7 @@
             <compound name='last_attack_dir' type-name='coord2d'/>
             <int16_t/>
             <int16_t name='siege_morale'/>
-            <int16_t/>
+            <int16_t name='morale_recovery_timer'/>
             <pointer comment='df_job' name='current_job' type-name='job'/>
             <stl-vector name='mood_item_type'>
                 <enum base-type='int16_t' type-name='item_type'/>
@@ -374,8 +376,8 @@
         </compound>
 
         <compound name='counters'>
-            <int32_t/>
-            <int32_t/>
+            <int32_t name='exp_gains'/>
+            <int32_t name='think_counter'/>
             <int32_t name='job_counter'/>
             <int32_t/>
             <enum base-type='int16_t' name='death_cause' type-name='death_type' comment='used when thrown as a projectile'/>
@@ -407,7 +409,7 @@
         <compound name='status'>
             <stl-vector name='misc_traits' pointer-type='unit_misc_trait'/>
 
-            <pointer name='eat_history'> speculated
+            <pointer name='eat_history'>
                 <compound name='food'>
                     <stl-vector name='item_type'>
                         <enum base-type='int16_t' type-name='item_type'/>
@@ -415,7 +417,8 @@
                     <stl-vector name='item_subtype' type-name='int16_t'/>
                     <compound name='material' type-name='material_vec_ref'/>
                     <stl-vector name='year' type-name='int32_t'/>
-                    <stl-vector name='year_time' type-name='int32_t'/>
+                    <stl-vector name='season' type-name='int8_t'/>
+                    <stl-vector name='season_tick' type-name='int16_t'/>
                 </compound>
                 <compound name='drink'>
                     <stl-vector name='item_type'>
@@ -424,7 +427,8 @@
                     <stl-vector name='item_subtype' type-name='int16_t'/>
                     <compound name='material' type-name='material_vec_ref'/>
                     <stl-vector name='year' type-name='int32_t'/>
-                    <stl-vector name='year_time' type-name='int32_t'/>
+                    <stl-vector name='season' type-name='int8_t'/>
+                    <stl-vector name='season_tick' type-name='int16_t'/>
                 </compound>
             </pointer>
 
@@ -432,7 +436,7 @@
             <int32_t name='mandate_timeout' init-value='1000'/>
             <stl-vector/>
             <stl-vector/>
-            <int8_t/>
+            <int8_t name='wagon_facing'/>
 
             <compound type-name='language_name' name='artifact_name'/>
             <int32_t name='strength'/>
@@ -499,21 +503,21 @@
             <int16_t name='limbs_fly_count'/>
             <int32_t name='specialattack_cooldown'/>
             <stl-vector name='body_part_temperature' pointer-type='temperaturest'/>
-            <int32_t name='enemy_status_slot'/>
+            <int32_t name='add_path_flags'/>
             <static-array name='traits' index-enum='personality_facet_type' type-name='int16_t' count='30'/>
-            <compound type-name='tile_designation' name='liquid_type'/> guess
-            <uint8_t name='liquid_depth'/> guess
+            <compound type-name='tile_designation' name='liquid_type'/>
+            <uint8_t name='liquid_depth'/>
             <int32_t/>
+            <int32_t name='enemy_status_slot'/>
         </compound>
 
-        <int32_t/>
-        <int32_t/>
-        <stl-vector type-name='int8_t'/>
-        <stl-vector type-name='int8_t'/>
+        <int32_t name='last_temp_update'/>
+        <stl-vector type-name='int8_t' name='nerves'/>
+        <stl-vector type-name='int8_t' name='bodyparts'/>
+        <stl-vector type-name='int16_t' name='bp_insulation'/>
         <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int32_t' name='bp_clothing_items'/>
         <stl-vector type-name='int16_t'/>
-        <stl-vector/>
-        <stl-vector/>
     </struct-type>
 
     <struct-type type-name='unit_inventory_item'>
@@ -554,7 +558,7 @@
         <enum-item name='Migrant'/>
         <enum-item name='RoomComplaint'/>
         <enum-item name='ResidentCreature' comment='upon reaching zero, it gets a name'/>
-        <enum-item/>
+        <enum-item name='RentBedroomCooldown'/>
         <enum-item name='ClaimTrinketCooldown'/>
         <enum-item name='ClaimClothingCooldown'/>
         <enum-item name='WantsDrink' comment='ALCOHOLIC'/>
@@ -566,7 +570,7 @@
         <enum-item name='CaveAdapt' comment='CAVE_ADAPT'/>
         <enum-item/>
         <enum-item/>
-        <enum-item/>
+        <enum-item name='WagonStuck'/>
         <enum-item/>
         <enum-item/>
         <enum-item/>

@@ -255,6 +255,28 @@
         </stl-vector>
     </struct-type>
 
+    <enum-type type-name='blood_type' base-type='int8_t'>
+        <enum-item name='GREEN'/>
+        <enum-item name='BLUE'/>
+        <enum-item name='PUS'/>
+        <enum-item name='MAGENTA'/>
+        <enum-item name='CYAN'/>
+        <enum-item name='ICHOR'/>
+        <enum-item name='GOO'/>
+        <enum-item name='VOMIT'/>
+        <enum-item name='SLIME'/>
+        <enum-item name='RED'/>
+    </enum-type>
+
+    <enum-type type-name='creature_material_type'>
+        <enum-item name='SILK'/>
+        <enum-item name='LEATHER'/>
+        <enum-item name='BONE'/>
+        <enum-item name='EXTRACT'/>
+        <enum-item name='CHEESE'/>
+        <enum-item name='DRINK'/>
+    </enum-type>
+
     <enum-type type-name='creature_graphics_role'>
         <enum-item name='DEFAULT'/>
         <enum-item name='GUARD'/>
@@ -297,18 +319,11 @@
 
         <uint8_t name='tile'/>
         <uint8_t name='alttile'/>
-        <int8_t name='bloodtype'/>
+        <enum name='bloodtype' type-name='blood_type'/>
         <uint8_t name='glowtile'/>
 
-        <static-array name='temperatures' count='7'> // body, SILK, LEATHER, BONE, EXTRACT, CHEESE, DRINK
-            <uint16_t name='spec_heat'/>
-            <uint16_t name='heatdam_point'/>
-            <uint16_t name='colddam_point'/>
-            <uint16_t name='ignite_point'/>
-            <uint16_t name='melting_point'/>
-            <uint16_t name='boiling_point'/>
-            <uint16_t name='fixed_temp'/>
-        </static-array>
+        <compound name='temperatures' type-name='temperature_raw'/>
+        <static-array name='mat_temperatures' index-enum='creature_material_type' count='6' type-name='temperature_raw'/>
         <uint16_t name='homeotherm'/>
 
         <uint16_t name='min_temp'/>
@@ -365,10 +380,7 @@
         <int32_t name='baby'/>
         <int32_t name='child'/>
         <int32_t name='density'/>
-        <static-array name='densities' count='6'>
-            <int32_t name='solid_density'/>
-            <int32_t name='liquid_density'/>
-        </static-array>
+        <static-array name='densities' index-enum='creature_material_type' count='6' type-name='density_raw'/>
 
         <int32_t name='swim_speed'/>
         <int32_t name='trade_capacity'/>

@@ -98,6 +98,25 @@
         <int16_t name='bottom'/>
     </struct-type>
 
+    <struct-type type-name='world_data_unk194' key-field='id' instance-vector='$global.world.world_data.unk194'>
+        <static-array count='3'>
+            <stl-vector>
+                <pointer>
+                    <int16_t/>
+                    <int16_t/>
+                    <int16_t/>
+                    <int16_t/>
+                    <int8_t/>
+                    <int32_t/>
+                    <int32_t/>
+                </pointer>
+            </stl-vector>
+        </static-array>
+        <int32_t name='id'/>
+        <int32_t/>
+        <int32_t/>
+    </struct-type>
+
     <struct-type type-name='world_landmass'
                  instance-vector='$global.world.world_data.landmasses'>
         <compound name='name' type-name='language_name'/>
@@ -124,9 +143,7 @@
         <int32_t name="unk_90"/>
         <int32_t name="unk_94"/>
 
-        <stl-vector name='populations'>
-            <pointer type-name='world_population'/>
-        </stl-vector>
+        <stl-vector name='populations' pointer-type='world_population'/>
 
         <static-array name='biome_tile_counts' type-name='int32_t' count="51" index-enum='biome_type'/>
 
@@ -152,18 +169,19 @@
         <code-helper name='describe'>(describe-obj $.name)</code-helper>
 
         <compound name='path' type-name='coord2d_path'/>
-        <stl-vector name="unk_8c">
-            <int32_t/>
-        </stl-vector>
-        <stl-vector name="unk_9c">
-            <int16_t/>
-        </stl-vector>
-        <stl-vector name="local_id">
-            <int16_t/>
-        </stl-vector>
+        <stl-vector name="unk_8c" type-name='int32_t'/>
+        <stl-vector name="unk_9c" type-name='int16_t'/>
+        <stl-vector name="local_id" type-name='int16_t'/>
 
         <compound name='end_pos' type-name='coord2d'/>
         <df-flagarray name='flags'/>
+    </struct-type>
+
+    <struct-type type-name='world_mountain_peak'>
+        <compound name='name' type-name='language_name'/>
+        <compound name='pos' type-name='coord2d'/>
+        <df-flagarray name='flags'/>
+        <int16_t name="height"/>
     </struct-type>
 
     <enum-type type-name='geo_layer_type' base-type='int16_t'>
@@ -187,9 +205,7 @@
 
         <code-helper name='describe'>(describe-obj $.matgloss.ref-target)</code-helper>
 
-        <stl-vector name="vein_mat">
-            <int16_t ref-target='matgloss_stone'/>
-        </stl-vector>
+        <stl-vector name="vein_mat" type-name='int16_t' ref-target='matgloss_stone'/>
         <stl-vector name="vein_nested_in">
             -- Index of the other vein this one is nested in, or -1
             <int16_t refers-to='$$._global.vein_mat[$].ref-target'/>
@@ -197,9 +213,7 @@
         <stl-vector name="vein_type">
             <enum base-type='int8_t' type-name='inclusion_type'/>
         </stl-vector>
-        <stl-vector name="vein_frequency">
-            <int8_t/>
-        </stl-vector>
+        <stl-vector name="vein_frequency" type-name='int8_t'/>
 
         <int16_t name="top_height" comment='negative'/>
         <int16_t name="bottom_height"/>
@@ -211,9 +225,7 @@
 
         <code-helper name='describe'>(fmt "~A geo_layers" $.layers.count)</code-helper>
 
-        <stl-vector name="layers">
-            <pointer type-name='world_geo_layer'/>
-        </stl-vector>
+        <stl-vector name="layers" pointer-type='world_geo_layer'/>
     </struct-type>
 
     <struct-type type-name='world_region_feature'>
@@ -253,10 +265,14 @@
             <static-array type-name='uint32_t' count='16'/>
         </static-array>
         <static-array count='17'>
-            <static-array type-name='int16_t' count='16'/>
+            <static-array count='16'>
+                <static-array count='2' type-name='int16_t'/>
+            </static-array>
         </static-array>
         <static-array count='16'>
-            <static-array type-name='int16_t' count='17'/>
+            <static-array count='17'>
+                <static-array count='2' type-name='int16_t'/>
+            </static-array>
         </static-array>
         <static-array count='16'>
             <static-array type-name='int8_t' count='16'/>
@@ -352,12 +368,38 @@
         <enum-item/>
     </enum-type>
 
+    <enum-type type-name='front_type' base-type='uint16_t'>
+        <enum-item name='front_none'/>
+        <enum-item name='front_warm'/>
+        <enum-item name='front_cold'/>
+        <enum-item name='front_occluded'/>
+    </enum-type>
+
+    <enum-type type-name='cumulus_type' base-type='uint16_t'>
+        <enum-item name='cumulus_none'/>
+        <enum-item name='cumulus_medium'/>
+        <enum-item name='cumulus_multi'/>
+        <enum-item name='cumulus_nimbus'/>
+    </enum-type>
+
+    <enum-type type-name='stratus_type' base-type='uint16_t'>
+        <enum-item name='stratus_none'/>
+        <enum-item name='stratus_alto'/>
+        <enum-item name='stratus_proper'/>
+        <enum-item name='stratus_nimbus'/>
+    </enum-type>
+
+    <enum-type type-name='fog_type' base-type='uint16_t'>
+        <enum-item name='fog_none'/>
+        <enum-item name='fog_mist'/>
+        <enum-item name='fog_normal'/>
+        <enum-item name='fog_thick'/>
+    </enum-type>
+
     <struct-type type-name='region_map_entry'>
         <int32_t name="unk_0"/>
         <int32_t name='finder_rank' init-value='-1'/>
-        <stl-vector name="sites">
-            <pointer type-name='world_site'/>
-        </stl-vector>
+        <stl-vector name="sites" pointer-type='world_site'/>
         <df-flagarray name='flags' index-enum='region_map_entry_flags'/>
         <int16_t name="elevation" comment='~40 ocean -> ~100 plains -> ~200 mointains'/>
         <int16_t name="rainfall"/>
@@ -367,12 +409,28 @@
         <int16_t name="drainage"/>
         <int16_t name="volcanism"/>
         <int16_t name="savagery"/>
-        <int16_t name="unk_30" comment='3'/>
-        <int16_t name="unk_32" comment='0'/>
-        <int16_t name="unk_34" comment='0'/>
-        <int16_t name="unk_36" comment='0'/>
-        <int16_t name="unk_38" comment='0'/>
-        <int16_t name="unk_3a" comment='0-5000'/>
+        <int16_t name="air_temp" comment='3'/>
+        <int16_t name="air_x" comment='0'/>
+        <int16_t name="air_y" comment='0'/>
+        <bitfield name='clouds' base-type='uint16_t'>
+            <flag-bit name='front' count='2' type-name='front_type'/>
+            <flag-bit name='cumulus' count='2' type-name='cumulus_type'/>
+            <flag-bit name='cirrus' count='1'/>
+            <flag-bit name='stratus' count='2' type-name='stratus_type'/>
+            <flag-bit name='fog' count='2' type-name='fog_type'/>
+            <flag-bit name='countdown' count='4' comment='A counter for stratus clouds that randomly decreases by 1 or 0 each timer weather is checked there. it does various stratus/fog effects based on the humidity/breezes/etc.'/>
+        </bitfield>
+        <bitfield name='wind' base-type='uint16_t' comment='blows toward direction in morning'>
+            <flag-bit name='north_1'/>
+            <flag-bit name='south_1'/>
+            <flag-bit name='east_1'/>
+            <flag-bit name='west_1'/>
+            <flag-bit name='north_2'/>
+            <flag-bit name='south_2'/>
+            <flag-bit name='east_2'/>
+            <flag-bit name='west_2'/>
+        </bitfield>
+        <int16_t name="snowfall" comment='0-5000'/>
         <int16_t name="salinity"/>
         <compound name='unk_3e' type-name='coord'/>
         <compound name='unk_44' type-name='coord'/>
@@ -441,24 +499,26 @@
         <int16_t/>
         <int32_t/>
         <int16_t/>
-        <int32_t name='world_width2'/>
-        <int32_t name='world_height2'/>
-        <pointer type-name='uint32_t' is-array='true' comment='(width+1)*(height+1)'/>
-        <pointer type-name='uint32_t' is-array='true' comment='(width+1)*(height+1)'/>
-        <pointer type-name='uint32_t' is-array='true' comment='width*height'/>
-        <pointer type-name='uint8_t' is-array='true' comment='(width+1)*(height+1)'/>
+        <compound name='lookups'>
+            <int32_t name='width'/>
+            <int32_t name='height'/>
+            <pointer type-name='uint32_t' is-array='true' comment='(width+1)*(height+1)'/>
+            <pointer type-name='uint32_t' is-array='true' comment='(width+1)*(height+1)'/>
+            <pointer type-name='uint32_t' is-array='true' comment='width*height'/>
+            <pointer type-name='uint8_t' is-array='true' comment='(width+1)*(height+1)'/>
+        </compound>
 
-        <stl-vector name='region_details'>
-            <pointer type-name='world_region_details'/>
-        </stl-vector>
-        <int32_t name='adv_region_x'/>
-        <int32_t name='adv_region_y'/>
-        <int32_t name='adv_emb_x'/>
-        <int32_t name='adv_emb_y'/>
-        <int16_t name='unk_x1'/>
-        <int16_t name='unk_y1'/>
-        <int16_t name='unk_x2'/>
-        <int16_t name='unk_y2'/>
+        <compound name='terrain'>
+            <stl-vector name='region_details' pointer-type='world_region_details'/>
+            <int32_t name='adv_region_x'/>
+            <int32_t name='adv_region_y'/>
+            <int32_t name='adv_emb_x'/>
+            <int32_t name='adv_emb_y'/>
+            <int16_t name='unk_x1'/>
+            <int16_t name='unk_y1'/>
+            <int16_t name='unk_x2'/>
+            <int16_t name='unk_y2'/>
+        </compound>
 
         <compound name='constructions'>
             <int16_t name="width"/>
@@ -517,7 +577,6 @@
             <int32_t name='end_year'/>
             <int32_t name='beast_end_year_percent'/>
             <int32_t name='total_civ_population'/>
-            <int32_t name='site_cap'/>
             <int32_t name='elevation_ranges_1'/>
             <int32_t name='elevation_ranges_0'/>
             <int32_t name='elevation_ranges_2'/>
@@ -531,7 +590,13 @@
             <static-array type-name='int32_t' name='savagery_frequency' count='6'/>
             <static-array type-name='int32_t' name='temperature_frequency' count='6'/>
             <static-array type-name='int32_t' name='volcanism_frequency' count='6'/>
-            <pointer name='ps'/> dtor 83bed90
+            <pointer name='ps'>
+                <int32_t name='dim_x'/>
+                <int32_t name='dim_y'/>
+                <static-array name='values' count='24' index-enum='region_property_type'>
+                    <pointer is-array='true'><pointer is-array='true' type-name='int16_t'/></pointer>
+                </static-array>
+            </pointer>
             <int32_t name='reveal_all_history'/>
             <int32_t name='cull_historical_figures'/>
             <int32_t name='erosion_cycle_count'/>
@@ -546,64 +611,29 @@
             <int32_t name='show_embark_chasm'/>
             <int32_t name='show_embark_pit'/>
             <int32_t name='show_embark_other'/>
+            <int32_t name='show_embark_tunnel'/>
             <bool/>
         </compound>
         <stl-string name='version'/>
-        <int32_t/>
+        <int32_t name='loadversion'/>
 
         <compound name="entity_claims1" type-name='entity_claim_mask'/>
         <compound name="entity_claims2" type-name='entity_claim_mask'/>
 
-        <stl-vector name="sites">
-            <pointer type-name='world_site'/>
-        </stl-vector>
-        <stl-vector>
-            <pointer>
-                <static-array count='3'>
-                    <stl-vector>
-                        <pointer>
-                            <int16_t/>
-                            <int16_t/>
-                            <int16_t/>
-                            <int16_t/>
-                            <int8_t/>
-                            <int32_t/>
-                            <int32_t/>
-                        </pointer>
-                    </stl-vector>
-                </static-array>
-                <int32_t/>
-                <int32_t/>
-                <int32_t/>
-            </pointer>
-        </stl-vector>
-        <stl-vector name="landmasses">
-            <pointer type-name='world_landmass'/>
-        </stl-vector>
-        <stl-vector name="regions">
-            <pointer type-name='world_region'/>
-        </stl-vector>
-        <stl-vector name="geo_biomes">
-            <pointer type-name='world_geo_biome'/>
-        </stl-vector>
-        <stl-vector name="mountain_peaks">
-            <pointer>
-                <compound name='name' type-name='language_name'/>
-                <compound name='pos' type-name='coord2d'/>
-                <df-flagarray name='flags'/>
-                <int16_t name="height"/>
-            </pointer>
-        </stl-vector>
-        <stl-vector name="rivers">
-            <pointer type-name='world_river'/>
-        </stl-vector>
+        <stl-vector name="sites" pointer-type='world_site'/>
+        <stl-vector name="unk194" pointer-type='world_data_unk194'/>
+        <stl-vector name="landmasses" pointer-type='world_landmass'/>
+        <stl-vector name="regions" pointer-type='world_region'/>
+        <stl-vector name="geo_biomes" pointer-type='world_geo_biome'/>
+        <stl-vector name="mountain_peaks" pointer-type='world_mountain_peak'/>
+        <stl-vector name="rivers" pointer-type='world_river'/>
         <pointer name="region_map" is-array='true'>
             <pointer is-array='true' type-name='region_map_entry'/>
         </pointer>
         <pointer is-array='true' type-name='int32_t' comment='2D array, size ceil(width/16) * ceil(height/16)'/>
         <int32_t/>
         <stl-vector name="embark_notes" pointer-type='embark_note'/>
-        <stl-vector/>
+        <stl-vector name='unk_sites' pointer-type='world_site'/>
         <pointer is-array='true' name='feature_map'>
             <pointer is-array='true'>
                 <int16_t name='x'/>
@@ -611,7 +641,7 @@
                 <pointer name='features'>
                     <static-array name='feature_init' count='16'>
                         <static-array count='16'>
-                            <stl-vector><pointer type-name='feature_init'/></stl-vector>
+                            <stl-vector pointer-type='feature_init'/>
                         </static-array>
                     </static-array>
                 </pointer>
@@ -619,7 +649,7 @@
             </pointer>
         </pointer>
         <stl-string name='save_folder_name'/>
-        <df-flagarray/>
+        <df-flagarray name='flags'/>
         <stl-vector/>
         <stl-vector/>
         <stl-vector/>

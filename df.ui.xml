@@ -103,29 +103,24 @@
         <int32_t name='gameover_sieger' ref-target='historical_entity'/>
         <compound name='tax_collection'>
             <int16_t name='state'/>
-            <int32_t/>
-            <stl-vector name='rooms'>
-                <pointer type-name='building'/>
-            </stl-vector>
-            <int32_t/>
-            <int32_t comment='probably for tax collector'/>
-            <int32_t comment='probably for guard1'/>
-            <int32_t comment='probably for guard2'/>
+            <int32_t name='check_timer'/>
+            <stl-vector name='rooms' type-name='int32_t' ref-target='building'/>
+            <int32_t name='reach_room_timer'/>
+            <int32_t name='tc_protect_timer'/>
+            <static-array type-name='int32_t' count='2' name='guard_reach_tc_timer'/>
             <int16_t name='collected'/>
             <int16_t name='quota'/>
             <compound type-name='coord' name='collector_pos'/>
-            <static-array type-name='int16_t' count='2' name='guard_pos_x'/>
-            <static-array type-name='int16_t' count='2' name='guard_pos_y'/>
-            <static-array type-name='int16_t' count='2' name='guard_pos_z'/>
+            <static-array type-name='int16_t' count='2' name='guard_x'/>
+            <static-array type-name='int16_t' count='2' name='guard_y'/>
+            <static-array type-name='int16_t' count='2' name='guard_z'/>
             <pointer type-name='unit' name='collector'/>
             <pointer type-name='unit' name='guard1'/>
             <pointer type-name='unit' name='guard2'/>
-            <int8_t/>
+            <int8_t name='guard_lack_complained'/>
         </compound>
-        <stl-vector name='caravans'>
-            <pointer type-name='caravan_state'/>
-        </stl-vector>
-        <int8_t/>
+        <stl-vector name='caravans' pointer-type='caravan_state'/>
+        <int8_t/> firstCaravan?
         <int16_t name='fortress_rank'/>
         <int16_t name='progress_population'/>
         <int16_t name='progress_trade'/>
@@ -133,7 +128,7 @@
         <bool name='king_arrived'/>
         <bool name='king_hasty'/>
         <bool name='economy_active'/>
-        <bool name='skip_job_satisfaction_check'/>
+        <bool name='ignore_labor_shortage'/>
         <bool name='justice_active'/>
         <int16_t/>
         <int16_t/>
@@ -157,17 +152,11 @@
         <compound type-name='entity_activity_statistics' name='tasks'/>
 
         <stl-vector type-name='pointer'/>
-        <stl-vector name='activities'>
-            <pointer type-name='activity_info'/>
-        </stl-vector>
-
-        <stl-vector name='dip_meeting_info'>
-            <pointer type-name='meeting_diplomat_info'/>
-        </stl-vector>
-
-        <stl-vector name='royal_guards'><int32_t ref-target='unit'/></stl-vector>
-        <stl-vector name='fortress_guards'><int32_t ref-target='unit'/></stl-vector>
-        <stl-vector name='aid_requesters'><int32_t ref-target='unit'/></stl-vector>
+        <stl-vector name='activities' pointer-type='activity_info'/>
+        <stl-vector name='dip_meeting_info' pointer-type='meeting_diplomat_info'/>
+        <stl-vector name='royal_guards' type-name='int32_t' ref-target='unit'/>
+        <stl-vector name='fortress_guards' type-name='int32_t' ref-target='unit'/>
+        <stl-vector name='aid_requesters' type-name='int32_t' ref-target='unit'/>
         <int8_t name='game_over'/>
 
         <compound name='siege'>
@@ -329,16 +318,14 @@
         <stl-vector type-name='int32_t'/>
         <stl-vector type-name='int16_t'/>
         <stl-vector type-name='int16_t'/>
-        <int32_t name='mayor_nemesis' ref-target='nemesis_record'/>
-        <int32_t name='manager_nemesis' ref-target='nemesis_record'/>
-        <int32_t name='bookkeeper_nemesis' ref-target='nemesis_record'/>
-        <int32_t name='broker_nemesis' ref-target='nemesis_record'/>
-        <int32_t name='sheriff_nemesis' ref-target='nemesis_record'/>
-        <int32_t name='noble_flags' comment='0x1 = need Manager; 0x2 = have Mayor'/>
-        <int32_t name='manager_timer'/>
-        <int32_t name='bookkeeper_timer'/>
-        <int32_t name='bookkeeper_precision_reached'/>
-        <int16_t name='bookkeeper_accuracy_level'/>
+        <compound name='nobles'>
+            <static-array name='nemesis' count='5' index-enum='ui_noble_type' type-name='int32_t' ref-target='nemesis_record'/>
+            <int32_t name='noble_flags' comment='0x1 = need Manager; 0x2 = have Mayor'/>
+            <int32_t name='manager_timer'/>
+            <int32_t name='bookkeeper_timer'/>
+            <int32_t name='bookkeeper_precision_reached'/>
+            <int16_t name='bookkeeper_accuracy_level'/>
+        </compound>
 
         <compound name='notes'>
             <stl-vector name='list' pointer-type='ui_note'/>
@@ -361,8 +348,7 @@
             <int32_t name='traffic_cost_low'/>
             <int32_t name='traffic_cost_restricted'/>
 
-            <pointer name='fortress_entity' type-name='historical_entity'
-                     comment='entity pointed to by group_id'/>
+            <pointer name='civ_raw' type-name='entity_raw' comment='when defined, points to current entity raws'/>
 
             <enum base-type='int16_t' name='mode' type-name='ui_sidebar_mode'/>
 
@@ -389,6 +375,14 @@
         <enum-item name='FeatureAttack'/>
         <enum-item name='Megabeast'/>
         <enum-item name='CuriousBeasts'/>
+    </enum-type>
+
+    <enum-type type-name='ui_noble_type' base-type='int16_t'>
+        <enum-item name='Mayor'/>
+        <enum-item name='Manager'/>
+        <enum-item name='Bookkeeper'/>
+        <enum-item name='Broker'/>
+        <enum-item name='Sheriff'/>
     </enum-type>
 
     <struct-type type-name='timed_event'>
