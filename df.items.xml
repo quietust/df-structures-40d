@@ -597,7 +597,7 @@
         <int32_t name='unit_id' ref-target='unit'/>
         <int16_t name='racegloss'/>
         <int16_t/>
-        <int8_t name='sex' comment='-1 n/a, 0 female, 1 male'/>
+        <enum base-type='int8_t' name='sex' type-name='sex_type'/>
         <int32_t name='rot_timer'/>
     </class-type>
 
@@ -665,7 +665,7 @@
         <int16_t name='race' ref-target='creature_raw'/>
         <int16_t name='racegloss'/>
         <int16_t/>
-        <int8_t name='sex'/>
+        <enum base-type='int8_t' name='sex' type-name='sex_type'/>
         <int32_t name='hist_figure_id' ref-target='historical_figure'/>
         <int32_t name='unit_id' ref-target='unit'/>
         <int8_t name='is_generic' comment='set to 1 and it shows up as "body part" instead of by name'/>

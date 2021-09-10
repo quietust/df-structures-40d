@@ -758,38 +758,94 @@
         <stl-vector type-name='int16_t'/>
     </class-type>
 
+    <struct-type type-name='worldgen_parms'>
+        <stl-string name='title'/>
+        <uint32_t name='seed'/>
+        <uint32_t name='history_seed'/>
+        <uint32_t name='name_seed'/>
+        <int32_t name='dim_x'/>
+        <int32_t name='dim_y'/>
+        <stl-string name='custom_name'/>
+        <bool name='has_seed'/>
+        <bool name='has_history_seed'/>
+        <bool name='has_name_seed'/>
+        <int32_t name='peak_number_min'/>
+        <int32_t name='ocean_edge_min'/>
+        <int32_t name='volcano_min'/>
+        <static-array name='region_counts' count='3'>
+            <static-array type-name='int32_t' count='10' index-enum='region_biome_type'/>
+        </static-array>
+        <static-array type-name='int32_t' name='river_mins' count='2'/>
+        <int32_t name='subregion_max'/>
+        <int32_t name='cave_min_size'/>
+        <int32_t name='cave_max_size'/>
+        <int32_t name='mountain_cave_min'/>
+        <int32_t name='non_mountain_cave_min'/>
+        <int32_t name='total_civ_number'/>
+        <int32_t name='rain_ranges_1'/>
+        <int32_t name='rain_ranges_0'/>
+        <int32_t name='rain_ranges_2'/>
+        <int32_t name='drainage_ranges_1'/>
+        <int32_t name='drainage_ranges_0'/>
+        <int32_t name='drainage_ranges_2'/>
+        <int32_t name='savagery_ranges_1'/>
+        <int32_t name='savagery_ranges_0'/>
+        <int32_t name='savagery_ranges_2'/>
+        <int32_t name='volcanism_ranges_1'/>
+        <int32_t name='volcanism_ranges_0'/>
+        <int32_t name='volcanism_ranges_2'/>
+        <static-array count='4' name='ranges'>
+            <static-array type-name='int32_t' count='24' index-enum='region_property_type'/>
+        </static-array>
+        <int32_t name='beast_end_year'/>
+        <int32_t name='end_year'/>
+        <int32_t name='beast_end_year_percent'/>
+        <int32_t name='total_civ_population'/>
+        <int32_t name='elevation_ranges_1'/>
+        <int32_t name='elevation_ranges_0'/>
+        <int32_t name='elevation_ranges_2'/>
+        <static-array name='sq_counts' count='3'>
+            <int32_t name='good'/>
+            <int32_t name='evil'/>
+        </static-array>
+        <static-array type-name='int32_t' name='elevation_frequency' count='6'/>
+        <static-array type-name='int32_t' name='rain_frequency' count='6'/>
+        <static-array type-name='int32_t' name='drainage_frequency' count='6'/>
+        <static-array type-name='int32_t' name='savagery_frequency' count='6'/>
+        <static-array type-name='int32_t' name='temperature_frequency' count='6'/>
+        <static-array type-name='int32_t' name='volcanism_frequency' count='6'/>
+        <pointer type-name='worldgen_parms_ps' name='ps'/>
+        <int32_t name='reveal_all_history'/>
+        <int32_t name='cull_historical_figures'/>
+        <int32_t name='erosion_cycle_count'/>
+        <int32_t name='periodically_erode_extremes'/>
+        <int32_t name='orographic_precipitation'/>
+        <int32_t name='playable_civilization_required'/>
+        <int32_t name='all_caves_visible'/>
+        <int32_t name='show_embark_river'/>
+        <int32_t name='show_embark_pool'/>
+        <int32_t name='show_embark_m_pool'/>
+        <int32_t name='show_embark_m_pipe'/>
+        <int32_t name='show_embark_chasm'/>
+        <int32_t name='show_embark_pit'/>
+        <int32_t name='show_embark_other'/>
+        <int32_t name='show_embark_tunnel'/>
+        <bool/>
+    </struct-type>
+
+    <struct-type type-name='worldgen_parms_ps'>
+        <int32_t name='width'/>
+        <int32_t name='height'/>
+        <static-array count='24' name='data' index-enum='region_property_type'>
+            <pointer is-array='true'><pointer is-array='true' type-name='int16_t'/></pointer>
+        </static-array>
+    </struct-type>
+
     <class-type type-name='viewscreen_layer_world_gen_paramst' inherits-from='viewscreen_layer'>
-        <int32_t/>
-        <stl-string/>
-        <stl-vector/>
-        <compound>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-            <int32_t/>
-        </compound>
+        <pointer type-name='worldgen_parms' name='parms'/>
+        <stl-string name='name'/>
+        <stl-vector name='controls' comment='pointer-type=world_gen_param_basest'/>
+        <compound type-name='worldgen_parms_ps' name='ps'/>
     </class-type>
 
     <class-type type-name='viewscreen_layer_world_gen_param_presetst' inherits-from='viewscreen_layer'>

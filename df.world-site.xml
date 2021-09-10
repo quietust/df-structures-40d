@@ -10,16 +10,20 @@
         <enum-item name='DARK_TOWER'/>
     </enum-type>
 
+    <enum-type type-name='abstract_building_flags'>
+        <enum-item name='Razed'/>
+    </enum-type>
+
     <class-type type-name='abstract_building' original-name='abstract_buildingst'>
         <int32_t name='id'/>
         <stl-vector name='links' pointer-type='site_hf_link'/>
-        <df-flagarray name='flags'/>
-        <pointer name='unk_1'>
-            <stl-vector type-name='int32_t'/>
+        <df-flagarray name='flags' index-enum='abstract_building_flags'/>
+        <pointer name='temple_data'>
+            <stl-vector name='deities' type-name='int32_t' ref-target='historical_figure'/>
             <int32_t/>
-            <stl-vector type-name='int16_t'/>
-            <int16_t/>
-            <int16_t/>
+            <stl-vector name='architectural_elements' type-name='architectural_element'/>
+            <enum base-type='int16_t' name='material' type-name='material_type'/>
+            <int16_t name='matgloss'/>
         </pointer>
         <int32_t name='site' ref-target='world_site'/>
 
@@ -100,29 +104,23 @@
 
         <int32_t name="id"/>
 
-        <stl-vector name="nemesis">
-            <int32_t ref-target='nemesis_record'/>
-        </stl-vector>
-        <stl-vector type-name='int32_t'/>
-        <stl-vector name="animals">
-            <pointer type-name='world_population'/>
-        </stl-vector>
-        <stl-vector/>
-        <stl-vector/>
+        <stl-vector name="nemesis" type-name='int32_t' ref-target='nemesis_record'/>
+        <stl-vector name='items' type-name='int32_t' ref-target='item'/>
+        <stl-vector name="animals" pointer-type='world_population'/>
+        <stl-vector name='histfig_ids' type-name='int32_t' ref-target='historical_figure'/>
+        <stl-vector name='histfigs' pointer-type='historical_figure'/>
 
         <int32_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int32_t/>
+        <int16_t name='x_min'/>
+        <int16_t name='x_max'/>
+        <int16_t name='y_min'/>
+        <int16_t name='y_max'/>
+        <int16_t name='z_min'/>
+        <int16_t name='z_max'/>
+        <int32_t name='unk_size'/>
         <df-flagarray name='flags'/>
 
-        <stl-vector name='buildings'>
-            <pointer type-name='abstract_building'/>
-        </stl-vector>
+        <stl-vector name='buildings' pointer-type='abstract_building'/>
         <int32_t name='next_building_id'/>
         <int32_t/>
         <int32_t/>

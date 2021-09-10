@@ -226,6 +226,13 @@
         </enum-item>
     </enum-type>
 
+    <enum-type type-name='sex_type' base-type='int8_t'>
+        <enum-item name='Random' value='-2'/>
+        <enum-item name='Neuter'/>
+        <enum-item name='Female'/>
+        <enum-item name='Male'/>
+    </enum-type>
+
     <struct-type type-name='unit' key-field='id' instance-vector='$global.world.units.all'>
         <compound type-name='language_name' name='name'/>
 
@@ -268,7 +275,7 @@
             <enum base-type='int16_t' name='diplomat_target_prof' type-name='profession'/>
             <enum base-type='int16_t' name='diplomat_target_noble' type-name='ui_noble_type'/>
         </compound>
-        <int8_t name='sex'/>
+        <enum base-type='int8_t' name='sex' type-name='sex_type'/>
         <int32_t name='id'/>
         <enum base-type='int16_t' name='idle_location_type' type-name='unit_idle_type'/>
         <int32_t name='schedule_id' ref-target='schedule_info'/>
@@ -504,7 +511,7 @@
             <int32_t name='specialattack_cooldown'/>
             <stl-vector name='body_part_temperature' pointer-type='temperaturest'/>
             <int32_t name='add_path_flags'/>
-            <static-array name='traits' index-enum='personality_facet_type' type-name='int16_t' count='30'/>
+            <compound type-name='unit_personality' name='personality'/>
             <compound type-name='tile_designation' name='liquid_type'/>
             <uint8_t name='liquid_depth'/>
             <int32_t/>
@@ -645,6 +652,10 @@
 
         <bool name='active'/>
         <int32_t name='prefstring_seed' comment='feeds into a simple RNG to choose which prefstring to use'/>
+    </struct-type>
+
+    <struct-type type-name='unit_personality'>
+        <static-array type-name='uint16_t' name='traits' count='30' index-enum='personality_facet_type'/>
     </struct-type>
 
     <struct-type type-name='unit_chunk'

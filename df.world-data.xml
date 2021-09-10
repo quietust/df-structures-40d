@@ -458,30 +458,25 @@
     </struct-type>
 
     <struct-type type-name='moving_party'>
-        <compound name='pos' type-name='coord2d' comment='global block x/y'/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
+        <compound name='pos_g' type-name='coord2d' comment='global block x/y'/>
+        <compound name='pos_r' type-name='coord2d' comment='region tile x/y'/>
+        <int16_t name='timer'/>
         <int32_t/>
-        <stl-vector name='members' type-name='int32_t' ref-target='nemesis_record'/> guessed
+        <stl-vector name='members' type-name='int32_t' ref-target='nemesis_record'/>
         <int32_t name="entity_id" ref-target='historical_entity'/>
         <df-flagarray name='flags'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
+        <compound type-name='coord2d_path' name='path_g' />
+        <compound type-name='coord2d_path' name='path_r' />
         <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int32_t name="region_id" ref-target='world_region'/> guessed
+        <compound name='dest_g' type-name='coord2d' comment='global block x/y'/>
+        <compound name='dest_r' type-name='coord2d' comment='region tile x/y'/>
+        <int32_t name="region_id" ref-target='world_region'/>
     </struct-type>
 
     <struct-type type-name='world_data'>
         <compound type-name='language_name' name='name'/>
 
-        <static-array count='15' type-name='int8_t'/>
+        <static-array name='gamemode_flags' count='15' type-name='int8_t'/>
         <int32_t name='next_site_id'/>
         <int32_t/>
         <int16_t name='world_width'/>
@@ -490,15 +485,15 @@
         <stl-vector name='travel' pointer-type='moving_party'/>
 
         <compound name='history' type-name='world_history'/>
-        <padding size='16'/>
+        <int32_t/>
         <int16_t name='flip_latitude'/>
         <int16_t name='flip_longitude'/>
         <static-array count='3' type-name='int16_t'/>
         <static-array count='3' type-name='int16_t'/>
-        <int32_t/>
-        <int16_t/>
-        <int32_t/>
-        <int16_t/>
+        <int32_t name='next_unit_chunk_id'/>
+        <int16_t name='next_unit_chunk_slot'/>
+        <int32_t name='next_art_image_chunk_id'/>
+        <int16_t name='next_art_image_chunk_slot'/>
         <compound name='lookups'>
             <int32_t name='width'/>
             <int32_t name='height'/>
@@ -534,86 +529,8 @@
             <int32_t name="next_id"/>
         </compound>
 
-        <compound name='worldgen_parms'>
-            <stl-string name='title'/>
-            <uint32_t name='seed'/>
-            <uint32_t name='history_seed'/>
-            <uint32_t name='name_seed'/>
-            <int32_t name='dim_x'/>
-            <int32_t name='dim_y'/>
-            <stl-string name='custom_name'/>
-            <bool name='has_seed'/>
-            <bool name='has_history_seed'/>
-            <bool name='has_name_seed'/>
-            <int32_t name='peak_number_min'/>
-            <int32_t name='ocean_edge_min'/>
-            <int32_t name='volcano_min'/>
-            <static-array name='region_counts' count='3'>
-                <static-array type-name='int32_t' count='10' index-enum='region_biome_type'/>
-            </static-array>
-            <static-array type-name='int32_t' name='river_mins' count='2'/>
-            <int32_t name='subregion_max'/>
-            <int32_t name='cave_min_size'/>
-            <int32_t name='cave_max_size'/>
-            <int32_t name='mountain_cave_min'/>
-            <int32_t name='non_mountain_cave_min'/>
-            <int32_t name='total_civ_number'/>
-            <int32_t name='rain_ranges_1'/>
-            <int32_t name='rain_ranges_0'/>
-            <int32_t name='rain_ranges_2'/>
-            <int32_t name='drainage_ranges_1'/>
-            <int32_t name='drainage_ranges_0'/>
-            <int32_t name='drainage_ranges_2'/>
-            <int32_t name='savagery_ranges_1'/>
-            <int32_t name='savagery_ranges_0'/>
-            <int32_t name='savagery_ranges_2'/>
-            <int32_t name='volcanism_ranges_1'/>
-            <int32_t name='volcanism_ranges_0'/>
-            <int32_t name='volcanism_ranges_2'/>
-            <static-array count='4' name='ranges'>
-                <static-array type-name='int32_t' count='24' index-enum='region_property_type'/>
-            </static-array>
-            <int32_t name='beast_end_year'/>
-            <int32_t name='end_year'/>
-            <int32_t name='beast_end_year_percent'/>
-            <int32_t name='total_civ_population'/>
-            <int32_t name='elevation_ranges_1'/>
-            <int32_t name='elevation_ranges_0'/>
-            <int32_t name='elevation_ranges_2'/>
-            <static-array name='sq_counts' count='3'>
-                <int32_t name='good'/>
-                <int32_t name='evil'/>
-            </static-array>
-            <static-array type-name='int32_t' name='elevation_frequency' count='6'/>
-            <static-array type-name='int32_t' name='rain_frequency' count='6'/>
-            <static-array type-name='int32_t' name='drainage_frequency' count='6'/>
-            <static-array type-name='int32_t' name='savagery_frequency' count='6'/>
-            <static-array type-name='int32_t' name='temperature_frequency' count='6'/>
-            <static-array type-name='int32_t' name='volcanism_frequency' count='6'/>
-            <pointer name='ps'>
-                <int32_t name='dim_x'/>
-                <int32_t name='dim_y'/>
-                <static-array name='values' count='24' index-enum='region_property_type'>
-                    <pointer is-array='true'><pointer is-array='true' type-name='int16_t'/></pointer>
-                </static-array>
-            </pointer>
-            <int32_t name='reveal_all_history'/>
-            <int32_t name='cull_historical_figures'/>
-            <int32_t name='erosion_cycle_count'/>
-            <int32_t name='periodically_erode_extremes'/>
-            <int32_t name='orographic_precipitation'/>
-            <int32_t name='playable_civilization_required'/>
-            <int32_t name='all_caves_visible'/>
-            <int32_t name='show_embark_river'/>
-            <int32_t name='show_embark_pool'/>
-            <int32_t name='show_embark_m_pool'/>
-            <int32_t name='show_embark_m_pipe'/>
-            <int32_t name='show_embark_chasm'/>
-            <int32_t name='show_embark_pit'/>
-            <int32_t name='show_embark_other'/>
-            <int32_t name='show_embark_tunnel'/>
-            <bool/>
-        </compound>
+        <compound name='worldgen_parms' type-name='worldgen_parms'/>
+
         <stl-string name='version'/>
         <int32_t name='loadversion'/>
 
@@ -630,7 +547,7 @@
         <pointer name="region_map" is-array='true'>
             <pointer is-array='true' type-name='region_map_entry'/>
         </pointer>
-        <pointer is-array='true' type-name='int32_t' comment='2D array, size ceil(width/16) * ceil(height/16)'/>
+        <pointer name='region_map_seeds' is-array='true' type-name='int32_t' comment='2D array, size ceil(width/16) * ceil(height/16)'/>
         <int32_t/>
         <stl-vector name="embark_notes" pointer-type='embark_note'/>
         <stl-vector name='unk_sites' pointer-type='world_site'/>
@@ -645,24 +562,31 @@
                         </static-array>
                     </static-array>
                 </pointer>
-                <pointer/>
+                <pointer name='river_map'>
+                    <static-array count='16'>
+                        <static-array count='16'>
+                            <int16_t name='river_id'/>
+                            <int16_t name='path_coord'/>
+                        </static-array>
+                    </static-array>
+                </pointer>
             </pointer>
         </pointer>
         <stl-string name='save_folder_name'/>
         <df-flagarray name='flags'/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
+        <stl-vector type-name='int32_t' name='reclaim_sites' ref-target='world_site'/>
+        <stl-vector type-name='int32_t' name='reclaim_x'/>
+        <stl-vector type-name='int32_t' name='reclaim_y'/>
         <stl-vector type-name='int16_t'/>
         <stl-vector type-name='int16_t'/>
         <int32_t/>
         <int8_t/>
+        <int32_t name='unk_tag'/>
+        <int8_t name='unk_tag_exceeded'/>
+        <int32_t name='unk_tag_increment'/>
         <int32_t/>
-        <int8_t/>
-        <int32_t/>
-        <int32_t/>
-        <stl-vector/>
-        <int32_t/>
+        <stl-vector name='worldgen_nomads'/>
+        <int32_t name='initial_version'/>
     </struct-type>
 </data-definition>
 

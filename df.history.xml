@@ -1,20 +1,189 @@
 <data-definition>
+    <struct-type type-name='historical_kills'>
+        -- Important
+
+        <stl-vector name="events" type-name='int32_t' ref-target='history_event'/>
+
+        -- Misc
+
+        <stl-vector name="killed_race" type-name='int16_t' ref-target='creature_raw'/>
+        <stl-vector name="killed_region" type-name='int32_t' ref-target='world_region'/>
+        <stl-vector name="killed_site" type-name='int32_t' ref-target='world_site'/>
+        <stl-vector name='killed_undead'>
+            <bitfield type-name='undead_flags'/>
+        </stl-vector>
+        <stl-vector name="killed_count" type-name='int32_t'/>
+    </struct-type>
+
+    <struct-type type-name='historical_figure_info'>
+        <pointer name="spheres">
+            <stl-vector>
+                <enum base-type='int16_t' type-name='sphere_type'/>
+            </stl-vector>
+        </pointer>
+
+        <pointer name="skills">
+            <stl-vector name="skills">
+                <enum base-type='int16_t' type-name='job_skill'/>
+            </stl-vector>
+            <stl-vector name="points" type-name='int32_t' index-refers-to='$$._parent.skills[$]'/>
+            <stl-vector name="professions_held">
+                <enum base-type='int16_t' type-name='profession'/>
+            </stl-vector>
+            <stl-vector name="profession_years" type-name='int32_t' comment="Number of years on each profession above. Need not be consecutive, so non registered periods can happen"/>
+
+            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t'/>
+            <enum base-type='int16_t' name='profession' type-name='profession'/>
+        </pointer>
+
+        <pointer name='personality'>
+            <compound name='personality' type-name='unit_personality'/>
+        </pointer>
+
+        <pointer name="masterpieces">
+            <stl-vector name="create_events" type-name='int32_t' ref-target='history_event'/>
+            <stl-vector name="loss_events" type-name='int32_t' ref-target='history_event'/>
+        </pointer>
+
+       <pointer name='state'>
+            <enum name='state' type-name='histfig_state'/>
+            <int32_t name="site" ref-target='world_site'/>
+            <int32_t name="region_id" ref-target='world_region'/>
+            <compound name='region_pos' type-name='coord2d'/>
+        </pointer>
+
+        <pointer name="kills" type-name='historical_kills'/>
+
+        <pointer name="wounds">
+            <stl-vector name="events" type-name='int32_t' ref-target='history_event'/>
+            <stl-bit-vector name="status"/>
+        </pointer>
+    </struct-type>
+
+    <enum-type type-name='histfig_state' base-type='int16_t'>
+        <enum-item name='NONE' value='-1'/>
+        <enum-item name='wanderer'/>
+        <enum-item name='scouting'/>
+        <enum-item name='beast_hunting'/>
+        <enum-item name='settler'/>
+        <enum-item name='baby_snatching'/>
+        <enum-item name='thieving'/>
+        <enum-item name='fleeing'/>
+    </enum-type>
+
+    <enum-type type-name='histfig_flags'>
+        <enum-item name='reveal_artwork'/>
+        <enum-item name='equipment_created'/>
+        <enum-item name='deity'/>
+        <enum-item name='force'/>
+        <enum-item name='skeleton'/>
+        <enum-item name='zombie'/>
+        <enum-item name='unk_worldgen_acted'/>
+        <enum-item name='never_cull'/>
+
+        <enum-item name='skin_destroyed'/>
+        <enum-item name='meat_destroyed'/>
+        <enum-item name='bones_destroyed'/>
+    </enum-type>
+
+    <enum-type type-name='histfig_relationship_type' base-type='int16_t'>
+        -- Can be checked through viewscreen_layer_unit_relationshipst
+        <enum-item name='None' value='-1'/>
+        <enum-item name='Mother'/>
+        <enum-item name='Father'/>
+        <enum-item name='Parent'/>
+        <enum-item name='Husband'/>
+        <enum-item name='Wife'/>
+        <enum-item name='Spouse'/>
+        <enum-item name='SonEldest'/>
+        <enum-item name='SonEldest2'/>
+        <enum-item name='SonEldest3'/>
+        <enum-item name='SonEldest4'/>
+        --  10
+        <enum-item name='SonEldest5'/>
+        <enum-item name='SonEldest6'/>
+        <enum-item name='SonEldest7'/>
+        <enum-item name='SonEldest8'/>
+        <enum-item name='SonEldest9'/>
+        <enum-item name='SonEldest10'/>
+        <enum-item name='Son'/>
+        <enum-item name='SonYoungest'/>
+        <enum-item name='SonOnly'/>
+        <enum-item name='DaughterEldest'/>
+        --  20
+        <enum-item name='DaughterEldest2'/>
+        <enum-item name='DaughterEldest3'/>
+        <enum-item name='DaughterEldest4'/>
+        <enum-item name='DaughterEldest5'/>
+        <enum-item name='DaughterEldest6'/>
+        <enum-item name='DaughterEldest7'/>
+        <enum-item name='DaughterEldest8'/>
+        <enum-item name='DaughterEldest9'/>
+        <enum-item name='DaughterEldest10'/>
+        <enum-item name='Daughter'/>
+        --  30
+        <enum-item name='DaughterOnly'/>
+        <enum-item name='DaughterYoungest'/>
+        <enum-item name='ChildEldest'/>
+        <enum-item name='ChildEldest2'/>
+        <enum-item name='ChildEldest3'/>
+        <enum-item name='ChildEldest4'/>
+        <enum-item name='ChildEldest5'/>
+        <enum-item name='ChildEldest6'/>
+        <enum-item name='ChildEldest7'/>
+        <enum-item name='ChildEldest8'/>
+        --  40
+        <enum-item name='ChildEldest9'/>
+        <enum-item name='ChildEldest10'/>
+        <enum-item name='Child'/>
+        <enum-item name='ChildYoungest'/>
+        <enum-item name='ChildOnly'/>
+        <enum-item name='PaternalGrandmother'/>
+        <enum-item name='PaternalGrandfather'/>
+        <enum-item name='MaternalGrandmother'/>
+        <enum-item name='MaternalGrandfather'/>
+        <enum-item name='Grandmother'/>
+        --  50
+        <enum-item name='Grandfather'/>
+        <enum-item name='Grandparent'/>
+        <enum-item name='OlderBrother'/>
+        <enum-item name='OlderSister'/>
+        <enum-item name='OlderSibling'/>
+        <enum-item name='YoungerBrother'/>
+        <enum-item name='YoungerSister'/>
+        <enum-item name='YoungerSibling'/>
+        <enum-item name='Cousin'/>
+        <enum-item name='Aunt'/>
+        --  60
+        <enum-item name='Uncle'/>
+        <enum-item name='Niece'/>
+        <enum-item name='Nephew'/>
+        <enum-item name='Sibling'/>
+        <enum-item name='Grandchild'/>
+    </enum-type>
+
+    <bitfield-type type-name='undead_flags' base-type='uint16_t'>
+        <flag-bit name='skeletal'/>
+        <flag-bit name='zombie'/>
+    </bitfield-type>
+
     <struct-type type-name='historical_figure' instance-vector='$global.world.world_data.history.figures' key-field='id'>
         <enum base-type='int16_t' name='profession' type-name='profession'/>
 
         <int16_t name='race' ref-target='creature_raw'/>
-        <int16_t name='racegloss'/>
-        <int16_t/>
+        <enum name='race_material' base-type='int16_t' type-name='material_type'/>
+        <int16_t name='race_matgloss'/>
 
-        <int8_t name='sex' comment='-1 n/a, 0 female, 1 male'/>
+        <enum base-type='int8_t' name='sex' type-name='sex_type'/>
         <int32_t name='age_death'/>
         <int32_t name='appeared_year'/>
         <int32_t name='born_year'/>
-        <int32_t/>
+        <int32_t name='died_year'/>
 
         <compound type-name='language_name' name='name'/>
         <compound type-name='language_name' name='squad_name'/>
-        <int32_t/>
+        <int32_t name='civ_id'/>
 
         <code-helper name='describe'>
             (describe-obj $.name)
@@ -29,19 +198,13 @@
 
         <int32_t/>
 
-        <stl-vector name='entity_links'>
-            <pointer type-name='histfig_entity_link'/>
-        </stl-vector>
-        <stl-vector name='site_links'>
-            <pointer type-name='histfig_site_link'/>
-        </stl-vector>
-        <stl-vector name='histfig_links'>
-            <pointer type-name='histfig_hf_link'/>
-        </stl-vector>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
-        <int32_t/>
+        <stl-vector name='entity_links' pointer-type='histfig_entity_link'/>
+        <stl-vector name='site_links' pointer-type='histfig_site_link'/>
+        <stl-vector name='histfig_links' pointer-type='histfig_hf_link'/>
+        <pointer name='info' type-name='historical_figure_info'/>
+        <pointer name='site' type-name='world_site' comment='only used during worldgen'/>
+        <pointer name='region' type-name='world_region' comment='only used during worldgen'/>
+        <int32_t name='history_tag'/>
     </struct-type>
 
     <enum-type type-name='history_event_collection_type'>
@@ -93,7 +256,7 @@
         <compound type-name='language_name'/>
         <stl-vector name='attacker_civ' type-name='int32_t' ref-target='historical_entity'/>
         <stl-vector name='defender_civ' type-name='int32_t' ref-target='historical_entity'/>
-        <compound name='unk'>
+        <compound name='war_details'>
             <stl-vector type-name='int16_t'/>
             <stl-vector type-name='int32_t'/>
             <stl-vector type-name='int32_t'/>
@@ -200,6 +363,52 @@
         <stl-vector name='attacker_hf' type-name='int32_t' ref-target='historical_figure'/>
         <int32_t name='ordinal'/>
     </class-type>
+
+    <struct-type type-name='history_event_context'>
+        <int32_t name='artifact_id' ref-target='artifact_record'/>
+        <int32_t name='entity_id' ref-target='historical_entity'/>
+        <int32_t name='histfig_id' ref-target='historical_figure'/>
+        <int32_t name='speaker_id' ref-target='historical_figure'/>
+        <int32_t name='site_id' ref-target='world_site'/>
+        <int32_t name='region_id' ref-target='world_region'/>
+        <int32_t name='abstract_building_id' ref-target='abstract_building'/>
+        <enum name='sphere' type-name='sphere_type'/>
+        <enum name='architectural_element' type-name='architectural_element'/>
+        <enum name='architecture_justification' type-name='architecture_justification'/>
+        <enum name='family_relationship' type-name='histfig_relationship_type'/>
+        <int32_t name='number' init-value='1'/>
+        <enum name='profession' type-name='profession' base-type='int16_t'/>
+        <int16_t name='race' ref-target='creature_raw'/>
+        <enum name='material' type-name='material_type' base-type='int16_t'/>
+        <int16_t name='matgloss'/>
+        <enum base-type='int8_t' name='sex' type-name='sex_type'/>
+        <bitfield name='undead_flags' type-name='undead_flags'/>
+        <int16_t name='unk_5a' init-value='-1'/>
+    </struct-type>
+
+    <enum-type type-name='architectural_element' base-type='int16_t'>
+        <enum-item name='NONE' value='-1'/>
+        <enum-item name='paved_outdoor_area'/>
+        <enum-item name='uneven_pillars'/>
+        <enum-item name='square_of_pillars'/>
+        <enum-item name='pillars_on_the_perimeter'/>
+        <enum-item name='upper_floors'/>
+        <enum-item name='lower_floors'/>
+        <enum-item name='water_pool'/>
+        <enum-item name='lava_pool'/>
+        <enum-item name='stagnant_pool'/>
+        <enum-item name='open_structure'/>
+        <enum-item name='paved_indoor_areas'/>
+        <enum-item name='detailed_surfaces'/>
+    </enum-type>
+
+    <enum-type type-name='architecture_justification' base-type='int16_t'>
+        <enum-item name='representation'/>
+        <enum-item name='proximity'/>
+        <enum-item name='experience'/>
+        <enum-item name='reminder'/>
+        <enum-item name='antithetical'/>
+    </enum-type>
 
     <enum-type type-name='history_event_type'>
         <enum-item name='WAR_ATTACKED_SITE'/>
@@ -992,17 +1201,20 @@
         <stl-vector name='unk1' type-name='int32_t'/>
         <stl-vector name='unk2' type-name='int16_t'/>
 
-        <int32_t/>
+        <int32_t name='num_art_images'/>
         <int32_t name='total_powers' comment='also includes megabeasts'/>
         <int32_t name='total_megabeasts'/>
         <int32_t name='total_semimegabeasts'/>
+        <stl-vector pointer-type='historical_figure'/>
+        <stl-vector pointer-type='historical_figure'/>
+        <stl-vector pointer-type='historical_figure'/>
+        <stl-vector pointer-type='historical_figure'/>
         <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <bool/>
-        <stl-vector/>
+        <int8_t/>
+        <stl-vector pointer-type='history_event_collection_duelst' name='active_duels'/>
+        <int8_t name='history_tag_exceeded'/>
+        <int32_t name='history_tag'/>
+        <int32_t name='history_tag_increment'/>
     </struct-type>
 </data-definition>
 
