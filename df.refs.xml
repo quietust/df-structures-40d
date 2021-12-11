@@ -188,7 +188,7 @@
         <enum-item name='PLOT_INFO'/>
         <enum-item name='VIEWSCREEN'/>
         <enum-item name='UNIT_ITEM_WRESTLE'/>
-        <enum-item name='UNKNOWN'/>
+        <enum-item name='NULL_REF'/>
 
         <enum-item name='DEFAULT'/>
         <enum-item name='HIST_FIG'/>
@@ -202,6 +202,7 @@
         <enum-item name='SUBREGION'/>
         <enum-item name='ART_IMAGE'/>
         <enum-item name='CREATURE_DEF'/>
+        <enum-item name='GENERAL_REF'/>
     </enum-type>
 
     <struct-type type-name='specific_ref'>

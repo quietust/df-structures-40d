@@ -419,13 +419,13 @@
         <stl-vector name='population'>
             <pointer type-name='world_population'/>
         </stl-vector>
-        <int32_t/>
-        <int16_t comment='attack intensity'/>
+        <int32_t name='attack_prob' comment='max 10000'/>
+        <int16_t name='num_attacks' comment='max 10'/>
         <pointer name='spec_info' type-name='feature_specinfo'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
+        <stl-vector type-name='int16_t' name='region_x'/>
+        <stl-vector type-name='int16_t' name='region_y'/>
+        <stl-vector type-name='int16_t' name='z_min'/>
+        <stl-vector type-name='int16_t' name='z_max'/>
     </struct-type>
 
     <enum-type type-name='feature_init_flags'>
@@ -442,10 +442,16 @@
         <pointer name='feature' type-name='feature'/>
     </struct-type>
 
+    <enum-type type-name='feature_alteration_type' base-type='int16_t'>
+        <enum-item name='unk_0'/>
+        <enum-item name='new_lava_fill_z'/>
+        <enum-item name='new_spike_level'/>
+    </enum-type>
+
     <struct-type type-name='feature_alteration'>
-        <int16_t/>
-        <int32_t/>
-        <int32_t/>
+        <enum name='type' base-type='int16_t' type-name='feature_alteration_type'/>
+        <int32_t name='spike_level' comment='uninitialized for other types'/>
+        <int32_t name='lava_fill_z' comment='uninitialized for other types'/>
         <pointer name='spec_info' type-name='feature_alteration_spec_info'/>
     </struct-type>
 
@@ -462,21 +468,23 @@
                 <pointer comment='file_compressorst'/>
                 <int32_t name='loadversion'/>
             </vmethod>
-            <vmethod name='adjustPosition'><int32_t name='dx'/><int32_t name='dy'/><int32_t name='dz'/></vmethod>
-            <vmethod/>
+            <vmethod name='adjustPosition' comment='does nothing because coords are already absolute'>
+                <int32_t name='dx'/><int32_t name='dy'/><int32_t name='dz'/>
+            </vmethod>
+            <vmethod name='discover' comment='spawns HFS'/>
             <vmethod is-destructor='true'/>
         </virtual-methods>
     </class-type>
 
     <class-type type-name='feature_specinfo_cave_lava_shaftst' inherits-from='feature_specinfo'>
-        <int32_t/>
+        <int32_t name='magma_refill_level'/>
     </class-type>
 
     <struct-type type-name='underworld_spike_level_info'>
-        <int16_t/>
-        <stl-vector type-name='int32_t'/>
-        <stl-vector type-name='int32_t'/>
-        <stl-vector type-name='int32_t'/>
+        <int16_t name='demon_race'/>
+        <stl-vector type-name='int32_t' name='tiles_x' comment='absolute, including region coords'/>
+        <stl-vector type-name='int32_t' name='tiles_y'/>
+        <stl-vector type-name='int32_t' name='tiles_z'/>
     </struct-type>
 
     <class-type type-name='feature_specinfo_cave_underworld_spikest' inherits-from='feature_specinfo'>
@@ -495,10 +503,7 @@
     </class-type>
 
     <class-type type-name='feature_alteration_spec_info_underworld_spike_level_infost' inherits-from='feature_alteration_spec_info'>
-        <int16_t/>
-        <stl-vector type-name='int32_t'/>
-        <stl-vector type-name='int32_t'/>
-        <stl-vector type-name='int32_t'/>
+        <compound name='info' type-name='underworld_spike_level_info'/>
     </class-type>
 
     <enum-type type-name='world_construction_type'>

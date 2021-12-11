@@ -235,7 +235,7 @@
 
             -- 80
 
-            <vmethod name='setDisplayColor'><int32_t/></vmethod>
+            <vmethod name='setDisplayColor'><int16_t name='bg'/></vmethod>
             <vmethod ret-type='bool' name='isDamagedByHeat'/>
             <vmethod ret-type='bool' name='needTwoHandedWield'> <int32_t name='size'/> </vmethod>
             <vmethod name='splitStack'>
@@ -595,8 +595,8 @@
         <int16_t name='race' ref-target='creature_raw'/>
         <int32_t name='hist_figure_id' ref-target='historical_figure'/>
         <int32_t name='unit_id' ref-target='unit'/>
-        <int16_t name='racegloss'/>
-        <int16_t/>
+        <enum base-type='int16_t' name='race_material' type-name='material_type'/>
+        <int16_t name='race_matgloss'/>
         <enum base-type='int8_t' name='sex' type-name='sex_type'/>
         <int32_t name='rot_timer'/>
     </class-type>
@@ -663,8 +663,8 @@
     <class-type type-name='item_corpsepiecest' inherits-from='item_actual'>
         <int16_t name='part_id'/>
         <int16_t name='race' ref-target='creature_raw'/>
-        <int16_t name='racegloss'/>
-        <int16_t/>
+        <enum base-type='int16_t' name='race_material' type-name='material_type'/>
+        <int16_t name='race_matgloss'/>
         <enum base-type='int8_t' name='sex' type-name='sex_type'/>
         <int32_t name='hist_figure_id' ref-target='historical_figure'/>
         <int32_t name='unit_id' ref-target='unit'/>

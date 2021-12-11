@@ -56,7 +56,7 @@
                 <int32_t name='loadversion'/>
             </vmethod>
             <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
-            <vmethod name='drawSelf'><pointer/></vmethod>
+            <vmethod name='drawSelf'><pointer type-name='map_viewport'/></vmethod>
             <vmethod ret-type='bool' name='isNull'/>
             <vmethod is-destructor='true'/>
         </virtual-methods>

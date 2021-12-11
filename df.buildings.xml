@@ -390,9 +390,9 @@
             <vmethod name='populateTaskList'/> for certain workshops
             <vmethod ret-type='bool' name='isForbidden'/>
             <vmethod ret-type='bool' name='isHidden'/>
-            <vmethod/>
+            <vmethod ret-type='bool' name='isRendered'/>
             <vmethod ret-type='bool' name='isVisible'
-                     comment='used by stuff like open doors/floodgates'><pointer/></vmethod>
+                     comment='used by stuff like open doors/floodgates'><pointer type-name='map_viewport'/></vmethod>
 
             -- 80
 
