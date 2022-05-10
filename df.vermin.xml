@@ -4,6 +4,18 @@
         <flag-bit name='is_colony' comment='A vermin colony.'/>
     </bitfield-type>
 
+    <enum-type type-name='vermin_category' base-type='int16_t'>
+        <enum-item name='None' value='-1'/>
+        <enum-item name='Eater'/>
+        <enum-item name='Grounder'/>
+        <enum-item name='Rotter'/>
+        <enum-item name='Swamper'/>
+        <enum-item name='Searched'/>
+        <enum-item name='Disturbed'/>
+        <enum-item name='Dropped'/>
+        <enum-item name='Underworld'/>
+    </enum-type>
+
     <struct-type type-name='vermin' instance-vector='$global.world.vermin.all'>
         <int16_t name='race' ref-target='creature_raw'/>
 
@@ -19,12 +31,12 @@
         <pointer name='item' type-name='item'/>
 
         <compound name='flags' type-name='vermin_flags'/>
-        <int32_t name='amount' />
+        <int32_t name="amount" comment="The total number of vermin in this object. Decimal constant 10000001 means infinity." />
 
         <compound name='population' type-name='world_population_ref'/>
 
-        <int16_t name="unk_34" />
-        <int32_t name="unk_38" comment="weird, normally uninitialized index? also not saved." />
+        <enum type-name='vermin_category' name='category'/>
+        <int32_t name='id' comment='assigned during Save'/>
     </struct-type>
 </data-definition>
 
