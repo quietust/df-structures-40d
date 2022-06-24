@@ -306,10 +306,9 @@
 
     <class-type type-name='cave_column_rectangle' original-name='cave_column_rectanglest'>
         <int32_t/>
-        <compound type-name='coord2d'/>
-        <compound type-name='coord'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
+        <compound type-name='coord2d' name='pos2d'/>
+        <compound type-name='coord' name='pos3d'/>
+        <compound type-name='coord2d_path'/>
         <stl-vector type-name='int16_t'/>
         <int32_t/>
 
@@ -416,9 +415,7 @@
     </enum-type>
 
     <struct-type type-name='feature'>
-        <stl-vector name='population'>
-            <pointer type-name='world_population'/>
-        </stl-vector>
+        <stl-vector name='population' pointer-type='world_population'/>
         <int32_t name='attack_prob' comment='max 10000'/>
         <int16_t name='num_attacks' comment='max 10'/>
         <pointer name='spec_info' type-name='feature_specinfo'/>
@@ -532,32 +529,39 @@
                 <int32_t name='loadversion'/>
             </vmethod>
             <vmethod is-destructor='true'/>
-            <vmethod><int32_t/><int32_t/><int32_t/><int32_t/><int32_t/><int32_t/><int32_t/><int32_t/><int32_t/><int32_t/></vmethod>
+            <vmethod name='realize'>
+                <pointer name='gen_info'/>
+                <int16_t name='x1'/><int16_t name='x2'/>
+                <int16_t name='y1'/><int16_t name='y2'/>
+                <int16_t name='z1'/><int16_t name='z2'/>
+                <pointer name='x_vec'><stl-vector type-name='int16_t'/></pointer>
+                <pointer name='y_vec'><stl-vector type-name='int16_t'/></pointer>
+                <pointer name='z_vec'><stl-vector type-name='int16_t'/></pointer></vmethod>
         </virtual-methods>
     </class-type>
 
     <class-type type-name='world_construction_square_roadst' inherits-from='world_construction_square'>
-        <int16_t/>
-        <int16_t/>
-        <int16_t name='material'/>
-        <int16_t name='matgloss'/>
+        <enum type-name='item_type' base-type='int16_t' name='item_type'/>
+        <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
 
     <class-type type-name='world_construction_square_tunnelst' inherits-from='world_construction_square'/>
 
     <class-type type-name='world_construction_square_bridgest' inherits-from='world_construction_square'>
         <int32_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t name='material'/>
-        <int16_t name='matgloss'/>
+        <enum type-name='item_type' base-type='int16_t' name='item_type'/>
+        <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
 
     <class-type type-name='world_construction_square_wallst' inherits-from='world_construction_square'>
-        <int16_t/>
-        <int16_t/>
-        <int16_t name='material'/>
-        <int16_t name='matgloss'/>
+        <enum type-name='item_type' base-type='int16_t' name='item_type'/>
+        <int16_t name='item_subtype' refers-to='(item-subtype-target $$._parent.item_type $)'/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
     </class-type>
 
     <class-type type-name='world_construction' original-name='world_constructionst'
@@ -700,7 +704,7 @@
 
     <struct-type type-name='effect_info'>
         <int32_t comment='uninit'/>
-        <pointer type-name='job'/>
+        <pointer name='job' type-name='job'/>
         <int16_t name='type' comment='2 = falling into chasm'/>
         <int16_t name='foreground'/>
         <int16_t name='background'/>

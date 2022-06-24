@@ -220,7 +220,7 @@
         </static-array>
 
         <int32_t name='language' ref-target='language_translation'/>
-        <int16_t name='unknown'/>
+        <enum name='type' type-name='language_name_type'/>
 
         <bool name='has_name'/>
 
@@ -312,7 +312,7 @@
         <enum-item name='DemonEvil'/>
         <enum-item name='DemonGood'/>
         <enum-item name='MountainPeak'/>
-        <enum-item name='Unknown1'/>
+        <enum-item name='River'/>
 
         <enum-item name='Volcano'/>
         <enum-item name='SmallIsland'/>
@@ -335,6 +335,65 @@
         <enum-item name='Wall'/>
         <enum-item name='Bridge'/>
         <enum-item name='Tunnel'/>
+    </enum-type>
+
+    <enum-type type-name='language_name_type' base-type='int16_t'>
+        <enum-item name='NONE' value='-1'/>
+
+        0
+        <enum-item name='Unk0'/>
+        <enum-item name='Figure'/>
+        <enum-item name='Artifact'/>
+        <enum-item name='Civilization'/>
+        <enum-item name='Squad'/>
+        <enum-item name='Site'/>
+        <enum-item name='World'/>
+        <enum-item name='Region'/>
+        <enum-item name='Dungeon'/>
+        <enum-item name='VeryLegendaryFigure'/>
+
+
+        10
+        <enum-item name='LegendaryFigure'/>
+        <enum-item name='FigureAlt'/>
+        <enum-item name='ArtImage'/>
+        <enum-item name='SiteGovernment'/>
+        <enum-item name='ElfTree'/>
+        <enum-item name='Unk15'/>
+        <enum-item name='MigratingGroup'/>
+        <enum-item name='Vessel'/>
+        <enum-item name='Religion'/>
+        <enum-item name='MountainPeak'/>
+
+        20
+        <enum-item name='River'/>
+        <enum-item name='Temple'/>
+        <enum-item name='Keep'/>
+        <enum-item name='MeadHall'/>
+        <enum-item name='SymbolArtifice'/>
+        <enum-item name='SymbolViolent'/>
+        <enum-item name='SymbolProtect'/>
+        <enum-item name='SymbolDomestic'/>
+        <enum-item name='SymbolFood'/>
+        <enum-item name='War'/>
+
+        30
+        <enum-item name='Battle'/>
+        <enum-item name='Siege'/>
+        <enum-item name='Road'/>
+        <enum-item name='Wall'/>
+        <enum-item name='Bridge'/>
+        <enum-item name='Tunnel'/>
+    </enum-type>
+
+    <enum-type type-name='language_name_component'>
+        <enum-item name='FrontCompound'/>
+        <enum-item name='RearCompound'/>
+        <enum-item name='FirstAdjective'/>
+        <enum-item name='SecondAdjective'/>
+        <enum-item name='HyphenCompound'/>
+        <enum-item name='TheX'/>
+        <enum-item name='OfX'/>
     </enum-type>
 </data-definition>
 

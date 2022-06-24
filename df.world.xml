@@ -18,21 +18,19 @@
     <struct-type type-name='fire'>
         <compound type-name='coord' name='pos'/>
         <int16_t name='timer'/>
-        <uint16_t name='temperature'/>
-        <uint16_t name='unk1' comment='10000'/>
-        <uint16_t name='unk2'/>
-        <uint16_t name='unk3'/>
+        <uint16_t name='temp_inner_cur'/>
+        <uint16_t name='temp_outer_cur'/>
+        <uint16_t name='temp_inner_max'/>
+        <uint16_t name='temp_outer_max'/>
     </struct-type>
 
     <struct-type type-name='ocean_wave'>
-        <int16_t name='x1'/>
-        <int16_t name='y1'/>
-        <int16_t name='x2'/>
-        <int16_t name='y2'/>
+        <compound type-name='coord2d' name='dest'/>
+        <compound type-name='coord2d' name='cur'/>
         <int16_t name='z'/>
-        <int8_t/>
-        <int8_t/>
-        <int8_t/>
+        <bool name='spawn_flows'/>
+        <int8_t name='move_timer'/>
+        <int8_t name='unk_120'/>
     </struct-type>
 
     <struct-type type-name='coin_batch'>
@@ -46,13 +44,11 @@
     </struct-type>
 
 
-    <struct-type type-name='world_unk_6c'>
-        <compound type-name='coord'/>
-        <int8_t/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
-        <stl-vector type-name='int16_t'/>
+    <struct-type type-name='ocean_wave_maker'>
+        <compound name='pos' type-name='coord'/>
+        <int8_t name='rand'/>
+        <compound name='coastline' type-name='coord2d_path'/>
+        <compound name='wave_origin' type-name='coord2d_path'/>
     </struct-type>
 
     <struct-type type-name='water_area'>
@@ -78,22 +74,22 @@
             <stl-vector name='all' pointer-type='vermin'/>
             <stl-vector name='colonies' pointer-type='vermin'/>
         </compound>
-        <stl-vector name='unk_30' pointer-type='coord'/>
+        <stl-vector name='dirty_waters' pointer-type='coord'/>
         <stl-vector name='campfires' pointer-type='campfire'/>
-        <stl-vector name='unk_50' pointer-type='coord' comment='probably contaminated_tiles'/>
+        <stl-vector name='dirty_walls' pointer-type='coord'/>
         <stl-vector name='web_clusters' pointer-type='web_cluster'/>
         <stl-vector name='fires' pointer-type='fire'/>
-        <stl-vector name='unk_80' pointer-type='world_unk_6c'/>
+        <stl-vector name='ocean_wave_makers' pointer-type='ocean_wave_maker'/>
         <stl-vector name='ocean_waves' pointer-type='ocean_wave'/>
         <stl-vector name='constructions' pointer-type='construction'/>
         <stl-vector name='water_areas' pointer-type='water_area'/>
         <stl-vector name='local_map_descriptors' pointer-type='local_map_descriptor'/>
 
-        <stl-vector name='unk_D0' pointer-type='engraving'/>
-        <stl-vector name='unk_E0' pointer-type='construction'/>
-        <stl-vector name='unk_F0' pointer-type='local_map_descriptor'/>
-        <stl-vector name='unk_100' pointer-type='world_unk_6c'/>
-        <stl-vector name='unk_110' pointer-type='water_area'/>
+        <stl-vector name='saveload_engravings' pointer-type='engraving'/>
+        <stl-vector name='saveload_constructions' pointer-type='construction'/>
+        <stl-vector name='saveload_local_map_descriptors' pointer-type='local_map_descriptor'/>
+        <stl-vector name='saveload_ocean_wave_makers' pointer-type='ocean_wave_maker'/>
+        <stl-vector name='saveload_water_areas' pointer-type='water_area'/>
 
         <stl-vector name='effects' pointer-type='effect_info'/>
         <stl-vector name='coin_batches' pointer-type='coin_batch'/>
@@ -258,7 +254,6 @@
         <int8_t name='build_direction'/>
 
         <compound name='map'>
-            52cdc
             <stl-vector name='map_blocks' pointer-type='map_block'/>
             <pointer name='block_index' is-array='true'>
                 <pointer is-array='true'>
@@ -296,13 +291,13 @@
         <compound name='worldgen_status'>
             <int16_t name='state'/>
             <int32_t name='num_rejects'/>
-            <static-array count='53' type-name='int32_t'/>
-            <static-array count='53' type-name='int32_t'/>
+            <static-array name='reject_warnings' count='53' type-name='int32_t'/>
+            <static-array name='reject_counts' count='53' type-name='int32_t'/>
             <int16_t name='rejection_reason'/>
-            <int32_t name='lakes_total'/>
-            <int32_t/>
+            <int32_t name='width'/>
+            <int32_t name='height'/>
             <int16_t/>
-            <int32_t name='lakes_cur'/>
+            <int32_t name='form_lakes_cur'/>
             <int8_t/>
             <int32_t name='finalized_civ_mats'/>
             <int32_t name='finalized_art'/>
@@ -310,14 +305,13 @@
             <int32_t name='finalized_sites'/>
             <int32_t/>
             <int32_t/>
+            <stl-vector name='entities' pointer-type='historical_entity'/>
             <stl-vector type-name='pointer'/>
-            <stl-vector type-name='pointer'/>
-            <int32_t name='width'/>
-            <int32_t name='height'/>
-            <stl-vector type-name='pointer'/>
-            <stl-vector type-name='pointer'/>
-            <int32_t name='rivers_total'/>
-            <int32_t name='rivers_cur'/>
+            <int32_t name='camera_x'/>
+            <int32_t name='camera_y'/>
+            <compound name='river_start_points' type-name='coord2d_path'/>
+            <int32_t name='erosion_cycle_max'/>
+            <int32_t name='erosion_cycle_cur'/>
             <int8_t/>
             <stl-string/>
             <uint32_t name='last_seed'/>
@@ -382,16 +376,16 @@
             <stl-vector type-name='int16_t' name='feature_x'/>
             <stl-vector type-name='int16_t' name='feature_y'/>
             <stl-vector type-name='int16_t' name='feature_idx' comment='same as map_block.feature'/>
-            <stl-vector pointer-type='feature_init'/>
-            <stl-vector type-name='int16_t' comment='local_map_descriptor.region.x'/>
-            <stl-vector type-name='int16_t' comment='local_map_descriptor.region.y'/>
-            <stl-vector type-name='int16_t' comment='local_map_descriptor.embark.x'/>
-            <stl-vector type-name='int16_t' comment='local_map_descriptor.embark.y'/>
-            <stl-vector type-name='int16_t' comment='local_map_descriptor.feature_idx'/>
-            <stl-vector type-name='int16_t' comment='local_map_descriptor.local.x'/>
-            <stl-vector type-name='int16_t' comment='local_map_descriptor.local.y'/>
-            <stl-vector type-name='int16_t' comment='local_map_descriptor.z_min'/>
-            <stl-vector type-name='int16_t' comment='local_map_descriptor.z_max'/>
+            <stl-vector pointer-type='feature_init' name='unk_feat'/>
+            <stl-vector type-name='int16_t' name='region_x' comment='local_map_descriptor.region.x'/>
+            <stl-vector type-name='int16_t' name='region_y' comment='local_map_descriptor.region.y'/>
+            <stl-vector type-name='int16_t' name='embark_x' comment='local_map_descriptor.embark.x'/>
+            <stl-vector type-name='int16_t' name='embark_y' comment='local_map_descriptor.embark.y'/>
+            <stl-vector type-name='int16_t' name='unk_feat_idx' comment='local_map_descriptor.feature_idx'/>
+            <stl-vector type-name='int16_t' name='local_x' comment='local_map_descriptor.local.x'/>
+            <stl-vector type-name='int16_t' name='local_y' comment='local_map_descriptor.local.y'/>
+            <stl-vector type-name='int16_t' name='z_min' comment='local_map_descriptor.z_min'/>
+            <stl-vector type-name='int16_t' name='z_max' comment='local_map_descriptor.z_max'/>
         </compound>
 
         <bool/>

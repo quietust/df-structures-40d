@@ -199,22 +199,14 @@
         <uint8_t name='item_symbol'/>
 
         <compound name='metal_ore'>
-            <stl-vector name='str' comment='only during parsing'>
-                <pointer type-name='stl-string'/>
-            </stl-vector>
-            <stl-vector name='metal'>
-                <int16_t ref-target='matgloss_metal'/>
-            </stl-vector>
+            <stl-vector name='str' pointer-type='stl-string' comment='only during parsing'/>
+            <stl-vector name='metal' type-name='int16_t' ref-target='matgloss_metal'/>
             <stl-vector type-name='int16_t' name='probability'/>
         </compound>
 
         <compound name='thread_metal'>
-            <stl-vector name='str' comment='only during parsing'>
-                <pointer type-name='stl-string'/>
-            </stl-vector>
-            <stl-vector name='metal'>
-                <int16_t ref-target='matgloss_metal'/>
-            </stl-vector>
+            <stl-vector name='str' pointer-type='stl-string' comment='only during parsing'/>
+            <stl-vector name='metal' type-name='int16_t' ref-target='matgloss_metal'/>
             <stl-vector type-name='int16_t' name='probability'/>
         </compound>
 
@@ -223,12 +215,8 @@
         <int32_t name='value'/>
 
         <compound name='environment_spec'>
-            <stl-vector name='str' comment='only during parsing'>
-                <pointer type-name='stl-string'/>
-            </stl-vector>
-            <stl-vector name='stone'>
-                <int16_t ref-target='matgloss_stone'/>
-            </stl-vector>
+            <stl-vector name='str' pointer-type='stl-string' comment='only during parsing'/>
+            <stl-vector name='stone' type-name='int16_t' ref-target='matgloss_stone'/>
             <stl-vector name='inclusion_type'>
                 <enum base-type='int16_t' type-name='inclusion_type'/>
             </stl-vector>
@@ -245,8 +233,8 @@
             <stl-vector type-name='int8_t' name='probability'/>
         </compound>
 
-        <int16_t/>
-        <int16_t/>
+        <int16_t name='times_used_land'/>
+        <int16_t name='times_used_ocean'/>
     </struct-type>
 
     <enum-type type-name='matgloss_metal_flags'>
@@ -435,9 +423,7 @@
         <int16_t name='frequency'/>
         <int16_t name='clustersize'/>
 
-        <stl-vector name='prefstring'>
-            <pointer type-name='stl-string'/>
-        </stl-vector>
+        <stl-vector name='prefstring' pointer-type='stl-string'/>
 
         <int8_t name='drown_level'/>
     </struct-type>
@@ -520,9 +506,7 @@
         <uint8_t name='dead_sapling_tile'/>
         <stl-string name='name'/>
         <stl-string name='adj'/>
-        <stl-vector name='prefstring'>
-            <pointer type-name='stl-string'/>
-        </stl-vector>
+        <stl-vector name='prefstring' pointer-type='stl-string'/>
 
         <compound name='temperature' type-name='temperature_raw'/>
         <compound name='density' type-name='density_raw'/>

@@ -78,11 +78,9 @@
         <int8_t/>
         <int8_t/>
         <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
-        <int16_t/>
+        <int16_t name='travel_timer'/>
+        <compound name='travel_pos_g' type-name='coord2d'/>
+        <compound name='travel_pos_r' type-name='coord2d'/>
 
         <stl-vector name='talk_targets'>
             <pointer>
@@ -113,9 +111,9 @@
         <int32_t/>
         <int16_t/>
         <int16_t/>
-        <stl-vector type-name='pointer' name='interact_options'/>
-        <stl-vector type-name='pointer'/>
-        <stl-vector type-name='pointer' name='move_options'/>
+        <stl-vector name='interact_options' pointer-type='adventure_item_interact_choicest'/>
+        <stl-vector name='commands' pointer-type='adventure_optionst'/>
+        <stl-vector name='move_options' pointer-type='adventure_movement_optionst'/>
     </struct-type>
 
     <struct-type type-name='quest_list_link'>
@@ -148,6 +146,108 @@
         <int32_t name='target_hfid' ref-target='historical_figure'/>
         <int8_t/>
     </class-type>
+
+    <class-type type-name='adventure_optionst'>
+        <virtual-methods>
+            <vmethod name='getDescription'><pointer type-name='stl-string'/></vmethod>
+            <vmethod is-destructor='true'/>
+            <vmethod name='getIngestedItem'><ret-type><pointer type-name='item'/></ret-type></vmethod>
+            <vmethod name='performAction'>
+                <pointer type-name='int32_t' name='remove_vermin_idx'/>
+                <pointer type-name='bool' name='did_pick_vermin'/>
+                <pointer type-name='bool' name='did_set_fire'/>
+            </vmethod>
+
+            <vmethod ret-type='int16_t' name='getPlayerPosX'/>
+            <vmethod ret-type='int16_t' name='getPlayerPosY'/>
+            <vmethod ret-type='int16_t' name='getPlayerPosZ'/>
+
+            <vmethod ret-type='int16_t' name='getTargetPosX'/>
+            <vmethod ret-type='int16_t' name='getTargetPosY'/>
+            <vmethod ret-type='int16_t' name='getTargetPosZ'/>
+
+            <vmethod name='deleteSpatter'/>
+        </virtual-methods>
+    </class-type>
+
+    <class-type type-name='adventure_option_eat_unit_contaminantst' inherits-from='adventure_optionst'>
+        <pointer name='unit' type-name='unit'/>
+        <pointer name='contaminant' type-name='unit_contaminant'/>
+    </class-type>
+
+    <class-type type-name='adventure_option_eat_item_contaminantst' inherits-from='adventure_optionst'>
+        <pointer name='unit' type-name='unit'/>
+        <pointer name='inv_item' type-name='unit_inventory_item'/>
+        <pointer name='contaminant' type-name='contaminant'/>
+    </class-type>
+
+    <class-type type-name='adventure_option_view_contaminantst' inherits-from='adventure_optionst'>
+        <pointer name='unit' type-name='unit'/>
+        <pointer name='contaminant' type-name='unit_contaminant'/>
+    </class-type>
+
+    <class-type type-name='adventure_environment_optionst' inherits-from='adventure_optionst'>
+        <compound name='target_pos' type-name='coord'/>
+        <compound name='player_pos' type-name='coord'/>
+    </class-type>
+
+    <class-type type-name='adventure_environment_pickup_ignite_vegst' inherits-from='adventure_environment_optionst'>
+        <int32_t name='plant_idx'/>
+    </class-type>
+
+    <class-type type-name='adventure_environment_pickup_vermin_eventst' inherits-from='adventure_environment_optionst'>
+        <int32_t name='vermin_idx'/>
+    </class-type>
+
+    <class-type type-name='adventure_environment_drink_waterst' inherits-from='adventure_environment_optionst' />
+    <class-type type-name='adventure_environment_drink_bloodst' inherits-from='adventure_environment_optionst' />
+    <class-type type-name='adventure_environment_eat_mudst' inherits-from='adventure_environment_optionst' />
+    <class-type type-name='adventure_environment_eat_vomitst' inherits-from='adventure_environment_optionst' />
+    <class-type type-name='adventure_environment_eat_slimest' inherits-from='adventure_environment_optionst' />
+
+    <class-type type-name='adventure_movement_optionst'>
+        <compound name='dest' type-name='coord'/>
+        <compound name='source' type-name='coord'/>
+        <virtual-methods>
+            <vmethod name='getDescription'><pointer type-name='stl-string'/></vmethod>
+            <vmethod name='performAction'/>
+        </virtual-methods>
+    </class-type>
+
+    <class-type type-name='adventure_movement_attack_creaturest' inherits-from='adventure_movement_optionst'>
+        <stl-vector name='targets' type-name='int32_t' ref-target='unit'/>
+    </class-type>
+
+    <class-type type-name='adventure_movement_movest' inherits-from='adventure_movement_optionst'>
+        <int32_t name='unit_path_flags'/>
+    </class-type>
+
+    <class-type type-name='adventure_movement_building_interactst' inherits-from='adventure_movement_optionst'>
+        <int32_t name='building_id' ref-target='building'/>
+    </class-type>
+
+    <class-type type-name='adventure_item_interact_choicest'>
+        <virtual-methods>
+            <vmethod name='getDescription'><pointer type-name='stl-string'/></vmethod>
+            <vmethod name='performAction'/>
+            <vmethod is-destructor='true'/>
+        </virtual-methods>
+    </class-type>
+
+    <class-type type-name='adventure_item_interact_pull_outst' inherits-from='adventure_item_interact_choicest'/>
+    <class-type type-name='adventure_item_interact_strugglest' inherits-from='adventure_item_interact_choicest'/>
+
+    <class-type type-name='adventure_item_interact_fillst' inherits-from='adventure_item_interact_choicest'>
+        <pointer type-name='item' name='item'/>
+        <compound type-name='coord' name='self'/>
+        <compound type-name='coord' name='target'/>
+    </class-type>
+
+    <class-type type-name='adventure_item_interact_fill_with_waterst' inherits-from='adventure_item_interact_fillst'/>
+    <class-type type-name='adventure_item_interact_fill_with_bloodst' inherits-from='adventure_item_interact_fillst'/>
+    <class-type type-name='adventure_item_interact_fill_with_mudst' inherits-from='adventure_item_interact_fillst'/>
+    <class-type type-name='adventure_item_interact_fill_with_vomitst' inherits-from='adventure_item_interact_fillst'/>
+    <class-type type-name='adventure_item_interact_fill_with_slimest' inherits-from='adventure_item_interact_fillst'/>
 </data-definition>
 
 <!--

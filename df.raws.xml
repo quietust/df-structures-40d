@@ -1,24 +1,14 @@
 <data-definition>
     <struct-type type-name='world_raws'>
         <compound name='matgloss'>
-            <stl-vector name='wood'>
-                <pointer type-name='matgloss_wood'/>
-            </stl-vector>
-            <stl-vector name='stone'>
-                <pointer type-name='matgloss_stone'/>
-            </stl-vector>
-            <stl-vector name='plant'>
-                <pointer type-name='matgloss_plant'/>
-            </stl-vector>
-            <stl-vector name='metal'>
-                <pointer type-name='matgloss_metal'/>
-            </stl-vector>
+            <stl-vector name='wood' pointer-type='matgloss_wood'/>
+            <stl-vector name='stone' pointer-type='matgloss_stone'/>
+            <stl-vector name='plant' pointer-type='matgloss_plant'/>
+            <stl-vector name='metal' pointer-type='matgloss_metal'/>
         </compound>
 
         <compound name='body'>
-            <stl-vector name='templates'>
-                <pointer type-name='body_template'/>
-            </stl-vector>
+            <stl-vector name='templates' pointer-type='body_template'/>
             <stl-vector name='glosses'>
                 <pointer key-field='id'>
                     <stl-string name='id'/>
@@ -28,87 +18,42 @@
             </stl-vector>
         </compound>
 
-        <stl-vector name='creatures'>
-            <pointer type-name='creature_raw'/>
-        </stl-vector>
+        <stl-vector name='creatures' pointer-type='creature_raw'/>
 
         <compound name='itemdefs'>
+            <stl-vector name='all' pointer-type='itemdef'/>
 
-            <stl-vector name='all'>
-                <pointer type-name='itemdef'/>
-            </stl-vector>
-
-            <stl-vector name='weapons'>
-                <pointer type-name='itemdef_weaponst'/>
-            </stl-vector>
-            <stl-vector name='trapcomps'>
-                <pointer type-name='itemdef_trapcompst'/>
-            </stl-vector>
-            <stl-vector name='toys'>
-                <pointer type-name='itemdef_toyst'/>
-            </stl-vector>
-            <stl-vector name='instruments'>
-                <pointer type-name='itemdef_instrumentst'/>
-            </stl-vector>
-            <stl-vector name='armor'>
-                <pointer type-name='itemdef_armorst'/>
-            </stl-vector>
-            <stl-vector name='ammo'>
-                <pointer type-name='itemdef_ammost'/>
-            </stl-vector>
-            <stl-vector name='siegeammo'>
-                <pointer type-name='itemdef_siegeammost'/>
-            </stl-vector>
-            <stl-vector name='gloves'>
-                <pointer type-name='itemdef_glovesst'/>
-            </stl-vector>
-            <stl-vector name='shoes'>
-                <pointer type-name='itemdef_shoesst'/>
-            </stl-vector>
-            <stl-vector name='shields'>
-                <pointer type-name='itemdef_shieldst'/>
-            </stl-vector>
-            <stl-vector name='helms'>
-                <pointer type-name='itemdef_helmst'/>
-            </stl-vector>
-            <stl-vector name='pants'>
-                <pointer type-name='itemdef_pantsst'/>
-            </stl-vector>
-            <stl-vector name='food'>
-                <pointer type-name='itemdef_foodst'/>
-            </stl-vector>
+            <stl-vector name='weapons' pointer-type='itemdef_weaponst'/>
+            <stl-vector name='trapcomps' pointer-type='itemdef_trapcompst'/>
+            <stl-vector name='toys' pointer-type='itemdef_toyst'/>
+            <stl-vector name='instruments' pointer-type='itemdef_instrumentst'/>
+            <stl-vector name='armor' pointer-type='itemdef_armorst'/>
+            <stl-vector name='ammo' pointer-type='itemdef_ammost'/>
+            <stl-vector name='siegeammo' pointer-type='itemdef_siegeammost'/>
+            <stl-vector name='gloves' pointer-type='itemdef_glovesst'/>
+            <stl-vector name='shoes' pointer-type='itemdef_shoesst'/>
+            <stl-vector name='shields' pointer-type='itemdef_shieldst'/>
+            <stl-vector name='helms' pointer-type='itemdef_helmst'/>
+            <stl-vector name='pants' pointer-type='itemdef_pantsst'/>
+            <stl-vector name='food' pointer-type='itemdef_foodst'/>
         </compound>
 
-        <stl-vector name='entities'>
-            <pointer type-name='entity_raw'/>
-        </stl-vector>
+        <stl-vector name='entities' pointer-type='entity_raw'/>
 
         <compound name='language'>
-            <stl-vector name='words'>
-                <pointer type-name='language_word'/>
-            </stl-vector>
-            <stl-vector name='symbols'>
-                <pointer type-name='language_symbol'/>
-            </stl-vector>
-            <stl-vector name='translations'>
-                <pointer type-name='language_translation'/>
-            </stl-vector>
+            <stl-vector name='words' pointer-type='language_word'/>
+            <stl-vector name='symbols' pointer-type='language_symbol'/>
+            <stl-vector name='translations' pointer-type='language_translation'/>
             <static-array name='word_table' count='2'>
                 <static-array type-name='language_word_table' index-enum='language_name_category' count='60'/>
             </static-array>
         </compound>
 
         <compound name='descriptors'>
-            <stl-vector name='colors'>
-                <pointer type-name='descriptor_color'/>
-            </stl-vector>
-            <stl-vector name='shapes'>
-                <pointer type-name='descriptor_shape'/>
-            </stl-vector>
+            <stl-vector name='colors' pointer-type='descriptor_color'/>
+            <stl-vector name='shapes' pointer-type='descriptor_shape'/>
         </compound>
-        <stl-vector name='reactions'>
-            <pointer type-name='reaction'/>
-        </stl-vector>
+        <stl-vector name='reactions' pointer-type='reaction'/>
     </struct-type>
 </data-definition>
 

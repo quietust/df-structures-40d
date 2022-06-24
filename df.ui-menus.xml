@@ -77,13 +77,8 @@
     </class-type>
 
     <struct-type type-name='ui_build_selector'>
-        <stl-vector name='requirements'>
-            <pointer type-name='ui_build_item_req'/>
-        </stl-vector>
-
-        <stl-vector name='choices'>
-            <pointer type-name='build_req_choicest'/>
-        </stl-vector>
+        <stl-vector name='requirements' pointer-type='ui_build_item_req'/>
+        <stl-vector name='choices' pointer-type='build_req_choicest'/>
 
         <enum base-type='int32_t' name="building_type"
               type-name='building_type' comment='if -1, in Build menu; otherwise select item'/>
@@ -96,9 +91,7 @@
 
         <int32_t name="is_grouped"/>
 
-        <stl-vector name='errors'>
-            <pointer type-name='stl-string'/>
-        </stl-vector>
+        <stl-vector name='errors' pointer-type='stl-string'/>
 
         <static-array name='tiles' count='10'>
             <static-array type-name='int32_t' count='10'/>
@@ -207,12 +200,8 @@
 
     <struct-type type-name='ui_sidebar_menus'>
         <compound name='workshop_job'>
-            <stl-vector name='choices_all'>
-                <pointer type-name='interface_button_buildingst'/>
-            </stl-vector>
-            <stl-vector name='choices_visible'>
-                <pointer type-name='interface_button_buildingst'/>
-            </stl-vector>
+            <stl-vector name='choices_all' pointer-type='interface_button_buildingst'/>
+            <stl-vector name='choices_visible' pointer-type='interface_button_buildingst'/>
 
             <int32_t name="cursor"/>
             <int32_t name="category_id" comment='weapons, armor, etc'/>
@@ -221,36 +210,24 @@
         </compound>
 
         <compound name='building'>
-            <stl-vector name='choices_all'>
-                <pointer type-name='interface_button_constructionst'/>
-            </stl-vector>
-            <stl-vector name='choices_visible'>
-                <pointer type-name='interface_button_constructionst'/>
-            </stl-vector>
+            <stl-vector name='choices_all' pointer-type='interface_button_constructionst'/>
+            <stl-vector name='choices_visible' pointer-type='interface_button_constructionst'/>
 
             <int32_t name="category_id"/>
             <int32_t name="cursor"/>
         </compound>
 
         <compound name='designation'>
-            <stl-vector name='choices'>
-                <pointer type-name='interface_button_buttonst'/>
-            </stl-vector>
+            <stl-vector name='choices' pointer-type='interface_button_buttonst'/>
             <int32_t/>
             <int32_t/> int8?
             <int32_t/> int8?
         </compound>
 
         <compound name='unit'>
-            <stl-vector name='inv_items'>
-                <pointer type-name='unit_inventory_item'/>
-            </stl-vector>
-            <stl-vector name='inv_spatters'>
-                <pointer type-name='unit_contaminant'/>
-            </stl-vector>
-            <stl-vector name='list'>
-                <int32_t refers-to='$global.world.units.active[$]'/>
-            </stl-vector>
+            <stl-vector name='inv_items' pointer-type='unit_inventory_item'/>
+            <stl-vector name='inv_spatters' pointer-type='unit_contaminant'/>
+            <stl-vector name='list' type-name='int32_t' refers-to='$global.world.units.active[$]'/>
 
             <int8_t/>
         </compound>

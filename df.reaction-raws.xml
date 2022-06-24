@@ -13,12 +13,8 @@
 
         <df-flagarray name='flags' index-enum='reaction_flags'/>
 
-        <stl-vector name="reagents">
-            <pointer type-name='reaction_reagent'/>
-        </stl-vector>
-        <stl-vector name="products">
-            <pointer type-name='reaction_product'/>
-        </stl-vector>
+        <stl-vector name="reagents" pointer-type='reaction_reagent'/>
+        <stl-vector name="products" pointer-type='reaction_product'/>
     </struct-type>
 
     <class-type type-name='reaction_reagent' original-name='reaction_reagentst'>
@@ -32,7 +28,7 @@
                 <pointer name='avail_reaction_classes'><stl-vector type-name='int32_t'/></pointer>
             </vmethod>
             <vmethod name='finalize'><int32_t/></vmethod>
-            <vmethod><pointer/></vmethod>
+            <vmethod name='getJobItemSearchInfo'><pointer/></vmethod>
             <vmethod name='getName'><pointer name='str' type-name='stl-string'/></vmethod>
         </virtual-methods>
     </class-type>

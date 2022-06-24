@@ -24,14 +24,14 @@
             </vmethod>
             <vmethod name='getSymbol'>
                 <pointer type-name='int8_t' name='sym'/>
-                <pointer type-name='int16_t'/>
+                <pointer type-name='int16_t' name='size'/>
             </vmethod>
             <vmethod name='getName'>
-                <pointer type-name='stl-string'/>
-                <pointer/>
-                <pointer/>
+                <pointer type-name='stl-string' name='str'/>
+                <bool name='useThe'/>
+                <bool name='useName'/>
             </vmethod>
-            <vmethod/>
+            <vmethod name='markDiscovered'/>
             <vmethod name='getColorAndShape'>
                 <pointer name='colors'><stl-vector type-name='int16_t'/></pointer>
                 <pointer name='shapes'><stl-vector type-name='int16_t'/></pointer>
@@ -86,9 +86,9 @@
             </vmethod>
 
             <vmethod name='getName'>
-                <pointer type-name='stl-string'/>
-                <pointer/>
-                <pointer/>
+                <pointer type-name='stl-string' name='str'/>
+                <pointer type-name='art_image' name='image'/>
+                <bool name='useName'/>
             </vmethod>
         </virtual-methods>
     </class-type>

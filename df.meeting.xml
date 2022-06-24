@@ -238,18 +238,14 @@
     </struct-type>
 
     <struct-type type-name='party_info'>
-        <stl-vector name="units">
-            <pointer type-name="unit"/>
-        </stl-vector>
+        <stl-vector name="units" pointer-type="unit"/>
         <pointer name="location" type-name="building"/>
         <int32_t name="timer" comment='-1 per 10'/>
         <int32_t name='id' comment='assigned during Save'/>
     </struct-type>
 
     <struct-type type-name='room_rent_info'>
-        <stl-vector name='elements'>
-            <pointer type-name='building'/>
-        </stl-vector>
+        <stl-vector name='elements' pointer-type='building'/>
         <int32_t name='rent_value'/>
         <bitfield name='flags'>
             <flag-bit name='eviction_underway'/>
@@ -266,7 +262,7 @@
         <int16_t name='type' comment='0:Eat, 1:Sleep, 2-4:???'/>
         <int16_t name='start_time'/>
         <int16_t name='end_time'/>
-        <int16_t/>
+        <int16_t name='priority'/>
         <int8_t name='processed'/>
     </struct-type>
 

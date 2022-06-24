@@ -443,9 +443,9 @@
         <int32_t name='builder' ref-target='historical_figure'/>
         <int32_t name='build_masterpiece_event' ref-target='history_event'/>
         <int16_t name='build_skill'/>
-        <int16_t/>
-        <int32_t/>
-        <int16_t/>
+        <int16_t name='build_timer'/>
+        <int32_t name='builder2' ref-target='historical_figure'/>
+        <int16_t name='build_timer2'/>
         <int16_t name='design_quality'/>
         <int16_t name='build_quality'/>
         <bitfield name='flags' base-type='uint32_t'>
@@ -453,8 +453,8 @@
             <flag-bit name='built'/>
             <flag-bit name='designed'/>
         </bitfield>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='hitpoints'/>
+        <int32_t name='max_hitpoints'/>
     </struct-type>
 
     <class-type type-name='building_chairst' inherits-from='building_actual'>
@@ -462,7 +462,7 @@
     </class-type>
 
     <class-type type-name='building_bedst' inherits-from='building_actual'>
-        <int16_t/>
+        <int16_t name='flags'/>
     </class-type>
 
     <class-type type-name='building_tablest' inherits-from='building_actual'>
@@ -483,9 +483,9 @@
         <static-array name='plant_id' count='4'>
             <int16_t ref-target='matgloss_plant'/>
         </static-array>
-        <int32_t/>
+        <int32_t name='material_amount'/>
         <int32_t name='seasonal_fertilize'/>
-        <int8_t/>
+        <int8_t name='last_season'/>
         <int32_t name='current_fertilization'/>
         <int32_t name='max_fertilization'/>
         <int16_t name='terrain_purge_timer'/>
@@ -751,7 +751,7 @@
         <stl-vector name='assigned_items'>
             <int32_t ref-target='item'/>
         </stl-vector>
-        <int16_t/>
+        <int16_t name='cage_flags'/>
         <int16_t/>
     </class-type>
 
@@ -811,8 +811,8 @@
             <flag-bit name='pit_pond'/>
             <flag-bit name='meeting_area'/>
         </bitfield>
-        <int32_t/>
-        <int32_t/>
+        <int32_t name='site_id' ref-target='world_site'/>
+        <int32_t name='abstract_building_id'/>
         <int32_t name='zone_num'/>
         <bitfield name='pit_flags' base-type='uint32_t'>
             <flag-bit name='is_pond'/>
@@ -822,8 +822,8 @@
     </class-type>
 
     <class-type type-name='building_weaponst' inherits-from='building_actual'>
-        <int16_t/>
-        <int8_t/>
+        <int16_t name='spike_flags'/>
+        <int8_t name='timer'/>
     </class-type>
 
     <class-type type-name='building_wagonst' inherits-from='building_actual'/>
@@ -837,7 +837,7 @@
 
     <class-type type-name='building_screw_pumpst' inherits-from='building_actual'>
         <compound name='machine' type-name='machine_info'/>
-        <uint8_t/>
+        <int8_t name='intertia'/>
         <enum name='direction' base-type='int8_t' type-name='screw_pump_direction'/>
         <bool name='pump_manually'/>
     </class-type>

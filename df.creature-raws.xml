@@ -246,13 +246,27 @@
     </enum-type>
 
     <struct-type type-name='body_info'>
-        <stl-vector name='body_parts'>
-            <pointer type-name='body_part_raw'/>
-        </stl-vector>
+        <stl-vector name='body_parts' pointer-type='body_part_raw'/>
+        <stl-vector name='attacks' pointer-type='creature_attack'/>
+    </struct-type>
 
-        <stl-vector name='attacks'>
-            <pointer/>
-        </stl-vector>
+    <struct-type type-name='creature_attack'>
+        <int32_t name='min_damage'/>
+        <int32_t name='max_damage'/>
+        <enum base-type="int16_t" type-name="damage_type" name="damage_type"/>
+        <stl-string name='verb_3rd'/>
+        <stl-string name='verb_2nd'/>
+        <bitfield name='flags' base-type='uint16_t'>
+            <flag-bit name='with'/>
+            <flag-bit name='latch'/>
+            <flag-bit name='main'/>
+        </bitfield>
+        <stl-vector type-name='int32_t' name='specialattack_type' comment='0 = inject extract, 1 = suck blood'/>
+        <stl-vector type-name='int32_t' name='specialattack_material' comment='extract injected'/>
+        <stl-vector type-name='int32_t' name='specialattack_min' comment='amount of extract injected or blood sucked'/>
+        <stl-vector type-name='int32_t' name='specialattack_max'/>
+        <stl-string name='by_token'/>
+        <stl-string name='by_type'/>
     </struct-type>
 
     <enum-type type-name='blood_type' base-type='int8_t'>
@@ -286,6 +300,15 @@
         <enum-item name='ADVENTURER'/>
     </enum-type>
 
+    <enum-type type-name='racegloss_type' base-type='int16_t'>
+        <enum-item name='NONE' value='-1'/>
+        <enum-item name='WOOD'/>
+        <enum-item name='PLANT'/>
+        <enum-item name='STONE'/>
+        <enum-item name='METAL'/>
+    </enum-type>
+
+
     <struct-type type-name='creature_raw' instance-vector='$global.world.raws.creatures'>
         <stl-string name='creature_id'/>
         <code-helper name='describe'>$.creature_id</code-helper>
@@ -312,10 +335,7 @@
         <static-array type-name='stl-string' name='bowman_name' count='2'/>
         <static-array type-name='stl-string' name='specname_male' count='3'/>
         <static-array type-name='stl-string' name='specname_female' count='3'/>
-        <stl-string/>
-        <stl-string/>
-        <stl-string/>
-        <stl-string/>
+        <static-array type-name='stl-string' name='itemcorpse_str' count='4'/>
 
         <uint8_t name='tile'/>
         <uint8_t name='alttile'/>
@@ -353,7 +373,7 @@
         <enum base-type='int16_t' name='itemcorpse_material' type-name='material_type'/>
         <int16_t name='itemcorpse_matgloss' refers-to='(matgloss-target $$._parent.itemcorpse_material $)'/>
         <int16_t name='itemcorpse_quality'/>
-        <enum base-type='int16_t' name='racegloss' type-name='material_type'/>
+        <enum base-type='int16_t' name='racegloss' type-name='racegloss_type'/>
 
         <static-array type-name='int16_t' name='remains_color' count='3'/>
         <int16_t name='difficulty'/>
@@ -384,7 +404,7 @@
 
         <int32_t name='swim_speed'/>
         <int32_t name='trade_capacity'/>
-        <int32_t/>
+        <int32_t name='danger_score'/>
 
         <stl-vector name='prefstring'>
             <pointer type-name='stl-string'/>
@@ -393,9 +413,9 @@
         <compound name='body_info' type-name='body_info'/>
 
         <compound name='personality'>
-            <static-array type-name='int16_t' name='a' count='30' index-enum='personality_facet_type'/>
-            <static-array type-name='int16_t' name='b' count='30' index-enum='personality_facet_type'/>
-            <static-array type-name='int16_t' name='c' count='30' index-enum='personality_facet_type'/>
+            <static-array type-name='int16_t' name='min' count='30' index-enum='personality_facet_type'/>
+            <static-array type-name='int16_t' name='avg' count='30' index-enum='personality_facet_type'/>
+            <static-array type-name='int16_t' name='max' count='30' index-enum='personality_facet_type'/>
         </compound>
         <stl-vector type-name='int16_t' name='sphere'/>
 
@@ -436,7 +456,7 @@
 
         <stl-vector name='speech_1' type-name='int8_t'/>
         <stl-vector name='speech_2' type-name='int32_t'/>
-        <stl-vector name='speech_3' type-name='int32_t'/>
+        <stl-vector name='speech_3' pointer-type='stl-string'/>
     </struct-type>
 
     <enum-type type-name='body_part_template_flags'>

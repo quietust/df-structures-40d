@@ -71,8 +71,8 @@
     </class-type>
 
     <class-type type-name='proj_magicst' inherits-from='projectile'>
-        <int16_t/>
-        <int16_t/>
+        <int16_t name='type'/>
+        <int16_t name='damage'/>
     </class-type>
 </data-definition>
 

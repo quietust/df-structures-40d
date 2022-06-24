@@ -333,16 +333,10 @@
         <int16_t name='mount_type'/>
         <int16_t name='killer_profession'/>
         <stl-vector name='inventory' pointer-type='unit_inventory_item'/>
-        <stl-vector name='owned_items'>
-            <int32_t ref-target='item'/>
-        </stl-vector>
-        <stl-vector name='traded_items' comment='items brought to trade depot'>
-            <int32_t ref-target='item'/>
-        </stl-vector>
+        <stl-vector name='owned_items' type-name='int32_t' ref-target='item'/>
+        <stl-vector name='traded_items' type-name='int32_t' ref-target='item' comment='items brought to trade depot'/>
         <stl-vector name='owned_buildings' pointer-type='building'/>
-        <stl-vector name='corpse_items'>
-            <int32_t ref-target='item'/>
-        </stl-vector>
+        <stl-vector name='corpse_items' type-name='int32_t' ref-target='item'/>
         <compound name='job'>
             <int32_t name='account'/>
             <int32_t name='satisfaction' comment='had enough work to do'/>
@@ -441,8 +435,8 @@
 
             <int32_t name='demand_timeout' init-value='1000'/>
             <int32_t name='mandate_timeout' init-value='1000'/>
-            <stl-vector/>
-            <stl-vector/>
+            <stl-vector type-name='int32_t'/>
+            <stl-vector type-name='int16_t'/>
             <int8_t name='wagon_facing'/>
 
             <compound type-name='language_name' name='artifact_name'/>
@@ -456,14 +450,9 @@
             <static-array type-name='int8_t' name='labors' index-enum='unit_labor' count='102'/>
 
             <int32_t name='total_exp'/> for attribute boosts
-            <stl-vector comment='wrestle_items'>
-                <pointer>
-                </pointer>
-            </stl-vector>
+            <stl-vector name='wrestle_items' pointer-type='unit_item_wrestle'/>
 
-            <stl-vector name='observed_traps'>
-                <int32_t ref-target='building'/>
-            </stl-vector>
+            <stl-vector name='observed_traps' type-name='int32_t' ref-target='building'/>
 
             <stl-vector name='recent_events' pointer-type='unit_thought'/>
             <stl-vector name='recent_dreams' pointer-type='unit_thought'/>
@@ -496,8 +485,8 @@
 
             <int16_t name='adv_sleep_timer' comment='and some other things'/>
 
-            <compound type-name='coord32'/>
-            <compound type-name='coord32_path'/>
+            <compound name='job_center' type-name='coord32'/>
+            <compound name='job_coords' type-name='coord32_path'/>
         </compound>
 
         <int32_t name='hist_figure_id' ref-target='historical_figure'/>
@@ -514,7 +503,7 @@
             <compound type-name='unit_personality' name='personality'/>
             <compound type-name='tile_designation' name='liquid_type'/>
             <uint8_t name='liquid_depth'/>
-            <int32_t/>
+            <int32_t name='histeventcol_id' ref-target='history_event_collection'/>
             <int32_t name='enemy_status_slot'/>
         </compound>
 
@@ -556,6 +545,20 @@
         <int16_t name="unk_16"/>
     </struct-type>
 
+    <struct-type type-name='unit_item_wrestle'>
+        <int32_t name="unit" ref-target='unit'/>
+        <int32_t name="self_bp"
+                 refers-to='$$._parent._upglobal.body.body_plan.body_parts[$]'/>
+        <int32_t name="other_bp"
+                 refers-to='$$._parent.unit.ref-target.body.body_plan.body_parts[$]'/>
+        <int32_t name="self_bp2" init-value='-1'/>
+        <int32_t name="other_bp2" init-value='-1'/>
+        <int32_t name='self_item' ref-target='item'/>
+        <int32_t name='other_item' ref-target='item'/>
+        <int32_t name="hold_type"/>
+        <int8_t name="direction" comment='1 grabs, -1 grabbed'/>
+    </struct-type>
+
     <enum-type base-type='int16_t' type-name='misc_trait_type'>
         <enum-item name='RequestWaterCooldown'/> for thirsty patients
         <enum-item name='RequestFoodCooldown'/> for hungry patients
@@ -585,8 +588,9 @@
         <enum-item/>
         <enum-item/>
         <enum-item/>
+        <enum-item name='PickNewIdleArea'/>
         <enum-item/>
-        <enum-item/>
+        <enum-item name='PartiedOut'/>
     </enum-type>
 
     <struct-type type-name='unit_misc_trait'>

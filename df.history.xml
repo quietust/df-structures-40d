@@ -17,7 +17,7 @@
 
     <struct-type type-name='historical_figure_info'>
         <pointer name="spheres">
-            <stl-vector>
+            <stl-vector name='spheres'>
                 <enum base-type='int16_t' type-name='sphere_type'/>
             </stl-vector>
         </pointer>
@@ -32,8 +32,8 @@
             </stl-vector>
             <stl-vector name="profession_years" type-name='int32_t' comment="Number of years on each profession above. Need not be consecutive, so non registered periods can happen"/>
 
-            <stl-vector type-name='int16_t'/>
-            <stl-vector type-name='int16_t'/>
+            <stl-vector name='unk_40' type-name='int16_t'/>
+            <stl-vector name='unk_50' type-name='int16_t'/>
             <enum base-type='int16_t' name='profession' type-name='profession'/>
         </pointer>
 
@@ -196,7 +196,7 @@
         <int32_t name='unit_id' ref-target='unit'/>
         <int32_t name='id'/>
 
-        <int32_t/>
+        <int32_t name='unk_108'/>
 
         <stl-vector name='entity_links' pointer-type='histfig_entity_link'/>
         <stl-vector name='site_links' pointer-type='histfig_site_link'/>
@@ -257,7 +257,7 @@
         <stl-vector name='attacker_civ' type-name='int32_t' ref-target='historical_entity'/>
         <stl-vector name='defender_civ' type-name='int32_t' ref-target='historical_entity'/>
         <compound name='war_details'>
-            <stl-vector type-name='int16_t'/>
+            <stl-vector type-name='int16_t' name='worship_dispute'/>
             <stl-vector type-name='int32_t'/>
             <stl-vector type-name='int32_t'/>
             <stl-vector type-name='int32_t'/>
@@ -566,29 +566,29 @@
             </vmethod>
             <vmethod name='getSummary'>
                 <pointer type-name='stl-string' name='str'/> "In x, some event happened"
-                <int32_t/>
-                <int32_t/>
-                <int32_t/>
+                <pointer type-name='history_event_context' name='context'/>
+                <bool name='unused1'/>
+                <bool name='unused2'/>
             </vmethod>
             <vmethod name='getDescription'>
                 <pointer type-name='stl-string' name='str'/> "the happening of some event"
-                <int32_t/>
-                <int32_t/>
-                <int32_t/>
+                <pointer type-name='history_event_context' name='context'/>
+                <bool name='unused1'/>
+                <bool name='unused2'/>
             </vmethod>
             <vmethod name='populateArtImage'>
                 <pointer type-name='art_image' name='image'/>
             </vmethod>
-            <vmethod/>
+            <vmethod name='getSignificance' ret-type='int32_t'/>
 
-            <vmethod/>
+            <vmethod ret-type='int32_t'/>
             <vmethod ret-type='bool'><int32_t/></vmethod>
             <vmethod name='write_file'> <pointer comment='file_compressorst'/> </vmethod>
             <vmethod name='read_file'>
                 <pointer comment='file_compressorst'/>
                 <int32_t name='loadversion'/>
             </vmethod>
-            <vmethod/>
+            <vmethod name='addToDiplomacy'/>
 
             -- 30
 
@@ -1178,40 +1178,36 @@
     </struct-type>
 
     <struct-type type-name='world_history'>
-        <stl-vector name='events'>
-            <pointer type-name='history_event'/>
-        </stl-vector>
-        <stl-vector name='figures'>
-            <pointer type-name='historical_figure'/>
-        </stl-vector>
+        <stl-vector name='events' pointer-type='history_event'/>
+        <stl-vector name='figures' pointer-type='historical_figure'/>
 
         <compound name='event_collections'>
-            <stl-vector name='all'>
-                <pointer type-name='history_event_collection'/>
-            </stl-vector>
-            <static-array name='other' count='7' index-enum='history_event_collection_type'>
-                <stl-vector>
-                    <pointer type-name='history_event_collection'/>
-                </stl-vector>
-            </static-array>
+            <stl-vector name='all' pointer-type='history_event_collection'/>
+            <stl-vector name='wars' pointer-type='history_event_collection_warst'/>
+            <stl-vector name='battles' pointer-type='history_event_collection_battlest'/>
+            <stl-vector name='duels' pointer-type='history_event_collection_duelst'/>
+            <stl-vector name='sites_conquered' pointer-type='history_event_collection_site_conqueredst'/>
+            <stl-vector name='abductions' pointer-type='history_event_collection_abductionst'/>
+            <stl-vector name='thefts' pointer-type='history_event_collection_theftst'/>
+            <stl-vector name='beast_attacks' pointer-type='history_event_collection_beast_attackst'/>
         </compound>
 
         <stl-vector name='eras' pointer-type='history_era'/>
 
-        <stl-vector name='unk1' type-name='int32_t'/>
-        <stl-vector name='unk2' type-name='int16_t'/>
+        <stl-vector name='discovered_art_ids' type-name='int32_t'/>
+        <stl-vector name='discovered_art_slots' type-name='int16_t'/>
 
         <int32_t name='num_art_images'/>
         <int32_t name='total_powers' comment='also includes megabeasts'/>
         <int32_t name='total_megabeasts'/>
         <int32_t name='total_semimegabeasts'/>
-        <stl-vector pointer-type='historical_figure'/>
-        <stl-vector pointer-type='historical_figure'/>
-        <stl-vector pointer-type='historical_figure'/>
-        <stl-vector pointer-type='historical_figure'/>
-        <stl-vector/>
-        <int8_t/>
-        <stl-vector pointer-type='history_event_collection_duelst' name='active_duels'/>
+        <stl-vector name='living_meagbeasts' pointer-type='historical_figure'/>
+        <stl-vector name='living_semimegabeasts' pointer-type='historical_figure'/>
+        <stl-vector name='living_beasts' pointer-type='historical_figure'/>
+        <stl-vector name='unk_110' pointer-type='historical_figure'/>
+        <stl-vector name='cull_hfids' type-name='int32_t' ref-target='historical_figure'/>
+        <int8_t name='unk_130'/>
+        <stl-vector pointer-type='history_event_collection' name='active_event_collections'/>
         <int8_t name='history_tag_exceeded'/>
         <int32_t name='history_tag'/>
         <int32_t name='history_tag_increment'/>

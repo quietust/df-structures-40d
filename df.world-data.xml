@@ -147,20 +147,20 @@
 
         <static-array name='biome_tile_counts' type-name='int32_t' count="51" index-enum='biome_type'/>
 
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <stl-vector/>
-        <int8_t/>
-        <int8_t/>
-        <int8_t/>
-        <int8_t/>
-        <int8_t/>
+        <stl-vector name='tree_biomes' type-name='int16_t'/>
+        <stl-vector name='tree_tiles_1' type-name='int16_t'/>
+        <stl-vector name='tree_tiles_2' type-name='int16_t'/>
+        <stl-vector name='tree_tiles_good' type-name='int16_t'/>
+        <stl-vector name='tree_tiles_evil' type-name='int16_t'/>
+        <stl-vector name='tree_tiles_savage' type-name='int16_t'/>
+        <bool name='evil_1'/>
+        <bool name='evil_2'/>
+        <int8_t name='dead_percent'/>
+        <bool name='color_variant'/>
+        <int8_t name='unk_evil'/>
         <int8_t/>
         <int16_t/>
-        <stl-vector/>
+        <stl-vector name='forces' type-name='int32_t' ref-target='historical_figure'/>
         <int32_t/>
     </struct-type>
 
@@ -220,7 +220,17 @@
     </struct-type>
 
     <struct-type type-name='world_geo_biome' instance-vector='$global.world.world_data.geo_biomes'>
-        <int16_t name='unk1'/>
+        <enum name='category' base-type='int16_t'>
+            <enum-item name='PlainsNormal'/>
+            <enum-item name='PlainsVolcanic'/>
+            <enum-item name='DeepOceanNormal'/>
+            <enum-item name='DeepOceanVolcanic'/>
+            <enum-item name='ShallowOceanNormal'/>
+            <enum-item name='ShallowOceanVolcanic'/>
+            <enum-item name='SandNormal'/>
+            <enum-item name='SandVolcanic'/>
+        </enum>
+        <int16_t name='type'/>
         <int16_t name='index'/>
 
         <code-helper name='describe'>(fmt "~A geo_layers" $.layers.count)</code-helper>
@@ -261,7 +271,7 @@
             <static-array type-name='int16_t' count='17'/>
         </static-array>
 
-        <static-array count='16'>
+        <static-array count='16' name='mt_seed'>
             <static-array type-name='uint32_t' count='16'/>
         </static-array>
         <static-array count='17'>
@@ -485,11 +495,11 @@
         <stl-vector name='travel' pointer-type='moving_party'/>
 
         <compound name='history' type-name='world_history'/>
-        <int32_t/>
+        <int32_t name='unk_moon_phase'/>
         <int16_t name='flip_latitude'/>
         <int16_t name='flip_longitude'/>
-        <static-array count='3' type-name='int16_t'/>
-        <static-array count='3' type-name='int16_t'/>
+        <static-array name='unk_weather_1' count='3' type-name='int16_t'/>
+        <static-array name='unk_weather_2' count='3' type-name='int16_t'/>
         <int32_t name='next_unit_chunk_id'/>
         <int16_t name='next_unit_chunk_slot'/>
         <int32_t name='next_art_image_chunk_id'/>

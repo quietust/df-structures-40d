@@ -53,15 +53,9 @@
         <int16_t name='recheck_cntdn' comment='for process_jobs; assumed same as current version'/>
         <int16_t name='wait_timer' comment='for units to leave build sites; to recheck stockpiles'/>
 
-        <stl-vector name='items'>
-            <pointer type-name='job_item_ref'/>
-        </stl-vector>
-        <stl-vector name='specific_refs'>
-            <pointer type-name='specific_ref'/>
-        </stl-vector>
-        <stl-vector name='general_refs'>
-            <pointer type-name='general_ref'/>
-        </stl-vector>
+        <stl-vector name='items' pointer-type='job_item_ref'/>
+        <stl-vector name='specific_refs' pointer-type='specific_ref'/>
+        <stl-vector name='general_refs' pointer-type='general_ref'/>
     </struct-type>
 
     <struct-type type-name='job_item_ref'>
@@ -170,7 +164,7 @@
 
     <struct-type type-name='manager_order'>
         <enum name='job_type' base-type='int16_t' type-name='job_type'/>
-        <int16_t/>
+        <enum base-type='int16_t' name='item_type' type-name='item_type'/>
         <int16_t name="item_subtype"/>
         <stl-string name='reaction_name'/>
         <enum base-type='int16_t' name='material' type-name='material_type'/>
@@ -183,11 +177,13 @@
 
     <struct-type type-name='manager_order_template'>
         <enum name='job_type' base-type='int16_t' type-name='job_type'/>
-        <stl-string/>
+        <stl-string name='reaction_name'/>
+        <enum base-type='int16_t' name='item_type' type-name='item_type'/>
         <int16_t name="item_subtype"/>
-        <int16_t name='material' comment='or matgloss, depends on context'/>
-        <int8_t/>
+        <enum base-type='int16_t' name='material' type-name='material_type'/>
+        <int16_t name='matgloss' refers-to='(matgloss-target $$._parent.material $)'/>
         <compound name="item_category" type-name='item_category'/>
+        <bool name='visible'/>
     </struct-type>
 
     <struct-type type-name='mandate'>
@@ -228,7 +224,7 @@
     </enum-type>
 
     <struct-type type-name='unit_demand'>
-        <int16_t name="unk_0"/>
+        <int16_t name="grace"/>
 
         <enum base-type='int16_t' name='place'>
             <enum-item name='Office'/>

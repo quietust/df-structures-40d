@@ -86,14 +86,10 @@
         <uint32_t name='age'/>
         <int32_t name='id'/>
 
-        <stl-vector name='specific_refs'>
-            <pointer type-name='specific_ref'/>
-        </stl-vector>
-        <stl-vector name='general_refs'>
-            <pointer type-name='general_ref'/>
-        </stl-vector>
-        <int8_t/>
-        <int8_t/>
+        <stl-vector name='specific_refs' pointer-type='specific_ref'/>
+        <stl-vector name='general_refs' pointer-type='general_ref'/>
+        <int8_t name='stockpile_countdown'/>
+        <int8_t name='stockpile_delay'/>
 
         <virtual-methods>
             <vmethod ret-type='item_type' name='getType'/>
@@ -464,15 +460,11 @@
         </code-helper>
 
         <pointer name='magic'>
-            <stl-vector>
-                <pointer type-name='item_magicness'/>
-            </stl-vector>
+            <stl-vector pointer-type='item_magicness'/>
         </pointer>
 
         <pointer name='contaminants'>
-            <stl-vector>
-                <pointer type-name='contaminant'/>
-            </stl-vector>
+            <stl-vector pointer-type='contaminant'/>
         </pointer>
 
         <compound name='temperature' type-name='temperaturest'/>
@@ -501,9 +493,7 @@
 
     <class-type type-name='item_constructed' inherits-from='item_crafted'
                 original-name='item_constructedst'>
-        <stl-vector name='improvements'>
-            <pointer type-name='itemimprovement'/>
-        </stl-vector>
+        <stl-vector name='improvements' pointer-type='itemimprovement'/>
     </class-type>
 
     -- CRITTER
@@ -517,7 +507,7 @@
     -- LIQUID/POWER
 
     <class-type type-name='item_liquipowder' inherits-from='item_actual' original-name='item_liquipowderst'>
-        <int32_t/>
+        <int32_t name='lp_flags'/>
     </class-type>
     <class-type type-name='item_liquid' inherits-from='item_liquipowder' original-name='item_liquidst'/>
 
@@ -806,7 +796,7 @@
         <int16_t name='recipe_id'/>
         <stl-vector name='ingredients'>
             <pointer>
-                <int16_t/>
+                <int16_t name='prep_type' comment='0=minced, 1=cooked'/>
                 <enum base-type='int16_t' name='item_type' type-name='item_type'/>
                 <int16_t name='item_subtype'/>
                 <enum base-type='int16_t' name='material' type-name='material_type'/>

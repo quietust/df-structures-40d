@@ -21,15 +21,13 @@
         </code-helper>
 
         <int32_t name='group_leader_id' ref-target='nemesis_record'/>
-        <stl-vector name='companions'>
-            <int32_t ref-target='nemesis_record'/>
-        </stl-vector>
+        <stl-vector name='companions' type-name='int32_t' ref-target='nemesis_record'/>
 
         <int16_t name='unk10' comment='-1'/>
         <int32_t name='unk11' comment='-1'/>
         <int32_t name='unk12' comment='-1'/>
         <df-flagarray name='flags' index-enum='nemesis_flags'/>
-        <stl-vector type-name='pointer'/>
+        <stl-vector name='items' type-name='int32_t' ref-target='item'/>
     </struct-type>
 
     <struct-type type-name='artifact_record' key-field='id'
